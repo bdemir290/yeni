@@ -3908,6 +3908,7 @@ function burst(x, y, n, color, speed, life, grav, size) {
 function floatText(str, x, y, color, scale, vy, life) {
   scale = scale || 1;
   const w = textWidth(str, scale), h = 9 * scale;
+  x = clamp(x, w / 2 + 2, W - w / 2 - 2); // never cut off at the screen edge
   for (let n = 0; n < 5; n++) {
     const hit = FX.texts.find(t => t.life > t.max * 0.3 && Math.abs(t.y - y) < (h + 9 * t.scale) / 2 && Math.abs(t.x - x) < (w + t.w) / 2 + 2);
     if (!hit) break;
@@ -4735,7 +4736,11 @@ SCENES.run = {
     }
     if (tg.kind === 'h') { this.hold = { tg, start: tg.t, end: tg.t + tg.len - 0.35 }; Sound.play('select'); }
     if (S.volley && this.combo % S.volley === 0) this.volley();
-    if (this.combo % 10 === 0) { Sound.play('combo'); floatText(this.combo + ' KOMBO!', W / 2, this.pY - 44, C.gold, 2, -12, 1.1); haptic('medium'); this.rate(4); if (this.combo >= 20) this.say('combo'); }
+    if (this.combo % 10 === 0) {
+      Sound.play('combo'); haptic('medium'); this.rate(4); if (this.combo >= 20) this.say('combo');
+      // milestone text only where it adds something: 10 and 20, then every 50 (30s already show DÖRTNAL)
+      if (this.combo % 30 !== 0 && (this.combo <= 20 || this.combo % 50 === 0)) floatText(this.combo + ' KOMBO!', W / 2, this.pY - 44, C.gold, 2, -12, 1.1);
+    }
     if (S.starDust && this.combo % 30 === 0 && RUN.hp < S.maxHp) { RUN.hp++; floatText('+1 CAN', P.x, this.pY - 22, C.red); Sound.play('heart'); }
     if (this.tut && this.tut.step === 3) this.tut.hits++;
     if (tg.kind === 'a' && perfect && this.boss && this.boss.taunt > 0) this.breakTaunt();
@@ -6940,7 +6945,7 @@ Object.assign(SCENES.run, {
       textO('DÖRTNAL', rx, ry - 64, Math.floor(T * 10) % 2 ? C.magenta : C.salmon, 'center');
       bar(rx - 20, ry - 55, 40, 2, this.fever / 5, C.magenta);
     }
-    if (this.grax) {
+    if (this.grax && !TOASTS.length) { // a tip toast takes the same strip: Grax waits
       const g0 = this.grax, k = clamp(g0.t / 0.25, 0, 1) * clamp((2.4 - g0.t) / 0.15, 0, 1);
       const tw = Math.min(W - 8, textWidth(g0.txt) + 16), x = Math.round(W / 2 - tw / 2), y = top + (this.reis && !this.reis.dead ? 60 : 46);
       g.globalAlpha = 0.8 * k; rrect(x, y, tw, 11, C.ink);
@@ -8080,7 +8085,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V4.2', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.0', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 

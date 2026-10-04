@@ -1,4 +1,4 @@
-# Dörtnala – iOS prototipi (v4.2 · Galaksi Kupası)
+# Dörtnala – iOS prototipi (v5.0 · Galaksi Kupası)
 
 Hades tarzı, üslü roguelike at yarışı. Pixel art, dikey ekran, tek elle oynanır.
 
@@ -67,6 +67,19 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 - **Moko'nun bahis masası:** bazı sprint ve düellolardan önce Moko oran verir (birincilik 2,5 kat, düello 2 kat, rövanş 3 kat). 15 ya da 40 sikke yatırabilir ya da pas geçebilirsin.
 - **Rövanşçı rakip:** seni düelloda yenen ya da sprinti senden önce birinci bitiren isimli rakip rövanşçın olur. Bir sonraki karşılaşmada kırmızı taçla gelir, laf atar ve her yenilgide biraz daha hızlanır (en fazla 3 seviye). Onu geçersen rövanş alınır: kristal, seviye 2'den sonra bir de şeker. İstasyondaki hedef satırı ve Seyir Defteri'ndeki rakip dosyası kimin rövanşçın olduğunu gösterir.
 - Yeni görevler (kapı aç, sponsor hediyesi, dörtnal modu, bahis, rövanş) ve Zafer Vitrini'nde rövanş ve dörtnal sayaçları.
+
+## v5.0: Yeni gezegenler ve kalabalık pistler
+
+- **İki yeni gezegen:** Mantar Ayı ile Galaksi Arenası arasında artık **Buz Halkası** ve **Kızıl Kum** var. Bir koşu 15 yerine 25 etap sürüyor. Her gezegenin kendi müziği, pist rengi ve kenar süsleri (buz kuleleri, kaktüsler, dev kaburgalar) var.
+- **Yeni şampiyonlar:** *Buz Kraliçesi Niva* buz sarkıtı düşürür, buz duvarı örer ve **AYAZ** ile şerit değiştirmeyi yavaşlatır; hamle ya da mükemmel altın nota buzu kırar. *Kum Solucanı Zarg* kumdan çıkar (önce turuncu halka belirir), kum dalgası yollar, kum fırtınası çıkarır.
+- **Daha çok uzaylı rakip:** isimli rakip 6'dan 15'e, genel uzaylı görünümü 8'den 16'ya çıktı; her gezegende üç isimli rakip ve kendi dosyaları var. Yeni tarzlar: **atıcı** (bir vuruş önce "!" ve kırmızı çizgi, sonra plazma) ve **zikzak** (şerit şerit kayar, önünü keser). Sprintte isimli rakipler de ritimle hamle yapar; her hamle bir vuruş önceden "!" ile görünür ve aynı anda yalnızca biri gelir. Omuz atan rakip de artık önce uyarır.
+- **Kalabalık sprintler:** Buz Halkası'nda 6, Kızıl Kum ve Arena'da 7 rakip var; 8 yarışçılı sprintlerde ilk 4 geçer.
+- **Adil pist:** göktaşları, variller, meteor ve solucan çıkışları, buz duvarları yerleşmeden önce kontrol edilir; her zaman ulaşılabilir bir geçit kalır. Zorluk bölge sırasına değil her gezegenin kendi kademesine bağlı.
+- **Geri bildirim:** "İYİ · ERKEN/GEÇ" ve "ISKA · ERKEN/GEÇ" ipuçları, kırılan kombo, neye çarptığını söyleyen yazı ("GÖKTAŞI!", "BARİYER: SIÇRA!"), kaybedilen kalbin animasyonu ve bitişte tek bir sonuç kartı (sıra, hasar, mükemmel, en iyi kombo). Üst üste binen yazılar ayrılır, ekranda en fazla 7 yazı kalır.
+- **Isınma turu:** hamle adımı, teknik ipucu ve sonunda kontrol özeti eklendi. Ayarlar'dan **Isınma turunu tekrar oyna** seçilebilir.
+- **Üs ekranı:** her bina panelinde sıradaki seviyenin etkisi, bedeli, eksik kristal ve sonraki seviyeler yazıyor; haritada bina isimleri, hedef çubuğunda sayısal ilerleme (örn. 45/60) var.
+- **iPhone:** küçük butonların dokunma alanı büyüdü, rakip isimleri ekrandan taşmıyor, metin çizimi önbelleğe alındı (kare süresi yaklaşık %25 kısaldı).
+- Eski kayıtlar taşınır: v4 kaydındaki bölge ilerlemesi ve yarım kalan koşu yeni gezegen sırasına göre güncellenir.
 
 ## Proje yapısı
 

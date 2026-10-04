@@ -684,7 +684,11 @@ SCENES.run = {
     }
     if (tg.kind === 'h') { this.hold = { tg, start: tg.t, end: tg.t + tg.len - 0.35 }; Sound.play('select'); }
     if (S.volley && this.combo % S.volley === 0) this.volley();
-    if (this.combo % 10 === 0) { Sound.play('combo'); floatText(this.combo + ' KOMBO!', W / 2, this.pY - 44, C.gold, 2, -12, 1.1); haptic('medium'); this.rate(4); if (this.combo >= 20) this.say('combo'); }
+    if (this.combo % 10 === 0) {
+      Sound.play('combo'); haptic('medium'); this.rate(4); if (this.combo >= 20) this.say('combo');
+      // milestone text only where it adds something: 10 and 20, then every 50 (30s already show DÖRTNAL)
+      if (this.combo % 30 !== 0 && (this.combo <= 20 || this.combo % 50 === 0)) floatText(this.combo + ' KOMBO!', W / 2, this.pY - 44, C.gold, 2, -12, 1.1);
+    }
     if (S.starDust && this.combo % 30 === 0 && RUN.hp < S.maxHp) { RUN.hp++; floatText('+1 CAN', P.x, this.pY - 22, C.red); Sound.play('heart'); }
     if (this.tut && this.tut.step === 3) this.tut.hits++;
     if (tg.kind === 'a' && perfect && this.boss && this.boss.taunt > 0) this.breakTaunt();

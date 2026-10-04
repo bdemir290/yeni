@@ -208,6 +208,7 @@ function burst(x, y, n, color, speed, life, grav, size) {
 function floatText(str, x, y, color, scale, vy, life) {
   scale = scale || 1;
   const w = textWidth(str, scale), h = 9 * scale;
+  x = clamp(x, w / 2 + 2, W - w / 2 - 2); // never cut off at the screen edge
   for (let n = 0; n < 5; n++) {
     const hit = FX.texts.find(t => t.life > t.max * 0.3 && Math.abs(t.y - y) < (h + 9 * t.scale) / 2 && Math.abs(t.x - x) < (w + t.w) / 2 + 2);
     if (!hit) break;
