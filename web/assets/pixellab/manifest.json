@@ -1,0 +1,49 @@
+{
+  "horses": {
+    "bay|deniz": {
+      "frames": [
+        "yildiz/run-0.png",
+        "yildiz/run-1.png",
+        "yildiz/run-2.png",
+        "yildiz/run-3.png"
+      ],
+      "jump": "yildiz/jump.png",
+      "stand": "yildiz/stand.png",
+      "blanketMask": [
+        [
+          6,
+          16
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          11,
+          17
+        ]
+      ]
+    }
+  },
+  "mounts": {
+    "r1": {
+      "frames": [
+        "r1/run-0.png",
+        "r1/run-1.png",
+        "r1/run-2.png",
+        "r1/run-3.png"
+      ],
+      "jump": "r1/jump.png",
+      "stand": "r1/stand.png"
+    }
+  },
+  "portraits": {
+    "bip": "portraits/bip.png",
+    "grax": "portraits/grax.png",
+    "moko": "portraits/moko.png"
+  }
+}

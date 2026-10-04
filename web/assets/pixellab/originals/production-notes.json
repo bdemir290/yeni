@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-04",
+  "model": "Pixen",
+  "credits_displayed_per_image": 1,
+  "generated": {
+    "bip": "1791138218560",
+    "grax": "1791138166680",
+    "moko": "1791138202594"
+  },
+  "ahir": {
+    "status": "saved-not-integrated",
+    "reason": "isometric angle does not match current hub front-facing buildings"
+  },
+  "r1_jump": {
+    "animation": "d1191d41-fc39-48eb-a378-0c250c536bb9",
+    "selected_frame": 3
+  }
+}

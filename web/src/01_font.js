@@ -1,0 +1,167 @@
+// ================= BITMAP FONT (Turkish uppercase) =================
+// Each glyph: body rows (5 tall), optional top (2 rows above) and bot (1 row below).
+const GLYPHS = {
+  'A': ['.##.', '#..#', '####', '#..#', '#..#'],
+  'B': ['###.', '#..#', '###.', '#..#', '###.'],
+  'C': ['.###', '#...', '#...', '#...', '.###'],
+  'D': ['###.', '#..#', '#..#', '#..#', '###.'],
+  'E': ['####', '#...', '###.', '#...', '####'],
+  'F': ['####', '#...', '###.', '#...', '#...'],
+  'G': ['.###', '#...', '#.##', '#..#', '.###'],
+  'H': ['#..#', '#..#', '####', '#..#', '#..#'],
+  'I': ['###', '.#.', '.#.', '.#.', '###'],
+  'J': ['..##', '...#', '...#', '#..#', '.##.'],
+  'K': ['#..#', '#.#.', '##..', '#.#.', '#..#'],
+  'L': ['#...', '#...', '#...', '#...', '####'],
+  'M': ['#...#', '##.##', '#.#.#', '#...#', '#...#'],
+  'N': ['#..#', '##.#', '#.##', '#..#', '#..#'],
+  'O': ['.##.', '#..#', '#..#', '#..#', '.##.'],
+  'P': ['###.', '#..#', '###.', '#...', '#...'],
+  'Q': ['.##.', '#..#', '#..#', '#.#.', '.#.#'],
+  'R': ['###.', '#..#', '###.', '#.#.', '#..#'],
+  'S': ['.###', '#...', '.##.', '...#', '###.'],
+  'T': ['###', '.#.', '.#.', '.#.', '.#.'],
+  'U': ['#..#', '#..#', '#..#', '#..#', '.##.'],
+  'V': ['#...#', '#...#', '.#.#.', '.#.#.', '..#..'],
+  'W': ['#...#', '#...#', '#.#.#', '##.##', '#...#'],
+  'X': ['#..#', '#..#', '.##.', '#..#', '#..#'],
+  'Y': ['#.#', '#.#', '.#.', '.#.', '.#.'],
+  'Z': ['####', '...#', '.##.', '#...', '####'],
+  '0': ['###', '#.#', '#.#', '#.#', '###'],
+  '1': ['.#.', '##.', '.#.', '.#.', '###'],
+  '2': ['###', '..#', '###', '#..', '###'],
+  '3': ['###', '..#', '.##', '..#', '###'],
+  '4': ['#.#', '#.#', '###', '..#', '..#'],
+  '5': ['###', '#..', '###', '..#', '###'],
+  '6': ['###', '#..', '###', '#.#', '###'],
+  '7': ['###', '..#', '..#', '.#.', '.#.'],
+  '8': ['###', '#.#', '###', '#.#', '###'],
+  '9': ['###', '#.#', '###', '..#', '###'],
+  '.': ['.', '.', '.', '.', '#'],
+  ',': ['.', '.', '.', '.', '#'],
+  '!': ['#', '#', '#', '.', '#'],
+  '?': ['###', '..#', '.##', '...', '.#.'],
+  ':': ['.', '#', '.', '#', '.'],
+  ';': ['.', '#', '.', '.', '#'],
+  '-': ['...', '...', '###', '...', '...'],
+  '+': ['...', '.#.', '###', '.#.', '...'],
+  '=': ['...', '###', '...', '###', '...'],
+  '/': ['..#', '..#', '.#.', '#..', '#..'],
+  '%': ['#.#', '..#', '.#.', '#..', '#.#'],
+  "'": ['#', '#', '.', '.', '.'],
+  '"': ['#.#', '#.#', '...', '...', '...'],
+  '(': ['.#', '#.', '#.', '#.', '.#'],
+  ')': ['#.', '.#', '.#', '.#', '#.'],
+  '<': ['..#', '.#.', '#..', '.#.', '..#'],
+  '>': ['#..', '.#.', '..#', '.#.', '#..'],
+  '#': ['.#.#.', '#####', '.#.#.', '#####', '.#.#.'],
+  '*': ['.....', '.#.#.', '..#..', '.#.#.', '.....'],
+  '←': ['..#..', '.#...', '#####', '.#...', '..#..'],
+  '→': ['..#..', '...#.', '#####', '...#.', '..#..'],
+  '↑': ['..#..', '.###.', '#.#.#', '..#..', '..#..'],
+  '↓': ['..#..', '..#..', '#.#.#', '.###.', '..#..'],
+  '♥': ['.#.#.', '#####', '#####', '.###.', '..#..'],
+  '·': ['.', '.', '#', '.', '.'],
+  ' ': ['..', '..', '..', '..', '..']
+};
+// derived (diacritics)
+(function () {
+  const add = (ch, base, top, bot) => { GLYPHS[ch] = { body: GLYPHS[base], top, bot }; };
+  add('Ç', 'C', null, '.#..');
+  add('Ş', 'S', null, '.#..');
+  add('Ğ', 'G', ['#..#', '.##.'], null);
+  add('Ü', 'U', ['#..#', null], null);
+  add('Ö', 'O', [null, '#..#'], null);
+  add('İ', 'I', [null, '.#.'], null);
+  add('Â', 'A', [null, '.##.'], null);
+  add('Î', 'I', [null, '.#.'], null);
+  add('Û', 'U', [null, '.##.'], null);
+  GLYPHS[','] = { body: ['.', '.', '.', '.', '#'], top: null, bot: '#' };
+})();
+function glyphOf(ch) {
+  let gd = GLYPHS[ch];
+  if (!gd) gd = GLYPHS['?'];
+  if (Array.isArray(gd)) return { body: gd, top: null, bot: null };
+  return gd;
+}
+const FONT_H = 8; // rows: 0-1 top marks, 2-6 body, 7 bottom
+const LINE_H = 10;
+// Build a white atlas once
+const FONT = (function () {
+  const chars = Object.keys(GLYPHS);
+  const map = {};
+  let x = 0;
+  for (const ch of chars) { const gd = glyphOf(ch); const w = gd.body[0].length; map[ch] = { x, w }; x += w + 1; }
+  const atlas = document.createElement('canvas');
+  atlas.width = Math.max(1, x); atlas.height = FONT_H;
+  const a = atlas.getContext('2d');
+  a.fillStyle = '#fff';
+  for (const ch of chars) {
+    const gd = glyphOf(ch); const m = map[ch];
+    gd.body.forEach((row, ry) => { for (let i = 0; i < row.length; i++) if (row[i] === '#') a.fillRect(m.x + i, ry + 2, 1, 1); });
+    if (gd.top) gd.top.forEach((row, ry) => { if (!row) return; for (let i = 0; i < row.length; i++) if (row[i] === '#') a.fillRect(m.x + i, ry, 1, 1); });
+    if (gd.bot) { for (let i = 0; i < gd.bot.length; i++) if (gd.bot[i] === '#') a.fillRect(m.x + i, 7, 1, 1); }
+  }
+  return { atlas, map, tinted: {} };
+})();
+function fontAtlas(color) {
+  let t = FONT.tinted[color];
+  if (!t) {
+    t = document.createElement('canvas'); t.width = FONT.atlas.width; t.height = FONT.atlas.height;
+    const c2 = t.getContext('2d');
+    c2.drawImage(FONT.atlas, 0, 0);
+    c2.globalCompositeOperation = 'source-in'; c2.fillStyle = color; c2.fillRect(0, 0, t.width, t.height);
+    FONT.tinted[color] = t;
+  }
+  return t;
+}
+function textWidth(str, scale) {
+  scale = scale || 1; str = trUp(str);
+  let w = 0;
+  for (const ch of str) { const m = FONT.map[ch] || FONT.map['?']; w += (m.w + 1); }
+  return Math.max(0, (w - 1)) * scale;
+}
+// draws text; y = top of glyph cell (cap top at y+2*scale)
+function text(str, x, y, color, align, scale, shadow) {
+  scale = scale || 1; str = trUp(str);
+  const w = textWidth(str, scale);
+  let sx = Math.round(align === 'center' ? x - w / 2 : align === 'right' ? x - w : x);
+  y = Math.round(y);
+  if (shadow) drawTextRaw(str, sx, y + scale, shadow, scale);
+  drawTextRaw(str, sx, y, color || C.white, scale);
+  return w;
+}
+function drawTextRaw(str, x, y, color, scale) {
+  const at = fontAtlas(color);
+  for (const ch of str) {
+    const m = FONT.map[ch] || FONT.map['?'];
+    g.drawImage(at, m.x, 0, m.w, FONT_H, x, y, m.w * scale, FONT_H * scale);
+    x += (m.w + 1) * scale;
+  }
+}
+// outlined text (for HUD readability)
+function textO(str, x, y, color, align, scale, outline) {
+  scale = scale || 1; outline = outline || C.ink;
+  const d = scale;
+  for (const [dx, dy] of [[-d, 0], [d, 0], [0, -d], [0, d], [-d, -d], [d, -d], [-d, d], [d, d]]) text(str, x + dx, y + dy, outline, align, scale);
+  return text(str, x, y, color, align, scale);
+}
+function wrapText(str, maxW, scale) {
+  scale = scale || 1;
+  const words = trUp(str).split(' ');
+  const lines = []; let line = '';
+  for (const wd of words) {
+    if (wd === '\n') { lines.push(line); line = ''; continue; }
+    const test = line ? line + ' ' + wd : wd;
+    if (textWidth(test, scale) > maxW && line) { lines.push(line); line = wd; }
+    else line = test;
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+function textBlock(str, x, y, maxW, color, align, scale, lineH) {
+  scale = scale || 1; lineH = lineH || LINE_H * scale;
+  const lines = wrapText(str, maxW, scale);
+  lines.forEach((ln, i) => text(ln, x, y + i * lineH, color, align, scale));
+  return lines.length * lineH;
+}
