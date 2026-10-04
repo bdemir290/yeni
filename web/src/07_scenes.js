@@ -712,11 +712,11 @@ SCENES.results = {
     }
     META.runSave = null;
     this.done = META.missions.filter(m => m.done).length;
-    this.where = this.won ? 'GALAKSİ KUPASI' : REGIONS[Math.min(LAST_REGION, RUN.region)].name + ' · ' + (RUN.etap >= 4 ? 'BOSS' : 'ETAP ' + (RUN.etap + 1));
+    this.where = this.won ? 'GALAKSİ KUPASI' : REGIONS[Math.min(LAST_REGION, RUN.region)].name + ' · ' + (RUN.etap >= 4 ? 'ŞAMPİYON' : 'ETAP ' + (RUN.etap + 1));
     const di = RUN.diedIn;
     this.near = null;
     if (!this.won && di) {
-      if (di.boss && di.gap != null) this.near = BOSSES[di.boss].name + '\'YI GEÇMENE %' + Math.max(0, 100 - di.gap) + ' KALDI';
+      if (di.boss && di.gap != null) this.near = trAcc(BOSSES[di.boss].name.split(' ').pop()) + ' GEÇMENE %' + Math.max(0, 100 - di.gap) + ' KALDI';
       else if (di.pct != null) this.near = 'ETABIN %' + di.pct + '\'İNİ KOŞTUN';
     }
     checkFarmPerks();

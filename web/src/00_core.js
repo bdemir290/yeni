@@ -46,6 +46,12 @@ const trUp = s => {
   return u;
 };
 
+// Turkish accusative suffix with vowel harmony: ZARG → ZARG'I, NİVA → NİVA'YI, KRİSTALO → KRİSTALO'YU
+function trAcc(name) {
+  const up = trUp(name), V = 'AEIİOÖUÜ', m = { A: 'I', I: 'I', E: 'İ', İ: 'İ', O: 'U', U: 'U', Ö: 'Ü', Ü: 'Ü' };
+  let last = 'A'; for (const ch of up) if (V.indexOf(ch) >= 0) last = ch;
+  return up + '\'' + (V.indexOf(up[up.length - 1]) >= 0 ? 'Y' : '') + m[last];
+}
 // ---------- canvas ----------
 const cvs = document.getElementById('game');
 const ctx = cvs.getContext('2d', { alpha: false });
