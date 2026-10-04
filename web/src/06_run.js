@@ -5,6 +5,10 @@ const HAZARD = { rock: 1, hurdle: 1, log: 1, puddle: 1, bale: 1, wolf: 1, fici: 
 const JUMPABLE = { hurdle: 1, log: 1, puddle: 1, bale: 1, wolf: 1, civi: 1, toz: 1 };
 const SOLID = { rock: 1, fici: 1 };
 const PICKUP = { coin: 1, clover: 1, heart: 1, sugar: 1 };
+// what hit you, shown next to the horse; jumpable ones remind you to jump
+const HURT_LABELS = { rock: 'GÖKTAŞI!', fici: 'VARİL!', scan: 'LAZER: ŞERİDİ DEĞİŞTİR', arrow: 'PLAZMA!', bolt: 'YILDIRIM!', foe: 'DÜŞMAN!', reis: 'KAPTAN!',
+  storm: 'KARA DELİK!', boss: 'FARK KAPANDI!', hurdle: 'BARİYER: SIÇRA!', log: 'BORU: SIÇRA!', bale: 'VARİL!', wolf: 'AV KÖPEĞİ!', civi: 'MAYIN: SIÇRA!', toz: 'ŞOK DALGASI: SIÇRA!',
+  ice: 'BUZ SARKITI!', kum: 'KUM SOLUCANI!', icerock: 'BUZ DUVARI!' };
 const FOE_TIPS = {
   karga: 'GÖZCÜ UÇAR, SIÇRAMAK İŞE YARAMAZ. VUR YA DA KAÇ!',
   domuz: 'TOSBİK ÜSTÜNE KOŞAR. ÜSTÜNDEN SIÇRA YA DA VUR!',
@@ -154,7 +158,7 @@ SCENES.run = {
     this.nefes = clamp(S.nefesStart, 0, 100); this.kick = 0; this.hamleShieldUsed = false;
     this.obs = []; this.foes = []; this.shots = []; this.eShots = []; this.trails = []; this.rivals = []; this.finished = []; this.bolts = []; this.lines = [];
     this.genY = 300; this.time = 0; this.state = 'intro'; this.stateT = 0; this.timeScale = 1;
-    this.damaged = 0; this.coinFrac = 0; this.paused = false; this.confirmQuit = false; this.showBoons = false;
+    this.damaged = 0; this.coinFrac = 0; this.etapMax = 0; this.etapPerfects = 0; this.finishMsg = null; this.finishBonus = null; this.heartLost = null; this.comboBreak = 0; this.prevCombo = 0; this.paused = false; this.confirmQuit = false; this.showBoons = false;
     this.shoeFlash = 0; this.ringFlash = 0; this.judgeT = 0; this.judgeStr = ''; this.judgeCol = C.white; this.result = null; this.ghostLane = 3;
     this.storm = this.type === 'kovala' ? { gap: 115 } : null;
     this.heartPlaced = false; this.resumeT = 0; this.finalStretch = false; this.medal = null; this.medalT = 0; this.shock = null;
@@ -480,17 +484,20 @@ SCENES.run = {
     this.ensureTargets(bp);
     let best = null, bd = 1e9;
     for (const tg of this.targets) { if (tg.done) continue; const dd = Math.abs(tg.t - bp) * Beat.iv; if (dd < bd) { bd = dd; best = tg; } }
+    this.missHint = null;
     if (!best) { this.pending = 'miss'; return; }
+    this.lastDelta = (best.t - bp) * Beat.iv; // > 0: pressed before the note
     let pw = S.perfectWin * (S.dawnWindow && this.combo >= 20 ? 1.5 : 1);
     if (best.kind === 'a') pw *= S.accentWin;
     const gwin = Math.max(S.goodWin, pw + 0.03);
     if (bd <= pw) this.hitTarget(best, 'perfect');
     else if (bd <= gwin) this.hitTarget(best, 'good');
-    else this.pending = 'miss';
+    else { this.pending = 'miss'; if (bd < 0.4) this.missHint = this.lastDelta > 0 ? 'ERKEN' : 'GEÇ'; }
   },
   tap() {
     if (this.paused) return;
     if (this.state === 'intro' && this.tipKey) { this.dismissTip(); return; }
+    if (this.state === 'finish' && this.medal && this.stateT > 0.9) { this.stateT = 99; return; }
     if (this.pending === 'miss') this.judgeMiss();
     this.pending = null;
   },
@@ -580,7 +587,8 @@ SCENES.run = {
   },
   hamle() {
     const P = this.P, S = this.S;
-    if (this.tut || this.state !== 'run' || this.paused || P.hamleCd > 0) return;
+    const tutHamle = this.tut && this.tut.step >= 5;
+    if ((this.tut && !tutHamle) || this.state !== 'run' || this.paused || P.hamleCd > 0) return;
     const cost = S.hamleCost * (RUN.runStyle === 'onde' && P.dist < this.length * 0.5 ? 0.7 : 1);
     if (this.nefes < cost) { floatText('NEFES YETMİYOR', P.x, this.pY - 22, C.gray, 1, -10, 0.6); Sound.play('deny'); return; }
     this.nefes -= cost; P.hamleT = S.hamleDur; P.hamleCd = 0.7;
@@ -591,6 +599,7 @@ SCENES.run = {
     if (S.hamleShield && !this.hamleShieldUsed) { this.hamleShieldUsed = true; P.shield++; floatText('+KALKAN', P.x, this.pY - 30, C.gold, 1, -12, 0.8); }
     if (this.boss && this.boss.taunt > 0) this.breakTaunt();
     if (this.frost > 0) this.breakFrost();
+    if (this.tut && this.tut.step === 5) { this.tutRivals(); this.tut.msg = 'HAMLE! NEFES HIZA DÖNÜŞTÜ'; this.tut.msgT = 1.6; Sound.play('select'); }
   },
   useAbility() {
     if (this.bond < 100 || this.state !== 'run' || this.paused) return;
@@ -645,18 +654,19 @@ SCENES.run = {
   judgeMiss() {
     const S = this.S, P = this.P;
     if (this.combo > 0 && P.stormT <= 0) this.combo = S.comboKeep ? Math.floor(this.combo / 2) : 0;
-    this.showJudge('ISKA', C.gray); Sound.play('miss');
+    this.showJudge(this.missHint ? 'ISKA · ' + this.missHint : 'ISKA', C.gray); Sound.play('miss');
     this.gateMiss();
     this.fireWeapon('miss');
   },
   hitTarget(tg, grade) {
     const S = this.S, P = this.P, perfect = grade === 'perfect';
     tg.done = true; tg.hit = grade; tg.hitAt = T;
-    this.combo++; this.ringFlash = 1;
+    this.combo++; this.ringFlash = 1; this.comboPop = 0.15;
     this.gateHit();
     if (this.combo % 30 === 0) this.startFever();
     if (perfect) this.rate(0.25);
-    RUN.maxCombo = Math.max(RUN.maxCombo, this.combo);
+    RUN.maxCombo = Math.max(RUN.maxCombo, this.combo); this.etapMax = Math.max(this.etapMax || 0, this.combo);
+    if (perfect) this.etapPerfects = (this.etapPerfects || 0) + 1;
     missionEvent('combo', this.combo);
     if (perfect) {
       RUN.perfects++; META.stats.perfects++; missionEvent('perfect', 1);
@@ -664,7 +674,7 @@ SCENES.run = {
       Sound.play('perfect', this.combo / 2); haptic('light');
       this.showJudge('MÜKEMMEL', C.yellow);
       burst(P.x, this.pY + 9, 5, [C.yellow, C.white], 35, 0.35);
-    } else { this.addBond(4); Sound.play('good'); this.showJudge('İYİ', C.white); this.shoeFlash = 0.5; }
+    } else { this.addBond(4); Sound.play('good'); this.showJudge(this.lastDelta > 0 ? 'İYİ · ERKEN' : 'İYİ · GEÇ', C.white); this.shoeFlash = 0.5; }
     if (this.boss) this.boss.gap = Math.min(100, this.boss.gap + (perfect ? 1.0 : 0.5) * (tg.kind === 'a' && perfect ? 1.6 : 1));
     this.gainNefes(perfect ? 1.5 : 0.75);
     if (tg.kind === 'a' && perfect) this.fireSpecial(); else this.fireWeapon(grade);
@@ -934,6 +944,8 @@ SCENES.run = {
     }
     if (P.shield > 0) { P.shield--; P.invuln = 0.6; floatText('KALKAN!', P.x, this.pY - 22, C.gold); Sound.play('bump'); shake(2, 0.15); haptic('medium'); return false; }
     RUN.hp--; RUN.damage++; this.damaged++;
+    this.heartLost = { i: RUN.hp, t: 0.8 };
+    const cause = HURT_LABELS[src]; if (cause) floatText(cause, P.x, this.pY - 30, C.salmon, 1, -14, 1.1);
     P.invuln = 1.25; P.slowT = 0.9; P.slowAmt = 0.45 * (1 - Math.min(0.8, S.slowResist));
     if (this.combo > 0 && P.stormT <= 0) this.combo = S.comboKeep ? Math.floor(this.combo / 2) : 0;
     this.nefes = Math.max(0, this.nefes - 12); this.hold = null;
@@ -1009,6 +1021,11 @@ SCENES.run = {
       if (fl > this.lastBeatIdx) { for (let b = this.lastBeatIdx + 1; b <= fl; b++) this.onBeat(b); this.lastBeatIdx = fl; }
     }
     this.shoeFlash = Math.max(0, this.shoeFlash - dt * 4);
+    if (this.comboPop > 0) this.comboPop -= dt;
+    if (this.heartLost) { this.heartLost.t -= dt; if (this.heartLost.t <= 0) this.heartLost = null; }
+    if (this.comboBreak > 0) this.comboBreak -= dt;
+    if ((this.prevCombo || 0) >= 8 && this.combo < this.prevCombo - 2 && this.state === 'run') { this.comboBreak = 0.9; this.brokenCombo = this.prevCombo; }
+    this.prevCombo = this.combo;
     this.ringFlash = Math.max(0, this.ringFlash - dt * 5);
     this.judgeT = Math.max(0, this.judgeT - dt);
     if (this.bannerT > 0) this.bannerT -= dt;
@@ -1029,7 +1046,7 @@ SCENES.run = {
       this.P.speed *= 0.94;
       if (this.stateT > 1.8) { saveMeta(); go('results', { won: false }); this.state = 'gone'; }
     }
-    if (this.state === 'finish' && this.stateT > (this.medal ? 2.0 : 1.5)) { this.state = 'gone'; this.complete(); }
+    if (this.state === 'finish' && this.stateT > (this.medal ? 2.6 : 1.5)) { this.state = 'gone'; this.complete(); }
     this.updateTargets();
     if (this.tut) this.updateTut(dt);
     if (window.__auto && this.state === 'run') this.autoPlay();
@@ -1097,7 +1114,7 @@ SCENES.run = {
     if ((this.combo >= 12 || P.hamleT > 0 || P.abilityT > 0 || P.slingT > 0 || P.stormT > 0 || this.kick > 0) && rnd() < dt * (8 + this.combo * 0.3)) this.lines.push({ x: this.trackL + rnd() * this.laneW * 5, y: -10, l: 6 + rnd() * 8, t: 1.2 });
     if (S.ghost) this.ghostLane = P.lane < 4 ? P.lane + 1 : P.lane - 1;
     if (!this.finalStretch && this.type !== 'boss' && !this.tut && this.state === 'run' && P.dist >= this.length * 0.8) this.startFinalStretch();
-    if (this.state === 'run' && this.type !== 'boss' && P.dist >= this.length && (!this.tut || this.tut.step >= 5)) this.finishLine();
+    if (this.state === 'run' && this.type !== 'boss' && P.dist >= this.length && (!this.tut || this.tut.step >= 6)) this.finishLine();
   },
   startFinalStretch() {
     this.finalStretch = true;
@@ -1145,7 +1162,7 @@ SCENES.run = {
       if (o.kind === 'bale') o.y += (o.vy || -60) * dt;
       if (o.kind === 'wolf') { o.x += o.vx * dt; if (o.x < this.trackL - 20 || o.x > this.trackL + this.laneW * 5 + 20) o.dead = true; }
       if (o.kind === 'scan' && o.mt < 1) { o.mt = Math.min(1, o.mt + dt / 0.12); o.vis = lerp(o.fromVis, o.lane, Ease.outQuad(o.mt)); }
-      const dy = o.y - P.dist;
+      const dy = o.y - P.dist, ly = o.ly; o.ly = dy;
       if (dy < -40) { if (o.jumped) { missionEvent('jump', 1); META.stats.jumps++; } o.dead = true; continue; }
       if (o.kind === 'rgate') { this.updateGate(o, dy, dt); continue; }
       if (!o.passed && dy < -4) {
@@ -1160,7 +1177,8 @@ SCENES.run = {
       }
       if (o.hit || flying || !this.overlapX(o, P.x, half)) continue;
       const depth = o.kind === 'log' ? 6 : 5;
-      if (Math.abs(dy) > depth) continue;
+      // a slow frame can step right over the contact band: count a crossing from in front to behind as contact
+      if (Math.abs(dy) > depth && !(ly != null && ly > depth && dy < -depth)) continue;
       if (JUMPABLE[o.kind] && (P.jumping || (P.floatT > 0 && o.kind !== 'bale'))) {
         if (!o.jumped) { o.jumped = true; if (P.jumping && o.kind !== 'puddle') this.judgeJump(o); }
         continue;
@@ -1176,7 +1194,7 @@ SCENES.run = {
       if (S.comboTrample && this.combo >= S.comboTrample && o.kind !== 'wolf') { if (o.kind === 'fici') this.hitFici(o, 99); else this.breakObs(o); Sound.play('bump'); shake(2, 0.1); continue; }
       if ((o.kind === 'rock' || o.kind === 'fici') && S.rockBreaker) { if (o.kind === 'fici') this.hitFici(o, 99); else this.breakObs(o); P.slowT = 0.35; P.slowAmt = 0.25; Sound.play('bump'); shake(2, 0.12); continue; }
       o.hit = true;
-      if (this.hurt(o.kind)) { if (o.kind === 'fici') this.hitFici(o, 99); else this.breakObs(o); }
+      if (this.hurt(o.kum ? 'kum' : o.ice ? 'icerock' : o.kind)) { if (o.kind === 'fici') this.hitFici(o, 99); else this.breakObs(o); }
     }
     if (this.obs.length > 160) this.obs = this.obs.filter(o => !o.dead);
   },

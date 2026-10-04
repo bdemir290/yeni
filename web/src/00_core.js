@@ -38,7 +38,13 @@ function hash2(x, y) {
   h = Math.imul(h ^ (h >>> 13), 1274126177);
   return ((h ^ (h >>> 16)) >>> 0) / 4294967296;
 }
-const trUp = s => String(s).toLocaleUpperCase('tr-TR');
+// Turkish upper-casing is slow and text is drawn every frame: remember recent results
+const TRUP_CACHE = new Map();
+const trUp = s => {
+  s = String(s); let u = TRUP_CACHE.get(s);
+  if (u === undefined) { u = s.toLocaleUpperCase('tr-TR'); if (TRUP_CACHE.size > 2000) TRUP_CACHE.clear(); TRUP_CACHE.set(s, u); }
+  return u;
+};
 
 // ---------- canvas ----------
 const cvs = document.getElementById('game');

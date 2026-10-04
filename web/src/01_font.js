@@ -139,12 +139,26 @@ function drawTextRaw(str, x, y, color, scale) {
     x += (m.w + 1) * scale;
   }
 }
-// outlined text (for HUD readability)
+// outlined text (for HUD readability). The 9-pass outline is rendered once per string/colour into a small
+// cached canvas, so busy HUD frames cost one drawImage per label instead of nine per letter.
+const TEXTO_CACHE = new Map();
 function textO(str, x, y, color, align, scale, outline) {
-  scale = scale || 1; outline = outline || C.ink;
-  const d = scale;
-  for (const [dx, dy] of [[-d, 0], [d, 0], [0, -d], [0, d], [-d, -d], [d, -d], [-d, d], [d, d]]) text(str, x + dx, y + dy, outline, align, scale);
-  return text(str, x, y, color, align, scale);
+  scale = scale || 1; outline = outline || C.ink; color = color || C.white; str = trUp(str);
+  const key = str + '|' + color + '|' + scale + '|' + outline;
+  let c = TEXTO_CACHE.get(key);
+  if (!c) {
+    const w = textWidth(str, scale), d = scale;
+    c = offscreen(w + d * 2, FONT_H * scale + d * 2, () => {
+      for (const [dx, dy] of [[-d, 0], [d, 0], [0, -d], [0, d], [-d, -d], [d, -d], [-d, d], [d, d]]) drawTextRaw(str, d + dx, d + dy, outline, scale);
+      drawTextRaw(str, d, d, color, scale);
+    });
+    c.tw = w;
+    if (TEXTO_CACHE.size > 500) TEXTO_CACHE.clear();
+    TEXTO_CACHE.set(key, c);
+  }
+  const sx = Math.round(align === 'center' ? x - c.tw / 2 : align === 'right' ? x - c.tw : x);
+  g.drawImage(c, sx - scale, Math.round(y) - scale);
+  return c.tw;
 }
 function wrapText(str, maxW, scale) {
   scale = scale || 1;

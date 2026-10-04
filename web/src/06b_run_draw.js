@@ -193,7 +193,9 @@ Object.assign(SCENES.run, {
         this.drawHorse(r.set, r.x + o, it.y + oy, fr, r.jumping, r.jumping ? r.jumpT / 0.5 : 0, r.stun > 0 && Math.floor(T * 10) % 2 === 0);
         if (r.name && !r.done) {
           const c = r.nem ? C.red : STYLE_COL[r.style] || C.green;
-          textO(r.name, r.x + o, it.y + oy - 24, c, 'center');
+          // names stay on screen, and fade out for rivals far behind you (they would sit under the bottom HUD)
+          const nw = textWidth(r.name), behind = it.y - this.pY;
+          if (behind < 60) { g.globalAlpha = behind > 20 ? 1 - (behind - 20) / 40 : 1; textO(r.name, clamp(r.x + o, nw / 2 + 2, W - nw / 2 - 2), it.y + oy - 24, c, 'center'); g.globalAlpha = 1; }
           if (r.nem) { spr(tinted('crown', C.red), r.x + o - 5, it.y + oy - 33); if (this.nemTaunt && !r.duel && (this.state === 'intro' || this.nemTaunt.t > 0)) this.speech(this.nemTaunt.txt, r.x + o, it.y + oy - 36); }
         }
         if (r.duel && this.duel && !r.done) this.drawDuelMarks(r, r.x + o, it.y + oy);
@@ -476,7 +478,13 @@ Object.assign(SCENES.run, {
   drawHUD() {
     const S = this.S, P = this.P, top = SAFE.t + 4;
     let hx = 4 + SAFE.l;
-    for (let i = 0; i < S.maxHp; i++) { spr(i < RUN.hp ? ICONS.heart : ICONS.heartE, hx, top); hx += 9; }
+    for (let i = 0; i < S.maxHp; i++) {
+      const lost = this.heartLost && this.heartLost.i === i;
+      spr(i < RUN.hp ? ICONS.heart : ICONS.heartE, hx, top);
+      // the heart you just lost pops off and fades, so the damage reads even in a busy moment
+      if (lost) { const k = 1 - this.heartLost.t / 0.8; g.globalAlpha = 1 - k; spr(ICONS.heart, hx, top - Math.round(k * 8)); g.globalAlpha = 1; if (Math.floor(T * 16) % 2 === 0) ring(hx + 4, top + 4, 5 + Math.round(k * 4), C.red); }
+      hx += 9;
+    }
     for (let i = 0; i < P.shield; i++) { spr(ICONS.heartG, hx, top); hx += 9; }
     // second row: weapon (+charge) and chaos
     let x2 = 4 + SAFE.l;
@@ -542,12 +550,17 @@ Object.assign(SCENES.run, {
     // bottom: note strip, breath, combo, ability, hamle
     const ry = H - SAFE.b - 24, rx = W / 2;
     this.drawNoteStrip(rx, ry);
-    if (this.combo > 0) {
-      textO(String(this.combo), rx, ry - 46, this.combo >= 20 ? C.gold : this.combo >= 10 ? C.yellow : C.white, 'center', 2);
+    if (this.comboBreak > 0 && this.combo < 3) {
+      g.globalAlpha = clamp(this.comboBreak * 2, 0, 1);
+      textO(String(this.brokenCombo), rx, ry - 46 + Math.round((0.9 - this.comboBreak) * 10), C.red, 'center', 2);
+      textO('KOMBO KIRILDI', rx, ry - 31, C.salmon, 'center'); g.globalAlpha = 1;
+    } else if (this.combo > 0) {
+      textO(String(this.combo), rx, ry - 46 - (this.comboPop > 0 ? 1 : 0), this.comboPop > 0.08 ? C.white : this.combo >= 20 ? C.gold : this.combo >= 10 ? C.yellow : C.white, 'center', 2);
       textO('KOMBO', rx, ry - 31, C.lgray, 'center');
       if (this.combo >= 10) spr(ICONS.flame, rx + textWidth(String(this.combo), 2) / 2 + 3, ry - 44);
     }
-    if (!this.tut) {
+    const showNefes = !this.tut || this.tut.step >= 5;
+    if (showNefes) {
       const bw = 60, bx = Math.round(rx - bw / 2), by = ry - 18;
       const cost = S.hamleCost * (RUN.runStyle === 'onde' && P.dist < this.length * 0.5 ? 0.7 : 1);
       bar(bx, by, bw, 3, this.nefes / 100, this.kick > 0 ? C.sky : this.nefes >= cost ? C.cyan : C.gray);
@@ -565,7 +578,7 @@ Object.assign(SCENES.run, {
     if (cg) { circle(abx + 10, aby - 10, 3, C.ink); circle(abx + 10, aby - 10, 2, SPIRITS[cg.sp].color); }
     if (full) { g.globalAlpha = 0.5 + 0.5 * Math.sin(T * 8); ring(abx, aby, 15, C.yellow); g.globalAlpha = 1; textO('BAS!', abx, aby - 24, C.yellow, 'center'); }
     UI.add('ability', abx - 16, aby - 16, 32, 32, () => this.useAbility(), { onDown: true });
-    if (!this.tut) {
+    if (showNefes) {
       const hx2 = left ? W - 22 - SAFE.r : 22 + SAFE.l, hy = aby;
       const cost = S.hamleCost * (RUN.runStyle === 'onde' && P.dist < this.length * 0.5 ? 0.7 : 1);
       const ready = this.nefes >= cost && P.hamleCd <= 0;
@@ -618,15 +631,30 @@ Object.assign(SCENES.run, {
     else if (kind === 'd' || kind === 'd2') { rect(x - 1, y - 4, 3, 9, C.ink); vline(x, y - 3, 7, col); }
     else { rect(x - 1, y - 5, 3, 11, C.ink); vline(x, y - 4, 9, col); }
   },
+  // finish card: what you achieved this etap in one calm panel (instead of a pile of floating texts)
   drawMedal() {
     if (this.state !== 'finish' && this.state !== 'gone') return;
     const m = this.medal, k = clamp(this.medalT / 0.35, 0, 1), img = MEDAL.big[m];
-    const y = Math.round(this.pY - 118 + (1 - Ease.outBack(k)) * 30);
-    g.globalAlpha = k;
-    for (let i = 0; i < 8; i++) { const a = i / 8 * Math.PI * 2 + T * 1.5; pix(W / 2 + Math.cos(a) * 18, y + 9 + Math.sin(a) * 18, MEDAL_COLS[m]); }
-    spr(img, W / 2 - img.width / 2, y);
-    textO(MEDAL_NAMES[m], W / 2, y + img.height + 3, MEDAL_COLS[m], 'center');
-    if (m !== 'b') textO(m === 'g' ? '+3 KRİSTAL' : '+1 KRİSTAL', W / 2, y + img.height + 13, C.cyan, 'center');
+    const top = Math.round(Math.max(SAFE.t + 44, H * 0.2) + (1 - Ease.outBack(k)) * 24);
+    const stat = [];
+    if (this.type === 'sprint' && this.result && this.result.rank) stat.push('SIRA ' + this.result.rank + '/' + (this.rivals.length + 1));
+    else if (this.type === 'baskin') stat.push('DÜŞMAN ' + this.kills + '/' + this.goal);
+    else if (this.type === 'duello' && this.duel) stat.push('FARK +' + Math.max(0, Math.round((this.P.dist - Math.min(this.duel.r.dist, this.length)) / 10)));
+    stat.push('HASAR ' + this.damaged);
+    let line2 = 'MÜKEMMEL ' + (this.etapPerfects || 0) + ' · EN İYİ KOMBO ' + (this.etapMax || 0);
+    if (this.tut) { stat.length = 0; stat.push('← → ŞERİT · ↑ SIÇRA · ↓ HAMLE'); line2 = 'NOTADA DOKUN: HIZ, KOMBO VE ATEŞ'; }
+    const h = 30 + img.height + 34 + (this.finishBonus ? 10 : 0);
+    g.globalAlpha = 0.55 * k; rect(0, top, W, h, C.ink); g.globalAlpha = k;
+    hline(0, top, W, MEDAL_COLS[m]); hline(0, top + h - 1, W, MEDAL_COLS[m]);
+    if (this.finishMsg) textO(this.finishMsg, W / 2, top + 5, C.gold, 'center', textWidth(this.finishMsg, 2) <= W - 8 ? 2 : 1);
+    const my = top + 25;
+    for (let i = 0; i < 8; i++) { const a = i / 8 * Math.PI * 2 + T * 1.5; pix(W / 2 + Math.cos(a) * 18, my + 9 + Math.sin(a) * 18, MEDAL_COLS[m]); }
+    spr(img, W / 2 - img.width / 2, my);
+    let y = my + img.height + 3;
+    textO(MEDAL_NAMES[m] + (m !== 'b' ? '  ' + (m === 'g' ? '+3' : '+1') + ' KRİSTAL' : ''), W / 2, y, MEDAL_COLS[m], 'center'); y += 11;
+    text(stat.join(' · '), W / 2, y, this.damaged ? C.lgray : C.green, 'center'); y += 10;
+    text(line2, W / 2, y, C.lgray, 'center'); y += 10;
+    if (this.finishBonus) text(this.finishBonus, W / 2, y, C.yellow, 'center');
     g.globalAlpha = 1;
   },
   drawTut() {
@@ -637,6 +665,7 @@ Object.assign(SCENES.run, {
     else if (tu.step === 2 && this.timeScale < 1) { msg = '↑ YUKARI KAYDIR: SIÇRA'; arrow = 'v'; }
     else if (tu.step === 3) { msg = 'İŞARETLER ORTADA BULUŞUNCA DOKUN! (' + Math.min(4, tu.hits) + '/4)'; arrow = 'r'; }
     else if (tu.step === 4) { const left = this.foes.filter(f => f.tut && !f.dead).length; msg = 'RİTİMLE DOKUN, IŞIK YAYI ATEŞ ETSİN! (' + (3 - left) + '/3)'; arrow = 'r'; }
+    else if (tu.step === 5 && tu.t > 1.4) { msg = '↓ AŞAĞI KAYDIR YA DA ' + (META.settings.left ? 'SAĞ' : 'SOL') + ' ALTTAKİ DÜĞMEYE BAS: HAMLE!'; arrow = 'd'; }
     if (tu.msgT > 0 && tu.msg) msg = tu.msg;
     if (!msg) return;
     const lines = wrapText(msg, W - 30);
@@ -645,6 +674,11 @@ Object.assign(SCENES.run, {
     const P = this.P, wob = Math.round(Math.sin(T * 8) * 2);
     if (arrow === 'h') { textO('←', P.x - 18 - wob, this.pY - 6, C.yellow, 'center', 2); textO('→', P.x + 18 + wob, this.pY - 6, C.yellow, 'center', 2); }
     if (arrow === 'v') textO('↑', P.x, this.pY - 34 - wob, C.yellow, 'center', 2);
+    if (arrow === 'd') {
+      textO('↓', P.x, this.pY + 22 + wob, C.yellow, 'center', 2);
+      const hx = META.settings.left ? W - 22 - SAFE.r : 22 + SAFE.l, hy = H - SAFE.b - 26;
+      g.globalAlpha = 0.6 + 0.4 * Math.sin(T * 8); ring(hx, hy, 15 + Math.abs(wob), C.yellow); g.globalAlpha = 1;
+    }
     if (arrow === 'r') { const ry = H - SAFE.b - 24; textO('↓', W / 2, ry - 26 + wob, C.yellow, 'center', 2); }
   },
   drawIntro() {

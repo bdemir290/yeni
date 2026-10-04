@@ -204,7 +204,18 @@ function addPart(x, y, vx, vy, life, color, size, grav) { if (FX.parts.length < 
 function burst(x, y, n, color, speed, life, grav, size) {
   for (let i = 0; i < n; i++) { const a = Math.random() * Math.PI * 2, s = speed * (0.35 + Math.random() * 0.65); addPart(x, y, Math.cos(a) * s, Math.sin(a) * s, life * (0.6 + Math.random() * 0.4), Array.isArray(color) ? color[i % color.length] : color, size, grav); }
 }
-function floatText(str, x, y, color, scale, vy, life) { FX.texts.push({ str, x, y, color, scale: scale || 1, vy: vy == null ? -20 : vy, life: life || 0.9, max: life || 0.9 }); }
+// floating text: a new line never lands on top of a fresh one (it steps up instead), and at most 7 stay on screen
+function floatText(str, x, y, color, scale, vy, life) {
+  scale = scale || 1;
+  const w = textWidth(str, scale), h = 9 * scale;
+  for (let n = 0; n < 5; n++) {
+    const hit = FX.texts.find(t => t.life > t.max * 0.3 && Math.abs(t.y - y) < (h + 9 * t.scale) / 2 && Math.abs(t.x - x) < (w + t.w) / 2 + 2);
+    if (!hit) break;
+    y = hit.y - (9 * hit.scale + h) / 2 - 1;
+  }
+  FX.texts.push({ str, x, y, color, scale, w, vy: vy == null ? -20 : vy, life: life || 0.9, max: life || 0.9 });
+  if (FX.texts.length > 7) FX.texts.splice(FX.texts.findIndex(t => t.scale === 1) >= 0 ? FX.texts.findIndex(t => t.scale === 1) : 0, 1);
+}
 function shake(mag, t) { if (META && !META.settings.shake) return; FX.shakeMag = Math.max(FX.shakeMag, mag); FX.shakeT = Math.max(FX.shakeT, t); }
 function flash(col, t) { FX.flashCol = col; FX.flashT = t; FX.flashMax = t; }
 function clearFX() { FX.parts.length = 0; FX.texts.length = 0; FX.shakeT = 0; FX.flashT = 0; FX.freeze = 0; }
@@ -269,14 +280,16 @@ function button(id, x, y, w, h, label, fn, opts) {
   const cy = y + oy + Math.round((h - 2) / 2);
   if (ic) { spr(ic, cx, cy - Math.floor(ic.height / 2)); cx += ic.width + 3; }
   if (label) text(label, cx, cy - 4 * (opts.scale || 1), opts.disabled ? C.dgray : tc, 'left', opts.scale || 1);
-  if (opts.disabled) UI.add(id, x, y, w, h, () => { Sound.play('deny'); if (opts.onDeny) opts.onDeny(); }, { deny: true });
-  else UI.add(id, x, y, w, h, fn, opts);
+  // small buttons get a taller invisible touch area (about 36 pt on an iPhone) without moving the art
+  const pad = opts.hitPad != null ? opts.hitPad : clamp(Math.ceil((18 - h) / 2), 0, 3), hx = opts.hitPad != null ? pad : Math.min(pad, 2);
+  if (opts.disabled) UI.add(id, x - hx, y - pad, w + hx * 2, h + pad * 2, () => { Sound.play('deny'); if (opts.onDeny) opts.onDeny(); }, { deny: true });
+  else UI.add(id, x - hx, y - pad, w + hx * 2, h + pad * 2, fn, opts);
 }
 function iconBtn(id, x, y, icon, fn, size) {
   size = size || 15; const pressed = UI.pressed === id;
   rrect(x - 1, y - 1, size + 2, size + 2, C.ink); rrect(x, y + (pressed ? 1 : 0), size, size - (pressed ? 1 : 0), C.slate); hline(x + 1, y + (pressed ? 1 : 0), size - 2, C.dgray);
   const ic = ICONS[icon]; if (ic) spr(ic, x + Math.round(size / 2 - ic.width / 2), y + (pressed ? 1 : 0) + Math.round(size / 2 - ic.height / 2));
-  UI.add(id, x - 3, y - 3, size + 6, size + 6, fn);
+  UI.add(id, x - 5, y - 4, size + 10, size + 8, fn);
 }
 function bar(x, y, w, h, frac, col, bg) { rect(x - 1, y - 1, w + 2, h + 2, C.ink); rect(x, y, w, h, bg || C.slate); rect(x, y, Math.round(w * clamp(frac, 0, 1)), h, col); if (h > 2) hline(x, y, Math.round(w * clamp(frac, 0, 1)), 'rgba(255,255,255,0.35)'); }
 function iconNum(icon, n, x, y, col) { const ic = ICONS[icon]; spr(ic, x, y); return text(String(n), x + ic.width + 2, y + Math.round(ic.height / 2) - 5, col || C.white) + ic.width + 2; }

@@ -351,7 +351,7 @@ Object.assign(SCENES.run, {
       b.t -= dt;
       if (b.t <= 0) {
         b.strike = 0.25; Sound.play('thunder'); flash(C.white, 0.15); shake(3, 0.2);
-        if (this.P.lane === b.lane && this.state === 'run') this.hurt('bolt');
+        if (this.P.lane === b.lane && this.state === 'run') this.hurt(b.ice ? 'ice' : 'bolt');
       }
     }
   },
@@ -361,7 +361,7 @@ Object.assign(SCENES.run, {
     const B = this.boss; B.won = true; B.taunt = 0; this.endFever();
     this.state = 'finish'; this.stateT = 0; this.result = { boss: true }; this.hold = null;
     Sound.play('win'); haptic('success'); flash(C.white, 0.3);
-    floatText(B.def.name + ' GEÇİLDİ!', W / 2, this.pY - 70, C.gold, 1, -6, 1.6);
+    this.finishMsg = B.def.name + ' GEÇİLDİ!';
     burst(W / 2, this.pY - 40, 30, [C.yellow, C.red, C.sky, C.green, C.white], 90, 1.2, 90, 2);
     this.giveMedal(this.damaged === 0 ? 'g' : this.damaged <= 2 ? 's' : 'b');
   },
@@ -384,10 +384,10 @@ Object.assign(SCENES.run, {
       return;
     }
     Sound.play('win'); haptic('success');
-    const msg = this.type === 'duello' ? 'DÜELLO SENİN!' : this.type === 'sprint' ? (rank === 1 ? 'BİRİNCİ!' : rank + '. OLDUN!') : this.type === 'parkur' ? (this.damaged ? 'PARKUR TAMAM!' : 'KUSURSUZ!') : this.type === 'baskin' ? 'BASKIN PÜSKÜRTÜLDÜ!' : 'KAÇTIN!';
-    floatText(msg, W / 2, this.pY - 70, C.gold, 2, -6, 1.5);
+    const msg = this.tut ? 'ISINMA TAMAM!' : this.type === 'duello' ? 'DÜELLO SENİN!' : this.type === 'sprint' ? (rank === 1 ? 'BİRİNCİ!' : rank + '. OLDUN!') : this.type === 'parkur' ? (this.damaged ? 'PARKUR TAMAM!' : 'KUSURSUZ!') : this.type === 'baskin' ? 'BASKIN PÜSKÜRTÜLDÜ!' : 'KAÇTIN!';
+    this.finishMsg = msg; flash(C.white, 0.12);
     burst(W / 2, this.pY - 50, 24, [C.yellow, C.red, C.sky, C.green, C.white], 80, 1.1, 90, 2);
-    if (this.type === 'parkur' && !this.damaged) { RUN.coins += 20; RUN.coinsEarned += 20; floatText('+20 SİKKE', W / 2, this.pY - 46, C.yellow, 1, -6, 1.5); }
+    if (this.type === 'parkur' && !this.damaged) { RUN.coins += 20; RUN.coinsEarned += 20; this.finishBonus = '+20 SİKKE'; }
     if (this.type === 'sprint' && rank === 1 && this.kick > 0.08) missionEvent('kick', 1);
     let m;
     if (this.type === 'sprint') m = rank === 1 ? 'g' : rank === 2 ? 's' : 'b';
@@ -454,6 +454,7 @@ Object.assign(SCENES.run, {
   updateTut(dt) {
     const tu = this.tut, P = this.P;
     tu.t += dt; if (tu.msgT > 0) tu.msgT -= dt;
+    if (this.bond >= 100 && !tu.abTold && tu.step >= 3) { tu.abTold = true; tu.msg = 'TEKNİK HAZIR! ' + (META.settings.left ? 'SOL' : 'SAĞ') + ' ALTTAKİ JOKEYE BAS'; tu.msgT = 2.6; }
     if (tu.step === 0) { if (tu.t > 2.4) { tu.step = 1; tu.t = 0; } }
     else if (tu.step === 1) {
       const rock = this.obs.find(o => o.tutRock && !o.dead);
@@ -475,13 +476,21 @@ Object.assign(SCENES.run, {
       const alive = this.foes.filter(f => f.tut && !f.dead).length;
       if (alive === 0 || tu.t > 20) {
         for (const f of this.foes) if (f.tut) { f.dead = true; burst(f.x, this.sy(f.dist), 6, [C.navy, C.slate], 40, 0.4); }
-        tu.step = 5; tu.t = 0; tu.msg = alive === 0 ? 'TAM İSABET!' : 'NİŞAN ALMA, RİTMİ YAKALA'; tu.msgT = 1.6;
-        Sound.play('combo');
-        this.rivals.push(this.makeRival(1, P.dist + 150, 0.78, RIVAL_LOOKS[0]));
-        this.rivals.push(this.makeRival(3, P.dist + 230, 0.8, RIVAL_LOOKS[2]));
-        this.script = this.script.concat(this.tutPhase2(P.dist));
-        this.length = Math.max(this.length, P.dist + 1500);
+        tu.step = 5; tu.t = 0; tu.msg = alive === 0 ? 'TAM İSABET!' : 'NİŞAN ALMA, RİTMİ YAKALA'; tu.msgT = 1.4;
+        this.nefes = 100; Sound.play('combo');
       }
-    } else if (tu.step === 5 && tu.t > 1.8 && !tu.said) { tu.said = true; tu.msg = 'RAKİPLERİ GEÇ, BİTİŞE KOŞ!'; tu.msgT = 2.2; }
+    } else if (tu.step === 5) {
+      // breath burst: the bar is full, the world waits until you swipe down (or tap the button)
+      this.timeScale = tu.t > 1.4 && tu.t < 14 ? 0.06 : 1;
+      if (tu.t > 14) this.tutRivals();
+    } else if (tu.step === 6 && tu.t > 1.8 && !tu.said) { tu.said = true; tu.msg = 'RAKİPLERİ GEÇ, BİTİŞE KOŞ!'; tu.msgT = 2.2; }
+  },
+  tutRivals() {
+    const tu = this.tut, P = this.P;
+    tu.step = 6; tu.t = 0; this.timeScale = 1;
+    this.rivals.push(this.makeRival(1, P.dist + 150, 0.78, RIVAL_LOOKS[0]));
+    this.rivals.push(this.makeRival(3, P.dist + 230, 0.8, RIVAL_LOOKS[2]));
+    this.script = this.script.concat(this.tutPhase2(P.dist));
+    this.length = Math.max(this.length, P.dist + 1500);
   }
 });

@@ -4,6 +4,8 @@ const CROP_BIG = {};
 function cropBig(type, st) { const k = type + st; return CROP_BIG[k] || (CROP_BIG[k] = scaleSprite(CROP[type][st], 2)); }
 const CROP_TYPES = [null, 'havuc', 'pancar'];
 
+const MAP_NAMES = { ev: 'KAMARA', ahir: 'AHIR', pano: 'GÖREVLER', ambar: 'YEM DEPOSU', silahhane: 'CEPHANELİK', nalbant: 'NAL ATÖLYESİ', tapinak: 'GÖZLEMEVİ',
+  jokey: 'KOĞUŞ', veteriner: 'REVİR', pazar: 'MOKO', anit: 'VİTRİN' };
 SCENES.farm = {
   enter(arg) {
     this.arg = arg || {}; this.panel = null; this.page = null; this.walk = null; this.t = 0; this.confirmReset = false;
@@ -315,6 +317,13 @@ SCENES.farm = {
         if (lv < b.max && META.yonca >= b.up[lv] && Math.floor(this.t * 2) % 2 === 0) { const ax = x + L.w - 6, ay = y + L.h - 12; text('↑', ax, ay, C.green, 'center'); }
       }
     }
+    // name plate so every module says what it is at a glance
+    const nm = MAP_NAMES[k];
+    if (nm && !(k === 'pazar' && !META.flags.moko)) {
+      const tw = textWidth(nm) + 4, px = Math.round(clamp(x + L.w / 2 - tw / 2, 1, W - tw - 1)), py = y + L.h - 2;
+      g.globalAlpha = 0.75; rect(px, py, tw, 8, C.ink); g.globalAlpha = 1;
+      text(nm, px + 2, py - 1, b && bl(k) === 0 ? C.gray : C.lgray);
+    }
     if (k === 'pano' && (META.missions.some(m => m.done) || META.daily.pending)) this.badge(x + L.w - 4, y - 8 + Math.round(Math.sin(this.t * 6)), C.red, '!');
     if (k === 'ahir' && META.points > 0) spr(ICONS.star, x + L.w - 12, y - 2 + Math.round(Math.sin(this.t * 6)));
     if (k === 'ev' && unreadMemories() > 0) spr(ICONS.book, x + 4, y + 4 + Math.round(Math.sin(this.t * 6)));
@@ -343,6 +352,7 @@ SCENES.farm = {
       const c = META.crops[i] || 0;
       if (c > 0) { const tp = CROP_TYPES[Math.floor(c / 10)], st = c % 10; if (tp) { const img = CROP[tp][st]; spr(img, cx + 6 - Math.floor(img.width / 2), cy + 8 - img.height + 3 + (st === 3 ? Math.round(Math.sin(this.t * 4 + i)) : 0)); } }
     }
+    { const tw = textWidth('SERA') + 4; g.globalAlpha = 0.75; rect(x + 2, y + B.h - 2, tw, 8, C.ink); g.globalAlpha = 1; text('SERA', x + 4, y + B.h - 3, lv ? C.lgray : C.gray); }
     if (META.crops.slice(0, n).some(c => c > 0 && c % 10 === 3)) this.badge(x + B.w - 4, y - 2 + Math.round(Math.sin(this.t * 6)), C.green, '!');
   },
   drawHUD() {
@@ -360,9 +370,10 @@ SCENES.farm = {
     const bw = Math.min(W - 10, 200), bx = Math.round(W / 2 - bw / 2);
     rrect(bx - 1, by - 1, bw + 2, 15, C.ink); rrect(bx, by, bw, 13, C.navy);
     const ic = ICONS[gl.icon]; if (ic) spr(ic, bx + 3, by + Math.round(6.5 - ic.height / 2));
-    const label = 'HEDEF: ' + gl.text, maxw = bw - (gl.need ? 58 : 20);
+    const label = 'HEDEF: ' + gl.text, maxw = bw - (gl.need ? 20 + textWidth(gl.need + '/' + gl.need) + 6 : 20);
     text(textWidth(label) > maxw ? gl.text : label, bx + 16, by + 1, C.white);
-    if (gl.need) { const fw = 32; bar(bx + bw - fw - 4, by + 5, fw, 3, gl.cur / gl.need, gl.cur >= gl.need ? C.green : C.gold); }
+    // goal progress: numbers on the right, a thin fill along the bottom edge
+    if (gl.need) { const ok = gl.cur >= gl.need; text(Math.min(gl.cur, gl.need) + '/' + gl.need, bx + bw - 4, by + 1, ok ? C.green : C.gold, 'right'); hline(bx + 1, by + 12, Math.round((bw - 2) * clamp(gl.cur / gl.need, 0, 1)), ok ? C.green : C.gold); }
     UI.add('goal', bx, by, bw, 13, () => this.focusGoal());
   },
   // ---------- panels ----------
@@ -373,7 +384,7 @@ SCENES.farm = {
     UI.block(0, 0, W, H, (px, py) => { if (px < x || px > x + w || py < y || py > y + h) this.closePanel(); });
     g.globalAlpha = 0.55; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
     panel(x, y, w, h, title);
-    button('pclose', x + w - 14, y + 2, 11, 10, 'X', () => this.closePanel(), { kind: 'red' });
+    button('pclose', x + w - 14, y + 2, 11, 10, 'X', () => this.closePanel(), { kind: 'red', hitPad: 5 });
     return { x, y, w, h };
   },
   closePanel() { this.panel = null; this.page = null; this.confirmReset = false; this.defTab = null; },
@@ -387,17 +398,29 @@ SCENES.farm = {
     }[p];
     if (fn) fn.call(this);
   },
-  upgradeH(k) { const b = BUILDINGS[k], lv = bl(k); if (lv >= b.max) return 18; return 16 + wrapText(b.upDesc[lv], Math.min(W - 10, 226) - 84).length * 9; },
+  // building upgrades: the next level (what it does, what it costs, how much is missing) and the road after it
+  upgradeInfo(k) {
+    const b = BUILDINGS[k], lv = bl(k), pw = Math.min(W - 10, 226);
+    if (lv >= b.max) return { lv, max: true };
+    const next = wrapText('SV' + (lv + 1) + ': ' + b.upDesc[lv], pw - 84);
+    const later = [];
+    for (let i = lv + 1; i < b.max; i++) later.push(...wrapText('SV' + (i + 1) + ' (' + b.up[i] + '): ' + b.upDesc[i], pw - 16));
+    return { lv, next, later, cost: b.up[lv] };
+  },
+  upgradeH(k) { const u = this.upgradeInfo(k); if (u.max) return 18; return 16 + Math.max(2, u.next.length) * 9 + u.later.length * 9 + 2; },
   upgradeRow(P, k, y) {
-    const b = BUILDINGS[k], lv = bl(k);
+    const b = BUILDINGS[k], u = this.upgradeInfo(k), lv = u.lv;
     hline(P.x + 6, y, P.w - 12, C.slate); y += 5;
     for (let i = 0; i < b.max; i++) { rect(P.x + 8 + i * 6, y + 1, 5, 5, C.ink); rect(P.x + 9 + i * 6, y + 2, 3, 3, i < lv ? C.yellow : C.slate); }
     text('SEVİYE ' + lv + '/' + b.max, P.x + 12 + b.max * 6, y, C.lgray);
-    if (lv >= b.max) { text('EN ÜST!', P.x + P.w - 8, y, C.green, 'right'); return y + 12; }
-    const cost = b.up[lv];
-    wrapText(b.upDesc[lv], P.w - 84).forEach((ln, i) => text(ln, P.x + 8, y + 10 + i * 9, C.sky));
-    button('up_' + k, P.x + P.w - 66, y + 4, 58, 15, String(cost), () => this.doUpgrade(k), { icon: 'clover', disabled: META.yonca < cost });
-    return y + 12 + wrapText(b.upDesc[lv], P.w - 84).length * 9;
+    if (u.max) { text('EN ÜST!', P.x + P.w - 8, y, C.green, 'right'); return y + 12; }
+    u.next.forEach((ln, i) => text(ln, P.x + 8, y + 10 + i * 9, C.sky));
+    const can = META.yonca >= u.cost;
+    button('up_' + k, P.x + P.w - 66, y + 2, 58, 15, String(u.cost), () => this.doUpgrade(k), { icon: 'clover', disabled: !can });
+    text(can ? 'YÜKSELT' : (u.cost - META.yonca) + ' EKSİK', P.x + P.w - 37, y + 19, can ? C.green : C.salmon, 'center');
+    y += 10 + Math.max(2, u.next.length) * 9 + 2;
+    u.later.forEach((ln, i) => text(ln, P.x + 8, y + i * 9, C.gray));
+    return y + u.later.length * 9;
   },
   doUpgrade(k) {
     const b = BUILDINGS[k], lv = bl(k), cost = b.up[lv];
@@ -417,13 +440,16 @@ SCENES.farm = {
   pRepair(k) {
     const b = BUILDINGS[k], img = k === 'bahce' ? null : this.bImg(k), ih = img ? img.height : 0;
     const lines = wrapText(b.desc, Math.min(W - 10, 226) - 20);
-    const h = 30 + ih + lines.length * 9 + 64;
+    const later = []; for (let i = 1; i < b.max; i++) later.push(...wrapText('SV' + (i + 1) + ' (' + b.up[i] + ' KRİSTAL): ' + b.upDesc[i], Math.min(W - 10, 226) - 16));
+    const h = 30 + ih + lines.length * 9 + 64 + later.length * 9;
     const P = this.panelBox(b.name + ' (ARIZALI)', h);
     if (img) spr(img, P.x + P.w / 2 - img.width / 2, P.y + 20);
     let y = P.y + 24 + ih;
     lines.forEach((ln, i) => text(ln, P.x + P.w / 2, y + i * 9, C.lgray, 'center'));
     y += lines.length * 9 + 3;
-    text('ONARINCA: ' + b.upDesc[0], P.x + P.w / 2, y, C.sky, 'center'); y += 12;
+    text('ONARINCA: ' + b.upDesc[0], P.x + P.w / 2, y, C.sky, 'center'); y += 10;
+    for (const ln of later) { text(ln, P.x + P.w / 2, y, C.gray, 'center'); y += 9; }
+    y += 3;
     const needR = b.rozet && META.rozet < b.rozet, needB = b.needBoon && META.stats.boons === 0;
     const cost = b.up[0], can = META.yonca >= cost && !needR && !needB;
     const msg = needR ? 'ÖNCE ' + b.rozet + ' ŞAMPİYON ROZETİ GEREKİR' : needB ? 'ÖNCE BİR YILDIZ GÜCÜ KAZAN' : (can ? 'ONARIM BEDELİ' : (cost - META.yonca) + ' KRİSTAL DAHA LAZIM');
@@ -568,7 +594,7 @@ SCENES.farm = {
   },
   pSilah() {
     const keys = Object.keys(WEAPONS);
-    const P = this.panelBox('CEPHANELİK', 30 + keys.length * 36 + this.upgradeH('silahhane') + 10);
+    const P = this.panelBox('CEPHANELİK', 30 + keys.length * 38 + this.upgradeH('silahhane') + 10);
     text('EYERDEKİ SİLAH RİTİMLE ATEŞ EDER', P.x + P.w / 2, P.y + 18, C.lgray, 'center');
     let y = P.y + 30;
     for (const k of keys) {
@@ -576,14 +602,14 @@ SCENES.farm = {
       circle(P.x + 14, y + 8, 8, C.ink); circle(P.x + 14, y + 8, 7, sel ? C.slate : C.navy); sprC(ICONS[w.icon], P.x + 14, y + 8);
       text(w.name, P.x + 26, y, sel ? C.yellow : C.white);
       if (own) for (let i = 0; i < 3; i++) { rect(P.x + 28 + textWidth(w.name) + i * 5, y + 2, 4, 4, C.ink); pix(P.x + 29 + textWidth(w.name) + i * 5, y + 3, i < lv ? C.yellow : C.slate); }
-      wrapText(w.desc, P.w - 112).slice(0, 3).forEach((ln, i) => text(ln, P.x + 26, y + 9 + i * 8, C.gray));
+      wrapText(w.desc, P.w - 34).slice(0, 2).forEach((ln, i) => text(ln, P.x + 26, y + 20 + i * 8, C.gray));
       if (!own) button('w_' + k, P.x + P.w - 62, y + 3, 54, 15, String(w.cost), () => { META.yonca -= w.cost; META.weapons[k] = true; META.wlv[k] = 1; META.weapon = k; saveMeta(); Sound.play('repair'); haptic('success'); toast(w.name + ' EYERE TAKILDI!', C.yellow, w.icon); }, { icon: 'clover', disabled: META.yonca < w.cost });
       else {
         button('ws_' + k, P.x + P.w - 80, y + 3, 34, 15, sel ? 'TAKILI' : 'TAK', () => { META.weapon = k; saveMeta(); Sound.play('select'); }, { kind: sel ? 'secondary' : 'green' });
-        if (lv < 3) { const c = WEAPON_UP[lv]; button('wu_' + k, P.x + P.w - 42, y + 3, 34, 15, '+' + c, () => { META.yonca -= c; META.wlv[k] = lv + 1; saveMeta(); Sound.play('repair'); haptic('success'); toast(w.name + ' SEVİYE ' + (lv + 1) + ': HASAR +%25', C.yellow, w.icon); }, { disabled: META.yonca < c }); }
+        if (lv < 3) { const c = WEAPON_UP[lv]; button('wu_' + k, P.x + P.w - 42, y + 3, 34, 15, String(c), () => { META.yonca -= c; META.wlv[k] = lv + 1; saveMeta(); Sound.play('repair'); haptic('success'); toast(w.name + ' SEVİYE ' + (lv + 1) + ': HASAR +%25', C.yellow, w.icon); }, { icon: 'clover', disabled: META.yonca < c }); }
         else text('MAKS', P.x + P.w - 25, y + 7, C.green, 'center');
       }
-      y += 36;
+      y += 38;
     }
     this.upgradeRow(P, 'silahhane', y);
   },
@@ -858,7 +884,7 @@ SCENES.farm = {
   pSettings() {
     const s = META.settings;
     const items = [['MÜZİK', 'music'], ['EFEKTLER', 'sfx'], ['TİTREŞİM', 'haptics'], ['RİTİM TİTREŞİMİ', 'beatHaptic'], ['EKRAN SARSINTISI', 'shake'], ['SOL EL MODU', 'left'], ['GENİŞ RİTİM PENCERESİ', 'wide'], ['SADE RİTİM', 'simpleNotes'], ['YARDIM MODU', 'assist']];
-    const P = this.panelBox('AYARLAR', 20 + items.length * 17 + 62);
+    const P = this.panelBox('AYARLAR', 20 + items.length * 17 + 82);
     let y = P.y + 19;
     for (const [lab, key] of items) {
       text(lab, P.x + 10, y + 3, key === 'assist' && s.assist ? C.sky : C.white);
@@ -871,7 +897,12 @@ SCENES.farm = {
     button('off_m', P.x + P.w - 72, y, 14, 14, '-', () => { s.offset = clamp(s.offset - 10, -150, 150); saveMeta(); }, { kind: 'secondary' });
     text(s.offset + 'MS', P.x + P.w - 36, y + 3, C.yellow, 'center');
     button('off_p', P.x + P.w - 22, y, 14, 14, '+', () => { s.offset = clamp(s.offset + 10, -150, 150); saveMeta(); }, { kind: 'secondary' });
-    y += 22;
+    y += 20;
+    button('tutagain', P.x + 10, y, P.w - 20, 15, META.tutorialDone ? 'ISINMA TURUNU TEKRAR OYNA' : 'SONRAKİ KOŞU ISINMA TURUYLA BAŞLAR', () => {
+      if (!META.tutorialDone) return;
+      META.tutorialDone = false; saveMeta(); toast('SONRAKİ KOŞU ISINMA TURUYLA BAŞLAR', C.green, 'check');
+    }, { kind: META.tutorialDone ? 'blue' : 'secondary' });
+    y += 20;
     button('reset', P.x + 10, y, P.w - 20, 15, this.confirmReset ? 'EMİN MİSİN? TÜM İLERLEME SİLİNİR' : 'İLERLEMEYİ SIFIRLA', () => {
       if (!this.confirmReset) { this.confirmReset = true; return; }
       const keep = META.settings; META = defaultMeta(); META.settings = keep; saveMeta(); this.confirmReset = false; this.panel = null; go('title');
