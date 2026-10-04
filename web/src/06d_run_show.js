@@ -12,6 +12,7 @@ Object.assign(SCENES.run, {
     this.ratingOn = !this.tut && (!!META.tipsSeen.reyting || this.tips.indexOf('reyting') >= 0);
     this.grax = null; this.graxCd = 1.2;
     this.fever = 0; Music.fever = false;
+    this.frost = 0; this.trickBeat = 0;
     this.lastGateY = -9999; this.lastScanY = -9999; this.meteors = [];
     this.nemRival = this.rivals.find(r => r.nem) || null;
     this.nemTaunt = this.nemRival && !this.nemRival.duel ? { txt: pickAny(NEMESIS_TAUNTS), t: 3 } : null;
@@ -59,7 +60,8 @@ Object.assign(SCENES.run, {
       if (m.t > 0) continue;
       this.meteors.splice(i, 1);
       if (m.y - P.dist < 45) continue;
-      this.addObs('rock', m.lane, 1, m.y, { v: 1 });
+      this.addObs('rock', m.lane, 1, m.y, { v: 1, kum: m.kind === 'kum' });
+      if (m.kind === 'kum') { burst(this.laneX(m.lane), this.sy(m.y), 12, [C.sand, C.tan, C.orange0], 55, 0.6, 80, 2); shake(2, 0.12); Sound.play('boom'); continue; }
       burst(this.laneX(m.lane), this.sy(m.y), 10, [C.orange, C.yellow, C.gray], 60, 0.5, 60, 2); shake(2, 0.12); Sound.play('boom');
     }
     if (!this.ratingOn || this.state !== 'run') return;
@@ -86,8 +88,12 @@ Object.assign(SCENES.run, {
   boredEvent() {
     const P = this.P, n = RUN.region >= 1 ? 3 : 2;
     this.ratingZeroT = 0; this.rating = 30; RUN.bored = (RUN.bored || 0) + 1;
-    const lanes = [0, 1, 2, 3, 4].sort(() => Math.random() - 0.5).slice(0, n);
-    lanes.forEach((lane, i) => { const t0 = 0.8 + i * 0.15; this.meteors.push({ lane, y: P.dist + 260 + i * 45, t: t0, t0 }); });
+    // each landing spot must leave the horse a way through (see 06f_run_fair)
+    for (let i = 0; i < n; i++) {
+      const y = P.dist + 260 + i * 45, lane = this.pickSafeLanes(1, y)[0];
+      if (lane == null) continue;
+      const t0 = 0.8 + i * 0.15; this.meteors.push({ lane, y, t: t0, t0 });
+    }
     this.banner = { txt: 'METEOR YAĞMURU!', col: C.salmon }; this.bannerT = 1.6;
     Sound.play('warn'); this.say('bored', true);
   },
@@ -105,6 +111,7 @@ Object.assign(SCENES.run, {
   endFever() {
     const was = this.fever > 0 || Music.fever;
     this.fever = 0; Music.fever = false;
+    this.frost = 0; this.trickBeat = 0;
     if (was && this.state === 'run') floatText('DÖRTNAL BİTTİ', W / 2, this.pY - 40, C.lgray, 1, -8, 0.8);
   },
 
@@ -266,11 +273,23 @@ Object.assign(SCENES.run, {
   drawShowFX(ox, oy) {
     for (const m of this.meteors) {
       const sy = Math.round(this.sy(m.y)) + oy, k = 1 - m.t / m.t0, x = this.laneX(m.lane) + ox + this.offY(sy);
+      if (m.kind === 'kum') { // the worm bulges up through the sand
+        g.globalAlpha = 0.35 + 0.4 * k; ellipse(x, sy + 2, 5 + Math.round(4 * k), 2 + Math.round(2 * k), C.tan);
+        g.globalAlpha = Math.floor(T * 10) % 2 ? 0.9 : 0.45; ring(x, sy + 2, Math.max(3, 9 - Math.round(4 * k)), C.orange); g.globalAlpha = 1;
+        if (rnd() < 0.5) addPart(x + (rnd() - 0.5) * 10, sy, (rnd() - 0.5) * 20, -20 - rnd() * 20, 0.4, C.sand, 1, 60);
+        continue;
+      }
       g.globalAlpha = 0.3 + 0.4 * k; ellipse(x, sy + 2, 4 + Math.round(5 * k), 2 + Math.round(2 * k), C.ink);
       g.globalAlpha = Math.floor(T * 10) % 2 ? 0.9 : 0.4; ring(x, sy + 2, Math.max(3, 10 - Math.round(5 * k)), C.red); g.globalAlpha = 1;
       const fx = x + Math.round((1 - k) * 24), fy = sy - Math.round((1 - k) * 90);
       for (let i = 1; i < 7; i++) { pix(fx + i * 2, fy - i * 3, i < 3 ? C.yellow : i < 5 ? C.orange : C.rust); pix(fx + i * 2 + 1, fy - i * 3, C.orange0); }
       circle(fx, fy, 4, C.rust); circle(fx, fy, 3, C.orange); circle(fx - 1, fy - 1, 1, C.yellow);
+    }
+    if (this.frost > 0) { // frost creeps in from the edges
+      const k = clamp(this.frost / 0.5, 0, 1);
+      g.globalAlpha = 0.35 * k; rect(0, 0, W, 4, C.white); rect(0, H - 4, W, 4, C.white); rect(0, 0, 4, H, C.white); rect(W - 4, 0, 4, H, C.white);
+      g.globalAlpha = 0.18 * k; rect(0, 0, W, H, C.sky); g.globalAlpha = 1;
+      for (let i = 0; i < 10; i++) { const fx = hash2(i, 3) * W, fy = (hash2(i, 4) * H + T * 20) % H; spr(OB.flake, fx, fy); }
     }
     if (this.fever > 0) {
       const c = Math.floor(T * 8) % 2 ? C.yellow : C.cyan;

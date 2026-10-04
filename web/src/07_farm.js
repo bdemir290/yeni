@@ -696,7 +696,7 @@ SCENES.farm = {
   pAnit() {
     const st = META.stats;
     const rows = [
-      ['KOŞU', st.runs], ['ZAFER', st.wins], ['EN UZAK', REGIONS[Math.min(2, st.bestRegion)].name], ['EN İYİ KOMBO', st.bestCombo],
+      ['KOŞU', st.runs], ['ZAFER', st.wins], ['EN UZAK', REGIONS[Math.min(LAST_REGION, st.bestRegion)].name], ['EN İYİ KOMBO', st.bestCombo],
       ['MÜKEMMEL', st.perfects], ['VURULAN DÜŞMAN', st.kills], ['KIL PAYI', st.nearMiss], ['SİPER ÇIKIŞI', st.drafts],
       ['TEMİZ ATLAYIŞ', st.cleanJumps || 0], ['HAMLE', st.hamles || 0], ['SON ATAK', st.kicks || 0], ['ÖZEL ATIŞ', st.specials || 0], ['DEVRİLEN KAPTAN', st.reisKills || 0], ['KAZANILAN DÜELLO', st.duels || 0], ['ALINAN RÖVANŞ', st.revenges || 0], ['DÖRTNAL MODU', st.fevers || 0],
       ['ÜS PUANI', farmLevel()]
@@ -711,7 +711,7 @@ SCENES.farm = {
     for (const m of ['g', 's', 'b']) { spr(MEDAL[m], x, y); text(String(st.medals[m] || 0), x + 12, y + 2, MEDAL_COLS[m]); x += 34; }
     y += 16;
     x = P.x + 10;
-    for (const k of ['pirlanta', 'kurt', 'simsek']) { const n = st.bossWins[k] || 0; spr(n ? ICONS.crown : tinted('crown', C.slate), x, y); text(String(n), x + 13, y, n ? C.yellow : C.gray); x += 34; }
+    for (const reg of REGIONS) { const k = reg.boss, n = st.bossWins[k] || 0; spr(n ? ICONS.crown : tinted('crown', C.slate), x, y); text(String(n), x + 13, y, n ? C.yellow : C.gray); x += Math.floor((P.w - 20) / REGIONS.length); }
   },
   pEv() {
     if (typeof this.page === 'string') return this.pRival(this.page);
@@ -720,7 +720,8 @@ SCENES.farm = {
     const unreadR = rivals.some(r => META.rivals[r.id] && !META.rivalRead[r.id]);
     if (!this.defTab) this.defTab = unreadR && !MEMORIES.some(m => m.cond() && !META.memRead[m.id]) ? 'rakip' : 'gunluk';
     const tab = this.defTab === 'rakip' ? 'rakip' : 'gunluk';
-    const P = this.panelBox('SEYİR DEFTERİ', 52 + Math.max(MEMORIES.length, rivals.length) * 20 + 6);
+    const avail = H - SAFE.t - SAFE.b - 8, rh = clamp(Math.floor((avail - 64) / rivals.length), 13, 20);
+    const P = this.panelBox('SEYİR DEFTERİ', 52 + Math.max(MEMORIES.length * 20, rivals.length * rh) + 6);
     const tw = Math.floor((P.w - 16) / 2);
     button('tab_g', P.x + 6, P.y + 16, tw, 14, 'GÜNLÜK', () => { this.defTab = 'gunluk'; Sound.play('page'); }, { kind: tab === 'gunluk' ? 'primary' : 'secondary' });
     button('tab_r', P.x + 10 + tw, P.y + 16, tw, 14, 'RAKİPLER ' + nOpen + '/' + rivals.length, () => { this.defTab = 'rakip'; Sound.play('page'); }, { kind: tab === 'rakip' ? 'primary' : 'secondary' });
@@ -744,18 +745,19 @@ SCENES.farm = {
     text('DÜELLODA YENDİĞİN RAKİPLERİN DOSYALARI', P.x + P.w / 2, y, C.lgray, 'center'); y += 12;
     for (const r of rivals) {
       const open = !!META.rivals[r.id], unread = open && !META.rivalRead[r.id], nem = META.nemesis && META.nemesis.id === r.id;
-      rrect(P.x + 6, y, P.w - 12, 17, open ? (unread ? C.purple : C.slate) : nem ? C.plum : C.navy);
+      rrect(P.x + 6, y, P.w - 12, rh - 3, open ? (unread ? C.purple : C.slate) : nem ? C.plum : C.navy);
+      const ty = y + Math.round((rh - 3) / 2) - 3;
       const reg = nem ? 'RÖVANŞÇI' : REGIONS[r.region].name.split(' ')[0];
       if (open) {
-        circle(P.x + 14, y + 8, 3, C.ink); circle(P.x + 14, y + 8, 2, r.style === 'itici' ? C.salmon : r.style === 'onde' ? C.sky : C.green);
-        text(r.name, P.x + 22, y + 5, C.white);
-        text(unread ? 'YENİ' : reg, P.x + P.w - 12, y + 5, unread ? C.yellow : nem ? C.red : C.gray, 'right');
-        UI.add('riv_' + r.id, P.x + 6, y, P.w - 12, 17, () => { this.page = r.id; META.rivalRead[r.id] = true; saveMeta(); Sound.play('page'); });
+        circle(P.x + 14, y + 8, 3, C.ink); circle(P.x + 14, y + rh / 2, 2, STYLE_COL[r.style] || C.green);
+        text(r.name, P.x + 22, ty, C.white);
+        text(unread ? 'YENİ' : reg, P.x + P.w - 12, ty, unread ? C.yellow : nem ? C.red : C.gray, 'right');
+        UI.add('riv_' + r.id, P.x + 6, y, P.w - 12, rh - 3, () => { this.page = r.id; META.rivalRead[r.id] = true; saveMeta(); Sound.play('page'); });
       } else {
-        spr(ICONS.lock, P.x + 11, y + 4); text(nem ? r.name : '???', P.x + 22, y + 5, nem ? C.salmon : C.dgray);
-        text(nem ? 'RÖVANŞÇI' : reg + ' DÜELLOSU', P.x + P.w - 12, y + 5, nem ? C.red : C.dgray, 'right');
+        spr(ICONS.lock, P.x + 11, ty - 1); text(nem ? r.name : '???', P.x + 22, ty, nem ? C.salmon : C.dgray);
+        text(nem ? 'RÖVANŞÇI' : reg + ' DÜELLOSU', P.x + P.w - 12, ty, nem ? C.red : C.dgray, 'right');
       }
-      y += 20;
+      y += rh;
     }
   },
   pRival(id) {
@@ -768,7 +770,7 @@ SCENES.farm = {
     text(r.name, P.x + 44, P.y + 19, C.yellow);
     text(info.race, P.x + 44, P.y + 29, C.lgray);
     text(info.home, P.x + 44, P.y + 39, C.gray);
-    text('TARZI: ' + info.trick, P.x + 10, P.y + 54, r.style === 'itici' ? C.salmon : r.style === 'onde' ? C.sky : C.green);
+    text('TARZI: ' + info.trick, P.x + 10, P.y + 54, STYLE_COL[r.style] || C.green);
     text('YENİLDİ: ' + (META.rivals[id] || 0) + ' KEZ', P.x + 10, P.y + 64, C.gray);
     if (META.nemesis && META.nemesis.id === id) text('RÖVANŞÇI · SV ' + META.nemesis.lv, P.x + P.w - 10, P.y + 64, C.red, 'right');
     rect(P.x + 6, P.y + 76, P.w - 12, P.h - 102, C.sand); hline(P.x + 6, P.y + 76, P.w - 12, C.white);

@@ -192,4 +192,59 @@ function buildRivalArt() {
     hline(12, 18, 4, K);
     for (const [x, y] of [[4, 24], [23, 23]]) pix(x, y, C.slate);
   });
+
+  // ---------------- v5 rivals: busts built from the racer look (rider kind + colours) ----------------
+  const bust = L => offscreen(28, 28, () => {
+    const skin = L.skin || C.green, sd = rcrDk(skin), sl = rcrLt(skin), suit = L.suit || C.navy, trim = L.trim || C.yellow, eye = L.reye || C.yellow;
+    const kind = L.rider;
+    // back pieces first: hood, ears, fin
+    if (kind === 'hood') fill(EL(14, 13, 10, 10.5), (x, y) => x >= 17 ? rcrDk(L.hat || suit) : (L.hat || suit), K);
+    if (kind === 'ears') { fill(TRI(3, 1, 12, 9, 7, 14), skin, K); fill(TRI(25, 1, 16, 9, 21, 14), sd, K); fill(TRI(5, 4, 10, 10, 8, 12), C.salmon); fill(TRI(23, 4, 18, 10, 20, 12), C.magenta); }
+    if (kind === 'fin') { fill(TRI(10, 8, 18, 8, 14, 0), trim, K); fill(TRI(4, 10, 8, 15, 3, 18), sd, K); fill(TRI(24, 10, 20, 15, 25, 18), sd, K); }
+    if (kind === 'squid') for (let i = 0; i < 6; i++) {
+      const x0 = 7 + i * 3, len = 6 + (i % 2) * 2;
+      for (let j = 0; j < len; j++) { const x = x0 + Math.round(Math.sin(j * 0.8 + i)); pix(x - 1, 17 + j, K); pix(x, 17 + j, skin); pix(x + 1, 17 + j, sd); }
+    }
+    // shoulders, collar, neck
+    fill(RR(3, 21, 22, 8, 5, 0), (x, y) => y === 21 ? trim : x >= 19 ? rcrDk(suit) : suit, K);
+    pix(14, 24, trim); pix(13, 25, trim); pix(15, 25, trim);
+    if (kind !== 'squid') { rect(11, 18, 6, 4, K); rect(12, 18, 4, 4, sd); }
+    // head
+    if (kind === 'robo') {
+      fill(RR(6, 5, 16, 15, 3), (x, y) => y <= 6 ? sl : x >= 18 ? sd : skin, K);
+      rect(8, 10, 12, 4, K); rect(9, 11, 10, 2, rcrDk(eye)); rect(12, 11, 4, 2, eye); pix(13, 11, C.white);
+      vline(14, 1, 4, K); pix(14, 0, eye); for (let x = 9; x < 19; x += 3) pix(x, 16, C.gray);
+    } else {
+      const wide = kind === 'brute', rx = wide ? 9 : 7, ry = kind === 'squid' ? 8 : 6.5, cy = kind === 'squid' ? 11 : 13;
+      fill(EL(14, cy, rx, ry), (x, y) => (x + 0.5 - 14) * 0.6 + (y + 0.5 - cy) > 3 ? sd : skin, K);
+      for (const [x, y] of [[10, cy - 3], [16, cy - 4], [18, cy - 1]]) pix(x, y, sl);
+    }
+    // faces
+    const eyeAt = (x, y, r) => { if (r) { fill(EL(x + 0.5, y + 0.5, r, r), C.white, K); pix(x, y, eye); pix(x + 1, y, K); } else { rect(x - 1, y - 1, 3, 3, K); pix(x, y, eye); pix(x - 1, y - 1, C.white); } };
+    if (kind === 'stalk') {
+      for (const [x0, x1] of [[11, 7], [17, 21]]) { line(x0 - 1, 9, x1 - 1, 3, K); line(x0 + 1, 9, x1 + 1, 3, K); line(x0, 9, x1, 3, skin); }
+      eyeAt(7, 2, 2.6); eyeAt(20, 2, 2.6);
+    } else if (kind === 'tri') { eyeAt(10, 13); eyeAt(14, 10); eyeAt(18, 13); }
+    else if (kind === 'mono') { fill(EL(14.5, 12.5, 4, 3.6), C.white, K); fill(EL(14.5, 12.5, 2, 2), eye); pix(14, 12, K); pix(15, 12, K); pix(13, 11, C.white); }
+    else if (kind === 'hood') { rect(9, 12, 4, 1, eye); rect(16, 12, 4, 1, eye); pix(9, 12, C.white); }
+    else if (kind !== 'robo') { eyeAt(11, 13); eyeAt(17, 13); }
+    if (kind === 'dome') {
+      fill(AND(EL(14, 9, 8.5, 8), (x, y) => y <= 10), L.glass || C.cyan, K);
+      fill(AND(EL(14, 7, 5.5, 3.6), (x, y) => y <= 9), (x, y) => ((x * 3 + y * 5) % 7 === 0) ? C.white : (L.brain || C.salmon));
+      hline(6, 10, 17, C.lgray); for (const [x, y] of [[8, 5], [9, 4]]) pix(x, y, C.white);
+    }
+    if (kind === 'horn' || kind === 'brute') {
+      const hc = L.horn || C.sand, s = kind === 'brute' ? 0 : 1;
+      fill(TRI(7, 9 - s, 10, 8, 4, 1 + s * 2), hc, K); fill(TRI(21, 9 - s, 18, 8, 24, 1 + s * 2), rcrDk(hc), K);
+    }
+    if (kind === 'crystal') for (let i = 0; i < 5; i++) {
+      const x = 7 + i * 3.5, h = 6 + (i === 2 ? 3 : i % 2 ? 1 : 0);
+      fill(TRI(x - 2, 8, x + 2, 8, x, 8 - h), i % 2 ? (L.cape || C.cyan) : trim, K);
+    }
+    if (kind === 'fin') pix(14, 3, C.white);
+    // mouth: brutes bare their teeth, the rest grin or frown
+    if (kind === 'brute') { hline(10, 17, 9, K); pix(11, 16, C.white); pix(17, 16, C.white); }
+    else if (kind !== 'robo' && kind !== 'squid') { hline(12, 17, 5, K); pix(12, 16, K); pix(16, 16, K); }
+  });
+  for (const id in RIVAL_BY_ID) if (!PORTRAIT[id]) PORTRAIT[id] = bust(ALIEN_LOOKS[RIVAL_BY_ID[id].look] || ALIEN_LOOKS.r1);
 }

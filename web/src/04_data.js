@@ -220,21 +220,40 @@ const REGIONS = [
   { id: 'orman', name: 'MANTAR AYI', song: 'orman', bpm: 128, speed: 1.08, dens: 1.18, rivals: [0.9, 0.95, 1.0, 1.05, 1.1], boss: 'kurt',
     grass: C.teal, grass2: C.ddgreen, grassD: C.navy, dirt: C.dgray, dirtD: C.slate, dirtL: C.gray, rail: C.magenta, post: C.purple, deco: 'forest', mud: true,
     foes: { karga: 1, domuz: 1.2, eskiya: 0.5, okcu: 0.45, kalkanli: 0.35 }, weather: { acik: 4, sis: 4, yagmur: 2 } },
-  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.16, dens: 1.35, rivals: [0.93, 0.98, 1.03, 1.08, 1.13], boss: 'simsek',
+  { id: 'buz', name: 'BUZ HALKASI', song: 'buz', bpm: 132, speed: 1.11, dens: 1.24, rivals: [0.91, 0.96, 1.0, 1.04, 1.08, 0.94, 0.98], boss: 'niva', tier: 1.5, field: 6,
+    grass: C.blue, grass2: C.navy, grassD: C.sky, dirt: C.gray, dirtD: C.dgray, dirtL: C.lgray, rail: C.white, post: C.cyan, deco: 'ice', mud: false,
+    foes: { karga: 1, domuz: 0.9, kalkanli: 0.6, okcu: 0.5, eskiya: 0.35 }, weather: { acik: 5, sis: 3, ruzgar: 2 } },
+  { id: 'kum', name: 'KIZIL KUM', song: 'kum', bpm: 134, speed: 1.14, dens: 1.3, rivals: [0.92, 0.97, 1.01, 1.05, 1.1, 0.95, 0.99], boss: 'zarg', tier: 2, field: 7,
+    grass: C.rust, grass2: C.dbrown, grassD: C.orange0, dirt: C.sand, dirtD: C.tan, dirtL: C.white, rail: C.orange, post: C.dbrown, deco: 'desert', mud: false,
+    foes: { karga: 0.8, domuz: 1.0, eskiya: 0.9, okcu: 0.7, kalkanli: 0.4 }, weather: { acik: 5, ruzgar: 4, sis: 1 } },
+  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.17, dens: 1.36, rivals: [0.93, 0.98, 1.03, 1.07, 1.12, 0.96, 1.0], boss: 'simsek', tier: 2.4, field: 7,
     grass: C.navy, grass2: C.slate, grassD: C.ink, dirt: C.orange0, dirtD: C.rust, dirtL: C.tan, rail: C.cyan, post: C.lgray, deco: 'stadium', mud: false, night: true,
     foes: { karga: 0.8, domuz: 0.8, eskiya: 1.0, okcu: 0.8, kalkanli: 0.5 }, weather: { acik: 6, yagmur: 3, ruzgar: 2 } }
 ];
+REGIONS[0].tier = 0; REGIONS[0].field = 5; REGIONS[1].tier = 1; REGIONS[1].field = 5;
+// v5 put two planets between Mantar Ayı and the arena: saves from v4 map their region index through this table
+const LAST_REGION = REGIONS.length - 1;
+const REGION_V4 = [0, 1, LAST_REGION];
+const regionIdx = id => REGIONS.findIndex(r => r.id === id);
+const BOSS_CRYSTALS = [10, 15, 18, 21, 25];
 const BOSSES = {
   pirlanta: { name: 'PRENS KRİSTALO', look: 'kristalo', drain: 2.0, attacks: ['mud', 'bale', 'karga'], attacks2: ['karga3', 'mud'], attacks3: ['mudrow', 'bale'], sig: 'kibir', color: C.magenta, title: 'LUMO\'NUN KİBİRLİ KRİSTAL PRENSİ' },
   kurt: { name: 'ULUYAN GORM', look: 'gorm', drain: 2.4, attacks: ['log', 'wolf', 'domuz'], attacks2: ['howl', 'wolf'], attacks3: ['stomp', 'domuz'], sig: 'uluma', color: C.green, title: 'MANTAR AYI\'NIN YENİLMEZİ' },
+  niva: { name: 'BUZ KRALİÇESİ NİVA', look: 'niva', drain: 2.5, attacks: ['icicle', 'karga', 'bale'], attacks2: ['icerow', 'icicle'], attacks3: ['icicle3', 'icerow'], sig: 'ayaz', color: C.cyan, title: 'BUZ HALKASI\'NIN SOĞUK HÜKÜMDARI' },
+  zarg: { name: 'KUM SOLUCANI ZARG', look: 'zarg', drain: 2.65, attacks: ['burrow', 'eskiya', 'domuz'], attacks2: ['sandwave', 'burrow', 'okcu'], attacks3: ['burrow2', 'sandwave'], sig: 'kum', color: C.orange, title: 'KIZIL KUM\'UN ÇÖL CANAVARI' },
   simsek: { name: 'VOLTRAK', horse: ['robot', 'voltrak'], drain: 2.8, attacks: ['bolt', 'bale', 'eskiya'], attacks2: ['bolt3', 'okcu'], attacks3: ['civirow', 'bolt3'], sig: 'hile', color: C.red, title: 'GRAX\'IN ROBOT ŞAMPİYONU' }
 };
-const RIVAL_LOOKS = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8'];
+const RIVAL_LOOKS = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12', 'r13', 'r14', 'r15', 'r16'];
+// named rivals per region (index = region). style: sondan / onde / itici / atici (shoots on the beat) / zikzak (cuts in)
 const NAMED_RIVALS = [
-  [{ id: 'glorb', name: 'GLORB', style: 'sondan', look: 'n5' }, { id: 'vuum', name: 'KIZIL VUUM', style: 'itici', look: 'n1' }],
-  [{ id: 'gece', name: 'GECE KANADI', style: 'onde', look: 'n6' }, { id: 'kiskac', name: 'DEMİR KISKAÇ', style: 'itici', look: 'n3' }],
-  [{ id: 'alev', name: 'ALEV KUYRUK', style: 'onde', look: 'n4' }, { id: 'golge', name: 'GRAX\'IN GÖLGESİ', style: 'sondan', look: 'n2' }]
+  [{ id: 'glorb', name: 'GLORB', style: 'sondan', look: 'n5' }, { id: 'vuum', name: 'KIZIL VUUM', style: 'itici', look: 'n1' }, { id: 'pip', name: 'PİP-PİP', style: 'zikzak', look: 'n7' }],
+  [{ id: 'gece', name: 'GECE KANADI', style: 'onde', look: 'n6' }, { id: 'kiskac', name: 'DEMİR KISKAÇ', style: 'itici', look: 'n3' }, { id: 'mantis', name: 'SİSLİ MANTİS', style: 'atici', look: 'n8' }],
+  [{ id: 'buzdis', name: 'BUZDİŞ', style: 'itici', look: 'n9' }, { id: 'aurora', name: 'AURORA', style: 'onde', look: 'n10' }, { id: 'kar', name: 'KAR TANESİ', style: 'zikzak', look: 'n14' }],
+  [{ id: 'tozkiran', name: 'TOZKIRAN', style: 'atici', look: 'n11' }, { id: 'zib', name: 'ÜÇ GÖZ ZİB', style: 'sondan', look: 'n12' }, { id: 'serap', name: 'SERAP', style: 'onde', look: 'n15' }],
+  [{ id: 'alev', name: 'ALEV KUYRUK', style: 'onde', look: 'n4' }, { id: 'golge', name: 'GRAX\'IN GÖLGESİ', style: 'sondan', look: 'n2' }, { id: 'nova', name: 'NOVA', style: 'zikzak', look: 'n13' }]
 ];
+const STYLE_COL = { itici: C.salmon, onde: C.sky, sondan: C.green, atici: C.gold, zikzak: C.magenta };
+const STYLE_TRICK = { atici: 'NİŞAN ALIR, "!" SONRA PLAZMA ATAR', zikzak: 'ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER' };
 const RIVAL_BY_ID = {};
 NAMED_RIVALS.forEach((list, reg) => list.forEach(r => { r.region = reg; RIVAL_BY_ID[r.id] = r; }));
 // Rakip dosyaları: a 1v1 duel win opens the rival's page in the logbook and their side of the story
@@ -262,10 +281,46 @@ const RIVAL_INFO = {
   golge: { race: 'GRAX\'IN İLK TUTSAĞI', home: 'BİLİNMİYOR', trick: 'SONDAN GELİR, SONDA ATAKLAR',
     taunt: 'BEN BU PİSTİN KENDİSİYİM.',
     lose: ['YİRMİ YIL ÖNCE BİR DÜNYALI DA BENİ BÖYLE GEÇMİŞTİ. AYNI GÖZLER.', 'ANNEN YAŞIYOR DENİZ. GRAX ONU HER GECE TRİBÜNE OTURTUYOR. KUPAYI AL.'],
-    text: 'GÖLGE, GRAX\'IN KAÇIRDIĞI İLK YARIŞÇI; ADINI KİMSE HATIRLAMIYOR. YİRMİ YIL ÖNCEKİ FİNALDE AKYEL\'İN YANINDA KOŞTU. IŞIKLAR SÖNMEDEN ÖNCE ONU ÖNDE GÖRDÜ. O GECEDEN BERİ GRAX İÇİN KOŞUYOR AMA ONA İNANMIYOR.' }
+    text: 'GÖLGE, GRAX\'IN KAÇIRDIĞI İLK YARIŞÇI; ADINI KİMSE HATIRLAMIYOR. YİRMİ YIL ÖNCEKİ FİNALDE AKYEL\'İN YANINDA KOŞTU. IŞIKLAR SÖNMEDEN ÖNCE ONU ÖNDE GÖRDÜ. O GECEDEN BERİ GRAX İÇİN KOŞUYOR AMA ONA İNANMIYOR.' },
+  pip: { race: 'MİNİK KUŞ HALKI', home: 'AĞAÇ GEZEGENİ TİRİ', trick: STYLE_TRICK.zikzak,
+    taunt: 'PİP! YAKALA BENİ YAKALAYABİLİRSEN!',
+    lose: ['PİP... SEN BENDEN BİLE HIZLI ŞERİT DEĞİŞTİRİYORSUN!', 'ANNEM HEP "UÇMAYI ÖĞREN" DERDİ. BEN KOŞMAYI SEÇTİM. SENİ GÖRÜNCE İYİ Kİ DEDİM.'],
+    text: 'PİP-PİP, TİRİ\'NİN DEV AĞAÇLARINDA YAŞAYAN MİNİK KUŞ HALKINDAN. HENÜZ UÇAMIYOR, O YÜZDEN DURMADAN KOŞUYOR. GRAX ONU "SEYİRCİ ŞİRİNLİK SEVER" DİYE KAFESİNE ATTI. HER YARIŞTA ŞERİTTEN ŞERİDE ZIPLIYOR, KİMSE ONU ÖNCEDEN TAHMİN EDEMİYOR.' },
+  mantis: { race: 'SİS ORMANI AVCISI', home: 'NEM GEZEGENİ HUMA', trick: STYLE_TRICK.atici,
+    taunt: 'SİSİN İÇİNDEN SENİ GÖRÜYORUM.',
+    lose: ['NİŞANIM HİÇ ŞAŞMAZDI. SEN RİTİMLE KAÇIYORSUN, BU ADİL DEĞİL... AMA GÜZEL.', 'HUMA\'DA YAĞMUR HİÇ DİNMEZ. KUPAYI ALIRSAN BİRAZ GÜNEŞ GETİR BANA.'],
+    text: 'SİSLİ MANTİS, HUMA\'NIN SİSLİ ORMANLARINDA AV PEŞİNDEN KOŞAN SABIRLI BİR AVCI. BİR VURUŞ BEKLER, NİŞAN ALIR, SONRA ATAR. GRAX ONA PLAZMA TÜFEĞİ VERDİ; O İSE SADECE ORMANINI ÖZLÜYOR.' },
+  buzdis: { race: 'BUZUL DEVİ', home: 'DONMUŞ AY GLASİ', trick: 'YANAŞIR, "!" SONRA OMUZ ATAR',
+    taunt: 'SOĞUK SENİ YAVAŞLATACAK DÜNYALI.',
+    lose: ['BUZUM ÇATLADI... BÖYLE SICAK BİR RİTİM HİÇ GÖRMEMİŞTİM.', 'GLASİ\'DE KARDEŞLERİM BENİ BEKLİYOR. HER KIŞ BİR HEYKEL YAPARLAR. BU KIŞ SENİNKİNİ YAPSINLAR.'],
+    text: 'BUZDİŞ, GLASİ AYININ DEV BUZUL HALKINDAN. ADIMLARI YAVAŞ AMA OMUZLARI DAĞ GİBİ. GRAX ONU BUZUN İÇİNDE UYURKEN BULDU VE UYANDIRDI. O GÜNDEN BERİ PİSTTE KİMSEYE YOL VERMİYOR.' },
+  aurora: { race: 'IŞIK SÜZÜCÜ', home: 'KUTUP GEZEGENİ LUMEN', trick: 'ÖNDE KAÇAR, MAYIN BIRAKIR',
+    taunt: 'IŞIĞIMI KOVALA, YETİŞEBİLİRSEN.',
+    lose: ['IŞIĞIMI GEÇTİN. GÖKYÜZÜ SANA DA RENK VERDİ DEMEK.', 'LUMEN\'DE GECELER YEŞİL PARLAR. SENİN DÜNYANDA DA ÖYLE Mİ?'],
+    text: 'AURORA, LUMEN\'İN KUTUP IŞIKLARINDAN DOĞAN BİR IŞIK SÜZÜCÜ. KOŞARKEN ARKASINDA RENKLİ BİR İZ BIRAKIR. GRAX ONU "EN GÜZEL YAYIN GÖRÜNTÜSÜ" DİYE TOPLADI; KANATLARI KAFESTE SOLUYOR.' },
+  kar: { race: 'KRİSTAL CİN', home: 'BUZ HALKASI', trick: STYLE_TRICK.zikzak,
+    taunt: 'HER KAR TANESİ FARKLIDIR. BEN EN HIZLISIYIM!',
+    lose: ['ERİDİM Mİ? HAYIR... SADECE BİRAZ UTANDIM.', 'NİVA KRALİÇE BENİ HER GECE DONDURUR, SABAH ÇÖZER. BİR GÜN SICAK BİR YERDE UYANMAK İSTİYORUM.'],
+    text: 'KAR TANESİ, BUZ HALKASI\'NIN KRİSTAL CİNLERİNDEN. NİVA\'NIN SARAYINDA DOĞDU, ONUN EMRİNDE KOŞUYOR. ŞERİT ŞERİT SÜZÜLÜR, ÖNÜNE GEÇİP SENİ YAVAŞLATMAYI SEVER. KİMSE ONUN GÜLDÜĞÜNÜ GÖRMEDİ.' },
+  tozkiran: { race: 'ÇÖL HAYDUDU', home: 'KIZIL KUM', trick: STYLE_TRICK.atici,
+    taunt: 'KUM GÖZÜNE KAÇMASIN DÜNYALI!',
+    lose: ['NİŞANIM KUMA GÖMÜLDÜ. SENİ VURAMADIM, HELAL OLSUN.', 'BİR ZAMANLAR KERVANLARI KORURDUM. GRAX BENİ HAYDUT YAPTI. BELKİ SEN BİZİ YENİDEN İYİ YAPARSIN.'],
+    text: 'TOZKIRAN, KIZIL KUM\'UN KERVAN YOLLARINI KORUYAN BİR MUHAFIZDI. ZARG ÇÖLÜ YUTUNCA GRAX\'IN ŞOVUNA SATILDI. ARTIK PİSTTE KUM KADAR SICAK PLAZMA ATIYOR, AMA HÂLÂ KERVAN ŞARKILARI MIRILDANIYOR.' },
+  zib: { race: 'ÜÇ GÖZLÜ TÜCCAR', home: 'PAZAR GEZEGENİ OBO', trick: 'SONDAN GELİR, SONDA ATAKLAR',
+    taunt: 'ÜÇ GÖZÜM VAR, ÜÇÜ DE KAZANMAMI GÖRÜYOR.',
+    lose: ['ÜÇ GÖZÜM DE AYNI ŞEYİ GÖRDÜ: SENİN SIRTINI.', 'MOKO BENİM KUZENİM. ONA SÖYLE, BORCUMU UNUTMADIM.'],
+    text: 'ZİB, OBO PAZARININ EN PAZARLIKÇI TÜCCARIYDI. GRAX\'LA BİR BAHSE GİRDİ VE KAYBETTİ; ŞİMDİ BORCUNU PİSTTE ÖDÜYOR. YARIŞI HEP SONA SAKLAR, ÇÜNKÜ "EN İYİ FİYAT SON ANDA ÇIKAR" DER.' },
+  serap: { race: 'SERAP RUHU', home: 'BİLİNMİYOR', trick: 'ÖNDE KAÇAR, MAYIN BIRAKIR',
+    taunt: 'GÖRDÜĞÜN BEN MİYİM, YOKSA SERAP MI?',
+    lose: ['DEMEK GERÇEKTİM. SEN DE ÖYLEYMİŞSİN.', 'ÇÖLDE BİR KAPI GÖRDÜM DENİZ. IŞIKLI BİR KAPI. SERAP DEĞİLDİ, EMİNİM.'],
+    text: 'SERAP, KIZIL KUM\'UN SICAĞINDA TİTREŞEN BİR RUH. KİMİ ONU GÖRDÜĞÜNÜ SANIR, KİMİ GÖRMEZ. GRAX BİLE ONU NASIL YAKALADIĞINI BİLMİYOR. ÖNDE KAÇAR VE ARKASINDA KUM MAYINLARI BIRAKIR.' },
+  nova: { race: 'YILDIZ ÇOCUĞU', home: 'SÖNMÜŞ YILDIZ VEGA-9', trick: STYLE_TRICK.zikzak,
+    taunt: 'BEN BİR YILDIZDAN DOĞDUM. SEN BİR ATTAN!',
+    lose: ['BİR AT BİR YILDIZI GEÇTİ. BUNU YILDIZLARA ANLATACAĞIM.', 'GRAX\'IN TAHTININ ARKASINDA BİR KAPI VAR. KUPA ONUN ANAHTARI. UNUTMA.'],
+    text: 'NOVA, SÖNEN BİR YILDIZIN SON IŞIĞINDAN DOĞDU. GRAX ONU ARENA\'NIN TAVANINDAN SARKITIR, SEYİRCİ YILDIZ GİBİ PARLADIĞINI SANSIN DİYE. HIZLI DÜŞÜNÜR, DAHA HIZLI ŞERİT DEĞİŞTİRİR.' }
 };
 const ETAP_INFO = {
-  sprint: { name: 'SPRİNT', short: 'İLK 3\'E GİR', icon: 'run' },
+  sprint: { name: 'SPRİNT', short: 'İLK SIRALARA GİR', icon: 'run' },
   parkur: { name: 'ENGEL PARKURU', tiny: 'PARKUR', short: 'HASARSIZ GEÇ', icon: 'shoe' },
   kovala: { name: 'KARA DELİK KAÇIŞI', tiny: 'KAÇIŞ', short: 'KARA DELİKTEN KAÇ', icon: 'swirl' },
   baskin: { name: 'KORSAN BASKINI', tiny: 'BASKIN', short: 'KORSANLARI VUR', icon: 'w_yay' },
@@ -277,7 +332,7 @@ const ETAP_INFO = {
   boss: { name: 'ŞAMPİYON YARIŞI', tiny: 'ŞAMPİYON', short: 'ŞAMPİYONU GEÇ', icon: 'crown' }
 };
 const ETAP_TIPS = {
-  sprint: 'İLK 3\'E GİR! RİTİMLE HIZLAN. RAKİBİN ARKASINDA KALIRSAN RÜZGAR SİPERİ DOLAR, SONRA YANA ÇIK.',
+  sprint: 'İLK SIRALARA GİR! RİTİMLE HIZLAN. RAKİBİN ARKASINDA KALIRSAN RÜZGAR SİPERİ DOLAR, SONRA YANA ÇIK.',
   parkur: 'ENGELLER SIK. ENGELE YAKLAŞINCA SIÇRA: TEMİZ ATLAYIŞ HIZ VERİR, ERKEN SIÇRARSAN SIYIRIRSIN. HASARSIZ BİTİRİRSEN ALTIN MADALYA.',
   kovala: 'KARA DELİK ARKANDA! YAVAŞLARSAN SENİ YUTAR. KOMBOYU KORU.',
   reyting: 'KIL PAYI, SOLLAMA, TEMİZ ATLAYIŞ VE KOMBO SEYİRCİYİ COŞTURUR. DOLUNCA SPONSOR HEDİYE ATAR; UZUN SÜRE SIFIRDA KALIRSAN GRAX METEOR YAĞDIRIR.',
@@ -409,7 +464,7 @@ const MEMORIES = [
     text: 'PRENS KRİSTALO YENİLİNCE KULAĞINA FISILDADI: "BEN DE KAÇIRILDIM. HEPİMİZ GRAX\'IN ŞOVUNDAYIZ." RAKİPLERİN DÜŞMAN DEĞİL, AYNI KAFESTEKİ KUŞLAR.' },
   { id: 5, title: 'YILDIZ ATLARI', hint: 'İKİLİ GÜÇ YA DA 12 GÜÇ AL', cond: () => META.stats.duos > 0 || META.stats.boons >= 12,
     text: 'TULPAR, KIRAT, SLEİPNİR, PEGASUS VE RÜZGAR KISRAĞI... DÜNYADAN BAKINCA BİRER TAKIMYILDIZ. BURADAN BAKINCA YILDIZ\'LA KONUŞAN DOSTLAR. ANNEN DE ONLARI DUYARMIŞ.' },
-  { id: 6, title: 'GRAX\'IN SIRRI', hint: 'GALAKSİ ARENASI\'NA ULAŞ', cond: () => META.stats.bestRegion >= 2,
+  { id: 6, title: 'GRAX\'IN SIRRI', hint: 'GALAKSİ ARENASI\'NA ULAŞ', cond: () => META.stats.bestRegion >= LAST_REGION,
     text: 'KUPA BİR ÖDÜL DEĞİL, BİR ANAHTAR: EVE GİDEN IŞINLANMA KAPISINI AÇIYOR. GRAX BU YÜZDEN KİMSENİN KAZANMASINA İZİN VERMİYOR. VOLTRAK\'IN TOYNAKLARINDAKİ KIVILCIMLAR: HİLE.' },
   { id: 7, title: 'EVE DÖNÜŞ', hint: 'GALAKSİ KUPASI\'NI KAZAN', cond: () => META.stats.wins > 0,
     text: 'KUPAYI KALDIRDIĞINDA KAPI AÇILDI. TRİBÜNDEN GRİ SAÇLI BİR KADIN İNDİ: AKYEL. YİRMİ YILDIR SENİ İZLİYORMUŞ. YILDIZ ONU HEMEN TANIDI. ARTIK HERKES İSTEDİĞİ YERDE KOŞABİLİR.' }
@@ -464,7 +519,11 @@ const STORY = [
   { id: 'winPirlanta', cond: () => META.stats.bossWins.pirlanta, lines: [['kemal', 'KRİSTALO\'YU GEÇEN DÜNYALIYI GÖRMEYE GELDİM. BEN KEMAL. BENİ DE YILLAR ÖNCE KAÇIRDILAR.'], ['grax', 'ŞANS ESERİ BİR GALİBİYET! SEYİRCİLER BAYILDI. AMA KUPA... ASLA SENİN OLMAYACAK.'], ['bip', 'BİP. GRAX GİTTİ. DENİZ, ONA GÖSTER.']] },
   { id: 'region2', cond: () => META.stats.bestRegion >= 1, lines: [['ayse', 'MANTAR AYI... ULUYAN GORM KİMSEYİ GEÇİRMEZMİŞ. KORSANLARA DA DİKKAT.']] },
   { id: 'winKurt', cond: () => META.stats.bossWins.kurt, lines: [['tayfun', 'VAY! GORM\'U GEÇTİN HA? BEN TAYFUN, DÖRT SEZONDUR BURADAYIM. BENİ DE TAKIMA AL!']] },
-  { id: 'region3', cond: () => META.stats.bestRegion >= 2, lines: [['bip', 'GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.']] },
+  { id: 'regionBuz', cond: () => META.stats.bestRegion >= 2, lines: [['tayfun', 'BUZ HALKASI! ORADA NİVA DİYE BİR KRALİÇE VARMIŞ, NEFESİYLE PİSTİ DONDURUYORMUŞ.'], ['bip', 'AYAZ GELİNCE ŞERİT DEĞİŞTİRMEK ZORLAŞIR. HAMLE YAP YA DA ALTIN NOTAYI VUR, BUZU KIR. BİP.']] },
+  { id: 'winNiva', cond: () => META.stats.bossWins.niva, lines: [['ayse', 'NİVA\'YI GEÇTİN! KRALİÇE BİLE ŞAŞIRDI, TAHTINDAN İNİP SENİ ALKIŞLADI.'], ['grax', 'BUZ ERİDİ DİYE SEVİNME DÜNYALI. ÇÖLDE SENİ KUM YUTACAK!']] },
+  { id: 'regionKum', cond: () => META.stats.bestRegion >= 3, lines: [['kemal', 'KIZIL KUM... ZARG DENEN SOLUCAN PİSTİN ALTINDAN ÇIKAR. KUMDA HALKA GÖRÜRSEN O ŞERİTTEN UZAKLAŞ.']] },
+  { id: 'winZarg', cond: () => META.stats.bossWins.zarg, lines: [['tayfun', 'SOLUCANI KUMA GÖMDÜN! ŞİMDİ SIRA VOLTRAK\'TA!'], ['bip', 'ARENA\'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.']] },
+  { id: 'region3', cond: () => META.stats.bestRegion >= LAST_REGION, lines: [['bip', 'GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.']] },
   { id: 'lostSimsek', cond: () => META.flags.lost_simsek, lines: [['kemal', 'VOLTRAK HİLE YAPMADAN KAZANAMAZ. SEN ONDAN HIZLISIN.']] },
   { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', 'KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!'], ['akyel', '...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.'], ['ayse', 'ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!']] }
 ];
@@ -473,7 +532,7 @@ const TIPS = [
   ['ayse', 'GÖKTAŞLARININ ÜSTÜNDEN SIÇRAYAMAZSIN, YANINDAN DOLAŞ.'],
   ['bip', 'KAPILARIN ÜSTÜNDEKİ İŞARETLERE BAK. ÖDÜLÜ SEN SEÇERSİN.'],
   ['ayse', 'GÖREV EKRANINA UĞRA, BİTEN GÖREVLER KRİSTAL VERİYOR!'],
-  ['bip', 'SPRİNTTE İLK ÜÇE GİREMEZSEN BİR CAN GİDER.'],
+  ['bip', 'SPRİNTTE İLK SIRALARA GİREMEZSEN BİR CAN GİDER. KALABALIK PİSTLERDE İLK 4 YETER.'],
   ['ayse', 'TEKNİK GÖSTERGESİ DOLUNCA ALTTAKİ DÜĞMEYE BAS.'],
   ['kemal', 'RAKİBİN ARKASINDA KALIRSAN SİPER DOLAR. YANA ÇIKINCA FIRLARSIN.'],
   ['tayfun', 'GÖKTAŞININ YANINDAN SON ANDA GEÇERSEN KIL PAYI SİKKESİ ALIRSIN!'],
@@ -504,6 +563,8 @@ const GRAX_LINES = {
   revenge: ['RÖVANŞ ALINDI! İNANILMAZ!', 'İNTİKAM SOĞUK YENİR, GALAKSİ!'],
   betWin: ['BAHSİ KAZANDI! MOKO AĞLIYOR!', 'KASA PATLADI!'],
   boss: ['ŞAMPİYON SAHNEDE! REKOR YAYIN!', 'İŞTE BÜYÜK KAPIŞMA!'],
+  rivalTrick: ['KİRLİ OYUN! SEYİRCİ BAYILIYOR!', 'BU HAMLEYİ GÖRDÜNÜZ MÜ?', 'KAÇABİLECEK Mİ?'],
+  dodge: ['ŞIK KAÇIŞ!', 'RAKİBİ BOŞA ÇIKARDI!', 'REFLEKSLERE BAK!'],
   kill: ['VUR GALAKSİ, VUR!', 'BİR KORSAN DAHA GİTTİ!']
 };
 const NEMESIS_TAUNTS = ['YİNE Mİ SEN?', 'BU SEFER DE GEÇEMEZSİN!', 'SENİ BEKLİYORDUM DÜNYALI.'];

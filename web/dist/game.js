@@ -2005,6 +2005,14 @@ const ALIEN_LOOKS = {
   r6: { mount: 'lizard', c: C.orange, l: C.gold, d: C.rust, a: C.yellow, eye: C.cyan, rider: 'horn', skin: C.sky, suit: C.white, trim: C.blue, horn: C.yellow },
   r7: { mount: 'beetle', c: C.gold, l: C.yellow, d: C.orange, a: C.blue, b: C.rust, eye: C.cyan, rider: 'mono', skin: C.green, suit: C.purple, trim: C.cyan, reye: C.red },
   r8: { mount: 'bird', c: C.lgray, l: C.white, d: C.gray, a: C.sky, b: C.orange, leg: C.orange, eye: C.ink, rider: 'ears', skin: C.green, suit: C.red, trim: C.yellow },
+  r9: { mount: 'beast', c: C.teal, l: C.green, d: C.ddgreen, a: C.yellow, b: C.green, eye: C.red, rider: 'tri', skin: C.salmon, suit: C.sky, trim: C.white },
+  r10: { mount: 'ray', c: C.wine, l: C.red, d: C.plum, a: C.gold, eye: C.yellow, rider: 'mono', skin: C.cyan, suit: C.navy, trim: C.gold, reye: C.yellow },
+  r11: { mount: 'bird', c: C.purple, l: C.magenta, d: C.plum, a: C.yellow, b: C.cyan, leg: C.yellow, eye: C.ink, rider: 'horn', skin: C.lgray, suit: C.green, trim: C.yellow, horn: C.white },
+  r12: { mount: 'lizard', c: C.blue, l: C.sky, d: C.navy, a: C.salmon, eye: C.yellow, rider: 'squid', skin: C.green, suit: C.orange, trim: C.white, reye: C.white },
+  r13: { mount: 'beetle', c: C.dgreen, l: C.green, d: C.ddgreen, a: C.yellow, b: C.teal, eye: C.salmon, rider: 'ears', skin: C.purple, suit: C.yellow, trim: C.wine },
+  r14: { mount: 'beast', c: C.gold, l: C.yellow, d: C.brown, a: C.dbrown, b: C.sand, eye: C.cyan, rider: 'stalk', skin: C.blue, suit: C.red, trim: C.white, reye: C.yellow },
+  r15: { mount: 'ray', c: C.lgray, l: C.white, d: C.gray, a: C.magenta, eye: C.magenta, rider: 'robo', skin: C.dgray, suit: C.purple, trim: C.cyan, reye: C.magenta },
+  r16: { mount: 'bird', c: C.ddgreen, l: C.dgreen, d: C.teal, a: C.orange, b: C.yellow, leg: C.orange, eye: C.yellow, rider: 'dome', skin: C.salmon, suit: C.teal, trim: C.yellow, glass: C.cyan, brain: C.salmon },
   // named rivals
   n1: { mount: 'ray', stripes: true, c: C.orange, l: C.gold, d: C.rust, a: C.yellow, eye: C.white, rider: 'squid', skin: C.magenta, suit: C.navy, trim: C.gold, reye: C.yellow },
   n2: { mount: 'beast', spikes: true, c: C.lgray, l: C.white, d: C.sky, a: C.blue, b: C.white, eye: C.cyan, rider: 'fin', skin: C.blue, suit: C.white, trim: C.cyan },
@@ -2012,6 +2020,17 @@ const ALIEN_LOOKS = {
   n4: { mount: 'bird', fancyTail: true, c: C.gold, l: C.yellow, d: C.orange, a: C.cyan, b: C.blue, leg: C.rust, eye: C.ink, rider: 'stalk', skin: C.purple, suit: C.sky, trim: C.white, reye: C.yellow },
   n5: { mount: 'beetle', horned: true, c: C.cyan, l: C.white, d: C.sky, a: C.magenta, b: C.blue, eye: C.yellow, rider: 'dome', skin: C.yellow, suit: C.magenta, trim: C.white, glass: C.green, brain: C.yellow },
   n6: { mount: 'ray', glowEdge: true, c: C.navy, l: C.slate, d: C.ink, a: C.gold, eye: C.gold, rider: 'ears', skin: C.lgray, suit: C.wine, trim: C.gold, reye: C.gold },
+  n7: { mount: 'bird', fancyTail: true, c: C.cyan, l: C.white, d: C.sky, a: C.hot, b: C.magenta, leg: C.yellow, eye: C.ink, rider: 'ears', skin: C.yellow, suit: C.hot, trim: C.white },
+  n8: { mount: 'beetle', horned: true, c: C.green, l: C.yellow, d: C.dgreen, a: C.purple, b: C.ddgreen, eye: C.hot, rider: 'mono', skin: C.green, suit: C.plum, trim: C.yellow, reye: C.hot },
+  n9: { mount: 'beast', spikes: true, c: C.white, l: C.white, d: C.lgray, a: C.cyan, b: C.sky, eye: C.blue, rider: 'brute', skin: C.sky, suit: C.navy, trim: C.white, reye: C.cyan, horn: C.white },
+  n10: { mount: 'ray', glowEdge: true, c: C.purple, l: C.magenta, d: C.navy, a: C.green, eye: C.green, rider: 'fin', skin: C.cyan, suit: C.magenta, trim: C.green },
+  n11: { mount: 'lizard', sail: true, c: C.tan, l: C.sand, d: C.brown, a: C.rust, eye: C.yellow, rider: 'hood', skin: C.green, suit: C.dbrown, trim: C.orange, hat: C.sand },
+  n12: { mount: 'beetle', horned: true, c: C.orange, l: C.yellow, d: C.rust, a: C.ink, b: C.wine, eye: C.cyan, rider: 'tri', skin: C.purple, suit: C.yellow, trim: C.ink },
+  n13: { mount: 'bird', fancyTail: true, c: C.white, l: C.white, d: C.lgray, a: C.gold, b: C.yellow, leg: C.gold, eye: C.ink, rider: 'crystal', skin: C.yellow, suit: C.white, trim: C.gold, cape: C.gold },
+  n14: { mount: 'ray', crystal: true, c: C.sky, l: C.white, d: C.blue, a: C.white, b: C.cyan, eye: C.white, rider: 'stalk', skin: C.white, suit: C.sky, trim: C.white, reye: C.cyan },
+  n15: { mount: 'lizard', sail: true, c: C.salmon, l: C.sand, d: C.magenta, a: C.gold, eye: C.white, rider: 'fin', skin: C.sand, suit: C.orange0, trim: C.yellow },
+  niva: { mount: 'ray', crystal: true, c: C.cyan, l: C.white, d: C.sky, a: C.blue, b: C.white, eye: C.white, rider: 'crystal', skin: C.white, suit: C.sky, trim: C.white, cape: C.blue },
+  zarg: { mount: 'beast', big: true, spikes: true, c: C.orange0, l: C.tan, d: C.rust, a: C.dbrown, b: C.sand, eye: C.red, rider: 'brute', skin: C.tan, suit: C.rust, trim: C.gold, reye: C.red, horn: C.sand },
   // champions
   kristalo: { mount: 'ray', c: C.magenta, l: C.salmon, d: C.purple, a: C.cyan, b: C.white, eye: C.white, crystal: true, rider: 'crystal', skin: C.lgray, suit: C.white, trim: C.magenta, cape: C.cyan },
   gorm: { mount: 'beast', c: C.dgreen, l: C.green, d: C.ddgreen, a: C.gray, b: C.lgray, eye: C.yellow, big: true, rider: 'brute', skin: C.gray, suit: C.dgreen, trim: C.lgray, reye: C.yellow, horn: C.sand },
@@ -2448,6 +2467,21 @@ function rcrBuildObstacles() {
     '.....mmm.....', '....mwmms....', '....mmmss....', '.cc...l...gg.', 'cwcs..l..gGgd', 'ccss..l..ggdd', '.ss...l...dd.', '..l...l...l..', '..l...l...l..', '..l..ll...l..', '.ll..ll..ll..', '.ll.lll..ll..'
   ], { m: C.magenta, w: C.white, s: C.purple, c: C.cyan, g: C.green, G: C.yellow, d: C.dgreen, l: C.lgray });
   OB.mushroom = rcrSpr(['.ccc.', 'cwccs', '..l..'], { c: C.cyan, w: C.white, s: C.sky, l: C.lgray }, null);
+  // v5 · Buz Halkası: ice spires, shards and frost flakes beside the track
+  OB.iceSpire = rcrSpr([
+    '....w......', '...wc......', '...wcs.....', '..wwcs.....', '..wccs..w..', '.wwccss.wc.', '.wcccss.wcs', 'wwccccsswcs', 'wcccccsssss', '.bbbbbbbbb.'
+  ], { w: C.white, c: C.cyan, s: C.sky, b: C.blue });
+  OB.iceShard = rcrSpr(['.w.', 'wcs', 'wcs', 'bbb'], { w: C.white, c: C.cyan, s: C.sky, b: C.blue }, null);
+  OB.flake = rcrSpr(['w.w', '.c.', 'w.w'], { w: C.white, c: C.cyan }, null);
+  // v5 · Kızıl Kum: alien cacti, ribs of something huge, desert rocks
+  OB.cactus = rcrSpr([
+    '...g...', '..gGg..', 'g.gGg..', 'gggGg.g', '.ggGggg', '..gGg..', '..gGg..', '..ddd..'
+  ], { g: C.green, G: C.yellow, d: C.dbrown });
+  OB.ribs = rcrSpr(['w.w.w.w', 'w.w.w.w', '.w.w.w.', 'lllllll'], { w: C.sand, l: C.white }, null);
+  OB.dune = rcrSpr(['..tttt..', '.tssstt.', 'tssssstt'], { t: C.orange0, s: C.tan }, null);
+  OB.sandRock = rcrSpr([
+    '...ttt.....', '..tsssbt...', '.tssssbbt..', 'tsswssbbbt.', 'tssssssbbbt', '.bbbbbbbbb.'
+  ], { t: C.tan, s: C.sand, w: C.white, b: C.orange0 });
 }
 
 // track-wide obstacles that scale with the lane width (replace the farm builders)
@@ -2698,6 +2732,61 @@ function buildRivalArt() {
     hline(12, 18, 4, K);
     for (const [x, y] of [[4, 24], [23, 23]]) pix(x, y, C.slate);
   });
+
+  // ---------------- v5 rivals: busts built from the racer look (rider kind + colours) ----------------
+  const bust = L => offscreen(28, 28, () => {
+    const skin = L.skin || C.green, sd = rcrDk(skin), sl = rcrLt(skin), suit = L.suit || C.navy, trim = L.trim || C.yellow, eye = L.reye || C.yellow;
+    const kind = L.rider;
+    // back pieces first: hood, ears, fin
+    if (kind === 'hood') fill(EL(14, 13, 10, 10.5), (x, y) => x >= 17 ? rcrDk(L.hat || suit) : (L.hat || suit), K);
+    if (kind === 'ears') { fill(TRI(3, 1, 12, 9, 7, 14), skin, K); fill(TRI(25, 1, 16, 9, 21, 14), sd, K); fill(TRI(5, 4, 10, 10, 8, 12), C.salmon); fill(TRI(23, 4, 18, 10, 20, 12), C.magenta); }
+    if (kind === 'fin') { fill(TRI(10, 8, 18, 8, 14, 0), trim, K); fill(TRI(4, 10, 8, 15, 3, 18), sd, K); fill(TRI(24, 10, 20, 15, 25, 18), sd, K); }
+    if (kind === 'squid') for (let i = 0; i < 6; i++) {
+      const x0 = 7 + i * 3, len = 6 + (i % 2) * 2;
+      for (let j = 0; j < len; j++) { const x = x0 + Math.round(Math.sin(j * 0.8 + i)); pix(x - 1, 17 + j, K); pix(x, 17 + j, skin); pix(x + 1, 17 + j, sd); }
+    }
+    // shoulders, collar, neck
+    fill(RR(3, 21, 22, 8, 5, 0), (x, y) => y === 21 ? trim : x >= 19 ? rcrDk(suit) : suit, K);
+    pix(14, 24, trim); pix(13, 25, trim); pix(15, 25, trim);
+    if (kind !== 'squid') { rect(11, 18, 6, 4, K); rect(12, 18, 4, 4, sd); }
+    // head
+    if (kind === 'robo') {
+      fill(RR(6, 5, 16, 15, 3), (x, y) => y <= 6 ? sl : x >= 18 ? sd : skin, K);
+      rect(8, 10, 12, 4, K); rect(9, 11, 10, 2, rcrDk(eye)); rect(12, 11, 4, 2, eye); pix(13, 11, C.white);
+      vline(14, 1, 4, K); pix(14, 0, eye); for (let x = 9; x < 19; x += 3) pix(x, 16, C.gray);
+    } else {
+      const wide = kind === 'brute', rx = wide ? 9 : 7, ry = kind === 'squid' ? 8 : 6.5, cy = kind === 'squid' ? 11 : 13;
+      fill(EL(14, cy, rx, ry), (x, y) => (x + 0.5 - 14) * 0.6 + (y + 0.5 - cy) > 3 ? sd : skin, K);
+      for (const [x, y] of [[10, cy - 3], [16, cy - 4], [18, cy - 1]]) pix(x, y, sl);
+    }
+    // faces
+    const eyeAt = (x, y, r) => { if (r) { fill(EL(x + 0.5, y + 0.5, r, r), C.white, K); pix(x, y, eye); pix(x + 1, y, K); } else { rect(x - 1, y - 1, 3, 3, K); pix(x, y, eye); pix(x - 1, y - 1, C.white); } };
+    if (kind === 'stalk') {
+      for (const [x0, x1] of [[11, 7], [17, 21]]) { line(x0 - 1, 9, x1 - 1, 3, K); line(x0 + 1, 9, x1 + 1, 3, K); line(x0, 9, x1, 3, skin); }
+      eyeAt(7, 2, 2.6); eyeAt(20, 2, 2.6);
+    } else if (kind === 'tri') { eyeAt(10, 13); eyeAt(14, 10); eyeAt(18, 13); }
+    else if (kind === 'mono') { fill(EL(14.5, 12.5, 4, 3.6), C.white, K); fill(EL(14.5, 12.5, 2, 2), eye); pix(14, 12, K); pix(15, 12, K); pix(13, 11, C.white); }
+    else if (kind === 'hood') { rect(9, 12, 4, 1, eye); rect(16, 12, 4, 1, eye); pix(9, 12, C.white); }
+    else if (kind !== 'robo') { eyeAt(11, 13); eyeAt(17, 13); }
+    if (kind === 'dome') {
+      fill(AND(EL(14, 9, 8.5, 8), (x, y) => y <= 10), L.glass || C.cyan, K);
+      fill(AND(EL(14, 7, 5.5, 3.6), (x, y) => y <= 9), (x, y) => ((x * 3 + y * 5) % 7 === 0) ? C.white : (L.brain || C.salmon));
+      hline(6, 10, 17, C.lgray); for (const [x, y] of [[8, 5], [9, 4]]) pix(x, y, C.white);
+    }
+    if (kind === 'horn' || kind === 'brute') {
+      const hc = L.horn || C.sand, s = kind === 'brute' ? 0 : 1;
+      fill(TRI(7, 9 - s, 10, 8, 4, 1 + s * 2), hc, K); fill(TRI(21, 9 - s, 18, 8, 24, 1 + s * 2), rcrDk(hc), K);
+    }
+    if (kind === 'crystal') for (let i = 0; i < 5; i++) {
+      const x = 7 + i * 3.5, h = 6 + (i === 2 ? 3 : i % 2 ? 1 : 0);
+      fill(TRI(x - 2, 8, x + 2, 8, x, 8 - h), i % 2 ? (L.cape || C.cyan) : trim, K);
+    }
+    if (kind === 'fin') pix(14, 3, C.white);
+    // mouth: brutes bare their teeth, the rest grin or frown
+    if (kind === 'brute') { hline(10, 17, 9, K); pix(11, 16, C.white); pix(17, 16, C.white); }
+    else if (kind !== 'robo' && kind !== 'squid') { hline(12, 17, 5, K); pix(12, 16, K); pix(16, 16, K); }
+  });
+  for (const id in RIVAL_BY_ID) if (!PORTRAIT[id]) PORTRAIT[id] = bust(ALIEN_LOOKS[RIVAL_BY_ID[id].look] || ALIEN_LOOKS.r1);
 }
 
 // Imported PixelLab art is embedded by build.py, so the iOS game stays offline.
@@ -2923,6 +3012,21 @@ const SONGS = {
     lead: '0:A4:2 2:Bb4:2 4:C#5:4 8:D5:2 10:C#5:2 12:Bb4:2 14:A4:2 16:G4:2 18:A4:2 20:Bb4:4 24:A4:6 32:E5:2 34:D5:2 36:C#5:2 38:Bb4:2 40:C#5:4 44:A4:4 48:Bb4:2 50:A4:2 52:G4:2 54:F4:2 56:E4:4 60:A4:4',
     bass: '0:A1:2 4:A2:2 6:E2:2 8:A1:2 12:A2:2 16:A1:2 20:A2:2 24:G1:2 28:G2:2 32:A1:2 36:A2:2 38:E2:2 40:A1:2 44:A2:2 48:Bb1:2 52:Bb2:2 56:A1:2 60:E2:2',
     drums: { k: 'x...x...x...x...', h: 'x.x.x.x.x.x.x.x.', s: '....x.......x...' }
+  },
+  // Buz Halkası: bright B minor, bell-like lead over a steady eighth bass
+  buz: {
+    bpm: 132, len: 64,
+    lead: '0:F#5:2 2:D5:2 4:B4:2 6:D5:2 8:F#5:4 12:E5:4 16:D5:2 18:C#5:2 20:B4:2 22:C#5:2 24:D5:6 30:E5:2 32:G5:2 34:F#5:2 36:E5:2 38:D5:2 40:E5:4 44:C#5:4 48:D5:2 50:B4:2 52:A4:2 54:C#5:2 56:B4:8',
+    bass: '0:B1:2 2:B2:2 4:B1:2 6:B2:2 8:G1:2 10:G2:2 12:G1:2 14:G2:2 16:D2:2 18:D3:2 20:D2:2 22:D3:2 24:A1:2 26:A2:2 28:A1:2 30:A2:2 32:E2:2 34:E3:2 36:E2:2 38:E3:2 40:G1:2 42:G2:2 44:A1:2 46:A2:2 48:B1:2 50:B2:2 52:F#1:2 54:F#2:2 56:B1:2 58:B2:2 60:F#2:2 62:B2:2',
+    pad: '0:D4:7 16:F#4:7 32:G4:7 48:F#4:7',
+    drums: { k: 'x...x...x...x...', h: '..x...x...x...x.', s: '....x.......x...' }
+  },
+  // Kızıl Kum: phrygian desert run, syncopated kick
+  kum: {
+    bpm: 134, len: 64,
+    lead: '0:E5:2 2:F5:2 4:G#5:2 6:F5:2 8:E5:4 12:D5:2 14:E5:2 16:F5:2 18:E5:2 20:D5:2 22:C5:2 24:B4:4 28:C5:2 30:D5:2 32:E5:2 34:G#5:2 36:A5:2 38:G#5:2 40:F5:4 44:E5:4 48:F5:2 50:E5:2 52:D5:2 54:C5:2 56:B4:2 58:C5:2 60:E5:4',
+    bass: '0:E2:2 3:E2:1 4:E3:2 6:F2:2 8:E2:2 11:E2:1 12:D2:2 14:E2:2 16:F2:2 19:F2:1 20:F3:2 22:E2:2 24:E2:2 27:E2:1 28:D2:2 30:C2:2 32:E2:2 35:E2:1 36:E3:2 38:F2:2 40:F2:2 43:F2:1 44:E2:2 46:E3:2 48:D2:2 51:D2:1 52:C2:2 54:D2:2 56:E2:2 59:E2:1 60:B1:2 62:E2:2',
+    drums: { k: 'x..x..x.x..x..x.', h: '..x...x...x...xx', s: '....x.......x...' }
   },
   hipodrom: {
     bpm: 136, len: 64,
@@ -3216,21 +3320,40 @@ const REGIONS = [
   { id: 'orman', name: 'MANTAR AYI', song: 'orman', bpm: 128, speed: 1.08, dens: 1.18, rivals: [0.9, 0.95, 1.0, 1.05, 1.1], boss: 'kurt',
     grass: C.teal, grass2: C.ddgreen, grassD: C.navy, dirt: C.dgray, dirtD: C.slate, dirtL: C.gray, rail: C.magenta, post: C.purple, deco: 'forest', mud: true,
     foes: { karga: 1, domuz: 1.2, eskiya: 0.5, okcu: 0.45, kalkanli: 0.35 }, weather: { acik: 4, sis: 4, yagmur: 2 } },
-  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.16, dens: 1.35, rivals: [0.93, 0.98, 1.03, 1.08, 1.13], boss: 'simsek',
+  { id: 'buz', name: 'BUZ HALKASI', song: 'buz', bpm: 132, speed: 1.11, dens: 1.24, rivals: [0.91, 0.96, 1.0, 1.04, 1.08, 0.94, 0.98], boss: 'niva', tier: 1.5, field: 6,
+    grass: C.blue, grass2: C.navy, grassD: C.sky, dirt: C.gray, dirtD: C.dgray, dirtL: C.lgray, rail: C.white, post: C.cyan, deco: 'ice', mud: false,
+    foes: { karga: 1, domuz: 0.9, kalkanli: 0.6, okcu: 0.5, eskiya: 0.35 }, weather: { acik: 5, sis: 3, ruzgar: 2 } },
+  { id: 'kum', name: 'KIZIL KUM', song: 'kum', bpm: 134, speed: 1.14, dens: 1.3, rivals: [0.92, 0.97, 1.01, 1.05, 1.1, 0.95, 0.99], boss: 'zarg', tier: 2, field: 7,
+    grass: C.rust, grass2: C.dbrown, grassD: C.orange0, dirt: C.sand, dirtD: C.tan, dirtL: C.white, rail: C.orange, post: C.dbrown, deco: 'desert', mud: false,
+    foes: { karga: 0.8, domuz: 1.0, eskiya: 0.9, okcu: 0.7, kalkanli: 0.4 }, weather: { acik: 5, ruzgar: 4, sis: 1 } },
+  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.17, dens: 1.36, rivals: [0.93, 0.98, 1.03, 1.07, 1.12, 0.96, 1.0], boss: 'simsek', tier: 2.4, field: 7,
     grass: C.navy, grass2: C.slate, grassD: C.ink, dirt: C.orange0, dirtD: C.rust, dirtL: C.tan, rail: C.cyan, post: C.lgray, deco: 'stadium', mud: false, night: true,
     foes: { karga: 0.8, domuz: 0.8, eskiya: 1.0, okcu: 0.8, kalkanli: 0.5 }, weather: { acik: 6, yagmur: 3, ruzgar: 2 } }
 ];
+REGIONS[0].tier = 0; REGIONS[0].field = 5; REGIONS[1].tier = 1; REGIONS[1].field = 5;
+// v5 put two planets between Mantar Ayı and the arena: saves from v4 map their region index through this table
+const LAST_REGION = REGIONS.length - 1;
+const REGION_V4 = [0, 1, LAST_REGION];
+const regionIdx = id => REGIONS.findIndex(r => r.id === id);
+const BOSS_CRYSTALS = [10, 15, 18, 21, 25];
 const BOSSES = {
   pirlanta: { name: 'PRENS KRİSTALO', look: 'kristalo', drain: 2.0, attacks: ['mud', 'bale', 'karga'], attacks2: ['karga3', 'mud'], attacks3: ['mudrow', 'bale'], sig: 'kibir', color: C.magenta, title: 'LUMO\'NUN KİBİRLİ KRİSTAL PRENSİ' },
   kurt: { name: 'ULUYAN GORM', look: 'gorm', drain: 2.4, attacks: ['log', 'wolf', 'domuz'], attacks2: ['howl', 'wolf'], attacks3: ['stomp', 'domuz'], sig: 'uluma', color: C.green, title: 'MANTAR AYI\'NIN YENİLMEZİ' },
+  niva: { name: 'BUZ KRALİÇESİ NİVA', look: 'niva', drain: 2.5, attacks: ['icicle', 'karga', 'bale'], attacks2: ['icerow', 'icicle'], attacks3: ['icicle3', 'icerow'], sig: 'ayaz', color: C.cyan, title: 'BUZ HALKASI\'NIN SOĞUK HÜKÜMDARI' },
+  zarg: { name: 'KUM SOLUCANI ZARG', look: 'zarg', drain: 2.65, attacks: ['burrow', 'eskiya', 'domuz'], attacks2: ['sandwave', 'burrow', 'okcu'], attacks3: ['burrow2', 'sandwave'], sig: 'kum', color: C.orange, title: 'KIZIL KUM\'UN ÇÖL CANAVARI' },
   simsek: { name: 'VOLTRAK', horse: ['robot', 'voltrak'], drain: 2.8, attacks: ['bolt', 'bale', 'eskiya'], attacks2: ['bolt3', 'okcu'], attacks3: ['civirow', 'bolt3'], sig: 'hile', color: C.red, title: 'GRAX\'IN ROBOT ŞAMPİYONU' }
 };
-const RIVAL_LOOKS = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8'];
+const RIVAL_LOOKS = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12', 'r13', 'r14', 'r15', 'r16'];
+// named rivals per region (index = region). style: sondan / onde / itici / atici (shoots on the beat) / zikzak (cuts in)
 const NAMED_RIVALS = [
-  [{ id: 'glorb', name: 'GLORB', style: 'sondan', look: 'n5' }, { id: 'vuum', name: 'KIZIL VUUM', style: 'itici', look: 'n1' }],
-  [{ id: 'gece', name: 'GECE KANADI', style: 'onde', look: 'n6' }, { id: 'kiskac', name: 'DEMİR KISKAÇ', style: 'itici', look: 'n3' }],
-  [{ id: 'alev', name: 'ALEV KUYRUK', style: 'onde', look: 'n4' }, { id: 'golge', name: 'GRAX\'IN GÖLGESİ', style: 'sondan', look: 'n2' }]
+  [{ id: 'glorb', name: 'GLORB', style: 'sondan', look: 'n5' }, { id: 'vuum', name: 'KIZIL VUUM', style: 'itici', look: 'n1' }, { id: 'pip', name: 'PİP-PİP', style: 'zikzak', look: 'n7' }],
+  [{ id: 'gece', name: 'GECE KANADI', style: 'onde', look: 'n6' }, { id: 'kiskac', name: 'DEMİR KISKAÇ', style: 'itici', look: 'n3' }, { id: 'mantis', name: 'SİSLİ MANTİS', style: 'atici', look: 'n8' }],
+  [{ id: 'buzdis', name: 'BUZDİŞ', style: 'itici', look: 'n9' }, { id: 'aurora', name: 'AURORA', style: 'onde', look: 'n10' }, { id: 'kar', name: 'KAR TANESİ', style: 'zikzak', look: 'n14' }],
+  [{ id: 'tozkiran', name: 'TOZKIRAN', style: 'atici', look: 'n11' }, { id: 'zib', name: 'ÜÇ GÖZ ZİB', style: 'sondan', look: 'n12' }, { id: 'serap', name: 'SERAP', style: 'onde', look: 'n15' }],
+  [{ id: 'alev', name: 'ALEV KUYRUK', style: 'onde', look: 'n4' }, { id: 'golge', name: 'GRAX\'IN GÖLGESİ', style: 'sondan', look: 'n2' }, { id: 'nova', name: 'NOVA', style: 'zikzak', look: 'n13' }]
 ];
+const STYLE_COL = { itici: C.salmon, onde: C.sky, sondan: C.green, atici: C.gold, zikzak: C.magenta };
+const STYLE_TRICK = { atici: 'NİŞAN ALIR, "!" SONRA PLAZMA ATAR', zikzak: 'ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER' };
 const RIVAL_BY_ID = {};
 NAMED_RIVALS.forEach((list, reg) => list.forEach(r => { r.region = reg; RIVAL_BY_ID[r.id] = r; }));
 // Rakip dosyaları: a 1v1 duel win opens the rival's page in the logbook and their side of the story
@@ -3258,10 +3381,46 @@ const RIVAL_INFO = {
   golge: { race: 'GRAX\'IN İLK TUTSAĞI', home: 'BİLİNMİYOR', trick: 'SONDAN GELİR, SONDA ATAKLAR',
     taunt: 'BEN BU PİSTİN KENDİSİYİM.',
     lose: ['YİRMİ YIL ÖNCE BİR DÜNYALI DA BENİ BÖYLE GEÇMİŞTİ. AYNI GÖZLER.', 'ANNEN YAŞIYOR DENİZ. GRAX ONU HER GECE TRİBÜNE OTURTUYOR. KUPAYI AL.'],
-    text: 'GÖLGE, GRAX\'IN KAÇIRDIĞI İLK YARIŞÇI; ADINI KİMSE HATIRLAMIYOR. YİRMİ YIL ÖNCEKİ FİNALDE AKYEL\'İN YANINDA KOŞTU. IŞIKLAR SÖNMEDEN ÖNCE ONU ÖNDE GÖRDÜ. O GECEDEN BERİ GRAX İÇİN KOŞUYOR AMA ONA İNANMIYOR.' }
+    text: 'GÖLGE, GRAX\'IN KAÇIRDIĞI İLK YARIŞÇI; ADINI KİMSE HATIRLAMIYOR. YİRMİ YIL ÖNCEKİ FİNALDE AKYEL\'İN YANINDA KOŞTU. IŞIKLAR SÖNMEDEN ÖNCE ONU ÖNDE GÖRDÜ. O GECEDEN BERİ GRAX İÇİN KOŞUYOR AMA ONA İNANMIYOR.' },
+  pip: { race: 'MİNİK KUŞ HALKI', home: 'AĞAÇ GEZEGENİ TİRİ', trick: STYLE_TRICK.zikzak,
+    taunt: 'PİP! YAKALA BENİ YAKALAYABİLİRSEN!',
+    lose: ['PİP... SEN BENDEN BİLE HIZLI ŞERİT DEĞİŞTİRİYORSUN!', 'ANNEM HEP "UÇMAYI ÖĞREN" DERDİ. BEN KOŞMAYI SEÇTİM. SENİ GÖRÜNCE İYİ Kİ DEDİM.'],
+    text: 'PİP-PİP, TİRİ\'NİN DEV AĞAÇLARINDA YAŞAYAN MİNİK KUŞ HALKINDAN. HENÜZ UÇAMIYOR, O YÜZDEN DURMADAN KOŞUYOR. GRAX ONU "SEYİRCİ ŞİRİNLİK SEVER" DİYE KAFESİNE ATTI. HER YARIŞTA ŞERİTTEN ŞERİDE ZIPLIYOR, KİMSE ONU ÖNCEDEN TAHMİN EDEMİYOR.' },
+  mantis: { race: 'SİS ORMANI AVCISI', home: 'NEM GEZEGENİ HUMA', trick: STYLE_TRICK.atici,
+    taunt: 'SİSİN İÇİNDEN SENİ GÖRÜYORUM.',
+    lose: ['NİŞANIM HİÇ ŞAŞMAZDI. SEN RİTİMLE KAÇIYORSUN, BU ADİL DEĞİL... AMA GÜZEL.', 'HUMA\'DA YAĞMUR HİÇ DİNMEZ. KUPAYI ALIRSAN BİRAZ GÜNEŞ GETİR BANA.'],
+    text: 'SİSLİ MANTİS, HUMA\'NIN SİSLİ ORMANLARINDA AV PEŞİNDEN KOŞAN SABIRLI BİR AVCI. BİR VURUŞ BEKLER, NİŞAN ALIR, SONRA ATAR. GRAX ONA PLAZMA TÜFEĞİ VERDİ; O İSE SADECE ORMANINI ÖZLÜYOR.' },
+  buzdis: { race: 'BUZUL DEVİ', home: 'DONMUŞ AY GLASİ', trick: 'YANAŞIR, "!" SONRA OMUZ ATAR',
+    taunt: 'SOĞUK SENİ YAVAŞLATACAK DÜNYALI.',
+    lose: ['BUZUM ÇATLADI... BÖYLE SICAK BİR RİTİM HİÇ GÖRMEMİŞTİM.', 'GLASİ\'DE KARDEŞLERİM BENİ BEKLİYOR. HER KIŞ BİR HEYKEL YAPARLAR. BU KIŞ SENİNKİNİ YAPSINLAR.'],
+    text: 'BUZDİŞ, GLASİ AYININ DEV BUZUL HALKINDAN. ADIMLARI YAVAŞ AMA OMUZLARI DAĞ GİBİ. GRAX ONU BUZUN İÇİNDE UYURKEN BULDU VE UYANDIRDI. O GÜNDEN BERİ PİSTTE KİMSEYE YOL VERMİYOR.' },
+  aurora: { race: 'IŞIK SÜZÜCÜ', home: 'KUTUP GEZEGENİ LUMEN', trick: 'ÖNDE KAÇAR, MAYIN BIRAKIR',
+    taunt: 'IŞIĞIMI KOVALA, YETİŞEBİLİRSEN.',
+    lose: ['IŞIĞIMI GEÇTİN. GÖKYÜZÜ SANA DA RENK VERDİ DEMEK.', 'LUMEN\'DE GECELER YEŞİL PARLAR. SENİN DÜNYANDA DA ÖYLE Mİ?'],
+    text: 'AURORA, LUMEN\'İN KUTUP IŞIKLARINDAN DOĞAN BİR IŞIK SÜZÜCÜ. KOŞARKEN ARKASINDA RENKLİ BİR İZ BIRAKIR. GRAX ONU "EN GÜZEL YAYIN GÖRÜNTÜSÜ" DİYE TOPLADI; KANATLARI KAFESTE SOLUYOR.' },
+  kar: { race: 'KRİSTAL CİN', home: 'BUZ HALKASI', trick: STYLE_TRICK.zikzak,
+    taunt: 'HER KAR TANESİ FARKLIDIR. BEN EN HIZLISIYIM!',
+    lose: ['ERİDİM Mİ? HAYIR... SADECE BİRAZ UTANDIM.', 'NİVA KRALİÇE BENİ HER GECE DONDURUR, SABAH ÇÖZER. BİR GÜN SICAK BİR YERDE UYANMAK İSTİYORUM.'],
+    text: 'KAR TANESİ, BUZ HALKASI\'NIN KRİSTAL CİNLERİNDEN. NİVA\'NIN SARAYINDA DOĞDU, ONUN EMRİNDE KOŞUYOR. ŞERİT ŞERİT SÜZÜLÜR, ÖNÜNE GEÇİP SENİ YAVAŞLATMAYI SEVER. KİMSE ONUN GÜLDÜĞÜNÜ GÖRMEDİ.' },
+  tozkiran: { race: 'ÇÖL HAYDUDU', home: 'KIZIL KUM', trick: STYLE_TRICK.atici,
+    taunt: 'KUM GÖZÜNE KAÇMASIN DÜNYALI!',
+    lose: ['NİŞANIM KUMA GÖMÜLDÜ. SENİ VURAMADIM, HELAL OLSUN.', 'BİR ZAMANLAR KERVANLARI KORURDUM. GRAX BENİ HAYDUT YAPTI. BELKİ SEN BİZİ YENİDEN İYİ YAPARSIN.'],
+    text: 'TOZKIRAN, KIZIL KUM\'UN KERVAN YOLLARINI KORUYAN BİR MUHAFIZDI. ZARG ÇÖLÜ YUTUNCA GRAX\'IN ŞOVUNA SATILDI. ARTIK PİSTTE KUM KADAR SICAK PLAZMA ATIYOR, AMA HÂLÂ KERVAN ŞARKILARI MIRILDANIYOR.' },
+  zib: { race: 'ÜÇ GÖZLÜ TÜCCAR', home: 'PAZAR GEZEGENİ OBO', trick: 'SONDAN GELİR, SONDA ATAKLAR',
+    taunt: 'ÜÇ GÖZÜM VAR, ÜÇÜ DE KAZANMAMI GÖRÜYOR.',
+    lose: ['ÜÇ GÖZÜM DE AYNI ŞEYİ GÖRDÜ: SENİN SIRTINI.', 'MOKO BENİM KUZENİM. ONA SÖYLE, BORCUMU UNUTMADIM.'],
+    text: 'ZİB, OBO PAZARININ EN PAZARLIKÇI TÜCCARIYDI. GRAX\'LA BİR BAHSE GİRDİ VE KAYBETTİ; ŞİMDİ BORCUNU PİSTTE ÖDÜYOR. YARIŞI HEP SONA SAKLAR, ÇÜNKÜ "EN İYİ FİYAT SON ANDA ÇIKAR" DER.' },
+  serap: { race: 'SERAP RUHU', home: 'BİLİNMİYOR', trick: 'ÖNDE KAÇAR, MAYIN BIRAKIR',
+    taunt: 'GÖRDÜĞÜN BEN MİYİM, YOKSA SERAP MI?',
+    lose: ['DEMEK GERÇEKTİM. SEN DE ÖYLEYMİŞSİN.', 'ÇÖLDE BİR KAPI GÖRDÜM DENİZ. IŞIKLI BİR KAPI. SERAP DEĞİLDİ, EMİNİM.'],
+    text: 'SERAP, KIZIL KUM\'UN SICAĞINDA TİTREŞEN BİR RUH. KİMİ ONU GÖRDÜĞÜNÜ SANIR, KİMİ GÖRMEZ. GRAX BİLE ONU NASIL YAKALADIĞINI BİLMİYOR. ÖNDE KAÇAR VE ARKASINDA KUM MAYINLARI BIRAKIR.' },
+  nova: { race: 'YILDIZ ÇOCUĞU', home: 'SÖNMÜŞ YILDIZ VEGA-9', trick: STYLE_TRICK.zikzak,
+    taunt: 'BEN BİR YILDIZDAN DOĞDUM. SEN BİR ATTAN!',
+    lose: ['BİR AT BİR YILDIZI GEÇTİ. BUNU YILDIZLARA ANLATACAĞIM.', 'GRAX\'IN TAHTININ ARKASINDA BİR KAPI VAR. KUPA ONUN ANAHTARI. UNUTMA.'],
+    text: 'NOVA, SÖNEN BİR YILDIZIN SON IŞIĞINDAN DOĞDU. GRAX ONU ARENA\'NIN TAVANINDAN SARKITIR, SEYİRCİ YILDIZ GİBİ PARLADIĞINI SANSIN DİYE. HIZLI DÜŞÜNÜR, DAHA HIZLI ŞERİT DEĞİŞTİRİR.' }
 };
 const ETAP_INFO = {
-  sprint: { name: 'SPRİNT', short: 'İLK 3\'E GİR', icon: 'run' },
+  sprint: { name: 'SPRİNT', short: 'İLK SIRALARA GİR', icon: 'run' },
   parkur: { name: 'ENGEL PARKURU', tiny: 'PARKUR', short: 'HASARSIZ GEÇ', icon: 'shoe' },
   kovala: { name: 'KARA DELİK KAÇIŞI', tiny: 'KAÇIŞ', short: 'KARA DELİKTEN KAÇ', icon: 'swirl' },
   baskin: { name: 'KORSAN BASKINI', tiny: 'BASKIN', short: 'KORSANLARI VUR', icon: 'w_yay' },
@@ -3273,7 +3432,7 @@ const ETAP_INFO = {
   boss: { name: 'ŞAMPİYON YARIŞI', tiny: 'ŞAMPİYON', short: 'ŞAMPİYONU GEÇ', icon: 'crown' }
 };
 const ETAP_TIPS = {
-  sprint: 'İLK 3\'E GİR! RİTİMLE HIZLAN. RAKİBİN ARKASINDA KALIRSAN RÜZGAR SİPERİ DOLAR, SONRA YANA ÇIK.',
+  sprint: 'İLK SIRALARA GİR! RİTİMLE HIZLAN. RAKİBİN ARKASINDA KALIRSAN RÜZGAR SİPERİ DOLAR, SONRA YANA ÇIK.',
   parkur: 'ENGELLER SIK. ENGELE YAKLAŞINCA SIÇRA: TEMİZ ATLAYIŞ HIZ VERİR, ERKEN SIÇRARSAN SIYIRIRSIN. HASARSIZ BİTİRİRSEN ALTIN MADALYA.',
   kovala: 'KARA DELİK ARKANDA! YAVAŞLARSAN SENİ YUTAR. KOMBOYU KORU.',
   reyting: 'KIL PAYI, SOLLAMA, TEMİZ ATLAYIŞ VE KOMBO SEYİRCİYİ COŞTURUR. DOLUNCA SPONSOR HEDİYE ATAR; UZUN SÜRE SIFIRDA KALIRSAN GRAX METEOR YAĞDIRIR.',
@@ -3405,7 +3564,7 @@ const MEMORIES = [
     text: 'PRENS KRİSTALO YENİLİNCE KULAĞINA FISILDADI: "BEN DE KAÇIRILDIM. HEPİMİZ GRAX\'IN ŞOVUNDAYIZ." RAKİPLERİN DÜŞMAN DEĞİL, AYNI KAFESTEKİ KUŞLAR.' },
   { id: 5, title: 'YILDIZ ATLARI', hint: 'İKİLİ GÜÇ YA DA 12 GÜÇ AL', cond: () => META.stats.duos > 0 || META.stats.boons >= 12,
     text: 'TULPAR, KIRAT, SLEİPNİR, PEGASUS VE RÜZGAR KISRAĞI... DÜNYADAN BAKINCA BİRER TAKIMYILDIZ. BURADAN BAKINCA YILDIZ\'LA KONUŞAN DOSTLAR. ANNEN DE ONLARI DUYARMIŞ.' },
-  { id: 6, title: 'GRAX\'IN SIRRI', hint: 'GALAKSİ ARENASI\'NA ULAŞ', cond: () => META.stats.bestRegion >= 2,
+  { id: 6, title: 'GRAX\'IN SIRRI', hint: 'GALAKSİ ARENASI\'NA ULAŞ', cond: () => META.stats.bestRegion >= LAST_REGION,
     text: 'KUPA BİR ÖDÜL DEĞİL, BİR ANAHTAR: EVE GİDEN IŞINLANMA KAPISINI AÇIYOR. GRAX BU YÜZDEN KİMSENİN KAZANMASINA İZİN VERMİYOR. VOLTRAK\'IN TOYNAKLARINDAKİ KIVILCIMLAR: HİLE.' },
   { id: 7, title: 'EVE DÖNÜŞ', hint: 'GALAKSİ KUPASI\'NI KAZAN', cond: () => META.stats.wins > 0,
     text: 'KUPAYI KALDIRDIĞINDA KAPI AÇILDI. TRİBÜNDEN GRİ SAÇLI BİR KADIN İNDİ: AKYEL. YİRMİ YILDIR SENİ İZLİYORMUŞ. YILDIZ ONU HEMEN TANIDI. ARTIK HERKES İSTEDİĞİ YERDE KOŞABİLİR.' }
@@ -3460,7 +3619,11 @@ const STORY = [
   { id: 'winPirlanta', cond: () => META.stats.bossWins.pirlanta, lines: [['kemal', 'KRİSTALO\'YU GEÇEN DÜNYALIYI GÖRMEYE GELDİM. BEN KEMAL. BENİ DE YILLAR ÖNCE KAÇIRDILAR.'], ['grax', 'ŞANS ESERİ BİR GALİBİYET! SEYİRCİLER BAYILDI. AMA KUPA... ASLA SENİN OLMAYACAK.'], ['bip', 'BİP. GRAX GİTTİ. DENİZ, ONA GÖSTER.']] },
   { id: 'region2', cond: () => META.stats.bestRegion >= 1, lines: [['ayse', 'MANTAR AYI... ULUYAN GORM KİMSEYİ GEÇİRMEZMİŞ. KORSANLARA DA DİKKAT.']] },
   { id: 'winKurt', cond: () => META.stats.bossWins.kurt, lines: [['tayfun', 'VAY! GORM\'U GEÇTİN HA? BEN TAYFUN, DÖRT SEZONDUR BURADAYIM. BENİ DE TAKIMA AL!']] },
-  { id: 'region3', cond: () => META.stats.bestRegion >= 2, lines: [['bip', 'GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.']] },
+  { id: 'regionBuz', cond: () => META.stats.bestRegion >= 2, lines: [['tayfun', 'BUZ HALKASI! ORADA NİVA DİYE BİR KRALİÇE VARMIŞ, NEFESİYLE PİSTİ DONDURUYORMUŞ.'], ['bip', 'AYAZ GELİNCE ŞERİT DEĞİŞTİRMEK ZORLAŞIR. HAMLE YAP YA DA ALTIN NOTAYI VUR, BUZU KIR. BİP.']] },
+  { id: 'winNiva', cond: () => META.stats.bossWins.niva, lines: [['ayse', 'NİVA\'YI GEÇTİN! KRALİÇE BİLE ŞAŞIRDI, TAHTINDAN İNİP SENİ ALKIŞLADI.'], ['grax', 'BUZ ERİDİ DİYE SEVİNME DÜNYALI. ÇÖLDE SENİ KUM YUTACAK!']] },
+  { id: 'regionKum', cond: () => META.stats.bestRegion >= 3, lines: [['kemal', 'KIZIL KUM... ZARG DENEN SOLUCAN PİSTİN ALTINDAN ÇIKAR. KUMDA HALKA GÖRÜRSEN O ŞERİTTEN UZAKLAŞ.']] },
+  { id: 'winZarg', cond: () => META.stats.bossWins.zarg, lines: [['tayfun', 'SOLUCANI KUMA GÖMDÜN! ŞİMDİ SIRA VOLTRAK\'TA!'], ['bip', 'ARENA\'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.']] },
+  { id: 'region3', cond: () => META.stats.bestRegion >= LAST_REGION, lines: [['bip', 'GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.']] },
   { id: 'lostSimsek', cond: () => META.flags.lost_simsek, lines: [['kemal', 'VOLTRAK HİLE YAPMADAN KAZANAMAZ. SEN ONDAN HIZLISIN.']] },
   { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', 'KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!'], ['akyel', '...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.'], ['ayse', 'ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!']] }
 ];
@@ -3469,7 +3632,7 @@ const TIPS = [
   ['ayse', 'GÖKTAŞLARININ ÜSTÜNDEN SIÇRAYAMAZSIN, YANINDAN DOLAŞ.'],
   ['bip', 'KAPILARIN ÜSTÜNDEKİ İŞARETLERE BAK. ÖDÜLÜ SEN SEÇERSİN.'],
   ['ayse', 'GÖREV EKRANINA UĞRA, BİTEN GÖREVLER KRİSTAL VERİYOR!'],
-  ['bip', 'SPRİNTTE İLK ÜÇE GİREMEZSEN BİR CAN GİDER.'],
+  ['bip', 'SPRİNTTE İLK SIRALARA GİREMEZSEN BİR CAN GİDER. KALABALIK PİSTLERDE İLK 4 YETER.'],
   ['ayse', 'TEKNİK GÖSTERGESİ DOLUNCA ALTTAKİ DÜĞMEYE BAS.'],
   ['kemal', 'RAKİBİN ARKASINDA KALIRSAN SİPER DOLAR. YANA ÇIKINCA FIRLARSIN.'],
   ['tayfun', 'GÖKTAŞININ YANINDAN SON ANDA GEÇERSEN KIL PAYI SİKKESİ ALIRSIN!'],
@@ -3500,6 +3663,8 @@ const GRAX_LINES = {
   revenge: ['RÖVANŞ ALINDI! İNANILMAZ!', 'İNTİKAM SOĞUK YENİR, GALAKSİ!'],
   betWin: ['BAHSİ KAZANDI! MOKO AĞLIYOR!', 'KASA PATLADI!'],
   boss: ['ŞAMPİYON SAHNEDE! REKOR YAYIN!', 'İŞTE BÜYÜK KAPIŞMA!'],
+  rivalTrick: ['KİRLİ OYUN! SEYİRCİ BAYILIYOR!', 'BU HAMLEYİ GÖRDÜNÜZ MÜ?', 'KAÇABİLECEK Mİ?'],
+  dodge: ['ŞIK KAÇIŞ!', 'RAKİBİ BOŞA ÇIKARDI!', 'REFLEKSLERE BAK!'],
   kill: ['VUR GALAKSİ, VUR!', 'BİR KORSAN DAHA GİTTİ!']
 };
 const NEMESIS_TAUNTS = ['YİNE Mİ SEN?', 'BU SEFER DE GEÇEMEZSİN!', 'SENİ BEKLİYORDUM DÜNYALI.'];
@@ -3517,7 +3682,7 @@ for (const id in RIVAL_BY_ID) SPEAKERS[id] = RIVAL_BY_ID[id].name;
 const SAVE_KEY = 'dortnala_save_v1';
 function defaultMeta() {
   return {
-    v: 4, yonca: 0, rozet: 0, seker: 0, xp: 0, level: 1, points: 0,
+    v: 5, yonca: 0, rozet: 0, seker: 0, xp: 0, level: 1, points: 0,
     skills: {},
     blv: { ev: 1, ahir: 1, pano: 1, ambar: 0, silahhane: 0, nalbant: 0, tapinak: 0, jokey: 0, veteriner: 0, bahce: 0 },
     nals: { demir: true }, nal: 'demir', foods: {}, food: null, food2: null,
@@ -3570,6 +3735,22 @@ function loadMeta(hot) {
     if (META.keepsake === 'teyze') META.keepsake = 'bip'; else if (META.keepsake === 'hasan') META.keepsake = 'moko';
     if (META.flags.hasan) META.flags.moko = true;
     META.introDone = false; META.seen = {}; META.memRead = {}; META.runSave = null; META.v = 4;
+  }
+  // v5: two planets now sit between Mantar Ayı and the arena; move v4 region indices to their new place
+  if (obj && (obj.v || 0) < 5) {
+    const map = i => REGION_V4[clamp(i | 0, 0, REGION_V4.length - 1)];
+    META.stats.bestRegion = map(META.stats.bestRegion);
+    if (META.stats.bestProgress >= 10) META.stats.bestProgress += 10;
+    const rs = META.runSave;
+    if (rs) {
+      rs.region = map(rs.region);
+      for (const k of ['shopDone', 'restDone', 'kaosDone', 'eventCount', 'duelDone']) {
+        const o = rs[k]; if (!o) continue;
+        const n = {}; for (const r in o) n[map(+r)] = o[r]; rs[k] = n;
+      }
+      if (rs.diedIn && rs.diedIn.region != null) rs.diedIn.region = map(rs.diedIn.region);
+    }
+    META.v = 5;
   }
   fixCrops();
 }
@@ -3691,6 +3872,8 @@ function nextGoal() {
     if (lv >= 1 && lv < b.max) return { text: b.name + ' SEVİYE ' + (lv + 1), target: k, cur: META.yonca, need: b.up[lv], icon: 'hammer' };
   }
   if (!META.stats.bossWins.kurt) return { text: 'ULUYAN GORM\'U YEN', target: 'gate', icon: 'crown' };
+  if (!META.stats.bossWins.niva) return { text: 'BUZ KRALİÇESİ NİVA\'YI YEN', target: 'gate', icon: 'crown' };
+  if (!META.stats.bossWins.zarg) return { text: 'KUM SOLUCANI ZARG\'I YEN', target: 'gate', icon: 'crown' };
   if (!META.stats.wins) return { text: 'GALAKSİ KUPASINI KAZAN', target: 'gate', icon: 'crown' };
   return { text: 'ZOR PİSTTE KUPAYI KAZAN', target: 'gate', icon: 'crown' };
 }
@@ -3971,10 +4154,10 @@ SCENES.run = {
     RUN.hp = Math.min(RUN.hp, S.maxHp);
     this.layout();
     const lenBase = { sprint: 3400, parkur: 3000, kovala: 3600, baskin: 3300, duello: 3200 };
-    this.length = this.type === 'boss' ? 1e9 : lenBase[this.type] + RUN.region * 300;
+    this.length = this.type === 'boss' ? 1e9 : lenBase[this.type] + Math.round(this.reg.tier * 260);
     this.tut = node.tutorial ? { step: 0, t: 0, hits: 0, msg: null, msgT: 0 } : null;
     if (this.tut) this.length = 4300;
-    this.goal = this.type === 'baskin' ? 10 + RUN.region + (this.elite ? 3 : 0) : 0;
+    this.goal = this.type === 'baskin' ? 10 + Math.round(this.reg.tier) + (this.elite ? 3 : 0) : 0;
     this.kills = 0;
     const lx = this.laneX(2);
     this.P = {
@@ -4063,17 +4246,21 @@ SCENES.run = {
   gainNefes(n) { this.nefes = Math.min(100, this.nefes + n * this.S.nefesGain * (RUN.runStyle === 'dengeli' ? 1.2 : 1)); },
 
   // ---------- setup helpers ----------
+  // how many places count as a pass: crowded fields (8 racers) let the top 4 through
+  passRank() { return (this.rivals.length >= 7 ? 4 : 3) + (this.S.assist > 0 ? 1 : 0); },
   spawnRivals() {
-    const speeds = this.reg.rivals.slice().sort((a, b) => b - a);
+    const field = clamp(this.reg.field || 5, 5, 7);
+    const speeds = this.reg.rivals.slice(0, field).sort((a, b) => b - a);
+    while (speeds.length < field) speeds.push(1);
     const looks = R.shuffle(RIVAL_LOOKS.slice());
-    const starts = [[0, 36], [1, 64], [3, 50], [4, 20], [2, -46]];
+    const starts = [[0, 36], [1, 64], [3, 50], [4, 20], [2, -46], [1, -22], [3, -64]].slice(0, field);
     const pool = (NAMED_RIVALS[RUN.region] || []).slice(), nemId = META.nemesis && META.nemesis.id;
-    const named = R.shuffle(pool.slice()).slice(0, RUN.etap >= 2 ? 2 : 1);
+    const named = R.shuffle(pool.slice()).slice(0, RUN.etap >= 3 ? 3 : RUN.etap >= 1 ? 2 : 1);
     if (nemId && pool.some(p => p.id === nemId) && !named.some(p => p.id === nemId)) named[0] = pool.find(p => p.id === nemId);
     const rest = R.shuffle(speeds.slice(named.length));
     const hc = this.S.rivalHandicap || 0;
-    const order = R.shuffle([0, 1, 2, 3, 4]);
-    for (let i = 0; i < 5; i++) {
+    const order = R.shuffle(starts.map((_, i) => i));
+    for (let i = 0; i < field; i++) {
       const [lane, d] = starts[order[i]];
       const def = named[i] || null;
       const spd = (def ? speeds[i] : rest[i - named.length]) * HEATS[RUN.heat].mult * (this.elite ? 1.04 : 1);
@@ -4200,7 +4387,7 @@ SCENES.run = {
     }
   },
   placePattern(y, ph) {
-    const d = RUN.region + RUN.etap * 0.3, S = this.S;
+    const d = this.reg.tier + RUN.etap * 0.3, S = this.S;
     const wet = this.weather === 'yagmur';
     const foeW = (this.type === 'sprint' ? 0.5 : this.type === 'baskin' ? 0.6 : this.type === 'duello' ? 0.35 : 1.0) * S.moreFoes * (this.elite ? 1.5 : 1);
     let pats;
@@ -4208,7 +4395,7 @@ SCENES.run = {
     else if (ph === 'warm') pats = [['rock1', 2], ['hurdle1', 2], ['coins', 2.5], ['puddle', wet ? 2.5 : 1], ['foe', foeW * 0.4]];
     else pats = [['rock1', 3], ['rock2', 1.4 + d], ['hurdle1', 3], ['hurdleLine', y > 700 ? 0.7 + d * 0.35 : 0], ['log', 2], ['puddle', wet ? 3 : 1.5],
       ['wall', d >= 1 ? 0.5 + d * 0.4 : 0], ['coins', ph === 'final' ? 3.2 : 2.2], ['coinArc', 1.5], ['fici', 0.8 + d * 0.2], ['foe', foeW * 1.4], ['foe2', ph === 'chal2' ? foeW * 0.6 : 0],
-      ['rgate', this.allowGate && ph !== 'final' && y - this.lastGateY > 800 ? 1.1 : 0], ['scan', this.allowScan && y - this.lastScanY > 520 ? 1.2 + d * 0.3 : 0]];
+      ['rgate', this.allowGate && ph !== 'final' && y - this.lastGateY > 800 ? 1.1 : 0], ['scan', this.allowScan && y - this.lastScanY > 520 && !this.nearSolid(y, 80) ? 1.2 + d * 0.3 : 0]];
     let tot = 0; for (const p of pats) tot += p[1];
     let r = rnd() * tot, pick = pats[0][0];
     for (const p of pats) { r -= p[1]; if (r <= 0) { pick = p[0]; break; } }
@@ -4216,17 +4403,27 @@ SCENES.run = {
     const coinLine = (lane, y0, n) => { for (let i = 0; i < n; i++) this.addObs('coin', lane, 1, y0 + i * 14); };
     let extra = 0;
     switch (pick) {
-      case 'rock1': this.addObs('rock', L, 1, y, { v: R.i(0, 1) }); if (R.chance(0.45)) coinLine((L + R.i(1, 4)) % 5, y - 20, 5); break;
-      case 'rock2': { const L2 = (L + R.i(1, 4)) % 5; this.addObs('rock', L, 1, y, { v: 1 }); this.addObs('rock', L2, 1, y + R.i(0, 1) * 30, { v: 0 }); break; }
+      case 'rock1': {
+        const lanes = [L].concat(R.shuffle([0, 1, 2, 3, 4].filter(l => l !== L)));
+        const ok = lanes.find(l => this.tryRocks([{ lane: l, y, v: R.i(0, 1) }]));
+        if (ok != null && R.chance(0.45)) coinLine((ok + R.i(1, 4)) % 5, y - 20, 5); else if (ok == null) coinLine(L, y - 30, 5);
+        break;
+      }
+      case 'rock2': { const L2 = (L + R.i(1, 4)) % 5; if (!this.tryRocks([{ lane: L, y, v: 1 }, { lane: L2, y: y + R.i(0, 1) * 30 }])) this.tryRocks([{ lane: L, y, v: 1 }]); break; }
       case 'hurdle1': { const sp = (L < 4 && R.chance(0.45)) ? 2 : 1; this.addObs('hurdle', L, sp, y); break; }
       case 'hurdleLine': this.addObs('hurdle', 0, 5, y); for (let i = 0; i < 3; i++) this.addObs('coin', R.i(0, 4), 1, y - 4 + i * 2); break;
       case 'log': { const sp = R.i(2, 3); const l0 = R.i(0, 5 - sp); this.addObs('log', l0, sp, y); break; }
       case 'puddle': this.addObs('puddle', L, 1, y, { mud: this.reg.mud }); if (R.chance(wet ? 0.7 : 0.4)) this.addObs('puddle', (L + 2) % 5, 1, y + 30, { mud: this.reg.mud }); break;
-      case 'wall': { const gapL = R.i(0, 4); for (let i = 0; i < 5; i++) if (i !== gapL) this.addObs('rock', i, 1, y, { v: i % 2 }); coinLine(gapL, y - 28, 4); extra = 50; break; }
+      case 'wall': {
+        // one gap; the generator only keeps a gap the horse can actually reach from the rows before it
+        const gapL = [L].concat(R.shuffle([0, 1, 2, 3, 4].filter(l => l !== L))).find(gl => this.tryRocks([0, 1, 2, 3, 4].filter(i => i !== gl).map(i => ({ lane: i, y, v: i % 2 }))));
+        if (gapL != null) { coinLine(gapL, y - 28, 4); extra = 50; } else coinLine(L, y - 30, 7);
+        break;
+      }
       case 'coins': coinLine(L, y - 30, 7); break;
       case 'coinArc': this.addObs('hurdle', L, 1, y); this.addObs('coin', L, 1, y - 14); this.addObs('coin', L, 1, y); this.addObs('coin', L, 1, y + 14); break;
       case 'coinRain': for (let i = 0; i < 10; i++) this.addObs('coin', R.i(0, 4), 1, y + i * 12); break;
-      case 'fici': this.addObs('fici', L, 1, y, { hp: 2 }); coinLine(L, y + 18, 3); break;
+      case 'fici': if (this.tryRocks([{ kind: 'fici', lane: L, y, extra: { hp: 2 } }])) coinLine(L, y + 18, 3); else coinLine(L, y - 30, 5); break;
       case 'foe': this.spawnFoeAt(y); break;
       case 'foe2': this.spawnFoeAt(y); this.spawnFoeAt(y + 46); break;
       case 'rgate': this.addObs('rgate', 0, 5, y, { need: 2, charge: 0, open: false, armed: false, openT: 0 }); this.lastGateY = y; coinLine(L, y + 26, 4); extra = 60; break;
@@ -4242,7 +4439,7 @@ SCENES.run = {
   barPattern(bar) {
     if (this.tut) return 'nnnn';
     const ph = this.type === 'boss' ? 'chal' : this.phaseAt(this.P.dist + 220);
-    const lvl = RUN.region + (RUN.heat || 0) * 0.5 + (this.elite ? 0.5 : 0);
+    const lvl = this.reg.tier + (RUN.heat || 0) * 0.5 + (this.elite ? 0.5 : 0);
     let pool;
     if (bar === 0) pool = NOTE_POOLS.basic;
     else if (this.allowH && this.nefes < 35 && rnd() < 0.35) pool = NOTE_POOLS.breath;
@@ -4411,6 +4608,7 @@ SCENES.run = {
     if (S.hamleStars) this.starBurst(S.hamleStars);
     if (S.hamleShield && !this.hamleShieldUsed) { this.hamleShieldUsed = true; P.shield++; floatText('+KALKAN', P.x, this.pY - 30, C.gold, 1, -12, 0.8); }
     if (this.boss && this.boss.taunt > 0) this.breakTaunt();
+    if (this.frost > 0) this.breakFrost();
   },
   useAbility() {
     if (this.bond < 100 || this.state !== 'run' || this.paused) return;
@@ -4498,6 +4696,7 @@ SCENES.run = {
     if (S.starDust && this.combo % 30 === 0 && RUN.hp < S.maxHp) { RUN.hp++; floatText('+1 CAN', P.x, this.pY - 22, C.red); Sound.play('heart'); }
     if (this.tut && this.tut.step === 3) this.tut.hits++;
     if (tg.kind === 'a' && perfect && this.boss && this.boss.taunt > 0) this.breakTaunt();
+    if (tg.kind === 'a' && perfect && this.frost > 0) this.breakFrost();
   },
   finishHold(auto) {
     const h = this.hold; if (!h) return;
@@ -4689,7 +4888,7 @@ SCENES.run = {
     for (const f of this.foes) if (!f.dead) { if (f.kind === 'okcu') this.okcuBeat(f, b); else if (f.kind === 'kalkanli') this.guardBeat(f, b); }
     if (this.reis && !this.reis.dead) this.reisBeat(b);
     if (this.boss && !this.boss.won) this.bossBeat(b);
-    if (this.duel) this.duelBeat(b);
+    if (this.duel) this.duelBeat(b); else if (this.rivals.length) this.rivalBeat(b);
     this.scanBeat();
   },
   // the duel rival acts on the beat: it shows its move one beat ahead ("!"), so the music warns you
@@ -4706,6 +4905,10 @@ SCENES.run = {
     } else if (r.style === 'sondan' && this.finalStretch && !D.surged) {
       D.surged = 1; D.surgeT = 3.2; D.nextTrick = b + 8;
       this.banner = { txt: r.name + ' ATAĞA KALKTI!', col: C.salmon }; this.bannerT = 1.6; Sound.play('roar');
+    } else if (r.style === 'atici' && gap > 40 && gap < 220 && r.laneT >= 1 && P.dist < this.length * 0.94) {
+      D.tele = { kind: 'shot', lane: P.lane }; D.nextTrick = b + 5; Sound.play('warn');
+    } else if (r.style === 'zikzak' && gap > 6 && gap < 64 && Math.abs(r.lane - P.lane) === 1 && r.laneT >= 1 && this.laneFree(P.lane, r.dist, r)) {
+      D.tele = { kind: 'cut', lane: P.lane }; D.nextTrick = b + 4; Sound.play('hey');
     } else if (gap > 6 && gap < 55 && Math.abs(r.lane - P.lane) === 1 && r.laneT >= 1 && D.blockCd <= 0 && this.laneFree(P.lane, r.dist, r)) {
       // cuts in front of you: go around it (being behind it still fills your draft)
       r.fromX = r.x; r.lane = P.lane; r.laneT = 0; r.cool = 1; D.blockCd = 3.5; D.nextTrick = b + 4;
@@ -4724,11 +4927,7 @@ SCENES.run = {
           floatText('İTTİ!', P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(3, 0.16); haptic('medium');
         }
       } else { r.stun = 0.8; floatText('BOŞA ÇIKTI!', r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.8); Sound.play('whoosh'); this.addBond(4); this.rate(6); }
-    } else if (t.kind === 'drop') {
-      const kind = rnd() < 0.5 ? 'civi' : 'puddle';
-      this.addObs(kind, r.lane, 1, r.dist - 22, kind === 'puddle' ? { mud: this.reg.mud } : null);
-      floatText(kind === 'civi' ? 'MAYIN!' : 'JÖLE!', r.x, this.sy(r.dist) + 2, C.salmon, 1, -6, 0.8); Sound.play('pebble');
-    }
+    } else this.rivalAct(r, t);
   },
   updateLayer() {
     let L = this.combo >= 20 ? 3 : this.combo >= 10 ? 2 : this.combo >= 4 ? 1 : 0;
@@ -4862,7 +5061,8 @@ SCENES.run = {
     const dec = k => { if (P[k] > 0) P[k] = Math.max(0, P[k] - dt); };
     ['invuln', 'slowT', 'hamleT', 'hamleCd', 'abilityT', 'laneInv', 'floatT', 'landInv', 'landBoostT', 'laneBoostT', 'flyT', 'ghostsT', 'stormT', 'slingT', 'jumpBuf', 'cleanT'].forEach(dec);
     if (this.fogT > 0) this.fogT -= dt;
-    if (P.laneT < 1) { P.laneT = Math.min(1, P.laneT + dt / S.laneTime); P.x = lerp(P.fromX, this.laneX(P.lane), Ease.outQuad(P.laneT)); }
+    if (this.frost > 0) this.frost -= dt;
+    if (P.laneT < 1) { P.laneT = Math.min(1, P.laneT + dt / (S.laneTime * (this.frost > 0 ? 1.8 : 1))); P.x = lerp(P.fromX, this.laneX(P.lane), Ease.outQuad(P.laneT)); }
     else P.x = this.laneX(P.lane) + (P.bounce ? P.bounce * 3 * Math.sin(Math.min(1, Math.abs(P.bounce)) * Math.PI) : 0);
     if (P.bounce) { P.bounce *= 0.8; if (Math.abs(P.bounce) < 0.05) P.bounce = 0; }
     if (P.jumping) {
@@ -4896,7 +5096,7 @@ SCENES.run = {
     if (this.state === 'run') this.updateBends();
     if (this.type === 'baskin' && this.state === 'run' && P.dist < this.length - 260) {
       this.foeTimer -= dt;
-      if (this.foeTimer <= 0) { this.foeTimer = R.f(0.85, 1.4) / (S.moreFoes * (this.elite ? 1.3 : 1) * (1 + 0.12 * RUN.region)); this.spawnFoeAt(P.dist + this.pY + 30); }
+      if (this.foeTimer <= 0) { this.foeTimer = R.f(0.85, 1.4) / (S.moreFoes * (this.elite ? 1.3 : 1) * (1 + 0.12 * this.reg.tier)); this.spawnFoeAt(P.dist + this.pY + 30); }
       if (!this.reisDone && P.dist > this.length * 0.5) this.spawnReis();
     }
     this.updateObs(dt);
@@ -5067,13 +5267,20 @@ SCENES.run = {
       const bd = this.bendAt(r.dist + 60);
       if (bd && r.cool <= 0 && r.laneT >= 1 && !ob) { const nl = r.lane + (bd < 0 ? -1 : 1); if (nl >= 0 && nl <= 4 && this.laneFree(nl, r.dist, r)) { r.fromX = r.x; r.lane = nl; r.laneT = 0; r.cool = 1.4; } }
       for (const o of this.obs) if (!o.dead && (SOLID[o.kind] || o.kind === 'scan') && o.lane === r.lane && Math.abs(o.y - r.dist) < 5 && !o.rivalHit) { o.rivalHit = true; r.stun = 0.8; }
-      if (r.style === 'itici' && !r.duel && r.pushCd <= 0 && r.laneT >= 1 && r.stun <= 0 && this.state === 'run' && Math.abs(r.lane - P.lane) === 1 && Math.abs(r.dist - P.dist) < 12 && P.flyT <= 0) {
-        r.pushCd = R.f(3, 5);
-        if (this.S.shoulder) this.pushRival(r, r.lane - P.lane);
-        else {
-          P.slowT = 0.45; P.slowAmt = 0.25 * (1 - Math.min(0.8, this.S.slowResist)); P.bounce = r.lane < P.lane ? 1 : -1;
-          floatText('İTTİ!', P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(2, 0.12); haptic('light');
+      // shoulder barge: a short "!" warning first, so a quick lane change (or a jump) dodges it
+      if (r.pushWarn > 0) {
+        r.pushWarn -= dt;
+        if (r.pushWarn <= 0) {
+          if (this.state === 'run' && r.stun <= 0 && Math.abs(r.lane - P.lane) === 1 && Math.abs(r.dist - P.dist) < 16 && P.flyT <= 0 && !P.jumping && !this.invulnerable()) {
+            if (this.S.shoulder) this.pushRival(r, r.lane - P.lane);
+            else {
+              P.slowT = 0.45; P.slowAmt = 0.25 * (1 - Math.min(0.8, this.S.slowResist)); P.bounce = r.lane < P.lane ? 1 : -1;
+              floatText('İTTİ!', P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(2, 0.12); haptic('light');
+            }
+          } else if (this.state === 'run') { floatText('BOŞA ÇIKTI!', r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.7); this.rate(4); }
         }
+      } else if (r.style === 'itici' && !r.duel && r.pushCd <= 0 && r.laneT >= 1 && r.stun <= 0 && this.state === 'run' && Math.abs(r.lane - P.lane) === 1 && Math.abs(r.dist - P.dist) < 12 && P.flyT <= 0) {
+        r.pushCd = R.f(3, 5); r.pushWarn = 0.42; Sound.play('hey');
       }
       let front = null;
       if (P.lane === r.lane && P.dist > r.dist && P.dist - r.dist < 17) front = P.speed;
@@ -5181,16 +5388,25 @@ Object.assign(SCENES.run, {
         } else if (reg.deco === 'forest') {
           if (h > 0.6 && h < 0.63) spr(OB.tuftD, x + 2, sy);
           else if (h > 0.45 && h < 0.46) spr(OB.mushroom, x + 2, sy);
+        } else if (reg.deco === 'ice') {
+          if (h > 0.6 && h < 0.625) spr(OB.flake, x + 2, sy);
+          else if (h > 0.45 && h < 0.46) spr(OB.iceShard, x + 2, sy);
+        } else if (reg.deco === 'desert') {
+          if (h > 0.6 && h < 0.618) spr(OB.dune, x, sy);
+          else if (h > 0.45 && h < 0.455) spr(OB.ribs, x, sy);
         }
       }
     }
-    if (reg.deco === 'forest' || reg.deco === 'meadow') {
+    if (reg.deco === 'forest' || reg.deco === 'meadow' || reg.deco === 'ice' || reg.deco === 'desert') {
       const step = 26; const s0 = Math.floor(botWorld / step), s1 = Math.ceil(topWorld / step);
       for (let s = s0; s <= s1; s++) for (const side of [0, 1]) {
         const h = hash2(s * 7 + side, 991);
         const sy = Math.round(this.sy(s * step)) + oy, o = this.offY(sy) + ox;
         if (reg.deco === 'forest') {
           if (h < 0.75) { const img = h < 0.4 ? OB.tree : OB.pine; const x = side ? tx + tw + 4 + (h * 20 | 0) % Math.max(1, W - tx - tw - 10) - 2 : tx - 4 - img.width - ((h * 20) | 0) % Math.max(1, tx - 6) + 4; spr(img, x + o, sy - img.height); }
+        } else if (reg.deco === 'ice' || reg.deco === 'desert') {
+          const img = reg.deco === 'ice' ? (h < 0.22 ? OB.iceSpire : h < 0.3 ? OB.iceShard : null) : (h < 0.16 ? OB.cactus : h < 0.24 ? OB.sandRock : null);
+          if (img) { const x = side ? tx + tw + 5 + ((h * 90) | 0) % Math.max(1, W - tx - tw - img.width - 6) : ((h * 90) | 0) % Math.max(1, tx - img.width - 5); spr(img, x + o, sy - img.height); }
         } else if (h < 0.16) { const x = side ? tx + tw + 6 + ((h * 90) | 0) % Math.max(1, W - tx - tw - 16) : ((h * 90) | 0) % Math.max(1, tx - 16); spr(OB.bush, x + o, sy - 6); }
       }
     }
@@ -5295,11 +5511,12 @@ Object.assign(SCENES.run, {
         const r = it.r, o = this.offY(it.y) + ox; const fr = Math.floor(this.time * 10 * r.spd + r.phase) % 4;
         this.drawHorse(r.set, r.x + o, it.y + oy, fr, r.jumping, r.jumping ? r.jumpT / 0.5 : 0, r.stun > 0 && Math.floor(T * 10) % 2 === 0);
         if (r.name && !r.done) {
-          const c = r.nem ? C.red : r.style === 'itici' ? C.salmon : r.style === 'onde' ? C.sky : C.green;
+          const c = r.nem ? C.red : STYLE_COL[r.style] || C.green;
           textO(r.name, r.x + o, it.y + oy - 24, c, 'center');
           if (r.nem) { spr(tinted('crown', C.red), r.x + o - 5, it.y + oy - 33); if (this.nemTaunt && !r.duel && (this.state === 'intro' || this.nemTaunt.t > 0)) this.speech(this.nemTaunt.txt, r.x + o, it.y + oy - 36); }
         }
         if (r.duel && this.duel && !r.done) this.drawDuelMarks(r, r.x + o, it.y + oy);
+        else if (!r.done) { this.drawRivalTele(r, r.x + o, it.y + oy); if (r.pushWarn > 0 && Math.floor(T * 12) % 2 === 0) { textO('!', r.x + o, it.y + oy - 34, C.red, 'center', 2); textO(r.lane < this.P.lane ? '→' : '←', r.x + o + (r.lane < this.P.lane ? 12 : -12), it.y + oy - 4, C.red, 'center'); } }
       } else if (it.b) this.drawBoss(it.b, ox + this.offY(it.y), oy);
       else if (it.p) this.drawPlayer(ox, oy, gallop);
     }
@@ -5313,8 +5530,8 @@ Object.assign(SCENES.run, {
     if (D.surgeT > 0) { g.globalAlpha = 0.35 + 0.2 * Math.sin(T * 20); ellipse(x, y, 10, 14, C.salmon); g.globalAlpha = 1; }
     if (D.tele && Math.floor(T * 10) % 2 === 0) {
       textO('!', x, y - 36, C.red, 'center', 2);
-      if (D.tele.kind === 'push') textO(D.tele.lane < r.lane ? '←' : '→', x + (D.tele.lane < r.lane ? -12 : 12), y - 4, C.red, 'center');
-      else textO('↓', x, y + 14, C.red, 'center');
+      if (D.tele.kind === 'push' || D.tele.kind === 'cut') textO(D.tele.lane < r.lane ? '←' : '→', x + (D.tele.lane < r.lane ? -12 : 12), y - 4, C.red, 'center');
+      else if (D.tele.kind === 'drop') textO('↓', x, y + 14, C.red, 'center');
     }
     const tt = D.tauntTxt || D.info.taunt;
     if ((this.state === 'intro' || D.tauntT > 0) && tt) this.speech(tt, x, y - (r.nem ? 40 : 34));
@@ -5400,7 +5617,7 @@ Object.assign(SCENES.run, {
     const x0 = this.laneL(o.lane) + ox; sy = Math.round(sy) + oy;
     const lw = this.laneW;
     switch (o.kind) {
-      case 'rock': { const img = o.v ? OB.rock2 : (this.reg.deco === 'forest' ? OB.mossrock : OB.rock); g.globalAlpha = 0.3; ellipse(x0 + lw / 2, sy + 4, 7, 2, C.ink); g.globalAlpha = 1; spr(img, x0 + lw / 2 - img.width / 2, sy - img.height + 4); break; }
+      case 'rock': { const img = o.ice ? OB.rock2 : o.kum || this.reg.deco === 'desert' ? OB.sandRock : o.v ? OB.rock2 : (this.reg.deco === 'forest' ? OB.mossrock : OB.rock); g.globalAlpha = 0.3; ellipse(x0 + lw / 2, sy + 4, 7, 2, C.ink); g.globalAlpha = 1; spr(img, x0 + lw / 2 - img.width / 2, sy - img.height + 4); break; }
       case 'hurdle': { for (let i = 0; i < o.span; i++) { const img = hurdleSprite(lw - 4); spr(img, x0 + i * lw + 2, sy - 5); } break; }
       case 'log': { const img = logSprite(o.span * lw - 4); spr(img, x0 + 2, sy - 5); break; }
       case 'puddle': { const img = puddleSprite(lw - 4, o.mud); spr(img, x0 + 2, sy - 5); break; }
@@ -5477,6 +5694,10 @@ Object.assign(SCENES.run, {
     };
     for (const f of this.foes) if (!f.dead && f.kind === 'okcu' && f.aim) tele(f.aimLane, this.sy(f.dist));
     if (this.reis && !this.reis.dead && this.reis.aimLanes) for (const l of this.reis.aimLanes) tele(l, this.sy(this.reis.dist));
+    for (const r of this.rivals) {
+      const t = r.duel && this.duel ? this.duel.tele : r.tele;
+      if (t && t.kind === 'shot' && !r.done) tele(t.lane, this.sy(r.dist));
+    }
     for (const s of this.eShots) {
       const sy = Math.round(this.sy(s.dist)) + oy; if (sy < -10 || sy > H + 10) continue;
       const x = Math.round(s.x) + this.offY(sy) + ox, img = PROJ.earrow;
@@ -5552,15 +5773,16 @@ Object.assign(SCENES.run, {
       const lw = this.laneW, xc = this.laneL(b.lane) + lw / 2 + ox;
       if (b.strike > 0) {
         g.globalAlpha = 0.8;
-        for (let y = 0; y < this.pY + 12; y += 6) { const o = this.offY(y); rect(xc - 2 + o, y, 4, 6, C.white); rect(xc - 1 + o, y, 2, 6, C.yellow); }
+        for (let y = 0; y < this.pY + 12; y += 6) { const o = this.offY(y); rect(xc - 2 + o, y, 4, 6, C.white); rect(xc - 1 + o, y, 2, 6, b.ice ? C.cyan : C.yellow); }
         g.globalAlpha = 1;
         burst(xc, this.pY + 10, 2, [C.yellow, C.white], 60, 0.3);
       } else {
         const on = Math.floor(T * 12) % 2 === 0;
         g.globalAlpha = on ? 0.35 : 0.18;
-        for (let y = this.pY - 70; y < this.pY + 20; y += 5) rect(xc - lw / 2 + 1 + this.offY(y), y + oy, lw - 2, 5, C.red);
+        for (let y = this.pY - 70; y < this.pY + 20; y += 5) rect(xc - lw / 2 + 1 + this.offY(y), y + oy, lw - 2, 5, b.ice ? C.sky : C.red);
         g.globalAlpha = 1;
-        spr(ICONS.bolt, xc - 3 + this.offY(this.pY - 80), this.pY - 80 + oy);
+        if (b.ice) { const ix = xc + this.offY(this.pY - 80), iy = this.pY - 84 + oy + Math.round((1 - b.t) * 6); spr(OB.iceShard, ix - 1, iy); spr(OB.flake, ix - 1, iy - 5); }
+        else spr(ICONS.bolt, xc - 3 + this.offY(this.pY - 80), this.pY - 80 + oy);
       }
     }
   },
@@ -5611,7 +5833,7 @@ Object.assign(SCENES.run, {
       if (this.elite) spr(ICONS.skull, bx + bw + 4, top + 10);
       if (this.type === 'sprint' && this.rivals.length) {
         let rank = 1; for (const r of this.rivals) if (r.done || r.dist > P.dist) rank++;
-        const ok = rank <= (S.assist > 0 ? 4 : 3);
+        const ok = rank <= this.passRank();
         textO(rank + '/' + (this.rivals.length + 1), cx, top + 19, ok ? C.yellow : C.red, 'center', 2);
       } else if (this.type === 'duello' && this.duel) {
         const r = this.duel.r, gap = Math.round((P.dist - Math.min(r.dist, this.length)) / 10), lead = gap >= 0 && !(r.done && this.state === 'run');
@@ -5751,6 +5973,7 @@ Object.assign(SCENES.run, {
     const title = this.type === 'boss' ? this.boss.def.name : this.tut ? 'ISINMA TURU' : ETAP_INFO[this.type].name;
     let sub = this.type === 'boss' ? this.boss.def.title : this.tut ? 'TEMEL HAREKETLER' : ETAP_INFO[this.type].short;
     if (this.type === 'baskin') sub = this.goal + ' DÜŞMAN VUR';
+    if (this.type === 'sprint' && !this.tut) sub = 'İLK ' + this.passRank() + '\'E GİR · ' + (this.rivals.length + 1) + ' YARIŞÇI';
     if (this.duel) sub = this.duel.def.name + ' İLE BİRE BİR';
     const tags = [];
     if (this.duel && this.duel.info.trick) tags.push([this.duel.info.trick, C.salmon]);
@@ -5832,7 +6055,7 @@ Object.assign(SCENES.run, {
   },
   makeFoe(kind, lane, dist, extra) {
     const x = this.laneX(lane), def = FOES[kind];
-    const hp = Math.round(def.hp * (1 + 0.15 * RUN.region) * (this.elite ? 1.3 : 1) * 10) / 10;
+    const hp = Math.round(def.hp * (1 + 0.15 * this.reg.tier) * (this.elite ? 1.3 : 1) * 10) / 10;
     const f = Object.assign({ kind, lane, x, bx: x, fromX: x, laneT: 1, dist, hp, maxHp: hp, t: 0, ph: rnd() * 6, flash: 0, stun: 0, dead: false, r: (kind === 'eskiya' || kind === 'okcu') ? 7 : 6, seen: false, hitP: 0, passed: false, amp: 0.9, burnT: 0, burnDps: 0 }, extra || {});
     if (kind === 'karga') { f.v = -12; f.rel = 0.55; }
     else if (kind === 'domuz') f.v = -75;
@@ -5955,7 +6178,7 @@ Object.assign(SCENES.run, {
     for (const s of this.eShots) {
       if (s.dead) continue;
       s.dist += s.v * dt;
-      if (s.dist < P.dist - 30) { s.dead = true; continue; }
+      if (s.dist < P.dist - 30) { s.dead = true; if (s.rival && this.state === 'run') { this.rate(4); this.say('dodge'); } continue; }
       if (this.state === 'run' && Math.abs(s.dist - P.dist) < 7 && Math.abs(s.x - P.x) < 7) { s.dead = true; this.hurt('arrow'); }
     }
     if (this.eShots.length) this.eShots = this.eShots.filter(s => !s.dead);
@@ -5965,7 +6188,7 @@ Object.assign(SCENES.run, {
   spawnReis() {
     this.reisDone = true;
     const P = this.P, def = FOES.reis;
-    const hp = Math.round(def.hp * (1 + 0.4 * RUN.region) * (this.elite ? 1.3 : 1));
+    const hp = Math.round(def.hp * (1 + 0.4 * this.reg.tier) * (this.elite ? 1.3 : 1));
     const lane = clamp(P.lane + R.pick([-1, 1]), 0, 4), x = this.laneX(lane);
     this.reis = { kind: 'reis', lane, x, fromX: x, laneT: 1, dist: P.dist + this.pY + 40, hp, maxHp: hp, t: 0, ph: 0, flash: 0, stun: 0, dead: false, r: 8, gapT: 120, charge: 0, atkIdx: 0, aimLanes: null, burnT: 0, burnDps: 0, hitP: 0 };
     this.showBanner('KORSAN KAPTANI!', C.red); this.foeTip('reis'); Sound.play('roar'); shake(3, 0.3);
@@ -6054,6 +6277,11 @@ Object.assign(SCENES.run, {
     const B = this.boss;
     if (this.state !== 'run' || B.stun > 0 || B.taunt > 0) return;
     if (B.def.sig === 'kibir' && b >= B.nextTaunt) { this.startTaunt(); B.nextTaunt = b + R.i(14, 20); return; }
+    if (B.def.sig === 'ayaz' && b >= B.nextTaunt) { this.startFrost(); B.nextTaunt = b + R.i(16, 22); return; }
+    if (B.def.sig === 'kum' && b >= B.nextTaunt) {
+      B.nextTaunt = b + R.i(18, 24); this.fogT = 3.2; this.burrow(1);
+      floatText('KUM FIRTINASI!', W / 2, this.pY - 74, C.tan, 1, -6, 1.4); Sound.play('whoosh'); return;
+    }
     if (b >= B.nextAtk) {
       B.nextAtk = b + Math.max(2, [4, 3, 2][B.phase - 1] - (RUN.heat >= 2 ? 1 : 0));
       this.bossAttack();
@@ -6064,6 +6292,25 @@ Object.assign(SCENES.run, {
     B.taunt = 2.6; const nl = P.lane > 0 ? P.lane - 1 : 1; B.fromX = B.x; B.lane = nl; B.laneT = 0;
     floatText('KİBİR! HAMLE YAP YA DA ALTIN NOTAYI VUR', W / 2, this.pY - 74, C.magenta, 1, -6, 1.8);
     Sound.play('hey');
+  },
+  // Niva's frost: lane changes slow down until a dash or a golden note breaks the ice
+  startFrost() {
+    this.frost = 3.6; this.showBanner('AYAZ!', C.cyan);
+    floatText('HAMLE YAP YA DA ALTIN NOTAYI VUR', W / 2, this.pY - 74, C.cyan, 1, -6, 1.8);
+    Sound.play('zap'); flash(C.cyan, 0.2);
+  },
+  breakFrost() {
+    if (!(this.frost > 0)) return;
+    this.frost = 0; if (this.boss) this.boss.gap = Math.min(100, this.boss.gap + 6);
+    floatText('BUZU KIRDIN!', W / 2, this.pY - 60, C.white, 1, -10, 1.2); Sound.play('combo'); haptic('success');
+    burst(this.P.x, this.pY, 14, [C.white, C.cyan, C.sky], 60, 0.5, 60, 1);
+  },
+  // Zarg's worm breaks the surface: sand rings mark the lanes first, the horse always keeps a way through
+  burrow(n) {
+    const P = this.P, y = P.dist + 230;
+    const lanes = this.pickSafeLanes(n, y);
+    lanes.forEach((lane, i) => { const t0 = 0.95 + i * 0.1; this.meteors.push({ lane, y: y + i * 6, t: t0, t0, kind: 'kum' }); });
+    if (lanes.length) Sound.play('warn');
   },
   breakTaunt() {
     const B = this.boss; if (!B || B.taunt <= 0) return;
@@ -6119,6 +6366,25 @@ Object.assign(SCENES.run, {
         else { this.addObs('bale', B.lane, 1, wy, { vy: -55 }); Sound.play('bump'); }
         break;
       }
+      case 'icicle': case 'icicle3': {
+        const lanes = [P.lane], extra = atk === 'icicle3' ? 2 : (R.chance(0.5) ? 1 : 0);
+        const others = R.shuffle([0, 1, 2, 3, 4].filter(l => l !== P.lane));
+        for (let i = 0; i < extra; i++) lanes.push(others[i]);
+        for (const l of lanes) this.bolts.push({ lane: l, t: 1.0, strike: 0, ice: true });
+        Sound.play('warn'); break;
+      }
+      case 'icerow': {
+        if (this.frost > 0) { this.addObs('bale', B.lane, 1, wy, { vy: -55 }); break; }
+        const y = Math.max(wy, P.dist + 180);
+        const gaps = R.shuffle([0, 1, 2, 3, 4].filter(l => Math.abs(l - P.lane) <= 2));
+        for (const gl of gaps) {
+          const row = [0, 1, 2, 3, 4].filter(l => l !== gl).map(l => ({ lane: l, y }));
+          if (this.passable(row, P.lane, P.dist + 20)) { for (const e of row) this.addObs('rock', e.lane, 1, y, { v: 1, ice: true }); break; }
+        }
+        floatText('BUZ DUVARI!', B.x, B.screenY - 24, C.cyan, 1, -10, 1); Sound.play('boom'); break;
+      }
+      case 'burrow': case 'burrow2': this.burrow(atk === 'burrow2' ? 3 : 2); break;
+      case 'sandwave': this.addObs('toz', 0, 5, wy - 20); floatText('KUM DALGASI: SIÇRA!', W / 2, this.pY - 70, C.tan, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
       case 'civirow': { const gl = gapLane(); for (let l = 0; l < 5; l++) if (l !== gl) this.addObs('civi', l, 1, wy - 12); floatText('HİLE!', B.x, B.screenY - 24, C.red, 1, -10, 1); Sound.play('hey'); break; }
     }
     if (B.phase >= 2 && rnd() < 0.3) { B.tired = 2; floatText('YORULDU! ŞİMDİ VUR!', B.x, B.screenY - 30, C.yellow, 1, -10, 1.2); }
@@ -6149,13 +6415,13 @@ Object.assign(SCENES.run, {
     const rank = this.finished.length + 1;
     this.result = { rank, ok: true };
     this.settleRace(rank);
-    const failRank = this.type === 'sprint' && !this.tut && rank > (this.S.assist > 0 ? 4 : 3);
+    const failRank = this.type === 'sprint' && !this.tut && rank > this.passRank();
     const failRaid = this.type === 'baskin' && this.kills < this.goal;
     const failDuel = this.type === 'duello' && rank > 1;
     if (failRank || failRaid || failDuel) {
       this.result.ok = false;
       if (failDuel) { floatText(this.duel.def.name + ' KAZANDI', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('DÜELLOYU KAYBETTİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
-      else if (failRank) { floatText(rank + '. OLDUN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('İLK ' + (this.S.assist > 0 ? 4 : 3) + '\'E GİREMEDİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
+      else if (failRank) { floatText(rank + '. OLDUN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('İLK ' + this.passRank() + '\'E GİREMEDİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       else { floatText(this.kills + '/' + this.goal + ' DÜŞMAN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('BASKIN PÜSKÜRTÜLEMEDİ: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       this.P.invuln = 0; this.P.laneInv = 0; this.P.landInv = 0; this.P.flyT = 0; this.P.hamleT = 0;
       this.state = 'run'; this.hurt(failRaid ? 'raid' : 'rank');
@@ -6202,14 +6468,14 @@ Object.assign(SCENES.run, {
       const key = this.reg.boss, first = !META.stats.bossWins[key];
       META.stats.bossWins[key] = (META.stats.bossWins[key] || 0) + 1; missionEvent('boss', 1);
       if (first) { META.rozet++; toast('ŞAMPİYON ROZETİ KAZANDIN!', C.sky, 'rozet'); }
-      const yon = Math.round([10, 15, 25][RUN.region] * HEATS[RUN.heat].rew);
+      const yon = Math.round((BOSS_CRYSTALS[RUN.region] || 25) * HEATS[RUN.heat].rew);
       RUN.yonca += yon; missionEvent('yonca', yon); toast('+' + yon + ' KRİSTAL', C.cyan, 'clover');
       RUN.score += 400;
       if (S.bossHeal) RUN.hp = Math.min(S.maxHp, RUN.hp + 1);
       RUN.region++; RUN.etap = 0;
-      META.stats.bestRegion = Math.max(META.stats.bestRegion, Math.min(2, RUN.region));
+      META.stats.bestRegion = Math.max(META.stats.bestRegion, Math.min(LAST_REGION, RUN.region));
       saveMeta();
-      if (RUN.region >= 3) { go('results', { won: true }); return; }
+      if (RUN.region >= REGIONS.length) { go('results', { won: true }); return; }
       go('boon', { sp: R.pick(SPIRIT_KEYS), afterBoss: true });
       return;
     }
@@ -6279,6 +6545,7 @@ Object.assign(SCENES.run, {
     this.ratingOn = !this.tut && (!!META.tipsSeen.reyting || this.tips.indexOf('reyting') >= 0);
     this.grax = null; this.graxCd = 1.2;
     this.fever = 0; Music.fever = false;
+    this.frost = 0; this.trickBeat = 0;
     this.lastGateY = -9999; this.lastScanY = -9999; this.meteors = [];
     this.nemRival = this.rivals.find(r => r.nem) || null;
     this.nemTaunt = this.nemRival && !this.nemRival.duel ? { txt: pickAny(NEMESIS_TAUNTS), t: 3 } : null;
@@ -6326,7 +6593,8 @@ Object.assign(SCENES.run, {
       if (m.t > 0) continue;
       this.meteors.splice(i, 1);
       if (m.y - P.dist < 45) continue;
-      this.addObs('rock', m.lane, 1, m.y, { v: 1 });
+      this.addObs('rock', m.lane, 1, m.y, { v: 1, kum: m.kind === 'kum' });
+      if (m.kind === 'kum') { burst(this.laneX(m.lane), this.sy(m.y), 12, [C.sand, C.tan, C.orange0], 55, 0.6, 80, 2); shake(2, 0.12); Sound.play('boom'); continue; }
       burst(this.laneX(m.lane), this.sy(m.y), 10, [C.orange, C.yellow, C.gray], 60, 0.5, 60, 2); shake(2, 0.12); Sound.play('boom');
     }
     if (!this.ratingOn || this.state !== 'run') return;
@@ -6353,8 +6621,12 @@ Object.assign(SCENES.run, {
   boredEvent() {
     const P = this.P, n = RUN.region >= 1 ? 3 : 2;
     this.ratingZeroT = 0; this.rating = 30; RUN.bored = (RUN.bored || 0) + 1;
-    const lanes = [0, 1, 2, 3, 4].sort(() => Math.random() - 0.5).slice(0, n);
-    lanes.forEach((lane, i) => { const t0 = 0.8 + i * 0.15; this.meteors.push({ lane, y: P.dist + 260 + i * 45, t: t0, t0 }); });
+    // each landing spot must leave the horse a way through (see 06f_run_fair)
+    for (let i = 0; i < n; i++) {
+      const y = P.dist + 260 + i * 45, lane = this.pickSafeLanes(1, y)[0];
+      if (lane == null) continue;
+      const t0 = 0.8 + i * 0.15; this.meteors.push({ lane, y, t: t0, t0 });
+    }
     this.banner = { txt: 'METEOR YAĞMURU!', col: C.salmon }; this.bannerT = 1.6;
     Sound.play('warn'); this.say('bored', true);
   },
@@ -6372,6 +6644,7 @@ Object.assign(SCENES.run, {
   endFever() {
     const was = this.fever > 0 || Music.fever;
     this.fever = 0; Music.fever = false;
+    this.frost = 0; this.trickBeat = 0;
     if (was && this.state === 'run') floatText('DÖRTNAL BİTTİ', W / 2, this.pY - 40, C.lgray, 1, -8, 0.8);
   },
 
@@ -6533,11 +6806,23 @@ Object.assign(SCENES.run, {
   drawShowFX(ox, oy) {
     for (const m of this.meteors) {
       const sy = Math.round(this.sy(m.y)) + oy, k = 1 - m.t / m.t0, x = this.laneX(m.lane) + ox + this.offY(sy);
+      if (m.kind === 'kum') { // the worm bulges up through the sand
+        g.globalAlpha = 0.35 + 0.4 * k; ellipse(x, sy + 2, 5 + Math.round(4 * k), 2 + Math.round(2 * k), C.tan);
+        g.globalAlpha = Math.floor(T * 10) % 2 ? 0.9 : 0.45; ring(x, sy + 2, Math.max(3, 9 - Math.round(4 * k)), C.orange); g.globalAlpha = 1;
+        if (rnd() < 0.5) addPart(x + (rnd() - 0.5) * 10, sy, (rnd() - 0.5) * 20, -20 - rnd() * 20, 0.4, C.sand, 1, 60);
+        continue;
+      }
       g.globalAlpha = 0.3 + 0.4 * k; ellipse(x, sy + 2, 4 + Math.round(5 * k), 2 + Math.round(2 * k), C.ink);
       g.globalAlpha = Math.floor(T * 10) % 2 ? 0.9 : 0.4; ring(x, sy + 2, Math.max(3, 10 - Math.round(5 * k)), C.red); g.globalAlpha = 1;
       const fx = x + Math.round((1 - k) * 24), fy = sy - Math.round((1 - k) * 90);
       for (let i = 1; i < 7; i++) { pix(fx + i * 2, fy - i * 3, i < 3 ? C.yellow : i < 5 ? C.orange : C.rust); pix(fx + i * 2 + 1, fy - i * 3, C.orange0); }
       circle(fx, fy, 4, C.rust); circle(fx, fy, 3, C.orange); circle(fx - 1, fy - 1, 1, C.yellow);
+    }
+    if (this.frost > 0) { // frost creeps in from the edges
+      const k = clamp(this.frost / 0.5, 0, 1);
+      g.globalAlpha = 0.35 * k; rect(0, 0, W, 4, C.white); rect(0, H - 4, W, 4, C.white); rect(0, 0, 4, H, C.white); rect(W - 4, 0, 4, H, C.white);
+      g.globalAlpha = 0.18 * k; rect(0, 0, W, H, C.sky); g.globalAlpha = 1;
+      for (let i = 0; i < 10; i++) { const fx = hash2(i, 3) * W, fy = (hash2(i, 4) * H + T * 20) % H; spr(OB.flake, fx, fy); }
     }
     if (this.fever > 0) {
       const c = Math.floor(T * 8) % 2 ? C.yellow : C.cyan;
@@ -6583,6 +6868,125 @@ Object.assign(SCENES.run, {
     button('bet_pas', px + 8, by, bw, 16, 'PAS', () => this.placeBet(0), { kind: 'secondary' });
     B.stakes.forEach((st, i) => button('bet_' + st, px + 8 + (i + 1) * (bw + gap), by, bw, 16, String(st), () => this.placeBet(st), { icon: 'coin0', kind: 'primary' }));
     iconNum('coin0', RUN.coins, px + 10, by - 11, C.yellow);
+  }
+});
+
+// ================= RUN SCENE: RIVAL TRICKS (v5) =================
+// Named rivals in sprints play on the beat like the duel rival: one beat of warning ("!"), then the move.
+// onde drops a mine, atici fires a slow plasma down your lane, zikzak cuts in front of you, itici barges (06_run).
+// Only one rival may telegraph at a time and tricks are spaced out, so two tricks never stack into an unfair spot.
+Object.assign(SCENES.run, {
+  rivalBeat(b) {
+    if (this.state !== 'run' || this.tut) return;
+    const P = this.P;
+    for (const r of this.rivals) if (r.tele) { const t = r.tele; r.tele = null; if (!r.done && r.stun <= 0) this.rivalAct(r, t); return; }
+    if (b < (this.trickBeat || 0)) return;
+    const cands = [];
+    for (const r of this.rivals) {
+      if (r.done || !r.style || r.duel || r.stun > 0 || r.laneT < 1 || b < (r.nextTrick || 0)) continue;
+      const gap = r.dist - P.dist, dl = Math.abs(r.lane - P.lane);
+      if (r.style === 'atici' && gap > 50 && gap < 210 && dl <= 2 && P.dist < this.length * 0.92) cands.push([r, { kind: 'shot', lane: P.lane }, 8]);
+      else if (r.style === 'onde' && gap > 55 && gap < 220 && dl <= 1 && P.dist < this.length * 0.9) cands.push([r, { kind: 'drop' }, 9]);
+      else if (r.style === 'zikzak') {
+        if (gap > 10 && gap < 70 && dl === 1 && this.laneFree(P.lane, r.dist, r)) cands.push([r, { kind: 'cut', lane: P.lane }, 6]);
+        else if (rnd() < 0.25) { // restless lane hops (harmless, but you can never quite predict them)
+          const nl = r.lane + R.pick([-1, 1]);
+          if (this.laneFree(nl, r.dist, r)) { r.fromX = r.x; r.lane = nl; r.laneT = 0; r.cool = 0.6; }
+        }
+      }
+    }
+    if (!cands.length) return;
+    const [r, t, cd] = R.pick(cands);
+    r.tele = t; r.nextTrick = b + cd; this.trickBeat = b + 3;
+    Sound.play(t.kind === 'shot' ? 'warn' : 'hey');
+  },
+  rivalAct(r, t) {
+    const P = this.P;
+    if (t.kind === 'shot') {
+      this.eShots.push({ x: this.laneX(t.lane), lane: t.lane, dist: r.dist - 10, v: -170, dead: false, rival: true });
+      Sound.play('shoot'); this.say('rivalTrick');
+    } else if (t.kind === 'drop') {
+      const kind = rnd() < 0.5 ? 'civi' : 'puddle';
+      this.addObs(kind, r.lane, 1, r.dist - 22, kind === 'puddle' ? { mud: this.reg.mud } : null);
+      floatText(kind === 'civi' ? 'MAYIN!' : 'JÖLE!', r.x, this.sy(r.dist) + 2, C.salmon, 1, -6, 0.8); Sound.play('pebble');
+    } else if (t.kind === 'cut') {
+      const gap = r.dist - P.dist;
+      if (gap > 4 && gap < 90 && this.laneFree(t.lane, r.dist, r)) {
+        r.fromX = r.x; r.lane = t.lane; r.laneT = 0; r.cool = 1;
+        floatText('ÖNÜNÜ KESTİ!', r.x, this.sy(r.dist) - 28, C.salmon, 1, -8, 0.8); this.say('rivalTrick');
+      }
+    }
+  },
+  // the "!" over a rival and the lane it is about to hit
+  drawRivalTele(r, x, y) {
+    const t = r.tele; if (!t || Math.floor(T * 10) % 2) return;
+    textO('!', x, y - 36, C.red, 'center', 2);
+    if (t.kind === 'cut') textO(t.lane < r.lane ? '←' : '→', x + (t.lane < r.lane ? -12 : 12), y - 4, C.red, 'center');
+    else if (t.kind === 'drop') textO('↓', x, y + 14, C.red, 'center');
+  }
+});
+
+// ================= RUN SCENE: FAIR TRACK (v5) =================
+// Every solid thing (asteroids, crates, meteor and worm landings, ice walls) is placed only if a horse can still
+// weave through: rows of solids are walked in order and the set of reachable lanes may spread by one lane per
+// `laneStep()` of track. If a new piece would close every lane, the generator picks another lane or drops it.
+Object.assign(SCENES.run, {
+  // world px the horse needs to shift one lane at top speed, with a little reaction time on top
+  laneStep() {
+    const S = this.S, top = BASE_SPEED * this.reg.speed * S.speed * (1 + S.comboCap * S.comboPer) * 1.1;
+    return Math.max(30, top * (S.laneTime + 0.14));
+  },
+  solidRows(y0, y1, extra) {
+    const rows = [];
+    const add = (lane, y, span) => {
+      let row = rows.find(r => Math.abs(r.y - y) < 14);
+      if (!row) { row = { y, b: new Set() }; rows.push(row); }
+      for (let l = lane; l < lane + (span || 1); l++) row.b.add(l);
+    };
+    for (const o of this.obs) if (!o.dead && SOLID[o.kind] && o.y >= y0 && o.y <= y1) add(o.lane, o.y, o.span);
+    for (const m of this.meteors || []) if (m.y >= y0 && m.y <= y1) add(m.lane, m.y, 1);
+    for (const e of extra) add(e.lane, e.y, 1);
+    rows.sort((a, b) => a.y - b.y);
+    return rows;
+  },
+  // can the horse still get through if `extra` solids are added? fromLane/fromY: start from the horse itself
+  passable(extra, fromLane, fromY) {
+    if (!extra.length) return true;
+    let lo = 1e9, hi = -1e9;
+    for (const e of extra) { lo = Math.min(lo, e.y); hi = Math.max(hi, e.y); }
+    const start = fromY != null ? fromY : lo - 300;
+    const rows = this.solidRows(start, hi + 300, extra), step = this.laneStep();
+    let reach = fromLane != null ? [fromLane] : [0, 1, 2, 3, 4], py = fromY != null ? fromY : -1e9;
+    for (const row of rows) {
+      if (row.y <= start) continue;
+      const spread = Math.floor((row.y - py) / step), next = [];
+      for (let l = 0; l < 5; l++) if (!row.b.has(l) && reach.some(r => Math.abs(r - l) <= spread)) next.push(l);
+      if (!next.length) return false;
+      reach = next; py = row.y;
+    }
+    return true;
+  },
+  // scanner lasers sweep across lanes, so keep solids out of their way
+  nearScan(y, d) { return this.obs.some(o => !o.dead && o.kind === 'scan' && Math.abs(o.y - y) < d); },
+  nearSolid(y, d) { return this.obs.some(o => !o.dead && SOLID[o.kind] && Math.abs(o.y - y) < d); },
+  // place a group of rocks only if the track stays passable
+  tryRocks(list, extra) {
+    if (list.some(e => this.nearScan(e.y, 70))) return false;
+    if (!this.passable(list)) return false;
+    for (const e of list) this.addObs(e.kind || 'rock', e.lane, 1, e.y, Object.assign({ v: e.v || 0 }, extra || {}, e.extra || {}));
+    return true;
+  },
+  // lanes for things that land near the horse (meteors, worm, ice walls): keep a way out from where it is now
+  pickSafeLanes(n, y, prefer) {
+    const P = this.P, out = [];
+    const lanes = R.shuffle([0, 1, 2, 3, 4]);
+    if (prefer != null) lanes.sort((a, b) => Math.abs(a - prefer) - Math.abs(b - prefer));
+    for (const l of lanes) {
+      if (out.length >= n) break;
+      const trial = out.concat([{ lane: l, y }]);
+      if (this.passable(trial, P.lane, P.dist + 20)) out.push({ lane: l, y });
+    }
+    return out.map(e => e.lane);
   }
 });
 
@@ -7284,7 +7688,7 @@ SCENES.farm = {
   pAnit() {
     const st = META.stats;
     const rows = [
-      ['KOŞU', st.runs], ['ZAFER', st.wins], ['EN UZAK', REGIONS[Math.min(2, st.bestRegion)].name], ['EN İYİ KOMBO', st.bestCombo],
+      ['KOŞU', st.runs], ['ZAFER', st.wins], ['EN UZAK', REGIONS[Math.min(LAST_REGION, st.bestRegion)].name], ['EN İYİ KOMBO', st.bestCombo],
       ['MÜKEMMEL', st.perfects], ['VURULAN DÜŞMAN', st.kills], ['KIL PAYI', st.nearMiss], ['SİPER ÇIKIŞI', st.drafts],
       ['TEMİZ ATLAYIŞ', st.cleanJumps || 0], ['HAMLE', st.hamles || 0], ['SON ATAK', st.kicks || 0], ['ÖZEL ATIŞ', st.specials || 0], ['DEVRİLEN KAPTAN', st.reisKills || 0], ['KAZANILAN DÜELLO', st.duels || 0], ['ALINAN RÖVANŞ', st.revenges || 0], ['DÖRTNAL MODU', st.fevers || 0],
       ['ÜS PUANI', farmLevel()]
@@ -7299,7 +7703,7 @@ SCENES.farm = {
     for (const m of ['g', 's', 'b']) { spr(MEDAL[m], x, y); text(String(st.medals[m] || 0), x + 12, y + 2, MEDAL_COLS[m]); x += 34; }
     y += 16;
     x = P.x + 10;
-    for (const k of ['pirlanta', 'kurt', 'simsek']) { const n = st.bossWins[k] || 0; spr(n ? ICONS.crown : tinted('crown', C.slate), x, y); text(String(n), x + 13, y, n ? C.yellow : C.gray); x += 34; }
+    for (const reg of REGIONS) { const k = reg.boss, n = st.bossWins[k] || 0; spr(n ? ICONS.crown : tinted('crown', C.slate), x, y); text(String(n), x + 13, y, n ? C.yellow : C.gray); x += Math.floor((P.w - 20) / REGIONS.length); }
   },
   pEv() {
     if (typeof this.page === 'string') return this.pRival(this.page);
@@ -7308,7 +7712,8 @@ SCENES.farm = {
     const unreadR = rivals.some(r => META.rivals[r.id] && !META.rivalRead[r.id]);
     if (!this.defTab) this.defTab = unreadR && !MEMORIES.some(m => m.cond() && !META.memRead[m.id]) ? 'rakip' : 'gunluk';
     const tab = this.defTab === 'rakip' ? 'rakip' : 'gunluk';
-    const P = this.panelBox('SEYİR DEFTERİ', 52 + Math.max(MEMORIES.length, rivals.length) * 20 + 6);
+    const avail = H - SAFE.t - SAFE.b - 8, rh = clamp(Math.floor((avail - 64) / rivals.length), 13, 20);
+    const P = this.panelBox('SEYİR DEFTERİ', 52 + Math.max(MEMORIES.length * 20, rivals.length * rh) + 6);
     const tw = Math.floor((P.w - 16) / 2);
     button('tab_g', P.x + 6, P.y + 16, tw, 14, 'GÜNLÜK', () => { this.defTab = 'gunluk'; Sound.play('page'); }, { kind: tab === 'gunluk' ? 'primary' : 'secondary' });
     button('tab_r', P.x + 10 + tw, P.y + 16, tw, 14, 'RAKİPLER ' + nOpen + '/' + rivals.length, () => { this.defTab = 'rakip'; Sound.play('page'); }, { kind: tab === 'rakip' ? 'primary' : 'secondary' });
@@ -7332,18 +7737,19 @@ SCENES.farm = {
     text('DÜELLODA YENDİĞİN RAKİPLERİN DOSYALARI', P.x + P.w / 2, y, C.lgray, 'center'); y += 12;
     for (const r of rivals) {
       const open = !!META.rivals[r.id], unread = open && !META.rivalRead[r.id], nem = META.nemesis && META.nemesis.id === r.id;
-      rrect(P.x + 6, y, P.w - 12, 17, open ? (unread ? C.purple : C.slate) : nem ? C.plum : C.navy);
+      rrect(P.x + 6, y, P.w - 12, rh - 3, open ? (unread ? C.purple : C.slate) : nem ? C.plum : C.navy);
+      const ty = y + Math.round((rh - 3) / 2) - 3;
       const reg = nem ? 'RÖVANŞÇI' : REGIONS[r.region].name.split(' ')[0];
       if (open) {
-        circle(P.x + 14, y + 8, 3, C.ink); circle(P.x + 14, y + 8, 2, r.style === 'itici' ? C.salmon : r.style === 'onde' ? C.sky : C.green);
-        text(r.name, P.x + 22, y + 5, C.white);
-        text(unread ? 'YENİ' : reg, P.x + P.w - 12, y + 5, unread ? C.yellow : nem ? C.red : C.gray, 'right');
-        UI.add('riv_' + r.id, P.x + 6, y, P.w - 12, 17, () => { this.page = r.id; META.rivalRead[r.id] = true; saveMeta(); Sound.play('page'); });
+        circle(P.x + 14, y + 8, 3, C.ink); circle(P.x + 14, y + rh / 2, 2, STYLE_COL[r.style] || C.green);
+        text(r.name, P.x + 22, ty, C.white);
+        text(unread ? 'YENİ' : reg, P.x + P.w - 12, ty, unread ? C.yellow : nem ? C.red : C.gray, 'right');
+        UI.add('riv_' + r.id, P.x + 6, y, P.w - 12, rh - 3, () => { this.page = r.id; META.rivalRead[r.id] = true; saveMeta(); Sound.play('page'); });
       } else {
-        spr(ICONS.lock, P.x + 11, y + 4); text(nem ? r.name : '???', P.x + 22, y + 5, nem ? C.salmon : C.dgray);
-        text(nem ? 'RÖVANŞÇI' : reg + ' DÜELLOSU', P.x + P.w - 12, y + 5, nem ? C.red : C.dgray, 'right');
+        spr(ICONS.lock, P.x + 11, ty - 1); text(nem ? r.name : '???', P.x + 22, ty, nem ? C.salmon : C.dgray);
+        text(nem ? 'RÖVANŞÇI' : reg + ' DÜELLOSU', P.x + P.w - 12, ty, nem ? C.red : C.dgray, 'right');
       }
-      y += 20;
+      y += rh;
     }
   },
   pRival(id) {
@@ -7356,7 +7762,7 @@ SCENES.farm = {
     text(r.name, P.x + 44, P.y + 19, C.yellow);
     text(info.race, P.x + 44, P.y + 29, C.lgray);
     text(info.home, P.x + 44, P.y + 39, C.gray);
-    text('TARZI: ' + info.trick, P.x + 10, P.y + 54, r.style === 'itici' ? C.salmon : r.style === 'onde' ? C.sky : C.green);
+    text('TARZI: ' + info.trick, P.x + 10, P.y + 54, STYLE_COL[r.style] || C.green);
     text('YENİLDİ: ' + (META.rivals[id] || 0) + ' KEZ', P.x + 10, P.y + 64, C.gray);
     if (META.nemesis && META.nemesis.id === id) text('RÖVANŞÇI · SV ' + META.nemesis.lv, P.x + P.w - 10, P.y + 64, C.red, 'right');
     rect(P.x + 6, P.y + 76, P.w - 12, P.h - 102, C.sand); hline(P.x + 6, P.y + 76, P.w - 12, C.white);
@@ -8182,7 +8588,7 @@ SCENES.results = {
     const prog = RUN.region * 5 + RUN.etap;
     this.record = prog > st.bestProgress && st.runs > 1;
     st.bestProgress = Math.max(st.bestProgress, prog);
-    st.bestRegion = Math.max(st.bestRegion, Math.min(2, RUN.region));
+    st.bestRegion = Math.max(st.bestRegion, Math.min(LAST_REGION, RUN.region));
     META.yonca += this.yonca; META.seker += this.seker;
     if (this.conv) missionEvent('yonca', this.conv);
     this.lvBefore = META.level; this.xpBefore = META.xp;
@@ -8199,7 +8605,7 @@ SCENES.results = {
     }
     META.runSave = null;
     this.done = META.missions.filter(m => m.done).length;
-    this.where = this.won ? 'GALAKSİ KUPASI' : REGIONS[Math.min(2, RUN.region)].name + ' · ' + (RUN.etap >= 4 ? 'BOSS' : 'ETAP ' + (RUN.etap + 1));
+    this.where = this.won ? 'GALAKSİ KUPASI' : REGIONS[Math.min(LAST_REGION, RUN.region)].name + ' · ' + (RUN.etap >= 4 ? 'BOSS' : 'ETAP ' + (RUN.etap + 1));
     const di = RUN.diedIn;
     this.near = null;
     if (!this.won && di) {
@@ -8290,10 +8696,12 @@ function stationFloor() {
 const PLANET_PAL = [
   [C.plum, C.purple, C.magenta, C.salmon],   // Lumo Çayırı
   [C.teal, C.ddgreen, C.dgreen, C.green],    // Mantar Ayı
+  [C.blue, C.sky, C.cyan, C.white],          // Buz Halkası
+  [C.dbrown, C.rust, C.orange0, C.tan],      // Kızıl Kum
   [C.rust, C.orange0, C.tan, C.sand]         // Galaksi Arenası
 ];
 function drawPlanet(x, y, r, reg) {
-  const p = PLANET_PAL[clamp(reg | 0, 0, PLANET_PAL.length - 1)], ringed = reg >= 2;
+  const p = PLANET_PAL[clamp(reg | 0, 0, PLANET_PAL.length - 1)], ringed = reg === 2 || reg >= LAST_REGION;
   const ringArc = front => { for (let a = 0; a < Math.PI * 2; a += 0.025) { const sn = Math.sin(a); if (front ? sn < 0 : sn >= 0) continue; pix(Math.round(x + Math.cos(a) * r * 1.7), Math.round(y + sn * r * 0.3), C.cyan); } };
   if (ringed) { g.globalAlpha = 0.6; ringArc(false); g.globalAlpha = 1; }
   circle(x, y, r + 1, C.ink); circle(x, y, r, p[0]); circle(x - 2, y - 2, r - 3, p[1]); circle(x - 5, y - 5, Math.round(r * 0.45), p[2]); circle(x - 7, y - 8, Math.max(1, Math.round(r * 0.15)), p[3]);

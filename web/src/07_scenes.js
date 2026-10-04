@@ -695,7 +695,7 @@ SCENES.results = {
     const prog = RUN.region * 5 + RUN.etap;
     this.record = prog > st.bestProgress && st.runs > 1;
     st.bestProgress = Math.max(st.bestProgress, prog);
-    st.bestRegion = Math.max(st.bestRegion, Math.min(2, RUN.region));
+    st.bestRegion = Math.max(st.bestRegion, Math.min(LAST_REGION, RUN.region));
     META.yonca += this.yonca; META.seker += this.seker;
     if (this.conv) missionEvent('yonca', this.conv);
     this.lvBefore = META.level; this.xpBefore = META.xp;
@@ -712,7 +712,7 @@ SCENES.results = {
     }
     META.runSave = null;
     this.done = META.missions.filter(m => m.done).length;
-    this.where = this.won ? 'GALAKSİ KUPASI' : REGIONS[Math.min(2, RUN.region)].name + ' · ' + (RUN.etap >= 4 ? 'BOSS' : 'ETAP ' + (RUN.etap + 1));
+    this.where = this.won ? 'GALAKSİ KUPASI' : REGIONS[Math.min(LAST_REGION, RUN.region)].name + ' · ' + (RUN.etap >= 4 ? 'BOSS' : 'ETAP ' + (RUN.etap + 1));
     const di = RUN.diedIn;
     this.near = null;
     if (!this.won && di) {
@@ -803,10 +803,12 @@ function stationFloor() {
 const PLANET_PAL = [
   [C.plum, C.purple, C.magenta, C.salmon],   // Lumo Çayırı
   [C.teal, C.ddgreen, C.dgreen, C.green],    // Mantar Ayı
+  [C.blue, C.sky, C.cyan, C.white],          // Buz Halkası
+  [C.dbrown, C.rust, C.orange0, C.tan],      // Kızıl Kum
   [C.rust, C.orange0, C.tan, C.sand]         // Galaksi Arenası
 ];
 function drawPlanet(x, y, r, reg) {
-  const p = PLANET_PAL[clamp(reg | 0, 0, PLANET_PAL.length - 1)], ringed = reg >= 2;
+  const p = PLANET_PAL[clamp(reg | 0, 0, PLANET_PAL.length - 1)], ringed = reg === 2 || reg >= LAST_REGION;
   const ringArc = front => { for (let a = 0; a < Math.PI * 2; a += 0.025) { const sn = Math.sin(a); if (front ? sn < 0 : sn >= 0) continue; pix(Math.round(x + Math.cos(a) * r * 1.7), Math.round(y + sn * r * 0.3), C.cyan); } };
   if (ringed) { g.globalAlpha = 0.6; ringArc(false); g.globalAlpha = 1; }
   circle(x, y, r + 1, C.ink); circle(x, y, r, p[0]); circle(x - 2, y - 2, r - 3, p[1]); circle(x - 5, y - 5, Math.round(r * 0.45), p[2]); circle(x - 7, y - 8, Math.max(1, Math.round(r * 0.15)), p[3]);

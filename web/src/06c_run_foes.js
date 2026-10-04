@@ -10,7 +10,7 @@ Object.assign(SCENES.run, {
   },
   makeFoe(kind, lane, dist, extra) {
     const x = this.laneX(lane), def = FOES[kind];
-    const hp = Math.round(def.hp * (1 + 0.15 * RUN.region) * (this.elite ? 1.3 : 1) * 10) / 10;
+    const hp = Math.round(def.hp * (1 + 0.15 * this.reg.tier) * (this.elite ? 1.3 : 1) * 10) / 10;
     const f = Object.assign({ kind, lane, x, bx: x, fromX: x, laneT: 1, dist, hp, maxHp: hp, t: 0, ph: rnd() * 6, flash: 0, stun: 0, dead: false, r: (kind === 'eskiya' || kind === 'okcu') ? 7 : 6, seen: false, hitP: 0, passed: false, amp: 0.9, burnT: 0, burnDps: 0 }, extra || {});
     if (kind === 'karga') { f.v = -12; f.rel = 0.55; }
     else if (kind === 'domuz') f.v = -75;
@@ -133,7 +133,7 @@ Object.assign(SCENES.run, {
     for (const s of this.eShots) {
       if (s.dead) continue;
       s.dist += s.v * dt;
-      if (s.dist < P.dist - 30) { s.dead = true; continue; }
+      if (s.dist < P.dist - 30) { s.dead = true; if (s.rival && this.state === 'run') { this.rate(4); this.say('dodge'); } continue; }
       if (this.state === 'run' && Math.abs(s.dist - P.dist) < 7 && Math.abs(s.x - P.x) < 7) { s.dead = true; this.hurt('arrow'); }
     }
     if (this.eShots.length) this.eShots = this.eShots.filter(s => !s.dead);
@@ -143,7 +143,7 @@ Object.assign(SCENES.run, {
   spawnReis() {
     this.reisDone = true;
     const P = this.P, def = FOES.reis;
-    const hp = Math.round(def.hp * (1 + 0.4 * RUN.region) * (this.elite ? 1.3 : 1));
+    const hp = Math.round(def.hp * (1 + 0.4 * this.reg.tier) * (this.elite ? 1.3 : 1));
     const lane = clamp(P.lane + R.pick([-1, 1]), 0, 4), x = this.laneX(lane);
     this.reis = { kind: 'reis', lane, x, fromX: x, laneT: 1, dist: P.dist + this.pY + 40, hp, maxHp: hp, t: 0, ph: 0, flash: 0, stun: 0, dead: false, r: 8, gapT: 120, charge: 0, atkIdx: 0, aimLanes: null, burnT: 0, burnDps: 0, hitP: 0 };
     this.showBanner('KORSAN KAPTANI!', C.red); this.foeTip('reis'); Sound.play('roar'); shake(3, 0.3);
@@ -232,6 +232,11 @@ Object.assign(SCENES.run, {
     const B = this.boss;
     if (this.state !== 'run' || B.stun > 0 || B.taunt > 0) return;
     if (B.def.sig === 'kibir' && b >= B.nextTaunt) { this.startTaunt(); B.nextTaunt = b + R.i(14, 20); return; }
+    if (B.def.sig === 'ayaz' && b >= B.nextTaunt) { this.startFrost(); B.nextTaunt = b + R.i(16, 22); return; }
+    if (B.def.sig === 'kum' && b >= B.nextTaunt) {
+      B.nextTaunt = b + R.i(18, 24); this.fogT = 3.2; this.burrow(1);
+      floatText('KUM FIRTINASI!', W / 2, this.pY - 74, C.tan, 1, -6, 1.4); Sound.play('whoosh'); return;
+    }
     if (b >= B.nextAtk) {
       B.nextAtk = b + Math.max(2, [4, 3, 2][B.phase - 1] - (RUN.heat >= 2 ? 1 : 0));
       this.bossAttack();
@@ -242,6 +247,25 @@ Object.assign(SCENES.run, {
     B.taunt = 2.6; const nl = P.lane > 0 ? P.lane - 1 : 1; B.fromX = B.x; B.lane = nl; B.laneT = 0;
     floatText('KİBİR! HAMLE YAP YA DA ALTIN NOTAYI VUR', W / 2, this.pY - 74, C.magenta, 1, -6, 1.8);
     Sound.play('hey');
+  },
+  // Niva's frost: lane changes slow down until a dash or a golden note breaks the ice
+  startFrost() {
+    this.frost = 3.6; this.showBanner('AYAZ!', C.cyan);
+    floatText('HAMLE YAP YA DA ALTIN NOTAYI VUR', W / 2, this.pY - 74, C.cyan, 1, -6, 1.8);
+    Sound.play('zap'); flash(C.cyan, 0.2);
+  },
+  breakFrost() {
+    if (!(this.frost > 0)) return;
+    this.frost = 0; if (this.boss) this.boss.gap = Math.min(100, this.boss.gap + 6);
+    floatText('BUZU KIRDIN!', W / 2, this.pY - 60, C.white, 1, -10, 1.2); Sound.play('combo'); haptic('success');
+    burst(this.P.x, this.pY, 14, [C.white, C.cyan, C.sky], 60, 0.5, 60, 1);
+  },
+  // Zarg's worm breaks the surface: sand rings mark the lanes first, the horse always keeps a way through
+  burrow(n) {
+    const P = this.P, y = P.dist + 230;
+    const lanes = this.pickSafeLanes(n, y);
+    lanes.forEach((lane, i) => { const t0 = 0.95 + i * 0.1; this.meteors.push({ lane, y: y + i * 6, t: t0, t0, kind: 'kum' }); });
+    if (lanes.length) Sound.play('warn');
   },
   breakTaunt() {
     const B = this.boss; if (!B || B.taunt <= 0) return;
@@ -297,6 +321,25 @@ Object.assign(SCENES.run, {
         else { this.addObs('bale', B.lane, 1, wy, { vy: -55 }); Sound.play('bump'); }
         break;
       }
+      case 'icicle': case 'icicle3': {
+        const lanes = [P.lane], extra = atk === 'icicle3' ? 2 : (R.chance(0.5) ? 1 : 0);
+        const others = R.shuffle([0, 1, 2, 3, 4].filter(l => l !== P.lane));
+        for (let i = 0; i < extra; i++) lanes.push(others[i]);
+        for (const l of lanes) this.bolts.push({ lane: l, t: 1.0, strike: 0, ice: true });
+        Sound.play('warn'); break;
+      }
+      case 'icerow': {
+        if (this.frost > 0) { this.addObs('bale', B.lane, 1, wy, { vy: -55 }); break; }
+        const y = Math.max(wy, P.dist + 180);
+        const gaps = R.shuffle([0, 1, 2, 3, 4].filter(l => Math.abs(l - P.lane) <= 2));
+        for (const gl of gaps) {
+          const row = [0, 1, 2, 3, 4].filter(l => l !== gl).map(l => ({ lane: l, y }));
+          if (this.passable(row, P.lane, P.dist + 20)) { for (const e of row) this.addObs('rock', e.lane, 1, y, { v: 1, ice: true }); break; }
+        }
+        floatText('BUZ DUVARI!', B.x, B.screenY - 24, C.cyan, 1, -10, 1); Sound.play('boom'); break;
+      }
+      case 'burrow': case 'burrow2': this.burrow(atk === 'burrow2' ? 3 : 2); break;
+      case 'sandwave': this.addObs('toz', 0, 5, wy - 20); floatText('KUM DALGASI: SIÇRA!', W / 2, this.pY - 70, C.tan, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
       case 'civirow': { const gl = gapLane(); for (let l = 0; l < 5; l++) if (l !== gl) this.addObs('civi', l, 1, wy - 12); floatText('HİLE!', B.x, B.screenY - 24, C.red, 1, -10, 1); Sound.play('hey'); break; }
     }
     if (B.phase >= 2 && rnd() < 0.3) { B.tired = 2; floatText('YORULDU! ŞİMDİ VUR!', B.x, B.screenY - 30, C.yellow, 1, -10, 1.2); }
@@ -327,13 +370,13 @@ Object.assign(SCENES.run, {
     const rank = this.finished.length + 1;
     this.result = { rank, ok: true };
     this.settleRace(rank);
-    const failRank = this.type === 'sprint' && !this.tut && rank > (this.S.assist > 0 ? 4 : 3);
+    const failRank = this.type === 'sprint' && !this.tut && rank > this.passRank();
     const failRaid = this.type === 'baskin' && this.kills < this.goal;
     const failDuel = this.type === 'duello' && rank > 1;
     if (failRank || failRaid || failDuel) {
       this.result.ok = false;
       if (failDuel) { floatText(this.duel.def.name + ' KAZANDI', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('DÜELLOYU KAYBETTİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
-      else if (failRank) { floatText(rank + '. OLDUN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('İLK ' + (this.S.assist > 0 ? 4 : 3) + '\'E GİREMEDİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
+      else if (failRank) { floatText(rank + '. OLDUN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('İLK ' + this.passRank() + '\'E GİREMEDİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       else { floatText(this.kills + '/' + this.goal + ' DÜŞMAN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('BASKIN PÜSKÜRTÜLEMEDİ: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       this.P.invuln = 0; this.P.laneInv = 0; this.P.landInv = 0; this.P.flyT = 0; this.P.hamleT = 0;
       this.state = 'run'; this.hurt(failRaid ? 'raid' : 'rank');
@@ -380,14 +423,14 @@ Object.assign(SCENES.run, {
       const key = this.reg.boss, first = !META.stats.bossWins[key];
       META.stats.bossWins[key] = (META.stats.bossWins[key] || 0) + 1; missionEvent('boss', 1);
       if (first) { META.rozet++; toast('ŞAMPİYON ROZETİ KAZANDIN!', C.sky, 'rozet'); }
-      const yon = Math.round([10, 15, 25][RUN.region] * HEATS[RUN.heat].rew);
+      const yon = Math.round((BOSS_CRYSTALS[RUN.region] || 25) * HEATS[RUN.heat].rew);
       RUN.yonca += yon; missionEvent('yonca', yon); toast('+' + yon + ' KRİSTAL', C.cyan, 'clover');
       RUN.score += 400;
       if (S.bossHeal) RUN.hp = Math.min(S.maxHp, RUN.hp + 1);
       RUN.region++; RUN.etap = 0;
-      META.stats.bestRegion = Math.max(META.stats.bestRegion, Math.min(2, RUN.region));
+      META.stats.bestRegion = Math.max(META.stats.bestRegion, Math.min(LAST_REGION, RUN.region));
       saveMeta();
-      if (RUN.region >= 3) { go('results', { won: true }); return; }
+      if (RUN.region >= REGIONS.length) { go('results', { won: true }); return; }
       go('boon', { sp: R.pick(SPIRIT_KEYS), afterBoss: true });
       return;
     }

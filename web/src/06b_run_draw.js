@@ -69,16 +69,25 @@ Object.assign(SCENES.run, {
         } else if (reg.deco === 'forest') {
           if (h > 0.6 && h < 0.63) spr(OB.tuftD, x + 2, sy);
           else if (h > 0.45 && h < 0.46) spr(OB.mushroom, x + 2, sy);
+        } else if (reg.deco === 'ice') {
+          if (h > 0.6 && h < 0.625) spr(OB.flake, x + 2, sy);
+          else if (h > 0.45 && h < 0.46) spr(OB.iceShard, x + 2, sy);
+        } else if (reg.deco === 'desert') {
+          if (h > 0.6 && h < 0.618) spr(OB.dune, x, sy);
+          else if (h > 0.45 && h < 0.455) spr(OB.ribs, x, sy);
         }
       }
     }
-    if (reg.deco === 'forest' || reg.deco === 'meadow') {
+    if (reg.deco === 'forest' || reg.deco === 'meadow' || reg.deco === 'ice' || reg.deco === 'desert') {
       const step = 26; const s0 = Math.floor(botWorld / step), s1 = Math.ceil(topWorld / step);
       for (let s = s0; s <= s1; s++) for (const side of [0, 1]) {
         const h = hash2(s * 7 + side, 991);
         const sy = Math.round(this.sy(s * step)) + oy, o = this.offY(sy) + ox;
         if (reg.deco === 'forest') {
           if (h < 0.75) { const img = h < 0.4 ? OB.tree : OB.pine; const x = side ? tx + tw + 4 + (h * 20 | 0) % Math.max(1, W - tx - tw - 10) - 2 : tx - 4 - img.width - ((h * 20) | 0) % Math.max(1, tx - 6) + 4; spr(img, x + o, sy - img.height); }
+        } else if (reg.deco === 'ice' || reg.deco === 'desert') {
+          const img = reg.deco === 'ice' ? (h < 0.22 ? OB.iceSpire : h < 0.3 ? OB.iceShard : null) : (h < 0.16 ? OB.cactus : h < 0.24 ? OB.sandRock : null);
+          if (img) { const x = side ? tx + tw + 5 + ((h * 90) | 0) % Math.max(1, W - tx - tw - img.width - 6) : ((h * 90) | 0) % Math.max(1, tx - img.width - 5); spr(img, x + o, sy - img.height); }
         } else if (h < 0.16) { const x = side ? tx + tw + 6 + ((h * 90) | 0) % Math.max(1, W - tx - tw - 16) : ((h * 90) | 0) % Math.max(1, tx - 16); spr(OB.bush, x + o, sy - 6); }
       }
     }
@@ -183,11 +192,12 @@ Object.assign(SCENES.run, {
         const r = it.r, o = this.offY(it.y) + ox; const fr = Math.floor(this.time * 10 * r.spd + r.phase) % 4;
         this.drawHorse(r.set, r.x + o, it.y + oy, fr, r.jumping, r.jumping ? r.jumpT / 0.5 : 0, r.stun > 0 && Math.floor(T * 10) % 2 === 0);
         if (r.name && !r.done) {
-          const c = r.nem ? C.red : r.style === 'itici' ? C.salmon : r.style === 'onde' ? C.sky : C.green;
+          const c = r.nem ? C.red : STYLE_COL[r.style] || C.green;
           textO(r.name, r.x + o, it.y + oy - 24, c, 'center');
           if (r.nem) { spr(tinted('crown', C.red), r.x + o - 5, it.y + oy - 33); if (this.nemTaunt && !r.duel && (this.state === 'intro' || this.nemTaunt.t > 0)) this.speech(this.nemTaunt.txt, r.x + o, it.y + oy - 36); }
         }
         if (r.duel && this.duel && !r.done) this.drawDuelMarks(r, r.x + o, it.y + oy);
+        else if (!r.done) { this.drawRivalTele(r, r.x + o, it.y + oy); if (r.pushWarn > 0 && Math.floor(T * 12) % 2 === 0) { textO('!', r.x + o, it.y + oy - 34, C.red, 'center', 2); textO(r.lane < this.P.lane ? '→' : '←', r.x + o + (r.lane < this.P.lane ? 12 : -12), it.y + oy - 4, C.red, 'center'); } }
       } else if (it.b) this.drawBoss(it.b, ox + this.offY(it.y), oy);
       else if (it.p) this.drawPlayer(ox, oy, gallop);
     }
@@ -201,8 +211,8 @@ Object.assign(SCENES.run, {
     if (D.surgeT > 0) { g.globalAlpha = 0.35 + 0.2 * Math.sin(T * 20); ellipse(x, y, 10, 14, C.salmon); g.globalAlpha = 1; }
     if (D.tele && Math.floor(T * 10) % 2 === 0) {
       textO('!', x, y - 36, C.red, 'center', 2);
-      if (D.tele.kind === 'push') textO(D.tele.lane < r.lane ? '←' : '→', x + (D.tele.lane < r.lane ? -12 : 12), y - 4, C.red, 'center');
-      else textO('↓', x, y + 14, C.red, 'center');
+      if (D.tele.kind === 'push' || D.tele.kind === 'cut') textO(D.tele.lane < r.lane ? '←' : '→', x + (D.tele.lane < r.lane ? -12 : 12), y - 4, C.red, 'center');
+      else if (D.tele.kind === 'drop') textO('↓', x, y + 14, C.red, 'center');
     }
     const tt = D.tauntTxt || D.info.taunt;
     if ((this.state === 'intro' || D.tauntT > 0) && tt) this.speech(tt, x, y - (r.nem ? 40 : 34));
@@ -288,7 +298,7 @@ Object.assign(SCENES.run, {
     const x0 = this.laneL(o.lane) + ox; sy = Math.round(sy) + oy;
     const lw = this.laneW;
     switch (o.kind) {
-      case 'rock': { const img = o.v ? OB.rock2 : (this.reg.deco === 'forest' ? OB.mossrock : OB.rock); g.globalAlpha = 0.3; ellipse(x0 + lw / 2, sy + 4, 7, 2, C.ink); g.globalAlpha = 1; spr(img, x0 + lw / 2 - img.width / 2, sy - img.height + 4); break; }
+      case 'rock': { const img = o.ice ? OB.rock2 : o.kum || this.reg.deco === 'desert' ? OB.sandRock : o.v ? OB.rock2 : (this.reg.deco === 'forest' ? OB.mossrock : OB.rock); g.globalAlpha = 0.3; ellipse(x0 + lw / 2, sy + 4, 7, 2, C.ink); g.globalAlpha = 1; spr(img, x0 + lw / 2 - img.width / 2, sy - img.height + 4); break; }
       case 'hurdle': { for (let i = 0; i < o.span; i++) { const img = hurdleSprite(lw - 4); spr(img, x0 + i * lw + 2, sy - 5); } break; }
       case 'log': { const img = logSprite(o.span * lw - 4); spr(img, x0 + 2, sy - 5); break; }
       case 'puddle': { const img = puddleSprite(lw - 4, o.mud); spr(img, x0 + 2, sy - 5); break; }
@@ -365,6 +375,10 @@ Object.assign(SCENES.run, {
     };
     for (const f of this.foes) if (!f.dead && f.kind === 'okcu' && f.aim) tele(f.aimLane, this.sy(f.dist));
     if (this.reis && !this.reis.dead && this.reis.aimLanes) for (const l of this.reis.aimLanes) tele(l, this.sy(this.reis.dist));
+    for (const r of this.rivals) {
+      const t = r.duel && this.duel ? this.duel.tele : r.tele;
+      if (t && t.kind === 'shot' && !r.done) tele(t.lane, this.sy(r.dist));
+    }
     for (const s of this.eShots) {
       const sy = Math.round(this.sy(s.dist)) + oy; if (sy < -10 || sy > H + 10) continue;
       const x = Math.round(s.x) + this.offY(sy) + ox, img = PROJ.earrow;
@@ -440,15 +454,16 @@ Object.assign(SCENES.run, {
       const lw = this.laneW, xc = this.laneL(b.lane) + lw / 2 + ox;
       if (b.strike > 0) {
         g.globalAlpha = 0.8;
-        for (let y = 0; y < this.pY + 12; y += 6) { const o = this.offY(y); rect(xc - 2 + o, y, 4, 6, C.white); rect(xc - 1 + o, y, 2, 6, C.yellow); }
+        for (let y = 0; y < this.pY + 12; y += 6) { const o = this.offY(y); rect(xc - 2 + o, y, 4, 6, C.white); rect(xc - 1 + o, y, 2, 6, b.ice ? C.cyan : C.yellow); }
         g.globalAlpha = 1;
         burst(xc, this.pY + 10, 2, [C.yellow, C.white], 60, 0.3);
       } else {
         const on = Math.floor(T * 12) % 2 === 0;
         g.globalAlpha = on ? 0.35 : 0.18;
-        for (let y = this.pY - 70; y < this.pY + 20; y += 5) rect(xc - lw / 2 + 1 + this.offY(y), y + oy, lw - 2, 5, C.red);
+        for (let y = this.pY - 70; y < this.pY + 20; y += 5) rect(xc - lw / 2 + 1 + this.offY(y), y + oy, lw - 2, 5, b.ice ? C.sky : C.red);
         g.globalAlpha = 1;
-        spr(ICONS.bolt, xc - 3 + this.offY(this.pY - 80), this.pY - 80 + oy);
+        if (b.ice) { const ix = xc + this.offY(this.pY - 80), iy = this.pY - 84 + oy + Math.round((1 - b.t) * 6); spr(OB.iceShard, ix - 1, iy); spr(OB.flake, ix - 1, iy - 5); }
+        else spr(ICONS.bolt, xc - 3 + this.offY(this.pY - 80), this.pY - 80 + oy);
       }
     }
   },
@@ -499,7 +514,7 @@ Object.assign(SCENES.run, {
       if (this.elite) spr(ICONS.skull, bx + bw + 4, top + 10);
       if (this.type === 'sprint' && this.rivals.length) {
         let rank = 1; for (const r of this.rivals) if (r.done || r.dist > P.dist) rank++;
-        const ok = rank <= (S.assist > 0 ? 4 : 3);
+        const ok = rank <= this.passRank();
         textO(rank + '/' + (this.rivals.length + 1), cx, top + 19, ok ? C.yellow : C.red, 'center', 2);
       } else if (this.type === 'duello' && this.duel) {
         const r = this.duel.r, gap = Math.round((P.dist - Math.min(r.dist, this.length)) / 10), lead = gap >= 0 && !(r.done && this.state === 'run');
@@ -639,6 +654,7 @@ Object.assign(SCENES.run, {
     const title = this.type === 'boss' ? this.boss.def.name : this.tut ? 'ISINMA TURU' : ETAP_INFO[this.type].name;
     let sub = this.type === 'boss' ? this.boss.def.title : this.tut ? 'TEMEL HAREKETLER' : ETAP_INFO[this.type].short;
     if (this.type === 'baskin') sub = this.goal + ' DÜŞMAN VUR';
+    if (this.type === 'sprint' && !this.tut) sub = 'İLK ' + this.passRank() + '\'E GİR · ' + (this.rivals.length + 1) + ' YARIŞÇI';
     if (this.duel) sub = this.duel.def.name + ' İLE BİRE BİR';
     const tags = [];
     if (this.duel && this.duel.info.trick) tags.push([this.duel.info.trick, C.salmon]);

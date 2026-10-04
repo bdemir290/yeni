@@ -136,10 +136,10 @@ SCENES.run = {
     RUN.hp = Math.min(RUN.hp, S.maxHp);
     this.layout();
     const lenBase = { sprint: 3400, parkur: 3000, kovala: 3600, baskin: 3300, duello: 3200 };
-    this.length = this.type === 'boss' ? 1e9 : lenBase[this.type] + RUN.region * 300;
+    this.length = this.type === 'boss' ? 1e9 : lenBase[this.type] + Math.round(this.reg.tier * 260);
     this.tut = node.tutorial ? { step: 0, t: 0, hits: 0, msg: null, msgT: 0 } : null;
     if (this.tut) this.length = 4300;
-    this.goal = this.type === 'baskin' ? 10 + RUN.region + (this.elite ? 3 : 0) : 0;
+    this.goal = this.type === 'baskin' ? 10 + Math.round(this.reg.tier) + (this.elite ? 3 : 0) : 0;
     this.kills = 0;
     const lx = this.laneX(2);
     this.P = {
@@ -228,17 +228,21 @@ SCENES.run = {
   gainNefes(n) { this.nefes = Math.min(100, this.nefes + n * this.S.nefesGain * (RUN.runStyle === 'dengeli' ? 1.2 : 1)); },
 
   // ---------- setup helpers ----------
+  // how many places count as a pass: crowded fields (8 racers) let the top 4 through
+  passRank() { return (this.rivals.length >= 7 ? 4 : 3) + (this.S.assist > 0 ? 1 : 0); },
   spawnRivals() {
-    const speeds = this.reg.rivals.slice().sort((a, b) => b - a);
+    const field = clamp(this.reg.field || 5, 5, 7);
+    const speeds = this.reg.rivals.slice(0, field).sort((a, b) => b - a);
+    while (speeds.length < field) speeds.push(1);
     const looks = R.shuffle(RIVAL_LOOKS.slice());
-    const starts = [[0, 36], [1, 64], [3, 50], [4, 20], [2, -46]];
+    const starts = [[0, 36], [1, 64], [3, 50], [4, 20], [2, -46], [1, -22], [3, -64]].slice(0, field);
     const pool = (NAMED_RIVALS[RUN.region] || []).slice(), nemId = META.nemesis && META.nemesis.id;
-    const named = R.shuffle(pool.slice()).slice(0, RUN.etap >= 2 ? 2 : 1);
+    const named = R.shuffle(pool.slice()).slice(0, RUN.etap >= 3 ? 3 : RUN.etap >= 1 ? 2 : 1);
     if (nemId && pool.some(p => p.id === nemId) && !named.some(p => p.id === nemId)) named[0] = pool.find(p => p.id === nemId);
     const rest = R.shuffle(speeds.slice(named.length));
     const hc = this.S.rivalHandicap || 0;
-    const order = R.shuffle([0, 1, 2, 3, 4]);
-    for (let i = 0; i < 5; i++) {
+    const order = R.shuffle(starts.map((_, i) => i));
+    for (let i = 0; i < field; i++) {
       const [lane, d] = starts[order[i]];
       const def = named[i] || null;
       const spd = (def ? speeds[i] : rest[i - named.length]) * HEATS[RUN.heat].mult * (this.elite ? 1.04 : 1);
@@ -365,7 +369,7 @@ SCENES.run = {
     }
   },
   placePattern(y, ph) {
-    const d = RUN.region + RUN.etap * 0.3, S = this.S;
+    const d = this.reg.tier + RUN.etap * 0.3, S = this.S;
     const wet = this.weather === 'yagmur';
     const foeW = (this.type === 'sprint' ? 0.5 : this.type === 'baskin' ? 0.6 : this.type === 'duello' ? 0.35 : 1.0) * S.moreFoes * (this.elite ? 1.5 : 1);
     let pats;
@@ -373,7 +377,7 @@ SCENES.run = {
     else if (ph === 'warm') pats = [['rock1', 2], ['hurdle1', 2], ['coins', 2.5], ['puddle', wet ? 2.5 : 1], ['foe', foeW * 0.4]];
     else pats = [['rock1', 3], ['rock2', 1.4 + d], ['hurdle1', 3], ['hurdleLine', y > 700 ? 0.7 + d * 0.35 : 0], ['log', 2], ['puddle', wet ? 3 : 1.5],
       ['wall', d >= 1 ? 0.5 + d * 0.4 : 0], ['coins', ph === 'final' ? 3.2 : 2.2], ['coinArc', 1.5], ['fici', 0.8 + d * 0.2], ['foe', foeW * 1.4], ['foe2', ph === 'chal2' ? foeW * 0.6 : 0],
-      ['rgate', this.allowGate && ph !== 'final' && y - this.lastGateY > 800 ? 1.1 : 0], ['scan', this.allowScan && y - this.lastScanY > 520 ? 1.2 + d * 0.3 : 0]];
+      ['rgate', this.allowGate && ph !== 'final' && y - this.lastGateY > 800 ? 1.1 : 0], ['scan', this.allowScan && y - this.lastScanY > 520 && !this.nearSolid(y, 80) ? 1.2 + d * 0.3 : 0]];
     let tot = 0; for (const p of pats) tot += p[1];
     let r = rnd() * tot, pick = pats[0][0];
     for (const p of pats) { r -= p[1]; if (r <= 0) { pick = p[0]; break; } }
@@ -381,17 +385,27 @@ SCENES.run = {
     const coinLine = (lane, y0, n) => { for (let i = 0; i < n; i++) this.addObs('coin', lane, 1, y0 + i * 14); };
     let extra = 0;
     switch (pick) {
-      case 'rock1': this.addObs('rock', L, 1, y, { v: R.i(0, 1) }); if (R.chance(0.45)) coinLine((L + R.i(1, 4)) % 5, y - 20, 5); break;
-      case 'rock2': { const L2 = (L + R.i(1, 4)) % 5; this.addObs('rock', L, 1, y, { v: 1 }); this.addObs('rock', L2, 1, y + R.i(0, 1) * 30, { v: 0 }); break; }
+      case 'rock1': {
+        const lanes = [L].concat(R.shuffle([0, 1, 2, 3, 4].filter(l => l !== L)));
+        const ok = lanes.find(l => this.tryRocks([{ lane: l, y, v: R.i(0, 1) }]));
+        if (ok != null && R.chance(0.45)) coinLine((ok + R.i(1, 4)) % 5, y - 20, 5); else if (ok == null) coinLine(L, y - 30, 5);
+        break;
+      }
+      case 'rock2': { const L2 = (L + R.i(1, 4)) % 5; if (!this.tryRocks([{ lane: L, y, v: 1 }, { lane: L2, y: y + R.i(0, 1) * 30 }])) this.tryRocks([{ lane: L, y, v: 1 }]); break; }
       case 'hurdle1': { const sp = (L < 4 && R.chance(0.45)) ? 2 : 1; this.addObs('hurdle', L, sp, y); break; }
       case 'hurdleLine': this.addObs('hurdle', 0, 5, y); for (let i = 0; i < 3; i++) this.addObs('coin', R.i(0, 4), 1, y - 4 + i * 2); break;
       case 'log': { const sp = R.i(2, 3); const l0 = R.i(0, 5 - sp); this.addObs('log', l0, sp, y); break; }
       case 'puddle': this.addObs('puddle', L, 1, y, { mud: this.reg.mud }); if (R.chance(wet ? 0.7 : 0.4)) this.addObs('puddle', (L + 2) % 5, 1, y + 30, { mud: this.reg.mud }); break;
-      case 'wall': { const gapL = R.i(0, 4); for (let i = 0; i < 5; i++) if (i !== gapL) this.addObs('rock', i, 1, y, { v: i % 2 }); coinLine(gapL, y - 28, 4); extra = 50; break; }
+      case 'wall': {
+        // one gap; the generator only keeps a gap the horse can actually reach from the rows before it
+        const gapL = [L].concat(R.shuffle([0, 1, 2, 3, 4].filter(l => l !== L))).find(gl => this.tryRocks([0, 1, 2, 3, 4].filter(i => i !== gl).map(i => ({ lane: i, y, v: i % 2 }))));
+        if (gapL != null) { coinLine(gapL, y - 28, 4); extra = 50; } else coinLine(L, y - 30, 7);
+        break;
+      }
       case 'coins': coinLine(L, y - 30, 7); break;
       case 'coinArc': this.addObs('hurdle', L, 1, y); this.addObs('coin', L, 1, y - 14); this.addObs('coin', L, 1, y); this.addObs('coin', L, 1, y + 14); break;
       case 'coinRain': for (let i = 0; i < 10; i++) this.addObs('coin', R.i(0, 4), 1, y + i * 12); break;
-      case 'fici': this.addObs('fici', L, 1, y, { hp: 2 }); coinLine(L, y + 18, 3); break;
+      case 'fici': if (this.tryRocks([{ kind: 'fici', lane: L, y, extra: { hp: 2 } }])) coinLine(L, y + 18, 3); else coinLine(L, y - 30, 5); break;
       case 'foe': this.spawnFoeAt(y); break;
       case 'foe2': this.spawnFoeAt(y); this.spawnFoeAt(y + 46); break;
       case 'rgate': this.addObs('rgate', 0, 5, y, { need: 2, charge: 0, open: false, armed: false, openT: 0 }); this.lastGateY = y; coinLine(L, y + 26, 4); extra = 60; break;
@@ -407,7 +421,7 @@ SCENES.run = {
   barPattern(bar) {
     if (this.tut) return 'nnnn';
     const ph = this.type === 'boss' ? 'chal' : this.phaseAt(this.P.dist + 220);
-    const lvl = RUN.region + (RUN.heat || 0) * 0.5 + (this.elite ? 0.5 : 0);
+    const lvl = this.reg.tier + (RUN.heat || 0) * 0.5 + (this.elite ? 0.5 : 0);
     let pool;
     if (bar === 0) pool = NOTE_POOLS.basic;
     else if (this.allowH && this.nefes < 35 && rnd() < 0.35) pool = NOTE_POOLS.breath;
@@ -576,6 +590,7 @@ SCENES.run = {
     if (S.hamleStars) this.starBurst(S.hamleStars);
     if (S.hamleShield && !this.hamleShieldUsed) { this.hamleShieldUsed = true; P.shield++; floatText('+KALKAN', P.x, this.pY - 30, C.gold, 1, -12, 0.8); }
     if (this.boss && this.boss.taunt > 0) this.breakTaunt();
+    if (this.frost > 0) this.breakFrost();
   },
   useAbility() {
     if (this.bond < 100 || this.state !== 'run' || this.paused) return;
@@ -663,6 +678,7 @@ SCENES.run = {
     if (S.starDust && this.combo % 30 === 0 && RUN.hp < S.maxHp) { RUN.hp++; floatText('+1 CAN', P.x, this.pY - 22, C.red); Sound.play('heart'); }
     if (this.tut && this.tut.step === 3) this.tut.hits++;
     if (tg.kind === 'a' && perfect && this.boss && this.boss.taunt > 0) this.breakTaunt();
+    if (tg.kind === 'a' && perfect && this.frost > 0) this.breakFrost();
   },
   finishHold(auto) {
     const h = this.hold; if (!h) return;
@@ -854,7 +870,7 @@ SCENES.run = {
     for (const f of this.foes) if (!f.dead) { if (f.kind === 'okcu') this.okcuBeat(f, b); else if (f.kind === 'kalkanli') this.guardBeat(f, b); }
     if (this.reis && !this.reis.dead) this.reisBeat(b);
     if (this.boss && !this.boss.won) this.bossBeat(b);
-    if (this.duel) this.duelBeat(b);
+    if (this.duel) this.duelBeat(b); else if (this.rivals.length) this.rivalBeat(b);
     this.scanBeat();
   },
   // the duel rival acts on the beat: it shows its move one beat ahead ("!"), so the music warns you
@@ -871,6 +887,10 @@ SCENES.run = {
     } else if (r.style === 'sondan' && this.finalStretch && !D.surged) {
       D.surged = 1; D.surgeT = 3.2; D.nextTrick = b + 8;
       this.banner = { txt: r.name + ' ATAĞA KALKTI!', col: C.salmon }; this.bannerT = 1.6; Sound.play('roar');
+    } else if (r.style === 'atici' && gap > 40 && gap < 220 && r.laneT >= 1 && P.dist < this.length * 0.94) {
+      D.tele = { kind: 'shot', lane: P.lane }; D.nextTrick = b + 5; Sound.play('warn');
+    } else if (r.style === 'zikzak' && gap > 6 && gap < 64 && Math.abs(r.lane - P.lane) === 1 && r.laneT >= 1 && this.laneFree(P.lane, r.dist, r)) {
+      D.tele = { kind: 'cut', lane: P.lane }; D.nextTrick = b + 4; Sound.play('hey');
     } else if (gap > 6 && gap < 55 && Math.abs(r.lane - P.lane) === 1 && r.laneT >= 1 && D.blockCd <= 0 && this.laneFree(P.lane, r.dist, r)) {
       // cuts in front of you: go around it (being behind it still fills your draft)
       r.fromX = r.x; r.lane = P.lane; r.laneT = 0; r.cool = 1; D.blockCd = 3.5; D.nextTrick = b + 4;
@@ -889,11 +909,7 @@ SCENES.run = {
           floatText('İTTİ!', P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(3, 0.16); haptic('medium');
         }
       } else { r.stun = 0.8; floatText('BOŞA ÇIKTI!', r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.8); Sound.play('whoosh'); this.addBond(4); this.rate(6); }
-    } else if (t.kind === 'drop') {
-      const kind = rnd() < 0.5 ? 'civi' : 'puddle';
-      this.addObs(kind, r.lane, 1, r.dist - 22, kind === 'puddle' ? { mud: this.reg.mud } : null);
-      floatText(kind === 'civi' ? 'MAYIN!' : 'JÖLE!', r.x, this.sy(r.dist) + 2, C.salmon, 1, -6, 0.8); Sound.play('pebble');
-    }
+    } else this.rivalAct(r, t);
   },
   updateLayer() {
     let L = this.combo >= 20 ? 3 : this.combo >= 10 ? 2 : this.combo >= 4 ? 1 : 0;
@@ -1027,7 +1043,8 @@ SCENES.run = {
     const dec = k => { if (P[k] > 0) P[k] = Math.max(0, P[k] - dt); };
     ['invuln', 'slowT', 'hamleT', 'hamleCd', 'abilityT', 'laneInv', 'floatT', 'landInv', 'landBoostT', 'laneBoostT', 'flyT', 'ghostsT', 'stormT', 'slingT', 'jumpBuf', 'cleanT'].forEach(dec);
     if (this.fogT > 0) this.fogT -= dt;
-    if (P.laneT < 1) { P.laneT = Math.min(1, P.laneT + dt / S.laneTime); P.x = lerp(P.fromX, this.laneX(P.lane), Ease.outQuad(P.laneT)); }
+    if (this.frost > 0) this.frost -= dt;
+    if (P.laneT < 1) { P.laneT = Math.min(1, P.laneT + dt / (S.laneTime * (this.frost > 0 ? 1.8 : 1))); P.x = lerp(P.fromX, this.laneX(P.lane), Ease.outQuad(P.laneT)); }
     else P.x = this.laneX(P.lane) + (P.bounce ? P.bounce * 3 * Math.sin(Math.min(1, Math.abs(P.bounce)) * Math.PI) : 0);
     if (P.bounce) { P.bounce *= 0.8; if (Math.abs(P.bounce) < 0.05) P.bounce = 0; }
     if (P.jumping) {
@@ -1061,7 +1078,7 @@ SCENES.run = {
     if (this.state === 'run') this.updateBends();
     if (this.type === 'baskin' && this.state === 'run' && P.dist < this.length - 260) {
       this.foeTimer -= dt;
-      if (this.foeTimer <= 0) { this.foeTimer = R.f(0.85, 1.4) / (S.moreFoes * (this.elite ? 1.3 : 1) * (1 + 0.12 * RUN.region)); this.spawnFoeAt(P.dist + this.pY + 30); }
+      if (this.foeTimer <= 0) { this.foeTimer = R.f(0.85, 1.4) / (S.moreFoes * (this.elite ? 1.3 : 1) * (1 + 0.12 * this.reg.tier)); this.spawnFoeAt(P.dist + this.pY + 30); }
       if (!this.reisDone && P.dist > this.length * 0.5) this.spawnReis();
     }
     this.updateObs(dt);
@@ -1232,13 +1249,20 @@ SCENES.run = {
       const bd = this.bendAt(r.dist + 60);
       if (bd && r.cool <= 0 && r.laneT >= 1 && !ob) { const nl = r.lane + (bd < 0 ? -1 : 1); if (nl >= 0 && nl <= 4 && this.laneFree(nl, r.dist, r)) { r.fromX = r.x; r.lane = nl; r.laneT = 0; r.cool = 1.4; } }
       for (const o of this.obs) if (!o.dead && (SOLID[o.kind] || o.kind === 'scan') && o.lane === r.lane && Math.abs(o.y - r.dist) < 5 && !o.rivalHit) { o.rivalHit = true; r.stun = 0.8; }
-      if (r.style === 'itici' && !r.duel && r.pushCd <= 0 && r.laneT >= 1 && r.stun <= 0 && this.state === 'run' && Math.abs(r.lane - P.lane) === 1 && Math.abs(r.dist - P.dist) < 12 && P.flyT <= 0) {
-        r.pushCd = R.f(3, 5);
-        if (this.S.shoulder) this.pushRival(r, r.lane - P.lane);
-        else {
-          P.slowT = 0.45; P.slowAmt = 0.25 * (1 - Math.min(0.8, this.S.slowResist)); P.bounce = r.lane < P.lane ? 1 : -1;
-          floatText('İTTİ!', P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(2, 0.12); haptic('light');
+      // shoulder barge: a short "!" warning first, so a quick lane change (or a jump) dodges it
+      if (r.pushWarn > 0) {
+        r.pushWarn -= dt;
+        if (r.pushWarn <= 0) {
+          if (this.state === 'run' && r.stun <= 0 && Math.abs(r.lane - P.lane) === 1 && Math.abs(r.dist - P.dist) < 16 && P.flyT <= 0 && !P.jumping && !this.invulnerable()) {
+            if (this.S.shoulder) this.pushRival(r, r.lane - P.lane);
+            else {
+              P.slowT = 0.45; P.slowAmt = 0.25 * (1 - Math.min(0.8, this.S.slowResist)); P.bounce = r.lane < P.lane ? 1 : -1;
+              floatText('İTTİ!', P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(2, 0.12); haptic('light');
+            }
+          } else if (this.state === 'run') { floatText('BOŞA ÇIKTI!', r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.7); this.rate(4); }
         }
+      } else if (r.style === 'itici' && !r.duel && r.pushCd <= 0 && r.laneT >= 1 && r.stun <= 0 && this.state === 'run' && Math.abs(r.lane - P.lane) === 1 && Math.abs(r.dist - P.dist) < 12 && P.flyT <= 0) {
+        r.pushCd = R.f(3, 5); r.pushWarn = 0.42; Sound.play('hey');
       }
       let front = null;
       if (P.lane === r.lane && P.dist > r.dist && P.dist - r.dist < 17) front = P.speed;

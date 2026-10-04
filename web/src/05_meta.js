@@ -2,7 +2,7 @@
 const SAVE_KEY = 'dortnala_save_v1';
 function defaultMeta() {
   return {
-    v: 4, yonca: 0, rozet: 0, seker: 0, xp: 0, level: 1, points: 0,
+    v: 5, yonca: 0, rozet: 0, seker: 0, xp: 0, level: 1, points: 0,
     skills: {},
     blv: { ev: 1, ahir: 1, pano: 1, ambar: 0, silahhane: 0, nalbant: 0, tapinak: 0, jokey: 0, veteriner: 0, bahce: 0 },
     nals: { demir: true }, nal: 'demir', foods: {}, food: null, food2: null,
@@ -55,6 +55,22 @@ function loadMeta(hot) {
     if (META.keepsake === 'teyze') META.keepsake = 'bip'; else if (META.keepsake === 'hasan') META.keepsake = 'moko';
     if (META.flags.hasan) META.flags.moko = true;
     META.introDone = false; META.seen = {}; META.memRead = {}; META.runSave = null; META.v = 4;
+  }
+  // v5: two planets now sit between Mantar Ayı and the arena; move v4 region indices to their new place
+  if (obj && (obj.v || 0) < 5) {
+    const map = i => REGION_V4[clamp(i | 0, 0, REGION_V4.length - 1)];
+    META.stats.bestRegion = map(META.stats.bestRegion);
+    if (META.stats.bestProgress >= 10) META.stats.bestProgress += 10;
+    const rs = META.runSave;
+    if (rs) {
+      rs.region = map(rs.region);
+      for (const k of ['shopDone', 'restDone', 'kaosDone', 'eventCount', 'duelDone']) {
+        const o = rs[k]; if (!o) continue;
+        const n = {}; for (const r in o) n[map(+r)] = o[r]; rs[k] = n;
+      }
+      if (rs.diedIn && rs.diedIn.region != null) rs.diedIn.region = map(rs.diedIn.region);
+    }
+    META.v = 5;
   }
   fixCrops();
 }
@@ -176,6 +192,8 @@ function nextGoal() {
     if (lv >= 1 && lv < b.max) return { text: b.name + ' SEVİYE ' + (lv + 1), target: k, cur: META.yonca, need: b.up[lv], icon: 'hammer' };
   }
   if (!META.stats.bossWins.kurt) return { text: 'ULUYAN GORM\'U YEN', target: 'gate', icon: 'crown' };
+  if (!META.stats.bossWins.niva) return { text: 'BUZ KRALİÇESİ NİVA\'YI YEN', target: 'gate', icon: 'crown' };
+  if (!META.stats.bossWins.zarg) return { text: 'KUM SOLUCANI ZARG\'I YEN', target: 'gate', icon: 'crown' };
   if (!META.stats.wins) return { text: 'GALAKSİ KUPASINI KAZAN', target: 'gate', icon: 'crown' };
   return { text: 'ZOR PİSTTE KUPAYI KAZAN', target: 'gate', icon: 'crown' };
 }
