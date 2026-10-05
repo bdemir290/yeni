@@ -31,7 +31,7 @@ function newRun(opts) {
     food: built('ambar') ? META.food : null, food2: bl('ambar') >= 2 ? META.food2 : null,
     keepsake: META.keepsake && META.bond[META.keepsake] > 0 ? META.keepsake : null,
     runStyle: RUN_STYLES[META.runStyle] ? META.runStyle : 'dengeli', heat: META.heatUnlocked ? META.heat : 0,
-    blanket: bl('ahir') >= 2 ? META.blanket : null, petted: META.petted ? (bl('ahir') >= 3 ? 10 : 5) : 0,
+    blanket: bl('ahir') >= 2 ? META.blanket : null, petted: META.petted ? [5, 5, 5, 10, 15][bl('ahir')] : 0,
     boons: {}, chaos: [], mods: [], hammers: 0, region: 0, etap: 0, hp: 3, coins: 0, coinsEarned: 0, yonca: 0, seker: 0,
     perfects: 0, maxCombo: 0, kills: 0, medals: { g: 0, s: 0, b: 0 }, score: 0, nearMiss: 0, specials: 0, cleanJumps: 0, hamles: 0, holds: 0,
     bosses: 0, cleared: 0, overtakes: 0, revivesUsed: 0, rerollsUsed: 0, doorRerolls: 0, rareNext: false, bonusMaxHp: 0, shotBonus: 0,
@@ -240,7 +240,7 @@ SCENES.run = {
 
   // ---------- setup helpers ----------
   // how many places count as a pass: crowded fields (8 racers) let the top 4 through
-  passRank() { return (this.rivals.length >= 7 ? 4 : 3) + (this.S.assist > 0 ? 1 : 0); },
+  passRank() { return (this.reg.pass || (this.rivals.length >= 7 ? 4 : 3)) + (this.S.assist > 0 ? 1 : 0); },
   spawnRivals() {
     const field = clamp(this.reg.field || 5, 5, 7);
     const speeds = this.reg.rivals.slice(0, field).sort((a, b) => b - a);
@@ -658,7 +658,7 @@ SCENES.run = {
   },
   togglePause() {
     if (this.state !== 'run' && this.state !== 'intro') return;
-    this.paused = !this.paused; this.confirmQuit = false; this.showBoons = false;
+    this.paused = !this.paused; this.confirmQuit = false; this.showBoons = false; if (this.calibOpen) { this.calibOpen = false; Calib.st = null; }
     if (this.paused) { Music.stop(); this.hold = null; return; }
     if (this.clockOn) {
       const t0 = now() + 0.6; Beat.set(this.reg.bpm, t0); Music.play(this.reg.song, t0, this.type === 'boss');

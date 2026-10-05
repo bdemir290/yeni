@@ -763,17 +763,19 @@ Object.assign(SCENES.run, {
   drawPause() {
     UI.block(0, 0, W, H, null);
     g.globalAlpha = 0.6; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
-    const pw = Math.min(W - 24, 170), ph = 152, px = Math.round(W / 2 - pw / 2), py = Math.round(H / 2 - ph / 2);
+    const pw = Math.min(W - 24, 170), ph = 172, px = Math.round(W / 2 - pw / 2), py = Math.round(H / 2 - ph / 2);
     panel(px, py, pw, ph, 'MOLA');
     button('p_resume', px + 10, py + 22, pw - 20, 18, 'DEVAM ET', () => this.togglePause());
     button('p_boons', px + 10, py + 46, pw - 20, 16, 'GÜÇLERİM (' + (Object.keys(RUN.boons).length + (RUN.mods ? RUN.mods.length : 0)) + ')', () => { this.showBoons = true; }, { kind: 'blue' });
     button('p_music', px + 10, py + 66, pw - 20, 16, 'MÜZİK: ' + (META.settings.music ? 'AÇIK' : 'KAPALI'), () => { META.settings.music = !META.settings.music; Sound.applySettings(); saveMeta(); }, { kind: 'secondary' });
     button('p_sfx', px + 10, py + 86, pw - 20, 16, 'EFEKTLER: ' + (META.settings.sfx ? 'AÇIK' : 'KAPALI'), () => { META.settings.sfx = !META.settings.sfx; Sound.applySettings(); saveMeta(); }, { kind: 'secondary' });
-    button('p_quit', px + 10, py + 114, pw - 20, 18, this.confirmQuit ? 'EMİN MİSİN? TEKRAR BAS' : 'KOŞUYU BIRAK', () => {
+    button('p_calib', px + 10, py + 106, pw - 20, 16, 'RİTMİ ÖLÇ', () => { this.calibOpen = true; Calib.start(); }, { kind: 'blue' });
+    button('p_quit', px + 10, py + 134, pw - 20, 18, this.confirmQuit ? 'EMİN MİSİN? TEKRAR BAS' : 'KOŞUYU BIRAK', () => {
       if (!this.confirmQuit) { this.confirmQuit = true; return; }
       this.paused = false; this.state = 'gone'; Music.fever = false; RUN.diedIn = { type: 'quit', region: RUN.region, etap: RUN.etap }; go('results', { won: false, quit: true });
     }, { kind: 'red' });
     if (this.showBoons) drawBoonList(() => { this.showBoons = false; });
+    if (this.calibOpen) Calib.draw(() => { this.calibOpen = false; });
   }
 });
 const FLIP_CACHE = new Map();

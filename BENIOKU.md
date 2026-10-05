@@ -1,4 +1,4 @@
-# Dörtnala – iOS prototipi (v5.3 · Galaksi Kupası)
+# Dörtnala – iOS prototipi (v5.4 · Galaksi Kupası)
 
 Hades tarzı, üslü roguelike at yarışı. Pixel art, dikey ekran, tek elle oynanır.
 
@@ -105,6 +105,14 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 - **Seyir Defteri büyüdü:** "Donmuş Taht", "Kumun Altındaki Çip", "Açık Kapı" ve "Herkes Evine" sayfaları; sayfalar hikaye sırasına göre numaralanır.
 - **Kapı Açık (kurtuluş):** her kupa kazancı kapıyı bir kez daha açar. Düelloda dosyasını açtığın bir rakibi evine gönderirsin: veda eder, veda hediyesi bırakır (+12 kristal, +1 şeker) ve bir daha piste çıkmaz. Hakkını hemen kullanmazsan Seyir Defteri'ndeki rakip sayfasından da kullanabilirsin. Zafer Vitrini ve Seyir Defteri eve dönenleri gösterir; hepsi dönünce son sayfa açılır.
 - **Akyel istasyonda:** kupadan sonra annen Akyel vitrinin yanında durur. Sohbet eder; şeker verirsen hatırası *Akyel'in Nalı* şampiyon yarışlarında farkın daha yavaş kapanmasını sağlar.
+
+## v5.4: İç denetim sonrası
+
+- **iOS:** müzik varsayılan olarak sessiz modda da çalar (ritim oyunu için gerekli); Ayarlar > *Sessiz modda da çal* ile kapatılabilir. iOS oyunun web sürecini kapatırsa oyun en güncel kayıtla yeniden yüklenir.
+- **Ekonomi:** koşu sonunda ilk 500 sikke 10'a 1, fazlası 20'ye 1 kristal olur (pazarda harcamak daha değerli). Altı binaya pahalı 4. seviye geldi (3 şampiyon rozeti gerekir): Ahır (+1 puan, sevilen Yıldız 15 komboyla başlar), Görev Ekranı (ödüller iki kat), Cephanelik (atışlar +%60), Nal Atölyesi (yavaşlama -%20), Jokey Koğuşu (teknik %75 hızlı), Revir (3 kez kalk).
+- **Galaksi Arenası:** sprintte 6 rakip, ilk 4 geçer (önceden 7 rakip).
+- **Mola menüsünde ritim ölçümü:** kulaklık değişince koşudan çıkmadan yeniden ölç.
+- Düzeltmeler: lig bonusu puan almadan verilmez, sıçrama toleransında şerit değiştirerek kaçış hasarsız, Türkçe ek hataları, hedef çubuğu kullanılmamış eve gönderme hakkını gösterir.
 
 ## Proje yapısı
 

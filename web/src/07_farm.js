@@ -91,7 +91,7 @@ SCENES.farm = {
   petHorse() {
     Sound.play('nicker'); haptic('light');
     for (let i = 0; i < 4; i++) this.hearts.push({ x: this.hx + (rnd() - 0.5) * 14, y: this.hy - 12 - rnd() * 6, t: 1.2 + rnd() * 0.4 });
-    if (!META.petted) { META.petted = true; saveMeta(); toast('YILDIZ MUTLU! SONRAKİ KOŞU +' + (bl('ahir') >= 3 ? 10 : 5) + ' KOMBOYLA BAŞLAR', C.salmon, 'heartS'); }
+    if (!META.petted) { META.petted = true; saveMeta(); toast('YILDIZ MUTLU! SONRAKİ KOŞU +' + [5, 5, 5, 10, 15][bl('ahir')] + ' KOMBOYLA BAŞLAR', C.salmon, 'heartS'); }
   },
   petDog() {
     if (!this.hasDog()) return;
@@ -318,7 +318,7 @@ SCENES.farm = {
         if ((b.rozet && META.rozet < b.rozet) || (b.needBoon && META.stats.boons === 0)) spr(ICONS.lock, bx + 24, by - 6);
       } else if (b.max > 1) {
         for (let i = 0; i < b.max; i++) { rect(x + L.w - 4 - (b.max - i) * 4, y + L.h - 4, 3, 3, C.ink); pix(x + L.w - 3 - (b.max - i) * 4, y + L.h - 3, i < lv ? C.yellow : C.slate); }
-        if (lv < b.max && META.yonca >= b.up[lv] && Math.floor(this.t * 2) % 2 === 0) { const ax = x + L.w - 6, ay = y + L.h - 12; text('↑', ax, ay, C.green, 'center'); }
+        if (lv < b.max && META.yonca >= b.up[lv] && !(lv === 3 && META.rozet < LV4_ROZET) && Math.floor(this.t * 2) % 2 === 0) { const ax = x + L.w - 6, ay = y + L.h - 12; text('↑', ax, ay, C.green, 'center'); }
       }
     }
     // name plate so every module says what it is at a glance
@@ -391,7 +391,7 @@ SCENES.farm = {
     button('pclose', x + w - 14, y + 2, 11, 10, 'X', () => this.closePanel(), { kind: 'red', hitPad: 5 });
     return { x, y, w, h };
   },
-  closePanel() { if (this.panel === 'calib') { this.cal = null; Music.play('farm', now() + 0.2, false); } this.panel = null; this.page = null; this.confirmReset = false; this.defTab = null; },
+  closePanel() { if (this.panel === 'calib') { Calib.st = null; Music.play('farm', now() + 0.2, false); } this.panel = null; this.page = null; this.confirmReset = false; this.defTab = null; },
   drawPanel() {
     const p = this.panel;
     if (p.startsWith('repair:')) return this.pRepair(p.slice(7));
@@ -419,16 +419,16 @@ SCENES.farm = {
     text('SEVİYE ' + lv + '/' + b.max, P.x + 12 + b.max * 6, y, C.lgray);
     if (u.max) { text('EN ÜST!', P.x + P.w - 8, y, C.green, 'right'); return y + 12; }
     u.next.forEach((ln, i) => text(ln, P.x + 8, y + 10 + i * 9, C.sky));
-    const can = META.yonca >= u.cost;
-    button('up_' + k, P.x + P.w - 66, y + 2, 58, 15, String(u.cost), () => this.doUpgrade(k), { icon: 'clover', disabled: !can });
-    text(can ? 'YÜKSELT' : (u.cost - META.yonca) + ' EKSİK', P.x + P.w - 37, y + 19, can ? C.green : C.salmon, 'center');
+    const lock = lv === 3 && META.rozet < LV4_ROZET, can = META.yonca >= u.cost && !lock;
+    button('up_' + k, P.x + P.w - 66, y + 2, 58, 15, String(u.cost), () => this.doUpgrade(k), { icon: lock ? 'lock' : 'clover', disabled: !can });
+    text(lock ? LV4_ROZET + ' ROZET GEREK' : can ? 'YÜKSELT' : (u.cost - META.yonca) + ' EKSİK', P.x + P.w - 37, y + 19, can ? C.green : C.salmon, 'center');
     y += 10 + Math.max(2, u.next.length) * 9 + 2;
     u.later.forEach((ln, i) => text(ln, P.x + 8, y + i * 9, C.gray));
     return y + u.later.length * 9;
   },
   doUpgrade(k) {
     const b = BUILDINGS[k], lv = bl(k), cost = b.up[lv];
-    if (lv >= b.max || META.yonca < cost) return;
+    if (lv >= b.max || META.yonca < cost || (lv === 3 && META.rozet < LV4_ROZET)) return;
     META.yonca -= cost; META.blv[k] = lv + 1;
     if (k === 'ambar' && lv === 0) { META.foods.havuc = true; if (!META.food) META.food = 'havuc'; }
     if (k === 'ahir' && lv >= 1) { META.points++; toast('+1 SEVİYE PUANI', C.yellow, 'star'); }
@@ -504,7 +504,7 @@ SCENES.farm = {
     const showDaily = META.tutorialDone;
     const P = this.panelBox('GÖREV EKRANI', 20 + slots * 30 + 52 + (showDaily ? 30 : 0) + this.upgradeH('pano') + 8);
     let y = P.y + 18;
-    const bonus = bl('pano') >= 3 ? 1.5 : 1;
+    const bonus = [1, 1, 1, 1.5, 2][bl('pano')];
     for (const m of META.missions) {
       const lines = wrapText(missionText(m), P.w - 76);
       lines.slice(0, 2).forEach((ln, i) => text(ln, P.x + 8, y + i * 9, m.done ? C.green : C.white));
@@ -917,65 +917,10 @@ SCENES.farm = {
       const keep = META.settings; META = defaultMeta(); META.settings = keep; saveMeta(); this.confirmReset = false; this.panel = null; go('title');
     }, { kind: 'red' });
   },
-  // ---------- rhythm calibration: tap along with 16 clicks, the median lag becomes the rhythm offset ----------
-  startCalib() {
-    Sound.unlock(); Music.stop();
-    const t0 = now() + 0.8, iv = 0.6, n = 16;
-    this.cal = { t0, iv, n, taps: [], result: null };
-    for (let i = 0; i < n; i++) {
-      const t = Sound.at(t0 + i * iv), acc = i % 4 === 0;
-      Sound.tone(acc ? 1568 : 1046, 0.05, 'square', 0.22, t, null, Sound.master);
-      Sound.noise(0.03, 0.25, t, 'highpass', 3000, Sound.master);
-    }
-    this.panel = 'calib';
-  },
-  calibTap(t) {
-    const c = this.cal; if (!c || c.result) return;
-    const k = Math.round((t - c.t0) / c.iv);
-    if (k < 2 || k >= c.n) return; // the first two clicks are only for finding the beat
-    const d = t - (c.t0 + k * c.iv);
-    if (Math.abs(d) < c.iv * 0.45) { c.taps.push(d); haptic('light'); }
-  },
-  finishCalib() {
-    const c = this.cal;
-    if (c.taps.length < 6) { c.result = { fail: true }; return; }
-    const sorted = c.taps.slice().sort((a, b) => a - b), med = sorted[sorted.length >> 1];
-    const spread = sorted[Math.floor(sorted.length * 0.8)] - sorted[Math.floor(sorted.length * 0.2)];
-    const ms = clamp(Math.round((med - Sound.latency()) * 1000 / 5) * 5, -150, 150);
-    c.result = { ms, med: Math.round(med * 1000), spread: Math.round(spread * 1000) };
-  },
+  // ---------- rhythm calibration (shared with the pause menu, see Calib in 05b_calib.js) ----------
+  startCalib() { Calib.start(); this.panel = 'calib'; },
   pCalib() {
-    const c = this.cal; if (!c) { this.panel = 'settings'; return; }
-    const P = this.panelBox('RİTİM AYARI', 150);
-    const t = now(), bp = (t - c.t0) / c.iv, k = Math.floor(bp);
-    if (!c.result && bp > c.n + 0.5) this.finishCalib();
-    if (!c.result) UI.block(0, 0, W, H, (px, py, tt) => this.calibTap(tt == null ? now() : tt));
-    let y = P.y + 19;
-    textBlock(c.result ? (c.result.fail ? 'YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.' : 'ÖLÇÜM TAMAM!') : 'SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.', P.x + P.w / 2, y, P.w - 20, C.lgray, 'center');
-    y += 30;
-    const cx = P.x + P.w / 2;
-    if (!c.result) {
-      // the click, as a ring that flashes on each beat, and the count
-      const f = bp >= 0 && k < c.n ? Math.max(0, 1 - (bp - k) * 3) : 0;
-      circle(cx, y + 14, 12, C.ink); circle(cx, y + 14, 11, f > 0 ? (k % 4 === 0 ? C.gold : C.sky) : C.slate);
-      if (f > 0) { g.globalAlpha = f; ring(cx, y + 14, 13 + Math.round((1 - f) * 6), C.white); g.globalAlpha = 1; }
-      text(bp < 0 ? 'HAZIR...' : Math.min(c.n, k + 1) + '/' + c.n, cx, y + 32, C.white, 'center');
-    } else if (!c.result.fail) {
-      const r = c.result;
-      textO((r.ms > 0 ? '+' : '') + r.ms + ' MS', cx, y + 2, C.yellow, 'center', 2);
-      text(r.ms > 10 ? 'SESİ BİRAZ GEÇ DUYUYORSUN' : r.ms < -10 ? 'SESİN ÖNÜNE GEÇİYORSUN' : 'ZAMANLAMAN TAM', cx, y + 22, C.lgray, 'center');
-      text('SAPMA: ' + r.spread + ' MS' + (r.spread > 90 ? ' (TEKRAR DENE)' : ''), cx, y + 32, r.spread > 90 ? C.salmon : C.gray, 'center');
-    }
-    // where each tap landed: -150 ms ... +150 ms
-    const lx = P.x + 16, lw = P.w - 32, ly = P.y + 112;
-    rect(lx, ly, lw, 1, C.slate); vline(lx + lw / 2, ly - 3, 7, C.lgray);
-    text('ERKEN', lx, ly + 3, C.gray); text('GEÇ', lx + lw, ly + 3, C.gray, 'right');
-    for (const d of c.taps) { const x = lx + lw / 2 + clamp(d / 0.15, -1, 1) * lw / 2; vline(x, ly - 2, 5, C.cyan); }
-    if (c.result) {
-      const bw = Math.floor((P.w - 26) / 2);
-      button('cal_again', P.x + 8, P.y + P.h - 22, bw, 15, 'TEKRAR', () => this.startCalib(), { kind: 'secondary' });
-      if (!c.result.fail) button('cal_ok', P.x + 18 + bw, P.y + P.h - 22, bw, 15, 'KAYDET', () => { META.settings.offset = c.result.ms; saveMeta(); toast('RİTİM GECİKMESİ: ' + c.result.ms + ' MS', C.green, 'check'); this.cal = null; this.panel = 'settings'; Music.play('farm', now() + 0.2, false); }, { kind: 'green' });
-    }
+    Calib.draw(() => { this.panel = 'settings'; Music.play('farm', now() + 0.2, false); });
   },
   pDaily() {
     const P = this.panelBox('GÜNLÜK ERZAK', 104);

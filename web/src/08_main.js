@@ -163,6 +163,7 @@ window.__dortnala = {
   error: () => LAST_ERROR,
   beat: () => Beat.pos(now()), iv: () => Beat.iv, stats: () => computeStats(RUN),
   art: () => { const RACERS = {}; for (const k in ALIEN_LOOKS) RACERS[k] = getMount(k); RACERS.voltrak = getHorse('robot', 'voltrak'); RACERS.deniz = getHorse('bay', 'deniz'); return { BLD, PEOPLE, PORTRAIT, OB, FOE_SPR, ICONS, PROJ, MEDAL, RACERS }; },
+  calib: () => Calib.st,
   rects: () => UI.prev.map(r => ({ id: r.id, x: r.x, y: r.y, w: r.w, h: r.h }))
 };
 boot();

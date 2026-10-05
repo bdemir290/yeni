@@ -185,16 +185,18 @@ const BRANCHES = [{ name: 'HIZ', color: C.sky }, { name: 'DAYANIKLILIK', color: 
 // ---------- farm buildings (level 0 = ruined, 1 = repaired, 2-3 = upgrades) ----------
 const BUILDINGS = {
   ev: { name: 'KAMARA', max: 1, up: [0], upDesc: ['SEYİR DEFTERİ'], desc: 'DENİZ\'İN KAMARASI. SEYİR DEFTERİNDE BU TUHAF YOLCULUK YAZILI.' },
-  ahir: { name: 'AHIR MODÜLÜ', max: 3, up: [0, 80, 160], upDesc: ['ANTRENMAN PLANI', '+1 PUAN VE BATTANİYE RENKLERİ', '+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ'], desc: 'YILDIZ\'IN CAM KUBBELİ AHIRI. SEVİYE PUANLARINI ANTRENMANDA HARCA.' },
-  pano: { name: 'GÖREV EKRANI', max: 3, up: [0, 60, 140], upDesc: ['3 GÖREV', '4. GÖREV YUVASI', 'GÖREV ÖDÜLLERİ +%50'], desc: 'GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.' },
+  ahir: { name: 'AHIR MODÜLÜ', max: 4, up: [0, 80, 160, 280], upDesc: ['ANTRENMAN PLANI', '+1 PUAN VE BATTANİYE RENKLERİ', '+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ', '+1 PUAN, SEVİLEN YILDIZ 15 KOMBOYLA BAŞLAR'], desc: 'YILDIZ\'IN CAM KUBBELİ AHIRI. SEVİYE PUANLARINI ANTRENMANDA HARCA.' },
+  pano: { name: 'GÖREV EKRANI', max: 4, up: [0, 60, 140, 260], upDesc: ['3 GÖREV', '4. GÖREV YUVASI', 'GÖREV ÖDÜLLERİ +%50', 'GÖREV ÖDÜLLERİ İKİ KAT'], desc: 'GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.' },
   ambar: { name: 'YEM DEPOSU', max: 2, up: [20, 90], upDesc: ['KOŞUDAN ÖNCE YEM SEÇ', 'İKİNCİ YEM YUVASI'], desc: 'DÜNYA\'DAN GETİRİLEN YEMLER. KOŞUDAN ÖNCE BİRİNİ SEÇ, AVANTAJLA BAŞLA.' },
-  silahhane: { name: 'CEPHANELİK', max: 3, up: [30, 100, 200], upDesc: ['SİLAH SEÇ VE GELİŞTİR', 'TÜM ATIŞLAR +%20 HASAR', 'TÜM ATIŞLAR +%40 HASAR'], desc: 'EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ EDER.' },
-  nalbant: { name: 'NAL ATÖLYESİ', max: 3, up: [50, 100, 180], upDesc: ['NAL SEÇ', 'HER NALDA +%5 HIZ', 'HER NALDA +1 AZAMİ CAN'], desc: 'FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.' },
+  silahhane: { name: 'CEPHANELİK', max: 4, up: [30, 100, 200, 350], upDesc: ['SİLAH SEÇ VE GELİŞTİR', 'TÜM ATIŞLAR +%20 HASAR', 'TÜM ATIŞLAR +%40 HASAR', 'TÜM ATIŞLAR +%60 HASAR'], desc: 'EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ EDER.' },
+  nalbant: { name: 'NAL ATÖLYESİ', max: 4, up: [50, 100, 180, 300], upDesc: ['NAL SEÇ', 'HER NALDA +%5 HIZ', 'HER NALDA +1 AZAMİ CAN', 'HER NALDA YAVAŞLAMA -%20'], desc: 'FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.' },
   tapinak: { name: 'GÖZLEMEVİ', max: 3, up: [60, 120, 220], needBoon: true, upDesc: ['GÖZDE TAKIMYILDIZINI SEÇ', 'İKİLİ GÜÇ ŞANSI 2 KAT', 'NADİR GÜÇ ŞANSI +%15'], desc: 'TELESKOP YILDIZ ATLARINA ÇEVRİLİ. GÖZDE TAKIMYILDIZININ İLK GÜCÜ SENİN OLUR.' },
-  jokey: { name: 'JOKEY KOĞUŞU', max: 3, up: [40, 90, 170], rozet: 1, upDesc: ['TEKNİK SEÇ', 'TEKNİK %25 HIZLI DOLAR', 'TEKNİK %50 HIZLI DOLAR'], desc: 'TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.' },
-  veteriner: { name: 'REVİR', max: 3, up: [80, 150, 220], upDesc: ['1 KEZ, 1 CANLA KALK', '1 KEZ, 2 CANLA KALK', '2 KEZ, 2 CANLA KALK'], desc: 'İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.' },
+  jokey: { name: 'JOKEY KOĞUŞU', max: 4, up: [40, 90, 170, 300], rozet: 1, upDesc: ['TEKNİK SEÇ', 'TEKNİK %25 HIZLI DOLAR', 'TEKNİK %50 HIZLI DOLAR', 'TEKNİK %75 HIZLI DOLAR'], desc: 'TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.' },
+  veteriner: { name: 'REVİR', max: 4, up: [80, 150, 220, 380], upDesc: ['1 KEZ, 1 CANLA KALK', '1 KEZ, 2 CANLA KALK', '2 KEZ, 2 CANLA KALK', '3 KEZ, 2 CANLA KALK'], desc: 'İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.' },
   bahce: { name: 'SERA', max: 3, up: [25, 90, 180], upDesc: ['3 TEPSİ', '5 TEPSİ', '7 TEPSİ'], desc: 'HER KOŞUDAN SONRA ÜRÜNLER BÜYÜR. HAVUÇ KRİSTAL, PANCAR ŞEKER VERİR.' }
 };
+// the 4th level of a building is late game: it needs this many champion badges
+const LV4_ROZET = 3;
 const BUILD_ORDER = ['ambar', 'silahhane', 'bahce', 'nalbant', 'jokey', 'tapinak', 'veteriner'];
 const DECOR = {
   saman: { name: 'SAMAN BALYALARI', cost: 10 },
@@ -226,7 +228,7 @@ const REGIONS = [
   { id: 'kum', name: 'KIZIL KUM', song: 'kum', bpm: 134, speed: 1.14, dens: 1.3, rivals: [0.92, 0.97, 1.01, 1.05, 1.1, 0.95, 0.99], boss: 'zarg', tier: 2, field: 7,
     grass: C.rust, grass2: C.dbrown, grassD: C.orange0, dirt: C.sand, dirtD: C.tan, dirtL: C.white, rail: C.orange, post: C.dbrown, deco: 'desert', mud: false,
     foes: { karga: 0.8, domuz: 1.0, eskiya: 0.9, okcu: 0.7, kalkanli: 0.4 }, weather: { acik: 5, kumf: 3, ruzgar: 2 } },
-  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.17, dens: 1.36, rivals: [0.93, 0.98, 1.03, 1.07, 1.12, 0.96, 1.0], boss: 'simsek', tier: 2.4, field: 7,
+  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.17, dens: 1.36, rivals: [0.93, 0.98, 1.03, 1.07, 1.12, 0.96, 1.0], boss: 'simsek', tier: 2.4, field: 6, pass: 4,
     grass: C.navy, grass2: C.slate, grassD: C.ink, dirt: C.orange0, dirtD: C.rust, dirtL: C.tan, rail: C.cyan, post: C.lgray, deco: 'stadium', mud: false, night: true,
     foes: { karga: 0.8, domuz: 0.8, eskiya: 1.0, okcu: 0.8, kalkanli: 0.5 }, weather: { acik: 6, yagmur: 3, ruzgar: 2 } }
 ];
@@ -577,7 +579,7 @@ const TIPS = [
   ['ayse', 'TEKNİK GÖSTERGESİ DOLUNCA ALTTAKİ DÜĞMEYE BAS.'],
   ['kemal', 'RAKİBİN ARKASINDA KALIRSAN SİPER DOLAR. YANA ÇIKINCA FIRLARSIN.'],
   ['tayfun', 'GÖKTAŞININ YANINDAN SON ANDA GEÇERSEN KIL PAYI SİKKESİ ALIRSIN!'],
-  ['ayse', 'SİKKELERİN BOŞA GİTMEZ: KOŞU SONUNDA 10 SİKKE 1 KRİSTAL OLUR.'],
+  ['ayse', 'SİKKELERİN BOŞA GİTMEZ: KOŞU SONUNDA İLK 500 SİKKE 10\'A 1, FAZLASI 20\'YE 1 KRİSTAL OLUR. PAZARDA HARCAMAYI UNUTMA!'],
   ['kemal', 'NEFESİNİ HER YERDE HARCAMA. SON DÜZLÜKTE SAKLADIĞIN NEFES SENİ UÇURUR.'],
   ['ayse', 'VİRAJDA İÇ KULVARA YAPIŞ, DIŞTAN DÖNEN HEP GERİDE KALIR.'],
   ['tayfun', 'ALTIN NOTAYI TAM VURURSAN SİLAH ÇILDIRIR! ÜÇLÜ IŞIN, PLAZMA, NE VARSA!'],

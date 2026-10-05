@@ -3338,16 +3338,18 @@ const BRANCHES = [{ name: 'HIZ', color: C.sky }, { name: 'DAYANIKLILIK', color: 
 // ---------- farm buildings (level 0 = ruined, 1 = repaired, 2-3 = upgrades) ----------
 const BUILDINGS = {
   ev: { name: 'KAMARA', max: 1, up: [0], upDesc: ['SEYİR DEFTERİ'], desc: 'DENİZ\'İN KAMARASI. SEYİR DEFTERİNDE BU TUHAF YOLCULUK YAZILI.' },
-  ahir: { name: 'AHIR MODÜLÜ', max: 3, up: [0, 80, 160], upDesc: ['ANTRENMAN PLANI', '+1 PUAN VE BATTANİYE RENKLERİ', '+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ'], desc: 'YILDIZ\'IN CAM KUBBELİ AHIRI. SEVİYE PUANLARINI ANTRENMANDA HARCA.' },
-  pano: { name: 'GÖREV EKRANI', max: 3, up: [0, 60, 140], upDesc: ['3 GÖREV', '4. GÖREV YUVASI', 'GÖREV ÖDÜLLERİ +%50'], desc: 'GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.' },
+  ahir: { name: 'AHIR MODÜLÜ', max: 4, up: [0, 80, 160, 280], upDesc: ['ANTRENMAN PLANI', '+1 PUAN VE BATTANİYE RENKLERİ', '+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ', '+1 PUAN, SEVİLEN YILDIZ 15 KOMBOYLA BAŞLAR'], desc: 'YILDIZ\'IN CAM KUBBELİ AHIRI. SEVİYE PUANLARINI ANTRENMANDA HARCA.' },
+  pano: { name: 'GÖREV EKRANI', max: 4, up: [0, 60, 140, 260], upDesc: ['3 GÖREV', '4. GÖREV YUVASI', 'GÖREV ÖDÜLLERİ +%50', 'GÖREV ÖDÜLLERİ İKİ KAT'], desc: 'GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.' },
   ambar: { name: 'YEM DEPOSU', max: 2, up: [20, 90], upDesc: ['KOŞUDAN ÖNCE YEM SEÇ', 'İKİNCİ YEM YUVASI'], desc: 'DÜNYA\'DAN GETİRİLEN YEMLER. KOŞUDAN ÖNCE BİRİNİ SEÇ, AVANTAJLA BAŞLA.' },
-  silahhane: { name: 'CEPHANELİK', max: 3, up: [30, 100, 200], upDesc: ['SİLAH SEÇ VE GELİŞTİR', 'TÜM ATIŞLAR +%20 HASAR', 'TÜM ATIŞLAR +%40 HASAR'], desc: 'EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ EDER.' },
-  nalbant: { name: 'NAL ATÖLYESİ', max: 3, up: [50, 100, 180], upDesc: ['NAL SEÇ', 'HER NALDA +%5 HIZ', 'HER NALDA +1 AZAMİ CAN'], desc: 'FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.' },
+  silahhane: { name: 'CEPHANELİK', max: 4, up: [30, 100, 200, 350], upDesc: ['SİLAH SEÇ VE GELİŞTİR', 'TÜM ATIŞLAR +%20 HASAR', 'TÜM ATIŞLAR +%40 HASAR', 'TÜM ATIŞLAR +%60 HASAR'], desc: 'EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ EDER.' },
+  nalbant: { name: 'NAL ATÖLYESİ', max: 4, up: [50, 100, 180, 300], upDesc: ['NAL SEÇ', 'HER NALDA +%5 HIZ', 'HER NALDA +1 AZAMİ CAN', 'HER NALDA YAVAŞLAMA -%20'], desc: 'FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.' },
   tapinak: { name: 'GÖZLEMEVİ', max: 3, up: [60, 120, 220], needBoon: true, upDesc: ['GÖZDE TAKIMYILDIZINI SEÇ', 'İKİLİ GÜÇ ŞANSI 2 KAT', 'NADİR GÜÇ ŞANSI +%15'], desc: 'TELESKOP YILDIZ ATLARINA ÇEVRİLİ. GÖZDE TAKIMYILDIZININ İLK GÜCÜ SENİN OLUR.' },
-  jokey: { name: 'JOKEY KOĞUŞU', max: 3, up: [40, 90, 170], rozet: 1, upDesc: ['TEKNİK SEÇ', 'TEKNİK %25 HIZLI DOLAR', 'TEKNİK %50 HIZLI DOLAR'], desc: 'TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.' },
-  veteriner: { name: 'REVİR', max: 3, up: [80, 150, 220], upDesc: ['1 KEZ, 1 CANLA KALK', '1 KEZ, 2 CANLA KALK', '2 KEZ, 2 CANLA KALK'], desc: 'İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.' },
+  jokey: { name: 'JOKEY KOĞUŞU', max: 4, up: [40, 90, 170, 300], rozet: 1, upDesc: ['TEKNİK SEÇ', 'TEKNİK %25 HIZLI DOLAR', 'TEKNİK %50 HIZLI DOLAR', 'TEKNİK %75 HIZLI DOLAR'], desc: 'TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.' },
+  veteriner: { name: 'REVİR', max: 4, up: [80, 150, 220, 380], upDesc: ['1 KEZ, 1 CANLA KALK', '1 KEZ, 2 CANLA KALK', '2 KEZ, 2 CANLA KALK', '3 KEZ, 2 CANLA KALK'], desc: 'İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.' },
   bahce: { name: 'SERA', max: 3, up: [25, 90, 180], upDesc: ['3 TEPSİ', '5 TEPSİ', '7 TEPSİ'], desc: 'HER KOŞUDAN SONRA ÜRÜNLER BÜYÜR. HAVUÇ KRİSTAL, PANCAR ŞEKER VERİR.' }
 };
+// the 4th level of a building is late game: it needs this many champion badges
+const LV4_ROZET = 3;
 const BUILD_ORDER = ['ambar', 'silahhane', 'bahce', 'nalbant', 'jokey', 'tapinak', 'veteriner'];
 const DECOR = {
   saman: { name: 'SAMAN BALYALARI', cost: 10 },
@@ -3379,7 +3381,7 @@ const REGIONS = [
   { id: 'kum', name: 'KIZIL KUM', song: 'kum', bpm: 134, speed: 1.14, dens: 1.3, rivals: [0.92, 0.97, 1.01, 1.05, 1.1, 0.95, 0.99], boss: 'zarg', tier: 2, field: 7,
     grass: C.rust, grass2: C.dbrown, grassD: C.orange0, dirt: C.sand, dirtD: C.tan, dirtL: C.white, rail: C.orange, post: C.dbrown, deco: 'desert', mud: false,
     foes: { karga: 0.8, domuz: 1.0, eskiya: 0.9, okcu: 0.7, kalkanli: 0.4 }, weather: { acik: 5, kumf: 3, ruzgar: 2 } },
-  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.17, dens: 1.36, rivals: [0.93, 0.98, 1.03, 1.07, 1.12, 0.96, 1.0], boss: 'simsek', tier: 2.4, field: 7,
+  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.17, dens: 1.36, rivals: [0.93, 0.98, 1.03, 1.07, 1.12, 0.96, 1.0], boss: 'simsek', tier: 2.4, field: 6, pass: 4,
     grass: C.navy, grass2: C.slate, grassD: C.ink, dirt: C.orange0, dirtD: C.rust, dirtL: C.tan, rail: C.cyan, post: C.lgray, deco: 'stadium', mud: false, night: true,
     foes: { karga: 0.8, domuz: 0.8, eskiya: 1.0, okcu: 0.8, kalkanli: 0.5 }, weather: { acik: 6, yagmur: 3, ruzgar: 2 } }
 ];
@@ -3730,7 +3732,7 @@ const TIPS = [
   ['ayse', 'TEKNİK GÖSTERGESİ DOLUNCA ALTTAKİ DÜĞMEYE BAS.'],
   ['kemal', 'RAKİBİN ARKASINDA KALIRSAN SİPER DOLAR. YANA ÇIKINCA FIRLARSIN.'],
   ['tayfun', 'GÖKTAŞININ YANINDAN SON ANDA GEÇERSEN KIL PAYI SİKKESİ ALIRSIN!'],
-  ['ayse', 'SİKKELERİN BOŞA GİTMEZ: KOŞU SONUNDA 10 SİKKE 1 KRİSTAL OLUR.'],
+  ['ayse', 'SİKKELERİN BOŞA GİTMEZ: KOŞU SONUNDA İLK 500 SİKKE 10\'A 1, FAZLASI 20\'YE 1 KRİSTAL OLUR. PAZARDA HARCAMAYI UNUTMA!'],
   ['kemal', 'NEFESİNİ HER YERDE HARCAMA. SON DÜZLÜKTE SAKLADIĞIN NEFES SENİ UÇURUR.'],
   ['ayse', 'VİRAJDA İÇ KULVARA YAPIŞ, DIŞTAN DÖNEN HEP GERİDE KALIR.'],
   ['tayfun', 'ALTIN NOTAYI TAM VURURSAN SİLAH ÇILDIRIR! ÜÇLÜ IŞIN, PLAZMA, NE VARSA!'],
@@ -3992,15 +3994,16 @@ function computeStats(run) {
   (NALS[run ? run.nal : META.nal] || NALS.demir).apply(S);
   if (bl('nalbant') >= 2) S.speed *= 1.05;
   if (bl('nalbant') >= 3) S.maxHp += 1;
+  if (bl('nalbant') >= 4) S.slowResist += 0.2;
   (JOCKEYS[run ? run.jockey : META.jockey] || JOCKEYS.ayse).apply(S);
-  if (bl('jokey') >= 2) S.bondMult = bl('jokey') >= 3 ? 1.5 : 1.25;
+  if (bl('jokey') >= 2) S.bondMult = [1, 1, 1.25, 1.5, 1.75][bl('jokey')];
   const foods = run ? [run.food, run.food2] : [META.food, META.food2];
   for (const f of foods) if (f && FOODS[f]) FOODS[f].apply(S);
-  const vl = bl('veteriner'); if (vl > 0) { S.revives = vl >= 3 ? 2 : 1; S.reviveHp = vl >= 2 ? 2 : 1; }
+  const vl = bl('veteriner'); if (vl > 0) { S.revives = vl >= 4 ? 3 : vl >= 3 ? 2 : 1; S.reviveHp = vl >= 2 ? 2 : 1; }
   const wk = run ? run.weapon : META.weapon;
   S.weapon = WEAPONS[wk] ? wk : 'yay';
   S.shotDmg = WEAPONS[S.weapon].dmg * (1 + 0.25 * ((META.wlv[S.weapon] || 1) - 1));
-  if (bl('silahhane') >= 2) S.shotDmg *= bl('silahhane') >= 3 ? 1.4 : 1.2;
+  if (bl('silahhane') >= 2) S.shotDmg *= [1, 1, 1.2, 1.4, 1.6][bl('silahhane')];
   if (bl('tapinak') >= 2) S.duoChance = 0.6;
   if (bl('tapinak') >= 3) S.luck += 0.15;
   const kp = run ? run.keepsake : META.keepsake;
@@ -4018,6 +4021,8 @@ function computeStats(run) {
   S.hamleCost = Math.max(8, S.hamleCost);
   return S;
 }
+// end-of-run coins → crystals: the first 500 coins at 10:1, the rest at 20:1 (spend them in the market!)
+function coinsToCrystals(c) { return Math.floor(Math.min(c, 500) / 10) + Math.floor(Math.max(0, c - 500) / 20); }
 const xpNeed = lv => 50 + (lv - 1) * 30;
 function addXP(n) {
   const ups = []; META.xp += n;
@@ -4085,7 +4090,7 @@ function nextGoal() {
   if (!built('jokey')) return { text: 'JOKEY KOĞUŞUNU ONAR', target: 'jokey', cur: META.yonca, need: BUILDINGS.jokey.up[0], icon: 'hammer' };
   for (const k of ['silahhane', 'ahir', 'pano', 'nalbant', 'veteriner', 'jokey', 'bahce', 'tapinak', 'ambar']) {
     const b = BUILDINGS[k], lv = bl(k);
-    if (lv >= 1 && lv < b.max) return { text: b.name + ' SEVİYE ' + (lv + 1), target: k, cur: META.yonca, need: b.up[lv], icon: 'hammer' };
+    if (lv >= 1 && lv < b.max && !(lv === 3 && META.rozet < LV4_ROZET)) return { text: b.name + ' SEVİYE ' + (lv + 1), target: k, cur: META.yonca, need: b.up[lv], icon: 'hammer' };
   }
   if (!META.stats.bossWins.kurt) return { text: 'ULUYAN GORM\'U YEN', target: 'gate', icon: 'crown' };
   if (!META.stats.bossWins.niva) return { text: 'BUZ KRALİÇESİ NİVA\'YI YEN', target: 'gate', icon: 'crown' };
@@ -4246,6 +4251,76 @@ function drawTrans() {
   if (Trans.dir) UI.block(0, 0, W, H, null);
 }
 
+// ================= RHYTHM CALIBRATION =================
+// Tap along with 16 clicks; the median lag (minus the audio output latency) becomes the rhythm offset.
+// Used from the station settings and from the race pause menu (headphones change mid-run).
+const Calib = {
+  st: null,
+  start() {
+    Sound.unlock(); Music.stop();
+    const t0 = now() + 0.8, iv = 0.6, n = 16;
+    this.st = { t0, iv, n, taps: [], result: null };
+    for (let i = 0; i < n; i++) {
+      const t = Sound.at(t0 + i * iv), acc = i % 4 === 0;
+      Sound.tone(acc ? 1568 : 1046, 0.05, 'square', 0.22, t, null, Sound.master);
+      Sound.noise(0.03, 0.25, t, 'highpass', 3000, Sound.master);
+    }
+  },
+  tap(t) {
+    const c = this.st; if (!c || c.result) return;
+    const k = Math.round((t - c.t0) / c.iv);
+    if (k < 2 || k >= c.n) return; // the first two clicks are only for finding the beat
+    const d = t - (c.t0 + k * c.iv);
+    if (Math.abs(d) < c.iv * 0.45) { c.taps.push(d); haptic('light'); }
+  },
+  finish() {
+    const c = this.st;
+    if (c.taps.length < 6) { c.result = { fail: true }; return; }
+    const sorted = c.taps.slice().sort((a, b) => a - b), med = sorted[sorted.length >> 1];
+    const spread = sorted[Math.floor(sorted.length * 0.8)] - sorted[Math.floor(sorted.length * 0.2)];
+    const ms = clamp(Math.round((med - Sound.latency()) * 1000 / 5) * 5, -150, 150);
+    c.result = { ms, med: Math.round(med * 1000), spread: Math.round(spread * 1000) };
+  },
+  // the whole overlay; onClose runs after KAYDET or KAPAT
+  draw(onClose) {
+    const c = this.st; if (!c) { onClose(); return; }
+    const w = Math.min(W - 10, 226), h = 150, px = Math.round(W / 2 - w / 2), py = Math.round(SAFE.t + (H - SAFE.t - SAFE.b - h) / 2);
+    const t = now(), bp = (t - c.t0) / c.iv, k = Math.floor(bp);
+    if (!c.result && bp > c.n + 0.5) this.finish();
+    // the whole screen takes the taps while measuring; the close button is registered after it, so it still works
+    UI.block(0, 0, W, H, c.result ? null : (x, y, tt) => this.tap(tt == null ? now() : tt));
+    g.globalAlpha = 0.55; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
+    panel(px, py, w, h, 'RİTİM AYARI');
+    const close = () => { this.st = null; onClose(); };
+    button('cal_x', px + w - 14, py + 2, 11, 10, 'X', close, { kind: 'red', hitPad: 5 });
+    let y = py + 19;
+    textBlock(c.result ? (c.result.fail ? 'YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.' : 'ÖLÇÜM TAMAM!') : 'SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.', px + w / 2, y, w - 20, C.lgray, 'center');
+    y += 30;
+    const cx = px + w / 2;
+    if (!c.result) {
+      const f = bp >= 0 && k < c.n ? Math.max(0, 1 - (bp - k) * 3) : 0;
+      circle(cx, y + 14, 12, C.ink); circle(cx, y + 14, 11, f > 0 ? (k % 4 === 0 ? C.gold : C.sky) : C.slate);
+      if (f > 0) { g.globalAlpha = f; ring(cx, y + 14, 13 + Math.round((1 - f) * 6), C.white); g.globalAlpha = 1; }
+      text(bp < 0 ? 'HAZIR...' : Math.min(c.n, k + 1) + '/' + c.n, cx, y + 32, C.white, 'center');
+    } else if (!c.result.fail) {
+      const r = c.result;
+      textO((r.ms > 0 ? '+' : '') + r.ms + ' MS', cx, y + 2, C.yellow, 'center', 2);
+      text(r.ms > 10 ? 'SESİ BİRAZ GEÇ DUYUYORSUN' : r.ms < -10 ? 'SESİN ÖNÜNE GEÇİYORSUN' : 'ZAMANLAMAN TAM', cx, y + 22, C.lgray, 'center');
+      text('SAPMA: ' + r.spread + ' MS' + (r.spread > 90 ? ' (TEKRAR DENE)' : ''), cx, y + 32, r.spread > 90 ? C.salmon : C.gray, 'center');
+    }
+    // where each tap landed: -150 ms ... +150 ms
+    const lx = px + 16, lw = w - 32, ly = py + 112;
+    rect(lx, ly, lw, 1, C.slate); vline(lx + lw / 2, ly - 3, 7, C.lgray);
+    text('ERKEN', lx, ly + 3, C.gray); text('GEÇ', lx + lw, ly + 3, C.gray, 'right');
+    for (const d of c.taps) { const x = lx + lw / 2 + clamp(d / 0.15, -1, 1) * lw / 2; vline(x, ly - 2, 5, C.cyan); }
+    if (c.result) {
+      const bw = Math.floor((w - 26) / 2);
+      button('cal_again', px + 8, py + h - 22, bw, 15, 'TEKRAR', () => this.start(), { kind: 'secondary' });
+      if (!c.result.fail) button('cal_ok', px + 18 + bw, py + h - 22, bw, 15, 'KAYDET', () => { META.settings.offset = c.result.ms; saveMeta(); toast('RİTİM GECİKMESİ: ' + c.result.ms + ' MS', C.green, 'check'); close(); }, { kind: 'green' });
+    }
+  }
+};
+
 // ================= RUN STATE =================
 let RUN = null;
 const BASE_SPEED = 118;
@@ -4279,7 +4354,7 @@ function newRun(opts) {
     food: built('ambar') ? META.food : null, food2: bl('ambar') >= 2 ? META.food2 : null,
     keepsake: META.keepsake && META.bond[META.keepsake] > 0 ? META.keepsake : null,
     runStyle: RUN_STYLES[META.runStyle] ? META.runStyle : 'dengeli', heat: META.heatUnlocked ? META.heat : 0,
-    blanket: bl('ahir') >= 2 ? META.blanket : null, petted: META.petted ? (bl('ahir') >= 3 ? 10 : 5) : 0,
+    blanket: bl('ahir') >= 2 ? META.blanket : null, petted: META.petted ? [5, 5, 5, 10, 15][bl('ahir')] : 0,
     boons: {}, chaos: [], mods: [], hammers: 0, region: 0, etap: 0, hp: 3, coins: 0, coinsEarned: 0, yonca: 0, seker: 0,
     perfects: 0, maxCombo: 0, kills: 0, medals: { g: 0, s: 0, b: 0 }, score: 0, nearMiss: 0, specials: 0, cleanJumps: 0, hamles: 0, holds: 0,
     bosses: 0, cleared: 0, overtakes: 0, revivesUsed: 0, rerollsUsed: 0, doorRerolls: 0, rareNext: false, bonusMaxHp: 0, shotBonus: 0,
@@ -4488,7 +4563,7 @@ SCENES.run = {
 
   // ---------- setup helpers ----------
   // how many places count as a pass: crowded fields (8 racers) let the top 4 through
-  passRank() { return (this.rivals.length >= 7 ? 4 : 3) + (this.S.assist > 0 ? 1 : 0); },
+  passRank() { return (this.reg.pass || (this.rivals.length >= 7 ? 4 : 3)) + (this.S.assist > 0 ? 1 : 0); },
   spawnRivals() {
     const field = clamp(this.reg.field || 5, 5, 7);
     const speeds = this.reg.rivals.slice(0, field).sort((a, b) => b - a);
@@ -4906,7 +4981,7 @@ SCENES.run = {
   },
   togglePause() {
     if (this.state !== 'run' && this.state !== 'intro') return;
-    this.paused = !this.paused; this.confirmQuit = false; this.showBoons = false;
+    this.paused = !this.paused; this.confirmQuit = false; this.showBoons = false; if (this.calibOpen) { this.calibOpen = false; Calib.st = null; }
     if (this.paused) { Music.stop(); this.hold = null; return; }
     if (this.clockOn) {
       const t0 = now() + 0.6; Beat.set(this.reg.bpm, t0); Music.play(this.reg.song, t0, this.type === 'boss');
@@ -6372,17 +6447,19 @@ Object.assign(SCENES.run, {
   drawPause() {
     UI.block(0, 0, W, H, null);
     g.globalAlpha = 0.6; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
-    const pw = Math.min(W - 24, 170), ph = 152, px = Math.round(W / 2 - pw / 2), py = Math.round(H / 2 - ph / 2);
+    const pw = Math.min(W - 24, 170), ph = 172, px = Math.round(W / 2 - pw / 2), py = Math.round(H / 2 - ph / 2);
     panel(px, py, pw, ph, 'MOLA');
     button('p_resume', px + 10, py + 22, pw - 20, 18, 'DEVAM ET', () => this.togglePause());
     button('p_boons', px + 10, py + 46, pw - 20, 16, 'GÜÇLERİM (' + (Object.keys(RUN.boons).length + (RUN.mods ? RUN.mods.length : 0)) + ')', () => { this.showBoons = true; }, { kind: 'blue' });
     button('p_music', px + 10, py + 66, pw - 20, 16, 'MÜZİK: ' + (META.settings.music ? 'AÇIK' : 'KAPALI'), () => { META.settings.music = !META.settings.music; Sound.applySettings(); saveMeta(); }, { kind: 'secondary' });
     button('p_sfx', px + 10, py + 86, pw - 20, 16, 'EFEKTLER: ' + (META.settings.sfx ? 'AÇIK' : 'KAPALI'), () => { META.settings.sfx = !META.settings.sfx; Sound.applySettings(); saveMeta(); }, { kind: 'secondary' });
-    button('p_quit', px + 10, py + 114, pw - 20, 18, this.confirmQuit ? 'EMİN MİSİN? TEKRAR BAS' : 'KOŞUYU BIRAK', () => {
+    button('p_calib', px + 10, py + 106, pw - 20, 16, 'RİTMİ ÖLÇ', () => { this.calibOpen = true; Calib.start(); }, { kind: 'blue' });
+    button('p_quit', px + 10, py + 134, pw - 20, 18, this.confirmQuit ? 'EMİN MİSİN? TEKRAR BAS' : 'KOŞUYU BIRAK', () => {
       if (!this.confirmQuit) { this.confirmQuit = true; return; }
       this.paused = false; this.state = 'gone'; Music.fever = false; RUN.diedIn = { type: 'quit', region: RUN.region, etap: RUN.etap }; go('results', { won: false, quit: true });
     }, { kind: 'red' });
     if (this.showBoons) drawBoonList(() => { this.showBoons = false; });
+    if (this.calibOpen) Calib.draw(() => { this.calibOpen = false; });
   }
 });
 const FLIP_CACHE = new Map();
@@ -7508,7 +7585,7 @@ SCENES.farm = {
   petHorse() {
     Sound.play('nicker'); haptic('light');
     for (let i = 0; i < 4; i++) this.hearts.push({ x: this.hx + (rnd() - 0.5) * 14, y: this.hy - 12 - rnd() * 6, t: 1.2 + rnd() * 0.4 });
-    if (!META.petted) { META.petted = true; saveMeta(); toast('YILDIZ MUTLU! SONRAKİ KOŞU +' + (bl('ahir') >= 3 ? 10 : 5) + ' KOMBOYLA BAŞLAR', C.salmon, 'heartS'); }
+    if (!META.petted) { META.petted = true; saveMeta(); toast('YILDIZ MUTLU! SONRAKİ KOŞU +' + [5, 5, 5, 10, 15][bl('ahir')] + ' KOMBOYLA BAŞLAR', C.salmon, 'heartS'); }
   },
   petDog() {
     if (!this.hasDog()) return;
@@ -7735,7 +7812,7 @@ SCENES.farm = {
         if ((b.rozet && META.rozet < b.rozet) || (b.needBoon && META.stats.boons === 0)) spr(ICONS.lock, bx + 24, by - 6);
       } else if (b.max > 1) {
         for (let i = 0; i < b.max; i++) { rect(x + L.w - 4 - (b.max - i) * 4, y + L.h - 4, 3, 3, C.ink); pix(x + L.w - 3 - (b.max - i) * 4, y + L.h - 3, i < lv ? C.yellow : C.slate); }
-        if (lv < b.max && META.yonca >= b.up[lv] && Math.floor(this.t * 2) % 2 === 0) { const ax = x + L.w - 6, ay = y + L.h - 12; text('↑', ax, ay, C.green, 'center'); }
+        if (lv < b.max && META.yonca >= b.up[lv] && !(lv === 3 && META.rozet < LV4_ROZET) && Math.floor(this.t * 2) % 2 === 0) { const ax = x + L.w - 6, ay = y + L.h - 12; text('↑', ax, ay, C.green, 'center'); }
       }
     }
     // name plate so every module says what it is at a glance
@@ -7808,7 +7885,7 @@ SCENES.farm = {
     button('pclose', x + w - 14, y + 2, 11, 10, 'X', () => this.closePanel(), { kind: 'red', hitPad: 5 });
     return { x, y, w, h };
   },
-  closePanel() { if (this.panel === 'calib') { this.cal = null; Music.play('farm', now() + 0.2, false); } this.panel = null; this.page = null; this.confirmReset = false; this.defTab = null; },
+  closePanel() { if (this.panel === 'calib') { Calib.st = null; Music.play('farm', now() + 0.2, false); } this.panel = null; this.page = null; this.confirmReset = false; this.defTab = null; },
   drawPanel() {
     const p = this.panel;
     if (p.startsWith('repair:')) return this.pRepair(p.slice(7));
@@ -7836,16 +7913,16 @@ SCENES.farm = {
     text('SEVİYE ' + lv + '/' + b.max, P.x + 12 + b.max * 6, y, C.lgray);
     if (u.max) { text('EN ÜST!', P.x + P.w - 8, y, C.green, 'right'); return y + 12; }
     u.next.forEach((ln, i) => text(ln, P.x + 8, y + 10 + i * 9, C.sky));
-    const can = META.yonca >= u.cost;
-    button('up_' + k, P.x + P.w - 66, y + 2, 58, 15, String(u.cost), () => this.doUpgrade(k), { icon: 'clover', disabled: !can });
-    text(can ? 'YÜKSELT' : (u.cost - META.yonca) + ' EKSİK', P.x + P.w - 37, y + 19, can ? C.green : C.salmon, 'center');
+    const lock = lv === 3 && META.rozet < LV4_ROZET, can = META.yonca >= u.cost && !lock;
+    button('up_' + k, P.x + P.w - 66, y + 2, 58, 15, String(u.cost), () => this.doUpgrade(k), { icon: lock ? 'lock' : 'clover', disabled: !can });
+    text(lock ? LV4_ROZET + ' ROZET GEREK' : can ? 'YÜKSELT' : (u.cost - META.yonca) + ' EKSİK', P.x + P.w - 37, y + 19, can ? C.green : C.salmon, 'center');
     y += 10 + Math.max(2, u.next.length) * 9 + 2;
     u.later.forEach((ln, i) => text(ln, P.x + 8, y + i * 9, C.gray));
     return y + u.later.length * 9;
   },
   doUpgrade(k) {
     const b = BUILDINGS[k], lv = bl(k), cost = b.up[lv];
-    if (lv >= b.max || META.yonca < cost) return;
+    if (lv >= b.max || META.yonca < cost || (lv === 3 && META.rozet < LV4_ROZET)) return;
     META.yonca -= cost; META.blv[k] = lv + 1;
     if (k === 'ambar' && lv === 0) { META.foods.havuc = true; if (!META.food) META.food = 'havuc'; }
     if (k === 'ahir' && lv >= 1) { META.points++; toast('+1 SEVİYE PUANI', C.yellow, 'star'); }
@@ -7921,7 +7998,7 @@ SCENES.farm = {
     const showDaily = META.tutorialDone;
     const P = this.panelBox('GÖREV EKRANI', 20 + slots * 30 + 52 + (showDaily ? 30 : 0) + this.upgradeH('pano') + 8);
     let y = P.y + 18;
-    const bonus = bl('pano') >= 3 ? 1.5 : 1;
+    const bonus = [1, 1, 1, 1.5, 2][bl('pano')];
     for (const m of META.missions) {
       const lines = wrapText(missionText(m), P.w - 76);
       lines.slice(0, 2).forEach((ln, i) => text(ln, P.x + 8, y + i * 9, m.done ? C.green : C.white));
@@ -8334,65 +8411,10 @@ SCENES.farm = {
       const keep = META.settings; META = defaultMeta(); META.settings = keep; saveMeta(); this.confirmReset = false; this.panel = null; go('title');
     }, { kind: 'red' });
   },
-  // ---------- rhythm calibration: tap along with 16 clicks, the median lag becomes the rhythm offset ----------
-  startCalib() {
-    Sound.unlock(); Music.stop();
-    const t0 = now() + 0.8, iv = 0.6, n = 16;
-    this.cal = { t0, iv, n, taps: [], result: null };
-    for (let i = 0; i < n; i++) {
-      const t = Sound.at(t0 + i * iv), acc = i % 4 === 0;
-      Sound.tone(acc ? 1568 : 1046, 0.05, 'square', 0.22, t, null, Sound.master);
-      Sound.noise(0.03, 0.25, t, 'highpass', 3000, Sound.master);
-    }
-    this.panel = 'calib';
-  },
-  calibTap(t) {
-    const c = this.cal; if (!c || c.result) return;
-    const k = Math.round((t - c.t0) / c.iv);
-    if (k < 2 || k >= c.n) return; // the first two clicks are only for finding the beat
-    const d = t - (c.t0 + k * c.iv);
-    if (Math.abs(d) < c.iv * 0.45) { c.taps.push(d); haptic('light'); }
-  },
-  finishCalib() {
-    const c = this.cal;
-    if (c.taps.length < 6) { c.result = { fail: true }; return; }
-    const sorted = c.taps.slice().sort((a, b) => a - b), med = sorted[sorted.length >> 1];
-    const spread = sorted[Math.floor(sorted.length * 0.8)] - sorted[Math.floor(sorted.length * 0.2)];
-    const ms = clamp(Math.round((med - Sound.latency()) * 1000 / 5) * 5, -150, 150);
-    c.result = { ms, med: Math.round(med * 1000), spread: Math.round(spread * 1000) };
-  },
+  // ---------- rhythm calibration (shared with the pause menu, see Calib in 05b_calib.js) ----------
+  startCalib() { Calib.start(); this.panel = 'calib'; },
   pCalib() {
-    const c = this.cal; if (!c) { this.panel = 'settings'; return; }
-    const P = this.panelBox('RİTİM AYARI', 150);
-    const t = now(), bp = (t - c.t0) / c.iv, k = Math.floor(bp);
-    if (!c.result && bp > c.n + 0.5) this.finishCalib();
-    if (!c.result) UI.block(0, 0, W, H, (px, py, tt) => this.calibTap(tt == null ? now() : tt));
-    let y = P.y + 19;
-    textBlock(c.result ? (c.result.fail ? 'YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.' : 'ÖLÇÜM TAMAM!') : 'SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.', P.x + P.w / 2, y, P.w - 20, C.lgray, 'center');
-    y += 30;
-    const cx = P.x + P.w / 2;
-    if (!c.result) {
-      // the click, as a ring that flashes on each beat, and the count
-      const f = bp >= 0 && k < c.n ? Math.max(0, 1 - (bp - k) * 3) : 0;
-      circle(cx, y + 14, 12, C.ink); circle(cx, y + 14, 11, f > 0 ? (k % 4 === 0 ? C.gold : C.sky) : C.slate);
-      if (f > 0) { g.globalAlpha = f; ring(cx, y + 14, 13 + Math.round((1 - f) * 6), C.white); g.globalAlpha = 1; }
-      text(bp < 0 ? 'HAZIR...' : Math.min(c.n, k + 1) + '/' + c.n, cx, y + 32, C.white, 'center');
-    } else if (!c.result.fail) {
-      const r = c.result;
-      textO((r.ms > 0 ? '+' : '') + r.ms + ' MS', cx, y + 2, C.yellow, 'center', 2);
-      text(r.ms > 10 ? 'SESİ BİRAZ GEÇ DUYUYORSUN' : r.ms < -10 ? 'SESİN ÖNÜNE GEÇİYORSUN' : 'ZAMANLAMAN TAM', cx, y + 22, C.lgray, 'center');
-      text('SAPMA: ' + r.spread + ' MS' + (r.spread > 90 ? ' (TEKRAR DENE)' : ''), cx, y + 32, r.spread > 90 ? C.salmon : C.gray, 'center');
-    }
-    // where each tap landed: -150 ms ... +150 ms
-    const lx = P.x + 16, lw = P.w - 32, ly = P.y + 112;
-    rect(lx, ly, lw, 1, C.slate); vline(lx + lw / 2, ly - 3, 7, C.lgray);
-    text('ERKEN', lx, ly + 3, C.gray); text('GEÇ', lx + lw, ly + 3, C.gray, 'right');
-    for (const d of c.taps) { const x = lx + lw / 2 + clamp(d / 0.15, -1, 1) * lw / 2; vline(x, ly - 2, 5, C.cyan); }
-    if (c.result) {
-      const bw = Math.floor((P.w - 26) / 2);
-      button('cal_again', P.x + 8, P.y + P.h - 22, bw, 15, 'TEKRAR', () => this.startCalib(), { kind: 'secondary' });
-      if (!c.result.fail) button('cal_ok', P.x + 18 + bw, P.y + P.h - 22, bw, 15, 'KAYDET', () => { META.settings.offset = c.result.ms; saveMeta(); toast('RİTİM GECİKMESİ: ' + c.result.ms + ' MS', C.green, 'check'); this.cal = null; this.panel = 'settings'; Music.play('farm', now() + 0.2, false); }, { kind: 'green' });
-    }
+    Calib.draw(() => { this.panel = 'settings'; Music.play('farm', now() + 0.2, false); });
   },
   pDaily() {
     const P = this.panelBox('GÜNLÜK ERZAK', 104);
@@ -8480,7 +8502,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.3.1', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.4', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 
@@ -9112,7 +9134,7 @@ SCENES.results = {
     this.won = !!arg.won; this.quit = !!arg.quit; this.t = 0; Music.stop();
     const mult = HEATS[RUN.heat].rew;
     const xp = Math.round((14 * RUN.cleared + 45 * RUN.bosses + Math.floor(RUN.maxCombo * 0.6) + RUN.kills + (this.won ? 120 : 0)) * mult);
-    this.xp = xp; this.conv = Math.floor(RUN.coins / 10); this.yonca = RUN.yonca + this.conv; this.seker = RUN.seker;
+    this.xp = xp; this.conv = coinsToCrystals(RUN.coins); this.yonca = RUN.yonca + this.conv; this.seker = RUN.seker;
     const st = META.stats;
     st.runs++; if (this.won) { st.wins++; META.heatUnlocked = true; }
     if (!RUN.daily) st.earlyLoss = (!this.won && !this.quit && RUN.region === 0) ? (st.earlyLoss || 0) + 1 : 0;
@@ -9207,6 +9229,7 @@ SCENES.results = {
     if (this.assistUp && this.t > 2.4) notes.push(['YARDIM MODU BİRAZ GÜÇLENDİ', C.sky]);
     if (RUN.grades && this.t > 2.42) { const gs = ['S', 'A', 'B'].filter(k => RUN.grades[k]).map(k => RUN.grades[k] + ' ' + k).join(' · '); if (gs) notes.push(['RİTİM NOTLARI: ' + gs, C.gold]); }
     if (this.league && this.t > 2.45) notes.push(['GALAKSİ LİGİ: ' + this.league + '. SIRA', this.league === 1 ? C.gold : C.lgray, this.league === 1]);
+    if (RUN.coins > 500 && this.t > 2.48) notes.push(['500 ÜSTÜ SİKKE YARI DEĞERDE: PAZARDA HARCA', C.salmon]);
     if (this.done && this.t > 2.5) notes.push([this.done + ' GÖREV TAMAM: PANODAN AL', C.green]);
     for (const [s, c, o] of notes) { if (o) textO(s, W / 2, y, c, 'center'); else text(s, W / 2, y, c, 'center'); y += 11; }
     const btnY = H - SAFE.b - 38;
@@ -9474,6 +9497,7 @@ window.__dortnala = {
   error: () => LAST_ERROR,
   beat: () => Beat.pos(now()), iv: () => Beat.iv, stats: () => computeStats(RUN),
   art: () => { const RACERS = {}; for (const k in ALIEN_LOOKS) RACERS[k] = getMount(k); RACERS.voltrak = getHorse('robot', 'voltrak'); RACERS.deniz = getHorse('bay', 'deniz'); return { BLD, PEOPLE, PORTRAIT, OB, FOE_SPR, ICONS, PROJ, MEDAL, RACERS }; },
+  calib: () => Calib.st,
   rects: () => UI.prev.map(r => ({ id: r.id, x: r.x, y: r.y, w: r.w, h: r.h }))
 };
 boot();

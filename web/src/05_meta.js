@@ -103,15 +103,16 @@ function computeStats(run) {
   (NALS[run ? run.nal : META.nal] || NALS.demir).apply(S);
   if (bl('nalbant') >= 2) S.speed *= 1.05;
   if (bl('nalbant') >= 3) S.maxHp += 1;
+  if (bl('nalbant') >= 4) S.slowResist += 0.2;
   (JOCKEYS[run ? run.jockey : META.jockey] || JOCKEYS.ayse).apply(S);
-  if (bl('jokey') >= 2) S.bondMult = bl('jokey') >= 3 ? 1.5 : 1.25;
+  if (bl('jokey') >= 2) S.bondMult = [1, 1, 1.25, 1.5, 1.75][bl('jokey')];
   const foods = run ? [run.food, run.food2] : [META.food, META.food2];
   for (const f of foods) if (f && FOODS[f]) FOODS[f].apply(S);
-  const vl = bl('veteriner'); if (vl > 0) { S.revives = vl >= 3 ? 2 : 1; S.reviveHp = vl >= 2 ? 2 : 1; }
+  const vl = bl('veteriner'); if (vl > 0) { S.revives = vl >= 4 ? 3 : vl >= 3 ? 2 : 1; S.reviveHp = vl >= 2 ? 2 : 1; }
   const wk = run ? run.weapon : META.weapon;
   S.weapon = WEAPONS[wk] ? wk : 'yay';
   S.shotDmg = WEAPONS[S.weapon].dmg * (1 + 0.25 * ((META.wlv[S.weapon] || 1) - 1));
-  if (bl('silahhane') >= 2) S.shotDmg *= bl('silahhane') >= 3 ? 1.4 : 1.2;
+  if (bl('silahhane') >= 2) S.shotDmg *= [1, 1, 1.2, 1.4, 1.6][bl('silahhane')];
   if (bl('tapinak') >= 2) S.duoChance = 0.6;
   if (bl('tapinak') >= 3) S.luck += 0.15;
   const kp = run ? run.keepsake : META.keepsake;
@@ -129,6 +130,8 @@ function computeStats(run) {
   S.hamleCost = Math.max(8, S.hamleCost);
   return S;
 }
+// end-of-run coins → crystals: the first 500 coins at 10:1, the rest at 20:1 (spend them in the market!)
+function coinsToCrystals(c) { return Math.floor(Math.min(c, 500) / 10) + Math.floor(Math.max(0, c - 500) / 20); }
 const xpNeed = lv => 50 + (lv - 1) * 30;
 function addXP(n) {
   const ups = []; META.xp += n;
@@ -196,7 +199,7 @@ function nextGoal() {
   if (!built('jokey')) return { text: 'JOKEY KOĞUŞUNU ONAR', target: 'jokey', cur: META.yonca, need: BUILDINGS.jokey.up[0], icon: 'hammer' };
   for (const k of ['silahhane', 'ahir', 'pano', 'nalbant', 'veteriner', 'jokey', 'bahce', 'tapinak', 'ambar']) {
     const b = BUILDINGS[k], lv = bl(k);
-    if (lv >= 1 && lv < b.max) return { text: b.name + ' SEVİYE ' + (lv + 1), target: k, cur: META.yonca, need: b.up[lv], icon: 'hammer' };
+    if (lv >= 1 && lv < b.max && !(lv === 3 && META.rozet < LV4_ROZET)) return { text: b.name + ' SEVİYE ' + (lv + 1), target: k, cur: META.yonca, need: b.up[lv], icon: 'hammer' };
   }
   if (!META.stats.bossWins.kurt) return { text: 'ULUYAN GORM\'U YEN', target: 'gate', icon: 'crown' };
   if (!META.stats.bossWins.niva) return { text: 'BUZ KRALİÇESİ NİVA\'YI YEN', target: 'gate', icon: 'crown' };
