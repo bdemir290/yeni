@@ -222,10 +222,10 @@ const REGIONS = [
     foes: { karga: 1, domuz: 1.2, eskiya: 0.5, okcu: 0.45, kalkanli: 0.35 }, weather: { acik: 4, sis: 4, yagmur: 2 } },
   { id: 'buz', name: 'BUZ HALKASI', song: 'buz', bpm: 132, speed: 1.11, dens: 1.24, rivals: [0.91, 0.96, 1.0, 1.04, 1.08, 0.94, 0.98], boss: 'niva', tier: 1.5, field: 6,
     grass: C.blue, grass2: C.navy, grassD: C.sky, dirt: C.gray, dirtD: C.dgray, dirtL: C.lgray, rail: C.white, post: C.cyan, deco: 'ice', mud: false,
-    foes: { karga: 1, domuz: 0.9, kalkanli: 0.6, okcu: 0.5, eskiya: 0.35 }, weather: { acik: 5, sis: 3, ruzgar: 2 } },
+    foes: { karga: 1, domuz: 0.9, kalkanli: 0.6, okcu: 0.5, eskiya: 0.35 }, weather: { acik: 5, kar: 3, sis: 1, ruzgar: 1 } },
   { id: 'kum', name: 'KIZIL KUM', song: 'kum', bpm: 134, speed: 1.14, dens: 1.3, rivals: [0.92, 0.97, 1.01, 1.05, 1.1, 0.95, 0.99], boss: 'zarg', tier: 2, field: 7,
     grass: C.rust, grass2: C.dbrown, grassD: C.orange0, dirt: C.sand, dirtD: C.tan, dirtL: C.white, rail: C.orange, post: C.dbrown, deco: 'desert', mud: false,
-    foes: { karga: 0.8, domuz: 1.0, eskiya: 0.9, okcu: 0.7, kalkanli: 0.4 }, weather: { acik: 5, ruzgar: 4, sis: 1 } },
+    foes: { karga: 0.8, domuz: 1.0, eskiya: 0.9, okcu: 0.7, kalkanli: 0.4 }, weather: { acik: 5, kumf: 3, ruzgar: 2 } },
   { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.17, dens: 1.36, rivals: [0.93, 0.98, 1.03, 1.07, 1.12, 0.96, 1.0], boss: 'simsek', tier: 2.4, field: 7,
     grass: C.navy, grass2: C.slate, grassD: C.ink, dirt: C.orange0, dirtD: C.rust, dirtL: C.tan, rail: C.cyan, post: C.lgray, deco: 'stadium', mud: false, night: true,
     foes: { karga: 0.8, domuz: 0.8, eskiya: 1.0, okcu: 0.8, kalkanli: 0.5 }, weather: { acik: 6, yagmur: 3, ruzgar: 2 } }
@@ -253,6 +253,7 @@ const NAMED_RIVALS = [
   [{ id: 'alev', name: 'ALEV KUYRUK', style: 'onde', look: 'n4' }, { id: 'golge', name: 'GRAX\'IN GÖLGESİ', style: 'sondan', look: 'n2' }, { id: 'nova', name: 'NOVA', style: 'zikzak', look: 'n13' }]
 ];
 const STYLE_COL = { itici: C.salmon, onde: C.sky, sondan: C.green, atici: C.gold, zikzak: C.magenta };
+const STYLE_SHORT = { sondan: 'SONDAN GELİR', onde: 'ÖNDE KAÇAR', itici: 'OMUZ ATAR', atici: 'PLAZMA ATAR', zikzak: 'ÖNÜNÜ KESER' };
 const STYLE_TRICK = { atici: 'NİŞAN ALIR, "!" SONRA PLAZMA ATAR', zikzak: 'ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER' };
 const RIVAL_BY_ID = {};
 NAMED_RIVALS.forEach((list, reg) => list.forEach(r => { r.region = reg; RIVAL_BY_ID[r.id] = r; }));
@@ -345,6 +346,8 @@ const ETAP_TIPS = {
   yagmur: 'ASİT YAĞMURU: ŞERİT DEĞİŞTİRMEK YAVAŞLAR, JÖLE BİRİKİNTİSİ ÇOK.',
   sis: 'NEBULA SİSİ: ENGELLERİ GEÇ GÖRÜRSÜN. KULAĞIN RİTİMDE OLSUN.',
   ruzgar: 'GÜNEŞ RÜZGARI: ARKADAN ESİNCE HIZLANIR, ÖNDEN ESİNCE YAVAŞLARSIN.',
+  kar: 'KAR FIRTINASI: PİST KAYGAN, ŞERİT DEĞİŞTİRMEK BİRAZ YAVAŞ. ENGELE ERKEN HAZIRLAN.',
+  kumf: 'KUM FIRTINASI: UZAĞI GÖREMEZSİN VE RÜZGAR ESER. RİTMİ DİNLE, ARKA RÜZGARI YAKALA.',
   hamle: 'NEFES: AŞAĞI KAYDIR YA DA ALTTAKİ ÇİFT OKA BAS, HAMLE YAP. SAKLADIĞIN NEFES SON DÜZLÜKTE SON ATAĞA DÖNÜŞÜR.',
   nota_a: 'ALTIN NOTAYI MÜKEMMEL VURURSAN SİLAHIN ÖZEL ATIŞ YAPAR. NOTA OLMAYAN BOŞLUKTA DOKUNMA, RAHATÇA ŞERİT DEĞİŞTİR.',
   nota_d: 'ÇİFT NOTA: İKİ İŞARET ART ARDA GELİR. VURUŞTA VE ARADA İKİ KEZ DOKUN.',
@@ -366,7 +369,9 @@ const WEATHERS = {
   acik: { name: 'AÇIK GÖK', icon: null },
   yagmur: { name: 'ASİT YAĞMURU', icon: 'rain' },
   sis: { name: 'NEBULA SİSİ', icon: 'fog' },
-  ruzgar: { name: 'GÜNEŞ RÜZGARI', icon: 'gust' }
+  ruzgar: { name: 'GÜNEŞ RÜZGARI', icon: 'gust' },
+  kar: { name: 'KAR FIRTINASI', icon: 'spark' },
+  kumf: { name: 'KUM FIRTINASI', icon: 'wind' }
 };
 
 // ---------- chaos gate: a curse for 3 stages, then a blessing ----------

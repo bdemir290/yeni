@@ -415,21 +415,33 @@ Object.assign(SCENES.run, {
       }
       g.globalAlpha = 1;
     }
-    if (wx === 'sis' || this.fogT > 0) {
-      const k = wx === 'sis' ? 1 : clamp(this.fogT / 0.6, 0, 1);
-      g.globalAlpha = 0.1 * k; rect(0, 0, W, this.pY - 40, C.purple); g.globalAlpha = 1;
+    if (wx === 'kar') { // snowstorm: flakes drifting sideways, a cold veil
+      g.globalAlpha = 0.12; rect(0, 0, W, H, C.white); g.globalAlpha = 0.8;
+      for (let i = 0; i < 40; i++) {
+        const h = hash2(i, 41), h2 = hash2(i, 87), sp = 0.6 + h * 0.6;
+        const x = ((h * (W + 40) + T * 35 * sp + Math.sin(T * 2 + i) * 6) % (W + 40)) - 20, y = ((h2 * (H + 20) + T * 90 * sp) % (H + 20)) - 10;
+        if (i % 3) pix(x, y, C.white); else spr(OB.flake, x - 1, y - 1);
+      }
+      g.globalAlpha = 1;
+    }
+    const sand = wx === 'kumf';
+    if (wx === 'sis' || sand || this.fogT > 0) {
+      const k = wx === 'sis' ? 1 : sand ? Math.max(0.7, clamp(this.fogT / 0.6, 0, 1)) : clamp(this.fogT / 0.6, 0, 1);
+      const fc = sand || this.reg.deco === 'desert' ? C.tan : C.lgray;
+      g.globalAlpha = 0.1 * k; rect(0, 0, W, this.pY - 40, sand ? C.orange0 : C.purple); g.globalAlpha = 1;
       const fogEnd = this.pY - 70;
-      for (let y = 0; y < fogEnd; y += 4) { g.globalAlpha = clamp(0.95 - y / fogEnd * 0.95, 0, 0.92) * k; rect(0, y, W, 4, C.lgray); }
+      for (let y = 0; y < fogEnd; y += 4) { g.globalAlpha = clamp(0.95 - y / fogEnd * 0.95, 0, 0.92) * k; rect(0, y, W, 4, fc); }
       g.globalAlpha = 0.18 * k;
       for (let i = 0; i < 5; i++) { const x = ((hash2(i, 9) * W + T * (8 + i * 3)) % (W + 80)) - 40, y = fogEnd - 10 + i * 18; ellipse(x, y, 30, 6, C.white); }
       g.globalAlpha = 1;
-    } else if (wx === 'ruzgar' && this.wind.left > 0) {
+    }
+    if ((wx === 'ruzgar' || sand) && this.wind.left > 0) {
       const dir = this.wind.dir, k = clamp(this.wind.left / 0.4, 0, 1) * clamp((2.2 - this.wind.left) / 0.3, 0, 1);
       g.globalAlpha = 0.45 * k;
       for (let i = 0; i < 22; i++) {
         const h = hash2(i, 5), x = (h * W) | 0, len = 6 + (hash2(i, 6) * 10 | 0);
         const y = dir > 0 ? ((hash2(i, 7) * H + T * 420) % H) : (H - ((hash2(i, 7) * H + T * 300) % H));
-        rect(x, y, 1, len, C.white);
+        rect(x, y, 1, len, sand ? C.sand : C.white);
       }
       g.globalAlpha = 1;
     }
@@ -696,6 +708,8 @@ Object.assign(SCENES.run, {
     if (this.duel && this.duel.info.trick) tags.push([this.duel.info.trick, C.salmon]);
     if (this.elite) tags.push(['ZORLU · ÖDÜL X2', C.salmon]);
     if (this.weather !== 'acik') tags.push([WEATHERS[this.weather].name, C.sky]);
+    // who you are up against in this sprint, and their habit
+    if (this.type === 'sprint' && !this.tut) for (const r of this.rivals) if (r.name) tags.push([r.name + ' · ' + (r.nem ? 'RÖVANŞÇI' : STYLE_SHORT[r.style] || ''), r.nem ? C.red : STYLE_COL[r.style] || C.white]);
     if (this.bends && this.bends.length) tags.push([this.bends.length + ' VİRAJ', C.orange]);
     if (RUN.runStyle !== 'dengeli' && this.type !== 'boss' && !this.tut) tags.push([RUN_STYLES[RUN.runStyle].name, C.green]);
     const bh = 44 + tags.length * 10;

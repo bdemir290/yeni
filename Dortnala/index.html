@@ -3371,10 +3371,10 @@ const REGIONS = [
     foes: { karga: 1, domuz: 1.2, eskiya: 0.5, okcu: 0.45, kalkanli: 0.35 }, weather: { acik: 4, sis: 4, yagmur: 2 } },
   { id: 'buz', name: 'BUZ HALKASI', song: 'buz', bpm: 132, speed: 1.11, dens: 1.24, rivals: [0.91, 0.96, 1.0, 1.04, 1.08, 0.94, 0.98], boss: 'niva', tier: 1.5, field: 6,
     grass: C.blue, grass2: C.navy, grassD: C.sky, dirt: C.gray, dirtD: C.dgray, dirtL: C.lgray, rail: C.white, post: C.cyan, deco: 'ice', mud: false,
-    foes: { karga: 1, domuz: 0.9, kalkanli: 0.6, okcu: 0.5, eskiya: 0.35 }, weather: { acik: 5, sis: 3, ruzgar: 2 } },
+    foes: { karga: 1, domuz: 0.9, kalkanli: 0.6, okcu: 0.5, eskiya: 0.35 }, weather: { acik: 5, kar: 3, sis: 1, ruzgar: 1 } },
   { id: 'kum', name: 'KIZIL KUM', song: 'kum', bpm: 134, speed: 1.14, dens: 1.3, rivals: [0.92, 0.97, 1.01, 1.05, 1.1, 0.95, 0.99], boss: 'zarg', tier: 2, field: 7,
     grass: C.rust, grass2: C.dbrown, grassD: C.orange0, dirt: C.sand, dirtD: C.tan, dirtL: C.white, rail: C.orange, post: C.dbrown, deco: 'desert', mud: false,
-    foes: { karga: 0.8, domuz: 1.0, eskiya: 0.9, okcu: 0.7, kalkanli: 0.4 }, weather: { acik: 5, ruzgar: 4, sis: 1 } },
+    foes: { karga: 0.8, domuz: 1.0, eskiya: 0.9, okcu: 0.7, kalkanli: 0.4 }, weather: { acik: 5, kumf: 3, ruzgar: 2 } },
   { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.17, dens: 1.36, rivals: [0.93, 0.98, 1.03, 1.07, 1.12, 0.96, 1.0], boss: 'simsek', tier: 2.4, field: 7,
     grass: C.navy, grass2: C.slate, grassD: C.ink, dirt: C.orange0, dirtD: C.rust, dirtL: C.tan, rail: C.cyan, post: C.lgray, deco: 'stadium', mud: false, night: true,
     foes: { karga: 0.8, domuz: 0.8, eskiya: 1.0, okcu: 0.8, kalkanli: 0.5 }, weather: { acik: 6, yagmur: 3, ruzgar: 2 } }
@@ -3402,6 +3402,7 @@ const NAMED_RIVALS = [
   [{ id: 'alev', name: 'ALEV KUYRUK', style: 'onde', look: 'n4' }, { id: 'golge', name: 'GRAX\'IN GÖLGESİ', style: 'sondan', look: 'n2' }, { id: 'nova', name: 'NOVA', style: 'zikzak', look: 'n13' }]
 ];
 const STYLE_COL = { itici: C.salmon, onde: C.sky, sondan: C.green, atici: C.gold, zikzak: C.magenta };
+const STYLE_SHORT = { sondan: 'SONDAN GELİR', onde: 'ÖNDE KAÇAR', itici: 'OMUZ ATAR', atici: 'PLAZMA ATAR', zikzak: 'ÖNÜNÜ KESER' };
 const STYLE_TRICK = { atici: 'NİŞAN ALIR, "!" SONRA PLAZMA ATAR', zikzak: 'ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER' };
 const RIVAL_BY_ID = {};
 NAMED_RIVALS.forEach((list, reg) => list.forEach(r => { r.region = reg; RIVAL_BY_ID[r.id] = r; }));
@@ -3494,6 +3495,8 @@ const ETAP_TIPS = {
   yagmur: 'ASİT YAĞMURU: ŞERİT DEĞİŞTİRMEK YAVAŞLAR, JÖLE BİRİKİNTİSİ ÇOK.',
   sis: 'NEBULA SİSİ: ENGELLERİ GEÇ GÖRÜRSÜN. KULAĞIN RİTİMDE OLSUN.',
   ruzgar: 'GÜNEŞ RÜZGARI: ARKADAN ESİNCE HIZLANIR, ÖNDEN ESİNCE YAVAŞLARSIN.',
+  kar: 'KAR FIRTINASI: PİST KAYGAN, ŞERİT DEĞİŞTİRMEK BİRAZ YAVAŞ. ENGELE ERKEN HAZIRLAN.',
+  kumf: 'KUM FIRTINASI: UZAĞI GÖREMEZSİN VE RÜZGAR ESER. RİTMİ DİNLE, ARKA RÜZGARI YAKALA.',
   hamle: 'NEFES: AŞAĞI KAYDIR YA DA ALTTAKİ ÇİFT OKA BAS, HAMLE YAP. SAKLADIĞIN NEFES SON DÜZLÜKTE SON ATAĞA DÖNÜŞÜR.',
   nota_a: 'ALTIN NOTAYI MÜKEMMEL VURURSAN SİLAHIN ÖZEL ATIŞ YAPAR. NOTA OLMAYAN BOŞLUKTA DOKUNMA, RAHATÇA ŞERİT DEĞİŞTİR.',
   nota_d: 'ÇİFT NOTA: İKİ İŞARET ART ARDA GELİR. VURUŞTA VE ARADA İKİ KEZ DOKUN.',
@@ -3515,7 +3518,9 @@ const WEATHERS = {
   acik: { name: 'AÇIK GÖK', icon: null },
   yagmur: { name: 'ASİT YAĞMURU', icon: 'rain' },
   sis: { name: 'NEBULA SİSİ', icon: 'fog' },
-  ruzgar: { name: 'GÜNEŞ RÜZGARI', icon: 'gust' }
+  ruzgar: { name: 'GÜNEŞ RÜZGARI', icon: 'gust' },
+  kar: { name: 'KAR FIRTINASI', icon: 'spark' },
+  kumf: { name: 'KUM FIRTINASI', icon: 'wind' }
 };
 
 // ---------- chaos gate: a curse for 3 stages, then a blessing ----------
@@ -4251,6 +4256,7 @@ SCENES.run = {
     const S = this.S;
     this.weather = S.forceFog ? 'sis' : (node.weather || 'acik');
     if (this.weather === 'yagmur') S.laneTime *= 1.35;
+    else if (this.weather === 'kar') S.laneTime *= 1.2;
     RUN.hp = Math.min(RUN.hp, S.maxHp);
     this.layout();
     const lenBase = { sprint: 3400, parkur: 3000, kovala: 3600, baskin: 3300, duello: 3200 };
@@ -5427,7 +5433,7 @@ SCENES.run = {
   },
   updateWind(dt) {
     const w = this.wind;
-    if (this.weather !== 'ruzgar' || this.state !== 'run') { w.left = Math.max(0, w.left - dt); return; }
+    if ((this.weather !== 'ruzgar' && this.weather !== 'kumf') || this.state !== 'run') { w.left = Math.max(0, w.left - dt); return; }
     if (w.left > 0) { w.left -= dt; if (w.left <= 0) w.t = R.f(3, 6); return; }
     w.t -= dt;
     if (w.t <= 0) {
@@ -5854,21 +5860,33 @@ Object.assign(SCENES.run, {
       }
       g.globalAlpha = 1;
     }
-    if (wx === 'sis' || this.fogT > 0) {
-      const k = wx === 'sis' ? 1 : clamp(this.fogT / 0.6, 0, 1);
-      g.globalAlpha = 0.1 * k; rect(0, 0, W, this.pY - 40, C.purple); g.globalAlpha = 1;
+    if (wx === 'kar') { // snowstorm: flakes drifting sideways, a cold veil
+      g.globalAlpha = 0.12; rect(0, 0, W, H, C.white); g.globalAlpha = 0.8;
+      for (let i = 0; i < 40; i++) {
+        const h = hash2(i, 41), h2 = hash2(i, 87), sp = 0.6 + h * 0.6;
+        const x = ((h * (W + 40) + T * 35 * sp + Math.sin(T * 2 + i) * 6) % (W + 40)) - 20, y = ((h2 * (H + 20) + T * 90 * sp) % (H + 20)) - 10;
+        if (i % 3) pix(x, y, C.white); else spr(OB.flake, x - 1, y - 1);
+      }
+      g.globalAlpha = 1;
+    }
+    const sand = wx === 'kumf';
+    if (wx === 'sis' || sand || this.fogT > 0) {
+      const k = wx === 'sis' ? 1 : sand ? Math.max(0.7, clamp(this.fogT / 0.6, 0, 1)) : clamp(this.fogT / 0.6, 0, 1);
+      const fc = sand || this.reg.deco === 'desert' ? C.tan : C.lgray;
+      g.globalAlpha = 0.1 * k; rect(0, 0, W, this.pY - 40, sand ? C.orange0 : C.purple); g.globalAlpha = 1;
       const fogEnd = this.pY - 70;
-      for (let y = 0; y < fogEnd; y += 4) { g.globalAlpha = clamp(0.95 - y / fogEnd * 0.95, 0, 0.92) * k; rect(0, y, W, 4, C.lgray); }
+      for (let y = 0; y < fogEnd; y += 4) { g.globalAlpha = clamp(0.95 - y / fogEnd * 0.95, 0, 0.92) * k; rect(0, y, W, 4, fc); }
       g.globalAlpha = 0.18 * k;
       for (let i = 0; i < 5; i++) { const x = ((hash2(i, 9) * W + T * (8 + i * 3)) % (W + 80)) - 40, y = fogEnd - 10 + i * 18; ellipse(x, y, 30, 6, C.white); }
       g.globalAlpha = 1;
-    } else if (wx === 'ruzgar' && this.wind.left > 0) {
+    }
+    if ((wx === 'ruzgar' || sand) && this.wind.left > 0) {
       const dir = this.wind.dir, k = clamp(this.wind.left / 0.4, 0, 1) * clamp((2.2 - this.wind.left) / 0.3, 0, 1);
       g.globalAlpha = 0.45 * k;
       for (let i = 0; i < 22; i++) {
         const h = hash2(i, 5), x = (h * W) | 0, len = 6 + (hash2(i, 6) * 10 | 0);
         const y = dir > 0 ? ((hash2(i, 7) * H + T * 420) % H) : (H - ((hash2(i, 7) * H + T * 300) % H));
-        rect(x, y, 1, len, C.white);
+        rect(x, y, 1, len, sand ? C.sand : C.white);
       }
       g.globalAlpha = 1;
     }
@@ -6135,6 +6153,8 @@ Object.assign(SCENES.run, {
     if (this.duel && this.duel.info.trick) tags.push([this.duel.info.trick, C.salmon]);
     if (this.elite) tags.push(['ZORLU · ÖDÜL X2', C.salmon]);
     if (this.weather !== 'acik') tags.push([WEATHERS[this.weather].name, C.sky]);
+    // who you are up against in this sprint, and their habit
+    if (this.type === 'sprint' && !this.tut) for (const r of this.rivals) if (r.name) tags.push([r.name + ' · ' + (r.nem ? 'RÖVANŞÇI' : STYLE_SHORT[r.style] || ''), r.nem ? C.red : STYLE_COL[r.style] || C.white]);
     if (this.bends && this.bends.length) tags.push([this.bends.length + ' VİRAJ', C.orange]);
     if (RUN.runStyle !== 'dengeli' && this.type !== 'boss' && !this.tut) tags.push([RUN_STYLES[RUN.runStyle].name, C.green]);
     const bh = 44 + tags.length * 10;

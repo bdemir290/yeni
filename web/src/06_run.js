@@ -137,6 +137,7 @@ SCENES.run = {
     const S = this.S;
     this.weather = S.forceFog ? 'sis' : (node.weather || 'acik');
     if (this.weather === 'yagmur') S.laneTime *= 1.35;
+    else if (this.weather === 'kar') S.laneTime *= 1.2;
     RUN.hp = Math.min(RUN.hp, S.maxHp);
     this.layout();
     const lenBase = { sprint: 3400, parkur: 3000, kovala: 3600, baskin: 3300, duello: 3200 };
@@ -1313,7 +1314,7 @@ SCENES.run = {
   },
   updateWind(dt) {
     const w = this.wind;
-    if (this.weather !== 'ruzgar' || this.state !== 'run') { w.left = Math.max(0, w.left - dt); return; }
+    if ((this.weather !== 'ruzgar' && this.weather !== 'kumf') || this.state !== 'run') { w.left = Math.max(0, w.left - dt); return; }
     if (w.left > 0) { w.left -= dt; if (w.left <= 0) w.t = R.f(3, 6); return; }
     w.t -= dt;
     if (w.t <= 0) {
