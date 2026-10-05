@@ -539,7 +539,9 @@ const MISSION_POOL = [
   { k: 'revenge', t: () => 'BİR RÖVANŞÇIDAN RÖVANŞ AL', n: [1], minLv: 3 },
   { k: 'league', t: () => 'BİR GEZEGENİ LİG LİDERİ BİTİR', n: [1], minLv: 2 },
   { k: 'dodge', t: n => n + ' RAKİP ATIŞINDAN KAÇ', n: [3, 8, 15], minLv: 2 },
-  { k: 'ahead', t: n => n + ' İSİMLİ RAKİBİN ÖNÜNDE BİTİR', n: [4, 10, 20] }
+  { k: 'ahead', t: n => n + ' İSİMLİ RAKİBİN ÖNÜNDE BİTİR', n: [4, 10, 20] },
+  { k: 'adim', t: n => n + ' RİTMİK ADIM AT (NOTA ANINDA KAYDIR)', n: [10, 25, 50] },
+  { k: 'sgrade', t: n => n === 1 ? 'BİR ETABI S RİTİM NOTUYLA BİTİR' : n + ' ETABI S RİTİM NOTUYLA BİTİR', n: [1, 3, 6] }
 ];
 const DAILY = [10, 15, 20, 25, 30, 40, 60];
 const DAILY_SUGAR = [0, 0, 1, 0, 0, 0, 2];
@@ -563,6 +565,7 @@ const STORY = [
   { id: 'winZarg', cond: () => META.stats.bossWins.zarg, lines: [['tayfun', 'SOLUCANI KUMA GÖMDÜN! ŞİMDİ SIRA VOLTRAK\'TA!'], ['bip', 'ARENA\'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.']] },
   { id: 'region3', cond: () => META.stats.bestRegion >= LAST_REGION, lines: [['bip', 'GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.']] },
   { id: 'lostSimsek', cond: () => META.flags.lost_simsek, lines: [['kemal', 'VOLTRAK HİLE YAPMADAN KAZANAMAZ. SEN ONDAN HIZLISIN.']] },
+  { id: 'assistHint', cond: () => (META.stats.earlyLoss || 0) >= 3 && !META.settings.assist && !META.settings.wide, lines: [['bip', 'BİP! İLK PİSTTE ÜST ÜSTE ZORLANDIN. AYARLARDA GENİŞ RİTİM PENCERESİ VE YARDIM MODU VAR. UTANILACAK ŞEY DEĞİL!'], ['ayse', 'BİR DE RİTMİ ÖLÇ: KULAKLIĞIN SESİ GEÇ VERİYOR OLABİLİR. SAĞ ÜSTTEKİ DİŞLİYE BAS.']] },
   { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', 'KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!'], ['akyel', '...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.'], ['ayse', 'ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!']] }
 ];
 const TIPS = [

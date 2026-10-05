@@ -5,6 +5,9 @@ const HAZARD = { rock: 1, hurdle: 1, log: 1, puddle: 1, bale: 1, wolf: 1, fici: 
 const JUMPABLE = { hurdle: 1, log: 1, puddle: 1, bale: 1, wolf: 1, civi: 1, toz: 1 };
 const SOLID = { rock: 1, fici: 1 };
 const PICKUP = { coin: 1, clover: 1, heart: 1, sugar: 1 };
+// rhythm grade of an etap from note accuracy (good hits count 60%, stray taps half a miss)
+const GRADES = [['S', 0.92, C.gold, 15], ['A', 0.8, C.green, 8], ['B', 0.65, C.sky, 0], ['C', 0.5, C.lgray, 0], ['D', 0, C.salmon, 0]];
+const JUMP_GRACE = 0.09; // seconds a swipe-up may come after touching a jumpable obstacle (about 5 frames)
 // what hit you, shown next to the horse; jumpable ones remind you to jump
 const HURT_LABELS = { rock: 'GÖKTAŞI!', fici: 'VARİL!', scan: 'LAZER: ŞERİDİ DEĞİŞTİR', arrow: 'PLAZMA!', bolt: 'YILDIRIM!', foe: 'DÜŞMAN!', reis: 'KAPTAN!',
   storm: 'KARA DELİK!', boss: 'FARK KAPANDI!', hurdle: 'BARİYER: SIÇRA!', log: 'BORU: SIÇRA!', bale: 'VARİL!', wolf: 'AV KÖPEĞİ!', civi: 'MAYIN: SIÇRA!', toz: 'ŞOK DALGASI: SIÇRA!',
@@ -160,7 +163,7 @@ SCENES.run = {
     this.nefes = clamp(S.nefesStart, 0, 100); this.kick = 0; this.hamleShieldUsed = false;
     this.obs = []; this.foes = []; this.shots = []; this.eShots = []; this.trails = []; this.rivals = []; this.finished = []; this.bolts = []; this.lines = [];
     this.genY = 300; this.time = 0; this.state = 'intro'; this.stateT = 0; this.timeScale = 1;
-    this.damaged = 0; this.coinFrac = 0; this.etapMax = 0; this.etapPerfects = 0; this.finishMsg = null; this.finishBonus = null; this.heartLost = null; this.comboBreak = 0; this.prevCombo = 0; this.paused = false; this.confirmQuit = false; this.showBoons = false;
+    this.damaged = 0; this.coinFrac = 0; this.etapMax = 0; this.etapPerfects = 0; this.etapGoods = 0; this.missedNotes = 0; this.tapMisses = 0; this.grade = null; this.finishMsg = null; this.finishBonus = null; this.heartLost = null; this.comboBreak = 0; this.prevCombo = 0; this.paused = false; this.confirmQuit = false; this.showBoons = false;
     this.shoeFlash = 0; this.ringFlash = 0; this.judgeT = 0; this.judgeStr = ''; this.judgeCol = C.white; this.result = null; this.ghostLane = 3;
     this.storm = this.type === 'kovala' ? { gap: 115 } : null;
     this.heartPlaced = false; this.resumeT = 0; this.finalStretch = false; this.medal = null; this.medalT = 0; this.shock = null;
@@ -231,7 +234,7 @@ SCENES.run = {
   sy(worldY) { return this.pY - (worldY - this.P.dist); },
   laneOfX(x) { return clamp(Math.round((x - this.trackL - this.laneW / 2) / this.laneW), 0, 4); },
   addBond(n) { this.bond = Math.min(100, this.bond + n * this.S.bondMult); },
-  gainNefes(n) { this.nefes = Math.min(100, this.nefes + n * this.S.nefesGain * (RUN.runStyle === 'dengeli' ? 1.2 : 1)); },
+  gainNefes(n) { this.nefes = Math.min(100, this.nefes + n * this.S.nefesGain * (RUN.runStyle === 'dengeli' ? 1.2 : 1) * (this.chasing ? 1.5 : 1)); },
 
   // ---------- setup helpers ----------
   // how many places count as a pass: crowded fields (8 racers) let the top 4 through
@@ -473,7 +476,7 @@ SCENES.run = {
     const gw = this.S.goodWin / Beat.iv;
     for (const tg of this.targets) {
       if (tg.done || bp - tg.t <= gw) continue;
-      tg.done = true; tg.missed = true; this.gateMiss();
+      tg.done = true; tg.missed = true; this.gateMiss(); if (this.state === 'run') this.missedNotes = (this.missedNotes || 0) + 1;
       if (this.combo > 0 && this.P.stormT <= 0) this.combo = Math.max(0, this.combo - this.S.comboDecay);
     }
     if (this.hold && bp >= this.hold.end) this.finishHold(true);
@@ -493,8 +496,8 @@ SCENES.run = {
     let pw = S.perfectWin * (S.dawnWindow && this.combo >= 20 ? 1.5 : 1);
     if (best.kind === 'a') pw *= S.accentWin;
     const gwin = Math.max(S.goodWin, pw + 0.03);
-    if (bd <= pw) this.hitTarget(best, 'perfect');
-    else if (bd <= gwin) this.hitTarget(best, 'good');
+    if (bd <= pw) { this.hitTarget(best, 'perfect'); this.beatDown = { t: now(), perfect: true }; }
+    else if (bd <= gwin) { this.hitTarget(best, 'good'); this.beatDown = { t: now(), perfect: false }; }
     else { this.pending = 'miss'; if (bd < 0.4) this.missHint = this.lastDelta > 0 ? 'ERKEN' : 'GEÇ'; }
   },
   tap() {
@@ -508,6 +511,13 @@ SCENES.run = {
   swipe(dir) {
     if (this.paused || this.state !== 'run') return;
     const P = this.P;
+    // Ritmik adım: the touch that hit the note became this swipe, so the move itself landed on the beat
+    const bd = this.beatDown; this.beatDown = null;
+    if (bd && now() - bd.t < 0.3 && dir !== 'down') {
+      P.cleanT = Math.max(P.cleanT, bd.perfect ? 0.6 : 0.4); this.addBond(1); this.rate(1.5); RUN.beatSteps = (RUN.beatSteps || 0) + 1; missionEvent('adim', 1);
+      if (this.time - (this.stepLabelT || -9) > 1.4) { this.stepLabelT = this.time; floatText('RİTMİK ADIM', P.x, this.pY + 24, C.cyan, 1, 8, 0.5); }
+      if (!META.tipsSeen.adim) { META.tipsSeen.adim = true; toast('NOTA ANINDA KAYDIRMAK DA VURUŞ SAYILIR: RİTMİK ADIM HIZ VERİR', C.cyan, 'run'); }
+    }
     if (dir === 'left' || dir === 'right') {
       const nl = clamp(P.lane + (dir === 'left' ? -1 : 1), 0, 4);
       if (nl !== P.lane) this.changeLane(nl); else P.bounce = dir === 'left' ? -1 : 1;
@@ -565,6 +575,8 @@ SCENES.run = {
       return;
     }
     P.jumping = true; P.jumpT = 0; P.apexDone = false; P.jumpsLeft = this.S.extraJumps; Sound.play('jump');
+    // a jump in the grace window still clears what you were touching: a last-moment save
+    for (const o of this.obs) if (o.grace && !o.hit && !o.jumped && this.time - o.grace < JUMP_GRACE) { o.jumped = true; this.nearMiss(); floatText('SON ANDA!', P.x, this.pY - 36, C.green, 1, -12, 0.7); }
     burst(P.x, this.pY + 10, 5, this.reg.dirtL, 25, 0.3);
     if (this.tut && this.tut.step === 2 && this.timeScale < 1) this.tutNext('UÇUYORSUN!');
   },
@@ -657,7 +669,7 @@ SCENES.run = {
   judgeMiss() {
     const S = this.S, P = this.P;
     if (this.combo > 0 && P.stormT <= 0) this.combo = S.comboKeep ? Math.floor(this.combo / 2) : 0;
-    this.showJudge(this.missHint ? 'ISKA · ' + this.missHint : 'ISKA', C.gray); Sound.play('miss');
+    this.showJudge(this.missHint ? 'ISKA · ' + this.missHint : 'ISKA', C.gray); Sound.play('miss'); this.tapMisses = (this.tapMisses || 0) + 1;
     this.gateMiss();
     this.fireWeapon('miss');
   },
@@ -669,7 +681,7 @@ SCENES.run = {
     if (this.combo % 30 === 0) this.startFever();
     if (perfect) this.rate(0.25);
     RUN.maxCombo = Math.max(RUN.maxCombo, this.combo); this.etapMax = Math.max(this.etapMax || 0, this.combo);
-    if (perfect) this.etapPerfects = (this.etapPerfects || 0) + 1;
+    if (perfect) this.etapPerfects = (this.etapPerfects || 0) + 1; else this.etapGoods = (this.etapGoods || 0) + 1;
     missionEvent('combo', this.combo);
     if (perfect) {
       RUN.perfects++; META.stats.perfects++; missionEvent('perfect', 1);
@@ -706,6 +718,12 @@ SCENES.run = {
       this.showJudge('NEFES!', C.cyan); Sound.play('heal');
       for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2; addPart(P.x + Math.cos(a) * 12, this.pY + Math.sin(a) * 12, -Math.cos(a) * 30, -Math.sin(a) * 30, 0.5, i % 2 ? C.cyan : C.white, 1); }
     } else { this.showJudge('BIRAKTIN', C.gray); Sound.play('miss'); }
+  },
+  rhythmGrade() {
+    const p = this.etapPerfects || 0, gd = this.etapGoods || 0, total = p + gd + (this.missedNotes || 0) + 0.5 * (this.tapMisses || 0);
+    if (total < 8) return null;
+    const acc = (p + 0.6 * gd) / total, gr = GRADES.find(q => acc >= q[1]);
+    return { letter: gr[0], acc, col: gr[2], coins: gr[3] };
   },
   showJudge(s, c) { this.judgeStr = s; this.judgeCol = c; this.judgeT = 0.55; },
 
@@ -1090,7 +1108,7 @@ SCENES.run = {
       if (d > 0 && d < 64) drafting = true;
     }
     if (drafting && this.state === 'run') {
-      P.draft = Math.min(1, P.draft + dt * 0.5); this.gainNefes(8 * dt);
+      P.draft = Math.min(1, P.draft + dt * (this.chasing ? 0.75 : 0.5)); this.gainNefes(8 * dt);
       if (P.draft >= 1 && !P.draftFull) { P.draftFull = true; floatText('SİPER DOLU: YANA ÇIK!', P.x, this.pY + 22, C.cyan, 1, 6, 1); Sound.play('select'); }
     } else if (!P.draftFull) P.draft = Math.max(0, P.draft - dt * 0.6);
     else { P.draft = Math.max(0, P.draft - dt * 0.25); if (P.draft <= 0) P.draftFull = false; }
@@ -1113,6 +1131,13 @@ SCENES.run = {
     this.updateTrails(dt);
     this.updateRivals(dt);
     if (this.storm && this.state === 'run') this.updateStorm(dt);
+    // comeback help (Mario Kart style, kept light): out of the pass places in a sprint, breath and draft fill faster
+    if (this.type === 'sprint' && !this.tut && this.state === 'run') {
+      let rank = 1; for (const r of this.rivals) if (r.done || r.dist > P.dist) rank++;
+      const was = this.chasing;
+      this.chasing = rank > this.passRank() && P.dist > this.length * 0.12;
+      if (this.chasing && !was && !META.tipsSeen.chase) { META.tipsSeen.chase = true; toast('GERİDESİN: NEFES VE SİPER DAHA HIZLI DOLAR. HAMLEYİ KULLAN!', C.cyan, 'run'); }
+    } else this.chasing = false;
     if (this.boss) this.updateBoss(dt);
     this.updateBolts(dt);
     this.updateWind(dt);
@@ -1172,6 +1197,9 @@ SCENES.run = {
       const dy = o.y - P.dist, ly = o.ly; o.ly = dy;
       if (dy < -40) { if (o.jumped) { missionEvent('jump', 1); META.stats.jumps++; } o.dead = true; continue; }
       if (o.kind === 'rgate') { this.updateGate(o, dy, dt); continue; }
+      // late-jump grace (coyote time): a jumpable touched without jumping waits a few frames for the swipe
+      if (o.grace && !o.hit && !o.jumped && this.time - o.grace >= JUMP_GRACE) { o.hit = true; if (this.hurt(o.kind)) this.breakObs(o); continue; }
+
       if (!o.passed && dy < -4) {
         o.passed = true;
         if (!o.hit && SOLID[o.kind] && this.state === 'run' && P.prevLane >= o.lane && P.prevLane < o.lane + o.span && P.lane !== P.prevLane && this.time - P.laneAt < 0.4) this.nearMiss();
@@ -1183,6 +1211,8 @@ SCENES.run = {
         continue;
       }
       if (o.hit || flying || !this.overlapX(o, P.x, half)) continue;
+      // lane-dodge grace: you already started moving out of this obstacle's lane, so the dodge counts
+      if (o.kind !== 'wolf' && o.kind !== 'puddle' && P.laneT < 1 && this.time - P.laneAt < 0.2 && P.prevLane >= o.lane && P.prevLane < o.lane + o.span && !(P.lane >= o.lane && P.lane < o.lane + o.span)) continue;
       const depth = o.kind === 'log' ? 6 : 5;
       // a slow frame can step right over the contact band: count a crossing from in front to behind as contact
       if (Math.abs(dy) > depth && !(ly != null && ly > depth && dy < -depth)) continue;
@@ -1190,6 +1220,8 @@ SCENES.run = {
         if (!o.jumped) { o.jumped = true; if (P.jumping && o.kind !== 'puddle') this.judgeJump(o); }
         continue;
       }
+      if (JUMPABLE[o.kind] && o.kind !== 'puddle' && !o.grace && !(P.hamleT > 0 && (S.hamleInv || S.hamleRam)) && !(P.abilityT > 0 && RUN.jockey === 'ayse') && !(this.fever > 0) && !this.invulnerable()) { o.grace = this.time; continue; }
+      if (o.grace) continue;
       if (o.kind === 'puddle') {
         o.hit = true;
         if (!S.puddleImmune && !(P.hamleT > 0 && S.hamleInv)) { P.slowT = 0.7; P.slowAmt = 0.38 * (1 - Math.min(0.8, S.slowResist)); Sound.play('splash'); }
@@ -1261,6 +1293,7 @@ SCENES.run = {
         if (this.state === 'run') sp *= gap > 150 ? 0.92 : gap > 90 ? 0.96 : gap < -180 ? 1.18 : gap < -120 ? 1.12 : gap < -60 ? 1.06 : 1;
         if (D.surgeT > 0) sp *= 1.1;
       }
+      if (!r.duel && this.type === 'sprint' && this.state === 'run' && r.dist - P.dist < -220) sp *= 1.05;
       if (r.stun > 0) sp *= 0.55;
       if (r.laneT < 1) { r.laneT = Math.min(1, r.laneT + dt / 0.22); r.x = lerp(r.fromX, this.laneX(r.lane), Ease.outQuad(r.laneT)); } else r.x = this.laneX(r.lane);
       if (r.jumping) { r.jumpT += dt; if (r.jumpT >= 0.5) r.jumping = false; }

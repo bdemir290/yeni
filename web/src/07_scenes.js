@@ -62,7 +62,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.1', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.2', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 
@@ -697,6 +697,7 @@ SCENES.results = {
     this.xp = xp; this.conv = Math.floor(RUN.coins / 10); this.yonca = RUN.yonca + this.conv; this.seker = RUN.seker;
     const st = META.stats;
     st.runs++; if (this.won) { st.wins++; META.heatUnlocked = true; }
+    if (!RUN.daily) st.earlyLoss = (!this.won && !this.quit && RUN.region === 0) ? (st.earlyLoss || 0) + 1 : 0;
     st.bestCombo = Math.max(st.bestCombo, RUN.maxCombo);
     const prog = RUN.region * 5 + RUN.etap;
     this.record = prog > st.bestProgress && st.runs > 1;
@@ -780,6 +781,7 @@ SCENES.results = {
     if (this.near && this.t > 2.3) notes.push([this.near, C.salmon]);
     if (this.grew && this.t > 2.4) notes.push(['SERADA ÜRÜNLER BÜYÜDÜ', C.green]);
     if (this.assistUp && this.t > 2.4) notes.push(['YARDIM MODU BİRAZ GÜÇLENDİ', C.sky]);
+    if (RUN.grades && this.t > 2.42) { const gs = ['S', 'A', 'B'].filter(k => RUN.grades[k]).map(k => RUN.grades[k] + ' ' + k).join(' · '); if (gs) notes.push(['RİTİM NOTLARI: ' + gs, C.gold]); }
     if (this.league && this.t > 2.45) notes.push(['GALAKSİ LİGİ: ' + this.league + '. SIRA', this.league === 1 ? C.gold : C.lgray, this.league === 1]);
     if (this.done && this.t > 2.5) notes.push([this.done + ' GÖREV TAMAM: PANODAN AL', C.green]);
     for (const [s, c, o] of notes) { if (o) textO(s, W / 2, y, c, 'center'); else text(s, W / 2, y, c, 'center'); y += 11; }

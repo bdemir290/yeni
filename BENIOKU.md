@@ -1,4 +1,4 @@
-# Dörtnala – iOS prototipi (v5.1 · Galaksi Kupası)
+# Dörtnala – iOS prototipi (v5.2 · Galaksi Kupası)
 
 Hades tarzı, üslü roguelike at yarışı. Pixel art, dikey ekran, tek elle oynanır.
 
@@ -88,6 +88,15 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 - **Yeni yol olayları:** Buz Halkası'nda *Donmuş Kargo* ve *Kar Tanesi'nin Sırrı*, Kızıl Kum'da *Çölde Bir Vaha* ve *Tozkıran'ın Kervanı*, her yerde *BOP-1* (sonraki etaba kalkan). Gezegene özel olaylar yalnızca o gezegende çıkar.
 - **Yeni görevler:** bir gezegeni lig lideri bitir, rakip atışlarından kaç, isimli rakiplerin önünde bitir.
 - **Şampiyonlar konuşur:** her şampiyon yarışın başında laf atar.
+
+## v5.2: Daha keyifli oynanış (oyun hissi araştırmasından)
+
+- **Affedici kontroller:** engele değdiğin anda ya da en fazla ~5 kare (0,09 sn) sonra yukarı kaydırırsan sıçrama yine sayılır ("SON ANDA!", kıl payı ödülüyle). Bir engelin şeridinden çıkmaya temas öncesinde başladıysan kaçış sayılır.
+- **Ritmik adım:** notaya dokunduğun parmakla kaydırırsan (şerit ya da sıçrama) hareketin de ritme oturur: kısa bir hız artışı ve "RİTMİK ADIM" yazısı. Yeni görev: ritmik adım at.
+- **Ritim notu:** her etabın sonunda isabete göre S / A / B / C / D notu. S 15, A 8 sikke verir; sonuç ekranında koşunun notları listelenir. Yeni görev: S notuyla bitir.
+- **Takip yardımı:** sprintte geçme sırasının dışındaysan nefes ve siper %50 daha hızlı dolar ("TAKİPTE"). Çok geride kalan rakipler biraz hızlanır, yarış kalabalık ve çekişmeli kalır.
+- **Müzikle yaşayan dünya:** rakiplerin dörtnalı, sikkelerin zıplaması ve arenadaki seyirci vuruşa göre hareket eder.
+- **Yardım önerisi:** ilk pistte üst üste 3 kez kaybedersen BİP geniş ritim penceresini, yardım modunu ve ritim ölçümünü önerir.
 
 ## Proje yapısı
 

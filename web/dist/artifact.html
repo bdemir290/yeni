@@ -3678,7 +3678,9 @@ const MISSION_POOL = [
   { k: 'revenge', t: () => 'BİR RÖVANŞÇIDAN RÖVANŞ AL', n: [1], minLv: 3 },
   { k: 'league', t: () => 'BİR GEZEGENİ LİG LİDERİ BİTİR', n: [1], minLv: 2 },
   { k: 'dodge', t: n => n + ' RAKİP ATIŞINDAN KAÇ', n: [3, 8, 15], minLv: 2 },
-  { k: 'ahead', t: n => n + ' İSİMLİ RAKİBİN ÖNÜNDE BİTİR', n: [4, 10, 20] }
+  { k: 'ahead', t: n => n + ' İSİMLİ RAKİBİN ÖNÜNDE BİTİR', n: [4, 10, 20] },
+  { k: 'adim', t: n => n + ' RİTMİK ADIM AT (NOTA ANINDA KAYDIR)', n: [10, 25, 50] },
+  { k: 'sgrade', t: n => n === 1 ? 'BİR ETABI S RİTİM NOTUYLA BİTİR' : n + ' ETABI S RİTİM NOTUYLA BİTİR', n: [1, 3, 6] }
 ];
 const DAILY = [10, 15, 20, 25, 30, 40, 60];
 const DAILY_SUGAR = [0, 0, 1, 0, 0, 0, 2];
@@ -3702,6 +3704,7 @@ const STORY = [
   { id: 'winZarg', cond: () => META.stats.bossWins.zarg, lines: [['tayfun', 'SOLUCANI KUMA GÖMDÜN! ŞİMDİ SIRA VOLTRAK\'TA!'], ['bip', 'ARENA\'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.']] },
   { id: 'region3', cond: () => META.stats.bestRegion >= LAST_REGION, lines: [['bip', 'GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.']] },
   { id: 'lostSimsek', cond: () => META.flags.lost_simsek, lines: [['kemal', 'VOLTRAK HİLE YAPMADAN KAZANAMAZ. SEN ONDAN HIZLISIN.']] },
+  { id: 'assistHint', cond: () => (META.stats.earlyLoss || 0) >= 3 && !META.settings.assist && !META.settings.wide, lines: [['bip', 'BİP! İLK PİSTTE ÜST ÜSTE ZORLANDIN. AYARLARDA GENİŞ RİTİM PENCERESİ VE YARDIM MODU VAR. UTANILACAK ŞEY DEĞİL!'], ['ayse', 'BİR DE RİTMİ ÖLÇ: KULAKLIĞIN SESİ GEÇ VERİYOR OLABİLİR. SAĞ ÜSTTEKİ DİŞLİYE BAS.']] },
   { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', 'KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!'], ['akyel', '...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.'], ['ayse', 'ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!']] }
 ];
 const TIPS = [
@@ -4114,6 +4117,9 @@ const HAZARD = { rock: 1, hurdle: 1, log: 1, puddle: 1, bale: 1, wolf: 1, fici: 
 const JUMPABLE = { hurdle: 1, log: 1, puddle: 1, bale: 1, wolf: 1, civi: 1, toz: 1 };
 const SOLID = { rock: 1, fici: 1 };
 const PICKUP = { coin: 1, clover: 1, heart: 1, sugar: 1 };
+// rhythm grade of an etap from note accuracy (good hits count 60%, stray taps half a miss)
+const GRADES = [['S', 0.92, C.gold, 15], ['A', 0.8, C.green, 8], ['B', 0.65, C.sky, 0], ['C', 0.5, C.lgray, 0], ['D', 0, C.salmon, 0]];
+const JUMP_GRACE = 0.09; // seconds a swipe-up may come after touching a jumpable obstacle (about 5 frames)
 // what hit you, shown next to the horse; jumpable ones remind you to jump
 const HURT_LABELS = { rock: 'GÖKTAŞI!', fici: 'VARİL!', scan: 'LAZER: ŞERİDİ DEĞİŞTİR', arrow: 'PLAZMA!', bolt: 'YILDIRIM!', foe: 'DÜŞMAN!', reis: 'KAPTAN!',
   storm: 'KARA DELİK!', boss: 'FARK KAPANDI!', hurdle: 'BARİYER: SIÇRA!', log: 'BORU: SIÇRA!', bale: 'VARİL!', wolf: 'AV KÖPEĞİ!', civi: 'MAYIN: SIÇRA!', toz: 'ŞOK DALGASI: SIÇRA!',
@@ -4269,7 +4275,7 @@ SCENES.run = {
     this.nefes = clamp(S.nefesStart, 0, 100); this.kick = 0; this.hamleShieldUsed = false;
     this.obs = []; this.foes = []; this.shots = []; this.eShots = []; this.trails = []; this.rivals = []; this.finished = []; this.bolts = []; this.lines = [];
     this.genY = 300; this.time = 0; this.state = 'intro'; this.stateT = 0; this.timeScale = 1;
-    this.damaged = 0; this.coinFrac = 0; this.etapMax = 0; this.etapPerfects = 0; this.finishMsg = null; this.finishBonus = null; this.heartLost = null; this.comboBreak = 0; this.prevCombo = 0; this.paused = false; this.confirmQuit = false; this.showBoons = false;
+    this.damaged = 0; this.coinFrac = 0; this.etapMax = 0; this.etapPerfects = 0; this.etapGoods = 0; this.missedNotes = 0; this.tapMisses = 0; this.grade = null; this.finishMsg = null; this.finishBonus = null; this.heartLost = null; this.comboBreak = 0; this.prevCombo = 0; this.paused = false; this.confirmQuit = false; this.showBoons = false;
     this.shoeFlash = 0; this.ringFlash = 0; this.judgeT = 0; this.judgeStr = ''; this.judgeCol = C.white; this.result = null; this.ghostLane = 3;
     this.storm = this.type === 'kovala' ? { gap: 115 } : null;
     this.heartPlaced = false; this.resumeT = 0; this.finalStretch = false; this.medal = null; this.medalT = 0; this.shock = null;
@@ -4340,7 +4346,7 @@ SCENES.run = {
   sy(worldY) { return this.pY - (worldY - this.P.dist); },
   laneOfX(x) { return clamp(Math.round((x - this.trackL - this.laneW / 2) / this.laneW), 0, 4); },
   addBond(n) { this.bond = Math.min(100, this.bond + n * this.S.bondMult); },
-  gainNefes(n) { this.nefes = Math.min(100, this.nefes + n * this.S.nefesGain * (RUN.runStyle === 'dengeli' ? 1.2 : 1)); },
+  gainNefes(n) { this.nefes = Math.min(100, this.nefes + n * this.S.nefesGain * (RUN.runStyle === 'dengeli' ? 1.2 : 1) * (this.chasing ? 1.5 : 1)); },
 
   // ---------- setup helpers ----------
   // how many places count as a pass: crowded fields (8 racers) let the top 4 through
@@ -4582,7 +4588,7 @@ SCENES.run = {
     const gw = this.S.goodWin / Beat.iv;
     for (const tg of this.targets) {
       if (tg.done || bp - tg.t <= gw) continue;
-      tg.done = true; tg.missed = true; this.gateMiss();
+      tg.done = true; tg.missed = true; this.gateMiss(); if (this.state === 'run') this.missedNotes = (this.missedNotes || 0) + 1;
       if (this.combo > 0 && this.P.stormT <= 0) this.combo = Math.max(0, this.combo - this.S.comboDecay);
     }
     if (this.hold && bp >= this.hold.end) this.finishHold(true);
@@ -4602,8 +4608,8 @@ SCENES.run = {
     let pw = S.perfectWin * (S.dawnWindow && this.combo >= 20 ? 1.5 : 1);
     if (best.kind === 'a') pw *= S.accentWin;
     const gwin = Math.max(S.goodWin, pw + 0.03);
-    if (bd <= pw) this.hitTarget(best, 'perfect');
-    else if (bd <= gwin) this.hitTarget(best, 'good');
+    if (bd <= pw) { this.hitTarget(best, 'perfect'); this.beatDown = { t: now(), perfect: true }; }
+    else if (bd <= gwin) { this.hitTarget(best, 'good'); this.beatDown = { t: now(), perfect: false }; }
     else { this.pending = 'miss'; if (bd < 0.4) this.missHint = this.lastDelta > 0 ? 'ERKEN' : 'GEÇ'; }
   },
   tap() {
@@ -4617,6 +4623,13 @@ SCENES.run = {
   swipe(dir) {
     if (this.paused || this.state !== 'run') return;
     const P = this.P;
+    // Ritmik adım: the touch that hit the note became this swipe, so the move itself landed on the beat
+    const bd = this.beatDown; this.beatDown = null;
+    if (bd && now() - bd.t < 0.3 && dir !== 'down') {
+      P.cleanT = Math.max(P.cleanT, bd.perfect ? 0.6 : 0.4); this.addBond(1); this.rate(1.5); RUN.beatSteps = (RUN.beatSteps || 0) + 1; missionEvent('adim', 1);
+      if (this.time - (this.stepLabelT || -9) > 1.4) { this.stepLabelT = this.time; floatText('RİTMİK ADIM', P.x, this.pY + 24, C.cyan, 1, 8, 0.5); }
+      if (!META.tipsSeen.adim) { META.tipsSeen.adim = true; toast('NOTA ANINDA KAYDIRMAK DA VURUŞ SAYILIR: RİTMİK ADIM HIZ VERİR', C.cyan, 'run'); }
+    }
     if (dir === 'left' || dir === 'right') {
       const nl = clamp(P.lane + (dir === 'left' ? -1 : 1), 0, 4);
       if (nl !== P.lane) this.changeLane(nl); else P.bounce = dir === 'left' ? -1 : 1;
@@ -4674,6 +4687,8 @@ SCENES.run = {
       return;
     }
     P.jumping = true; P.jumpT = 0; P.apexDone = false; P.jumpsLeft = this.S.extraJumps; Sound.play('jump');
+    // a jump in the grace window still clears what you were touching: a last-moment save
+    for (const o of this.obs) if (o.grace && !o.hit && !o.jumped && this.time - o.grace < JUMP_GRACE) { o.jumped = true; this.nearMiss(); floatText('SON ANDA!', P.x, this.pY - 36, C.green, 1, -12, 0.7); }
     burst(P.x, this.pY + 10, 5, this.reg.dirtL, 25, 0.3);
     if (this.tut && this.tut.step === 2 && this.timeScale < 1) this.tutNext('UÇUYORSUN!');
   },
@@ -4766,7 +4781,7 @@ SCENES.run = {
   judgeMiss() {
     const S = this.S, P = this.P;
     if (this.combo > 0 && P.stormT <= 0) this.combo = S.comboKeep ? Math.floor(this.combo / 2) : 0;
-    this.showJudge(this.missHint ? 'ISKA · ' + this.missHint : 'ISKA', C.gray); Sound.play('miss');
+    this.showJudge(this.missHint ? 'ISKA · ' + this.missHint : 'ISKA', C.gray); Sound.play('miss'); this.tapMisses = (this.tapMisses || 0) + 1;
     this.gateMiss();
     this.fireWeapon('miss');
   },
@@ -4778,7 +4793,7 @@ SCENES.run = {
     if (this.combo % 30 === 0) this.startFever();
     if (perfect) this.rate(0.25);
     RUN.maxCombo = Math.max(RUN.maxCombo, this.combo); this.etapMax = Math.max(this.etapMax || 0, this.combo);
-    if (perfect) this.etapPerfects = (this.etapPerfects || 0) + 1;
+    if (perfect) this.etapPerfects = (this.etapPerfects || 0) + 1; else this.etapGoods = (this.etapGoods || 0) + 1;
     missionEvent('combo', this.combo);
     if (perfect) {
       RUN.perfects++; META.stats.perfects++; missionEvent('perfect', 1);
@@ -4815,6 +4830,12 @@ SCENES.run = {
       this.showJudge('NEFES!', C.cyan); Sound.play('heal');
       for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2; addPart(P.x + Math.cos(a) * 12, this.pY + Math.sin(a) * 12, -Math.cos(a) * 30, -Math.sin(a) * 30, 0.5, i % 2 ? C.cyan : C.white, 1); }
     } else { this.showJudge('BIRAKTIN', C.gray); Sound.play('miss'); }
+  },
+  rhythmGrade() {
+    const p = this.etapPerfects || 0, gd = this.etapGoods || 0, total = p + gd + (this.missedNotes || 0) + 0.5 * (this.tapMisses || 0);
+    if (total < 8) return null;
+    const acc = (p + 0.6 * gd) / total, gr = GRADES.find(q => acc >= q[1]);
+    return { letter: gr[0], acc, col: gr[2], coins: gr[3] };
   },
   showJudge(s, c) { this.judgeStr = s; this.judgeCol = c; this.judgeT = 0.55; },
 
@@ -5199,7 +5220,7 @@ SCENES.run = {
       if (d > 0 && d < 64) drafting = true;
     }
     if (drafting && this.state === 'run') {
-      P.draft = Math.min(1, P.draft + dt * 0.5); this.gainNefes(8 * dt);
+      P.draft = Math.min(1, P.draft + dt * (this.chasing ? 0.75 : 0.5)); this.gainNefes(8 * dt);
       if (P.draft >= 1 && !P.draftFull) { P.draftFull = true; floatText('SİPER DOLU: YANA ÇIK!', P.x, this.pY + 22, C.cyan, 1, 6, 1); Sound.play('select'); }
     } else if (!P.draftFull) P.draft = Math.max(0, P.draft - dt * 0.6);
     else { P.draft = Math.max(0, P.draft - dt * 0.25); if (P.draft <= 0) P.draftFull = false; }
@@ -5222,6 +5243,13 @@ SCENES.run = {
     this.updateTrails(dt);
     this.updateRivals(dt);
     if (this.storm && this.state === 'run') this.updateStorm(dt);
+    // comeback help (Mario Kart style, kept light): out of the pass places in a sprint, breath and draft fill faster
+    if (this.type === 'sprint' && !this.tut && this.state === 'run') {
+      let rank = 1; for (const r of this.rivals) if (r.done || r.dist > P.dist) rank++;
+      const was = this.chasing;
+      this.chasing = rank > this.passRank() && P.dist > this.length * 0.12;
+      if (this.chasing && !was && !META.tipsSeen.chase) { META.tipsSeen.chase = true; toast('GERİDESİN: NEFES VE SİPER DAHA HIZLI DOLAR. HAMLEYİ KULLAN!', C.cyan, 'run'); }
+    } else this.chasing = false;
     if (this.boss) this.updateBoss(dt);
     this.updateBolts(dt);
     this.updateWind(dt);
@@ -5281,6 +5309,9 @@ SCENES.run = {
       const dy = o.y - P.dist, ly = o.ly; o.ly = dy;
       if (dy < -40) { if (o.jumped) { missionEvent('jump', 1); META.stats.jumps++; } o.dead = true; continue; }
       if (o.kind === 'rgate') { this.updateGate(o, dy, dt); continue; }
+      // late-jump grace (coyote time): a jumpable touched without jumping waits a few frames for the swipe
+      if (o.grace && !o.hit && !o.jumped && this.time - o.grace >= JUMP_GRACE) { o.hit = true; if (this.hurt(o.kind)) this.breakObs(o); continue; }
+
       if (!o.passed && dy < -4) {
         o.passed = true;
         if (!o.hit && SOLID[o.kind] && this.state === 'run' && P.prevLane >= o.lane && P.prevLane < o.lane + o.span && P.lane !== P.prevLane && this.time - P.laneAt < 0.4) this.nearMiss();
@@ -5292,6 +5323,8 @@ SCENES.run = {
         continue;
       }
       if (o.hit || flying || !this.overlapX(o, P.x, half)) continue;
+      // lane-dodge grace: you already started moving out of this obstacle's lane, so the dodge counts
+      if (o.kind !== 'wolf' && o.kind !== 'puddle' && P.laneT < 1 && this.time - P.laneAt < 0.2 && P.prevLane >= o.lane && P.prevLane < o.lane + o.span && !(P.lane >= o.lane && P.lane < o.lane + o.span)) continue;
       const depth = o.kind === 'log' ? 6 : 5;
       // a slow frame can step right over the contact band: count a crossing from in front to behind as contact
       if (Math.abs(dy) > depth && !(ly != null && ly > depth && dy < -depth)) continue;
@@ -5299,6 +5332,8 @@ SCENES.run = {
         if (!o.jumped) { o.jumped = true; if (P.jumping && o.kind !== 'puddle') this.judgeJump(o); }
         continue;
       }
+      if (JUMPABLE[o.kind] && o.kind !== 'puddle' && !o.grace && !(P.hamleT > 0 && (S.hamleInv || S.hamleRam)) && !(P.abilityT > 0 && RUN.jockey === 'ayse') && !(this.fever > 0) && !this.invulnerable()) { o.grace = this.time; continue; }
+      if (o.grace) continue;
       if (o.kind === 'puddle') {
         o.hit = true;
         if (!S.puddleImmune && !(P.hamleT > 0 && S.hamleInv)) { P.slowT = 0.7; P.slowAmt = 0.38 * (1 - Math.min(0.8, S.slowResist)); Sound.play('splash'); }
@@ -5370,6 +5405,7 @@ SCENES.run = {
         if (this.state === 'run') sp *= gap > 150 ? 0.92 : gap > 90 ? 0.96 : gap < -180 ? 1.18 : gap < -120 ? 1.12 : gap < -60 ? 1.06 : 1;
         if (D.surgeT > 0) sp *= 1.1;
       }
+      if (!r.duel && this.type === 'sprint' && this.state === 'run' && r.dist - P.dist < -220) sp *= 1.05;
       if (r.stun > 0) sp *= 0.55;
       if (r.laneT < 1) { r.laneT = Math.min(1, r.laneT + dt / 0.22); r.x = lerp(r.fromX, this.laneX(r.lane), Ease.outQuad(r.laneT)); } else r.x = this.laneX(r.lane);
       if (r.jumping) { r.jumpT += dt; if (r.jumpT >= 0.5) r.jumping = false; }
@@ -5593,11 +5629,12 @@ Object.assign(SCENES.run, {
     const cols = [C.red, C.yellow, C.sky, C.white, C.green, C.salmon, C.gold, C.magenta];
     const skins = [C.green, C.cyan, C.lgray, C.magenta, C.yellow, C.salmon];
     const cheer = this.finalStretch ? 20 : 10;
+    const beatUp = this.state === 'run' ? this.beatFrac() < 0.22 : Math.sin(T * cheer) > 0.6;
     for (let s = s0; s <= s1; s++) {
       const sy = Math.round(this.sy(s * step)) + oy, o = this.offY(sy);
       if (s % 6 === 0) { rect(0, sy, leftW + o - 2, 1, C.navy); rect(rightX + o + 2, sy, W, 1, C.navy); continue; }
-      for (let x = 1; x < leftW - 3; x += 3) { const h = hash2(s, x); if (h < 0.75) { const bob = (Math.sin(T * cheer + h * 20) > 0.6) ? -1 : 0; pix(x + o + ox, sy + bob, skins[(h * 47 | 0) % 6]); pix(x + o + ox, sy + 1 + bob, cols[(h * 80 | 0) % 8]); } }
-      for (let x = rightX + 3; x < W + 8; x += 3) { const h = hash2(s, x); if (h < 0.75) { const bob = (Math.sin(T * cheer + h * 20) > 0.6) ? -1 : 0; pix(x + o + ox, sy + bob, skins[(h * 47 | 0) % 6]); pix(x + o + ox, sy + 1 + bob, cols[(h * 80 | 0) % 8]); } }
+      for (let x = 1; x < leftW - 3; x += 3) { const h = hash2(s, x); if (h < 0.75) { const bob = (beatUp && (h > 0.45 || this.finalStretch)) ? -1 : 0; pix(x + o + ox, sy + bob, skins[(h * 47 | 0) % 6]); pix(x + o + ox, sy + 1 + bob, cols[(h * 80 | 0) % 8]); } }
+      for (let x = rightX + 3; x < W + 8; x += 3) { const h = hash2(s, x); if (h < 0.75) { const bob = (beatUp && (h > 0.45 || this.finalStretch)) ? -1 : 0; pix(x + o + ox, sy + bob, skins[(h * 47 | 0) % 6]); pix(x + o + ox, sy + 1 + bob, cols[(h * 80 | 0) % 8]); } }
     }
   },
   drawWorld(ox, oy) {
@@ -5624,7 +5661,7 @@ Object.assign(SCENES.run, {
       else if (it.f) this.drawFoe(it.f, it.sy, ox + this.offY(it.sy), oy);
       else if (it.reis) this.drawReis(it.reis, it.sy, ox + this.offY(it.sy), oy);
       else if (it.r) {
-        const r = it.r, o = this.offY(it.y) + ox; const fr = Math.floor(this.time * 10 * r.spd + r.phase) % 4;
+        const r = it.r, o = this.offY(it.y) + ox; const fr = this.clockOn ? ((Math.floor(Beat.pos(now()) * 8 + r.phase * 4) % 4) + 4) % 4 : Math.floor(this.time * 10 * r.spd + r.phase) % 4; // gallop on the beat
         this.drawHorse(r.set, r.x + o, it.y + oy, fr, r.jumping, r.jumping ? r.jumpT / 0.5 : 0, r.stun > 0 && Math.floor(T * 10) % 2 === 0);
         if (r.name && !r.done) {
           const c = r.nem ? C.red : STYLE_COL[r.style] || C.green;
@@ -5743,7 +5780,7 @@ Object.assign(SCENES.run, {
       case 'puddle': { const img = puddleSprite(lw - 4, o.mud); spr(img, x0 + 2, sy - 5); break; }
       case 'bale': { const img = OB.bale[Math.floor(o.t * 8) % 2]; spr(img, x0 + lw / 2 - img.width / 2, sy - 6); break; }
       case 'wolf': { let img = OB.wolf[Math.floor(o.t * 10) % 2]; if (o.vx < 0) img = flipCached(img); spr(img, o.x + ox - img.width / 2, sy - 4); break; }
-      case 'coin': { const img = OB.coin[Math.floor(T * 8 + o.y * 0.05) % 4]; spr(img, x0 + lw / 2 - img.width / 2, sy - 4 + Math.round(Math.sin(T * 5 + o.y) * 1)); break; }
+      case 'coin': { const img = OB.coin[Math.floor(T * 8 + o.y * 0.05) % 4]; spr(img, x0 + lw / 2 - img.width / 2, sy - 4 - (this.beatFrac() < 0.18 ? 1 : 0)); break; }
       case 'clover': { const img = OB.clover; g.globalAlpha = 0.35 + 0.2 * Math.sin(T * 6); circle(x0 + lw / 2, sy, 6, C.cyan); g.globalAlpha = 1; spr(img, x0 + lw / 2 - Math.floor(img.width / 2), sy - Math.floor(img.height / 2) - 1 + Math.round(Math.sin(T * 4 + o.y))); break; }
       case 'heart': { g.globalAlpha = 0.35 + 0.2 * Math.sin(T * 6); circle(x0 + lw / 2, sy, 6, C.salmon); g.globalAlpha = 1; spr(OB.heart, x0 + lw / 2 - 4, sy - 4); break; }
       case 'sugar': { g.globalAlpha = 0.4 + 0.25 * Math.sin(T * 7); circle(x0 + lw / 2, sy, 7, C.white); g.globalAlpha = 1; spr(ICONS.seker, x0 + lw / 2 - 4, sy - 4 + Math.round(Math.sin(T * 4))); break; }
@@ -5973,6 +6010,7 @@ Object.assign(SCENES.run, {
         let rank = 1; for (const r of this.rivals) if (r.done || r.dist > P.dist) rank++;
         const ok = rank <= this.passRank();
         textO(rank + '/' + (this.rivals.length + 1), cx, top + 19, ok ? C.yellow : C.red, 'center', 2);
+        if (this.chasing && Math.floor(T * 3) % 2 === 0) textO('TAKİPTE: NEFES +%50', cx, top + 34, C.cyan, 'center');
       } else if (this.type === 'duello' && this.duel) {
         const r = this.duel.r, gap = Math.round((P.dist - Math.min(r.dist, this.length)) / 10), lead = gap >= 0 && !(r.done && this.state === 'run');
         rect(bx + Math.round(bw * clamp(r.dist / this.length, 0, 1)) - 1, top + 9, 2, 8, C.salmon);
@@ -5992,7 +6030,7 @@ Object.assign(SCENES.run, {
       textO('KORSAN KAPTANI', cx, by - 9, C.red, 'center');
       bar(bx, by, bw, 3, Rz.hp / Rz.maxHp, C.red);
     }
-    if (this.bannerT > 0 && this.banner) {
+    if (this.bannerT > 0 && this.banner && !this.medal) {
       const k = clamp(this.bannerT / 0.3, 0, 1) * clamp((1.6 - this.bannerT) / 0.15, 0, 1);
       g.globalAlpha = k; textO(this.banner.txt, cx, Math.round(H * 0.24), this.banner.col, 'center', 2); g.globalAlpha = 1;
     }
@@ -6084,7 +6122,7 @@ Object.assign(SCENES.run, {
   drawMedal() {
     if (this.state !== 'finish' && this.state !== 'gone') return;
     const m = this.medal, k = clamp(this.medalT / 0.35, 0, 1), img = MEDAL.big[m];
-    const top = Math.round(Math.max(SAFE.t + 44, H * 0.2) + (1 - Ease.outBack(k)) * 24);
+    const top = Math.round(Math.max(SAFE.t + 92, H * 0.28) + (1 - Ease.outBack(k)) * 24);
     const stat = [];
     if (this.type === 'sprint' && this.result && this.result.rank) stat.push('SIRA ' + this.result.rank + '/' + (this.rivals.length + 1));
     else if (this.type === 'baskin') stat.push('DÜŞMAN ' + this.kills + '/' + this.goal);
@@ -6092,18 +6130,23 @@ Object.assign(SCENES.run, {
     stat.push('HASAR ' + this.damaged);
     let line2 = 'MÜKEMMEL ' + (this.etapPerfects || 0) + ' · EN İYİ KOMBO ' + (this.etapMax || 0);
     if (this.tut) { stat.length = 0; stat.push('← → ŞERİT · ↑ SIÇRA · ↓ HAMLE'); line2 = 'NOTADA DOKUN: HIZ, KOMBO VE ATEŞ'; }
-    const h = 30 + img.height + 34 + (this.finishBonus ? 10 : 0);
+    const gr = this.grade, h = 30 + img.height + 34 + (this.finishBonus ? 10 : 0) + (gr ? 12 : 0);
     g.globalAlpha = 0.55 * k; rect(0, top, W, h, C.ink); g.globalAlpha = k;
     hline(0, top, W, MEDAL_COLS[m]); hline(0, top + h - 1, W, MEDAL_COLS[m]);
     if (this.finishMsg) textO(this.finishMsg, W / 2, top + 5, C.gold, 'center', textWidth(this.finishMsg, 2) <= W - 8 ? 2 : 1);
     const my = top + 25;
     for (let i = 0; i < 8; i++) { const a = i / 8 * Math.PI * 2 + T * 1.5; pix(W / 2 + Math.cos(a) * 18, my + 9 + Math.sin(a) * 18, MEDAL_COLS[m]); }
     spr(img, W / 2 - img.width / 2, my);
+    if (gr) { const gx = W / 2 + img.width / 2 + 16; textO(gr.letter, gx, my + 2, gr.col, 'center', 2); }
     let y = my + img.height + 3;
     textO(MEDAL_NAMES[m] + (m !== 'b' ? '  ' + (m === 'g' ? '+3' : '+1') + ' KRİSTAL' : ''), W / 2, y, MEDAL_COLS[m], 'center'); y += 11;
     text(stat.join(' · '), W / 2, y, this.damaged ? C.lgray : C.green, 'center'); y += 10;
     text(line2, W / 2, y, C.lgray, 'center'); y += 10;
-    if (this.finishBonus) text(this.finishBonus, W / 2, y, C.yellow, 'center');
+    if (this.finishBonus) { text(this.finishBonus, W / 2, y, C.yellow, 'center'); y += 10; }
+    if (gr) {
+      const lb = 'RİTİM NOTU ' + gr.letter + ' · %' + Math.round(gr.acc * 100) + (gr.coins ? ' · +' + gr.coins + ' SİKKE' : '');
+      textO(lb, W / 2, y + 1, gr.col, 'center');
+    }
     g.globalAlpha = 1;
   },
   drawTut() {
@@ -6609,6 +6652,13 @@ Object.assign(SCENES.run, {
   },
   giveMedal(m) {
     this.medal = m; this.medalT = 0;
+    // rhythm grade on top of the medal: S and A pay a few coins and are tracked for missions
+    const gr = this.tut ? null : this.rhythmGrade(); this.grade = gr;
+    if (gr) {
+      RUN.grades = RUN.grades || {}; RUN.grades[gr.letter] = (RUN.grades[gr.letter] || 0) + 1;
+      if (gr.coins) { RUN.coins += gr.coins; RUN.coinsEarned += gr.coins; }
+      if (gr.letter === 'S') { META.stats.sGrades = (META.stats.sGrades || 0) + 1; missionEvent('sgrade', 1); }
+    }
     RUN.medals[m]++; META.stats.medals[m]++;
     if (m === 'g') {
       RUN.yonca += 3; missionEvent('yonca', 3); META.stats.golds++; missionEvent('medal', 1);
@@ -7036,7 +7086,7 @@ Object.assign(SCENES.run, {
       textO('DÖRTNAL', rx, ry - 64, Math.floor(T * 10) % 2 ? C.magenta : C.salmon, 'center');
       bar(rx - 20, ry - 55, 40, 2, this.fever / 5, C.magenta);
     }
-    if (this.grax && !TOASTS.length) { // a tip toast takes the same strip: Grax waits
+    if (this.grax && !TOASTS.length && !this.medal) { // a tip toast takes the same strip: Grax waits
       const g0 = this.grax, k = clamp(g0.t / 0.25, 0, 1) * clamp((2.4 - g0.t) / 0.15, 0, 1);
       const tw = Math.min(W - 8, textWidth(g0.txt) + 16), x = Math.round(W / 2 - tw / 2), y = top + (this.reis && !this.reis.dead ? 60 : 46);
       g.globalAlpha = 0.8 * k; rrect(x, y, tw, 11, C.ink);
@@ -8280,7 +8330,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.1', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.2', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 
@@ -8915,6 +8965,7 @@ SCENES.results = {
     this.xp = xp; this.conv = Math.floor(RUN.coins / 10); this.yonca = RUN.yonca + this.conv; this.seker = RUN.seker;
     const st = META.stats;
     st.runs++; if (this.won) { st.wins++; META.heatUnlocked = true; }
+    if (!RUN.daily) st.earlyLoss = (!this.won && !this.quit && RUN.region === 0) ? (st.earlyLoss || 0) + 1 : 0;
     st.bestCombo = Math.max(st.bestCombo, RUN.maxCombo);
     const prog = RUN.region * 5 + RUN.etap;
     this.record = prog > st.bestProgress && st.runs > 1;
@@ -8998,6 +9049,7 @@ SCENES.results = {
     if (this.near && this.t > 2.3) notes.push([this.near, C.salmon]);
     if (this.grew && this.t > 2.4) notes.push(['SERADA ÜRÜNLER BÜYÜDÜ', C.green]);
     if (this.assistUp && this.t > 2.4) notes.push(['YARDIM MODU BİRAZ GÜÇLENDİ', C.sky]);
+    if (RUN.grades && this.t > 2.42) { const gs = ['S', 'A', 'B'].filter(k => RUN.grades[k]).map(k => RUN.grades[k] + ' ' + k).join(' · '); if (gs) notes.push(['RİTİM NOTLARI: ' + gs, C.gold]); }
     if (this.league && this.t > 2.45) notes.push(['GALAKSİ LİGİ: ' + this.league + '. SIRA', this.league === 1 ? C.gold : C.lgray, this.league === 1]);
     if (this.done && this.t > 2.5) notes.push([this.done + ' GÖREV TAMAM: PANODAN AL', C.green]);
     for (const [s, c, o] of notes) { if (o) textO(s, W / 2, y, c, 'center'); else text(s, W / 2, y, c, 'center'); y += 11; }

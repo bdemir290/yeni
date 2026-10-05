@@ -158,11 +158,12 @@ Object.assign(SCENES.run, {
     const cols = [C.red, C.yellow, C.sky, C.white, C.green, C.salmon, C.gold, C.magenta];
     const skins = [C.green, C.cyan, C.lgray, C.magenta, C.yellow, C.salmon];
     const cheer = this.finalStretch ? 20 : 10;
+    const beatUp = this.state === 'run' ? this.beatFrac() < 0.22 : Math.sin(T * cheer) > 0.6;
     for (let s = s0; s <= s1; s++) {
       const sy = Math.round(this.sy(s * step)) + oy, o = this.offY(sy);
       if (s % 6 === 0) { rect(0, sy, leftW + o - 2, 1, C.navy); rect(rightX + o + 2, sy, W, 1, C.navy); continue; }
-      for (let x = 1; x < leftW - 3; x += 3) { const h = hash2(s, x); if (h < 0.75) { const bob = (Math.sin(T * cheer + h * 20) > 0.6) ? -1 : 0; pix(x + o + ox, sy + bob, skins[(h * 47 | 0) % 6]); pix(x + o + ox, sy + 1 + bob, cols[(h * 80 | 0) % 8]); } }
-      for (let x = rightX + 3; x < W + 8; x += 3) { const h = hash2(s, x); if (h < 0.75) { const bob = (Math.sin(T * cheer + h * 20) > 0.6) ? -1 : 0; pix(x + o + ox, sy + bob, skins[(h * 47 | 0) % 6]); pix(x + o + ox, sy + 1 + bob, cols[(h * 80 | 0) % 8]); } }
+      for (let x = 1; x < leftW - 3; x += 3) { const h = hash2(s, x); if (h < 0.75) { const bob = (beatUp && (h > 0.45 || this.finalStretch)) ? -1 : 0; pix(x + o + ox, sy + bob, skins[(h * 47 | 0) % 6]); pix(x + o + ox, sy + 1 + bob, cols[(h * 80 | 0) % 8]); } }
+      for (let x = rightX + 3; x < W + 8; x += 3) { const h = hash2(s, x); if (h < 0.75) { const bob = (beatUp && (h > 0.45 || this.finalStretch)) ? -1 : 0; pix(x + o + ox, sy + bob, skins[(h * 47 | 0) % 6]); pix(x + o + ox, sy + 1 + bob, cols[(h * 80 | 0) % 8]); } }
     }
   },
   drawWorld(ox, oy) {
@@ -189,7 +190,7 @@ Object.assign(SCENES.run, {
       else if (it.f) this.drawFoe(it.f, it.sy, ox + this.offY(it.sy), oy);
       else if (it.reis) this.drawReis(it.reis, it.sy, ox + this.offY(it.sy), oy);
       else if (it.r) {
-        const r = it.r, o = this.offY(it.y) + ox; const fr = Math.floor(this.time * 10 * r.spd + r.phase) % 4;
+        const r = it.r, o = this.offY(it.y) + ox; const fr = this.clockOn ? ((Math.floor(Beat.pos(now()) * 8 + r.phase * 4) % 4) + 4) % 4 : Math.floor(this.time * 10 * r.spd + r.phase) % 4; // gallop on the beat
         this.drawHorse(r.set, r.x + o, it.y + oy, fr, r.jumping, r.jumping ? r.jumpT / 0.5 : 0, r.stun > 0 && Math.floor(T * 10) % 2 === 0);
         if (r.name && !r.done) {
           const c = r.nem ? C.red : STYLE_COL[r.style] || C.green;
@@ -308,7 +309,7 @@ Object.assign(SCENES.run, {
       case 'puddle': { const img = puddleSprite(lw - 4, o.mud); spr(img, x0 + 2, sy - 5); break; }
       case 'bale': { const img = OB.bale[Math.floor(o.t * 8) % 2]; spr(img, x0 + lw / 2 - img.width / 2, sy - 6); break; }
       case 'wolf': { let img = OB.wolf[Math.floor(o.t * 10) % 2]; if (o.vx < 0) img = flipCached(img); spr(img, o.x + ox - img.width / 2, sy - 4); break; }
-      case 'coin': { const img = OB.coin[Math.floor(T * 8 + o.y * 0.05) % 4]; spr(img, x0 + lw / 2 - img.width / 2, sy - 4 + Math.round(Math.sin(T * 5 + o.y) * 1)); break; }
+      case 'coin': { const img = OB.coin[Math.floor(T * 8 + o.y * 0.05) % 4]; spr(img, x0 + lw / 2 - img.width / 2, sy - 4 - (this.beatFrac() < 0.18 ? 1 : 0)); break; }
       case 'clover': { const img = OB.clover; g.globalAlpha = 0.35 + 0.2 * Math.sin(T * 6); circle(x0 + lw / 2, sy, 6, C.cyan); g.globalAlpha = 1; spr(img, x0 + lw / 2 - Math.floor(img.width / 2), sy - Math.floor(img.height / 2) - 1 + Math.round(Math.sin(T * 4 + o.y))); break; }
       case 'heart': { g.globalAlpha = 0.35 + 0.2 * Math.sin(T * 6); circle(x0 + lw / 2, sy, 6, C.salmon); g.globalAlpha = 1; spr(OB.heart, x0 + lw / 2 - 4, sy - 4); break; }
       case 'sugar': { g.globalAlpha = 0.4 + 0.25 * Math.sin(T * 7); circle(x0 + lw / 2, sy, 7, C.white); g.globalAlpha = 1; spr(ICONS.seker, x0 + lw / 2 - 4, sy - 4 + Math.round(Math.sin(T * 4))); break; }
@@ -538,6 +539,7 @@ Object.assign(SCENES.run, {
         let rank = 1; for (const r of this.rivals) if (r.done || r.dist > P.dist) rank++;
         const ok = rank <= this.passRank();
         textO(rank + '/' + (this.rivals.length + 1), cx, top + 19, ok ? C.yellow : C.red, 'center', 2);
+        if (this.chasing && Math.floor(T * 3) % 2 === 0) textO('TAKİPTE: NEFES +%50', cx, top + 34, C.cyan, 'center');
       } else if (this.type === 'duello' && this.duel) {
         const r = this.duel.r, gap = Math.round((P.dist - Math.min(r.dist, this.length)) / 10), lead = gap >= 0 && !(r.done && this.state === 'run');
         rect(bx + Math.round(bw * clamp(r.dist / this.length, 0, 1)) - 1, top + 9, 2, 8, C.salmon);
@@ -557,7 +559,7 @@ Object.assign(SCENES.run, {
       textO('KORSAN KAPTANI', cx, by - 9, C.red, 'center');
       bar(bx, by, bw, 3, Rz.hp / Rz.maxHp, C.red);
     }
-    if (this.bannerT > 0 && this.banner) {
+    if (this.bannerT > 0 && this.banner && !this.medal) {
       const k = clamp(this.bannerT / 0.3, 0, 1) * clamp((1.6 - this.bannerT) / 0.15, 0, 1);
       g.globalAlpha = k; textO(this.banner.txt, cx, Math.round(H * 0.24), this.banner.col, 'center', 2); g.globalAlpha = 1;
     }
@@ -649,7 +651,7 @@ Object.assign(SCENES.run, {
   drawMedal() {
     if (this.state !== 'finish' && this.state !== 'gone') return;
     const m = this.medal, k = clamp(this.medalT / 0.35, 0, 1), img = MEDAL.big[m];
-    const top = Math.round(Math.max(SAFE.t + 44, H * 0.2) + (1 - Ease.outBack(k)) * 24);
+    const top = Math.round(Math.max(SAFE.t + 92, H * 0.28) + (1 - Ease.outBack(k)) * 24);
     const stat = [];
     if (this.type === 'sprint' && this.result && this.result.rank) stat.push('SIRA ' + this.result.rank + '/' + (this.rivals.length + 1));
     else if (this.type === 'baskin') stat.push('DÜŞMAN ' + this.kills + '/' + this.goal);
@@ -657,18 +659,23 @@ Object.assign(SCENES.run, {
     stat.push('HASAR ' + this.damaged);
     let line2 = 'MÜKEMMEL ' + (this.etapPerfects || 0) + ' · EN İYİ KOMBO ' + (this.etapMax || 0);
     if (this.tut) { stat.length = 0; stat.push('← → ŞERİT · ↑ SIÇRA · ↓ HAMLE'); line2 = 'NOTADA DOKUN: HIZ, KOMBO VE ATEŞ'; }
-    const h = 30 + img.height + 34 + (this.finishBonus ? 10 : 0);
+    const gr = this.grade, h = 30 + img.height + 34 + (this.finishBonus ? 10 : 0) + (gr ? 12 : 0);
     g.globalAlpha = 0.55 * k; rect(0, top, W, h, C.ink); g.globalAlpha = k;
     hline(0, top, W, MEDAL_COLS[m]); hline(0, top + h - 1, W, MEDAL_COLS[m]);
     if (this.finishMsg) textO(this.finishMsg, W / 2, top + 5, C.gold, 'center', textWidth(this.finishMsg, 2) <= W - 8 ? 2 : 1);
     const my = top + 25;
     for (let i = 0; i < 8; i++) { const a = i / 8 * Math.PI * 2 + T * 1.5; pix(W / 2 + Math.cos(a) * 18, my + 9 + Math.sin(a) * 18, MEDAL_COLS[m]); }
     spr(img, W / 2 - img.width / 2, my);
+    if (gr) { const gx = W / 2 + img.width / 2 + 16; textO(gr.letter, gx, my + 2, gr.col, 'center', 2); }
     let y = my + img.height + 3;
     textO(MEDAL_NAMES[m] + (m !== 'b' ? '  ' + (m === 'g' ? '+3' : '+1') + ' KRİSTAL' : ''), W / 2, y, MEDAL_COLS[m], 'center'); y += 11;
     text(stat.join(' · '), W / 2, y, this.damaged ? C.lgray : C.green, 'center'); y += 10;
     text(line2, W / 2, y, C.lgray, 'center'); y += 10;
-    if (this.finishBonus) text(this.finishBonus, W / 2, y, C.yellow, 'center');
+    if (this.finishBonus) { text(this.finishBonus, W / 2, y, C.yellow, 'center'); y += 10; }
+    if (gr) {
+      const lb = 'RİTİM NOTU ' + gr.letter + ' · %' + Math.round(gr.acc * 100) + (gr.coins ? ' · +' + gr.coins + ' SİKKE' : '');
+      textO(lb, W / 2, y + 1, gr.col, 'center');
+    }
     g.globalAlpha = 1;
   },
   drawTut() {

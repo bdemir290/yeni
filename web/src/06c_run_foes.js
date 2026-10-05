@@ -398,6 +398,13 @@ Object.assign(SCENES.run, {
   },
   giveMedal(m) {
     this.medal = m; this.medalT = 0;
+    // rhythm grade on top of the medal: S and A pay a few coins and are tracked for missions
+    const gr = this.tut ? null : this.rhythmGrade(); this.grade = gr;
+    if (gr) {
+      RUN.grades = RUN.grades || {}; RUN.grades[gr.letter] = (RUN.grades[gr.letter] || 0) + 1;
+      if (gr.coins) { RUN.coins += gr.coins; RUN.coinsEarned += gr.coins; }
+      if (gr.letter === 'S') { META.stats.sGrades = (META.stats.sGrades || 0) + 1; missionEvent('sgrade', 1); }
+    }
     RUN.medals[m]++; META.stats.medals[m]++;
     if (m === 'g') {
       RUN.yonca += 3; missionEvent('yonca', 3); META.stats.golds++; missionEvent('medal', 1);

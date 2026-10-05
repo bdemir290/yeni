@@ -327,7 +327,7 @@ Object.assign(SCENES.run, {
       textO('DÖRTNAL', rx, ry - 64, Math.floor(T * 10) % 2 ? C.magenta : C.salmon, 'center');
       bar(rx - 20, ry - 55, 40, 2, this.fever / 5, C.magenta);
     }
-    if (this.grax && !TOASTS.length) { // a tip toast takes the same strip: Grax waits
+    if (this.grax && !TOASTS.length && !this.medal) { // a tip toast takes the same strip: Grax waits
       const g0 = this.grax, k = clamp(g0.t / 0.25, 0, 1) * clamp((2.4 - g0.t) / 0.15, 0, 1);
       const tw = Math.min(W - 8, textWidth(g0.txt) + 16), x = Math.round(W / 2 - tw / 2), y = top + (this.reis && !this.reis.dead ? 60 : 46);
       g.globalAlpha = 0.8 * k; rrect(x, y, tw, 11, C.ink);
