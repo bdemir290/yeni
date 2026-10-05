@@ -8,7 +8,7 @@ function defaultMeta() {
     nals: { demir: true }, nal: 'demir', foods: {}, food: null, food2: null,
     weapons: { yay: true }, weapon: 'yay', wlv: { yay: 1 },
     jockey: 'ayse', heat: 0, heatUnlocked: false, runStyle: 'dengeli', keepsake: null,
-    bond: { bip: 0, ayse: 0, kemal: 0, tayfun: 0, moko: 0 },
+    bond: { bip: 0, ayse: 0, kemal: 0, tayfun: 0, moko: 0, akyel: 0 },
     decor: {}, farmPerks: 0, favSpirit: null, crops: [0, 0, 0], blanket: null, blankets: {},
     missions: [], missionSeq: 0,
     stats: { runs: 0, wins: 0, bestRegion: 0, bestProgress: 0, bestCombo: 0, perfects: 0, jumps: 0, boons: 0, duos: 0, kills: 0, nearMiss: 0, drafts: 0, events: 0, golds: 0, medals: { g: 0, s: 0, b: 0 }, bossWins: {}, cleanJumps: 0, holds: 0, specials: 0, hamles: 0, reisKills: 0, kicks: 0, hammers: 0, duels: 0, revenges: 0, fevers: 0, sponsors: 0, gates: 0, betWins: 0, betOffers: 0 },
@@ -16,6 +16,7 @@ function defaultMeta() {
     dailyRun: { best: {}, log: [] },
     seen: {}, flags: {}, memRead: {}, tipsSeen: {}, assistLv: 0, petted: false, rivals: {}, rivalRead: {}, nemesis: null,
     settings: { music: true, sfx: true, haptics: true, shake: true, left: false, wide: false, offset: 0, assist: false, beatHaptic: false, simpleNotes: false },
+    freed: {}, freeTokens: 0, lastRun: null, seenReact: {}, lastReact: null,
     introDone: false, tutorialDone: false, runSave: null
   };
 }
@@ -88,6 +89,7 @@ function npcAvailable(k) {
   if (k === 'kemal') return META.rozet >= 1 && built('jokey');
   if (k === 'tayfun') return META.rozet >= 2 && built('jokey');
   if (k === 'moko') return !!META.flags.moko;
+  if (k === 'akyel') return META.stats.wins > 0;
   return false;
 }
 

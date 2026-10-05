@@ -1883,6 +1883,8 @@ function buildStationArt() {
     'h.BBBBB.h',
     '.TTTTTTT.',
     '.TtTtTtT.'], { a: C.yellow, l: C.gray, H: C.lgray, V: C.navy, w: C.white, c: C.cyan, d: C.dgray, B: C.white, y: C.sky, g: C.gray, h: C.yellow, T: C.slate, t: C.dgray }, K);
+  // Akyel in the red and white helmet from the old signal (station friend after the cup)
+  PEOPLE.akyel = personSprite({ hat: 'helmet', hc: C.white, hc2: C.red, top: C.white, top2: C.red, bot: C.lgray });
   PEOPLE.moko = makeSprite([
     '...TTT...',
     '..TTyTT..',
@@ -2813,6 +2815,8 @@ function buildRivalArt() {
     else if (kind !== 'robo' && kind !== 'squid') { hline(12, 17, 5, K); pix(12, 16, K); pix(16, 16, K); }
   });
   for (const id in RIVAL_BY_ID) if (!PORTRAIT[id]) PORTRAIT[id] = bust(ALIEN_LOOKS[RIVAL_BY_ID[id].look] || ALIEN_LOOKS.r1);
+  // champions get busts too (they speak after their first defeat)
+  for (const k in BOSS_PORTRAIT_LOOKS) { const lk = BOSS_PORTRAIT_LOOKS[k]; if (!PORTRAIT[k]) PORTRAIT[k] = bust(typeof lk === 'string' ? ALIEN_LOOKS[lk] : lk); }
 }
 
 // Imported PixelLab art is embedded by build.py, so the iOS game stays offline.
@@ -3150,7 +3154,7 @@ function baseStats() {
     // duos and misc
     airStars: false, landShockWide: false, comboTrample: 0, ghostShoots: false, foeCoins: 1,
     dawnWindow: false, bondMult: 1, rivalHandicap: 0, muska: 0, startCoins: 0, etapHeal: 0, forceFog: false,
-    moreFoes: 1, duoChance: 0.3, assist: 0,
+    moreFoes: 1, duoChance: 0.3, assist: 0, bossDrainMult: 1,
     // breath (nefes), hamle burst, final kick, bends, notes
     nefesStart: 50, nefesGain: 1, hamleCost: 30, hamleDur: 1.0, hamleSpd: 0.35, hamleInv: false, hamleAir: false, hamleRam: 0, hamleStars: 0, hamleShield: false,
     kickMult: 1, cornerMult: 1, outerSafe: false, accentWin: 1, specialMult: 1, cleanStars: 0, cleanNefes: 0, cleanHamle: false, doubleBonus: false, fullNefesDmg: 0,
@@ -3692,7 +3696,7 @@ const STORY = [
   { id: 'region3', cond: () => META.stats.bestRegion >= LAST_REGION, lines: [['bip', 'GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.']] },
   { id: 'lostSimsek', cond: () => META.flags.lost_simsek, lines: [['kemal', 'VOLTRAK HİLE YAPMADAN KAZANAMAZ. SEN ONDAN HIZLISIN.']] },
   { id: 'assistHint', cond: () => (META.stats.earlyLoss || 0) >= 3 && !META.settings.assist && !META.settings.wide, lines: [['bip', 'BİP! İLK PİSTTE ÜST ÜSTE ZORLANDIN. AYARLARDA GENİŞ RİTİM PENCERESİ VE YARDIM MODU VAR. UTANILACAK ŞEY DEĞİL!'], ['ayse', 'BİR DE RİTMİ ÖLÇ: KULAKLIĞIN SESİ GEÇ VERİYOR OLABİLİR. SAĞ ÜSTTEKİ DİŞLİYE BAS.']] },
-  { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', 'KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!'], ['akyel', '...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.'], ['ayse', 'ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!']] }
+  { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', 'KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!'], ['akyel', '...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.'], ['ayse', 'ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!'], ['akyel', 'AMA PİSTTEKİLER DE KAÇIRILMIŞTI DENİZ. HER KUPADA KAPI YİNE AÇILIR: DOSYASINI AÇTIĞIN BİR RAKİBİ EVİNE GÖNDEREBİLİRSİN.']] }
 ];
 const TIPS = [
   ['bip', 'HALKA ATIN ETRAFINDA KAPANDIĞI AN DOKUN. RİTİM HIZDIR. BİP.'],
@@ -3745,6 +3749,121 @@ const INTRO = [
 const SPEAKERS = { deniz: 'DENİZ', bip: 'BİP-0', ayse: 'AYŞE', kemal: 'KEMAL USTA', tayfun: 'TAYFUN', moko: 'MOKO', grax: 'SUNUCU GRAX', akyel: 'AKYEL' };
 for (const id in RIVAL_BY_ID) SPEAKERS[id] = RIVAL_BY_ID[id].name;
 
+// ================= STORY v5.3 · reactions, champions, liberation =================
+// Supergiant-style storytelling (Hades, Pyre): every run is a story beat. Friends react to how the last run went,
+// beaten champions tell their side, and after the cup each win can send one captured rival home.
+
+// ---------- champions: portraits are built from these looks, lines play after the first win against them ----------
+const BOSS_PEOPLE = { pirlanta: 'kristalo', kurt: 'gorm', niva: 'niva', zarg: 'zarg', simsek: 'voltrak' };
+const BOSS_PORTRAIT_LOOKS = {
+  kristalo: 'kristalo', gorm: 'gorm', niva: 'niva', zarg: 'zarg',
+  voltrak: { mount: 'beast', c: C.dgray, l: C.gray, d: C.slate, a: C.red, eye: C.red, rider: 'robo', skin: C.lgray, suit: C.wine, trim: C.yellow, reye: C.red }
+};
+const BOSS_LORE = {
+  pirlanta: [['kristalo', 'BEN... BİR PRENSTİM. LUMO\'NUN KRİSTAL SARAYINDA DOĞDUM. GRAX BENİ TAÇ GİYME TÖRENİMDE KAÇIRDI.'],
+    ['kristalo', 'KİBRİM KALKANIMDI DÜNYALI. ONSUZ KORKAKTIM. SEN BANA KORKMADAN KOŞMAYI GÖSTERDİN.'],
+    ['ayse', 'GÖRDÜN MÜ DENİZ? ŞAMPİYONLAR BİLE GRAX\'IN TUTSAĞI.']],
+  kurt: [['gorm', 'AUUU... YENİLDİM. MANTAR AYI\'NDA SÜRÜM BENİ BEKLİYOR. GRAX ONLARI KAFESTE TUTUYOR.'],
+    ['gorm', 'KAZANDIKÇA YAVRULARIMI GÖRMEME İZİN VERİYORDU. ARTIK... SEN KAZAN DENİZ. HEPİMİZ İÇİN.'],
+    ['tayfun', 'ULUYAN GORM AĞLIYOR MU? BU ŞOVDA KİMSE KÖTÜ DEĞİL GALİBA. SADECE GRAX.']],
+  niva: [['niva', 'BUZUM ERİDİ... YILLARDIR KENDİMİ DONDURUYORDUM DÜNYALI. DONMUŞ BİR KALP EVİNİ ÖZLEMEZ.'],
+    ['niva', 'GRAX GEZEGENİMİ ISITACAĞINI SÖZ VERDİ. YALAN. KUPA BİR ANAHTAR, SADECE KAZANANIN KAPISINI AÇAR.'],
+    ['bip', 'BİP. KRALİÇE NİVA SANA BİR BUZ ÇİÇEĞİ BIRAKTI. KAYITLARA EKLEDİM.']],
+  zarg: [['zarg', '...KRRRRR... KRRR...'],
+    ['bip', 'BİP! BAŞINDAKİ ÇİP KIRILMIŞ! ZARG KONUŞAMIYOR AMA SİNYALİ ÇÖZDÜM: "TEŞEKKÜRLER." GRAX ONU ÇİPLE YÖNETİYORMUŞ!'],
+    ['kemal', 'DEMEK ŞAMPİYONLARIN BİR KISMI İPLE OYNATILAN KUKLA. VOLTRAK DA ÖYLE Mİ ACABA?']],
+  simsek: [['voltrak', 'HATA. HATA. PROGRAM: KAZAN. DURUM: KAYBETTİ. YENİ GÖREV ARANIYOR...'],
+    ['voltrak', 'KAYIT 2006-FİNAL: AKYEL ÖNDE. GRAX KOMUTU: PİSTE KIVILCIM AT. KOMUT UYGULANDI. ÖZÜR... DİLERİM?'],
+    ['grax', 'YETER! KUPA... KUPA SENİN DÜNYALI. AMA KAPI SANDIĞIN KADAR KOLAY AÇILMAZ!']]
+};
+
+// ---------- the logbook grows: two new planets and the time after the cup ----------
+MEMORIES.push(
+  { id: 8, title: 'DONMUŞ TAHT', hint: 'BUZ HALKASI\'NA ULAŞ', cond: () => META.stats.bestRegion >= 2,
+    text: 'BUZ HALKASI\'NDA KRALİÇE NİVA HÜKÜM SÜRÜYOR. GEZEGENİ GÜNEŞİNİ KAYBETTİĞİNDE GRAX ONA SICAKLIK SÖZÜ VERDİ. NİVA O GÜNDEN BERİ KENDİNİ DONDURUYOR: DONMUŞ BİR KALP EVİNİ ÖZLEMEZ, DİYOR.' },
+  { id: 9, title: 'KUMUN ALTINDAKİ ÇİP', hint: 'KUM SOLUCANI ZARG\'I YEN', cond: () => !!META.stats.bossWins.zarg,
+    text: 'ZARG\'IN BAŞINDA GRAX\'IN ÇİPİ VARDI. ŞAMPİYONLARIN BAZILARI GÖNÜLLÜ DEĞİL, KUKLA. BİP SİNYALİ ÇÖZDÜ: AYNI ÇİPTEN BİRİ DE VOLTRAK\'IN İÇİNDE ATIYOR.' },
+  { id: 10, title: 'AÇIK KAPI', hint: 'KUPADAN SONRA BİR RAKİBİ EVE GÖNDER', cond: () => freedCount() >= 1,
+    text: 'KAPI AÇILDI AMA DENİZ GEÇMEDİ. TRİBÜNDEKİ HER YÜZ, PİSTTEKİ HER RAKİP BİR YERDEN KAÇIRILMIŞTI. KUPA HER KAZANILDIĞINDA KAPI BİR KEZ DAHA AÇILIYOR. ARTIK YARIŞMAK İÇİN DEĞİL, BAŞKALARINI EVE GÖNDERMEK İÇİN KOŞUYORUZ.' },
+  { id: 11, title: 'HERKES EVİNE', hint: 'BÜTÜN RAKİPLERİ EVE GÖNDER', cond: () => freedCount() >= NAMED_RIVALS.flat().length,
+    text: 'SON RAKİP DE KAPIDAN GEÇTİ. GRAX\'IN ŞOVU BOMBOŞ BİR STADYUMDA YAYINLANIYOR. AKYEL YILDIZ\'IN YELESİNİ OKŞADI: "ŞİMDİ EVE GİDEBİLİRİZ." DENİZ GÜLÜMSEDİ: "BİR TUR DAHA, ANNE. SADECE ZEVK İÇİN."' }
+);
+// story order for the logbook (ids stay for the save; the number shown is the place in this order)
+const MEMORY_ORDER = [1, 2, 3, 4, 5, 8, 9, 6, 7, 10, 11];
+MEMORIES.sort((a, b) => MEMORY_ORDER.indexOf(a.id) - MEMORY_ORDER.indexOf(b.id));
+
+// ---------- Akyel joins the station after the cup ----------
+NPC_NAMES.akyel = 'AKYEL';
+NPC_LINES.akyel = {
+  gift: ['DÜNYA ŞEKERİ... SEN KÜÇÜKKEN CEBİNDE HEP BUNDAN TAŞIRDIN. AL, ESKİ NALIM SENDE DURSUN.', 'NALI PARLATTIM. VOLTRAK ONU YİRMİ YIL ÖNCE KIRMIŞTI, KEMAL USTA ONARDI.', 'SENİNLE GURUR DUYUYORUM DENİZ. HER TURDA.'],
+  chat: ['YİRMİ YIL TRİBÜNDEN İZLEDİM. GRAX HER GECE YANIMA OTURUP "OĞLUN GELMEYECEK" DERDİ. GELDİN.', 'YILDIZ\'IN ANNESİNİ BEN YETİŞTİRDİM. AYNI İNATÇI KULAKLAR.', 'VOLTRAK KÖTÜ DEĞİL. ONU KÖTÜ YAPAN KOMUTLARDI.', 'ŞAMPİYONLARIN SIRRI BASİT: SON DÜZLÜKTE NEFESİNİ SAKLA.']
+};
+KEEPSAKES.akyel = { name: 'AKYEL\'İN NALI', desc: l => 'ŞAMPİYON YARIŞINDA FARK %' + [10, 20, 30][l - 1] + ' DAHA YAVAŞ KAPANIR', apply: (S, l) => { S.bossDrainMult *= 1 - [0.1, 0.2, 0.3][l - 1]; } };
+for (const k in BOSS_PEOPLE) SPEAKERS[BOSS_PEOPLE[k]] = BOSSES[k].name;
+
+// ---------- liberation: after each cup win one rival with an open file may go home ----------
+function freedCount() { return Object.keys(META.freed || {}).filter(id => RIVAL_BY_ID[id]).length; }
+function isFreed(id) { return !!(META.freed && META.freed[id]); }
+function activeRivals(reg) { return (NAMED_RIVALS[reg] || []).filter(r => !isFreed(r.id)); }
+function freeCandidates() { return NAMED_RIVALS.flat().filter(r => META.rivals[r.id] && !isFreed(r.id)); }
+const RIVAL_BYE = {
+  glorb: 'DENKLEMİ ÇÖZDÜN DÜNYALI: EVE GİDEN YOLUN DEĞİŞKENİ DOSTLUKMUŞ. ZİLA\'DA ADINA BİR KİTAP YAZACAĞIM.',
+  vuum: 'YEDİ YAVRUMA DOKUZ KOLUMLA SARILACAĞIM! BİR KOLUM DA SENİN İÇİN, DENİZ.',
+  pip: 'PİP PİP! BELKİ EVDE UÇMAYI DA ÖĞRENİRİM. ÖĞRENMESEM DE OLUR, KOŞMAYI SEN ÖĞRETTİN.',
+  gece: 'KIZ KARDEŞİMİ TRİBÜNDE BULDUM, O DA GELİYOR! NOKS\'UN KARANLIĞINDA SENİN IŞIĞIN YANACAK.',
+  kiskac: 'YENİ PROGRAM YÜKLENDİ: ARKADAŞLIK. HEDEF: ASTEROİT KUŞAĞI. NOT: BİP\'E SELAM.',
+  mantis: 'HUMA\'DA YAĞMUR YİNE YAĞIYOR OLMALI. BU SEFER SEVİNEREK ISLANACAĞIM.',
+  buzdis: 'KARDEŞLERİM BU KIŞ SENİN HEYKELİNİ YAPACAK. ATIN DA OLACAK, SÖZ.',
+  aurora: 'KANATLARIM YİNE RENKLENDİ. LUMEN\'İN GÖĞÜNE BAKARSAN YEŞİL BİR IŞIK GÖRÜRSÜN: O BENİM.',
+  kar: 'SICAK BİR YERDE UYANACAĞIM SONUNDA. ERİRSEM DE MUTLU ERİRİM!',
+  tozkiran: 'KERVANLAR YİNE YOLA ÇIKACAK. ŞARKININ YENİ KITASI SENİNLE İLGİLİ DÜNYALI.',
+  zib: 'BORCUM KAPANDI! MOKO\'YA SÖYLE: KUZENİ SONUNDA EVDE, DÜKKANINI AÇIYOR.',
+  serap: 'DEMEK GERÇEK BİR KAPI VARMIŞ. BEN DE GERÇEKMİŞİM. HOŞÇA KAL, DENİZ.',
+  alev: 'PİRA\'YA DÖNÜYORUM AMA ŞAMPİYON OLARAK DEĞİL. ARTIK KİMSENİN ÖNÜNDE KOŞMAK ZORUNDA DEĞİLİM.',
+  golge: 'ADIMI HATIRLADIM: RÜZGAR. YİRMİ YIL ÖNCE AKYEL\'E BORÇLANDIM. BORCUMU OĞLUNA ÖDEDİM.',
+  nova: 'YILDIZIMA DÖNÜYORUM. SÖNMÜŞ OLABİLİR AMA BEN HÂLÂ PARLIYORUM. SEN DE PARLA.'
+};
+
+// ---------- after-run reactions (storylets): someone at the station always has a word about the last run ----------
+// cond(i) reads META.lastRun; prio decides; once = only the first time; lines may be a function of the run info
+const RUN_REACTIONS = [
+  { id: 'cupAgain', prio: 90, cond: i => i.won && META.stats.wins > 1 && META.freeTokens > 0, lines: () => [['akyel', 'BİR KUPA DAHA! KAPI YİNE AÇIK. SEYİR DEFTERİNDEN BİR RAKİP SEÇ, EVİNE GÖNDERELİM.']] },
+  { id: 'cupFreed', prio: 89, cond: i => i.won && META.stats.wins > 1 && !(META.freeTokens > 0), lines: () => [['bip', 'KAPIDAN BİRİ DAHA GEÇTİ. İSTASYON SESSİZLEŞİYOR AMA GÜZEL BİR SESSİZLİK. BİP.']] },
+  { id: 'bossLoss_pirlanta', prio: 70, cond: i => i.boss === 'pirlanta', lines: () => [['ayse', 'KRİSTALO KİBİRLENİNCE DURUR. O AN HAMLE YAP YA DA ALTIN NOTAYI VUR, KİBRİNİ KIR!']] },
+  { id: 'bossLoss_kurt', prio: 70, cond: i => i.boss === 'kurt', lines: () => [['ayse', 'GORM ULUYUNCA SİS ÇÖKER VE KURTLAR YANDAN GELİR. KULAĞIN RİTİMDE OLSUN, GÖZÜN KENARLARDA.']] },
+  { id: 'bossLoss_niva', prio: 70, cond: i => i.boss === 'niva', lines: () => [['bip', 'BİP. NİVA\'NIN AYAZINDA ŞERİT DEĞİŞTİRMEK YAVAŞLAR. BUZU HAMLEYLE YA DA ALTIN NOTAYLA KIR.'], ['tayfun', 'SARKITLARIN DÜŞTÜĞÜ ŞERİT KIRMIZI YANAR. ORADAN UZAK DUR, YETER!']] },
+  { id: 'bossLoss_zarg', prio: 70, cond: i => i.boss === 'zarg', lines: () => [['kemal', 'KUMDA TURUNCU HALKA GÖRDÜĞÜN AN O ŞERİTTEN ÇIK. SOLUCAN ORADAN FIRLAR.']] },
+  { id: 'bossLoss_simsek', prio: 70, cond: i => i.boss === 'simsek', lines: () => [[META.stats.wins ? 'akyel' : 'kemal', 'VOLTRAK YİNE HİLE YAPTI, DEĞİL Mİ? KIVILCIMLARIN DÜŞECEĞİ ŞERİT ÖNCE KIZARIR. BEKLEME, KAÇ.']] },
+  { id: 'duelLoss', prio: 60, cond: i => !!i.duelLost, lines: i => [['kemal', i.duelLost + ' SENİ DÜELLODA GEÇTİ. ARKASINA SAKLAN, SİPERİN DOLSUN, SON DÜZLÜKTE YANA ÇIK.']] },
+  { id: 'nemesisNew', prio: 58, once: true, cond: i => !!i.nemesis, lines: i => [['tayfun', i.nemesis + ' ARTIK RÖVANŞÇIN! KIRMIZI TAÇLA GELECEK. ONU GEÇERSEN KESEN DOLAR!']] },
+  { id: 'revenge', prio: 55, cond: i => i.revenge, lines: () => [['tayfun', 'RÖVANŞI ALDIN HA! GRAX\'IN SURATINI GÖRMELİYDİN, MİKROFONU DÜŞÜRDÜ!']] },
+  { id: 'leagueTop', prio: 50, cond: i => i.league === 1 && !i.won, lines: () => [['moko', 'LİG LİDERİ DÜNYALI! BAHİS MASAMDA ORANLARIN DÜŞTÜ, BUNU İYİ ANLAMDA SÖYLÜYORUM.']] },
+  { id: 'sGrades', prio: 45, cond: i => i.sGrades >= 3, lines: i => [['ayse', i.sGrades + ' ETAPTA S NOTU! TOYNAKLARIN MÜZİĞİN İÇİNDEYDİ BUGÜN.']] },
+  { id: 'chaseLoss', prio: 40, cond: i => i.type === 'kovala', lines: () => [['bip', 'KARA DELİK SENİ YAKALADI. KOMBO HIZDIR: RİTMİ BOZMA, HAMLEYİ SON ANA SAKLA.']] },
+  { id: 'raidLoss', prio: 40, cond: i => i.type === 'baskin', lines: () => [['tayfun', 'KORSANLAR FAZLA MI GELDİ? RİTİMLE VUR, SİLAH KENDİ NİŞAN ALIR. KAPTANI ÖZEL ATIŞLA DÜŞÜR!']] },
+  { id: 'sprintLoss', prio: 35, cond: i => i.type === 'sprint', lines: () => [['ayse', 'SPRİNTTE GERİDE KALINCA NEFESİN DAHA HIZLI DOLAR. O NEFESİ HAMLEYE ÇEVİR!']] },
+  { id: 'parkurLoss', prio: 35, cond: i => i.type === 'parkur', lines: () => [['kemal', 'PARKURDA ACELE ETME. ENGEL SENE YAKLAŞINCA SIÇRA, ERKEN DEĞİL. TEMİZ ATLAYIŞ HIZ VERİR.']] },
+  { id: 'quit', prio: 30, cond: i => i.quit, lines: () => [['bip', 'KOŞUYU BIRAKMAK DA BİR SEÇİM. YILDIZ DİNLENDİ, SEN DE DİNLEN. BİP.']] },
+  { id: 'early', prio: 20, cond: i => !i.won && i.region === 0 && i.etap <= 1, lines: () => [['ayse', 'HERKES BURADAN BAŞLADI DENİZ. NOTA ORTADA BULUŞUNCA DOKUN, GERİSİ GELİR.']] },
+  { id: 'farther', prio: 15, cond: i => !i.won && i.region >= 2, lines: i => [['moko', REGIONS[Math.min(LAST_REGION, i.region)].name + '\'NA KADAR GİTTİN! TEZGAHIMDA SENİN ADINA BİR SÜS ASTIM.']] }
+];
+function pickReaction() {
+  const i = META.lastRun; if (!i || i.told) return null;
+  i.told = true;
+  META.seenReact = META.seenReact || {};
+  const ok = r => r.cond(i) && (!r.once || !META.seenReact[r.id]);
+  const lines = r => (typeof r.lines === 'function' ? r.lines(i) : r.lines).filter(l => l[0] !== 'kemal' && l[0] !== 'tayfun' && l[0] !== 'moko' && l[0] !== 'akyel' || npcAvailable(l[0]));
+  const pool = RUN_REACTIONS.filter(ok).sort((a, b) => b.prio - a.prio);
+  for (const r of pool) {
+    // a line heard last time waits a turn, unless it is the only fitting one
+    if (META.lastReact === r.id && pool.length > 1) continue;
+    const ls = lines(r); if (!ls.length) continue;
+    META.seenReact[r.id] = (META.seenReact[r.id] || 0) + 1; META.lastReact = r.id;
+    return ls;
+  }
+  return null;
+}
+
 // ================= META / SAVE / UI WIDGETS =================
 const SAVE_KEY = 'dortnala_save_v1';
 function defaultMeta() {
@@ -3755,7 +3874,7 @@ function defaultMeta() {
     nals: { demir: true }, nal: 'demir', foods: {}, food: null, food2: null,
     weapons: { yay: true }, weapon: 'yay', wlv: { yay: 1 },
     jockey: 'ayse', heat: 0, heatUnlocked: false, runStyle: 'dengeli', keepsake: null,
-    bond: { bip: 0, ayse: 0, kemal: 0, tayfun: 0, moko: 0 },
+    bond: { bip: 0, ayse: 0, kemal: 0, tayfun: 0, moko: 0, akyel: 0 },
     decor: {}, farmPerks: 0, favSpirit: null, crops: [0, 0, 0], blanket: null, blankets: {},
     missions: [], missionSeq: 0,
     stats: { runs: 0, wins: 0, bestRegion: 0, bestProgress: 0, bestCombo: 0, perfects: 0, jumps: 0, boons: 0, duos: 0, kills: 0, nearMiss: 0, drafts: 0, events: 0, golds: 0, medals: { g: 0, s: 0, b: 0 }, bossWins: {}, cleanJumps: 0, holds: 0, specials: 0, hamles: 0, reisKills: 0, kicks: 0, hammers: 0, duels: 0, revenges: 0, fevers: 0, sponsors: 0, gates: 0, betWins: 0, betOffers: 0 },
@@ -3763,6 +3882,7 @@ function defaultMeta() {
     dailyRun: { best: {}, log: [] },
     seen: {}, flags: {}, memRead: {}, tipsSeen: {}, assistLv: 0, petted: false, rivals: {}, rivalRead: {}, nemesis: null,
     settings: { music: true, sfx: true, haptics: true, shake: true, left: false, wide: false, offset: 0, assist: false, beatHaptic: false, simpleNotes: false },
+    freed: {}, freeTokens: 0, lastRun: null, seenReact: {}, lastReact: null,
     introDone: false, tutorialDone: false, runSave: null
   };
 }
@@ -3835,6 +3955,7 @@ function npcAvailable(k) {
   if (k === 'kemal') return META.rozet >= 1 && built('jokey');
   if (k === 'tayfun') return META.rozet >= 2 && built('jokey');
   if (k === 'moko') return !!META.flags.moko;
+  if (k === 'akyel') return META.stats.wins > 0;
   return false;
 }
 
@@ -4182,7 +4303,7 @@ function genDoors() {
     else if ((RUN.eventCount[reg] || 0) < 2 && E >= 1 && roll < 0.52 && !has('olay')) doors.push({ type: 'olay' });
     else {
       const pool = ['sprint', 'sprint', 'parkur', 'kovala', 'baskin'];
-      if (E >= 1 && META.stats.runs >= 1 && !(RUN.duelDone || {})[reg] && !has('duello') && (NAMED_RIVALS[reg] || []).length) pool.push('duello', 'duello');
+      if (E >= 1 && META.stats.runs >= 1 && !(RUN.duelDone || {})[reg] && !has('duello') && activeRivals(reg).length) pool.push('duello', 'duello');
       const type = R.pick(pool);
       const door = { type, reward: genReward(used), elite: (reg > 0 || E >= 2) && R.chance(0.2), weather: pickWeather() };
       if (type === 'duello') { door.rival = pickDuelRival(); door.elite = false; }
@@ -4194,7 +4315,7 @@ function genDoors() {
 }
 // the duel opponent: a named rival of this region whose file is still closed, if any
 function pickDuelRival() {
-  const list = NAMED_RIVALS[RUN.region] || NAMED_RIVALS[0];
+  const list = activeRivals(RUN.region);
   const nem = META.nemesis && list.find(r => r.id === META.nemesis.id);
   if (nem) return nem.id;
   const fresh = list.filter(r => !META.rivals[r.id]);
@@ -4344,7 +4465,7 @@ SCENES.run = {
     while (speeds.length < field) speeds.push(1);
     const looks = R.shuffle(RIVAL_LOOKS.slice());
     const starts = [[0, 36], [1, 64], [3, 50], [4, 20], [2, -46], [1, -22], [3, -64]].slice(0, field);
-    const pool = (NAMED_RIVALS[RUN.region] || []).slice(), nemId = META.nemesis && META.nemesis.id;
+    const pool = activeRivals(RUN.region), nemId = META.nemesis && META.nemesis.id;
     const named = R.shuffle(pool.slice()).slice(0, RUN.etap >= 3 ? 3 : RUN.etap >= 1 ? 2 : 1);
     if (nemId && pool.some(p => p.id === nemId) && !named.some(p => p.id === nemId)) named[0] = pool.find(p => p.id === nemId);
     const rest = R.shuffle(speeds.slice(named.length));
@@ -4366,7 +4487,7 @@ SCENES.run = {
   // 1v1: one named rival, a touch faster than the region's best, who plays dirty on the beat
   spawnDuel(id) {
     const def = RIVAL_BY_ID[id] || (NAMED_RIVALS[RUN.region] || NAMED_RIVALS[0])[0];
-    RUN.duelDone = RUN.duelDone || {}; RUN.duelDone[RUN.region] = true;
+    RUN.duelDone = RUN.duelDone || {}; RUN.duelDone[RUN.region] = true; RUN.lastDuel = def.name;
     const spd = Math.max(...this.reg.rivals) * 1.06 * HEATS[RUN.heat].mult;
     const r = this.makeRival(3, 26 - (this.S.rivalHandicap || 0), spd, def.look);
     r.name = def.name; r.style = def.style; r.duel = true; r.id = def.id;
@@ -6448,7 +6569,7 @@ Object.assign(SCENES.run, {
     // a hit may have pushed the gap to 100 since the last frame: win before this frame's drain pulls it back
     if (!B.won && this.state === 'run' && B.gap >= 100) this.bossWin();
     if (!B.won && this.state === 'run') {
-      const drain = B.taunt > 0 ? 0 : B.def.drain * HEATS[RUN.heat].mult * (1 - S.assist * 0.5) * (1 + 0.12 * (B.phase - 1));
+      const drain = B.taunt > 0 ? 0 : B.def.drain * S.bossDrainMult * HEATS[RUN.heat].mult * (1 - S.assist * 0.5) * (1 + 0.12 * (B.phase - 1));
       B.gap -= drain * dt;
       B.gap += Math.min(3, (P.speed * (P.cornerM || 1) / (BASE_SPEED * this.reg.speed) - 1) * 4) * dt;
       B.gap = Math.min(100, B.gap);
@@ -6616,7 +6737,7 @@ Object.assign(SCENES.run, {
     const failDuel = this.type === 'duello' && rank > 1;
     if (failRank || failRaid || failDuel) {
       this.result.ok = false;
-      if (failDuel) { floatText(this.duel.def.name + ' KAZANDI', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('DÜELLOYU KAYBETTİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
+      if (failDuel) { RUN.duelLost = this.duel.def.name; floatText(this.duel.def.name + ' KAZANDI', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('DÜELLOYU KAYBETTİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       else if (failRank) { floatText(rank + '. OLDUN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('İLK ' + this.passRank() + '\'E GİREMEDİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       else { floatText(this.kills + '/' + this.goal + ' DÜŞMAN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('BASKIN PÜSKÜRTÜLEMEDİ: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       this.P.invuln = 0; this.P.laneInv = 0; this.P.landInv = 0; this.P.flyT = 0; this.P.hamleT = 0;
@@ -6679,8 +6800,10 @@ Object.assign(SCENES.run, {
       RUN.region++; RUN.etap = 0;
       META.stats.bestRegion = Math.max(META.stats.bestRegion, Math.min(LAST_REGION, RUN.region));
       saveMeta();
-      if (RUN.region >= REGIONS.length) { go('results', { won: true }); return; }
-      go('boon', { sp: R.pick(SPIRIT_KEYS), afterBoss: true });
+      const next = () => { if (RUN.region >= REGIONS.length) go('results', { won: true }); else go('boon', { sp: R.pick(SPIRIT_KEYS), afterBoss: true }); };
+      // the first win against a champion: they tell their side of Grax's show
+      if (first && BOSS_LORE[key] && !window.__auto) { Dialog.start(BOSS_LORE[key], next); return; }
+      next();
       return;
     }
     if (this.type === 'duello' && this.duel && this.result && this.result.ok) {
@@ -6953,6 +7076,7 @@ Object.assign(SCENES.run, {
     if (N && N.id !== id) return;
     if (N) { N.lv = Math.min(3, N.lv + 1); N.wins = (N.wins || 0) + 1; } else META.nemesis = { id, lv: 1, wins: 1 };
     const lv = META.nemesis.lv;
+    RUN.nemesisNew = RIVAL_BY_ID[id].name;
     toast('RÖVANŞÇI: ' + RIVAL_BY_ID[id].name + (lv > 1 ? ' SV ' + lv : ''), C.red, 'crown');
     saveMeta();
   },
@@ -6961,7 +7085,7 @@ Object.assign(SCENES.run, {
     const yon = 8 + 6 * N.lv;
     RUN.yonca += yon; missionEvent('yonca', yon);
     if (N.lv >= 2) RUN.seker++;
-    META.nemesis = null; META.stats.revenges = (META.stats.revenges || 0) + 1; missionEvent('revenge', 1);
+    META.nemesis = null; META.stats.revenges = (META.stats.revenges || 0) + 1; missionEvent('revenge', 1); RUN.revenged = true;
     this.banner = { txt: 'RÖVANŞ ALINDI!', col: C.gold }; this.bannerT = 1.8;
     floatText('+' + yon + ' KRİSTAL' + (N.lv >= 2 ? ' +1 ŞEKER' : ''), W / 2, Math.round(H * 0.24) + 22, C.cyan, 1, -6, 1.6);
     Sound.play('medal'); this.say('revenge', true); saveMeta();
@@ -7345,6 +7469,7 @@ SCENES.farm = {
     const others = ['kemal', 'tayfun'].filter(k => npcAvailable(k));
     others.forEach((k, i) => out.push({ k, x: L.jokey.x - 8 + i * 12, y: L.jokey.y + 30 + i * 4 }));
     if (META.flags.moko) out.push({ k: 'moko', x: L.pazar.x + 16, y: L.pazar.y + 8 });
+    if (npcAvailable('akyel')) out.push({ k: 'akyel', x: L.anit.x + 34, y: L.anit.y + 6 });
     return out;
   },
   petHorse() {
@@ -7406,8 +7531,10 @@ SCENES.farm = {
     if (!this.introDone && this.t > this.introAt && Trans.dir === 0) {
       this.introDone = true;
       const st = STORY.find(s => !META.seen[s.id] && s.cond());
+      let react = null;
       const afterDlg = () => { if (META.daily.pending) this.panel = 'daily'; };
       if (st) { META.seen[st.id] = true; saveMeta(); Dialog.start(st.lines, afterDlg); }
+      else if (this.arg.fromRun && (react = pickReaction())) { saveMeta(); Dialog.start(react, afterDlg); }
       else if (this.arg.fromRun && Math.random() < 0.4) Dialog.start([TIPS[Math.floor(Math.random() * TIPS.length)]], afterDlg);
       else afterDlg();
     }
@@ -7986,7 +8113,7 @@ SCENES.farm = {
       ['KOŞU', st.runs], ['ZAFER', st.wins], ['EN UZAK', REGIONS[Math.min(LAST_REGION, st.bestRegion)].name], ['EN İYİ KOMBO', st.bestCombo],
       ['MÜKEMMEL', st.perfects], ['VURULAN DÜŞMAN', st.kills], ['KIL PAYI', st.nearMiss], ['SİPER ÇIKIŞI', st.drafts],
       ['TEMİZ ATLAYIŞ', st.cleanJumps || 0], ['HAMLE', st.hamles || 0], ['SON ATAK', st.kicks || 0], ['ÖZEL ATIŞ', st.specials || 0], ['DEVRİLEN KAPTAN', st.reisKills || 0], ['KAZANILAN DÜELLO', st.duels || 0], ['ALINAN RÖVANŞ', st.revenges || 0], ['DÖRTNAL MODU', st.fevers || 0],
-      ['ÜS PUANI', farmLevel()]
+      ['ÜS PUANI', farmLevel()], ['EVE DÖNEN RAKİP', freedCount() + '/' + NAMED_RIVALS.flat().length]
     ];
     const dbest = Math.max(0, ...Object.values(META.dailyRun.best || {}));
     if (dbest) rows.push(['GÜNÜN KOŞUSU REKORU', dbest]);
@@ -8019,7 +8146,7 @@ SCENES.farm = {
       for (const m of MEMORIES) {
         const open = m.cond(), unread = open && !META.memRead[m.id];
         rrect(P.x + 6, y, P.w - 12, 17, open ? (unread ? C.purple : C.slate) : C.navy);
-        text(m.id + '.', P.x + 12, y + 5, open ? C.yellow : C.dgray);
+        text((MEMORIES.indexOf(m) + 1) + '.', P.x + 12, y + 5, open ? C.yellow : C.dgray);
         if (open) {
           text(m.title, P.x + 26, y + 5, C.white);
           if (unread) text('YENİ', P.x + P.w - 12, y + 5, C.yellow, 'right');
@@ -8038,7 +8165,7 @@ SCENES.farm = {
       if (open) {
         circle(P.x + 14, y + 8, 3, C.ink); circle(P.x + 14, y + rh / 2, 2, STYLE_COL[r.style] || C.green);
         text(r.name, P.x + 22, ty, C.white);
-        text(unread ? 'YENİ' : reg, P.x + P.w - 12, ty, unread ? C.yellow : nem ? C.red : C.gray, 'right');
+        text(unread ? 'YENİ' : isFreed(r.id) ? 'EVE DÖNDÜ' : reg, P.x + P.w - 12, ty, unread ? C.yellow : isFreed(r.id) ? C.green : nem ? C.red : C.gray, 'right');
         UI.add('riv_' + r.id, P.x + 6, y, P.w - 12, rh - 3, () => { this.page = r.id; META.rivalRead[r.id] = true; saveMeta(); Sound.play('page'); });
       } else {
         spr(ICONS.lock, P.x + 11, ty - 1); text(nem ? r.name : '???', P.x + 22, ty, nem ? C.salmon : C.dgray);
@@ -8060,6 +8187,8 @@ SCENES.farm = {
     text('TARZI: ' + info.trick, P.x + 10, P.y + 54, STYLE_COL[r.style] || C.green);
     text('YENİLDİ: ' + (META.rivals[id] || 0) + ' KEZ', P.x + 10, P.y + 64, C.gray);
     if (META.nemesis && META.nemesis.id === id) text('RÖVANŞÇI · SV ' + META.nemesis.lv, P.x + P.w - 10, P.y + 64, C.red, 'right');
+    if (isFreed(id)) text('EVE DÖNDÜ', P.x + P.w - 10, P.y + 64, C.green, 'right');
+    else if (META.freeTokens > 0) button('pg_free', P.x + P.w / 2 - 34, P.y + P.h - 22, 68, 15, 'EVE GÖNDER', () => { this.panel = null; this.page = null; go('liberate', { pick: id }); }, { kind: 'green' });
     rect(P.x + 6, P.y + 76, P.w - 12, P.h - 102, C.sand); hline(P.x + 6, P.y + 76, P.w - 12, C.white);
     lines.forEach((ln, i) => text(ln, P.x + 15, P.y + 82 + i * 10, C.dbrown));
     const opened = NAMED_RIVALS.flat().filter(q => META.rivals[q.id]);
@@ -8317,7 +8446,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.2', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.3', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 
@@ -8973,6 +9102,12 @@ SCENES.results = {
       this.daily = { score, best: score > best };
     }
     META.runSave = null;
+    // what happened, for the station's reaction when we get home
+    const dI = RUN.diedIn || {};
+    META.lastRun = { won: this.won, quit: this.quit, region: RUN.region, etap: RUN.etap, type: dI.type || null, boss: !this.won && dI.boss ? dI.boss : null,
+      duelLost: RUN.duelLost || (dI.type === 'duello' ? RUN.lastDuel : null) || null, nemesis: RUN.nemesisNew || null, revenge: !!RUN.revenged,
+      league: RUN.league && Object.keys(RUN.league).length ? leagueRank() : 0, sGrades: (RUN.grades && RUN.grades.S) || 0, daily: !!RUN.daily, told: false };
+    if (this.won) META.freeTokens = (META.freeTokens || 0) + 1;
     this.league = RUN.league && Object.keys(RUN.league).length ? leagueRank() : 0;
     if (this.league === 1 && this.won) META.stats.leagueWins = (META.stats.leagueWins || 0) + 1;
     this.done = META.missions.filter(m => m.done).length;
@@ -9050,7 +9185,7 @@ SCENES.results = {
       if (this.won) spr(ICONS.crown, W / 2 - 5, artY - img.height + 8 - Math.round(Math.abs(Math.sin(this.t * 4)) * 3));
       else for (let i = 0; i < 3; i++) { const kk = (this.t * 0.6 + i / 3) % 1; g.globalAlpha = 1 - kk; text('Z', W / 2 + 14 + kk * 10, artY - 18 - kk * 16, C.lgray); g.globalAlpha = 1; }
     }
-    if (this.t > 1.0) { const bw = Math.min(W - 30, 160); button('res_farm', W / 2 - bw / 2, btnY, bw, 22, 'İSTASYONA DÖN', () => go('farm', { fromRun: true }), { kind: 'primary' }); }
+    if (this.t > 1.0) { const bw = Math.min(W - 30, 160); const lib = this.won && META.freeTokens > 0 && freeCandidates().length; button('res_farm', W / 2 - bw / 2, btnY, bw, 22, lib ? 'KAPI AÇIK: BİRİNİ EVE GÖNDER' : 'İSTASYONA DÖN', () => go(lib ? 'liberate' : 'farm', { fromRun: true }), { kind: 'primary' }); }
     drawParts(0, 0); drawTexts();
   }
 };
@@ -9085,6 +9220,58 @@ function drawPlanet(x, y, r, reg) {
   if (reg === 1) { circle(x + 6, y + 5, 3, p[0]); circle(x - 8, y + 9, 2, p[0]); circle(x + 9, y - 6, 2, p[0]); }
   if (ringed) ringArc(true);
 }
+
+// ================= LIBERATION (v5.3, after Pyre's liberation rites) =================
+// Each cup win opens the gate once more: pick one rival whose file you opened and send them home.
+// They leave the races for good (one fewer opponent), say goodbye, and leave a gift behind.
+SCENES.liberate = {
+  enter(arg) {
+    this.t = 0; this.sel = arg && arg.pick ? arg.pick : null; this.done = false; this.scroll = 0;
+    this.list = freeCandidates();
+    if (!this.list.length || !(META.freeTokens > 0)) { go('farm', { fromRun: true }); return; }
+    if (this.sel && !this.list.some(r => r.id === this.sel)) this.sel = null;
+    Music.layer = 1; Music.play('farm', now() + 0.2, false);
+  },
+  free(id) {
+    if (this.done) return;
+    const r = RIVAL_BY_ID[id]; if (!r) return;
+    this.done = true;
+    META.freed = META.freed || {}; META.freed[id] = true; META.freeTokens = Math.max(0, (META.freeTokens || 0) - 1);
+    if (META.nemesis && META.nemesis.id === id) META.nemesis = null;
+    META.yonca += 12; META.seker += 1; saveMeta();
+    Sound.play('gate'); haptic('success'); flash(C.cyan, 0.3);
+    const lines = [[id, RIVAL_BYE[id] || 'HOŞÇA KAL DÜNYALI.']];
+    lines.push([npcAvailable('akyel') ? 'akyel' : 'bip', freedCount() >= NAMED_RIVALS.flat().length ? 'SONUNCUSU DA GİTTİ. ARTIK GRAX\'IN ŞOVUNDA KİMSE ZORLA KOŞMUYOR.' : r.name + ' EVİNDE. GERİDE ' + (NAMED_RIVALS.flat().length - freedCount()) + ' KİŞİ KALDI.']);
+    Dialog.start(lines, () => { toast('VEDA HEDİYESİ: +12 KRİSTAL +1 ŞEKER', C.cyan, 'gift'); go('farm', { fromRun: true }); });
+  },
+  update(dt) { this.t += dt; updateFX(dt); },
+  key(k) { if (k === 'Escape') { go('farm', { fromRun: true }); return true; } return false; },
+  draw() {
+    rect(0, 0, W, H, C.ink);
+    for (let i = 0; i < 60; i++) { const x = (hash2(i, 61) * W) | 0, y = (hash2(i, 62) * H + T * 6) % H; pix(x, y, i % 4 ? C.slate : C.cyan); }
+    // the gate, glowing
+    const gx = W / 2, gy = SAFE.t + 54;
+    for (let r = 30, i = 0; r > 10; r -= 5, i++) { g.globalAlpha = 0.18 + 0.06 * i + 0.05 * Math.sin(T * 3 + i); ring(gx, gy, r, C.cyan); }
+    g.globalAlpha = 1; circle(gx, gy, 9, C.white); circle(gx, gy, 7, C.cyan);
+    textO('KAPI AÇIK', W / 2, gy + 36, C.cyan, 'center', 2);
+    textBlock('KUPA KAPIYI BİR KEZ DAHA AÇTI. DOSYASINI AÇTIĞIN BİR RAKİBİ EVİNE GÖNDER. GİDEN BİR DAHA PİSTE ÇIKMAZ.', W / 2, gy + 56, W - 24, C.lgray, 'center');
+    const top = gy + 88, rowH = 30, bw = Math.min(W - 16, 220), bx = Math.round(W / 2 - bw / 2);
+    const maxRows = Math.max(3, Math.floor((H - SAFE.b - 60 - top) / rowH));
+    this.list.slice(0, maxRows).forEach((r, i) => {
+      const y = top + i * rowH, info = RIVAL_INFO[r.id] || {}, sel = this.sel === r.id;
+      rrect(bx - 1, y - 1, bw + 2, rowH - 2, sel ? C.cyan : C.ink); rrect(bx, y, bw, rowH - 4, sel ? C.slate : C.navy);
+      if (PORTRAIT[r.id]) { const p = PORTRAIT[r.id]; g.drawImage(p, 6, 2, 16, 20, bx + 3, y + 2, 16, 20); }
+      text(r.name, bx + 24, y + 3, STYLE_COL[r.style] || C.white);
+      text(info.home || '', bx + 24, y + 13, C.gray);
+      UI.add('lib_' + r.id, bx, y, bw, rowH - 4, () => { this.sel = r.id; Sound.play('select'); });
+    });
+    const by = H - SAFE.b - 34, half = Math.floor((bw - 6) / 2);
+    button('lib_later', bx, by, half, 20, 'SONRA', () => go('farm', { fromRun: true }), { kind: 'secondary' });
+    button('lib_go', bx + half + 6, by, half, 20, 'EVE GÖNDER', () => this.free(this.sel), { kind: 'green', disabled: !this.sel || this.done });
+    text('EVE GÖNDERME HAKKI: ' + (META.freeTokens || 0), W / 2, by - 12, C.yellow, 'center');
+    drawParts(0, 0); drawTexts(); drawFlash();
+  }
+};
 
 // ================= AUTOPLAY (testing) =================
 // window.__autoSkill (0..1) makes the bot miss some notes; window.__autoNoHamle turns off bursts.

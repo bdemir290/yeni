@@ -207,6 +207,7 @@ Object.assign(SCENES.run, {
     if (N && N.id !== id) return;
     if (N) { N.lv = Math.min(3, N.lv + 1); N.wins = (N.wins || 0) + 1; } else META.nemesis = { id, lv: 1, wins: 1 };
     const lv = META.nemesis.lv;
+    RUN.nemesisNew = RIVAL_BY_ID[id].name;
     toast('RÖVANŞÇI: ' + RIVAL_BY_ID[id].name + (lv > 1 ? ' SV ' + lv : ''), C.red, 'crown');
     saveMeta();
   },
@@ -215,7 +216,7 @@ Object.assign(SCENES.run, {
     const yon = 8 + 6 * N.lv;
     RUN.yonca += yon; missionEvent('yonca', yon);
     if (N.lv >= 2) RUN.seker++;
-    META.nemesis = null; META.stats.revenges = (META.stats.revenges || 0) + 1; missionEvent('revenge', 1);
+    META.nemesis = null; META.stats.revenges = (META.stats.revenges || 0) + 1; missionEvent('revenge', 1); RUN.revenged = true;
     this.banner = { txt: 'RÖVANŞ ALINDI!', col: C.gold }; this.bannerT = 1.8;
     floatText('+' + yon + ' KRİSTAL' + (N.lv >= 2 ? ' +1 ŞEKER' : ''), W / 2, Math.round(H * 0.24) + 22, C.cyan, 1, -6, 1.6);
     Sound.play('medal'); this.say('revenge', true); saveMeta();

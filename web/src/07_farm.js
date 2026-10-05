@@ -84,6 +84,7 @@ SCENES.farm = {
     const others = ['kemal', 'tayfun'].filter(k => npcAvailable(k));
     others.forEach((k, i) => out.push({ k, x: L.jokey.x - 8 + i * 12, y: L.jokey.y + 30 + i * 4 }));
     if (META.flags.moko) out.push({ k: 'moko', x: L.pazar.x + 16, y: L.pazar.y + 8 });
+    if (npcAvailable('akyel')) out.push({ k: 'akyel', x: L.anit.x + 34, y: L.anit.y + 6 });
     return out;
   },
   petHorse() {
@@ -145,8 +146,10 @@ SCENES.farm = {
     if (!this.introDone && this.t > this.introAt && Trans.dir === 0) {
       this.introDone = true;
       const st = STORY.find(s => !META.seen[s.id] && s.cond());
+      let react = null;
       const afterDlg = () => { if (META.daily.pending) this.panel = 'daily'; };
       if (st) { META.seen[st.id] = true; saveMeta(); Dialog.start(st.lines, afterDlg); }
+      else if (this.arg.fromRun && (react = pickReaction())) { saveMeta(); Dialog.start(react, afterDlg); }
       else if (this.arg.fromRun && Math.random() < 0.4) Dialog.start([TIPS[Math.floor(Math.random() * TIPS.length)]], afterDlg);
       else afterDlg();
     }
@@ -725,7 +728,7 @@ SCENES.farm = {
       ['KOŞU', st.runs], ['ZAFER', st.wins], ['EN UZAK', REGIONS[Math.min(LAST_REGION, st.bestRegion)].name], ['EN İYİ KOMBO', st.bestCombo],
       ['MÜKEMMEL', st.perfects], ['VURULAN DÜŞMAN', st.kills], ['KIL PAYI', st.nearMiss], ['SİPER ÇIKIŞI', st.drafts],
       ['TEMİZ ATLAYIŞ', st.cleanJumps || 0], ['HAMLE', st.hamles || 0], ['SON ATAK', st.kicks || 0], ['ÖZEL ATIŞ', st.specials || 0], ['DEVRİLEN KAPTAN', st.reisKills || 0], ['KAZANILAN DÜELLO', st.duels || 0], ['ALINAN RÖVANŞ', st.revenges || 0], ['DÖRTNAL MODU', st.fevers || 0],
-      ['ÜS PUANI', farmLevel()]
+      ['ÜS PUANI', farmLevel()], ['EVE DÖNEN RAKİP', freedCount() + '/' + NAMED_RIVALS.flat().length]
     ];
     const dbest = Math.max(0, ...Object.values(META.dailyRun.best || {}));
     if (dbest) rows.push(['GÜNÜN KOŞUSU REKORU', dbest]);
@@ -758,7 +761,7 @@ SCENES.farm = {
       for (const m of MEMORIES) {
         const open = m.cond(), unread = open && !META.memRead[m.id];
         rrect(P.x + 6, y, P.w - 12, 17, open ? (unread ? C.purple : C.slate) : C.navy);
-        text(m.id + '.', P.x + 12, y + 5, open ? C.yellow : C.dgray);
+        text((MEMORIES.indexOf(m) + 1) + '.', P.x + 12, y + 5, open ? C.yellow : C.dgray);
         if (open) {
           text(m.title, P.x + 26, y + 5, C.white);
           if (unread) text('YENİ', P.x + P.w - 12, y + 5, C.yellow, 'right');
@@ -777,7 +780,7 @@ SCENES.farm = {
       if (open) {
         circle(P.x + 14, y + 8, 3, C.ink); circle(P.x + 14, y + rh / 2, 2, STYLE_COL[r.style] || C.green);
         text(r.name, P.x + 22, ty, C.white);
-        text(unread ? 'YENİ' : reg, P.x + P.w - 12, ty, unread ? C.yellow : nem ? C.red : C.gray, 'right');
+        text(unread ? 'YENİ' : isFreed(r.id) ? 'EVE DÖNDÜ' : reg, P.x + P.w - 12, ty, unread ? C.yellow : isFreed(r.id) ? C.green : nem ? C.red : C.gray, 'right');
         UI.add('riv_' + r.id, P.x + 6, y, P.w - 12, rh - 3, () => { this.page = r.id; META.rivalRead[r.id] = true; saveMeta(); Sound.play('page'); });
       } else {
         spr(ICONS.lock, P.x + 11, ty - 1); text(nem ? r.name : '???', P.x + 22, ty, nem ? C.salmon : C.dgray);
@@ -799,6 +802,8 @@ SCENES.farm = {
     text('TARZI: ' + info.trick, P.x + 10, P.y + 54, STYLE_COL[r.style] || C.green);
     text('YENİLDİ: ' + (META.rivals[id] || 0) + ' KEZ', P.x + 10, P.y + 64, C.gray);
     if (META.nemesis && META.nemesis.id === id) text('RÖVANŞÇI · SV ' + META.nemesis.lv, P.x + P.w - 10, P.y + 64, C.red, 'right');
+    if (isFreed(id)) text('EVE DÖNDÜ', P.x + P.w - 10, P.y + 64, C.green, 'right');
+    else if (META.freeTokens > 0) button('pg_free', P.x + P.w / 2 - 34, P.y + P.h - 22, 68, 15, 'EVE GÖNDER', () => { this.panel = null; this.page = null; go('liberate', { pick: id }); }, { kind: 'green' });
     rect(P.x + 6, P.y + 76, P.w - 12, P.h - 102, C.sand); hline(P.x + 6, P.y + 76, P.w - 12, C.white);
     lines.forEach((ln, i) => text(ln, P.x + 15, P.y + 82 + i * 10, C.dbrown));
     const opened = NAMED_RIVALS.flat().filter(q => META.rivals[q.id]);

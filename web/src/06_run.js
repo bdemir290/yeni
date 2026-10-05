@@ -83,7 +83,7 @@ function genDoors() {
     else if ((RUN.eventCount[reg] || 0) < 2 && E >= 1 && roll < 0.52 && !has('olay')) doors.push({ type: 'olay' });
     else {
       const pool = ['sprint', 'sprint', 'parkur', 'kovala', 'baskin'];
-      if (E >= 1 && META.stats.runs >= 1 && !(RUN.duelDone || {})[reg] && !has('duello') && (NAMED_RIVALS[reg] || []).length) pool.push('duello', 'duello');
+      if (E >= 1 && META.stats.runs >= 1 && !(RUN.duelDone || {})[reg] && !has('duello') && activeRivals(reg).length) pool.push('duello', 'duello');
       const type = R.pick(pool);
       const door = { type, reward: genReward(used), elite: (reg > 0 || E >= 2) && R.chance(0.2), weather: pickWeather() };
       if (type === 'duello') { door.rival = pickDuelRival(); door.elite = false; }
@@ -95,7 +95,7 @@ function genDoors() {
 }
 // the duel opponent: a named rival of this region whose file is still closed, if any
 function pickDuelRival() {
-  const list = NAMED_RIVALS[RUN.region] || NAMED_RIVALS[0];
+  const list = activeRivals(RUN.region);
   const nem = META.nemesis && list.find(r => r.id === META.nemesis.id);
   if (nem) return nem.id;
   const fresh = list.filter(r => !META.rivals[r.id]);
@@ -245,7 +245,7 @@ SCENES.run = {
     while (speeds.length < field) speeds.push(1);
     const looks = R.shuffle(RIVAL_LOOKS.slice());
     const starts = [[0, 36], [1, 64], [3, 50], [4, 20], [2, -46], [1, -22], [3, -64]].slice(0, field);
-    const pool = (NAMED_RIVALS[RUN.region] || []).slice(), nemId = META.nemesis && META.nemesis.id;
+    const pool = activeRivals(RUN.region), nemId = META.nemesis && META.nemesis.id;
     const named = R.shuffle(pool.slice()).slice(0, RUN.etap >= 3 ? 3 : RUN.etap >= 1 ? 2 : 1);
     if (nemId && pool.some(p => p.id === nemId) && !named.some(p => p.id === nemId)) named[0] = pool.find(p => p.id === nemId);
     const rest = R.shuffle(speeds.slice(named.length));
@@ -267,7 +267,7 @@ SCENES.run = {
   // 1v1: one named rival, a touch faster than the region's best, who plays dirty on the beat
   spawnDuel(id) {
     const def = RIVAL_BY_ID[id] || (NAMED_RIVALS[RUN.region] || NAMED_RIVALS[0])[0];
-    RUN.duelDone = RUN.duelDone || {}; RUN.duelDone[RUN.region] = true;
+    RUN.duelDone = RUN.duelDone || {}; RUN.duelDone[RUN.region] = true; RUN.lastDuel = def.name;
     const spd = Math.max(...this.reg.rivals) * 1.06 * HEATS[RUN.heat].mult;
     const r = this.makeRival(3, 26 - (this.S.rivalHandicap || 0), spd, def.look);
     r.name = def.name; r.style = def.style; r.duel = true; r.id = def.id;

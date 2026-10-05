@@ -62,7 +62,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.2', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.3', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 
@@ -718,6 +718,12 @@ SCENES.results = {
       this.daily = { score, best: score > best };
     }
     META.runSave = null;
+    // what happened, for the station's reaction when we get home
+    const dI = RUN.diedIn || {};
+    META.lastRun = { won: this.won, quit: this.quit, region: RUN.region, etap: RUN.etap, type: dI.type || null, boss: !this.won && dI.boss ? dI.boss : null,
+      duelLost: RUN.duelLost || (dI.type === 'duello' ? RUN.lastDuel : null) || null, nemesis: RUN.nemesisNew || null, revenge: !!RUN.revenged,
+      league: RUN.league && Object.keys(RUN.league).length ? leagueRank() : 0, sGrades: (RUN.grades && RUN.grades.S) || 0, daily: !!RUN.daily, told: false };
+    if (this.won) META.freeTokens = (META.freeTokens || 0) + 1;
     this.league = RUN.league && Object.keys(RUN.league).length ? leagueRank() : 0;
     if (this.league === 1 && this.won) META.stats.leagueWins = (META.stats.leagueWins || 0) + 1;
     this.done = META.missions.filter(m => m.done).length;
@@ -795,7 +801,7 @@ SCENES.results = {
       if (this.won) spr(ICONS.crown, W / 2 - 5, artY - img.height + 8 - Math.round(Math.abs(Math.sin(this.t * 4)) * 3));
       else for (let i = 0; i < 3; i++) { const kk = (this.t * 0.6 + i / 3) % 1; g.globalAlpha = 1 - kk; text('Z', W / 2 + 14 + kk * 10, artY - 18 - kk * 16, C.lgray); g.globalAlpha = 1; }
     }
-    if (this.t > 1.0) { const bw = Math.min(W - 30, 160); button('res_farm', W / 2 - bw / 2, btnY, bw, 22, 'İSTASYONA DÖN', () => go('farm', { fromRun: true }), { kind: 'primary' }); }
+    if (this.t > 1.0) { const bw = Math.min(W - 30, 160); const lib = this.won && META.freeTokens > 0 && freeCandidates().length; button('res_farm', W / 2 - bw / 2, btnY, bw, 22, lib ? 'KAPI AÇIK: BİRİNİ EVE GÖNDER' : 'İSTASYONA DÖN', () => go(lib ? 'liberate' : 'farm', { fromRun: true }), { kind: 'primary' }); }
     drawParts(0, 0); drawTexts();
   }
 };
@@ -830,3 +836,55 @@ function drawPlanet(x, y, r, reg) {
   if (reg === 1) { circle(x + 6, y + 5, 3, p[0]); circle(x - 8, y + 9, 2, p[0]); circle(x + 9, y - 6, 2, p[0]); }
   if (ringed) ringArc(true);
 }
+
+// ================= LIBERATION (v5.3, after Pyre's liberation rites) =================
+// Each cup win opens the gate once more: pick one rival whose file you opened and send them home.
+// They leave the races for good (one fewer opponent), say goodbye, and leave a gift behind.
+SCENES.liberate = {
+  enter(arg) {
+    this.t = 0; this.sel = arg && arg.pick ? arg.pick : null; this.done = false; this.scroll = 0;
+    this.list = freeCandidates();
+    if (!this.list.length || !(META.freeTokens > 0)) { go('farm', { fromRun: true }); return; }
+    if (this.sel && !this.list.some(r => r.id === this.sel)) this.sel = null;
+    Music.layer = 1; Music.play('farm', now() + 0.2, false);
+  },
+  free(id) {
+    if (this.done) return;
+    const r = RIVAL_BY_ID[id]; if (!r) return;
+    this.done = true;
+    META.freed = META.freed || {}; META.freed[id] = true; META.freeTokens = Math.max(0, (META.freeTokens || 0) - 1);
+    if (META.nemesis && META.nemesis.id === id) META.nemesis = null;
+    META.yonca += 12; META.seker += 1; saveMeta();
+    Sound.play('gate'); haptic('success'); flash(C.cyan, 0.3);
+    const lines = [[id, RIVAL_BYE[id] || 'HOŞÇA KAL DÜNYALI.']];
+    lines.push([npcAvailable('akyel') ? 'akyel' : 'bip', freedCount() >= NAMED_RIVALS.flat().length ? 'SONUNCUSU DA GİTTİ. ARTIK GRAX\'IN ŞOVUNDA KİMSE ZORLA KOŞMUYOR.' : r.name + ' EVİNDE. GERİDE ' + (NAMED_RIVALS.flat().length - freedCount()) + ' KİŞİ KALDI.']);
+    Dialog.start(lines, () => { toast('VEDA HEDİYESİ: +12 KRİSTAL +1 ŞEKER', C.cyan, 'gift'); go('farm', { fromRun: true }); });
+  },
+  update(dt) { this.t += dt; updateFX(dt); },
+  key(k) { if (k === 'Escape') { go('farm', { fromRun: true }); return true; } return false; },
+  draw() {
+    rect(0, 0, W, H, C.ink);
+    for (let i = 0; i < 60; i++) { const x = (hash2(i, 61) * W) | 0, y = (hash2(i, 62) * H + T * 6) % H; pix(x, y, i % 4 ? C.slate : C.cyan); }
+    // the gate, glowing
+    const gx = W / 2, gy = SAFE.t + 54;
+    for (let r = 30, i = 0; r > 10; r -= 5, i++) { g.globalAlpha = 0.18 + 0.06 * i + 0.05 * Math.sin(T * 3 + i); ring(gx, gy, r, C.cyan); }
+    g.globalAlpha = 1; circle(gx, gy, 9, C.white); circle(gx, gy, 7, C.cyan);
+    textO('KAPI AÇIK', W / 2, gy + 36, C.cyan, 'center', 2);
+    textBlock('KUPA KAPIYI BİR KEZ DAHA AÇTI. DOSYASINI AÇTIĞIN BİR RAKİBİ EVİNE GÖNDER. GİDEN BİR DAHA PİSTE ÇIKMAZ.', W / 2, gy + 56, W - 24, C.lgray, 'center');
+    const top = gy + 88, rowH = 30, bw = Math.min(W - 16, 220), bx = Math.round(W / 2 - bw / 2);
+    const maxRows = Math.max(3, Math.floor((H - SAFE.b - 60 - top) / rowH));
+    this.list.slice(0, maxRows).forEach((r, i) => {
+      const y = top + i * rowH, info = RIVAL_INFO[r.id] || {}, sel = this.sel === r.id;
+      rrect(bx - 1, y - 1, bw + 2, rowH - 2, sel ? C.cyan : C.ink); rrect(bx, y, bw, rowH - 4, sel ? C.slate : C.navy);
+      if (PORTRAIT[r.id]) { const p = PORTRAIT[r.id]; g.drawImage(p, 6, 2, 16, 20, bx + 3, y + 2, 16, 20); }
+      text(r.name, bx + 24, y + 3, STYLE_COL[r.style] || C.white);
+      text(info.home || '', bx + 24, y + 13, C.gray);
+      UI.add('lib_' + r.id, bx, y, bw, rowH - 4, () => { this.sel = r.id; Sound.play('select'); });
+    });
+    const by = H - SAFE.b - 34, half = Math.floor((bw - 6) / 2);
+    button('lib_later', bx, by, half, 20, 'SONRA', () => go('farm', { fromRun: true }), { kind: 'secondary' });
+    button('lib_go', bx + half + 6, by, half, 20, 'EVE GÖNDER', () => this.free(this.sel), { kind: 'green', disabled: !this.sel || this.done });
+    text('EVE GÖNDERME HAKKI: ' + (META.freeTokens || 0), W / 2, by - 12, C.yellow, 'center');
+    drawParts(0, 0); drawTexts(); drawFlash();
+  }
+};

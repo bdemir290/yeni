@@ -1,4 +1,4 @@
-# Dörtnala – iOS prototipi (v5.2 · Galaksi Kupası)
+# Dörtnala – iOS prototipi (v5.3 · Galaksi Kupası)
 
 Hades tarzı, üslü roguelike at yarışı. Pixel art, dikey ekran, tek elle oynanır.
 
@@ -97,6 +97,14 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 - **Takip yardımı:** sprintte geçme sırasının dışındaysan nefes ve siper %50 daha hızlı dolar ("TAKİPTE"). Çok geride kalan rakipler biraz hızlanır, yarış kalabalık ve çekişmeli kalır.
 - **Müzikle yaşayan dünya:** rakiplerin dörtnalı, sikkelerin zıplaması ve arenadaki seyirci vuruşa göre hareket eder.
 - **Yardım önerisi:** ilk pistte üst üste 3 kez kaybedersen BİP geniş ritim penceresini, yardım modunu ve ritim ölçümünü önerir.
+
+## v5.3: Hikaye (Hades ve Pyre'den ilham)
+
+- **Koşu sonrası tepkiler:** istasyona dönünce dostların son koşuna göre konuşur: hangi şampiyona yenildiğin (ve ona karşı ipucu), hangi rakibe düelloyu kaybettiğin, yeni rövanşçın, alınan rövanş, lig liderliği, S notları, kaçırdığın kara delik, baskın ya da parkur... Aynı söz arka arkaya gelmez.
+- **Şampiyonların hikayesi:** her şampiyon ilk yenilgisinden sonra konuşur (portreleriyle): kaçırılmış Prens Kristalo, sürüsü kafeste tutulan Gorm, kendini donduran Niva, kafasındaki çipi kırılan Zarg ve yirmi yıl önceki finalde Akyel'e hile yaptığını itiraf eden Voltrak.
+- **Seyir Defteri büyüdü:** "Donmuş Taht", "Kumun Altındaki Çip", "Açık Kapı" ve "Herkes Evine" sayfaları; sayfalar hikaye sırasına göre numaralanır.
+- **Kapı Açık (kurtuluş):** her kupa kazancı kapıyı bir kez daha açar. Düelloda dosyasını açtığın bir rakibi evine gönderirsin: veda eder, veda hediyesi bırakır (+12 kristal, +1 şeker) ve bir daha piste çıkmaz. Hakkını hemen kullanmazsan Seyir Defteri'ndeki rakip sayfasından da kullanabilirsin. Zafer Vitrini ve Seyir Defteri eve dönenleri gösterir; hepsi dönünce son sayfa açılır.
+- **Akyel istasyonda:** kupadan sonra annen Akyel vitrinin yanında durur. Sohbet eder; şeker verirsen hatırası *Akyel'in Nalı* şampiyon yarışlarında farkın daha yavaş kapanmasını sağlar.
 
 ## Proje yapısı
 

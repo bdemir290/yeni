@@ -24,7 +24,7 @@ function baseStats() {
     // duos and misc
     airStars: false, landShockWide: false, comboTrample: 0, ghostShoots: false, foeCoins: 1,
     dawnWindow: false, bondMult: 1, rivalHandicap: 0, muska: 0, startCoins: 0, etapHeal: 0, forceFog: false,
-    moreFoes: 1, duoChance: 0.3, assist: 0,
+    moreFoes: 1, duoChance: 0.3, assist: 0, bossDrainMult: 1,
     // breath (nefes), hamle burst, final kick, bends, notes
     nefesStart: 50, nefesGain: 1, hamleCost: 30, hamleDur: 1.0, hamleSpd: 0.35, hamleInv: false, hamleAir: false, hamleRam: 0, hamleStars: 0, hamleShield: false,
     kickMult: 1, cornerMult: 1, outerSafe: false, accentWin: 1, specialMult: 1, cleanStars: 0, cleanNefes: 0, cleanHamle: false, doubleBonus: false, fullNefesDmg: 0,
@@ -566,7 +566,7 @@ const STORY = [
   { id: 'region3', cond: () => META.stats.bestRegion >= LAST_REGION, lines: [['bip', 'GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.']] },
   { id: 'lostSimsek', cond: () => META.flags.lost_simsek, lines: [['kemal', 'VOLTRAK HİLE YAPMADAN KAZANAMAZ. SEN ONDAN HIZLISIN.']] },
   { id: 'assistHint', cond: () => (META.stats.earlyLoss || 0) >= 3 && !META.settings.assist && !META.settings.wide, lines: [['bip', 'BİP! İLK PİSTTE ÜST ÜSTE ZORLANDIN. AYARLARDA GENİŞ RİTİM PENCERESİ VE YARDIM MODU VAR. UTANILACAK ŞEY DEĞİL!'], ['ayse', 'BİR DE RİTMİ ÖLÇ: KULAKLIĞIN SESİ GEÇ VERİYOR OLABİLİR. SAĞ ÜSTTEKİ DİŞLİYE BAS.']] },
-  { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', 'KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!'], ['akyel', '...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.'], ['ayse', 'ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!']] }
+  { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', 'KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!'], ['akyel', '...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.'], ['ayse', 'ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!'], ['akyel', 'AMA PİSTTEKİLER DE KAÇIRILMIŞTI DENİZ. HER KUPADA KAPI YİNE AÇILIR: DOSYASINI AÇTIĞIN BİR RAKİBİ EVİNE GÖNDEREBİLİRSİN.']] }
 ];
 const TIPS = [
   ['bip', 'HALKA ATIN ETRAFINDA KAPANDIĞI AN DOKUN. RİTİM HIZDIR. BİP.'],

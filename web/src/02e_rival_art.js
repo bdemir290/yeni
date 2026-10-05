@@ -247,4 +247,6 @@ function buildRivalArt() {
     else if (kind !== 'robo' && kind !== 'squid') { hline(12, 17, 5, K); pix(12, 16, K); pix(16, 16, K); }
   });
   for (const id in RIVAL_BY_ID) if (!PORTRAIT[id]) PORTRAIT[id] = bust(ALIEN_LOOKS[RIVAL_BY_ID[id].look] || ALIEN_LOOKS.r1);
+  // champions get busts too (they speak after their first defeat)
+  for (const k in BOSS_PORTRAIT_LOOKS) { const lk = BOSS_PORTRAIT_LOOKS[k]; if (!PORTRAIT[k]) PORTRAIT[k] = bust(typeof lk === 'string' ? ALIEN_LOOKS[lk] : lk); }
 }

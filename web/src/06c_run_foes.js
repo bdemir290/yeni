@@ -207,7 +207,7 @@ Object.assign(SCENES.run, {
     // a hit may have pushed the gap to 100 since the last frame: win before this frame's drain pulls it back
     if (!B.won && this.state === 'run' && B.gap >= 100) this.bossWin();
     if (!B.won && this.state === 'run') {
-      const drain = B.taunt > 0 ? 0 : B.def.drain * HEATS[RUN.heat].mult * (1 - S.assist * 0.5) * (1 + 0.12 * (B.phase - 1));
+      const drain = B.taunt > 0 ? 0 : B.def.drain * S.bossDrainMult * HEATS[RUN.heat].mult * (1 - S.assist * 0.5) * (1 + 0.12 * (B.phase - 1));
       B.gap -= drain * dt;
       B.gap += Math.min(3, (P.speed * (P.cornerM || 1) / (BASE_SPEED * this.reg.speed) - 1) * 4) * dt;
       B.gap = Math.min(100, B.gap);
@@ -375,7 +375,7 @@ Object.assign(SCENES.run, {
     const failDuel = this.type === 'duello' && rank > 1;
     if (failRank || failRaid || failDuel) {
       this.result.ok = false;
-      if (failDuel) { floatText(this.duel.def.name + ' KAZANDI', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('DÜELLOYU KAYBETTİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
+      if (failDuel) { RUN.duelLost = this.duel.def.name; floatText(this.duel.def.name + ' KAZANDI', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('DÜELLOYU KAYBETTİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       else if (failRank) { floatText(rank + '. OLDUN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('İLK ' + this.passRank() + '\'E GİREMEDİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       else { floatText(this.kills + '/' + this.goal + ' DÜŞMAN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('BASKIN PÜSKÜRTÜLEMEDİ: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       this.P.invuln = 0; this.P.laneInv = 0; this.P.landInv = 0; this.P.flyT = 0; this.P.hamleT = 0;
@@ -438,8 +438,10 @@ Object.assign(SCENES.run, {
       RUN.region++; RUN.etap = 0;
       META.stats.bestRegion = Math.max(META.stats.bestRegion, Math.min(LAST_REGION, RUN.region));
       saveMeta();
-      if (RUN.region >= REGIONS.length) { go('results', { won: true }); return; }
-      go('boon', { sp: R.pick(SPIRIT_KEYS), afterBoss: true });
+      const next = () => { if (RUN.region >= REGIONS.length) go('results', { won: true }); else go('boon', { sp: R.pick(SPIRIT_KEYS), afterBoss: true }); };
+      // the first win against a champion: they tell their side of Grax's show
+      if (first && BOSS_LORE[key] && !window.__auto) { Dialog.start(BOSS_LORE[key], next); return; }
+      next();
       return;
     }
     if (this.type === 'duello' && this.duel && this.result && this.result.ok) {

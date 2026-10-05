@@ -729,6 +729,8 @@ function buildStationArt() {
     'h.BBBBB.h',
     '.TTTTTTT.',
     '.TtTtTtT.'], { a: C.yellow, l: C.gray, H: C.lgray, V: C.navy, w: C.white, c: C.cyan, d: C.dgray, B: C.white, y: C.sky, g: C.gray, h: C.yellow, T: C.slate, t: C.dgray }, K);
+  // Akyel in the red and white helmet from the old signal (station friend after the cup)
+  PEOPLE.akyel = personSprite({ hat: 'helmet', hc: C.white, hc2: C.red, top: C.white, top2: C.red, bot: C.lgray });
   PEOPLE.moko = makeSprite([
     '...TTT...',
     '..TTyTT..',
