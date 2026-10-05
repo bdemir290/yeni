@@ -72,5 +72,155 @@
     },
     "buildings_status": "saved-not-integrated: isometric 3/4 view clashes with front-facing hub, detail lost when shrunk to hub size, only 3 of 8 have damaged variants",
     "resize": "portraits 32->28 nearest-centre; items cropped to content then nearest to 16px (spirits also 20px, and native 32px for the boon screen)"
+  },
+  "mounts_2026_10_05": {
+    "r2": {
+      "character_id": "87aae8d9-d60d-4f96-9f5b-8b7cffeff2ca",
+      "direction": "north"
+    },
+    "r3": {
+      "character_id": "1386f073-7389-4606-8988-6fbc850bd5c8",
+      "direction": "north"
+    },
+    "r4": {
+      "character_id": "ff7c5cc3-656b-4712-86e2-f5ff30f78096",
+      "direction": "north"
+    },
+    "r5": {
+      "character_id": "c2c5f47c-7c9b-41a4-9521-9ad999fedf25",
+      "direction": "north"
+    },
+    "r7": {
+      "character_id": "8b8bc945-c607-4df9-9d7e-4bb758ccb08d",
+      "direction": "north"
+    },
+    "r9": {
+      "character_id": "8bb3501b-dc73-4820-a8d2-93420ecc1578",
+      "direction": "north"
+    },
+    "r10": {
+      "character_id": "ae3ccf8b-b0ef-468b-906f-52808ef62878",
+      "direction": "north"
+    },
+    "r13": {
+      "character_id": "a9da2796-ccd3-46fb-ae4e-ecf8e3b820dd",
+      "direction": "north"
+    },
+    "r15": {
+      "character_id": "510d8c49-c1ed-4d8d-8e5d-529af6175750",
+      "direction": "north"
+    },
+    "r16": {
+      "character_id": "1a2b843c-7781-42d5-8ceb-2c1d8ddc0de5",
+      "direction": "north"
+    },
+    "n5": {
+      "character_id": "9ba71128-3afe-4ae2-bd44-566c3229d119",
+      "direction": "north"
+    },
+    "n6": {
+      "character_id": "d8d15200-19ea-416c-b3b2-d8696f3d7ed8",
+      "direction": "north"
+    },
+    "n7": {
+      "character_id": "2b90cad6-3aad-424d-924f-f2930e3e760a",
+      "direction": "north"
+    },
+    "n8": {
+      "character_id": "22c97cea-e3a4-4eca-94e5-8304f01e59b0",
+      "direction": "north"
+    },
+    "n10": {
+      "character_id": "ba9f2c59-cb0e-441a-b759-069f5f94fcf0",
+      "direction": "north"
+    },
+    "n11": {
+      "character_id": "b12fce5b-d9b3-4f1c-ac0e-a98fb88b8876",
+      "direction": "north"
+    },
+    "n12": {
+      "character_id": "0a0d2cfd-9dcd-46de-96c2-5508353bf47b",
+      "direction": "north"
+    },
+    "n14": {
+      "character_id": "a3250188-57c7-449e-87ba-828a1a3f52a8",
+      "direction": "north"
+    },
+    "n15": {
+      "character_id": "2a95e635-ac77-435a-8bc9-a19a91ab0fdf",
+      "direction": "north"
+    },
+    "niva": {
+      "character_id": "c5f01e0c-2951-419f-bca2-2b016b92e074",
+      "direction": "north"
+    },
+    "gorm": {
+      "character_id": "aaaf657f-4070-40c8-8374-976d33fe43fc",
+      "direction": "north"
+    },
+    "nisanci": {
+      "character_id": "3cb717e0-f77b-43b3-8744-738085ea4599",
+      "direction": "north"
+    },
+    "kaptan": {
+      "character_id": "876ba077-875e-4457-952d-20af0044d473",
+      "direction": "north"
+    },
+    "r8": {
+      "character_id": "71e2bc0d-ccc4-4bed-a716-cf59ea27b55c",
+      "direction": "north"
+    },
+    "r11": {
+      "character_id": "8760c8fc-5e9c-493d-9186-d67fa73a15bc",
+      "direction": "north"
+    },
+    "r12": {
+      "character_id": "0d9afcf5-2bc9-4154-a099-89b504146cf4",
+      "direction": "north"
+    },
+    "r14": {
+      "character_id": "669228a7-2126-4cab-9322-b676e7edda2b",
+      "direction": "north"
+    },
+    "n1": {
+      "character_id": "dbbc8562-f59c-4594-89cf-a660e8797a5c",
+      "direction": "north"
+    },
+    "n2": {
+      "character_id": "cf2ba091-68ab-4d35-bbfa-777c167cd60f",
+      "direction": "north"
+    },
+    "n4": {
+      "character_id": "4b227b5e-42fb-40df-979c-6e7a9a5ce74b",
+      "direction": "north"
+    },
+    "n9": {
+      "character_id": "6caa516d-b537-47c3-90ea-098a5c39f94d",
+      "direction": "north"
+    },
+    "korsan": {
+      "character_id": "b71edc67-5460-4fd2-8686-92d1f5e51034",
+      "direction": "north"
+    },
+    "zarg": {
+      "character_id": "f0b97deb-ed26-4127-ad61-6b6063ea8424",
+      "direction": "north-east"
+    },
+    "r6": {
+      "character_id": "1cd3c1b9-1c28-4ffc-b772-808404a71627",
+      "direction": "south"
+    },
+    "n3": {
+      "character_id": "f084fdff-f101-4d15-a010-dc4be31c32e2",
+      "direction": "south"
+    },
+    "n13": {
+      "character_id": "a901fc5f-1ee5-4a60-9313-ba290f554c1e",
+      "direction": "north"
+    },
+    "kristalo": {
+      "character_id": "5e93aac5-6039-404e-ab80-c9fa96fbe1c6",
+      "direction": "north"
+    }
   }
 }

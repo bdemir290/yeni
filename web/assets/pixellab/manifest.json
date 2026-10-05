@@ -39,6 +39,376 @@
       ],
       "jump": "r1/jump.png",
       "stand": "r1/stand.png"
+    },
+    "r2": {
+      "frames": [
+        "mounts/r2/run-0.png",
+        "mounts/r2/run-1.png",
+        "mounts/r2/run-2.png",
+        "mounts/r2/run-3.png"
+      ],
+      "jump": "mounts/r2/jump.png",
+      "stand": "mounts/r2/stand.png"
+    },
+    "r3": {
+      "frames": [
+        "mounts/r3/run-0.png",
+        "mounts/r3/run-1.png",
+        "mounts/r3/run-2.png",
+        "mounts/r3/run-3.png"
+      ],
+      "jump": "mounts/r3/jump.png",
+      "stand": "mounts/r3/stand.png"
+    },
+    "r4": {
+      "frames": [
+        "mounts/r4/run-0.png",
+        "mounts/r4/run-1.png",
+        "mounts/r4/run-2.png",
+        "mounts/r4/run-3.png"
+      ],
+      "jump": "mounts/r4/jump.png",
+      "stand": "mounts/r4/stand.png"
+    },
+    "r5": {
+      "frames": [
+        "mounts/r5/run-0.png",
+        "mounts/r5/run-1.png",
+        "mounts/r5/run-2.png",
+        "mounts/r5/run-3.png"
+      ],
+      "jump": "mounts/r5/jump.png",
+      "stand": "mounts/r5/stand.png"
+    },
+    "r7": {
+      "frames": [
+        "mounts/r7/run-0.png",
+        "mounts/r7/run-1.png",
+        "mounts/r7/run-2.png",
+        "mounts/r7/run-3.png"
+      ],
+      "jump": "mounts/r7/jump.png",
+      "stand": "mounts/r7/stand.png"
+    },
+    "r9": {
+      "frames": [
+        "mounts/r9/run-0.png",
+        "mounts/r9/run-1.png",
+        "mounts/r9/run-2.png",
+        "mounts/r9/run-3.png"
+      ],
+      "jump": "mounts/r9/jump.png",
+      "stand": "mounts/r9/stand.png"
+    },
+    "r10": {
+      "frames": [
+        "mounts/r10/run-0.png",
+        "mounts/r10/run-1.png",
+        "mounts/r10/run-2.png",
+        "mounts/r10/run-3.png"
+      ],
+      "jump": "mounts/r10/jump.png",
+      "stand": "mounts/r10/stand.png"
+    },
+    "r13": {
+      "frames": [
+        "mounts/r13/run-0.png",
+        "mounts/r13/run-1.png",
+        "mounts/r13/run-2.png",
+        "mounts/r13/run-3.png"
+      ],
+      "jump": "mounts/r13/jump.png",
+      "stand": "mounts/r13/stand.png"
+    },
+    "r15": {
+      "frames": [
+        "mounts/r15/run-0.png",
+        "mounts/r15/run-1.png",
+        "mounts/r15/run-2.png",
+        "mounts/r15/run-3.png"
+      ],
+      "jump": "mounts/r15/jump.png",
+      "stand": "mounts/r15/stand.png"
+    },
+    "r16": {
+      "frames": [
+        "mounts/r16/run-0.png",
+        "mounts/r16/run-1.png",
+        "mounts/r16/run-2.png",
+        "mounts/r16/run-3.png"
+      ],
+      "jump": "mounts/r16/jump.png",
+      "stand": "mounts/r16/stand.png"
+    },
+    "n5": {
+      "frames": [
+        "mounts/n5/run-0.png",
+        "mounts/n5/run-1.png",
+        "mounts/n5/run-2.png",
+        "mounts/n5/run-3.png"
+      ],
+      "jump": "mounts/n5/jump.png",
+      "stand": "mounts/n5/stand.png"
+    },
+    "n6": {
+      "frames": [
+        "mounts/n6/run-0.png",
+        "mounts/n6/run-1.png",
+        "mounts/n6/run-2.png",
+        "mounts/n6/run-3.png"
+      ],
+      "jump": "mounts/n6/jump.png",
+      "stand": "mounts/n6/stand.png"
+    },
+    "n7": {
+      "frames": [
+        "mounts/n7/run-0.png",
+        "mounts/n7/run-1.png",
+        "mounts/n7/run-2.png",
+        "mounts/n7/run-3.png"
+      ],
+      "jump": "mounts/n7/jump.png",
+      "stand": "mounts/n7/stand.png"
+    },
+    "n8": {
+      "frames": [
+        "mounts/n8/run-0.png",
+        "mounts/n8/run-1.png",
+        "mounts/n8/run-2.png",
+        "mounts/n8/run-3.png"
+      ],
+      "jump": "mounts/n8/jump.png",
+      "stand": "mounts/n8/stand.png"
+    },
+    "n10": {
+      "frames": [
+        "mounts/n10/run-0.png",
+        "mounts/n10/run-1.png",
+        "mounts/n10/run-2.png",
+        "mounts/n10/run-3.png"
+      ],
+      "jump": "mounts/n10/jump.png",
+      "stand": "mounts/n10/stand.png"
+    },
+    "n11": {
+      "frames": [
+        "mounts/n11/run-0.png",
+        "mounts/n11/run-1.png",
+        "mounts/n11/run-2.png",
+        "mounts/n11/run-3.png"
+      ],
+      "jump": "mounts/n11/jump.png",
+      "stand": "mounts/n11/stand.png"
+    },
+    "n12": {
+      "frames": [
+        "mounts/n12/run-0.png",
+        "mounts/n12/run-1.png",
+        "mounts/n12/run-2.png",
+        "mounts/n12/run-3.png"
+      ],
+      "jump": "mounts/n12/jump.png",
+      "stand": "mounts/n12/stand.png"
+    },
+    "n14": {
+      "frames": [
+        "mounts/n14/run-0.png",
+        "mounts/n14/run-1.png",
+        "mounts/n14/run-2.png",
+        "mounts/n14/run-3.png"
+      ],
+      "jump": "mounts/n14/jump.png",
+      "stand": "mounts/n14/stand.png"
+    },
+    "n15": {
+      "frames": [
+        "mounts/n15/run-0.png",
+        "mounts/n15/run-1.png",
+        "mounts/n15/run-2.png",
+        "mounts/n15/run-3.png"
+      ],
+      "jump": "mounts/n15/jump.png",
+      "stand": "mounts/n15/stand.png"
+    },
+    "niva": {
+      "frames": [
+        "mounts/niva/run-0.png",
+        "mounts/niva/run-1.png",
+        "mounts/niva/run-2.png",
+        "mounts/niva/run-3.png"
+      ],
+      "jump": "mounts/niva/jump.png",
+      "stand": "mounts/niva/stand.png"
+    },
+    "gorm": {
+      "frames": [
+        "mounts/gorm/run-0.png",
+        "mounts/gorm/run-1.png",
+        "mounts/gorm/run-2.png",
+        "mounts/gorm/run-3.png"
+      ],
+      "jump": "mounts/gorm/jump.png",
+      "stand": "mounts/gorm/stand.png"
+    },
+    "nisanci": {
+      "frames": [
+        "mounts/nisanci/run-0.png",
+        "mounts/nisanci/run-1.png",
+        "mounts/nisanci/run-2.png",
+        "mounts/nisanci/run-3.png"
+      ],
+      "jump": "mounts/nisanci/jump.png",
+      "stand": "mounts/nisanci/stand.png"
+    },
+    "kaptan": {
+      "frames": [
+        "mounts/kaptan/run-0.png",
+        "mounts/kaptan/run-1.png",
+        "mounts/kaptan/run-2.png",
+        "mounts/kaptan/run-3.png"
+      ],
+      "jump": "mounts/kaptan/jump.png",
+      "stand": "mounts/kaptan/stand.png"
+    },
+    "r8": {
+      "frames": [
+        "mounts/r8/run-0.png",
+        "mounts/r8/run-1.png",
+        "mounts/r8/run-2.png",
+        "mounts/r8/run-3.png"
+      ],
+      "jump": "mounts/r8/jump.png",
+      "stand": "mounts/r8/stand.png"
+    },
+    "r11": {
+      "frames": [
+        "mounts/r11/run-0.png",
+        "mounts/r11/run-1.png",
+        "mounts/r11/run-2.png",
+        "mounts/r11/run-3.png"
+      ],
+      "jump": "mounts/r11/jump.png",
+      "stand": "mounts/r11/stand.png"
+    },
+    "r12": {
+      "frames": [
+        "mounts/r12/run-0.png",
+        "mounts/r12/run-1.png",
+        "mounts/r12/run-2.png",
+        "mounts/r12/run-3.png"
+      ],
+      "jump": "mounts/r12/jump.png",
+      "stand": "mounts/r12/stand.png"
+    },
+    "r14": {
+      "frames": [
+        "mounts/r14/run-0.png",
+        "mounts/r14/run-1.png",
+        "mounts/r14/run-2.png",
+        "mounts/r14/run-3.png"
+      ],
+      "jump": "mounts/r14/jump.png",
+      "stand": "mounts/r14/stand.png"
+    },
+    "n1": {
+      "frames": [
+        "mounts/n1/run-0.png",
+        "mounts/n1/run-1.png",
+        "mounts/n1/run-2.png",
+        "mounts/n1/run-3.png"
+      ],
+      "jump": "mounts/n1/jump.png",
+      "stand": "mounts/n1/stand.png"
+    },
+    "n2": {
+      "frames": [
+        "mounts/n2/run-0.png",
+        "mounts/n2/run-1.png",
+        "mounts/n2/run-2.png",
+        "mounts/n2/run-3.png"
+      ],
+      "jump": "mounts/n2/jump.png",
+      "stand": "mounts/n2/stand.png"
+    },
+    "n4": {
+      "frames": [
+        "mounts/n4/run-0.png",
+        "mounts/n4/run-1.png",
+        "mounts/n4/run-2.png",
+        "mounts/n4/run-3.png"
+      ],
+      "jump": "mounts/n4/jump.png",
+      "stand": "mounts/n4/stand.png"
+    },
+    "n9": {
+      "frames": [
+        "mounts/n9/run-0.png",
+        "mounts/n9/run-1.png",
+        "mounts/n9/run-2.png",
+        "mounts/n9/run-3.png"
+      ],
+      "jump": "mounts/n9/jump.png",
+      "stand": "mounts/n9/stand.png"
+    },
+    "korsan": {
+      "frames": [
+        "mounts/korsan/run-0.png",
+        "mounts/korsan/run-1.png",
+        "mounts/korsan/run-2.png",
+        "mounts/korsan/run-3.png"
+      ],
+      "jump": "mounts/korsan/jump.png",
+      "stand": "mounts/korsan/stand.png"
+    },
+    "zarg": {
+      "frames": [
+        "mounts/zarg/run-0.png",
+        "mounts/zarg/run-1.png",
+        "mounts/zarg/run-2.png",
+        "mounts/zarg/run-3.png"
+      ],
+      "jump": "mounts/zarg/jump.png",
+      "stand": "mounts/zarg/stand.png"
+    },
+    "r6": {
+      "frames": [
+        "mounts/r6/run-0.png",
+        "mounts/r6/run-1.png",
+        "mounts/r6/run-2.png",
+        "mounts/r6/run-3.png"
+      ],
+      "jump": "mounts/r6/jump.png",
+      "stand": "mounts/r6/stand.png"
+    },
+    "n3": {
+      "frames": [
+        "mounts/n3/run-0.png",
+        "mounts/n3/run-1.png",
+        "mounts/n3/run-2.png",
+        "mounts/n3/run-3.png"
+      ],
+      "jump": "mounts/n3/jump.png",
+      "stand": "mounts/n3/stand.png"
+    },
+    "n13": {
+      "frames": [
+        "mounts/n13/run-0.png",
+        "mounts/n13/run-1.png",
+        "mounts/n13/run-2.png",
+        "mounts/n13/run-3.png"
+      ],
+      "jump": "mounts/n13/jump.png",
+      "stand": "mounts/n13/stand.png"
+    },
+    "kristalo": {
+      "frames": [
+        "mounts/kristalo/run-0.png",
+        "mounts/kristalo/run-1.png",
+        "mounts/kristalo/run-2.png",
+        "mounts/kristalo/run-3.png"
+      ],
+      "jump": "mounts/kristalo/jump.png",
+      "stand": "mounts/kristalo/stand.png"
     }
   },
   "portraits": {
