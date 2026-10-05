@@ -184,7 +184,7 @@ function onPointerDown(e) {
   const b = UI.hit(p.x, p.y);
   if (b) {
     Input.btn = b;
-    if (b.opts.block) { if (b.fn) b.fn(p.x, p.y); return; }
+    if (b.opts.block) { if (b.fn) b.fn(p.x, p.y, evTime(e)); return; }
     UI.pressed = b.id;
     if (b.opts.onDown) { b.fn(); UI.pressed = null; Input.btn = { id: '__done', opts: { block: true } }; Sound.play('click'); }
     return;

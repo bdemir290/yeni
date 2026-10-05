@@ -226,15 +226,29 @@ Object.assign(SCENES.run, {
     const won = rank === 1;
     if (this.type === 'sprint' || this.type === 'duello') this.settleBet(won);
     if (this.type === 'duello' && this.duel) {
+      leagueAdd('deniz', won ? 8 : 3); leagueAdd(this.duel.def.id, won ? 3 : 8);
       if (won && this.duel.r.nem) this.takeRevenge();
       else if (!won) this.markNemesis(this.duel.def.id);
     } else if (this.type === 'sprint') {
+      this.leagueSprint();
       const nr = this.nemRival;
       if (nr && this.finished.indexOf(nr) < 0) this.takeRevenge();
       else if (!won && this.finished[0] && this.finished[0].id) this.markNemesis(this.finished[0].id);
     }
   },
 
+  // league points: the finishing order is the rivals that crossed before you, you, then the rest by distance
+  leagueSprint() {
+    const order = this.finished.slice();
+    order.push('deniz');
+    for (const r of this.rivals.filter(q => !q.done).sort((a, b) => b.dist - a.dist)) order.push(r);
+    const before = leagueRank();
+    order.forEach((r, i) => { const id = r === 'deniz' ? 'deniz' : r.id; if (id) leagueAdd(id, LEAGUE_PTS[i] || 0); });
+    const me = order.indexOf('deniz'), beaten = order.slice(me + 1).filter(r => r.id).length;
+    if (beaten) missionEvent('ahead', beaten);
+    const after = leagueRank();
+    if (after < before) floatText('LİGDE ' + after + '. SIRAYA ÇIKTIN', W / 2, this.pY - 92, C.cyan, 1, -6, 1.6);
+  },
   // ---------- drawing ----------
   drawGate(o, sy, ox) {
     const x0 = this.trackL + ox, w = this.laneW * 5;

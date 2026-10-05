@@ -133,7 +133,7 @@ Object.assign(SCENES.run, {
     for (const s of this.eShots) {
       if (s.dead) continue;
       s.dist += s.v * dt;
-      if (s.dist < P.dist - 30) { s.dead = true; if (s.rival && this.state === 'run') { this.rate(4); this.say('dodge'); } continue; }
+      if (s.dist < P.dist - 30) { s.dead = true; if (s.rival && this.state === 'run') { this.rate(4); this.say('dodge'); missionEvent('dodge', 1); } continue; }
       if (this.state === 'run' && Math.abs(s.dist - P.dist) < 7 && Math.abs(s.x - P.x) < 7) { s.dead = true; this.hurt('arrow'); }
     }
     if (this.eShots.length) this.eShots = this.eShots.filter(s => !s.dead);
@@ -423,6 +423,7 @@ Object.assign(SCENES.run, {
       const key = this.reg.boss, first = !META.stats.bossWins[key];
       META.stats.bossWins[key] = (META.stats.bossWins[key] || 0) + 1; missionEvent('boss', 1);
       if (first) { META.rozet++; toast('ŞAMPİYON ROZETİ KAZANDIN!', C.sky, 'rozet'); }
+      leagueRegionBonus();
       const yon = Math.round((BOSS_CRYSTALS[RUN.region] || 25) * HEATS[RUN.heat].rew);
       RUN.yonca += yon; missionEvent('yonca', yon); toast('+' + yon + ' KRİSTAL', C.cyan, 'clover');
       RUN.score += 400;

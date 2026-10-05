@@ -1,4 +1,4 @@
-# Dörtnala – iOS prototipi (v5.0 · Galaksi Kupası)
+# Dörtnala – iOS prototipi (v5.1 · Galaksi Kupası)
 
 Hades tarzı, üslü roguelike at yarışı. Pixel art, dikey ekran, tek elle oynanır.
 
@@ -80,6 +80,14 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 - **Üs ekranı:** her bina panelinde sıradaki seviyenin etkisi, bedeli, eksik kristal ve sonraki seviyeler yazıyor; haritada bina isimleri, hedef çubuğunda sayısal ilerleme (örn. 45/60) var.
 - **iPhone:** küçük butonların dokunma alanı büyüdü, rakip isimleri ekrandan taşmıyor, metin çizimi önbelleğe alındı (kare süresi yaklaşık %25 kısaldı).
 - Eski kayıtlar taşınır: v4 kaydındaki bölge ilerlemesi ve yarım kalan koşu yeni gezegen sırasına göre güncellenir.
+
+## v5.1: Galaksi Ligi ve ritim ayarı
+
+- **Ritim ayarı (kalibrasyon):** Ayarlar > *Ritmi ölç*. 16 tık sesine dokunursun, oyun gecikmeni ölçüp ritim gecikmesini otomatik ayarlar (Bluetooth kulaklıkta özellikle işe yarar). Dokunuşların erken/geç çizelgesinde görünür.
+- **Galaksi Ligi:** her sprintte bitiriş sırasına göre (10, 7, 5, 4, 3, 2, 1) sen ve isimli uzaylılar puan toplar; düelloyu kazanan 8, kaybeden 3 puan alır. Kapı ekranındaki *LİG* düğmesi tabloyu açar. Her gezegen sonunda ligde 1. +6, 2. +3, 3. +1 kristal kazanır. Lider rakibin adının yanında yıldız durur; sonuç ekranı ligdeki sıranı gösterir.
+- **Yeni yol olayları:** Buz Halkası'nda *Donmuş Kargo* ve *Kar Tanesi'nin Sırrı*, Kızıl Kum'da *Çölde Bir Vaha* ve *Tozkıran'ın Kervanı*, her yerde *BOP-1* (sonraki etaba kalkan). Gezegene özel olaylar yalnızca o gezegende çıkar.
+- **Yeni görevler:** bir gezegeni lig lideri bitir, rakip atışlarından kaç, isimli rakiplerin önünde bitir.
+- **Şampiyonlar konuşur:** her şampiyon yarışın başında laf atar.
 
 ## Proje yapısı
 

@@ -387,14 +387,14 @@ SCENES.farm = {
     button('pclose', x + w - 14, y + 2, 11, 10, 'X', () => this.closePanel(), { kind: 'red', hitPad: 5 });
     return { x, y, w, h };
   },
-  closePanel() { this.panel = null; this.page = null; this.confirmReset = false; this.defTab = null; },
+  closePanel() { if (this.panel === 'calib') { this.cal = null; Music.play('farm', now() + 0.2, false); } this.panel = null; this.page = null; this.confirmReset = false; this.defTab = null; },
   drawPanel() {
     const p = this.panel;
     if (p.startsWith('repair:')) return this.pRepair(p.slice(7));
     if (p.startsWith('npc:')) return this.pNpc(p.slice(4));
     const fn = {
       ahir: this.pAhir, pano: this.pPano, ambar: this.pAmbar, nalbant: this.pNalbant, jokey: this.pJokey, veteriner: this.pVet, gate: this.pGate,
-      settings: this.pSettings, daily: this.pDaily, silahhane: this.pSilah, tapinak: this.pTapinak, bahce: this.pBahce, pazar: this.pPazar, anit: this.pAnit, ev: this.pEv
+      settings: this.pSettings, daily: this.pDaily, calib: this.pCalib, silahhane: this.pSilah, tapinak: this.pTapinak, bahce: this.pBahce, pazar: this.pPazar, anit: this.pAnit, ev: this.pEv
     }[p];
     if (fn) fn.call(this);
   },
@@ -884,7 +884,7 @@ SCENES.farm = {
   pSettings() {
     const s = META.settings;
     const items = [['MÜZİK', 'music'], ['EFEKTLER', 'sfx'], ['TİTREŞİM', 'haptics'], ['RİTİM TİTREŞİMİ', 'beatHaptic'], ['EKRAN SARSINTISI', 'shake'], ['SOL EL MODU', 'left'], ['GENİŞ RİTİM PENCERESİ', 'wide'], ['SADE RİTİM', 'simpleNotes'], ['YARDIM MODU', 'assist']];
-    const P = this.panelBox('AYARLAR', 20 + items.length * 17 + 82);
+    const P = this.panelBox('AYARLAR', 20 + items.length * 17 + 102);
     let y = P.y + 19;
     for (const [lab, key] of items) {
       text(lab, P.x + 10, y + 3, key === 'assist' && s.assist ? C.sky : C.white);
@@ -898,6 +898,8 @@ SCENES.farm = {
     text(s.offset + 'MS', P.x + P.w - 36, y + 3, C.yellow, 'center');
     button('off_p', P.x + P.w - 22, y, 14, 14, '+', () => { s.offset = clamp(s.offset + 10, -150, 150); saveMeta(); }, { kind: 'secondary' });
     y += 20;
+    button('calib', P.x + 10, y, P.w - 20, 15, 'RİTMİ ÖLÇ: DOKUNARAK AYARLA', () => this.startCalib(), { kind: 'blue' });
+    y += 20;
     button('tutagain', P.x + 10, y, P.w - 20, 15, META.tutorialDone ? 'ISINMA TURUNU TEKRAR OYNA' : 'SONRAKİ KOŞU ISINMA TURUYLA BAŞLAR', () => {
       if (!META.tutorialDone) return;
       META.tutorialDone = false; saveMeta(); toast('SONRAKİ KOŞU ISINMA TURUYLA BAŞLAR', C.green, 'check');
@@ -907,6 +909,66 @@ SCENES.farm = {
       if (!this.confirmReset) { this.confirmReset = true; return; }
       const keep = META.settings; META = defaultMeta(); META.settings = keep; saveMeta(); this.confirmReset = false; this.panel = null; go('title');
     }, { kind: 'red' });
+  },
+  // ---------- rhythm calibration: tap along with 16 clicks, the median lag becomes the rhythm offset ----------
+  startCalib() {
+    Sound.unlock(); Music.stop();
+    const t0 = now() + 0.8, iv = 0.6, n = 16;
+    this.cal = { t0, iv, n, taps: [], result: null };
+    for (let i = 0; i < n; i++) {
+      const t = Sound.at(t0 + i * iv), acc = i % 4 === 0;
+      Sound.tone(acc ? 1568 : 1046, 0.05, 'square', 0.22, t, null, Sound.master);
+      Sound.noise(0.03, 0.25, t, 'highpass', 3000, Sound.master);
+    }
+    this.panel = 'calib';
+  },
+  calibTap(t) {
+    const c = this.cal; if (!c || c.result) return;
+    const k = Math.round((t - c.t0) / c.iv);
+    if (k < 2 || k >= c.n) return; // the first two clicks are only for finding the beat
+    const d = t - (c.t0 + k * c.iv);
+    if (Math.abs(d) < c.iv * 0.45) { c.taps.push(d); haptic('light'); }
+  },
+  finishCalib() {
+    const c = this.cal;
+    if (c.taps.length < 6) { c.result = { fail: true }; return; }
+    const sorted = c.taps.slice().sort((a, b) => a - b), med = sorted[sorted.length >> 1];
+    const spread = sorted[Math.floor(sorted.length * 0.8)] - sorted[Math.floor(sorted.length * 0.2)];
+    const ms = clamp(Math.round((med - Sound.latency()) * 1000 / 5) * 5, -150, 150);
+    c.result = { ms, med: Math.round(med * 1000), spread: Math.round(spread * 1000) };
+  },
+  pCalib() {
+    const c = this.cal; if (!c) { this.panel = 'settings'; return; }
+    const P = this.panelBox('RİTİM AYARI', 150);
+    const t = now(), bp = (t - c.t0) / c.iv, k = Math.floor(bp);
+    if (!c.result && bp > c.n + 0.5) this.finishCalib();
+    if (!c.result) UI.block(0, 0, W, H, (px, py, tt) => this.calibTap(tt == null ? now() : tt));
+    let y = P.y + 19;
+    textBlock(c.result ? (c.result.fail ? 'YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.' : 'ÖLÇÜM TAMAM!') : 'SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.', P.x + P.w / 2, y, P.w - 20, C.lgray, 'center');
+    y += 30;
+    const cx = P.x + P.w / 2;
+    if (!c.result) {
+      // the click, as a ring that flashes on each beat, and the count
+      const f = bp >= 0 && k < c.n ? Math.max(0, 1 - (bp - k) * 3) : 0;
+      circle(cx, y + 14, 12, C.ink); circle(cx, y + 14, 11, f > 0 ? (k % 4 === 0 ? C.gold : C.sky) : C.slate);
+      if (f > 0) { g.globalAlpha = f; ring(cx, y + 14, 13 + Math.round((1 - f) * 6), C.white); g.globalAlpha = 1; }
+      text(bp < 0 ? 'HAZIR...' : Math.min(c.n, k + 1) + '/' + c.n, cx, y + 32, C.white, 'center');
+    } else if (!c.result.fail) {
+      const r = c.result;
+      textO((r.ms > 0 ? '+' : '') + r.ms + ' MS', cx, y + 2, C.yellow, 'center', 2);
+      text(r.ms > 10 ? 'SESİ BİRAZ GEÇ DUYUYORSUN' : r.ms < -10 ? 'SESİN ÖNÜNE GEÇİYORSUN' : 'ZAMANLAMAN TAM', cx, y + 22, C.lgray, 'center');
+      text('SAPMA: ' + r.spread + ' MS' + (r.spread > 90 ? ' (TEKRAR DENE)' : ''), cx, y + 32, r.spread > 90 ? C.salmon : C.gray, 'center');
+    }
+    // where each tap landed: -150 ms ... +150 ms
+    const lx = P.x + 16, lw = P.w - 32, ly = P.y + 112;
+    rect(lx, ly, lw, 1, C.slate); vline(lx + lw / 2, ly - 3, 7, C.lgray);
+    text('ERKEN', lx, ly + 3, C.gray); text('GEÇ', lx + lw, ly + 3, C.gray, 'right');
+    for (const d of c.taps) { const x = lx + lw / 2 + clamp(d / 0.15, -1, 1) * lw / 2; vline(x, ly - 2, 5, C.cyan); }
+    if (c.result) {
+      const bw = Math.floor((P.w - 26) / 2);
+      button('cal_again', P.x + 8, P.y + P.h - 22, bw, 15, 'TEKRAR', () => this.startCalib(), { kind: 'secondary' });
+      if (!c.result.fail) button('cal_ok', P.x + 18 + bw, P.y + P.h - 22, bw, 15, 'KAYDET', () => { META.settings.offset = c.result.ms; saveMeta(); toast('RİTİM GECİKMESİ: ' + c.result.ms + ' MS', C.green, 'check'); this.cal = null; this.panel = 'settings'; Music.play('farm', now() + 0.2, false); }, { kind: 'green' });
+    }
   },
   pDaily() {
     const P = this.panelBox('GÜNLÜK ERZAK', 104);

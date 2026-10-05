@@ -62,7 +62,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.0', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.1', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 
@@ -83,7 +83,7 @@ function bottomBar(by, extraFn) {
 SCENES.doors = {
   enter() {
     if (!RUN.doors) RUN.doors = genDoors();
-    this.doors = RUN.doors; this.t = 0; this.sel = -1; this.showBoons = false;
+    this.doors = RUN.doors; this.t = 0; this.sel = -1; this.showBoons = false; this.showLeague = false;
     this.reg = REGIONS[RUN.region]; this.S = computeStats(RUN);
     RUN.hp = Math.min(RUN.hp, this.S.maxHp);
     Music.layer = 3; Music.play(this.reg.song, now() + 0.2, false);
@@ -144,6 +144,10 @@ SCENES.doors = {
       if (i < 3) hline(cx + 5, cy, 4, C.ink);
     }
     textO(this.doors[0].type === 'boss' ? 'ŞAMPİYON SENİ BEKLİYOR' : 'YOLUNU SEÇ', W / 2, top + 26, C.white, 'center');
+    if (RUN.league && Object.keys(RUN.league).length) {
+      const rk = leagueRank(), lt = leagueTable(), lb = 'LİG ' + rk + '. · ' + (lt[rk - 1] ? lt[rk - 1].pts : 0) + ' P', lw = textWidth(lb) + 24;
+      button('league', W / 2 - lw / 2, top + 37, lw, 14, lb, () => { this.showLeague = true; }, { kind: rk === 1 ? 'primary' : 'secondary', icon: 'crown' });
+    }
     for (let i = 0; i < n; i++) {
       const d = this.doors[i], x = x0 + i * (dw + gap);
       const hov = this.sel === i;
@@ -170,6 +174,7 @@ SCENES.doors = {
     });
     drawParts(0, 0); drawTexts();
     if (this.showBoons) drawBoonList(() => { this.showBoons = false; });
+    if (this.showLeague) drawLeague(() => { this.showLeague = false; });
   },
   drawDoor(d, x, y, w, h, hot) {
     const kaos = d.type === 'kaos', boss = d.type === 'boss';
@@ -618,7 +623,8 @@ SCENES.kaos = {
 SCENES.event = {
   enter() {
     const reg = RUN.region; RUN.eventCount[reg] = (RUN.eventCount[reg] || 0) + 1;
-    let pool = EVENTS.filter(e => RUN.eventsSeen.indexOf(e.id) < 0); if (!pool.length) pool = EVENTS;
+    const here = EVENTS.filter(e => !e.reg || e.reg.indexOf(REGIONS[reg].id) >= 0);
+    let pool = here.filter(e => RUN.eventsSeen.indexOf(e.id) < 0); if (!pool.length) pool = here;
     this.ev = R.pick(pool); RUN.eventsSeen.push(this.ev.id);
     this.result = null; this.t = 0; this.reg = REGIONS[reg];
     Sound.play('page'); Music.layer = 1;
@@ -711,6 +717,8 @@ SCENES.results = {
       this.daily = { score, best: score > best };
     }
     META.runSave = null;
+    this.league = RUN.league && Object.keys(RUN.league).length ? leagueRank() : 0;
+    if (this.league === 1 && this.won) META.stats.leagueWins = (META.stats.leagueWins || 0) + 1;
     this.done = META.missions.filter(m => m.done).length;
     this.where = this.won ? 'GALAKSİ KUPASI' : REGIONS[Math.min(LAST_REGION, RUN.region)].name + ' · ' + (RUN.etap >= 4 ? 'ŞAMPİYON' : 'ETAP ' + (RUN.etap + 1));
     const di = RUN.diedIn;
@@ -772,6 +780,7 @@ SCENES.results = {
     if (this.near && this.t > 2.3) notes.push([this.near, C.salmon]);
     if (this.grew && this.t > 2.4) notes.push(['SERADA ÜRÜNLER BÜYÜDÜ', C.green]);
     if (this.assistUp && this.t > 2.4) notes.push(['YARDIM MODU BİRAZ GÜÇLENDİ', C.sky]);
+    if (this.league && this.t > 2.45) notes.push(['GALAKSİ LİGİ: ' + this.league + '. SIRA', this.league === 1 ? C.gold : C.lgray, this.league === 1]);
     if (this.done && this.t > 2.5) notes.push([this.done + ' GÖREV TAMAM: PANODAN AL', C.green]);
     for (const [s, c, o] of notes) { if (o) textO(s, W / 2, y, c, 'center'); else text(s, W / 2, y, c, 'center'); y += 11; }
     const btnY = H - SAFE.b - 38;

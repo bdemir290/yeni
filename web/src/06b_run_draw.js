@@ -196,6 +196,7 @@ Object.assign(SCENES.run, {
           // names stay on screen, and fade out for rivals far behind you (they would sit under the bottom HUD)
           const nw = textWidth(r.name), behind = it.y - this.pY;
           if (behind < 60) { g.globalAlpha = behind > 20 ? 1 - (behind - 20) / 40 : 1; textO(r.name, clamp(r.x + o, nw / 2 + 2, W - nw / 2 - 2), it.y + oy - 24, c, 'center'); g.globalAlpha = 1; }
+          if (r.leader && !r.nem && behind < 60) spr(ICONS.star, clamp(r.x + o, nw / 2 + 2, W - nw / 2 - 2) + nw / 2 + 2, it.y + oy - 25);
           if (r.nem) { spr(tinted('crown', C.red), r.x + o - 5, it.y + oy - 33); if (this.nemTaunt && !r.duel && (this.state === 'intro' || this.nemTaunt.t > 0)) this.speech(this.nemTaunt.txt, r.x + o, it.y + oy - 36); }
         }
         if (r.duel && this.duel && !r.done) this.drawDuelMarks(r, r.x + o, it.y + oy);
@@ -235,6 +236,7 @@ Object.assign(SCENES.run, {
     else this.drawHorse(B.set, B.x + ox, y + oy, fr, false, 0, B.stun > 0 && Math.floor(T * 10) % 2 === 0);
     spr(ICONS.crown, B.x + ox - 5, y + oy - 22);
     if (B.tired > 0) for (let i = 0; i < 3; i++) { const k = (T * 1.5 + i / 3) % 1; g.globalAlpha = 1 - k; pix(B.x + ox - 8 + i * 8, y + oy - 14 + k * 10, C.cyan); g.globalAlpha = 1; }
+    if (B.def.taunt && this.state === 'run' && this.stateT < 2.8 && B.screenY > 30) this.speech(B.def.taunt, B.x + ox, y + oy - 26);
     if (B.taunt > 0) { textO('KİBİR!', B.x + ox, y + oy - 34 + Math.round(Math.sin(T * 10)), C.magenta, 'center'); g.globalAlpha = 0.4 + 0.3 * Math.sin(T * 14); ring(B.x + ox, y + oy, 14, C.magenta); g.globalAlpha = 1; }
   },
   drawPlayer(ox, oy, gallop) {

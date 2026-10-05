@@ -152,6 +152,7 @@ SCENES.run = {
       landBoostT: 0, laneBoostT: 0, flyT: 0, ghostsT: 0, stormT: 0, slingT: 0, bounce: 0, speed: 0, blocked: 0, draft: 0, draftFull: false
     };
     let sc = S.startCombo + (RUN.nextCombo || 0); RUN.nextCombo = 0;
+    if (RUN.nextShield && !node.tutorial) { this.P.shield += RUN.nextShield; RUN.nextShield = 0; }
     this.happy = 0;
     if (RUN.petted && !this.tut) { sc += RUN.petted; this.happy = RUN.petted; RUN.petted = 0; }
     this.combo = sc; this.bond = 0; this.pending = null; this.topCharge = 0;
@@ -254,6 +255,7 @@ SCENES.run = {
       if (def) {
         r.name = def.name; r.style = def.style; r.id = def.id;
         const nl = this.nemesisLv(def.id); if (nl) { r.nem = nl; r.spd *= 1 + 0.03 * nl; }
+        if (leagueLeader() === def.id) r.leader = true;
       }
       this.rivals.push(r);
     }

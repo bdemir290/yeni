@@ -237,11 +237,11 @@ const REGION_V4 = [0, 1, LAST_REGION];
 const regionIdx = id => REGIONS.findIndex(r => r.id === id);
 const BOSS_CRYSTALS = [10, 15, 18, 21, 25];
 const BOSSES = {
-  pirlanta: { name: 'PRENS KRİSTALO', look: 'kristalo', drain: 2.0, attacks: ['mud', 'bale', 'karga'], attacks2: ['karga3', 'mud'], attacks3: ['mudrow', 'bale'], sig: 'kibir', color: C.magenta, title: 'LUMO\'NUN KİBİRLİ KRİSTAL PRENSİ' },
-  kurt: { name: 'ULUYAN GORM', look: 'gorm', drain: 2.4, attacks: ['log', 'wolf', 'domuz'], attacks2: ['howl', 'wolf'], attacks3: ['stomp', 'domuz'], sig: 'uluma', color: C.green, title: 'MANTAR AYI\'NIN YENİLMEZİ' },
-  niva: { name: 'BUZ KRALİÇESİ NİVA', look: 'niva', drain: 2.5, attacks: ['icicle', 'karga', 'bale'], attacks2: ['icerow', 'icicle'], attacks3: ['icicle3', 'icerow'], sig: 'ayaz', color: C.cyan, title: 'BUZ HALKASI\'NIN SOĞUK HÜKÜMDARI' },
-  zarg: { name: 'KUM SOLUCANI ZARG', look: 'zarg', drain: 2.65, attacks: ['burrow', 'eskiya', 'domuz'], attacks2: ['sandwave', 'burrow', 'okcu'], attacks3: ['burrow2', 'sandwave'], sig: 'kum', color: C.orange, title: 'KIZIL KUM\'UN ÇÖL CANAVARI' },
-  simsek: { name: 'VOLTRAK', horse: ['robot', 'voltrak'], drain: 2.8, attacks: ['bolt', 'bale', 'eskiya'], attacks2: ['bolt3', 'okcu'], attacks3: ['civirow', 'bolt3'], sig: 'hile', color: C.red, title: 'GRAX\'IN ROBOT ŞAMPİYONU' }
+  pirlanta: { name: 'PRENS KRİSTALO', look: 'kristalo', drain: 2.0, attacks: ['mud', 'bale', 'karga'], attacks2: ['karga3', 'mud'], attacks3: ['mudrow', 'bale'], sig: 'kibir', taunt: 'IŞILTIMA BAK DÜNYALI. SONRA TOZUMU YUT.', color: C.magenta, title: 'LUMO\'NUN KİBİRLİ KRİSTAL PRENSİ' },
+  kurt: { name: 'ULUYAN GORM', look: 'gorm', drain: 2.4, attacks: ['log', 'wolf', 'domuz'], attacks2: ['howl', 'wolf'], attacks3: ['stomp', 'domuz'], sig: 'uluma', taunt: 'AUUU! BU ORMANDA BENDEN HIZLISI YOK!', color: C.green, title: 'MANTAR AYI\'NIN YENİLMEZİ' },
+  niva: { name: 'BUZ KRALİÇESİ NİVA', look: 'niva', drain: 2.5, attacks: ['icicle', 'karga', 'bale'], attacks2: ['icerow', 'icicle'], attacks3: ['icicle3', 'icerow'], sig: 'ayaz', taunt: 'BURADA HER ŞEY DONAR. SEN DE.', color: C.cyan, title: 'BUZ HALKASI\'NIN SOĞUK HÜKÜMDARI' },
+  zarg: { name: 'KUM SOLUCANI ZARG', look: 'zarg', drain: 2.65, attacks: ['burrow', 'eskiya', 'domuz'], attacks2: ['sandwave', 'burrow', 'okcu'], attacks3: ['burrow2', 'sandwave'], sig: 'kum', taunt: 'KUMUN ALTINDAN SENİ İZLİYORUM...', color: C.orange, title: 'KIZIL KUM\'UN ÇÖL CANAVARI' },
+  simsek: { name: 'VOLTRAK', horse: ['robot', 'voltrak'], drain: 2.8, attacks: ['bolt', 'bale', 'eskiya'], attacks2: ['bolt3', 'okcu'], attacks3: ['civirow', 'bolt3'], sig: 'hile', taunt: 'HESAPLAMA: KAZANMA İHTİMALİN %0.', color: C.red, title: 'GRAX\'IN ROBOT ŞAMPİYONU' }
 };
 const RIVAL_LOOKS = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12', 'r13', 'r14', 'r15', 'r16'];
 // named rivals per region (index = region). style: sondan / onde / itici / atici (shoots on the beat) / zikzak (cuts in)
@@ -430,6 +430,36 @@ const EVENTS = [
     ] }
 ];
 
+// v5.1 · planet events (reg: only on these planets) and a station-wide one
+EVENTS.push(
+  { id: 'kargo', reg: ['buz'], title: 'DONMUŞ KARGO', icon: 'gift', text: 'BUZ HALKASINDA DONMUŞ BİR KARGO KAPSÜLÜ. İÇİNDEN TIKIRTI GELİYOR.',
+    choices: [
+      { label: '20 SİKKEYE ISIT', desc: 'GÜVENLİ: KRİSTAL, BELKİ ŞEKER', req: r => r.coins >= 20, fn: r => { r.coins -= 20; r.yonca += 6; if (rnd() < 0.5) { r.seker++; return 'BUZ ERİDİ: İÇİNDE KRİSTALLER VE BİR KESME ŞEKER!'; } return 'BUZ ERİDİ: KAPSÜL KRİSTAL DOLUYMUŞ.'; } },
+      { label: 'TEKMEYLE KIR', desc: '%50: +35 SİKKE, %50: -1 CAN', fn: r => { if (rnd() < 0.5) { r.coins += 35; return 'KAPSÜL PATLADI, SİKKELER SAÇILDI!'; } r.hp = Math.max(1, r.hp - 1); return 'BİR BUZ PARÇASI SEKTİ. -1 CAN.'; } },
+      { label: 'DOKUNMA', desc: 'HİÇBİR ŞEY', fn: () => 'TIKIRTI ARKANDA KALDI...' }
+    ] },
+  { id: 'kartanesi', reg: ['buz'], title: 'KAR TANESİ\'NİN SIRRI', icon: 'spark', text: 'KRİSTAL CİN KAR TANESİ YOLUNU KESTİ: "NİVA\'NIN AYAZI NASIL KIRILIR, BİLİYOR MUSUN?"',
+    choices: [
+      { label: 'DİNLE', desc: 'SONRAKİ ETAP 12 KOMBOYLA BAŞLA', fn: r => { r.nextCombo = 12; return '"ALTIN NOTAYI TAM VUR, BUZ ÇATLAR. KRALİÇEYE SÖYLEME!"'; } },
+      { label: 'YARIŞA DAVET ET', desc: 'LİGDE +4 PUAN', fn: r => { leagueAdd('deniz', 4); return 'KAR TANESİ GÜLDÜ, SANA BİR LİG PUANI JETONU ATTI.'; } }
+    ] },
+  { id: 'vaha', reg: ['kum'], title: 'ÇÖLDE BİR VAHA', icon: 'fountain', text: 'KIZIL KUMUN ORTASINDA MAVİ BİR SU. YILDIZ KULAKLARINI DİKTİ.',
+    choices: [
+      { label: 'SU İÇ', desc: '+2 CAN', fn: r => { r.hp += 2; r.healCap = true; return 'SU SERİNDİ. YILDIZ DA KANA KANA İÇTİ.'; } },
+      { label: 'YAKINDAN BAK', desc: '%50: ŞEKER, %50: SERAP', fn: r => { if (rnd() < 0.5) { r.seker++; return 'SUYUN DİBİNDE PARLAYAN BİR KESME ŞEKER!'; } r.coins = Math.max(0, r.coins - 10); return 'SERAPMIŞ... KUMA BATTIN, 10 SİKKE DÜŞÜRDÜN.'; } }
+    ] },
+  { id: 'kervan', reg: ['kum'], title: 'TOZKIRAN\'IN KERVANI', icon: 'stall', text: 'ESKİ BİR KERVAN, KORSANLARDAN KAÇIYOR. TOZKIRAN EL SALLIYOR: "YARDIM ET DÜNYALI!"',
+    choices: [
+      { label: 'KERVANI KORU', desc: 'BASKIN ETABI, 60 SİKKE X2', fn: r => { r.pendingNode = { type: 'baskin', reward: { kind: 'coins', n: 60 }, elite: true, weather: 'ruzgar' }; return 'YILDIZ KERVANIN ÖNÜNE GEÇTİ!'; } },
+      { label: '30 SİKKEYE TAKAS', desc: 'BİR YILDIZ GÜCÜ', req: r => r.coins >= 30, fn: r => { r.coins -= 30; r.pendingBoon = R.pick(SPIRIT_KEYS); return 'KERVANDA YILDIZ TOZU DOLU BİR ŞİŞE BULDUN.'; } }
+    ] },
+  { id: 'bop', title: 'BOP-1', icon: 'gear', text: 'BİP\'İN KUZENİ BOP-1 ENKAZDAN BAŞINI KALDIRDI: "BOP! KALKAN JENERATÖRÜM ÇALIŞIYOR. YAKITIM BİTTİ AMA."',
+    choices: [
+      { label: '25 SİKKE VER', desc: 'SONRAKİ ETAP +2 KALKAN', req: r => r.coins >= 25, fn: r => { r.coins -= 25; r.nextShield = (r.nextShield || 0) + 2; return 'BOP! KALKANLAR ŞARJ OLDU. BİP\'E SELAM SÖYLE.'; } },
+      { label: 'SOHBET ET', desc: '+4 KRİSTAL', fn: r => { r.yonca += 4; return '"BİP HEP SENDEN BAHSEDİYOR." BOP SANA BİR KRİSTAL KUTUSU VERDİ.'; } }
+    ] }
+);
+
 // ---------- keepsakes from station friends (gift Earth sugar cubes) ----------
 const KEEPSAKES = {
   bip: { name: 'BİP\'İN YEDEK PİLİ', desc: l => 'BİR KEZ ÖLÜMCÜL DARBEYİ ' + (l >= 2 ? 2 : 1) + ' CANLA ATLAT' + (l >= 3 ? ', 2 SN DOKUNULMAZ' : ''), apply: (S, l) => { S.muska = l; } },
@@ -501,7 +531,10 @@ const MISSION_POOL = [
   { k: 'sponsor', t: n => n === 1 ? 'BİR SPONSOR HEDİYESİ KAZAN' : n + ' SPONSOR HEDİYESİ KAZAN', n: [1, 3, 5] },
   { k: 'fever', t: n => n === 1 ? 'DÖRTNAL MODUNA GİR' : n + ' KEZ DÖRTNAL MODUNA GİR', n: [1, 3, 6] },
   { k: 'bet', t: () => 'MOKO\'NUN MASASINDA BİR BAHİS KAZAN', n: [1], minLv: 2 },
-  { k: 'revenge', t: () => 'BİR RÖVANŞÇIDAN RÖVANŞ AL', n: [1], minLv: 3 }
+  { k: 'revenge', t: () => 'BİR RÖVANŞÇIDAN RÖVANŞ AL', n: [1], minLv: 3 },
+  { k: 'league', t: () => 'BİR GEZEGENİ LİG LİDERİ BİTİR', n: [1], minLv: 2 },
+  { k: 'dodge', t: n => n + ' RAKİP ATIŞINDAN KAÇ', n: [3, 8, 15], minLv: 2 },
+  { k: 'ahead', t: n => n + ' İSİMLİ RAKİBİN ÖNÜNDE BİTİR', n: [4, 10, 20] }
 ];
 const DAILY = [10, 15, 20, 25, 30, 40, 60];
 const DAILY_SUGAR = [0, 0, 1, 0, 0, 0, 2];
