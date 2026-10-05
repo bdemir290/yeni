@@ -16,6 +16,8 @@ function leagueRank() { return leagueTable().findIndex(r => r.me) + 1; }
 function leagueLeader() { const t = leagueTable(); return t.length && !t[0].me && t[0].pts > 0 ? t[0].id : null; }
 // at the end of a planet (after the champion): bonus crystals by league place
 function leagueRegionBonus() {
+  const me = (RUN.league || {}).deniz || 0;
+  if (!me) return; // no sprint or duel points yet: no table to lead
   const rk = leagueRank(), n = LEAGUE_BONUS[rk - 1] || 0;
   if (!n) return;
   RUN.yonca += n; missionEvent('yonca', n);

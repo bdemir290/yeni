@@ -234,6 +234,8 @@ SCENES.run = {
   sy(worldY) { return this.pY - (worldY - this.P.dist); },
   laneOfX(x) { return clamp(Math.round((x - this.trackL - this.laneW / 2) / this.laneW), 0, 4); },
   addBond(n) { this.bond = Math.min(100, this.bond + n * this.S.bondMult); },
+  // breath cost of a dash: the front-runner style makes it cheaper in the first half
+  hamleCostNow() { return this.S.hamleCost * (RUN.runStyle === 'onde' && this.P.dist < this.length * 0.5 ? 0.7 : 1); },
   gainNefes(n) { this.nefes = Math.min(100, this.nefes + n * this.S.nefesGain * (RUN.runStyle === 'dengeli' ? 1.2 : 1) * (this.chasing ? 1.5 : 1)); },
 
   // ---------- setup helpers ----------
@@ -604,7 +606,7 @@ SCENES.run = {
     const P = this.P, S = this.S;
     const tutHamle = this.tut && this.tut.step >= 5;
     if ((this.tut && !tutHamle) || this.state !== 'run' || this.paused || P.hamleCd > 0) return;
-    const cost = S.hamleCost * (RUN.runStyle === 'onde' && P.dist < this.length * 0.5 ? 0.7 : 1);
+    const cost = this.hamleCostNow();
     if (this.nefes < cost) { floatText('NEFES YETMİYOR', P.x, this.pY - 22, C.gray, 1, -10, 0.6); Sound.play('deny'); return; }
     this.nefes -= cost; P.hamleT = S.hamleDur; P.hamleCd = 0.7;
     RUN.hamles++; META.stats.hamles++; missionEvent('hamle', 1);
@@ -1198,7 +1200,7 @@ SCENES.run = {
       if (dy < -40) { if (o.jumped) { missionEvent('jump', 1); META.stats.jumps++; } o.dead = true; continue; }
       if (o.kind === 'rgate') { this.updateGate(o, dy, dt); continue; }
       // late-jump grace (coyote time): a jumpable touched without jumping waits a few frames for the swipe
-      if (o.grace && !o.hit && !o.jumped && this.time - o.grace >= JUMP_GRACE) { o.hit = true; if (this.hurt(o.kind)) this.breakObs(o); continue; }
+      if (o.grace && !o.hit && !o.jumped && this.time - o.grace >= JUMP_GRACE) { o.hit = true; if (P.laneAt > o.grace && P.lane !== o.lane) continue; if (this.hurt(o.kind)) this.breakObs(o); continue; }
 
       if (!o.passed && dy < -4) {
         o.passed = true;

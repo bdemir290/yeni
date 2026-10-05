@@ -15,7 +15,7 @@ SCENES.run.autoPlay = function () {
   }
   if (this.bond >= 100 && (this.boss || this.reis || this.foes.length > 1 || this.storm)) this.useAbility();
   // ---- breath bursts ----
-  const cost = S.hamleCost * (RUN.runStyle === 'onde' && P.dist < this.length * 0.5 ? 0.7 : 1);
+  const cost = this.hamleCostNow();
   if (!window.__autoNoHamle && P.hamleT <= 0 && P.hamleCd <= 0 && this.nefes >= cost && !this.tut) {
     const B = this.boss;
     if ((B && B.taunt > 0) || (this.storm && this.storm.gap < 45) || (B && this.nefes >= 75) ||
@@ -137,6 +137,7 @@ function boot() {
   const hot = window.claude && window.claude.hot;
   const start = async data => {
     loadMeta(data || {});
+    nativeAudio();
     await loadPixelLabArt();
     buildArt();
     resize();

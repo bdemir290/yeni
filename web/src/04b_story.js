@@ -94,7 +94,7 @@ const RUN_REACTIONS = [
   { id: 'parkurLoss', prio: 35, cond: i => i.type === 'parkur', lines: () => [['kemal', 'PARKURDA ACELE ETME. ENGEL SENE YAKLAŞINCA SIÇRA, ERKEN DEĞİL. TEMİZ ATLAYIŞ HIZ VERİR.']] },
   { id: 'quit', prio: 30, cond: i => i.quit, lines: () => [['bip', 'KOŞUYU BIRAKMAK DA BİR SEÇİM. YILDIZ DİNLENDİ, SEN DE DİNLEN. BİP.']] },
   { id: 'early', prio: 20, cond: i => !i.won && i.region === 0 && i.etap <= 1, lines: () => [['ayse', 'HERKES BURADAN BAŞLADI DENİZ. NOTA ORTADA BULUŞUNCA DOKUN, GERİSİ GELİR.']] },
-  { id: 'farther', prio: 15, cond: i => !i.won && i.region >= 2, lines: i => [['moko', REGIONS[Math.min(LAST_REGION, i.region)].name + '\'NA KADAR GİTTİN! TEZGAHIMDA SENİN ADINA BİR SÜS ASTIM.']] }
+  { id: 'farther', prio: 15, cond: i => !i.won && i.region >= 2, lines: i => [['moko', 'BU SEFER ' + REGIONS[Math.min(LAST_REGION, i.region)].name + ' GEZEGENİNE KADAR GİTTİN! TEZGAHIMDA SENİN ADINA BİR SÜS ASTIM.']] }
 ];
 function pickReaction() {
   const i = META.lastRun; if (!i || i.told) return null;

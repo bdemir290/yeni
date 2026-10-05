@@ -15,7 +15,7 @@ function defaultMeta() {
     daily: { last: '', count: 0, pending: false },
     dailyRun: { best: {}, log: [] },
     seen: {}, flags: {}, memRead: {}, tipsSeen: {}, assistLv: 0, petted: false, rivals: {}, rivalRead: {}, nemesis: null,
-    settings: { music: true, sfx: true, haptics: true, shake: true, left: false, wide: false, offset: 0, assist: false, beatHaptic: false, simpleNotes: false },
+    settings: { music: true, sfx: true, haptics: true, shake: true, left: false, wide: false, offset: 0, assist: false, beatHaptic: false, simpleNotes: false, loudSilent: true },
     freed: {}, freeTokens: 0, lastRun: null, seenReact: {}, lastReact: null,
     introDone: false, tutorialDone: false, runSave: null
   };
@@ -74,6 +74,10 @@ function loadMeta(hot) {
     META.v = 5;
   }
   fixCrops();
+}
+// iOS audio mode: a rhythm game needs its beat, so by default the music plays even with the silent switch on
+function nativeAudio() {
+  try { const mh = window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.audio; if (mh) mh.postMessage(META.settings.loudSilent ? 'playback' : 'ambient'); } catch (e) { }
 }
 function saveMeta() {
   const s = JSON.stringify(META);
@@ -179,6 +183,7 @@ function nextGoal() {
   if (unreadMemories() > 0) return { text: 'SEYİR DEFTERİNDE YENİ SAYFA', target: 'ev', icon: 'book' };
   if (built('bahce') && META.crops.slice(0, plotCount()).some(c => c > 0 && c % 10 === 3)) return { text: 'SERADA HASAT VAR', target: 'bahce', icon: 'clover' };
   if (META.seker > 0 && Object.keys(NPC_NAMES).some(k => npcAvailable(k) && META.bond[k] < 3)) return { text: 'DOSTLARINA ŞEKER HEDİYE ET', target: 'npc', icon: 'seker' };
+  if (META.freeTokens > 0 && freeCandidates().length) return { text: 'KAPI AÇIK: BİR RAKİBİ EVE GÖNDER', target: 'ev', icon: 'book' };
   if (META.nemesis && RIVAL_BY_ID[META.nemesis.id]) return { text: 'RÖVANŞ: ' + RIVAL_BY_ID[META.nemesis.id].name, target: 'gate', icon: 'crown' };
   for (const k of BUILD_ORDER) {
     if (built(k)) continue;

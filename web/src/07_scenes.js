@@ -62,7 +62,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.3', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.3.1', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 
@@ -732,7 +732,7 @@ SCENES.results = {
     this.near = null;
     if (!this.won && di) {
       if (di.boss && di.gap != null) this.near = trAcc(BOSSES[di.boss].name.split(' ').pop()) + ' GEÇMENE %' + Math.max(0, 100 - di.gap) + ' KALDI';
-      else if (di.pct != null) this.near = 'ETABIN %' + di.pct + '\'İNİ KOŞTUN';
+      else if (di.pct != null) this.near = 'ETAP İLERLEMESİ: %' + di.pct;
     }
     checkFarmPerks();
     saveMeta();
@@ -844,7 +844,8 @@ SCENES.liberate = {
   enter(arg) {
     this.t = 0; this.sel = arg && arg.pick ? arg.pick : null; this.done = false; this.scroll = 0;
     this.list = freeCandidates();
-    if (!this.list.length || !(META.freeTokens > 0)) { go('farm', { fromRun: true }); return; }
+    this.empty = !this.list.length || !(META.freeTokens > 0);
+    if (this.empty) return; // leave from update(): a scene change cannot start inside another one
     if (this.sel && !this.list.some(r => r.id === this.sel)) this.sel = null;
     Music.layer = 1; Music.play('farm', now() + 0.2, false);
   },
@@ -860,10 +861,11 @@ SCENES.liberate = {
     lines.push([npcAvailable('akyel') ? 'akyel' : 'bip', freedCount() >= NAMED_RIVALS.flat().length ? 'SONUNCUSU DA GİTTİ. ARTIK GRAX\'IN ŞOVUNDA KİMSE ZORLA KOŞMUYOR.' : r.name + ' EVİNDE. GERİDE ' + (NAMED_RIVALS.flat().length - freedCount()) + ' KİŞİ KALDI.']);
     Dialog.start(lines, () => { toast('VEDA HEDİYESİ: +12 KRİSTAL +1 ŞEKER', C.cyan, 'gift'); go('farm', { fromRun: true }); });
   },
-  update(dt) { this.t += dt; updateFX(dt); },
+  update(dt) { this.t += dt; updateFX(dt); if (this.empty && Trans.dir === 0) { this.empty = false; go('farm', { fromRun: true }); } },
   key(k) { if (k === 'Escape') { go('farm', { fromRun: true }); return true; } return false; },
   draw() {
     rect(0, 0, W, H, C.ink);
+    if (!this.list || !this.list.length) return;
     for (let i = 0; i < 60; i++) { const x = (hash2(i, 61) * W) | 0, y = (hash2(i, 62) * H + T * 6) % H; pix(x, y, i % 4 ? C.slate : C.cyan); }
     // the gate, glowing
     const gx = W / 2, gy = SAFE.t + 54;

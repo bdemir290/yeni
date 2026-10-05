@@ -578,7 +578,7 @@ Object.assign(SCENES.run, {
     const showNefes = !this.tut || this.tut.step >= 5;
     if (showNefes) {
       const bw = 60, bx = Math.round(rx - bw / 2), by = ry - 18;
-      const cost = S.hamleCost * (RUN.runStyle === 'onde' && P.dist < this.length * 0.5 ? 0.7 : 1);
+      const cost = this.hamleCostNow();
       bar(bx, by, bw, 3, this.nefes / 100, this.kick > 0 ? C.sky : this.nefes >= cost ? C.cyan : C.gray);
       vline(bx + Math.round(bw * Math.min(1, cost / 100)), by - 1, 5, C.white);
     }
@@ -596,7 +596,7 @@ Object.assign(SCENES.run, {
     UI.add('ability', abx - 16, aby - 16, 32, 32, () => this.useAbility(), { onDown: true });
     if (showNefes) {
       const hx2 = left ? W - 22 - SAFE.r : 22 + SAFE.l, hy = aby;
-      const cost = S.hamleCost * (RUN.runStyle === 'onde' && P.dist < this.length * 0.5 ? 0.7 : 1);
+      const cost = this.hamleCostNow();
       const ready = this.nefes >= cost && P.hamleCd <= 0;
       circle(hx2, hy, 12, C.ink); circle(hx2, hy, 11, P.hamleT > 0 ? C.white : ready ? C.blue : C.slate);
       const fr = Math.min(1, this.nefes / cost);

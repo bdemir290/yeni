@@ -75,6 +75,7 @@ SCENES.farm = {
     const gl = nextGoal(), t = gl.target;
     if (t === 'gate') { this.panel = 'gate'; return; }
     if (t === 'npc') { const k = Object.keys(NPC_NAMES).find(n => npcAvailable(n) && META.bond[n] < 3); if (k) this.panel = 'npc:' + k; return; }
+    if (t === 'ev' && gl.text.startsWith('KAPI AÇIK')) this.defTab = 'rakip';
     if (this.L[t]) { this.camY = clamp(this.L[t].y - H * 0.4, 0, this.maxCam); this.walkTo(t, () => this.open(t)); }
   },
   npcSpots() {
@@ -889,11 +890,12 @@ SCENES.farm = {
   pSettings() {
     const s = META.settings;
     const items = [['MÜZİK', 'music'], ['EFEKTLER', 'sfx'], ['TİTREŞİM', 'haptics'], ['RİTİM TİTREŞİMİ', 'beatHaptic'], ['EKRAN SARSINTISI', 'shake'], ['SOL EL MODU', 'left'], ['GENİŞ RİTİM PENCERESİ', 'wide'], ['SADE RİTİM', 'simpleNotes'], ['YARDIM MODU', 'assist']];
+    if (window.__NATIVE__) items.splice(2, 0, ['SESSİZ MODDA DA ÇAL', 'loudSilent']);
     const P = this.panelBox('AYARLAR', 20 + items.length * 17 + 102);
     let y = P.y + 19;
     for (const [lab, key] of items) {
       text(lab, P.x + 10, y + 3, key === 'assist' && s.assist ? C.sky : C.white);
-      button('set_' + key, P.x + P.w - 50, y, 42, 13, s[key] ? 'AÇIK' : 'KAPALI', () => { s[key] = !s[key]; Sound.applySettings(); saveMeta(); }, { kind: s[key] ? 'green' : 'secondary' });
+      button('set_' + key, P.x + P.w - 50, y, 42, 13, s[key] ? 'AÇIK' : 'KAPALI', () => { s[key] = !s[key]; Sound.applySettings(); if (key === 'loudSilent') nativeAudio(); saveMeta(); }, { kind: s[key] ? 'green' : 'secondary' });
       y += 17;
     }
     if (s.assist) text('YARDIM: %' + Math.round(Math.min(0.6, 0.2 + 0.02 * META.assistLv) * 100) + ' KORUMA', P.x + 10, y, C.sky);

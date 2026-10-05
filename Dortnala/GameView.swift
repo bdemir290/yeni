@@ -1,6 +1,7 @@
 import SwiftUI
 import WebKit
 import UIKit
+import AVFoundation
 
 /// Key under which the game's JSON save is stored in UserDefaults.
 private let saveKey = "dortnala_save_v1"
@@ -20,15 +21,11 @@ struct GameView: UIViewRepresentable {
         let contentController = WKUserContentController()
         contentController.add(context.coordinator, name: "haptic")
         contentController.add(context.coordinator, name: "save")
+        contentController.add(context.coordinator, name: "audio")
 
         // Give the game its saved progress before any of its scripts run.
-        let saved = UserDefaults.standard.string(forKey: saveKey) ?? ""
-        let boot = WKUserScript(
-            source: "window.__NATIVE__ = true; window.__NATIVE_SAVE__ = \(jsStringLiteral(saved));",
-            injectionTime: .atDocumentStart,
-            forMainFrameOnly: true
-        )
-        contentController.addUserScript(boot)
+        contentController.addUserScript(GameView.bootScript())
+        context.coordinator.contentController = contentController
 
         let config = WKWebViewConfiguration()
         config.userContentController = contentController
@@ -37,6 +34,7 @@ struct GameView: UIViewRepresentable {
 
         let background = UIColor(red: 0.094, green: 0.078, blue: 0.145, alpha: 1)
         let webView = WKWebView(frame: .zero, configuration: config)
+        webView.navigationDelegate = context.coordinator
         webView.isOpaque = false
         webView.backgroundColor = background
         webView.scrollView.backgroundColor = background
@@ -56,11 +54,22 @@ struct GameView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {}
+
+    /// Script that hands the latest save to the page before the game boots.
+    @MainActor static func bootScript() -> WKUserScript {
+        let saved = UserDefaults.standard.string(forKey: saveKey) ?? ""
+        return WKUserScript(
+            source: "window.__NATIVE__ = true; window.__NATIVE_SAVE__ = \(jsStringLiteral(saved));",
+            injectionTime: .atDocumentStart,
+            forMainFrameOnly: true
+        )
+    }
 }
 
-/// Receives messages from the game: haptic feedback and save data.
+/// Receives messages from the game: haptic feedback, save data and the audio mode.
 @MainActor
-final class GameBridge: NSObject, WKScriptMessageHandler {
+final class GameBridge: NSObject, WKScriptMessageHandler, WKNavigationDelegate {
+    weak var contentController: WKUserContentController?
     private let light = UIImpactFeedbackGenerator(style: .light)
     private let medium = UIImpactFeedbackGenerator(style: .medium)
     private let heavy = UIImpactFeedbackGenerator(style: .heavy)
@@ -81,8 +90,24 @@ final class GameBridge: NSObject, WKScriptMessageHandler {
             if let json = message.body as? String {
                 UserDefaults.standard.set(json, forKey: saveKey)
             }
+        case "audio":
+            // "playback" keeps the music on with the silent switch (a rhythm game needs its beat);
+            // "ambient" respects the switch. Both still mix with the player's own music.
+            let loud = (message.body as? String) == "playback"
+            let session = AVAudioSession.sharedInstance()
+            try? session.setCategory(loud ? .playback : .ambient, mode: .default, options: [.mixWithOthers])
+            try? session.setActive(true)
         default:
             break
         }
+    }
+
+    /// iOS may end the web content process under memory pressure: reload with the latest save, not the launch one.
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        if let controller = contentController {
+            controller.removeAllUserScripts()
+            controller.addUserScript(GameView.bootScript())
+        }
+        webView.reload()
     }
 }
