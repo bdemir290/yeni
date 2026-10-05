@@ -91,5 +91,16 @@
     "sp16_ruzgar": "items/sp16_ruzgar.png",
     "sp20_ruzgar": "items/sp20_ruzgar.png",
     "sp32_ruzgar": "items/sp32_ruzgar.png"
+  },
+  "env": {
+    "cayir_track": "env/cayir_track.png",
+    "cayir_out": "env/cayir_out.png",
+    "orman_track": "env/orman_track.png",
+    "orman_out": "env/orman_out.png",
+    "buz_track": "env/buz_track.png",
+    "buz_out": "env/buz_out.png",
+    "kum_track": "env/kum_track.png",
+    "kum_out": "env/kum_out.png",
+    "hipodrom_track": "env/hipodrom_track.png"
   }
 }

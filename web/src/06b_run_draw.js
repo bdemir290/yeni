@@ -50,9 +50,18 @@ Object.assign(SCENES.run, {
     if (this.state === 'dead') this.drawDead();
     if (this.paused) this.drawPause();
   },
+  // fill a vertical band with a world-anchored texture: it scrolls with the race and bends with the track
+  texFill(pat, x, w, ox, oy) {
+    const ty = Math.round(this.P.dist) + oy;
+    g.fillStyle = pat;
+    if (!this.hasOff) { g.save(); g.translate(x + ox, ty); g.fillRect(0, -ty, w, H); g.restore(); return; }
+    for (let y = 0; y < H; y += 2) { g.save(); g.translate(x + this.offY(y + 1) + ox, ty); g.fillRect(0, y - ty, w, 2); g.restore(); }
+  },
   drawTrack(ox, oy) {
     const reg = this.reg, P = this.P, tx = this.trackL, tw = this.laneW * 5;
+    const texOut = envPattern(reg.id + '_out'), texTrack = envPattern(reg.id + '_track');
     rect(0, 0, W, H, reg.grass);
+    if (texOut) this.texFill(texOut, -24, W + 48, ox, oy);
     const tile = 8;
     const topWorld = P.dist + this.pY + 40, botWorld = P.dist - (H - this.pY) - 40;
     const r0 = Math.floor(botWorld / tile), r1 = Math.ceil(topWorld / tile);
@@ -61,7 +70,8 @@ Object.assign(SCENES.run, {
       for (let cx = -16; cx < W + 16; cx += tile) {
         if (cx + tile > tx - 4 && cx < tx + tw + 4) continue;
         const h = hash2(r, cx), x = cx + o + ox;
-        if (h < 0.4) rect(x + ((h * 37) | 0) % 7, sy, 2, 1, reg.grass2);
+        if (texOut) { /* the texture already carries the speckle */ }
+        else if (h < 0.4) rect(x + ((h * 37) | 0) % 7, sy, 2, 1, reg.grass2);
         else if (h > 0.93) rect(x + ((h * 53) | 0) % 6, sy + 3, 1, 2, reg.grassD);
         if (reg.deco === 'meadow') {
           if (h > 0.4 && h < 0.45) spr(OB.flowers[(r + cx) & 3], x + 2, sy);
@@ -109,7 +119,11 @@ Object.assign(SCENES.run, {
       if (wet) { g.globalAlpha = 0.55; for (let y = 0; y < H; y += 2) rect(tx + this.offY(y + 1) + ox, y, tw, 2, reg.dirt); g.globalAlpha = 1; }
       if (pulse > 0) { g.globalAlpha = pulse * 0.5; for (let y = 0; y < H; y += 2) { const o = this.offY(y + 1) + ox; rect(tx - 4 + o, y, 2, 2, C.yellow); rect(tx + tw + 2 + o, y, 2, 2, C.yellow); } g.globalAlpha = 1; }
     }
-    const c0 = Math.floor(botWorld / 6), c1 = Math.ceil(topWorld / 6);
+    if (texTrack) {
+      this.texFill(texTrack, tx, tw, ox, oy);
+      if (wet) { g.globalAlpha = 0.4; if (!this.hasOff) rect(tx + ox, 0, tw, H, reg.dirtD); else for (let y = 0; y < H; y += 2) rect(tx + this.offY(y + 1) + ox, y, tw, 2, reg.dirtD); g.globalAlpha = 1; }
+    }
+    const c0 = Math.floor(botWorld / 6), c1 = Math.ceil(texTrack ? c0 - 1 : topWorld / 6);
     for (let r = c0; r <= c1; r++) {
       const sy = Math.round(this.sy(r * 6)) + oy, o = this.offY(sy) + ox;
       for (let cx = 0; cx < tw; cx += 6) {

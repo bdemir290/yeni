@@ -1,5 +1,5 @@
 // Imported PixelLab art is embedded by build.py, so the iOS game stays offline.
-const IMPORTED_ART = { horses: {}, mounts: {}, portraits: {}, buildings: {}, items: {} };
+const IMPORTED_ART = { horses: {}, mounts: {}, portraits: {}, buildings: {}, items: {}, env: {} };
 async function loadPixelLabArt() {
   const decode = uri => new Promise((resolve, reject) => {
     const image = new Image();
@@ -23,7 +23,7 @@ async function loadPixelLabArt() {
       }
     }
   }
-  for (const group of ['portraits', 'buildings', 'items']) {
+  for (const group of ['portraits', 'buildings', 'items', 'env']) {
     for (const [key, uri] of Object.entries(PIXELLAB_ASSETS[group] || {})) {
       try { IMPORTED_ART[group][key] = await decode(uri); }
       catch (error) { console.warn('PixelLab art fallback:', group, key, error.message); }
@@ -34,6 +34,12 @@ async function loadPixelLabArt() {
 // so callers ask for it and fall back to the old icon when it is missing.
 function itemArt(key) { return IMPORTED_ART.items[key] || null; }
 function spiritArt(sp, size) { return itemArt('sp' + size + '_' + sp); }
+// Seamless ground textures per planet (already mapped onto the game palette by the import step).
+const ENV_PAT = {};
+function envPattern(key) {
+  if (!(key in ENV_PAT)) { const img = IMPORTED_ART.env[key]; ENV_PAT[key] = img ? g.createPattern(img, 'repeat') : null; }
+  return ENV_PAT[key];
+}
 function applyPixelLabStaticArt() {
   for (const [group, target] of [['portraits', PORTRAIT], ['buildings', BLD]]) {
     for (const [key, image] of Object.entries(IMPORTED_ART[group])) {
