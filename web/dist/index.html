@@ -8534,7 +8534,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.5', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.6', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 

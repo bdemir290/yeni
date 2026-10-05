@@ -1,4 +1,4 @@
-# Dörtnala – iOS prototipi (v5.5 · Galaksi Kupası)
+# Dörtnala – iOS prototipi (v5.6 · Galaksi Kupası)
 
 Hades tarzı, üslü roguelike at yarışı. Pixel art, dikey ekran, tek elle oynanır.
 
@@ -122,6 +122,12 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 - Ruh amblemleri: gözlemevinde (20×20), güç kartlarında (16×16) ve güç sahnesinin ortasında (32×32).
 - İzometrik bina seti ve hasarlı eşleri `web/assets/pixellab/originals/buildings/` altında saklandı, üsse bağlanmadı: açı önden çizilen üsle uyuşmuyor, üs ölçüsüne küçülünce okunmuyor, 8 binanın yalnızca 3'ünün hasarlı hali var.
 - Bir görsel yüklenemezse eski çizim kullanılır.
+
+## v5.6: Yeni ortamlar ve yarışçılar (PixelLab)
+
+- Her gezegenin pisti ve pist dışı alanı için zemin dokusu: çayırda toprak ve mor çimen, ormanda çakıl ve yosun, buzda kar ve çatlak buz, çölde rüzgâr izli kum ve kızıl kaya, arenada kil. Dokular oyunun paletine çevrildi, ek yeri görünmeden döşenir, yarışla kayar ve virajda pistle bükülür.
+- 37 uzaylı yarışçının hepsine (isimsiz ve isimli rakipler, şampiyonlar, korsan binicileri) arkadan görünen 4 karelik koşu ve sıçrama seti. Voltrak robot at olduğu için kendi çizimiyle kaldı.
+- Binalar için üç yöntem denendi; hiçbiri mevcut çizimlerden iyi olmadığı için bağlanmadı. Denemeler `originals/buildings_trials/` altında.
 
 ## Proje yapısı
 

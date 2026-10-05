@@ -32,3 +32,11 @@ PixelLab galerisindeki 50 görsel (beyblade hariç) piksel piksel aynı olacak �
 - Bağlananlar: 11 portre, 5 yem, 4 nal, 4 silah, 5 hatıra, 5 ruh amblemi. Liste `web/assets/pixellab/manifest.json` içinde; galeri kimlikleri `originals/production-notes.json` içinde.
 - Bağlanmayanlar: 8 izometrik bina ve 3 hasarlı eşi (`originals/buildings/`). Üs önden çizildiği için açıları uymuyor; ayrıca 44–56 piksele küçülünce detay kayboluyor. Önden (front view) yeniden üretilirse bağlanabilir.
 - PixelLab karakterleri (at ve kertenkele setleri) zaten bağlı olanlarla aynı; değişiklik yok.
+
+# Güncelleme — 5 Ekim 2026 (ikinci tur)
+
+Bu turda kullanıcının onayıyla yeni üretim yapıldı.
+
+- Zemin dokuları: 12 Pixen görseli (9 yüzey, 3 yeniden deneme). Oyunun paletine çevrilip ek yersiz hale getirildi. Kaynaklar `originals/env/`.
+- Yarışçılar: 37 karakter, v3 modu (karakter başına 2) ile 4 karelik koşu ve 5 karelik sıçrama (her biri 1). Yanlış yöne bakan 14 karakter yeniden üretildi, 4'ü üçüncü kez. Kaynak zip dosyaları `originals/mounts/`; karakter kimlikleri `originals/production-notes.json` içinde.
+- Binalar: Mevcut binayı başlangıç görseli olarak verme, düzenleme ve sıfırdan önden çizim yöntemleri denendi (8 üretim). Hiçbiri mevcut çizimlerden iyi değildi, bağlanmadı. Denemeler `originals/buildings_trials/`.
