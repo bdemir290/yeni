@@ -1,5 +1,5 @@
 // Imported PixelLab art is embedded by build.py, so the iOS game stays offline.
-const IMPORTED_ART = { horses: {}, mounts: {}, portraits: {}, buildings: {} };
+const IMPORTED_ART = { horses: {}, mounts: {}, portraits: {}, buildings: {}, items: {} };
 async function loadPixelLabArt() {
   const decode = uri => new Promise((resolve, reject) => {
     const image = new Image();
@@ -23,13 +23,17 @@ async function loadPixelLabArt() {
       }
     }
   }
-  for (const group of ['portraits', 'buildings']) {
+  for (const group of ['portraits', 'buildings', 'items']) {
     for (const [key, uri] of Object.entries(PIXELLAB_ASSETS[group] || {})) {
       try { IMPORTED_ART[group][key] = await decode(uri); }
       catch (error) { console.warn('PixelLab art fallback:', group, key, error.message); }
     }
   }
 }
+// Item art (foods, horseshoes, weapons, keepsakes, spirit emblems) has no procedural twin of the same size,
+// so callers ask for it and fall back to the old icon when it is missing.
+function itemArt(key) { return IMPORTED_ART.items[key] || null; }
+function spiritArt(sp, size) { return itemArt('sp' + size + '_' + sp); }
 function applyPixelLabStaticArt() {
   for (const [group, target] of [['portraits', PORTRAIT], ['buildings', BLD]]) {
     for (const [key, image] of Object.entries(IMPORTED_ART[group])) {

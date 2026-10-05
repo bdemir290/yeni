@@ -62,7 +62,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.4', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V5.5', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 
@@ -297,8 +297,10 @@ SCENES.boon = {
     const top = Math.max(SAFE.t + 8, Math.round((H - contentH) / 2) - 10);
     const oy = top + 16;
     for (let r = 26, i = 0; r > 12; r -= 5, i++) { g.globalAlpha = 0.25 - i * 0.06; ring(W / 2, oy, r + Math.round(Math.sin(T * 3 + i) * 2), sp.color); }
-    g.globalAlpha = 1; circle(W / 2, oy, 12, C.ink); circle(W / 2, oy, 11, sp.dark); circle(W / 2, oy, 9, sp.color);
-    sprC(tinted(SPIRIT_ICON[this.sp], C.ink), W / 2, oy);
+    g.globalAlpha = 1;
+    const big = spiritArt(this.sp, 32);
+    if (big) { circle(W / 2, oy, 15, C.ink); circle(W / 2, oy, 14, sp.dark); sprC(big, W / 2, oy + Math.round(Math.sin(T * 2.5))); }
+    else { circle(W / 2, oy, 12, C.ink); circle(W / 2, oy, 11, sp.dark); circle(W / 2, oy, 9, sp.color); sprC(tinted(SPIRIT_ICON[this.sp], C.ink), W / 2, oy); }
     textO(sp.name, W / 2, oy + 20, sp.color, 'center', 2);
     text(this.after ? 'ŞAMPİYONU GEÇTİN! BİR GÜÇ SEÇ' : (this.hasDuo ? 'İKİ RUH BİRLİKTE KONUŞUYOR!' : sp.desc + ' RUHU SANA GÜÇ SUNUYOR'), W / 2, oy + 40, this.hasDuo ? C.gold : C.lgray, 'center');
     const cw = Math.min(W - 14, 230), cx = Math.round(W / 2 - cw / 2);
@@ -326,7 +328,7 @@ SCENES.boon = {
     else rect(x, y + 1, 3, h - 2, rc);
     circle(x + 18, y + 17, 11, C.ink); circle(x + 18, y + 17, 10, spA.dark); circle(x + 18, y + 17, 8, C.ink);
     if (duo) { sprC(tinted(SPIRIT_ICON[b.duo[0]], spA.color), x + 15, y + 14); sprC(tinted(SPIRIT_ICON[b.duo[1]], spB.color), x + 21, y + 20); }
-    else sprC(tinted(SPIRIT_ICON[b.sp], spA.color), x + 18, y + 17);
+    else sprC(spiritArt(b.sp, 16) || tinted(SPIRIT_ICON[b.sp], spA.color), x + 18, y + 17);
     text(b.name, x + 34, y + 4, duo ? C.gold : C.yellow);
     const lvTxt = duo ? 'İKİLİ' : o.cur === 0 ? 'YENİ' : 'SV ' + o.cur + '→' + (o.cur + o.gain);
     text(lvTxt, x + w - 6, y + 4, duo ? C.gold : o.cur === 0 ? C.green : C.sky, 'right');

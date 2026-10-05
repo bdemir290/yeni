@@ -1,4 +1,4 @@
-# Dörtnala – iOS prototipi (v5.4 · Galaksi Kupası)
+# Dörtnala – iOS prototipi (v5.5 · Galaksi Kupası)
 
 Hades tarzı, üslü roguelike at yarışı. Pixel art, dikey ekran, tek elle oynanır.
 
@@ -113,6 +113,15 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 - **Galaksi Arenası:** sprintte 6 rakip, ilk 4 geçer (önceden 7 rakip).
 - **Mola menüsünde ritim ölçümü:** kulaklık değişince koşudan çıkmadan yeniden ölç.
 - Düzeltmeler: lig bonusu puan almadan verilmez, sıçrama toleransında şerit değiştirerek kaçış hasarsız, Türkçe ek hataları, hedef çubuğu kullanılmamış eve gönderme hakkını gösterir.
+
+## v5.5: PixelLab görselleri bağlandı
+
+- PixelLab galerisindeki hazır görseller piksel piksel indirildi; yeni üretim yapılmadı.
+- 11 yeni portre: Deniz, Akyel, Ayşe, Kemal Usta, Tayfun ve rakipler Glorb, Kızıl Vuum, Gece Kanadı, Demir Kıskaç, Alev Kuyruk, Grax'ın Gölgesi (28×28).
+- Eşya görselleri: yem deposunda yemler, nal atölyesinde nallar, cephanelikte silahlar, dost panelinde hatıralar (16×16).
+- Ruh amblemleri: gözlemevinde (20×20), güç kartlarında (16×16) ve güç sahnesinin ortasında (32×32).
+- İzometrik bina seti ve hasarlı eşleri `web/assets/pixellab/originals/buildings/` altında saklandı, üsse bağlanmadı: açı önden çizilen üsle uyuşmuyor, üs ölçüsüne küçülünce okunmuyor, 8 binanın yalnızca 3'ünün hasarlı hali var.
+- Bir görsel yüklenemezse eski çizim kullanılır.
 
 ## Proje yapısı
 

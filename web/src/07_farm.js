@@ -554,8 +554,8 @@ SCENES.farm = {
   listRows(P, items, y, rowH) {
     rowH = rowH || 30;
     for (const it of items) {
-      if (it.icon2) spr(it.icon2, P.x + 8, y + 2);
-      const tx = P.x + (it.icon2 ? 22 : 10);
+      if (it.icon2) spr(it.icon2, P.x + 8, y + (it.icon2.height > 12 ? 1 : 2));
+      const tx = P.x + (it.icon2 ? it.icon2.width + 12 : 10);
       text(it.name, tx, y, it.sel ? C.yellow : C.white);
       const lines = wrapText(it.desc, P.w - (tx - P.x) - 70);
       lines.slice(0, 2).forEach((ln, i) => text(ln, tx, y + 9 + i * 8, C.gray));
@@ -572,7 +572,7 @@ SCENES.farm = {
       const f = FOODS[k], own = !!META.foods[k], s1 = META.food === k, s2 = META.food2 === k;
       if (own) {
         const label = s1 ? 'YEM 1' : s2 ? 'YEM 2' : 'SEÇ';
-        return { id: 'f_' + k, name: f.name, desc: f.desc, sel: s1 || s2, label, kind: (s1 || s2) ? 'secondary' : 'green', fn: () => {
+        return { id: 'f_' + k, name: f.name, desc: f.desc, icon2: itemArt('food_' + k), sel: s1 || s2, label, kind: (s1 || s2) ? 'secondary' : 'green', fn: () => {
           if (s1) { META.food = null; if (two && META.food2) { META.food = META.food2; META.food2 = null; } }
           else if (s2) META.food2 = null;
           else if (!META.food) META.food = k;
@@ -581,7 +581,7 @@ SCENES.farm = {
           saveMeta(); Sound.play('select');
         } };
       }
-      return { id: 'f_' + k, name: f.name, desc: f.desc, label: String(f.cost), icon: 'clover', disabled: META.yonca < f.cost, fn: () => { META.yonca -= f.cost; META.foods[k] = true; if (!META.food) META.food = k; else if (two && !META.food2) META.food2 = k; saveMeta(); Sound.play('buy'); haptic('success'); } };
+      return { id: 'f_' + k, name: f.name, desc: f.desc, icon2: itemArt('food_' + k), label: String(f.cost), icon: 'clover', disabled: META.yonca < f.cost, fn: () => { META.yonca -= f.cost; META.foods[k] = true; if (!META.food) META.food = k; else if (two && !META.food2) META.food2 = k; saveMeta(); Sound.play('buy'); haptic('success'); } };
     }), P.y + 30);
     this.upgradeRow(P, 'ambar', y + 2);
   },
@@ -591,8 +591,8 @@ SCENES.farm = {
     text('NAL OYUN TARZINI DEĞİŞTİRİR', P.x + P.w / 2, P.y + 18, C.lgray, 'center');
     const y = this.listRows(P, keys.map(k => {
       const n = NALS[k], own = !!META.nals[k], sel = META.nal === k;
-      if (own) return { id: 'n_' + k, name: n.name, desc: n.desc, sel, label: sel ? 'TAKILI' : 'TAK', kind: sel ? 'secondary' : 'green', fn: () => { META.nal = k; saveMeta(); Sound.play('select'); } };
-      return { id: 'n_' + k, name: n.name, desc: n.desc, label: String(n.cost), icon: 'clover', disabled: META.yonca < n.cost, fn: () => { META.yonca -= n.cost; META.nals[k] = true; META.nal = k; saveMeta(); Sound.play('repair'); haptic('success'); } };
+      if (own) return { id: 'n_' + k, name: n.name, desc: n.desc, icon2: itemArt('nal_' + k), sel, label: sel ? 'TAKILI' : 'TAK', kind: sel ? 'secondary' : 'green', fn: () => { META.nal = k; saveMeta(); Sound.play('select'); } };
+      return { id: 'n_' + k, name: n.name, desc: n.desc, icon2: itemArt('nal_' + k), label: String(n.cost), icon: 'clover', disabled: META.yonca < n.cost, fn: () => { META.yonca -= n.cost; META.nals[k] = true; META.nal = k; saveMeta(); Sound.play('repair'); haptic('success'); } };
     }), P.y + 30);
     this.upgradeRow(P, 'nalbant', y + 2);
   },
@@ -603,7 +603,9 @@ SCENES.farm = {
     let y = P.y + 30;
     for (const k of keys) {
       const w = WEAPONS[k], own = !!META.weapons[k], sel = META.weapon === k, lv = META.wlv[k] || 1;
-      circle(P.x + 14, y + 8, 8, C.ink); circle(P.x + 14, y + 8, 7, sel ? C.slate : C.navy); sprC(ICONS[w.icon], P.x + 14, y + 8);
+      const wart = itemArt('w_' + k);
+      if (wart) { if (sel) rrect(P.x + 5, y - 1, 18, 18, C.slate); spr(wart, P.x + 6, y); }
+      else { circle(P.x + 14, y + 8, 8, C.ink); circle(P.x + 14, y + 8, 7, sel ? C.slate : C.navy); sprC(ICONS[w.icon], P.x + 14, y + 8); }
       text(w.name, P.x + 26, y, sel ? C.yellow : C.white);
       if (own) for (let i = 0; i < 3; i++) { rect(P.x + 28 + textWidth(w.name) + i * 5, y + 2, 4, 4, C.ink); pix(P.x + 29 + textWidth(w.name) + i * 5, y + 3, i < lv ? C.yellow : C.slate); }
       wrapText(w.desc, P.w - 34).slice(0, 2).forEach((ln, i) => text(ln, P.x + 26, y + 20 + i * 8, C.gray));
@@ -620,11 +622,15 @@ SCENES.farm = {
   pTapinak() {
     const P = this.panelBox('GÖZLEMEVİ', 108 + this.upgradeH('tapinak'));
     textBlock('GÖZDE TAKIMYILDIZINI SEÇ: İLK KAPI ONUN GÜCÜNÜ SUNAR.', P.x + P.w / 2, P.y + 18, P.w - 20, C.lgray, 'center');
+    const fsel = () => !!(META.favSpirit && SPIRITS[META.favSpirit]);
     const n = SPIRIT_KEYS.length, cw = Math.min(34, Math.floor((P.w - 16) / n)), x0 = Math.round(P.x + P.w / 2 - n * cw / 2), y = P.y + 44;
     SPIRIT_KEYS.forEach((sp, i) => {
       const s = SPIRITS[sp], cx = x0 + i * cw + cw / 2, sel = META.favSpirit === sp;
       if (sel) { g.globalAlpha = 0.5 + 0.3 * Math.sin(T * 5); circle(cx, y + 10, 13, s.color); g.globalAlpha = 1; }
-      circle(cx, y + 10, 11, C.ink); circle(cx, y + 10, 10, sel ? s.color : s.dark); sprC(tinted(SPIRIT_ICON[sp], sel ? C.ink : s.color), cx, y + 10);
+      circle(cx, y + 10, 11, C.ink); circle(cx, y + 10, 10, sel ? s.color : s.dark);
+      const art = spiritArt(sp, 20);
+      if (art) { if (!sel && fsel()) g.globalAlpha = 0.55; sprC(art, cx, y + 10); g.globalAlpha = 1; }
+      else sprC(tinted(SPIRIT_ICON[sp], sel ? C.ink : s.color), cx, y + 10);
       UI.add('fs_' + sp, cx - cw / 2, y - 2, cw, 26, () => { META.favSpirit = sel ? null : sp; saveMeta(); Sound.play('power'); });
     });
     const fs = META.favSpirit && SPIRITS[META.favSpirit];
@@ -834,6 +840,8 @@ SCENES.farm = {
     for (let i = 0; i < 3; i++) spr(i < lv ? ICONS.heartS : tinted('heartS', C.slate), P.x + 44 + i * 9, P.y + 31);
     iconNum('seker', META.seker, P.x + P.w - 30, P.y + 20, C.white);
     const eq = META.keepsake === k;
+    const kart = itemArt('kp_' + k);
+    if (kart) { if (lv < 1) g.globalAlpha = 0.45; spr(kart, P.x + P.w - 26, P.y + 32); g.globalAlpha = 1; }
     text(kp.name, P.x + 10, P.y + 54, lv > 0 ? C.yellow : C.gray);
     lines.forEach((ln, i) => text(ln, P.x + 10, P.y + 64 + i * 9, C.lgray));
     const by = P.y + P.h - 22, bw = Math.floor((P.w - 24) / 3);

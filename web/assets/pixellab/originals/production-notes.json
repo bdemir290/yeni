@@ -14,5 +14,63 @@
   "r1_jump": {
     "animation": "d1191d41-fc39-48eb-a378-0c250c536bb9",
     "selected_frame": 3
+  },
+  "import_2026_10_05": {
+    "source": "PixelLab Creator gallery (exact pixels via workbench crop, no new generations)",
+    "portraits": {
+      "deniz": "1791218198711",
+      "akyel": "1791218212460",
+      "ayse": "1791218228522",
+      "kemal": "1791218233582",
+      "tayfun": "1791218243810",
+      "glorb": "1791218268513",
+      "vuum": "1791218277277",
+      "gece": "1791218298381",
+      "kiskac": "1791218311715",
+      "alev": "1791218330439",
+      "golge": "1791218336437"
+    },
+    "items": {
+      "food_havuc": "1791218583050",
+      "food_elma": "1791218692583",
+      "food_seker": "1791218634096",
+      "food_yulaf": "1791218594696",
+      "food_pancar": "1791218730585",
+      "nal_demir": "1791218740886",
+      "nal_ruzgar": "1791218749924",
+      "nal_tas": "1791218771404",
+      "nal_ritim": "1791218783826",
+      "w_yay": "1791218476904",
+      "w_sapan": "1791218483712",
+      "w_tatar": "1791218486208",
+      "w_top": "1791218510854",
+      "kp_bip": "1791218800940",
+      "kp_ayse": "1791218812934",
+      "kp_kemal": "1791218825912",
+      "kp_tayfun": "1791218855957",
+      "kp_moko": "1791218865424"
+    },
+    "spirits": {
+      "tulpar": "1791218517889",
+      "kirat": "1791218538845",
+      "sleipnir": "1791218555400",
+      "pegasus": "1791218556832",
+      "ruzgar": "1791218567328"
+    },
+    "buildings": {
+      "ahir": "1791218347143",
+      "nalbant": "1791218389227",
+      "ambar": "1791218385564",
+      "veteriner": "1791218433260",
+      "jokey": "1791218429742",
+      "ev": "1791218370255",
+      "tapinak": "1791218449805",
+      "silahhane": "1791218407123",
+      "ahirX": "1791218866979",
+      "nalbantX": "1791218886894",
+      "silahhaneX": "1791218898347"
+    },
+    "buildings_status": "saved-not-integrated: isometric 3/4 view clashes with front-facing hub, detail lost when shrunk to hub size, only 3 of 8 have damaged variants",
+    "resize": "portraits 32->28 nearest-centre; items cropped to content then nearest to 16px (spirits also 20px, and native 32px for the boon screen)"
   }
 }
