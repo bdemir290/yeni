@@ -22,6 +22,14 @@ def embed_png(value):
             return 'data:image/png;base64,' + base64.b64encode(image.read()).decode('ascii')
     return value
 js = 'const PIXELLAB_ASSETS = ' + json.dumps(embed_png(assets), ensure_ascii=True) + ';\n'
+# translations: web/i18n/<lang>.json maps the Turkish source line to the translated line
+i18n = {}
+i18n_dir = os.path.join(ROOT, 'i18n')
+if os.path.isdir(i18n_dir):
+    for fn in sorted(glob.glob(os.path.join(i18n_dir, '*.json'))):
+        lang = os.path.splitext(os.path.basename(fn))[0]
+        if len(lang) == 2: i18n[lang] = json.load(open(fn, encoding='utf-8'))
+js += 'const I18N = ' + json.dumps(i18n, ensure_ascii=True) + ';\n'
 js += "\n".join(open(f, encoding='utf-8').read() for f in files)
 script = "(function(){\n'use strict';\n" + js + "\n})();"
 

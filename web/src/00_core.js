@@ -1,3 +1,23 @@
+// ---------- language (v6.1) ----------
+// UI text stays Turkish in the source, wrapped in TX('...'). build.py embeds web/i18n/<lang>.json as I18N,
+// and TX looks the Turkish line up in the chosen language. Missing lines fall back to Turkish.
+const LANGS = ['tr', 'en', 'de', 'es', 'id'];
+const LANG_NAMES = { tr: 'TÜRKÇE', en: 'ENGLISH', de: 'DEUTSCH', es: 'ESPAÑOL', id: 'INDONESIA' };
+// the newest of the app's save and the page's own copy (after a language switch the app may still hold an older one)
+function newestSaveRaw() {
+  let a = null, b = null;
+  try { if (typeof window.__NATIVE_SAVE__ === 'string' && window.__NATIVE_SAVE__.length > 2) a = window.__NATIVE_SAVE__; } catch (e) { }
+  try { b = localStorage.getItem('dortnala_save_v1'); } catch (e) { }
+  const at = r => { try { return (JSON.parse(r).savedAt) || 0; } catch (e) { return -1; } };
+  if (a && b) return at(b) > at(a) ? b : a;
+  return a || b;
+}
+const LANG = (function () {
+  try { const r = newestSaveRaw(); const l = r && JSON.parse(r).settings && JSON.parse(r).settings.lang; if (LANGS.indexOf(l) >= 0) return l; } catch (e) { }
+  const nav = ((navigator.languages && navigator.languages[0]) || navigator.language || 'tr').slice(0, 2).toLowerCase();
+  return nav === 'in' ? 'id' : LANGS.indexOf(nav) >= 0 ? nav : 'en';
+})();
+const TX = s => { const d = I18N[LANG]; return (d && d[s]) || s; };
 // ================= CORE =================
 // Endesga 32 palette
 const C = {
@@ -42,12 +62,13 @@ function hash2(x, y) {
 const TRUP_CACHE = new Map();
 const trUp = s => {
   s = String(s); let u = TRUP_CACHE.get(s);
-  if (u === undefined) { u = s.toLocaleUpperCase('tr-TR'); if (TRUP_CACHE.size > 2000) TRUP_CACHE.clear(); TRUP_CACHE.set(s, u); }
+  if (u === undefined) { u = s.toLocaleUpperCase(LANG === 'tr' ? 'tr-TR' : LANG); if (TRUP_CACHE.size > 2000) TRUP_CACHE.clear(); TRUP_CACHE.set(s, u); }
   return u;
 };
 
 // Turkish accusative suffix with vowel harmony: ZARG → ZARG'I, NİVA → NİVA'YI, KRİSTALO → KRİSTALO'YU
 function trAcc(name) {
+  if (LANG !== 'tr') return trUp(name); // other languages phrase these lines without a suffix
   const up = trUp(name), V = 'AEIİOÖUÜ', m = { A: 'I', I: 'I', E: 'İ', İ: 'İ', O: 'U', U: 'U', Ö: 'Ü', Ü: 'Ü' };
   let last = 'A'; for (const ch of up) if (V.indexOf(ch) >= 0) last = ch;
   return up + '\'' + (V.indexOf(up[up.length - 1]) >= 0 ? 'Y' : '') + m[last];

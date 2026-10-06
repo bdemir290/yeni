@@ -9,16 +9,16 @@ const PICKUP = { coin: 1, clover: 1, heart: 1, sugar: 1 };
 const GRADES = [['S', 0.92, C.gold, 15], ['A', 0.8, C.green, 8], ['B', 0.65, C.sky, 0], ['C', 0.5, C.lgray, 0], ['D', 0, C.salmon, 0]];
 const JUMP_GRACE = 0.09; // seconds a swipe-up may come after touching a jumpable obstacle (about 5 frames)
 // what hit you, shown next to the horse; jumpable ones remind you to jump
-const HURT_LABELS = { rock: 'GÖKTAŞI!', fici: 'VARİL!', scan: 'LAZER: ŞERİDİ DEĞİŞTİR', arrow: 'PLAZMA!', bolt: 'YILDIRIM!', foe: 'DÜŞMAN!', reis: 'KAPTAN!',
-  storm: 'KARA DELİK!', boss: 'FARK KAPANDI!', hurdle: 'BARİYER: SIÇRA!', log: 'BORU: SIÇRA!', bale: 'VARİL!', wolf: 'AV KÖPEĞİ!', civi: 'MAYIN: SIÇRA!', toz: 'ŞOK DALGASI: SIÇRA!',
-  ice: 'BUZ SARKITI!', kum: 'KUM SOLUCANI!', icerock: 'BUZ DUVARI!', ember: 'KOR YAĞMURU!', lavarock: 'LAV TAŞI!' };
+const HURT_LABELS = { rock: TX('GÖKTAŞI!'), fici: TX('VARİL!'), scan: TX('LAZER: ŞERİDİ DEĞİŞTİR'), arrow: TX('PLAZMA!'), bolt: TX('YILDIRIM!'), foe: TX('DÜŞMAN!'), reis: TX('KAPTAN!'),
+  storm: TX('KARA DELİK!'), boss: TX('FARK KAPANDI!'), hurdle: TX('BARİYER: SIÇRA!'), log: TX('BORU: SIÇRA!'), bale: TX('VARİL!'), wolf: TX('AV KÖPEĞİ!'), civi: TX('MAYIN: SIÇRA!'), toz: TX('ŞOK DALGASI: SIÇRA!'),
+  ice: TX('BUZ SARKITI!'), kum: TX('KUM SOLUCANI!'), icerock: TX('BUZ DUVARI!'), ember: TX('KOR YAĞMURU!'), lavarock: TX('LAV TAŞI!') };
 const FOE_TIPS = {
-  karga: 'GÖZCÜ UÇAR, SIÇRAMAK İŞE YARAMAZ. VUR YA DA KAÇ!',
-  domuz: 'TOSBİK ÜSTÜNE KOŞAR. ÜSTÜNDEN SIÇRA YA DA VUR!',
-  eskiya: 'KORSAN ÖNÜNE DİKEN MAYIN ATAR. VUR VE KESESİNİ AL!',
-  okcu: 'NİŞANCI BİR VURUŞ NİŞAN ALIR, SONRAKİ VURUŞTA ATEŞ EDER. KIRMIZI ÇİZGİDEN ÇIK!',
-  kalkanli: 'KALKAN ROBOTU IŞINLARI SEKTİRİR. ALTIN NOTA, PLAZMA YA DA DELİCİ IŞINLA KIR!',
-  reis: 'KORSAN KAPTANI GELDİ! YENERSEN 3 DÜŞMAN SAYILIR, KESESİ DOLUDUR.'
+  karga: TX('GÖZCÜ UÇAR, SIÇRAMAK İŞE YARAMAZ. VUR YA DA KAÇ!'),
+  domuz: TX('TOSBİK ÜSTÜNE KOŞAR. ÜSTÜNDEN SIÇRA YA DA VUR!'),
+  eskiya: TX('KORSAN ÖNÜNE DİKEN MAYIN ATAR. VUR VE KESESİNİ AL!'),
+  okcu: TX('NİŞANCI BİR VURUŞ NİŞAN ALIR, SONRAKİ VURUŞTA ATEŞ EDER. KIRMIZI ÇİZGİDEN ÇIK!'),
+  kalkanli: TX('KALKAN ROBOTU IŞINLARI SEKTİRİR. ALTIN NOTA, PLAZMA YA DA DELİCİ IŞINLA KIR!'),
+  reis: TX('KORSAN KAPTANI GELDİ! YENERSEN 3 DÜŞMAN SAYILIR, KESESİ DOLUDUR.')
 };
 
 function newRun(opts) {
@@ -107,12 +107,12 @@ function rewardLabel(rew, elite) {
   if (!rew) return '';
   const m = rewardMult(elite);
   if (rew.kind === 'boon') return SPIRITS[rew.sp].name;
-  if (rew.kind === 'coins') return Math.round(rew.n * m) + ' SİKKE';
-  if (rew.kind === 'yonca') return Math.round(rew.n * m) + ' KRİSTAL';
-  if (rew.kind === 'heal') return '+' + rew.n * (elite ? 2 : 1) + ' CAN';
-  if (rew.kind === 'seker') return (elite ? 2 : 1) + ' ŞEKER';
-  if (rew.kind === 'cekic') return 'ÇEKİÇ';
-  if (rew.kind === 'boss') return 'ROZET';
+  if (rew.kind === 'coins') return Math.round(rew.n * m) + TX(' SİKKE');
+  if (rew.kind === 'yonca') return Math.round(rew.n * m) + TX(' KRİSTAL');
+  if (rew.kind === 'heal') return '+' + rew.n * (elite ? 2 : 1) + TX(' CAN');
+  if (rew.kind === 'seker') return (elite ? 2 : 1) + TX(' ŞEKER');
+  if (rew.kind === 'cekic') return TX('ÇEKİÇ');
+  if (rew.kind === 'boss') return TX('ROZET');
   return '';
 }
 function rewardIcon(rew) {
@@ -125,10 +125,10 @@ function grantReward(rew, elite) {
   if (!rew) { go('doors'); return; }
   if (rew.kind === 'boon') { if (elite) RUN.rareNext = true; go('boon', { sp: rew.sp }); return; }
   if (rew.kind === 'cekic') { if (elite) RUN.coins += 30; go('cekic'); return; }
-  if (rew.kind === 'coins') { const n = Math.round(rew.n * mult); RUN.coins += n; RUN.coinsEarned += n; missionEvent('coins', RUN.coinsEarned); toast('+' + n + ' SİKKE', C.gold, 'coin0'); Sound.play('buy'); }
-  else if (rew.kind === 'yonca') { const n = Math.round(rew.n * mult); RUN.yonca += n; missionEvent('yonca', n); toast('+' + n + ' KRİSTAL', C.cyan, 'clover'); Sound.play('clover'); }
-  else if (rew.kind === 'heal') { const S = computeStats(RUN), n = rew.n * (elite ? 2 : 1); RUN.hp = Math.min(S.maxHp, RUN.hp + n); toast('+' + n + ' CAN', C.red, 'heart'); Sound.play('heart'); }
-  else if (rew.kind === 'seker') { const n = elite ? 2 : 1; RUN.seker += n; toast('+' + n + ' ŞEKER', C.white, 'seker'); Sound.play('gift'); }
+  if (rew.kind === 'coins') { const n = Math.round(rew.n * mult); RUN.coins += n; RUN.coinsEarned += n; missionEvent('coins', RUN.coinsEarned); toast('+' + n + TX(' SİKKE'), C.gold, 'coin0'); Sound.play('buy'); }
+  else if (rew.kind === 'yonca') { const n = Math.round(rew.n * mult); RUN.yonca += n; missionEvent('yonca', n); toast('+' + n + TX(' KRİSTAL'), C.cyan, 'clover'); Sound.play('clover'); }
+  else if (rew.kind === 'heal') { const S = computeStats(RUN), n = rew.n * (elite ? 2 : 1); RUN.hp = Math.min(S.maxHp, RUN.hp + n); toast('+' + n + TX(' CAN'), C.red, 'heart'); Sound.play('heart'); }
+  else if (rew.kind === 'seker') { const n = elite ? 2 : 1; RUN.seker += n; toast('+' + n + TX(' ŞEKER'), C.white, 'seker'); Sound.play('gift'); }
   go('doors');
 }
 
@@ -323,7 +323,7 @@ SCENES.run = {
     }
     for (const b of this.bends) if (!b.told && P.dist > b.y0 - 240 && P.dist < b.y1) {
       b.told = true;
-      this.showBanner(b.dir < 0 ? '← SOLA VİRAJ' : 'SAĞA VİRAJ →', C.yellow);
+      this.showBanner(b.dir < 0 ? TX('← SOLA VİRAJ') : TX('SAĞA VİRAJ →'), C.yellow);
       Sound.play('warn');
     }
   },
@@ -500,7 +500,7 @@ SCENES.run = {
     const gwin = Math.max(S.goodWin, pw + 0.03);
     if (bd <= pw) { this.hitTarget(best, 'perfect'); this.beatDown = { t: now(), perfect: true }; }
     else if (bd <= gwin) { this.hitTarget(best, 'good'); this.beatDown = { t: now(), perfect: false }; }
-    else { this.pending = 'miss'; if (bd < 0.4) this.missHint = this.lastDelta > 0 ? 'ERKEN' : 'GEÇ'; }
+    else { this.pending = 'miss'; if (bd < 0.4) this.missHint = this.lastDelta > 0 ? TX('ERKEN') : TX('GEÇ'); }
   },
   tap() {
     if (this.paused) return;
@@ -517,8 +517,8 @@ SCENES.run = {
     const bd = this.beatDown; this.beatDown = null;
     if (bd && now() - bd.t < 0.3 && dir !== 'down') {
       P.cleanT = Math.max(P.cleanT, bd.perfect ? 0.6 : 0.4); this.addBond(1); this.rate(1.5); RUN.beatSteps = (RUN.beatSteps || 0) + 1; missionEvent('adim', 1);
-      if (this.time - (this.stepLabelT || -9) > 1.4) { this.stepLabelT = this.time; floatText('RİTMİK ADIM', P.x, this.pY + 24, C.cyan, 1, 8, 0.5); }
-      if (!META.tipsSeen.adim) { META.tipsSeen.adim = true; toast('NOTA ANINDA KAYDIRMAK DA VURUŞ SAYILIR: RİTMİK ADIM HIZ VERİR', C.cyan, 'run'); }
+      if (this.time - (this.stepLabelT || -9) > 1.4) { this.stepLabelT = this.time; floatText(TX('RİTMİK ADIM'), P.x, this.pY + 24, C.cyan, 1, 8, 0.5); }
+      if (!META.tipsSeen.adim) { META.tipsSeen.adim = true; toast(TX('NOTA ANINDA KAYDIRMAK DA VURUŞ SAYILIR: RİTMİK ADIM HIZ VERİR'), C.cyan, 'run'); }
     }
     if (dir === 'left' || dir === 'right') {
       const nl = clamp(P.lane + (dir === 'left' ? -1 : 1), 0, 4);
@@ -556,11 +556,11 @@ SCENES.run = {
     if (P.draftFull && this.state === 'run') {
       P.draft = 0; P.draftFull = false; P.slingT = 1.3;
       META.stats.drafts++; missionEvent('draft', 1); this.addBond(4);
-      floatText('SİPER ÇIKIŞI!', P.x, this.pY - 28, C.cyan, 1, -16, 1); this.rate(6);
+      floatText(TX('SİPER ÇIKIŞI!'), P.x, this.pY - 28, C.cyan, 1, -16, 1); this.rate(6);
       Sound.play('sling'); haptic('medium');
       for (let i = 0; i < 10; i++) this.lines.push({ x: this.trackL + rnd() * this.laneW * 5, y: rnd() * H, l: 10 + rnd() * 12, t: 0.5 });
     }
-    if (this.tut && this.tut.step === 1 && this.timeScale < 1) this.tutNext('SÜPER!');
+    if (this.tut && this.tut.step === 1 && this.timeScale < 1) this.tutNext(TX('SÜPER!'));
   },
   pushRival(r, dir) {
     const nl = r.lane + dir;
@@ -578,9 +578,9 @@ SCENES.run = {
     }
     P.jumping = true; P.jumpT = 0; P.apexDone = false; P.jumpsLeft = this.S.extraJumps; Sound.play('jump');
     // a jump in the grace window still clears what you were touching: a last-moment save
-    for (const o of this.obs) if (o.grace && !o.hit && !o.jumped && this.time - o.grace < JUMP_GRACE) { o.jumped = true; this.nearMiss(); floatText('SON ANDA!', P.x, this.pY - 36, C.green, 1, -12, 0.7); }
+    for (const o of this.obs) if (o.grace && !o.hit && !o.jumped && this.time - o.grace < JUMP_GRACE) { o.jumped = true; this.nearMiss(); floatText(TX('SON ANDA!'), P.x, this.pY - 36, C.green, 1, -12, 0.7); }
     burst(P.x, this.pY + 10, 5, this.reg.dirtL, 25, 0.3);
-    if (this.tut && this.tut.step === 2 && this.timeScale < 1) this.tutNext('UÇUYORSUN!');
+    if (this.tut && this.tut.step === 2 && this.timeScale < 1) this.tutNext(TX('UÇUYORSUN!'));
   },
   land() {
     const P = this.P, S = this.S; Sound.play('land');
@@ -607,27 +607,27 @@ SCENES.run = {
     const tutHamle = this.tut && this.tut.step >= 5;
     if ((this.tut && !tutHamle) || this.state !== 'run' || this.paused || P.hamleCd > 0) return;
     const cost = this.hamleCostNow();
-    if (this.nefes < cost) { floatText('NEFES YETMİYOR', P.x, this.pY - 22, C.gray, 1, -10, 0.6); Sound.play('deny'); return; }
+    if (this.nefes < cost) { floatText(TX('NEFES YETMİYOR'), P.x, this.pY - 22, C.gray, 1, -10, 0.6); Sound.play('deny'); return; }
     this.nefes -= cost; P.hamleT = S.hamleDur; P.hamleCd = 0.7;
     RUN.hamles++; META.stats.hamles++; missionEvent('hamle', 1);
     Sound.play('dash'); haptic('medium');
     for (let i = 0; i < 10; i++) this.lines.push({ x: this.trackL + rnd() * this.laneW * 5, y: rnd() * H, l: 10 + rnd() * 12, t: 0.45 });
     if (S.hamleStars) this.starBurst(S.hamleStars);
-    if (S.hamleShield && !this.hamleShieldUsed) { this.hamleShieldUsed = true; P.shield++; floatText('+KALKAN', P.x, this.pY - 30, C.gold, 1, -12, 0.8); }
+    if (S.hamleShield && !this.hamleShieldUsed) { this.hamleShieldUsed = true; P.shield++; floatText(TX('+KALKAN'), P.x, this.pY - 30, C.gold, 1, -12, 0.8); }
     if (this.boss && this.boss.taunt > 0) this.breakTaunt();
     if (this.frost > 0) this.breakFrost();
-    if (this.tut && this.tut.step === 5) { this.tutRivals(); this.tut.msg = 'HAMLE! NEFES HIZA DÖNÜŞTÜ'; this.tut.msgT = 1.6; Sound.play('select'); }
+    if (this.tut && this.tut.step === 5) { this.tutRivals(); this.tut.msg = TX('HAMLE! NEFES HIZA DÖNÜŞTÜ'); this.tut.msgT = 1.6; Sound.play('select'); }
   },
   useAbility() {
     if (this.bond < 100 || this.state !== 'run' || this.paused) return;
     this.bond = 0; missionEvent('ability', 1); haptic('success');
     const P = this.P, S = this.S;
-    if (RUN.jockey === 'ayse') { P.abilityT = 4; Sound.play('power'); flash(C.yellow, 0.25); floatText('SAKİN NEFES!', W / 2, this.pY - 50, C.yellow, 2, -10, 1.2); this.gainNefes(40); }
+    if (RUN.jockey === 'ayse') { P.abilityT = 4; Sound.play('power'); flash(C.yellow, 0.25); floatText(TX('SAKİN NEFES!'), W / 2, this.pY - 50, C.yellow, 2, -10, 1.2); this.gainNefes(40); }
     else if (RUN.jockey === 'kemal') {
       P.dist += 160; P.invuln = Math.max(P.invuln, 0.9);
       if (this.boss) this.boss.gap = Math.min(99, this.boss.gap + 25);
       if (this.storm) this.storm.gap += 45;
-      Sound.play('dash'); flash(C.white, 0.3); floatText('USTA ATAĞI!', W / 2, this.pY - 50, C.white, 2, -10, 1.2);
+      Sound.play('dash'); flash(C.white, 0.3); floatText(TX('USTA ATAĞI!'), W / 2, this.pY - 50, C.white, 2, -10, 1.2);
       for (let i = 0; i < 14; i++) this.lines.push({ x: this.trackL + rnd() * this.laneW * 5, y: rnd() * H, l: 12 + rnd() * 14, t: 0.6 });
     } else {
       for (const o of this.obs) if (!o.dead && HAZARD[o.kind] && o.y > P.dist - 10 && o.y < P.dist + this.pY) { if (o.kind === 'fici') this.hitFici(o, 99); else this.breakObs(o); }
@@ -636,25 +636,25 @@ SCENES.run = {
       for (const r of this.rivals) if (Math.abs(r.dist - P.dist) < 160) r.stun = 1.8;
       if (this.boss) { this.boss.gap = Math.min(99, this.boss.gap + 15); this.boss.stun = 3; }
       this.bolts.length = 0; this.eShots.length = 0;
-      Sound.play('roar'); shake(4, 0.4); flash(C.orange, 0.25); floatText('KÜKREME!', W / 2, this.pY - 50, C.orange, 2, -10, 1.2);
+      Sound.play('roar'); shake(4, 0.4); flash(C.orange, 0.25); floatText(TX('KÜKREME!'), W / 2, this.pY - 50, C.orange, 2, -10, 1.2);
     }
     let y = this.pY - 32;
     const tag = (s, c) => { floatText(s, W / 2, y, c, 1, -10, 1.3); y -= 10; };
-    if (S.abFly) { P.flyT = S.abFly; tag('TULPAR KANADI!', C.cyan); }
+    if (S.abFly) { P.flyT = S.abFly; tag(TX('TULPAR KANADI!'), C.cyan); }
     if (S.abStun) {
       for (const f of this.foes) if (!f.dead) f.stun = Math.max(f.stun, 2.5);
       for (const r of this.rivals) r.stun = Math.max(r.stun, 1.5);
       if (this.boss) this.boss.stun = Math.max(this.boss.stun, 2);
-      P.shield += S.abShield; tag('KÖROĞLU NARASI!', C.red); Sound.play('roar');
+      P.shield += S.abShield; tag(TX('KÖROĞLU NARASI!'), C.red); Sound.play('roar');
     }
-    if (S.abGhosts) { P.ghostsT = S.abGhosts; tag('GÖLGE SÜRÜSÜ!', C.magenta); }
+    if (S.abGhosts) { P.ghostsT = S.abGhosts; tag(TX('GÖLGE SÜRÜSÜ!'), C.magenta); }
     if (S.abStars) {
       for (const f of this.foes) if (!f.dead && this.sy(f.dist) > -10 && this.sy(f.dist) < H) { this.damageFoe(f, S.abStars, { breakShield: true }); for (let i = 0; i < 4; i++) addPart(f.x + (rnd() - 0.5) * 8, this.sy(f.dist) - 30 - rnd() * 30, 0, 160, 0.25, C.yellow, 2, 0); }
       for (let i = 0; i < 26; i++) addPart(this.trackL + rnd() * this.laneW * 5, -rnd() * 60, (rnd() - 0.5) * 20, 220 + rnd() * 80, 1.6, i % 3 ? C.yellow : C.white, 2, 0);
       if (this.boss) this.boss.gap = Math.min(99, this.boss.gap + 4 * S.abStars);
-      tag('TAKIMYILDIZ!', C.yellow); Sound.play('medal');
+      tag(TX('TAKIMYILDIZ!'), C.yellow); Sound.play('medal');
     }
-    if (S.abStorm) { P.stormT = S.abStorm; tag('FIRTINA ATAĞI!', C.green); Sound.play('whoosh'); }
+    if (S.abStorm) { P.stormT = S.abStorm; tag(TX('FIRTINA ATAĞI!'), C.green); Sound.play('whoosh'); }
   },
   togglePause() {
     if (this.state !== 'run' && this.state !== 'intro') return;
@@ -671,7 +671,7 @@ SCENES.run = {
   judgeMiss() {
     const S = this.S, P = this.P;
     if (this.combo > 0 && P.stormT <= 0) this.combo = S.comboKeep ? Math.floor(this.combo / 2) : 0;
-    this.showJudge(this.missHint ? 'ISKA · ' + this.missHint : 'ISKA', C.gray); Sound.play('miss'); this.tapMisses = (this.tapMisses || 0) + 1;
+    this.showJudge(this.missHint ? TX('ISKA · ') + this.missHint : TX('ISKA'), C.gray); Sound.play('miss'); this.tapMisses = (this.tapMisses || 0) + 1;
     this.gateMiss();
     this.fireWeapon('miss');
   },
@@ -689,24 +689,24 @@ SCENES.run = {
       RUN.perfects++; META.stats.perfects++; missionEvent('perfect', 1);
       this.addBond(7); this.shoeFlash = 1;
       Sound.play('perfect', this.combo / 2); haptic('light');
-      this.showJudge('MÜKEMMEL', C.yellow);
+      this.showJudge(TX('MÜKEMMEL'), C.yellow);
       burst(P.x, this.pY + 9, 5, [C.yellow, C.white], 35, 0.35);
-    } else { this.addBond(4); Sound.play('good'); this.showJudge(this.lastDelta > 0 ? 'İYİ · ERKEN' : 'İYİ · GEÇ', C.white); this.shoeFlash = 0.5; }
+    } else { this.addBond(4); Sound.play('good'); this.showJudge(this.lastDelta > 0 ? TX('İYİ · ERKEN') : TX('İYİ · GEÇ'), C.white); this.shoeFlash = 0.5; }
     if (this.boss) this.boss.gap = Math.min(100, this.boss.gap + (perfect ? 1.0 : 0.5) * (tg.kind === 'a' && perfect ? 1.6 : 1));
     this.gainNefes(perfect ? 1.5 : 0.75);
     if (tg.kind === 'a' && perfect) this.fireSpecial(); else this.fireWeapon(grade);
     if (tg.kind === 'd' || tg.kind === 'd2') {
       const mate = this.targets.find(o => o !== tg && o.pair === tg.pair);
-      if (mate && mate.hit) { this.showJudge('ÇİFT!', C.magenta); this.addBond(3); if (S.doubleBonus) { this.fireWeapon('good'); this.gainNefes(4); } }
+      if (mate && mate.hit) { this.showJudge(TX('ÇİFT!'), C.magenta); this.addBond(3); if (S.doubleBonus) { this.fireWeapon('good'); this.gainNefes(4); } }
     }
     if (tg.kind === 'h') { this.hold = { tg, start: tg.t, end: tg.t + tg.len - 0.35 }; Sound.play('select'); }
     if (S.volley && this.combo % S.volley === 0) this.volley();
     if (this.combo % 10 === 0) {
       Sound.play('combo'); haptic('medium'); this.rate(4); if (this.combo >= 20) this.say('combo');
       // milestone text only where it adds something: 10 and 20, then every 50 (30s already show DÖRTNAL)
-      if (this.combo % 30 !== 0 && (this.combo <= 20 || this.combo % 50 === 0)) floatText(this.combo + ' KOMBO!', W / 2, this.pY - 44, C.gold, 2, -12, 1.1);
+      if (this.combo % 30 !== 0 && (this.combo <= 20 || this.combo % 50 === 0)) floatText(this.combo + TX(' KOMBO!'), W / 2, this.pY - 44, C.gold, 2, -12, 1.1);
     }
-    if (S.starDust && this.combo % 30 === 0 && RUN.hp < S.maxHp) { RUN.hp++; floatText('+1 CAN', P.x, this.pY - 22, C.red); Sound.play('heart'); }
+    if (S.starDust && this.combo % 30 === 0 && RUN.hp < S.maxHp) { RUN.hp++; floatText(TX('+1 CAN'), P.x, this.pY - 22, C.red); Sound.play('heart'); }
     if (this.tut && this.tut.step === 3) this.tut.hits++;
     if (tg.kind === 'a' && perfect && this.boss && this.boss.taunt > 0) this.breakTaunt();
     if (tg.kind === 'a' && perfect && this.frost > 0) this.breakFrost();
@@ -717,9 +717,9 @@ SCENES.run = {
     const bp = Beat.pos(now()), P = this.P;
     if (auto || bp >= h.end - 0.15) {
       this.gainNefes(25); this.addBond(6); RUN.holds++; META.stats.holds++; missionEvent('nefes', 1); this.gateHit();
-      this.showJudge('NEFES!', C.cyan); Sound.play('heal');
+      this.showJudge(TX('NEFES!'), C.cyan); Sound.play('heal');
       for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2; addPart(P.x + Math.cos(a) * 12, this.pY + Math.sin(a) * 12, -Math.cos(a) * 30, -Math.sin(a) * 30, 0.5, i % 2 ? C.cyan : C.white, 1); }
-    } else { this.showJudge('BIRAKTIN', C.gray); Sound.play('miss'); }
+    } else { this.showJudge(TX('BIRAKTIN'), C.gray); Sound.play('miss'); }
   },
   rhythmGrade() {
     const p = this.etapPerfects || 0, gd = this.etapGoods || 0, total = p + gd + (this.missedNotes || 0) + 0.5 * (this.tapMisses || 0);
@@ -770,14 +770,14 @@ SCENES.run = {
     else if (w === 'tatar') { this.addShot(Object.assign({}, base, { x: P.x, dist: y0, dmg: base.dmg * 2 * m, pierce: 99, breaks: true, aim: true, special: true, big: true })); Sound.play('bolt'); }
     else if (w === 'top') { this.addShot(Object.assign({}, base, { x: P.x, dist: y0, dmg: base.dmg * 1.5 * m, aoe: true, special: true, big: true })); Sound.play('cannon'); shake(2, 0.12); }
     else { for (let i = 0; i < 3; i++) this.addShot(Object.assign({}, base, { x: P.x, dist: y0 - Math.abs(i - 1) * 5, vx: (i - 1) * 45, dmg: base.dmg * 1.3 * m, aim: i === 1, special: true })); Sound.play('shoot'); }
-    floatText(WEAPON_SPECIAL[w] || 'GÜÇ!', P.x, this.pY - 30, C.gold, 1, -16, 0.7);
+    floatText(WEAPON_SPECIAL[w] || TX('GÜÇ!'), P.x, this.pY - 30, C.gold, 1, -16, 0.7);
     for (let i = 0; i < 8; i++) { const a = i / 8 * Math.PI * 2; addPart(P.x + Math.cos(a) * 9, this.pY + Math.sin(a) * 9, Math.cos(a) * 40, Math.sin(a) * 40, 0.35, C.gold, 1); }
     haptic('medium');
   },
   volley() {
     const P = this.P, base = this.shotBase(false);
     for (let l = 0; l < 5; l++) this.addShot(Object.assign({}, base, { kind: 'arrow', x: this.laneX(l), dist: P.dist + 10 - Math.abs(l - P.lane) * 6, aoe: false }));
-    floatText('IŞIK YAĞMURU!', W / 2, this.pY - 56, C.green, 1, -10, 0.9); Sound.play('whoosh');
+    floatText(TX('IŞIK YAĞMURU!'), W / 2, this.pY - 56, C.green, 1, -10, 0.9); Sound.play('whoosh');
   },
   starBurst(n) {
     const P = this.P;
@@ -810,7 +810,7 @@ SCENES.run = {
           if (s.aoe) { this.explode(s); s.dead = true; break; }
           if (f.kind === 'kalkanli' && f.stun <= 0 && f.laneT >= 1 && !(s.pierce > 0 || s.special || s.breaks)) {
             s.dead = true; Sound.play('ehit'); burst(s.x, this.sy(f.dist) + 4, 5, [C.white, C.yellow], 40, 0.3); f.flash = 0.06;
-            floatText('TINK', f.x, this.sy(f.dist) - 14, C.lgray, 1, -14, 0.4);
+            floatText(TX('TINK'), f.x, this.sy(f.dist) - 14, C.lgray, 1, -14, 0.4);
             break;
           }
           this.damageFoe(f, s.dmg, s); s.hit.push(f); s.lastHit = f;
@@ -826,7 +826,7 @@ SCENES.run = {
           s.dead = true; Sound.play('ehit');
           if (this.duel.stunImm <= 0) {
             r.stun = Math.max(r.stun, s.special ? 0.9 : 0.4); this.duel.stunImm = s.special ? 4 : 3;
-            floatText('SERSEMLEDİ!', r.x, this.sy(r.dist) - 28, C.yellow, 1, -8, 0.7); this.rate(3);
+            floatText(TX('SERSEMLEDİ!'), r.x, this.sy(r.dist) - 28, C.yellow, 1, -8, 0.7); this.rate(3);
           } else burst(s.x, this.sy(r.dist), 4, [C.white, C.cyan], 30, 0.25);
           continue;
         }
@@ -871,7 +871,7 @@ SCENES.run = {
     f.hp -= dmg; f.flash = 0.12;
     // a golden-note shot, piercing bolt, blast or ram knocks the guard's shield aside
     if (f.kind === 'kalkanli' && src && (src.breakShield || src.special || src.pierce > 0 || src.breaks || src.aoe) && f.stun < 1 && f.hp > 0.001) {
-      f.stun = 1.8; floatText('KALKAN DÜŞTÜ!', f.x, this.sy(f.dist) - 18, C.gold, 1, -12, 0.7);
+      f.stun = 1.8; floatText(TX('KALKAN DÜŞTÜ!'), f.x, this.sy(f.dist) - 18, C.gold, 1, -12, 0.7);
     }
     if (src && src.knock && f.kind !== 'reis') { f.dist += 18; f.stun = Math.max(f.stun, 0.3); }
     if (src && src.stun) f.stun = Math.max(f.stun, src.stun);
@@ -889,7 +889,7 @@ SCENES.run = {
     burst(f.x, sy, 10, cols, 50, 0.5, 80, 1);
     Sound.play('edie'); haptic('light'); this.rate(2);
     if (this.kills % 5 === 0) this.say('kill');
-    if (this.type === 'baskin' && this.kills === this.goal) { floatText('HEDEF TAMAM!', W / 2, this.pY - 64, C.green, 1, -8, 1.3); Sound.play('combo'); }
+    if (this.type === 'baskin' && this.kills === this.goal) { floatText(TX('HEDEF TAMAM!'), W / 2, this.pY - 64, C.green, 1, -8, 1.3); Sound.play('combo'); }
   },
   hitFici(o, dmg) {
     o.hp = (o.hp || 2) - dmg; o.flash = 0.12;
@@ -923,7 +923,7 @@ SCENES.run = {
       D.tele = { kind: 'drop' }; D.nextTrick = b + 7; Sound.play('hey');
     } else if (r.style === 'sondan' && this.finalStretch && !D.surged) {
       D.surged = 1; D.surgeT = 3.2; D.nextTrick = b + 8;
-      this.banner = { txt: r.name + ' ATAĞA KALKTI!', col: C.salmon }; this.bannerT = 1.6; Sound.play('roar');
+      this.banner = { txt: r.name + TX(' ATAĞA KALKTI!'), col: C.salmon }; this.bannerT = 1.6; Sound.play('roar');
     } else if (r.style === 'atici' && gap > 40 && gap < 220 && r.laneT >= 1 && P.dist < this.length * 0.94) {
       D.tele = { kind: 'shot', lane: P.lane }; D.nextTrick = b + 5; Sound.play('warn');
     } else if (r.style === 'zikzak' && gap > 6 && gap < 64 && Math.abs(r.lane - P.lane) === 1 && r.laneT >= 1 && this.laneFree(P.lane, r.dist, r)) {
@@ -931,7 +931,7 @@ SCENES.run = {
     } else if (gap > 6 && gap < 55 && Math.abs(r.lane - P.lane) === 1 && r.laneT >= 1 && D.blockCd <= 0 && this.laneFree(P.lane, r.dist, r)) {
       // cuts in front of you: go around it (being behind it still fills your draft)
       r.fromX = r.x; r.lane = P.lane; r.laneT = 0; r.cool = 1; D.blockCd = 3.5; D.nextTrick = b + 4;
-      floatText('ÖNÜNÜ KESTİ!', r.x, this.sy(r.dist) - 28, C.salmon, 1, -8, 0.8);
+      floatText(TX('ÖNÜNÜ KESTİ!'), r.x, this.sy(r.dist) - 28, C.salmon, 1, -8, 0.8);
     }
   },
   duelAct(t) {
@@ -939,13 +939,13 @@ SCENES.run = {
     if (r.done || r.stun > 0) return;
     if (t.kind === 'push') {
       if (P.lane === t.lane && Math.abs(r.dist - P.dist) < 26 && P.flyT <= 0 && !P.jumping && !this.invulnerable()) {
-        if (S.shoulder) { this.pushRival(r, r.lane - P.lane); floatText('KARŞILADIN!', P.x, this.pY - 18, C.green); }
+        if (S.shoulder) { this.pushRival(r, r.lane - P.lane); floatText(TX('KARŞILADIN!'), P.x, this.pY - 18, C.green); }
         else {
           P.slowT = 0.7; P.slowAmt = 0.32 * (1 - Math.min(0.8, S.slowResist)); P.bounce = r.lane < P.lane ? 1 : -1;
           this.nefes = Math.max(0, this.nefes - 8);
-          floatText('İTTİ!', P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(3, 0.16); haptic('medium');
+          floatText(TX('İTTİ!'), P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(3, 0.16); haptic('medium');
         }
-      } else { r.stun = 0.8; floatText('BOŞA ÇIKTI!', r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.8); Sound.play('whoosh'); this.addBond(4); this.rate(6); }
+      } else { r.stun = 0.8; floatText(TX('BOŞA ÇIKTI!'), r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.8); Sound.play('whoosh'); this.addBond(4); this.rate(6); }
     } else this.rivalAct(r, t);
   },
   updateLayer() {
@@ -967,9 +967,9 @@ SCENES.run = {
     if (this.state !== 'run' || window.__god) return false;
     if (this.invulnerable()) return false;
     if (S.assist > 0 && src !== 'rank' && src !== 'raid' && src !== 'boss' && src !== 'storm' && rnd() < S.assist) {
-      P.invuln = 0.5; floatText('YARDIM!', P.x, this.pY - 22, C.sky); Sound.play('bump'); shake(1, 0.1); return false;
+      P.invuln = 0.5; floatText(TX('YARDIM!'), P.x, this.pY - 22, C.sky); Sound.play('bump'); shake(1, 0.1); return false;
     }
-    if (P.shield > 0) { P.shield--; P.invuln = 0.6; floatText('KALKAN!', P.x, this.pY - 22, C.gold); Sound.play('bump'); shake(2, 0.15); haptic('medium'); return false; }
+    if (P.shield > 0) { P.shield--; P.invuln = 0.6; floatText(TX('KALKAN!'), P.x, this.pY - 22, C.gold); Sound.play('bump'); shake(2, 0.15); haptic('medium'); return false; }
     RUN.hp--; RUN.damage++; this.damaged++;
     this.heartLost = { i: RUN.hp, t: 0.8 };
     const cause = HURT_LABELS[src]; if (cause) floatText(cause, P.x, this.pY - 30, C.salmon, 1, -14, 1.1);
@@ -984,11 +984,11 @@ SCENES.run = {
       if (S.muska && !RUN.muskaUsed) {
         RUN.muskaUsed = true; RUN.hp = S.muska >= 2 ? 2 : 1; P.invuln = S.muska >= 3 ? 2.2 : 1.5;
         flash(C.magenta, 0.5); Sound.play('revive'); haptic('success');
-        floatText('BİP\'İN YEDEK PİLİ!', W / 2, this.pY - 50, C.magenta, 1, -10, 1.4);
+        floatText(TX('BİP\'İN YEDEK PİLİ!'), W / 2, this.pY - 50, C.magenta, 1, -10, 1.4);
       } else if (RUN.revivesUsed < S.revives) {
         RUN.revivesUsed++; RUN.hp = S.reviveHp; P.invuln = 2.4;
         flash(C.white, 0.5); Sound.play('revive'); haptic('success');
-        floatText('İKİNCİ NEFES!', W / 2, this.pY - 50, C.cyan, 2, -10, 1.4);
+        floatText(TX('İKİNCİ NEFES!'), W / 2, this.pY - 50, C.cyan, 2, -10, 1.4);
       } else this.die();
     }
     return true;
@@ -1016,7 +1016,7 @@ SCENES.run = {
     const n = Math.max(1, Math.round(2 * this.S.coinMult));
     RUN.coins += n; RUN.coinsEarned += n;
     this.addBond(5); this.gainNefes(4);
-    floatText('KIL PAYI! +' + n, this.P.x, this.pY - 26, C.cyan, 1, -18, 0.85);
+    floatText(TX('KIL PAYI! +') + n, this.P.x, this.pY - 26, C.cyan, 1, -18, 0.85);
     Sound.play('nearmiss'); haptic('light');
     this.rate(8); this.say('nearmiss');
   },
@@ -1028,13 +1028,13 @@ SCENES.run = {
     if (k >= 0.28 && k <= 0.72) {
       RUN.cleanJumps++; META.stats.cleanJumps++; missionEvent('temiz', 1);
       P.cleanT = 0.8; this.addBond(2); this.gainNefes(2 + S.cleanNefes);
-      floatText('TEMİZ!', P.x, this.pY - 26, C.green, 1, -14, 0.6); Sound.play('select'); this.rate(4);
+      floatText(TX('TEMİZ!'), P.x, this.pY - 26, C.green, 1, -14, 0.6); Sound.play('select'); this.rate(4);
       if (S.cleanStars) this.starBurst(S.cleanStars);
       if (S.cleanHamle) P.hamleT = Math.max(P.hamleT, 0.6);
     } else if (k > 0.82) {
       if (P.slowT <= 0.05) P.slowAmt = 0.15;
       P.slowT = Math.max(P.slowT, 0.35);
-      floatText('SIYIRDI', P.x, this.pY - 20, C.salmon, 1, -10, 0.5); Sound.play('bump');
+      floatText(TX('SIYIRDI'), P.x, this.pY - 20, C.salmon, 1, -10, 0.5); Sound.play('bump');
     }
   },
 
@@ -1061,7 +1061,7 @@ SCENES.run = {
     if (this.state === 'intro') {
       if (this.clockOn && now() >= Beat.t0 - 0.05) {
         this.state = 'run'; this.stateT = 0; this.onRaceStart();
-        if (this.happy) { floatText('MUTLU YILDIZ! +' + this.happy + ' KOMBO', W / 2, this.pY - 52, C.salmon, 1, -10, 1.6); Sound.play('nicker'); }
+        if (this.happy) { floatText(TX('MUTLU YILDIZ! +') + this.happy + TX(' KOMBO'), W / 2, this.pY - 52, C.salmon, 1, -10, 1.6); Sound.play('nicker'); }
       }
       if (window.__auto && this.tipKey && this.stateT > 0.4) this.dismissTip();
       else if (window.__auto && this.betOffer && this.stateT > 0.3) this.placeBet(window.__autoBet ? (this.betOffer.stakes[0] || 0) : 0);
@@ -1111,7 +1111,7 @@ SCENES.run = {
     }
     if (drafting && this.state === 'run') {
       P.draft = Math.min(1, P.draft + dt * (this.chasing ? 0.75 : 0.5)); this.gainNefes(8 * dt);
-      if (P.draft >= 1 && !P.draftFull) { P.draftFull = true; floatText('SİPER DOLU: YANA ÇIK!', P.x, this.pY + 22, C.cyan, 1, 6, 1); Sound.play('select'); }
+      if (P.draft >= 1 && !P.draftFull) { P.draftFull = true; floatText(TX('SİPER DOLU: YANA ÇIK!'), P.x, this.pY + 22, C.cyan, 1, 6, 1); Sound.play('select'); }
     } else if (!P.draftFull) P.draft = Math.max(0, P.draft - dt * 0.6);
     else { P.draft = Math.max(0, P.draft - dt * 0.25); if (P.draft <= 0) P.draftFull = false; }
     if (this.kick > 0 && this.state === 'run') this.nefes = Math.max(0, this.nefes - 22 * dt);
@@ -1138,7 +1138,7 @@ SCENES.run = {
       let rank = 1; for (const r of this.rivals) if (r.done || r.dist > P.dist) rank++;
       const was = this.chasing;
       this.chasing = rank > this.passRank() && P.dist > this.length * 0.12;
-      if (this.chasing && !was && !META.tipsSeen.chase) { META.tipsSeen.chase = true; toast('GERİDESİN: NEFES VE SİPER DAHA HIZLI DOLAR. HAMLEYİ KULLAN!', C.cyan, 'run'); }
+      if (this.chasing && !was && !META.tipsSeen.chase) { META.tipsSeen.chase = true; toast(TX('GERİDESİN: NEFES VE SİPER DAHA HIZLI DOLAR. HAMLEYİ KULLAN!'), C.cyan, 'run'); }
     } else this.chasing = false;
     if (this.boss) this.updateBoss(dt);
     this.updateBolts(dt);
@@ -1152,15 +1152,15 @@ SCENES.run = {
   },
   startFinalStretch() {
     this.finalStretch = true;
-    floatText('SON DÜZLÜK!', W / 2, this.pY - 64, C.yellow, 2, -8, 1.3); Sound.play('cheer'); this.say('final', true);
+    floatText(TX('SON DÜZLÜK!'), W / 2, this.pY - 64, C.yellow, 2, -8, 1.3); Sound.play('cheer'); this.say('final', true);
     if (this.nefes > 1) {
       this.kick = (0.03 + 0.12 * this.nefes / 100) * this.S.kickMult * (RUN.runStyle === 'sondan' ? 1.5 : 1);
       META.stats.kicks++;
-      floatText('SON ATAK! +%' + Math.round(this.kick * 100) + ' HIZ', W / 2, this.pY - 42, C.cyan, 1, -8, 1.4);
+      floatText(TX('SON ATAK! +%') + Math.round(this.kick * 100) + TX(' HIZ'), W / 2, this.pY - 42, C.cyan, 1, -8, 1.4);
       flash(C.cyan, 0.2); haptic('success');
     }
-    if (RUN.runStyle === 'sondan') floatText('SONDAN GELİYORSUN!', W / 2, this.pY - 30, C.green, 1, -8, 1.3);
-    if (this.type === 'baskin' && this.kills < this.goal) floatText((this.goal - this.kills) + ' DÜŞMAN DAHA!', W / 2, this.pY - 18, C.salmon, 1, -8, 1.5);
+    if (RUN.runStyle === 'sondan') floatText(TX('SONDAN GELİYORSUN!'), W / 2, this.pY - 30, C.green, 1, -8, 1.3);
+    if (this.type === 'baskin' && this.kills < this.goal) floatText((this.goal - this.kills) + TX(' DÜŞMAN DAHA!'), W / 2, this.pY - 18, C.salmon, 1, -8, 1.5);
   },
   playerSpeed() {
     const S = this.S, P = this.P;
@@ -1250,11 +1250,11 @@ SCENES.run = {
       Sound.play('coin'); addPart(this.laneX(o.lane), this.pY - 4, 0, -30, 0.3, C.yellow, 1);
     } else if (o.kind === 'clover') {
       RUN.yonca++; missionEvent('yonca', 1); Sound.play('clover'); haptic('light');
-      floatText('+1 KRİSTAL', P.x, this.pY - 22, C.cyan); burst(P.x, this.pY - 6, 8, [C.cyan, C.white], 40, 0.5);
+      floatText(TX('+1 KRİSTAL'), P.x, this.pY - 22, C.cyan); burst(P.x, this.pY - 6, 8, [C.cyan, C.white], 40, 0.5);
     } else if (o.kind === 'heart') {
-      if (RUN.hp < S.maxHp) RUN.hp++; Sound.play('heart'); floatText('+1 CAN', P.x, this.pY - 22, C.red); burst(P.x, this.pY - 6, 8, [C.red, C.salmon], 40, 0.5);
+      if (RUN.hp < S.maxHp) RUN.hp++; Sound.play('heart'); floatText(TX('+1 CAN'), P.x, this.pY - 22, C.red); burst(P.x, this.pY - 6, 8, [C.red, C.salmon], 40, 0.5);
     } else if (o.kind === 'sugar') {
-      RUN.seker++; Sound.play('gift'); haptic('success'); floatText('+1 ŞEKER', P.x, this.pY - 22, C.white); burst(P.x, this.pY - 6, 10, [C.white, C.lgray, C.yellow], 40, 0.5);
+      RUN.seker++; Sound.play('gift'); haptic('success'); floatText(TX('+1 ŞEKER'), P.x, this.pY - 22, C.white); burst(P.x, this.pY - 6, 10, [C.white, C.lgray, C.yellow], 40, 0.5);
     }
   },
   updateTrails(dt) {
@@ -1317,9 +1317,9 @@ SCENES.run = {
             if (this.S.shoulder) this.pushRival(r, r.lane - P.lane);
             else {
               P.slowT = 0.45; P.slowAmt = 0.25 * (1 - Math.min(0.8, this.S.slowResist)); P.bounce = r.lane < P.lane ? 1 : -1;
-              floatText('İTTİ!', P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(2, 0.12); haptic('light');
+              floatText(TX('İTTİ!'), P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(2, 0.12); haptic('light');
             }
-          } else if (this.state === 'run') { floatText('BOŞA ÇIKTI!', r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.7); this.rate(4); }
+          } else if (this.state === 'run') { floatText(TX('BOŞA ÇIKTI!'), r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.7); this.rate(4); }
         }
       } else if (r.style === 'itici' && !r.duel && r.pushCd <= 0 && r.laneT >= 1 && r.stun <= 0 && this.state === 'run' && Math.abs(r.lane - P.lane) === 1 && Math.abs(r.dist - P.dist) < 12 && P.flyT <= 0) {
         r.pushCd = R.f(3, 5); r.pushWarn = 0.42; Sound.play('hey');
@@ -1334,7 +1334,7 @@ SCENES.run = {
       r.cur = sp; r.dist += sp * dt * this.cornerMult(r.lane, r.dist);
       if (r.dist >= this.length) {
         r.done = true; this.finished.push(r);
-        if (r.duel && this.state === 'run') { this.banner = { txt: r.name + ' BİTİRDİ!', col: C.red }; this.bannerT = 1.6; Sound.play('hey'); }
+        if (r.duel && this.state === 'run') { this.banner = { txt: r.name + TX(' BİTİRDİ!'), col: C.red }; this.bannerT = 1.6; Sound.play('hey'); }
       }
       const ahead = r.dist > P.dist;
       if (r.ahead && !ahead && this.state === 'run') { RUN.overtakes++; missionEvent('overtake', 1); this.addBond(3); this.rate(r.nem ? 10 : 5); this.say('overtake'); }
@@ -1354,7 +1354,7 @@ SCENES.run = {
     w.t -= dt;
     if (w.t <= 0) {
       w.dir = R.chance(0.5) ? 1 : -1; w.left = 2.2; Sound.play('whoosh');
-      floatText(w.dir > 0 ? 'ARKA RÜZGAR!' : 'KARŞI RÜZGAR!', W / 2, this.pY - 74, w.dir > 0 ? C.green : C.salmon, 1, -8, 1.1);
+      floatText(w.dir > 0 ? TX('ARKA RÜZGAR!') : TX('KARŞI RÜZGAR!'), W / 2, this.pY - 74, w.dir > 0 ? C.green : C.salmon, 1, -8, 1.1);
     }
   }
 };

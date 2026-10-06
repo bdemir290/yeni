@@ -21,8 +21,8 @@ Object.assign(SCENES.run, {
   onRaceStart() {
     if (this.tut) return;
     if (this.nemRival) {
-      this.banner = { txt: 'RÖVANŞ GECESİ!', col: C.red }; this.bannerT = 1.6;
-      floatText(this.nemRival.name + ' GERİ DÖNDÜ', W / 2, Math.round(H * 0.24) + 22, C.salmon, 1, -6, 1.6);
+      this.banner = { txt: TX('RÖVANŞ GECESİ!'), col: C.red }; this.bannerT = 1.6;
+      floatText(this.nemRival.name + TX(' GERİ DÖNDÜ'), W / 2, Math.round(H * 0.24) + 22, C.salmon, 1, -6, 1.6);
       this.say('nemesis', true);
     } else if (this.boss) this.say('boss', true);
     else if (this.duel) this.say('duel', true);
@@ -75,11 +75,11 @@ Object.assign(SCENES.run, {
     this.rating = 40; META.stats.sponsors = (META.stats.sponsors || 0) + 1; missionEvent('sponsor', 1);
     const opts = ['coins', 'nefes', 'shield']; if (RUN.hp < S.maxHp) opts.push('heart');
     const k = pickAny(opts); let label;
-    if (k === 'coins') { const l = Math.floor(Math.random() * 4); for (let i = 0; i < 12; i++) this.addObs('coin', l + (i % 2), 1, P.dist + 110 + i * 12); label = 'SİKKE YAĞMURU'; }
-    else if (k === 'nefes') { this.nefes = Math.min(100, this.nefes + 50); label = 'NEFES TÜPÜ: +50 NEFES'; }
-    else if (k === 'shield') { P.shield++; label = 'KALKAN'; }
-    else { RUN.hp = Math.min(S.maxHp, RUN.hp + 1); label = 'ŞİFA JELİ: +1 CAN'; }
-    this.banner = { txt: 'SPONSOR HEDİYESİ!', col: C.gold }; this.bannerT = 1.6;
+    if (k === 'coins') { const l = Math.floor(Math.random() * 4); for (let i = 0; i < 12; i++) this.addObs('coin', l + (i % 2), 1, P.dist + 110 + i * 12); label = TX('SİKKE YAĞMURU'); }
+    else if (k === 'nefes') { this.nefes = Math.min(100, this.nefes + 50); label = TX('NEFES TÜPÜ: +50 NEFES'); }
+    else if (k === 'shield') { P.shield++; label = TX('KALKAN'); }
+    else { RUN.hp = Math.min(S.maxHp, RUN.hp + 1); label = TX('ŞİFA JELİ: +1 CAN'); }
+    this.banner = { txt: TX('SPONSOR HEDİYESİ!'), col: C.gold }; this.bannerT = 1.6;
     floatText(label, W / 2, Math.round(H * 0.24) + 22, C.yellow, 1, -6, 1.5);
     Sound.play('gift'); haptic('success');
     for (let i = 0; i < 14; i++) addPart(W / 2 + (Math.random() - 0.5) * 60, SAFE.t + 30, (Math.random() - 0.5) * 80, 40 + Math.random() * 60, 0.8, [C.gold, C.yellow, C.white][i % 3], 2);
@@ -94,7 +94,7 @@ Object.assign(SCENES.run, {
       if (lane == null) continue;
       const t0 = 0.8 + i * 0.15; this.meteors.push({ lane, y, t: t0, t0 });
     }
-    this.banner = { txt: 'METEOR YAĞMURU!', col: C.salmon }; this.bannerT = 1.6;
+    this.banner = { txt: TX('METEOR YAĞMURU!'), col: C.salmon }; this.bannerT = 1.6;
     Sound.play('warn'); this.say('bored', true);
   },
 
@@ -104,15 +104,15 @@ Object.assign(SCENES.run, {
     this.fever = 5; Music.fever = true; RUN.fevers = (RUN.fevers || 0) + 1;
     META.stats.fevers = (META.stats.fevers || 0) + 1; missionEvent('fever', 1);
     Sound.play('power'); flash(C.magenta, 0.25); haptic('success');
-    this.banner = { txt: 'DÖRTNAL MODU!', col: C.magenta }; this.bannerT = 1.6;
-    if (!META.tipsSeen.fever) { META.tipsSeen.fever = true; toast('DÖRTNAL: 5 SN HIZ, ÇİFT ATIŞ, ENGELLER KIRILIR', C.magenta, 'flame'); }
+    this.banner = { txt: TX('DÖRTNAL MODU!'), col: C.magenta }; this.bannerT = 1.6;
+    if (!META.tipsSeen.fever) { META.tipsSeen.fever = true; toast(TX('DÖRTNAL: 5 SN HIZ, ÇİFT ATIŞ, ENGELLER KIRILIR'), C.magenta, 'flame'); }
     this.rate(10); this.say('fever', true);
   },
   endFever() {
     const was = this.fever > 0 || Music.fever;
     this.fever = 0; Music.fever = false;
     this.frost = 0; this.trickBeat = 0;
-    if (was && this.state === 'run') floatText('DÖRTNAL BİTTİ', W / 2, this.pY - 40, C.lgray, 1, -8, 0.8);
+    if (was && this.state === 'run') floatText(TX('DÖRTNAL BİTTİ'), W / 2, this.pY - 40, C.lgray, 1, -8, 0.8);
   },
 
   // ---------- rhythm gates: hit 2 notes on the approach and the gate opens ----------
@@ -126,16 +126,16 @@ Object.assign(SCENES.run, {
     if (!o.open && o.armed && o.charge >= 1 && !o.missed) this.openGate(o);
     if (o.open) {
       P.cleanT = Math.max(P.cleanT, 1); this.gainNefes(6); this.addBond(4);
-      floatText('TAM RİTİM!', P.x, this.pY - 26, C.green, 1, -14, 0.7); Sound.play('sling');
+      floatText(TX('TAM RİTİM!'), P.x, this.pY - 26, C.green, 1, -14, 0.7); Sound.play('sling');
       this.rate(8);
     } else if (P.flyT > 0 || this.fever > 0 || this.invulnerable()) {
-      floatText('GEÇTİN', P.x, this.pY - 22, C.lgray, 1, -10, 0.5);
+      floatText(TX('GEÇTİN'), P.x, this.pY - 22, C.lgray, 1, -10, 0.5);
     } else {
       P.slowT = 0.75; P.slowAmt = 0.4 * (1 - Math.min(0.8, this.S.slowResist));
       this.nefes = Math.max(0, this.nefes - 10);
       if (this.combo > 0 && P.stormT <= 0) this.combo = 0;
       o.flash = 0.4; shake(3, 0.2); flash(C.red, 0.12); haptic('heavy'); Sound.play('zap'); RUN.gateShut = (RUN.gateShut || 0) + 1;
-      floatText('KAPI KAPALI!', P.x, this.pY - 26, C.red, 1, -14, 0.8);
+      floatText(TX('KAPI KAPALI!'), P.x, this.pY - 26, C.red, 1, -14, 0.8);
       this.rate(-10); this.say('gateShut', true);
     }
   },
@@ -154,7 +154,7 @@ Object.assign(SCENES.run, {
     const sy = this.sy(o.y);
     for (let i = 0; i < 16; i++) addPart(this.trackL + Math.random() * this.laneW * 5, sy - 5, (Math.random() - 0.5) * 60, -20 - Math.random() * 40, 0.6, i % 2 ? C.cyan : C.white, 1);
     Sound.play('gate'); RUN.gates = (RUN.gates || 0) + 1; META.stats.gates = (META.stats.gates || 0) + 1; missionEvent('gate', 1);
-    floatText('KAPI AÇILDI!', W / 2, clamp(sy - 24, SAFE.t + 60, this.pY - 40), C.cyan, 1, -10, 0.8);
+    floatText(TX('KAPI AÇILDI!'), W / 2, clamp(sy - 24, SAFE.t + 60, this.pY - 40), C.cyan, 1, -10, 0.8);
     this.say('gateOpen');
   },
 
@@ -182,7 +182,7 @@ Object.assign(SCENES.run, {
     if (!this.betOffer) return;
     if (stake > 0 && RUN.coins >= stake) {
       RUN.coins -= stake; this.bet = { stake, odds: this.betOffer.odds };
-      Sound.play('buy'); floatText('BAHİS: ' + stake + ' SİKKE', W / 2, this.pY - 50, C.yellow, 1, -10, 1);
+      Sound.play('buy'); floatText(TX('BAHİS: ') + stake + TX(' SİKKE'), W / 2, this.pY - 50, C.yellow, 1, -10, 1);
     } else Sound.play('select');
     this.betOffer = null;
     if (!this.tipKey) this.startClock();
@@ -194,9 +194,9 @@ Object.assign(SCENES.run, {
       const pay = Math.round(b.stake * b.odds);
       RUN.coins += pay; RUN.coinsEarned += pay; missionEvent('coins', RUN.coinsEarned);
       META.stats.betWins = (META.stats.betWins || 0) + 1; missionEvent('bet', 1);
-      floatText('BAHİS: +' + pay + ' SİKKE', W / 2, this.pY - 30, C.yellow, 1, -8, 1.5); Sound.play('buy');
+      floatText(TX('BAHİS: +') + pay + TX(' SİKKE'), W / 2, this.pY - 30, C.yellow, 1, -8, 1.5); Sound.play('buy');
       this.say('betWin', true);
-    } else floatText('BAHİS GİTTİ', W / 2, this.pY - 30, C.salmon, 1, -8, 1.3);
+    } else floatText(TX('BAHİS GİTTİ'), W / 2, this.pY - 30, C.salmon, 1, -8, 1.3);
   },
 
   // ---------- nemesis ----------
@@ -208,7 +208,7 @@ Object.assign(SCENES.run, {
     if (N) { N.lv = Math.min(3, N.lv + 1); N.wins = (N.wins || 0) + 1; } else META.nemesis = { id, lv: 1, wins: 1 };
     const lv = META.nemesis.lv;
     RUN.nemesisNew = RIVAL_BY_ID[id].name;
-    toast('RÖVANŞÇI: ' + RIVAL_BY_ID[id].name + (lv > 1 ? ' SV ' + lv : ''), C.red, 'crown');
+    toast(TX('RÖVANŞÇI: ') + RIVAL_BY_ID[id].name + (lv > 1 ? ' SV ' + lv : ''), C.red, 'crown');
     saveMeta();
   },
   takeRevenge() {
@@ -217,8 +217,8 @@ Object.assign(SCENES.run, {
     RUN.yonca += yon; missionEvent('yonca', yon);
     if (N.lv >= 2) RUN.seker++;
     META.nemesis = null; META.stats.revenges = (META.stats.revenges || 0) + 1; missionEvent('revenge', 1); RUN.revenged = true;
-    this.banner = { txt: 'RÖVANŞ ALINDI!', col: C.gold }; this.bannerT = 1.8;
-    floatText('+' + yon + ' KRİSTAL' + (N.lv >= 2 ? ' +1 ŞEKER' : ''), W / 2, Math.round(H * 0.24) + 22, C.cyan, 1, -6, 1.6);
+    this.banner = { txt: TX('RÖVANŞ ALINDI!'), col: C.gold }; this.bannerT = 1.8;
+    floatText('+' + yon + TX(' KRİSTAL') + (N.lv >= 2 ? TX(' +1 ŞEKER') : ''), W / 2, Math.round(H * 0.24) + 22, C.cyan, 1, -6, 1.6);
     Sound.play('medal'); this.say('revenge', true); saveMeta();
   },
   // after the player crosses the line: bets, revenge, new nemesis
@@ -248,7 +248,7 @@ Object.assign(SCENES.run, {
     const me = order.indexOf('deniz'), beaten = order.slice(me + 1).filter(r => r.id).length;
     if (beaten) missionEvent('ahead', beaten);
     const after = leagueRank();
-    if (after < before) floatText('LİGDE ' + after + '. SIRAYA ÇIKTIN', W / 2, this.pY - 92, C.cyan, 1, -6, 1.6);
+    if (after < before) floatText(TX('LİGDE ') + after + TX('. SIRAYA ÇIKTIN'), W / 2, this.pY - 92, C.cyan, 1, -6, 1.6);
   },
   // ---------- drawing ----------
   drawGate(o, sy, ox) {
@@ -269,7 +269,7 @@ Object.assign(SCENES.run, {
       circle(lx, sy - 16, 4, C.ink); circle(lx, sy - 16, 3, on ? (o.open ? C.green : C.yellow) : C.slate);
       if (on) pix(lx - 1, sy - 17, C.white);
     }
-    if (o.armed && !o.open) textO((o.need - o.charge) + ' VURUŞ', cx, sy - 30, C.cyan, 'center');
+    if (o.armed && !o.open) textO((o.need - o.charge) + TX(' VURUŞ'), cx, sy - 30, C.cyan, 'center');
   },
   drawScan(o, sy, ox) {
     const x0 = this.trackL + ox, lw = this.laneW, w = lw * 5, vis = o.vis == null ? o.lane : o.vis;
@@ -320,12 +320,12 @@ Object.assign(SCENES.run, {
       const x = 4 + SAFE.l, y = top + 24, col = this.rating >= 70 ? C.gold : this.rating >= 25 ? C.cyan : C.salmon;
       spr(ICONS.tv, x, y - 2);
       bar(x + 11, y, 30, 3, this.rating / 100, this.ratingPulse > 0 && Math.floor(T * 20) % 2 ? C.white : col);
-      if (this.ratingZeroT > 2 && Math.floor(T * 6) % 2 === 0) textO('SIKICI!', x + 11, y + 5, C.salmon);
+      if (this.ratingZeroT > 2 && Math.floor(T * 6) % 2 === 0) textO(TX('SIKICI!'), x + 11, y + 5, C.salmon);
     }
     if (this.bet) textO(this.bet.stake + 'X' + fmtOdds(this.bet.odds), W - SAFE.r - 20, top + 11, C.yellow, 'right');
     if (this.fever > 0) {
       const rx = W / 2, ry = H - SAFE.b - 24;
-      textO('DÖRTNAL', rx, ry - 64, Math.floor(T * 10) % 2 ? C.magenta : C.salmon, 'center');
+      textO(TX('DÖRTNAL'), rx, ry - 64, Math.floor(T * 10) % 2 ? C.magenta : C.salmon, 'center');
       bar(rx - 20, ry - 55, 40, 2, this.fever / 5, C.magenta);
     }
     if (this.grax && !TOASTS.length && !this.medal) { // a tip toast takes the same strip: Grax waits
@@ -338,16 +338,16 @@ Object.assign(SCENES.run, {
   },
   drawBet() {
     const B = this.betOffer, pw = Math.min(W - 16, 214), odds = fmtOdds(B.odds);
-    const msg = (B.nem ? 'RÖVANŞ GECESİ, ORANLAR YÜKSEK! ' : '') + (this.type === 'duello' ? 'DÜELLOYU KAZANIRSAN' : 'BİRİNCİ GELİRSEN') + ' SİKKENİ ' + odds + ' KATINA ÇIKARIRIM. VAR MISIN DÜNYALI?';
+    const msg = (B.nem ? TX('RÖVANŞ GECESİ, ORANLAR YÜKSEK! ') : '') + (this.type === 'duello' ? TX('DÜELLOYU KAZANIRSAN') : TX('BİRİNCİ GELİRSEN')) + TX(' SİKKENİ ') + odds + TX(' KATINA ÇIKARIRIM. VAR MISIN DÜNYALI?');
     const lines = wrapText(msg, pw - 52), n = 1 + B.stakes.length;
     const ph = 26 + Math.max(30, lines.length * 9) + 30;
     const px = Math.round(W / 2 - pw / 2), py = Math.round(Math.max(SAFE.t + 30, H * 0.4 - ph / 2));
     g.globalAlpha = 0.45; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
-    panel(px, py, pw, ph, 'MOKO\'NUN BAHİS MASASI', C.yellow);
+    panel(px, py, pw, ph, TX('MOKO\'NUN BAHİS MASASI'), C.yellow);
     rect(px + 7, py + 18, 30, 30, C.ink); rect(px + 8, py + 19, 28, 28, C.slate); spr(PORTRAIT.moko, px + 8, py + 19);
     lines.forEach((ln, i) => text(ln, px + 44, py + 20 + i * 9, C.white));
     const by = py + ph - 24, gap = 6, bw = Math.floor((pw - 16 - (n - 1) * gap) / n);
-    button('bet_pas', px + 8, by, bw, 16, 'PAS', () => this.placeBet(0), { kind: 'secondary' });
+    button('bet_pas', px + 8, by, bw, 16, TX('PAS'), () => this.placeBet(0), { kind: 'secondary' });
     B.stakes.forEach((st, i) => button('bet_' + st, px + 8 + (i + 1) * (bw + gap), by, bw, 16, String(st), () => this.placeBet(st), { icon: 'coin0', kind: 'primary' }));
     iconNum('coin0', RUN.coins, px + 10, by - 11, C.yellow);
   }

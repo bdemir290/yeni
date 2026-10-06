@@ -76,6 +76,16 @@ const GLYPHS = {
   add('Â', 'A', [null, '.##.'], null);
   add('Î', 'I', [null, '.#.'], null);
   add('Û', 'U', [null, '.##.'], null);
+  // v6.1: German and Spanish letters
+  add('Ä', 'A', ['#..#', null], null);
+  add('Á', 'A', ['..#.', '.#..'], null);
+  add('É', 'E', ['..#.', '.#..'], null);
+  add('Í', 'I', ['..#', '.#.'], null);
+  add('Ó', 'O', ['..#.', '.#..'], null);
+  add('Ú', 'U', ['..#.', '.#..'], null);
+  add('Ñ', 'N', ['.#.#', '#.#.'], null);
+  GLYPHS['¡'] = ['#', '.', '#', '#', '#'];
+  GLYPHS['¿'] = ['.#.', '...', '##.', '#..', '###'];
   GLYPHS[','] = { body: ['.', '.', '.', '.', '#'], top: null, bot: '#' };
 })();
 function glyphOf(ch) {

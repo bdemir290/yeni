@@ -4,8 +4,8 @@ const CROP_BIG = {};
 function cropBig(type, st) { const k = type + st; return CROP_BIG[k] || (CROP_BIG[k] = scaleSprite(CROP[type][st], 2)); }
 const CROP_TYPES = [null, 'havuc', 'pancar'];
 
-const MAP_NAMES = { ev: 'KAMARA', ahir: 'AHIR', pano: 'GÖREVLER', ambar: 'YEM DEPOSU', silahhane: 'CEPHANELİK', nalbant: 'NAL ATÖLYESİ', tapinak: 'GÖZLEMEVİ',
-  jokey: 'KOĞUŞ', veteriner: 'REVİR', pazar: 'MOKO', anit: 'VİTRİN' };
+const MAP_NAMES = { ev: TX('KAMARA'), ahir: TX('AHIR'), pano: TX('GÖREVLER'), ambar: TX('YEM DEPOSU'), silahhane: TX('CEPHANELİK'), nalbant: TX('NAL ATÖLYESİ'), tapinak: TX('GÖZLEMEVİ'),
+  jokey: TX('KOĞUŞ'), veteriner: TX('REVİR'), pazar: TX('MOKO'), anit: TX('VİTRİN') };
 SCENES.farm = {
   enter(arg) {
     this.arg = arg || {}; this.panel = null; this.page = null; this.walk = null; this.t = 0; this.confirmReset = false;
@@ -66,7 +66,7 @@ SCENES.farm = {
   },
   open(k) {
     if (k === 'gate') { this.panel = 'gate'; return; }
-    if (k === 'pazar' && !META.flags.moko) { Dialog.start([['bip', 'BU KÖŞE BOŞ. UZAY PAZARINDA MOKO\'YLA TANIŞIRSAN BURAYA BİR TEZGAH KURAR.']]); return; }
+    if (k === 'pazar' && !META.flags.moko) { Dialog.start([['bip', TX('BU KÖŞE BOŞ. UZAY PAZARINDA MOKO\'YLA TANIŞIRSAN BURAYA BİR TEZGAH KURAR.')]]); return; }
     if (k === 'kulube') { this.petDog(); return; }
     if (BUILDINGS[k] && !built(k)) { this.panel = 'repair:' + k; return; }
     this.panel = k;
@@ -75,7 +75,7 @@ SCENES.farm = {
     const gl = nextGoal(), t = gl.target;
     if (t === 'gate') { this.panel = 'gate'; return; }
     if (t === 'npc') { const k = Object.keys(NPC_NAMES).find(n => npcAvailable(n) && META.bond[n] < 3); if (k) this.panel = 'npc:' + k; return; }
-    if (t === 'ev' && gl.text.startsWith('KAPI AÇIK')) this.defTab = 'rakip';
+    if (t === 'ev' && gl.tab) this.defTab = gl.tab;
     if (this.L[t]) { this.camY = clamp(this.L[t].y - H * 0.4, 0, this.maxCam); this.walkTo(t, () => this.open(t)); }
   },
   npcSpots() {
@@ -91,7 +91,7 @@ SCENES.farm = {
   petHorse() {
     Sound.play('nicker'); haptic('light');
     for (let i = 0; i < 4; i++) this.hearts.push({ x: this.hx + (rnd() - 0.5) * 14, y: this.hy - 12 - rnd() * 6, t: 1.2 + rnd() * 0.4 });
-    if (!META.petted) { META.petted = true; saveMeta(); toast('YILDIZ MUTLU! SONRAKİ KOŞU +' + [5, 5, 5, 10, 15][bl('ahir')] + ' KOMBOYLA BAŞLAR', C.salmon, 'heartS'); }
+    if (!META.petted) { META.petted = true; saveMeta(); toast(TX('YILDIZ MUTLU! SONRAKİ KOŞU +') + [5, 5, 5, 10, 15][bl('ahir')] + TX(' KOMBOYLA BAŞLAR'), C.salmon, 'heartS'); }
   },
   petDog() {
     if (!this.hasDog()) return;
@@ -99,7 +99,7 @@ SCENES.farm = {
     for (let i = 0; i < 3; i++) this.hearts.push({ x: this.dog.x + (rnd() - 0.5) * 10, y: this.dog.y - 8, t: 1 + rnd() * 0.4 });
     if (META.flags.dogDay !== todayStr()) {
       META.flags.dogDay = todayStr(); const n = 2 + Math.floor(Math.random() * 3); META.yonca += n; saveMeta();
-      toast('ZIPZIP ETRAFI KOKLADI: +' + n + ' KRİSTAL!', C.cyan, 'clover'); Sound.play('clover');
+      toast(TX('ZIPZIP ETRAFI KOKLADI: +') + n + TX(' KRİSTAL!'), C.cyan, 'clover'); Sound.play('clover');
     }
   },
   // ---------- input ----------
@@ -235,7 +235,7 @@ SCENES.farm = {
         if (canGift && Math.floor(this.t * 2) % 2 === 0) spr(ICONS.gift, n.x - 3, n.y - 9 + oy);
       } else if (a.gate) {
         spr(BLD.gate, L.gate.x, L.gate.y + oy);
-        text('YARIŞ', L.gate.x + 30, L.gate.y + 2 + oy, C.wine, 'center');
+        text(TX('YARIŞ'), L.gate.x + 30, L.gate.y + 2 + oy, C.wine, 'center');
       }
     }
     drawParts(0, oy);
@@ -246,8 +246,8 @@ SCENES.farm = {
     if (!this.panel) {
       const bw = 92, bx = Math.round(W / 2 - bw / 2), by = H - SAFE.b - 30;
       // a run left at the path choice waits here: continue it instead of starting over by accident
-      if (META.runSave) button('kos', bx - 14, by, bw + 28, 22, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); }, { kind: 'primary' });
-      else button('kos', bx, by, bw, 22, 'YARIŞA ÇIK', () => { this.panel = 'gate'; }, { kind: 'primary' });
+      if (META.runSave) button('kos', bx - 14, by, bw + 28, 22, TX('KOŞUYA DEVAM ET'), () => { restoreRun(); go('doors'); }, { kind: 'primary' });
+      else button('kos', bx, by, bw, 22, TX('YARIŞA ÇIK'), () => { this.panel = 'gate'; }, { kind: 'primary' });
       if (this.maxCam > 4) { const k = this.camY / this.maxCam; rect(W - 3, SAFE.t + 40 + k * (H - SAFE.t - 80), 2, 26, C.ddgreen); }
     }
     if (this.panel) this.drawPanel();
@@ -358,7 +358,7 @@ SCENES.farm = {
       const c = META.crops[i] || 0;
       if (c > 0) { const tp = CROP_TYPES[Math.floor(c / 10)], st = c % 10; if (tp) { const img = CROP[tp][st]; spr(img, cx + 6 - Math.floor(img.width / 2), cy + 8 - img.height + 3 + (st === 3 ? Math.round(Math.sin(this.t * 4 + i)) : 0)); } }
     }
-    { const tw = textWidth('SERA') + 4; g.globalAlpha = 0.75; rect(x + 2, y + B.h - 2, tw, 8, C.ink); g.globalAlpha = 1; text('SERA', x + 4, y + B.h - 3, lv ? C.lgray : C.gray); }
+    { const tw = textWidth(TX('SERA')) + 4; g.globalAlpha = 0.75; rect(x + 2, y + B.h - 2, tw, 8, C.ink); g.globalAlpha = 1; text(TX('SERA'), x + 4, y + B.h - 3, lv ? C.lgray : C.gray); }
     if (META.crops.slice(0, n).some(c => c > 0 && c % 10 === 3)) this.badge(x + B.w - 4, y - 2 + Math.round(Math.sin(this.t * 6)), C.green, '!');
   },
   drawHUD() {
@@ -376,7 +376,7 @@ SCENES.farm = {
     const bw = Math.min(W - 10, 200), bx = Math.round(W / 2 - bw / 2);
     rrect(bx - 1, by - 1, bw + 2, 15, C.ink); rrect(bx, by, bw, 13, C.navy);
     const ic = ICONS[gl.icon]; if (ic) spr(ic, bx + 3, by + Math.round(6.5 - ic.height / 2));
-    const label = 'HEDEF: ' + gl.text, maxw = bw - (gl.need ? 20 + textWidth(gl.need + '/' + gl.need) + 6 : 20);
+    const label = TX('HEDEF: ') + gl.text, maxw = bw - (gl.need ? 20 + textWidth(gl.need + '/' + gl.need) + 6 : 20);
     text(textWidth(label) > maxw ? gl.text : label, bx + 16, by + 1, C.white);
     // goal progress: numbers on the right, a thin fill along the bottom edge
     if (gl.need) { const ok = gl.cur >= gl.need; text(Math.min(gl.cur, gl.need) + '/' + gl.need, bx + bw - 4, by + 1, ok ? C.green : C.gold, 'right'); hline(bx + 1, by + 12, Math.round((bw - 2) * clamp(gl.cur / gl.need, 0, 1)), ok ? C.green : C.gold); }
@@ -418,12 +418,12 @@ SCENES.farm = {
     const b = BUILDINGS[k], u = this.upgradeInfo(k), lv = u.lv;
     hline(P.x + 6, y, P.w - 12, C.slate); y += 5;
     for (let i = 0; i < b.max; i++) { rect(P.x + 8 + i * 6, y + 1, 5, 5, C.ink); rect(P.x + 9 + i * 6, y + 2, 3, 3, i < lv ? C.yellow : C.slate); }
-    text('SEVİYE ' + lv + '/' + b.max, P.x + 12 + b.max * 6, y, C.lgray);
-    if (u.max) { text('EN ÜST!', P.x + P.w - 8, y, C.green, 'right'); return y + 12; }
+    text(TX('SEVİYE ') + lv + '/' + b.max, P.x + 12 + b.max * 6, y, C.lgray);
+    if (u.max) { text(TX('EN ÜST!'), P.x + P.w - 8, y, C.green, 'right'); return y + 12; }
     u.next.forEach((ln, i) => text(ln, P.x + 8, y + 10 + i * 9, C.sky));
     const lock = lv === 3 && META.rozet < LV4_ROZET, can = META.yonca >= u.cost && !lock;
     button('up_' + k, P.x + P.w - 66, y + 2, 58, 15, String(u.cost), () => this.doUpgrade(k), { icon: lock ? 'lock' : 'clover', disabled: !can });
-    text(lock ? LV4_ROZET + ' ROZET GEREK' : can ? 'YÜKSELT' : (u.cost - META.yonca) + ' EKSİK', P.x + P.w - 37, y + 19, can ? C.green : C.salmon, 'center');
+    text(lock ? LV4_ROZET + TX(' ROZET GEREK') : can ? TX('YÜKSELT') : (u.cost - META.yonca) + TX(' EKSİK'), P.x + P.w - 37, y + 19, can ? C.green : C.salmon, 'center');
     y += 10 + Math.max(2, u.next.length) * 9 + 2;
     u.later.forEach((ln, i) => text(ln, P.x + 8, y + i * 9, C.gray));
     return y + u.later.length * 9;
@@ -433,47 +433,47 @@ SCENES.farm = {
     if (lv >= b.max || META.yonca < cost || (lv === 3 && META.rozet < LV4_ROZET)) return;
     META.yonca -= cost; META.blv[k] = lv + 1;
     if (k === 'ambar' && lv === 0) { META.foods.havuc = true; if (!META.food) META.food = 'havuc'; }
-    if (k === 'ahir' && lv >= 1) { META.points++; toast('+1 SEVİYE PUANI', C.yellow, 'star'); }
+    if (k === 'ahir' && lv >= 1) { META.points++; toast(TX('+1 SEVİYE PUANI'), C.yellow, 'star'); }
     if (k === 'bahce') fixCrops();
     saveMeta(); this.layout();
     Sound.play('repair'); haptic('success');
     const Lb = this.L[k]; if (Lb) burst(Lb.x + Lb.w / 2, Lb.y + Lb.h / 2, 30, [C.yellow, C.white, C.gold, C.green], 70, 1, 60, 2);
     this.upFx = { k, t: 1 };
-    toast(lv === 0 ? b.name + ' ONARILDI!' : b.name + ' SEVİYE ' + (lv + 1) + '!', C.green, 'hammer');
+    toast(lv === 0 ? b.name + TX(' ONARILDI!') : b.name + TX(' SEVİYE ') + (lv + 1) + '!', C.green, 'hammer');
     checkFarmPerks();
     if (lv === 0) this.panel = null;
   },
   pRepair(k) {
     const b = BUILDINGS[k], img = k === 'bahce' ? null : this.bImg(k), ih = img ? img.height : 0;
     const lines = wrapText(b.desc, Math.min(W - 10, 226) - 20);
-    const later = []; for (let i = 1; i < b.max; i++) later.push(...wrapText('SV' + (i + 1) + ' (' + b.up[i] + ' KRİSTAL): ' + b.upDesc[i], Math.min(W - 10, 226) - 16));
+    const later = []; for (let i = 1; i < b.max; i++) later.push(...wrapText('SV' + (i + 1) + ' (' + b.up[i] + TX(' KRİSTAL): ') + b.upDesc[i], Math.min(W - 10, 226) - 16));
     const h = 30 + ih + lines.length * 9 + 64 + later.length * 9;
-    const P = this.panelBox(b.name + ' (ARIZALI)', h);
+    const P = this.panelBox(b.name + TX(' (ARIZALI)'), h);
     if (img) spr(img, P.x + P.w / 2 - img.width / 2, P.y + 20);
     let y = P.y + 24 + ih;
     lines.forEach((ln, i) => text(ln, P.x + P.w / 2, y + i * 9, C.lgray, 'center'));
     y += lines.length * 9 + 3;
-    text('ONARINCA: ' + b.upDesc[0], P.x + P.w / 2, y, C.sky, 'center'); y += 10;
+    text(TX('ONARINCA: ') + b.upDesc[0], P.x + P.w / 2, y, C.sky, 'center'); y += 10;
     for (const ln of later) { text(ln, P.x + P.w / 2, y, C.gray, 'center'); y += 9; }
     y += 3;
     const needR = b.rozet && META.rozet < b.rozet, needB = b.needBoon && META.stats.boons === 0;
     const cost = b.up[0], can = META.yonca >= cost && !needR && !needB;
-    const msg = needR ? 'ÖNCE ' + b.rozet + ' ŞAMPİYON ROZETİ GEREKİR' : needB ? 'ÖNCE BİR YILDIZ GÜCÜ KAZAN' : (can ? 'ONARIM BEDELİ' : (cost - META.yonca) + ' KRİSTAL DAHA LAZIM');
+    const msg = needR ? TX('ÖNCE ') + b.rozet + TX(' ŞAMPİYON ROZETİ GEREKİR') : needB ? TX('ÖNCE BİR YILDIZ GÜCÜ KAZAN') : (can ? TX('ONARIM BEDELİ') : (cost - META.yonca) + TX(' KRİSTAL DAHA LAZIM'));
     text(msg, P.x + P.w / 2, y, (needR || needB || !can) ? C.salmon : C.white, 'center');
-    button('repair', P.x + P.w / 2 - 45, y + 12, 90, 18, 'ONAR ' + cost, () => this.doUpgrade(k), { icon: 'clover', disabled: !can });
+    button('repair', P.x + P.w / 2 - 45, y + 12, 90, 18, TX('ONAR ') + cost, () => this.doUpgrade(k), { icon: 'clover', disabled: !can });
   },
   pAhir() {
     const rowH = 17, lv = bl('ahir');
     const extra = (lv >= 2 ? 24 : 0) + this.upgradeH('ahir') + 4;
-    const P = this.panelBox('AHIR MODÜLÜ · ANTRENMAN', 44 + 3 * 11 + SKILLS.length * rowH + 22 + extra);
+    const P = this.panelBox(TX('AHIR MODÜLÜ · ANTRENMAN'), 44 + 3 * 11 + SKILLS.length * rowH + 22 + extra);
     let y = P.y + 18;
-    text('SEVİYE ' + META.level, P.x + 8, y, C.white);
+    text(TX('SEVİYE ') + META.level, P.x + 8, y, C.white);
     bar(P.x + 62, y + 3, P.w - 130, 3, META.xp / xpNeed(META.level), C.yellow);
     text(META.xp + '/' + xpNeed(META.level), P.x + P.w - 64, y, C.lgray);
     y += 11;
-    text('PUAN: ' + META.points, P.x + 8, y, META.points ? C.yellow : C.gray);
+    text(TX('PUAN: ') + META.points, P.x + 8, y, META.points ? C.yellow : C.gray);
     const spent = SKILLS.reduce((a, s) => a + (META.skills[s.id] || 0) * s.cost, 0);
-    button('sk_reset', P.x + P.w - 60, y - 2, 52, 12, 'SIFIRLA', () => { META.points += spent; META.skills = {}; saveMeta(); Sound.play('select'); }, { kind: 'secondary', disabled: spent === 0 });
+    button('sk_reset', P.x + P.w - 60, y - 2, 52, 12, TX('SIFIRLA'), () => { META.points += spent; META.skills = {}; saveMeta(); Sound.play('select'); }, { kind: 'secondary', disabled: spent === 0 });
     y += 13;
     for (let br = 0; br < 3; br++) {
       text(BRANCHES[br].name, P.x + 8, y, BRANCHES[br].color); hline(P.x + 10 + textWidth(BRANCHES[br].name), y + 4, P.w - 20 - textWidth(BRANCHES[br].name), C.slate);
@@ -483,14 +483,14 @@ SCENES.farm = {
         text(sk.name, P.x + 10, y, C.white);
         text(sk.desc, P.x + 10, y + 8, C.gray);
         for (let i = 0; i < sk.max; i++) { rect(P.x + P.w - 60 + i * 6, y + 2, 5, 5, C.ink); rect(P.x + P.w - 59 + i * 6, y + 3, 3, 3, i < r ? BRANCHES[br].color : C.slate); }
-        button('sk_' + sk.id, P.x + P.w - 28, y + 1, 20, 12, maxed ? 'OK' : '+' + (sk.cost > 1 ? sk.cost : ''), () => {
+        button('sk_' + sk.id, P.x + P.w - 28, y + 1, 20, 12, maxed ? TX('OK') : '+' + (sk.cost > 1 ? sk.cost : ''), () => {
           META.points -= sk.cost; META.skills[sk.id] = r + 1; saveMeta(); Sound.play('power'); haptic('medium');
         }, { disabled: maxed || META.points < sk.cost, kind: 'green' });
         y += rowH;
       }
     }
     if (lv >= 2) {
-      text('BATTANİYE', P.x + 8, y + 5, C.lgray);
+      text(TX('BATTANİYE'), P.x + 8, y + 5, C.lgray);
       BLANKETS.forEach((c, i) => {
         const bx = P.x + 64 + i * 15, by = y + 1, sel = (META.blanket || null) === c;
         rect(bx - 1, by - 1, 14, 14, sel ? C.yellow : C.ink); rect(bx, by, 12, 12, c || C.brown);
@@ -504,7 +504,7 @@ SCENES.farm = {
   pPano() {
     const slots = META.missions.length;
     const showDaily = META.tutorialDone;
-    const P = this.panelBox('GÖREV EKRANI', 20 + slots * 30 + 52 + (showDaily ? 30 : 0) + this.upgradeH('pano') + 8);
+    const P = this.panelBox(TX('GÖREV EKRANI'), 20 + slots * 30 + 52 + (showDaily ? 30 : 0) + this.upgradeH('pano') + 8);
     let y = P.y + 18;
     const bonus = [1, 1, 1, 1.5, 2][bl('pano')];
     for (const m of META.missions) {
@@ -513,11 +513,11 @@ SCENES.farm = {
       bar(P.x + 8, y + 20, P.w - 82, 3, m.p / m.n, m.done ? C.green : C.sky);
       text(Math.floor(m.p) + '/' + m.n, P.x + P.w - 72, y + 17, C.gray);
       const yon = Math.round(m.yonca * bonus);
-      if (m.done) button('m_' + m.id, P.x + P.w - 42, y + 3, 34, 16, 'AL', () => {
+      if (m.done) button('m_' + m.id, P.x + P.w - 42, y + 3, 34, 16, TX('AL'), () => {
         META.yonca += yon; META.seker += m.seker || 0; const ups = addXP(m.xp);
         META.missions = META.missions.filter(q => q !== m); ensureMissions(); saveMeta();
-        Sound.play('buy'); haptic('success'); toast('+' + yon + ' KRİSTAL  +' + m.xp + ' XP' + (m.seker ? '  +1 ŞEKER' : ''), C.cyan, 'clover');
-        if (ups.length) { Sound.play('level'); toast('SEVİYE ' + META.level + '! AHIRDA PUAN SENİ BEKLİYOR', C.yellow, 'star'); }
+        Sound.play('buy'); haptic('success'); toast('+' + yon + TX(' KRİSTAL  +') + m.xp + ' XP' + (m.seker ? TX('  +1 ŞEKER') : ''), C.cyan, 'clover');
+        if (ups.length) { Sound.play('level'); toast(TX('SEVİYE ') + META.level + TX('! AHIRDA PUAN SENİ BEKLİYOR'), C.yellow, 'star'); }
       }, { kind: 'green' });
       else {
         spr(ICONS.clover, P.x + P.w - 42, y + 1); text(String(yon), P.x + P.w - 32, y + 1, C.green);
@@ -526,7 +526,7 @@ SCENES.farm = {
       }
       y += 30;
     }
-    text('GÜNLÜK ERZAK', P.x + 8, y, C.yellow); y += 11;
+    text(TX('GÜNLÜK ERZAK'), P.x + 8, y, C.yellow); y += 11;
     const bw = Math.floor((P.w - 16 - 6 * 3) / 7), cur = META.daily.count % 7;
     for (let i = 0; i < 7; i++) {
       const bx = P.x + 8 + i * (bw + 3), isToday = i === cur && META.daily.pending;
@@ -536,22 +536,22 @@ SCENES.farm = {
       if (DAILY_SUGAR[i]) spr(ICONS.seker, bx + bw - 7, y - 3);
     }
     y += 26;
-    if (META.daily.pending) button('dly', P.x + P.w / 2 - 40, y, 80, 14, 'ERZAĞI AL', () => this.claimDailyFx(), { kind: 'green' });
-    else text('YARIN YİNE GEL!', P.x + P.w / 2, y + 3, C.gray, 'center');
+    if (META.daily.pending) button('dly', P.x + P.w / 2 - 40, y, 80, 14, TX('ERZAĞI AL'), () => this.claimDailyFx(), { kind: 'green' });
+    else text(TX('YARIN YİNE GEL!'), P.x + P.w / 2, y + 3, C.gray, 'center');
     y += 18;
     if (showDaily) {
       const best = META.dailyRun.best[todayStr()] || 0;
       hline(P.x + 6, y, P.w - 12, C.slate); y += 4;
-      text('GÜNÜN KOŞUSU', P.x + 8, y + 1, C.cyan);
-      text(best ? 'BUGÜN EN İYİ: ' + best : 'AYNI YOL, TEK SKOR', P.x + 8, y + 11, C.lgray);
-      button('dailyrun', P.x + P.w - 62, y + 2, 54, 16, 'KOŞ', () => { this.panel = null; META.runSave = null; newRun({ daily: true }); saveMeta(); go('run', firstNode()); }, { kind: 'blue' });
+      text(TX('GÜNÜN KOŞUSU'), P.x + 8, y + 1, C.cyan);
+      text(best ? TX('BUGÜN EN İYİ: ') + best : TX('AYNI YOL, TEK SKOR'), P.x + 8, y + 11, C.lgray);
+      button('dailyrun', P.x + P.w - 62, y + 2, 54, 16, TX('KOŞ'), () => { this.panel = null; META.runSave = null; newRun({ daily: true }); saveMeta(); go('run', firstNode()); }, { kind: 'blue' });
       y += 26;
     }
     this.upgradeRow(P, 'pano', y);
   },
   claimDailyFx() {
     const a = claimDaily(); Sound.play('clover'); haptic('success');
-    toast('+' + a.amt + ' KRİSTAL' + (a.sg ? '  +' + a.sg + ' ŞEKER' : ''), C.cyan, 'clover');
+    toast('+' + a.amt + TX(' KRİSTAL') + (a.sg ? '  +' + a.sg + TX(' ŞEKER') : ''), C.cyan, 'clover');
   },
   listRows(P, items, y, rowH) {
     rowH = rowH || 30;
@@ -568,12 +568,12 @@ SCENES.farm = {
   },
   pAmbar() {
     const keys = Object.keys(FOODS), two = bl('ambar') >= 2;
-    const P = this.panelBox('YEM DEPOSU', 30 + keys.length * 30 + this.upgradeH('ambar') + 10);
-    text(two ? 'İKİ YEM SEÇEBİLİRSİN' : 'KOŞUDAN ÖNCE BİR YEM SEÇ', P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    const P = this.panelBox(TX('YEM DEPOSU'), 30 + keys.length * 30 + this.upgradeH('ambar') + 10);
+    text(two ? TX('İKİ YEM SEÇEBİLİRSİN') : TX('KOŞUDAN ÖNCE BİR YEM SEÇ'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
     const y = this.listRows(P, keys.map(k => {
       const f = FOODS[k], own = !!META.foods[k], s1 = META.food === k, s2 = META.food2 === k;
       if (own) {
-        const label = s1 ? 'YEM 1' : s2 ? 'YEM 2' : 'SEÇ';
+        const label = s1 ? TX('YEM 1') : s2 ? TX('YEM 2') : TX('SEÇ');
         return { id: 'f_' + k, name: f.name, desc: f.desc, icon2: itemArt('food_' + k), sel: s1 || s2, label, kind: (s1 || s2) ? 'secondary' : 'green', fn: () => {
           if (s1) { META.food = null; if (two && META.food2) { META.food = META.food2; META.food2 = null; } }
           else if (s2) META.food2 = null;
@@ -589,19 +589,19 @@ SCENES.farm = {
   },
   pNalbant() {
     const keys = Object.keys(NALS);
-    const P = this.panelBox('NAL ATÖLYESİ', 30 + keys.length * 30 + this.upgradeH('nalbant') + 10);
-    text('NAL OYUN TARZINI DEĞİŞTİRİR', P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    const P = this.panelBox(TX('NAL ATÖLYESİ'), 30 + keys.length * 30 + this.upgradeH('nalbant') + 10);
+    text(TX('NAL OYUN TARZINI DEĞİŞTİRİR'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
     const y = this.listRows(P, keys.map(k => {
       const n = NALS[k], own = !!META.nals[k], sel = META.nal === k;
-      if (own) return { id: 'n_' + k, name: n.name, desc: n.desc, icon2: itemArt('nal_' + k), sel, label: sel ? 'TAKILI' : 'TAK', kind: sel ? 'secondary' : 'green', fn: () => { META.nal = k; saveMeta(); Sound.play('select'); } };
+      if (own) return { id: 'n_' + k, name: n.name, desc: n.desc, icon2: itemArt('nal_' + k), sel, label: sel ? TX('TAKILI') : TX('TAK'), kind: sel ? 'secondary' : 'green', fn: () => { META.nal = k; saveMeta(); Sound.play('select'); } };
       return { id: 'n_' + k, name: n.name, desc: n.desc, icon2: itemArt('nal_' + k), label: String(n.cost), icon: 'clover', disabled: META.yonca < n.cost, fn: () => { META.yonca -= n.cost; META.nals[k] = true; META.nal = k; saveMeta(); Sound.play('repair'); haptic('success'); } };
     }), P.y + 30);
     this.upgradeRow(P, 'nalbant', y + 2);
   },
   pSilah() {
     const keys = Object.keys(WEAPONS);
-    const P = this.panelBox('CEPHANELİK', 30 + keys.length * 38 + this.upgradeH('silahhane') + 10);
-    text('EYERDEKİ SİLAH RİTİMLE ATEŞ EDER', P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    const P = this.panelBox(TX('CEPHANELİK'), 30 + keys.length * 38 + this.upgradeH('silahhane') + 10);
+    text(TX('EYERDEKİ SİLAH RİTİMLE ATEŞ EDER'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
     let y = P.y + 30;
     for (const k of keys) {
       const w = WEAPONS[k], own = !!META.weapons[k], sel = META.weapon === k, lv = META.wlv[k] || 1;
@@ -611,19 +611,19 @@ SCENES.farm = {
       text(w.name, P.x + 26, y, sel ? C.yellow : C.white);
       if (own) for (let i = 0; i < 3; i++) { rect(P.x + 28 + textWidth(w.name) + i * 5, y + 2, 4, 4, C.ink); pix(P.x + 29 + textWidth(w.name) + i * 5, y + 3, i < lv ? C.yellow : C.slate); }
       wrapText(w.desc, P.w - 34).slice(0, 2).forEach((ln, i) => text(ln, P.x + 26, y + 20 + i * 8, C.gray));
-      if (!own) button('w_' + k, P.x + P.w - 62, y + 3, 54, 15, String(w.cost), () => { META.yonca -= w.cost; META.weapons[k] = true; META.wlv[k] = 1; META.weapon = k; saveMeta(); Sound.play('repair'); haptic('success'); toast(w.name + ' EYERE TAKILDI!', C.yellow, w.icon); }, { icon: 'clover', disabled: META.yonca < w.cost });
+      if (!own) button('w_' + k, P.x + P.w - 62, y + 3, 54, 15, String(w.cost), () => { META.yonca -= w.cost; META.weapons[k] = true; META.wlv[k] = 1; META.weapon = k; saveMeta(); Sound.play('repair'); haptic('success'); toast(w.name + TX(' EYERE TAKILDI!'), C.yellow, w.icon); }, { icon: 'clover', disabled: META.yonca < w.cost });
       else {
-        button('ws_' + k, P.x + P.w - 80, y + 3, 34, 15, sel ? 'TAKILI' : 'TAK', () => { META.weapon = k; saveMeta(); Sound.play('select'); }, { kind: sel ? 'secondary' : 'green' });
-        if (lv < 3) { const c = WEAPON_UP[lv]; button('wu_' + k, P.x + P.w - 42, y + 3, 34, 15, String(c), () => { META.yonca -= c; META.wlv[k] = lv + 1; saveMeta(); Sound.play('repair'); haptic('success'); toast(w.name + ' SEVİYE ' + (lv + 1) + ': HASAR +%25', C.yellow, w.icon); }, { icon: 'clover', disabled: META.yonca < c }); }
-        else text('MAKS', P.x + P.w - 25, y + 7, C.green, 'center');
+        button('ws_' + k, P.x + P.w - 80, y + 3, 34, 15, sel ? TX('TAKILI') : TX('TAK'), () => { META.weapon = k; saveMeta(); Sound.play('select'); }, { kind: sel ? 'secondary' : 'green' });
+        if (lv < 3) { const c = WEAPON_UP[lv]; button('wu_' + k, P.x + P.w - 42, y + 3, 34, 15, String(c), () => { META.yonca -= c; META.wlv[k] = lv + 1; saveMeta(); Sound.play('repair'); haptic('success'); toast(w.name + TX(' SEVİYE ') + (lv + 1) + TX(': HASAR +%25'), C.yellow, w.icon); }, { icon: 'clover', disabled: META.yonca < c }); }
+        else text(TX('MAKS'), P.x + P.w - 25, y + 7, C.green, 'center');
       }
       y += 38;
     }
     this.upgradeRow(P, 'silahhane', y);
   },
   pTapinak() {
-    const P = this.panelBox('GÖZLEMEVİ', 108 + this.upgradeH('tapinak'));
-    textBlock('GÖZDE TAKIMYILDIZINI SEÇ: İLK KAPI ONUN GÜCÜNÜ SUNAR.', P.x + P.w / 2, P.y + 18, P.w - 20, C.lgray, 'center');
+    const P = this.panelBox(TX('GÖZLEMEVİ'), 108 + this.upgradeH('tapinak'));
+    textBlock(TX('GÖZDE TAKIMYILDIZINI SEÇ: İLK KAPI ONUN GÜCÜNÜ SUNAR.'), P.x + P.w / 2, P.y + 18, P.w - 20, C.lgray, 'center');
     const fsel = () => !!(META.favSpirit && SPIRITS[META.favSpirit]);
     const n = SPIRIT_KEYS.length, cw = Math.min(34, Math.floor((P.w - 16) / n)), x0 = Math.round(P.x + P.w / 2 - n * cw / 2), y = P.y + 44;
     SPIRIT_KEYS.forEach((sp, i) => {
@@ -636,13 +636,13 @@ SCENES.farm = {
       UI.add('fs_' + sp, cx - cw / 2, y - 2, cw, 26, () => { META.favSpirit = sel ? null : sp; saveMeta(); Sound.play('power'); });
     });
     const fs = META.favSpirit && SPIRITS[META.favSpirit];
-    text(fs ? 'GÖZDE: ' + fs.name + ' · ' + fs.desc : 'HENÜZ SEÇİLMEDİ', P.x + P.w / 2, y + 28, fs ? fs.color : C.gray, 'center');
+    text(fs ? TX('GÖZDE: ') + fs.name + ' · ' + fs.desc : TX('HENÜZ SEÇİLMEDİ'), P.x + P.w / 2, y + 28, fs ? fs.color : C.gray, 'center');
     this.upgradeRow(P, 'tapinak', y + 42);
   },
   pJokey() {
     const keys = Object.keys(JOCKEYS);
-    const P = this.panelBox('JOKEY KOĞUŞU', 34 + keys.length * 46 + this.upgradeH('jokey') + 6);
-    text('TUTSAK JOKEYLER TEKNİKLERİNİ ÖĞRETİR', P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    const P = this.panelBox(TX('JOKEY KOĞUŞU'), 34 + keys.length * 46 + this.upgradeH('jokey') + 6);
+    text(TX('TUTSAK JOKEYLER TEKNİKLERİNİ ÖĞRETİR'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
     let y = P.y + 30;
     for (const k of keys) {
       const j = JOCKEYS[k], open = META.rozet >= j.rozet, sel = META.jockey === k;
@@ -650,21 +650,21 @@ SCENES.farm = {
       text(j.name, P.x + 36, y, sel ? C.yellow : C.white);
       text(j.passive, P.x + 36, y + 9, C.gray);
       wrapText(j.ability + ': ' + j.abDesc, P.w - 44).slice(0, 2).forEach((ln, i) => text(ln, P.x + 36, y + 19 + i * 8, C.sky));
-      if (open) button('j_' + k, P.x + P.w - 50, y, 42, 14, sel ? 'TAKILI' : 'ÖĞREN', () => { META.jockey = k; saveMeta(); Sound.play('select'); }, { kind: sel ? 'secondary' : 'green' });
-      else { spr(ICONS.lock, P.x + P.w - 50, y + 2); text(j.rozet + ' ROZET', P.x + P.w - 40, y + 2, C.salmon); }
+      if (open) button('j_' + k, P.x + P.w - 50, y, 42, 14, sel ? TX('TAKILI') : TX('ÖĞREN'), () => { META.jockey = k; saveMeta(); Sound.play('select'); }, { kind: sel ? 'secondary' : 'green' });
+      else { spr(ICONS.lock, P.x + P.w - 50, y + 2); text(j.rozet + TX(' ROZET'), P.x + P.w - 40, y + 2, C.salmon); }
       y += 46;
     }
     this.upgradeRow(P, 'jokey', y);
   },
   pVet() {
     const b = BUILDINGS.veteriner, lv = bl('veteriner');
-    const P = this.panelBox('REVİR', 44 + b.max * 20 + this.upgradeH('veteriner') + 4);
-    textBlock('İKİNCİ NEFES: CANIN BİTİNCE YORGUN DÜŞMEK YERİNE AYAĞA KALKARSIN.', P.x + P.w / 2, P.y + 18, P.w - 20, C.lgray, 'center');
+    const P = this.panelBox(TX('REVİR'), 44 + b.max * 20 + this.upgradeH('veteriner') + 4);
+    textBlock(TX('İKİNCİ NEFES: CANIN BİTİNCE YORGUN DÜŞMEK YERİNE AYAĞA KALKARSIN.'), P.x + P.w / 2, P.y + 18, P.w - 20, C.lgray, 'center');
     let y = P.y + 40;
     for (let i = 0; i < b.max; i++) {
       const got = lv > i;
       rrect(P.x + 8, y, P.w - 16, 16, got ? C.ddgreen : C.slate);
-      text('SEVİYE ' + (i + 1) + ': ' + b.upDesc[i], P.x + 14, y + 4, got ? C.green : C.lgray);
+      text(TX('SEVİYE ') + (i + 1) + ': ' + b.upDesc[i], P.x + 14, y + 4, got ? C.green : C.lgray);
       if (got) spr(ICONS.check, P.x + P.w - 20, y + 4);
       y += 20;
     }
@@ -672,9 +672,9 @@ SCENES.farm = {
   },
   pBahce() {
     const n = plotCount(), rows = Math.ceil(n / 4);
-    const P = this.panelBox('SERA', 58 + rows * 44 + 20 + this.upgradeH('bahce'));
+    const P = this.panelBox(TX('SERA'), 58 + rows * 44 + 20 + this.upgradeH('bahce'));
     let y = P.y + 18;
-    const seeds = [['havuc', 'HAVUÇ', '6 KRİSTAL · 3 KOŞU'], ['pancar', 'PANCAR', '1 ŞEKER · 6 KOŞU']];
+    const seeds = [['havuc', TX('HAVUÇ'), TX('6 KRİSTAL · 3 KOŞU')], ['pancar', TX('PANCAR'), TX('1 ŞEKER · 6 KOŞU')]];
     const sw = Math.floor((P.w - 22) / 2);
     seeds.forEach(([k, nm, d], i) => {
       const bx = P.x + 8 + i * (sw + 6), sel = this.seed === k;
@@ -691,41 +691,41 @@ SCENES.farm = {
       hline(cx + 2, cy + 22, cw - 4, C.plum); hline(cx + 2, cy + 26, cw - 4, C.plum);
       if (tp) { const img = cropBig(tp, st); spr(img, cx + cw / 2 - img.width / 2, cy + 26 - img.height + (ripe ? Math.round(Math.sin(this.t * 4 + i)) : 0)); }
       else text('+', cx + cw / 2, cy + 10, C.tan, 'center', 2);
-      const lab = !tp ? 'EK' : ripe ? 'HASAT!' : 'BÜYÜYOR';
+      const lab = !tp ? TX('EK') : ripe ? TX('HASAT!') : TX('BÜYÜYOR');
       text(lab, cx + cw / 2, cy + 29, ripe ? C.yellow : C.lgray, 'center');
       UI.add('plot' + i, cx, cy, cw, 38, () => this.plotTap(i));
     }
     y += rows * 44;
-    if (META.crops.slice(0, n).some(c => c > 0 && c % 10 === 3)) button('harvestAll', P.x + P.w / 2 - 50, y, 100, 15, 'HEPSİNİ HASAT ET', () => { for (let i = 0; i < n; i++) if (META.crops[i] > 0 && META.crops[i] % 10 === 3) this.harvest(i); }, { kind: 'green' });
-    else text('ÜRÜNLER HER KOŞUDAN SONRA BÜYÜR', P.x + P.w / 2, y + 3, C.gray, 'center');
+    if (META.crops.slice(0, n).some(c => c > 0 && c % 10 === 3)) button('harvestAll', P.x + P.w / 2 - 50, y, 100, 15, TX('HEPSİNİ HASAT ET'), () => { for (let i = 0; i < n; i++) if (META.crops[i] > 0 && META.crops[i] % 10 === 3) this.harvest(i); }, { kind: 'green' });
+    else text(TX('ÜRÜNLER HER KOŞUDAN SONRA BÜYÜR'), P.x + P.w / 2, y + 3, C.gray, 'center');
     this.upgradeRow(P, 'bahce', y + 20);
   },
   plotTap(i) {
     const c = META.crops[i] || 0;
     if (!c) { META.crops[i] = (this.seed === 'pancar' ? 2 : 1) * 10; saveMeta(); Sound.play('harvest'); return; }
     if (c % 10 === 3) { this.harvest(i); return; }
-    Sound.play('deny'); toast('DAHA OLGUNLAŞMADI. KOŞMAYA DEVAM!', C.lgray, 'clover');
+    Sound.play('deny'); toast(TX('DAHA OLGUNLAŞMADI. KOŞMAYA DEVAM!'), C.lgray, 'clover');
   },
   harvest(i) {
     const c = META.crops[i], tp = CROP_TYPES[Math.floor(c / 10)];
     META.crops[i] = 0;
-    if (tp === 'havuc') { META.yonca += 6; toast('+6 KRİSTAL', C.cyan, 'clover'); }
-    else { META.seker += 1; toast('+1 ŞEKER', C.white, 'seker'); }
+    if (tp === 'havuc') { META.yonca += 6; toast(TX('+6 KRİSTAL'), C.cyan, 'clover'); }
+    else { META.seker += 1; toast(TX('+1 ŞEKER'), C.white, 'seker'); }
     Sound.play('harvest'); haptic('success'); saveMeta();
   },
   pPazar() {
     const keys = Object.keys(DECOR);
-    const P = this.panelBox('MOKO\'NUN TEZGAHI', 34 + keys.length * 20 + 8);
-    text('SÜS AL, ÜS PUANI KAZAN!', P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    const P = this.panelBox(TX('MOKO\'NUN TEZGAHI'), 34 + keys.length * 20 + 8);
+    text(TX('SÜS AL, ÜS PUANI KAZAN!'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
     let y = P.y + 30;
     for (const k of keys) {
       const d = DECOR[k], own = !!META.decor[k], lock = d.needWin && !META.stats.wins;
       text(d.name, P.x + 10, y + 3, own ? C.green : C.white);
-      if (own) text('BÖLMEDE', P.x + P.w - 36, y + 3, C.green, 'center');
-      else if (lock) { spr(ICONS.lock, P.x + P.w - 62, y + 2); text('KUPA', P.x + P.w - 30, y + 3, C.salmon, 'center'); }
+      if (own) text(TX('BÖLMEDE'), P.x + P.w - 36, y + 3, C.green, 'center');
+      else if (lock) { spr(ICONS.lock, P.x + P.w - 62, y + 2); text(TX('KUPA'), P.x + P.w - 30, y + 3, C.salmon, 'center'); }
       else button('dc_' + k, P.x + P.w - 62, y, 54, 15, String(d.cost), () => {
         META.yonca -= d.cost; META.decor[k] = true; saveMeta(); Sound.play('buy'); haptic('success');
-        toast(d.name + ' BÖLMEYE YERLEŞTİ!', C.yellow, 'house'); checkFarmPerks();
+        toast(d.name + TX(' BÖLMEYE YERLEŞTİ!'), C.yellow, 'house'); checkFarmPerks();
         const p = this.decorPos[k]; if (p) burst(p[0] + 8, p[1] + 6, 20, [C.yellow, C.white, C.green], 50, 0.9, 40, 2);
       }, { icon: 'clover', disabled: META.yonca < d.cost });
       y += 20;
@@ -734,14 +734,14 @@ SCENES.farm = {
   pAnit() {
     const st = META.stats;
     const rows = [
-      ['KOŞU', st.runs], ['ZAFER', st.wins], ['EN UZAK', REGIONS[Math.min(LAST_REGION, st.bestRegion)].name], ['EN İYİ KOMBO', st.bestCombo],
-      ['MÜKEMMEL', st.perfects], ['VURULAN DÜŞMAN', st.kills], ['KIL PAYI', st.nearMiss], ['SİPER ÇIKIŞI', st.drafts],
-      ['TEMİZ ATLAYIŞ', st.cleanJumps || 0], ['HAMLE', st.hamles || 0], ['SON ATAK', st.kicks || 0], ['ÖZEL ATIŞ', st.specials || 0], ['DEVRİLEN KAPTAN', st.reisKills || 0], ['KAZANILAN DÜELLO', st.duels || 0], ['ALINAN RÖVANŞ', st.revenges || 0], ['DÖRTNAL MODU', st.fevers || 0],
-      ['ÜS PUANI', farmLevel()], ['EVE DÖNEN RAKİP', freedCount() + '/' + NAMED_RIVALS.flat().length]
+      [TX('KOŞU'), st.runs], [TX('ZAFER'), st.wins], [TX('EN UZAK'), REGIONS[Math.min(LAST_REGION, st.bestRegion)].name], [TX('EN İYİ KOMBO'), st.bestCombo],
+      [TX('MÜKEMMEL'), st.perfects], [TX('VURULAN DÜŞMAN'), st.kills], [TX('KIL PAYI'), st.nearMiss], [TX('SİPER ÇIKIŞI'), st.drafts],
+      [TX('TEMİZ ATLAYIŞ'), st.cleanJumps || 0], [TX('HAMLE'), st.hamles || 0], [TX('SON ATAK'), st.kicks || 0], [TX('ÖZEL ATIŞ'), st.specials || 0], [TX('DEVRİLEN KAPTAN'), st.reisKills || 0], [TX('KAZANILAN DÜELLO'), st.duels || 0], [TX('ALINAN RÖVANŞ'), st.revenges || 0], [TX('DÖRTNAL MODU'), st.fevers || 0],
+      [TX('ÜS PUANI'), farmLevel()], [TX('EVE DÖNEN RAKİP'), freedCount() + '/' + NAMED_RIVALS.flat().length]
     ];
     const dbest = Math.max(0, ...Object.values(META.dailyRun.best || {}));
-    if (dbest) rows.push(['GÜNÜN KOŞUSU REKORU', dbest]);
-    const P = this.panelBox('ZAFER VİTRİNİ', 24 + rows.length * 11 + 56);
+    if (dbest) rows.push([TX('GÜNÜN KOŞUSU REKORU'), dbest]);
+    const P = this.panelBox(TX('ZAFER VİTRİNİ'), 24 + rows.length * 11 + 56);
     let y = P.y + 20;
     for (const [a, b] of rows) { text(a, P.x + 10, y, C.lgray); text(String(b), P.x + P.w - 10, y, C.white, 'right'); y += 11; }
     y += 4; hline(P.x + 6, y, P.w - 12, C.slate); y += 6;
@@ -760,14 +760,14 @@ SCENES.farm = {
     const tab = this.defTab === 'rakip' ? 'rakip' : 'gunluk';
     const avail = H - SAFE.t - SAFE.b - 8, rh = clamp(Math.floor((avail - 64) / rivals.length), 13, 20);
     const mh = clamp(Math.floor((avail - 82) / MEMORIES.length), 15, 20);
-    const P = this.panelBox('SEYİR DEFTERİ', 52 + Math.max(MEMORIES.length * mh + 20, rivals.length * rh) + 6);
+    const P = this.panelBox(TX('SEYİR DEFTERİ'), 52 + Math.max(MEMORIES.length * mh + 20, rivals.length * rh) + 6);
     const tw = Math.floor((P.w - 16) / 2);
-    button('tab_g', P.x + 6, P.y + 16, tw, 14, 'GÜNLÜK', () => { this.defTab = 'gunluk'; Sound.play('page'); }, { kind: tab === 'gunluk' ? 'primary' : 'secondary' });
-    button('tab_r', P.x + 10 + tw, P.y + 16, tw, 14, 'RAKİPLER ' + nOpen + '/' + rivals.length, () => { this.defTab = 'rakip'; Sound.play('page'); }, { kind: tab === 'rakip' ? 'primary' : 'secondary' });
+    button('tab_g', P.x + 6, P.y + 16, tw, 14, TX('GÜNLÜK'), () => { this.defTab = 'gunluk'; Sound.play('page'); }, { kind: tab === 'gunluk' ? 'primary' : 'secondary' });
+    button('tab_r', P.x + 10 + tw, P.y + 16, tw, 14, TX('RAKİPLER ') + nOpen + '/' + rivals.length, () => { this.defTab = 'rakip'; Sound.play('page'); }, { kind: tab === 'rakip' ? 'primary' : 'secondary' });
     if (unreadR && tab !== 'rakip') { circle(P.x + 10 + tw * 2 - 3, P.y + 17, 3, C.ink); circle(P.x + 10 + tw * 2 - 3, P.y + 17, 2, C.yellow); }
     let y = P.y + 36;
     if (tab === 'gunluk') {
-      text('DENİZ VE YILDIZ\'IN YOLCULUĞU', P.x + P.w / 2, y, C.lgray, 'center'); y += 12;
+      text(TX('DENİZ VE YILDIZ\'IN YOLCULUĞU'), P.x + P.w / 2, y, C.lgray, 'center'); y += 12;
       for (const m of MEMORIES) {
         const open = m.cond(), unread = open && !META.memRead[m.id];
         const rh2 = mh - 3, ty = y + Math.round(rh2 / 2) - 3;
@@ -775,31 +775,31 @@ SCENES.farm = {
         text((MEMORIES.indexOf(m) + 1) + '.', P.x + 12, ty, open ? C.yellow : C.dgray);
         if (open) {
           text(m.title, P.x + 26, ty, C.white);
-          if (unread) text('YENİ', P.x + P.w - 12, ty, C.yellow, 'right');
+          if (unread) text(TX('YENİ'), P.x + P.w - 12, ty, C.yellow, 'right');
           UI.add('mem' + m.id, P.x + 6, y, P.w - 12, rh2, () => { this.page = m.id; META.memRead[m.id] = true; saveMeta(); Sound.play('page'); });
         } else { spr(ICONS.lock, P.x + 26, ty - 1); text(m.hint, P.x + 37, ty, C.dgray); }
         y += mh;
       }
       // the illustrated story can be watched again
       const bw2 = Math.floor((P.w - 16) / 2);
-      button('cine_p', P.x + 6, y + 2, bw2, 14, 'PROLOĞU İZLE', () => { this.panel = null; go('cine', { script: 'prolog', then: ['farm', {}] }); }, { kind: 'blue' });
-      if (META.seen.cine_final) button('cine_f', P.x + 10 + bw2, y + 2, bw2, 14, 'FİNALİ İZLE', () => { this.panel = null; go('cine', { script: 'final', then: ['farm', {}] }); }, { kind: 'blue' });
+      button('cine_p', P.x + 6, y + 2, bw2, 14, TX('PROLOĞU İZLE'), () => { this.panel = null; go('cine', { script: 'prolog', then: ['farm', {}] }); }, { kind: 'blue' });
+      if (META.seen.cine_final) button('cine_f', P.x + 10 + bw2, y + 2, bw2, 14, TX('FİNALİ İZLE'), () => { this.panel = null; go('cine', { script: 'final', then: ['farm', {}] }); }, { kind: 'blue' });
       return;
     }
-    text('DÜELLODA YENDİĞİN RAKİPLERİN DOSYALARI', P.x + P.w / 2, y, C.lgray, 'center'); y += 12;
+    text(TX('DÜELLODA YENDİĞİN RAKİPLERİN DOSYALARI'), P.x + P.w / 2, y, C.lgray, 'center'); y += 12;
     for (const r of rivals) {
       const open = !!META.rivals[r.id], unread = open && !META.rivalRead[r.id], nem = META.nemesis && META.nemesis.id === r.id;
       rrect(P.x + 6, y, P.w - 12, rh - 3, open ? (unread ? C.purple : C.slate) : nem ? C.plum : C.navy);
       const ty = y + Math.round((rh - 3) / 2) - 3;
-      const reg = nem ? 'RÖVANŞÇI' : REGIONS[r.region].name.split(' ')[0];
+      const reg = nem ? TX('RÖVANŞÇI') : REGIONS[r.region].name.split(' ')[0];
       if (open) {
         circle(P.x + 14, y + 8, 3, C.ink); circle(P.x + 14, y + rh / 2, 2, STYLE_COL[r.style] || C.green);
         text(r.name, P.x + 22, ty, C.white);
-        text(unread ? 'YENİ' : isFreed(r.id) ? 'EVE DÖNDÜ' : reg, P.x + P.w - 12, ty, unread ? C.yellow : isFreed(r.id) ? C.green : nem ? C.red : C.gray, 'right');
+        text(unread ? TX('YENİ') : isFreed(r.id) ? TX('EVE DÖNDÜ') : reg, P.x + P.w - 12, ty, unread ? C.yellow : isFreed(r.id) ? C.green : nem ? C.red : C.gray, 'right');
         UI.add('riv_' + r.id, P.x + 6, y, P.w - 12, rh - 3, () => { this.page = r.id; META.rivalRead[r.id] = true; saveMeta(); Sound.play('page'); });
       } else {
         spr(ICONS.lock, P.x + 11, ty - 1); text(nem ? r.name : '???', P.x + 22, ty, nem ? C.salmon : C.dgray);
-        text(nem ? 'RÖVANŞÇI' : reg + ' DÜELLOSU', P.x + P.w - 12, ty, nem ? C.red : C.dgray, 'right');
+        text(nem ? TX('RÖVANŞÇI') : reg + TX(' DÜELLOSU'), P.x + P.w - 12, ty, nem ? C.red : C.dgray, 'right');
       }
       y += rh;
     }
@@ -808,45 +808,45 @@ SCENES.farm = {
     const r = RIVAL_BY_ID[id], info = RIVAL_INFO[id];
     if (!r || !info) { this.page = null; return; }
     const w = Math.min(W - 10, 226), lines = wrapText(info.text, w - 30);
-    const P = this.panelBox('RAKİP DOSYASI', 96 + lines.length * 10 + 30, w);
+    const P = this.panelBox(TX('RAKİP DOSYASI'), 96 + lines.length * 10 + 30, w);
     rect(P.x + 7, P.y + 18, 30, 30, C.ink); rect(P.x + 8, P.y + 19, 28, 28, C.slate);
     if (PORTRAIT[id]) spr(PORTRAIT[id], P.x + 8, P.y + 19);
     text(r.name, P.x + 44, P.y + 19, C.yellow);
     text(info.race, P.x + 44, P.y + 29, C.lgray);
     text(info.home, P.x + 44, P.y + 39, C.gray);
-    text('TARZI: ' + info.trick, P.x + 10, P.y + 54, STYLE_COL[r.style] || C.green);
-    text('YENİLDİ: ' + (META.rivals[id] || 0) + ' KEZ', P.x + 10, P.y + 64, C.gray);
-    if (META.nemesis && META.nemesis.id === id) text('RÖVANŞÇI · SV ' + META.nemesis.lv, P.x + P.w - 10, P.y + 64, C.red, 'right');
-    if (isFreed(id)) text('EVE DÖNDÜ', P.x + P.w - 10, P.y + 64, C.green, 'right');
-    else if (META.freeTokens > 0) button('pg_free', P.x + P.w / 2 - 34, P.y + P.h - 22, 68, 15, 'EVE GÖNDER', () => { this.panel = null; this.page = null; go('liberate', { pick: id }); }, { kind: 'green' });
+    text(TX('TARZI: ') + info.trick, P.x + 10, P.y + 54, STYLE_COL[r.style] || C.green);
+    text(TX('YENİLDİ: ') + (META.rivals[id] || 0) + TX(' KEZ'), P.x + 10, P.y + 64, C.gray);
+    if (META.nemesis && META.nemesis.id === id) text(TX('RÖVANŞÇI · SV ') + META.nemesis.lv, P.x + P.w - 10, P.y + 64, C.red, 'right');
+    if (isFreed(id)) text(TX('EVE DÖNDÜ'), P.x + P.w - 10, P.y + 64, C.green, 'right');
+    else if (META.freeTokens > 0) button('pg_free', P.x + P.w / 2 - 34, P.y + P.h - 22, 68, 15, TX('EVE GÖNDER'), () => { this.panel = null; this.page = null; go('liberate', { pick: id }); }, { kind: 'green' });
     rect(P.x + 6, P.y + 76, P.w - 12, P.h - 102, C.sand); hline(P.x + 6, P.y + 76, P.w - 12, C.white);
     lines.forEach((ln, i) => text(ln, P.x + 15, P.y + 82 + i * 10, C.dbrown));
     const opened = NAMED_RIVALS.flat().filter(q => META.rivals[q.id]);
     const idx = opened.findIndex(q => q.id === id);
-    button('pg_back', P.x + 8, P.y + P.h - 22, 54, 15, '< LİSTE', () => { this.page = null; Sound.play('page'); }, { kind: 'secondary' });
-    if (idx >= 0 && idx < opened.length - 1) button('pg_next', P.x + P.w - 62, P.y + P.h - 22, 54, 15, 'SONRAKİ >', () => { const nx = opened[idx + 1]; this.page = nx.id; META.rivalRead[nx.id] = true; saveMeta(); Sound.play('page'); }, { kind: 'blue' });
+    button('pg_back', P.x + 8, P.y + P.h - 22, 54, 15, TX('< LİSTE'), () => { this.page = null; Sound.play('page'); }, { kind: 'secondary' });
+    if (idx >= 0 && idx < opened.length - 1) button('pg_next', P.x + P.w - 62, P.y + P.h - 22, 54, 15, TX('SONRAKİ >'), () => { const nx = opened[idx + 1]; this.page = nx.id; META.rivalRead[nx.id] = true; saveMeta(); Sound.play('page'); }, { kind: 'blue' });
   },
   pPage(id) {
     const m = MEMORIES.find(q => q.id === id);
     const w = Math.min(W - 10, 226), lines = wrapText(m.text, w - 30);
     const pic = IMPORTED_ART.story['log_m' + id], ph = pic ? pic.height + 6 : 0;
-    const P = this.panelBox('SAYFA ' + (MEMORIES.indexOf(m) + 1), 48 + ph + lines.length * 10 + 30, w);
+    const P = this.panelBox(TX('SAYFA ') + (MEMORIES.indexOf(m) + 1), 48 + ph + lines.length * 10 + 30, w);
     rect(P.x + 6, P.y + 18, P.w - 12, P.h - 44, C.sand); hline(P.x + 6, P.y + 18, P.w - 12, C.white);
     text(m.title, P.x + P.w / 2, P.y + 23, C.wine, 'center');
     if (pic) { const px = Math.round(P.x + P.w / 2 - pic.width / 2); rect(px - 2, P.y + 33, pic.width + 4, pic.height + 4, C.dbrown); spr(pic, px, P.y + 35); }
     lines.forEach((ln, i) => text(ln, P.x + 15, P.y + 36 + ph + i * 10, C.dbrown));
     const opened = MEMORIES.filter(q => q.cond());
     const idx = opened.indexOf(m);
-    button('pg_back', P.x + 8, P.y + P.h - 22, 54, 15, '< LİSTE', () => { this.page = null; Sound.play('page'); }, { kind: 'secondary' });
-    if (idx >= 0 && idx < opened.length - 1) button('pg_next', P.x + P.w - 62, P.y + P.h - 22, 54, 15, 'SONRAKİ >', () => { const nx = opened[idx + 1]; this.page = nx.id; META.memRead[nx.id] = true; saveMeta(); Sound.play('page'); }, { kind: 'blue' });
+    button('pg_back', P.x + 8, P.y + P.h - 22, 54, 15, TX('< LİSTE'), () => { this.page = null; Sound.play('page'); }, { kind: 'secondary' });
+    if (idx >= 0 && idx < opened.length - 1) button('pg_next', P.x + P.w - 62, P.y + P.h - 22, 54, 15, TX('SONRAKİ >'), () => { const nx = opened[idx + 1]; this.page = nx.id; META.memRead[nx.id] = true; saveMeta(); Sound.play('page'); }, { kind: 'blue' });
   },
   pNpc(k) {
     const kp = KEEPSAKES[k], lv = META.bond[k] || 0, name = NPC_NAMES[k];
-    const desc = lv > 0 ? kp.desc(lv) : 'ŞEKER VER, HATIRASINI AL: ' + kp.desc(1);
+    const desc = lv > 0 ? kp.desc(lv) : TX('ŞEKER VER, HATIRASINI AL: ') + kp.desc(1);
     const w = Math.min(W - 10, 226), lines = wrapText(desc, w - 20);
     const P = this.panelBox(name, 74 + lines.length * 9 + 30, w);
     rect(P.x + 7, P.y + 18, 30, 30, C.ink); rect(P.x + 8, P.y + 19, 28, 28, C.slate); spr(PORTRAIT[k], P.x + 8, P.y + 19);
-    text('DOSTLUK', P.x + 44, P.y + 20, C.lgray);
+    text(TX('DOSTLUK'), P.x + 44, P.y + 20, C.lgray);
     for (let i = 0; i < 3; i++) spr(i < lv ? ICONS.heartS : tinted('heartS', C.slate), P.x + 44 + i * 9, P.y + 31);
     iconNum('seker', META.seker, P.x + P.w - 30, P.y + 20, C.white);
     const eq = META.keepsake === k;
@@ -855,14 +855,14 @@ SCENES.farm = {
     text(kp.name, P.x + 10, P.y + 54, lv > 0 ? C.yellow : C.gray);
     lines.forEach((ln, i) => text(ln, P.x + 10, P.y + 64 + i * 9, C.lgray));
     const by = P.y + P.h - 22, bw = Math.floor((P.w - 24) / 3);
-    button('gift', P.x + 8, by, bw, 16, lv >= 3 ? 'TAM DOST' : 'ŞEKER VER', () => {
+    button('gift', P.x + 8, by, bw, 16, lv >= 3 ? TX('TAM DOST') : TX('ŞEKER VER'), () => {
       META.seker--; META.bond[k] = lv + 1; if (!META.keepsake) META.keepsake = k; saveMeta();
       Sound.play('gift'); haptic('success');
-      toast(NPC_NAMES[k] + ' İLE DOSTLUK ' + (lv + 1) + '/3', C.salmon, 'heartS');
+      toast(NPC_NAMES[k] + TX(' İLE DOSTLUK ') + (lv + 1) + '/3', C.salmon, 'heartS');
       Dialog.start([[k, NPC_LINES[k].gift[lv]]]);
     }, { kind: 'green', disabled: lv >= 3 || META.seker < 1 });
-    button('equip', P.x + 12 + bw, by, bw, 16, eq ? 'TAKILI' : 'TAK', () => { META.keepsake = eq ? null : k; saveMeta(); Sound.play('select'); }, { kind: eq ? 'secondary' : 'blue', disabled: lv < 1 });
-    button('chat', P.x + 16 + bw * 2, by, bw, 16, 'SOHBET', () => { const ls = NPC_LINES[k].chat; Dialog.start([[k, ls[Math.floor(Math.random() * ls.length)]]]); }, { kind: 'secondary' });
+    button('equip', P.x + 12 + bw, by, bw, 16, eq ? TX('TAKILI') : TX('TAK'), () => { META.keepsake = eq ? null : k; saveMeta(); Sound.play('select'); }, { kind: eq ? 'secondary' : 'blue', disabled: lv < 1 });
+    button('chat', P.x + 16 + bw * 2, by, bw, 16, TX('SOHBET'), () => { const ls = NPC_LINES[k].chat; Dialog.start([[k, ls[Math.floor(Math.random() * ls.length)]]]); }, { kind: 'secondary' });
   },
   cycle(list, cur, dir) { let i = list.indexOf(cur); if (i < 0) i = 0; return list[(i + dir + list.length) % list.length]; },
   gateRows() {
@@ -870,28 +870,28 @@ SCENES.farm = {
     const jks = Object.keys(JOCKEYS).filter(k => k === 'ayse' || (built('jokey') && META.rozet >= JOCKEYS[k].rozet));
     if (jks.indexOf(META.jockey) < 0) META.jockey = 'ayse';
     const J = JOCKEYS[META.jockey];
-    rows.push({ label: 'TEKNİK', val: J.ability, desc: J.abDesc + ' (' + J.name + ')', list: jks, key: 'jockey' });
+    rows.push({ label: TX('TEKNİK'), val: J.ability, desc: J.abDesc + ' (' + J.name + ')', list: jks, key: 'jockey' });
     const nls = Object.keys(NALS).filter(k => META.nals[k]);
-    rows.push({ label: 'NAL', val: NALS[META.nal].name, desc: NALS[META.nal].desc, list: nls, key: 'nal' });
+    rows.push({ label: TX('NAL'), val: NALS[META.nal].name, desc: NALS[META.nal].desc, list: nls, key: 'nal' });
     const wps = Object.keys(WEAPONS).filter(k => META.weapons[k]);
-    if (built('silahhane') || wps.length > 1) { const w = WEAPONS[META.weapon] || WEAPONS.yay; rows.push({ label: 'SİLAH', val: w.name + ' SV' + (META.wlv[META.weapon] || 1), desc: w.desc, list: wps, key: 'weapon' }); }
-    else rows.push({ label: 'SİLAH', val: WEAPONS.yay.name, desc: WEAPONS.yay.desc + ' (CEPHANELİKTE YENİLERİ VAR)', list: ['yay'], key: 'weapon' });
+    if (built('silahhane') || wps.length > 1) { const w = WEAPONS[META.weapon] || WEAPONS.yay; rows.push({ label: TX('SİLAH'), val: w.name + ' SV' + (META.wlv[META.weapon] || 1), desc: w.desc, list: wps, key: 'weapon' }); }
+    else rows.push({ label: TX('SİLAH'), val: WEAPONS.yay.name, desc: WEAPONS.yay.desc + TX(' (CEPHANELİKTE YENİLERİ VAR)'), list: ['yay'], key: 'weapon' });
     if (built('ambar')) {
       const owned = Object.keys(FOODS).filter(k => META.foods[k]);
-      rows.push({ label: 'YEM', val: META.food ? FOODS[META.food].name : 'YOK', desc: META.food ? FOODS[META.food].desc : 'YEM SEÇİLMEDİ', list: [null].concat(owned.filter(k => k !== META.food2)), key: 'food' });
-      if (bl('ambar') >= 2) rows.push({ label: 'YEM 2', val: META.food2 ? FOODS[META.food2].name : 'YOK', desc: META.food2 ? FOODS[META.food2].desc : 'İKİNCİ YEM YUVASI', list: [null].concat(owned.filter(k => k !== META.food)), key: 'food2' });
+      rows.push({ label: TX('YEM'), val: META.food ? FOODS[META.food].name : TX('YOK'), desc: META.food ? FOODS[META.food].desc : TX('YEM SEÇİLMEDİ'), list: [null].concat(owned.filter(k => k !== META.food2)), key: 'food' });
+      if (bl('ambar') >= 2) rows.push({ label: TX('YEM 2'), val: META.food2 ? FOODS[META.food2].name : TX('YOK'), desc: META.food2 ? FOODS[META.food2].desc : TX('İKİNCİ YEM YUVASI'), list: [null].concat(owned.filter(k => k !== META.food)), key: 'food2' });
     }
     const kps = Object.keys(KEEPSAKES).filter(k => META.bond[k] > 0);
-    if (kps.length) rows.push({ label: 'HATIRA', val: META.keepsake ? KEEPSAKES[META.keepsake].name : 'YOK', desc: META.keepsake ? KEEPSAKES[META.keepsake].desc(META.bond[META.keepsake]) : 'DOSTLARINDAN BİR HATIRA TAK', list: [null].concat(kps), key: 'keepsake' });
-    if (META.tutorialDone) rows.push({ label: 'STİL', val: RUN_STYLES[META.runStyle].name, desc: RUN_STYLES[META.runStyle].desc, list: ['dengeli', 'onde', 'sondan'], key: 'runStyle' });
-    if (META.heatUnlocked) rows.push({ label: 'PİST', val: HEATS[META.heat].name, desc: META.heat ? 'ÖDÜLLER X' + HEATS[META.heat].rew : 'STANDART ZORLUK', list: [0, 1, 2], key: 'heat' });
+    if (kps.length) rows.push({ label: TX('HATIRA'), val: META.keepsake ? KEEPSAKES[META.keepsake].name : TX('YOK'), desc: META.keepsake ? KEEPSAKES[META.keepsake].desc(META.bond[META.keepsake]) : TX('DOSTLARINDAN BİR HATIRA TAK'), list: [null].concat(kps), key: 'keepsake' });
+    if (META.tutorialDone) rows.push({ label: TX('STİL'), val: RUN_STYLES[META.runStyle].name, desc: RUN_STYLES[META.runStyle].desc, list: ['dengeli', 'onde', 'sondan'], key: 'runStyle' });
+    if (META.heatUnlocked) rows.push({ label: TX('PİST'), val: HEATS[META.heat].name, desc: META.heat ? TX('ÖDÜLLER X') + HEATS[META.heat].rew : TX('STANDART ZORLUK'), list: [0, 1, 2], key: 'heat' });
     return rows;
   },
   pGate() {
     const rows = this.gateRows();
     const avail = H - SAFE.t - SAFE.b - 8 - 58;
     const rowH = clamp(Math.floor(avail / rows.length), 24, 36), two = rowH >= 33;
-    const P = this.panelBox('YARIŞA HAZIR MISIN?', 22 + rows.length * rowH + 34);
+    const P = this.panelBox(TX('YARIŞA HAZIR MISIN?'), 22 + rows.length * rowH + 34);
     let y = P.y + 19;
     for (const r of rows) {
       text(r.label, P.x + 8, y + 3, C.gray);
@@ -904,39 +904,46 @@ SCENES.farm = {
       y += rowH;
     }
     if (META.runSave) {
-      button('run_cont', P.x + 14, P.y + P.h - 26, Math.floor((P.w - 32) / 2), 20, 'DEVAM ET', () => { this.panel = null; restoreRun(); go('doors'); }, { kind: 'blue' });
-      button('run_go', P.x + 18 + Math.floor((P.w - 32) / 2), P.y + P.h - 26, Math.ceil((P.w - 32) / 2), 20, this.confirmNew ? 'EMİN MİSİN?' : 'YENİ KOŞU', () => {
+      button('run_cont', P.x + 14, P.y + P.h - 26, Math.floor((P.w - 32) / 2), 20, TX('DEVAM ET'), () => { this.panel = null; restoreRun(); go('doors'); }, { kind: 'blue' });
+      button('run_go', P.x + 18 + Math.floor((P.w - 32) / 2), P.y + P.h - 26, Math.ceil((P.w - 32) / 2), 20, this.confirmNew ? TX('EMİN MİSİN?') : TX('YENİ KOŞU'), () => {
         if (!this.confirmNew) { this.confirmNew = true; Sound.play('deny'); return; }
         this.confirmNew = false; this.panel = null; META.runSave = null; newRun(); saveMeta(); go('run', firstNode());
       }, { kind: 'secondary' });
-    } else button('run_go', P.x + 14, P.y + P.h - 26, P.w - 28, 20, 'KOŞ!', () => { this.panel = null; newRun(); saveMeta(); go('run', firstNode()); });
+    } else button('run_go', P.x + 14, P.y + P.h - 26, P.w - 28, 20, TX('KOŞ!'), () => { this.panel = null; newRun(); saveMeta(); go('run', firstNode()); });
   },
   pSettings() {
     const s = META.settings;
-    const items = [['MÜZİK', 'music'], ['EFEKTLER', 'sfx'], ['TİTREŞİM', 'haptics'], ['RİTİM TİTREŞİMİ', 'beatHaptic'], ['EKRAN SARSINTISI', 'shake'], ['SOL EL MODU', 'left'], ['GENİŞ RİTİM PENCERESİ', 'wide'], ['SADE RİTİM', 'simpleNotes'], ['YARDIM MODU', 'assist']];
-    if (window.__NATIVE__) items.splice(2, 0, ['SESSİZ MODDA DA ÇAL', 'loudSilent']);
-    const P = this.panelBox('AYARLAR', 20 + items.length * 17 + 102);
+    const items = [[TX('MÜZİK'), 'music'], [TX('EFEKTLER'), 'sfx'], [TX('TİTREŞİM'), 'haptics'], [TX('RİTİM TİTREŞİMİ'), 'beatHaptic'], [TX('EKRAN SARSINTISI'), 'shake'], [TX('SOL EL MODU'), 'left'], [TX('GENİŞ RİTİM PENCERESİ'), 'wide'], [TX('SADE RİTİM'), 'simpleNotes'], [TX('YARDIM MODU'), 'assist']];
+    if (window.__NATIVE__) items.splice(2, 0, [TX('SESSİZ MODDA DA ÇAL'), 'loudSilent']);
+    const P = this.panelBox(TX('AYARLAR'), 20 + items.length * 17 + 122);
     let y = P.y + 19;
     for (const [lab, key] of items) {
       text(lab, P.x + 10, y + 3, key === 'assist' && s.assist ? C.sky : C.white);
-      button('set_' + key, P.x + P.w - 50, y, 42, 13, s[key] ? 'AÇIK' : 'KAPALI', () => { s[key] = !s[key]; Sound.applySettings(); if (key === 'loudSilent') nativeAudio(); saveMeta(); }, { kind: s[key] ? 'green' : 'secondary' });
+      button('set_' + key, P.x + P.w - 50, y, 42, 13, s[key] ? TX('AÇIK') : TX('KAPALI'), () => { s[key] = !s[key]; Sound.applySettings(); if (key === 'loudSilent') nativeAudio(); saveMeta(); }, { kind: s[key] ? 'green' : 'secondary' });
       y += 17;
     }
-    if (s.assist) text('YARDIM: %' + Math.round(Math.min(0.6, 0.2 + 0.02 * META.assistLv) * 100) + ' KORUMA', P.x + 10, y, C.sky);
+    if (s.assist) text(TX('YARDIM: %') + Math.round(Math.min(0.6, 0.2 + 0.02 * META.assistLv) * 100) + TX(' KORUMA'), P.x + 10, y, C.sky);
     y += 10;
-    text('RİTİM GECİKMESİ', P.x + 10, y + 3, C.white);
+    text(TX('RİTİM GECİKMESİ'), P.x + 10, y + 3, C.white);
     button('off_m', P.x + P.w - 72, y, 14, 14, '-', () => { s.offset = clamp(s.offset - 10, -150, 150); saveMeta(); }, { kind: 'secondary' });
     text(s.offset + 'MS', P.x + P.w - 36, y + 3, C.yellow, 'center');
     button('off_p', P.x + P.w - 22, y, 14, 14, '+', () => { s.offset = clamp(s.offset + 10, -150, 150); saveMeta(); }, { kind: 'secondary' });
     y += 20;
-    button('calib', P.x + 10, y, P.w - 20, 15, 'RİTMİ ÖLÇ: DOKUNARAK AYARLA', () => this.startCalib(), { kind: 'blue' });
+    button('calib', P.x + 10, y, P.w - 20, 15, TX('RİTMİ ÖLÇ: DOKUNARAK AYARLA'), () => this.startCalib(), { kind: 'blue' });
     y += 20;
-    button('tutagain', P.x + 10, y, P.w - 20, 15, META.tutorialDone ? 'ISINMA TURUNU TEKRAR OYNA' : 'SONRAKİ KOŞU ISINMA TURUYLA BAŞLAR', () => {
+    // language: the whole game text is built at start-up, so a change reloads the page (progress is saved first)
+    text('DİL · LANGUAGE', P.x + 10, y + 4, C.white);
+    button('lang', P.x + P.w - 82, y, 74, 15, LANG_NAMES[LANG], () => {
+      s.lang = LANGS[(LANGS.indexOf(LANG) + 1) % LANGS.length]; saveMeta(); Sound.play('select');
+      setTimeout(() => location.reload(), 120);
+    }, { kind: 'blue' });
+    y += 20;
+    button('tutagain', P.x + 10, y, P.w - 20, 15, META.tutorialDone ? TX('ISINMA TURUNU TEKRAR OYNA') : TX('SONRAKİ KOŞU ISINMA TURUYLA BAŞLAR'), () => {
       if (!META.tutorialDone) return;
-      META.tutorialDone = false; saveMeta(); toast('SONRAKİ KOŞU ISINMA TURUYLA BAŞLAR', C.green, 'check');
+      META.tutorialDone = false; saveMeta(); toast(TX('SONRAKİ KOŞU ISINMA TURUYLA BAŞLAR'), C.green, 'check');
     }, { kind: META.tutorialDone ? 'blue' : 'secondary' });
     y += 20;
-    button('reset', P.x + 10, y, P.w - 20, 15, this.confirmReset ? 'EMİN MİSİN? TÜM İLERLEME SİLİNİR' : 'İLERLEMEYİ SIFIRLA', () => {
+    button('reset', P.x + 10, y, P.w - 20, 15, this.confirmReset ? TX('EMİN MİSİN? TÜM İLERLEME SİLİNİR') : TX('İLERLEMEYİ SIFIRLA'), () => {
       if (!this.confirmReset) { this.confirmReset = true; return; }
       const keep = META.settings; META = defaultMeta(); META.settings = keep; saveMeta(); this.confirmReset = false; this.panel = null; go('title');
     }, { kind: 'red' });
@@ -947,16 +954,16 @@ SCENES.farm = {
     Calib.draw(() => { this.panel = 'settings'; Music.play('farm', now() + 0.2, false); });
   },
   pDaily() {
-    const P = this.panelBox('GÜNLÜK ERZAK', 104);
+    const P = this.panelBox(TX('GÜNLÜK ERZAK'), 104);
     const cur = META.daily.count % 7;
-    textBlock('HER GÜN UĞRA, ERZAK ARTARAK GELSİN. GÜN KAÇIRSAN DA SERİ SIFIRLANMAZ.', P.x + P.w / 2, P.y + 18, P.w - 20, C.lgray, 'center');
+    textBlock(TX('HER GÜN UĞRA, ERZAK ARTARAK GELSİN. GÜN KAÇIRSAN DA SERİ SIFIRLANMAZ.'), P.x + P.w / 2, P.y + 18, P.w - 20, C.lgray, 'center');
     const bw = Math.floor((P.w - 16 - 18) / 7), y = P.y + 44;
     for (let i = 0; i < 7; i++) {
       const bx = P.x + 8 + i * (bw + 3); rrect(bx, y, bw, 22, i === cur ? C.gold : i < cur ? C.ddgreen : C.slate);
       text(String(DAILY[i]), bx + bw / 2, y + 7, i === cur ? C.ink : C.white, 'center');
       if (DAILY_SUGAR[i]) spr(ICONS.seker, bx + bw - 7, y - 3);
     }
-    button('dly2', P.x + P.w / 2 - 45, P.y + P.h - 24, 90, 18, 'AL: ' + DAILY[cur], () => { this.claimDailyFx(); this.panel = null; }, { icon: 'clover', kind: 'green' });
+    button('dly2', P.x + P.w / 2 - 45, P.y + P.h - 24, 90, 18, TX('AL: ') + DAILY[cur], () => { this.claimDailyFx(); this.panel = null; }, { icon: 'clover', kind: 'green' });
   }
 };
 const HDIR_CACHE = {};

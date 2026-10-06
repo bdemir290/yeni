@@ -146,7 +146,7 @@ Object.assign(SCENES.run, {
     const hp = Math.round(def.hp * (1 + 0.4 * this.reg.tier) * (this.elite ? 1.3 : 1));
     const lane = clamp(P.lane + R.pick([-1, 1]), 0, 4), x = this.laneX(lane);
     this.reis = { kind: 'reis', lane, x, fromX: x, laneT: 1, dist: P.dist + this.pY + 40, hp, maxHp: hp, t: 0, ph: 0, flash: 0, stun: 0, dead: false, r: 8, gapT: 120, charge: 0, atkIdx: 0, aimLanes: null, burnT: 0, burnDps: 0, hitP: 0 };
-    this.showBanner('KORSAN KAPTANI!', C.red); this.foeTip('reis'); Sound.play('roar'); shake(3, 0.3);
+    this.showBanner(TX('KORSAN KAPTANI!'), C.red); this.foeTip('reis'); Sound.play('roar'); shake(3, 0.3);
   },
   updateReis(dt) {
     const Rz = this.reis; if (!Rz || Rz.dead) return;
@@ -161,7 +161,7 @@ Object.assign(SCENES.run, {
     const v = clamp(P.speed + (target - Rz.dist) * (Rz.charge > 0.7 ? 2.6 : 1.4), P.speed * 0.3, P.speed * 1.8);
     Rz.dist += v * dt * (Rz.stun > 0 ? 0.5 : 1);
     if (Rz.laneT < 1) { Rz.laneT = Math.min(1, Rz.laneT + dt / 0.28); Rz.x = lerp(Rz.fromX, this.laneX(Rz.lane), Ease.outQuad(Rz.laneT)); }
-    if (Rz.dist - P.dist > this.pY + 80) { Rz.dead = true; this.reis = null; if (fleeing && this.state === 'run') floatText('KAPTAN KAÇTI!', W / 2, this.pY - 70, C.salmon, 1, -8, 1.2); return; }
+    if (Rz.dist - P.dist > this.pY + 80) { Rz.dead = true; this.reis = null; if (fleeing && this.state === 'run') floatText(TX('KAPTAN KAÇTI!'), W / 2, this.pY - 70, C.salmon, 1, -8, 1.2); return; }
     const dy = Rz.dist - P.dist;
     if (this.state === 'run' && Rz.hitP <= 0 && Math.abs(dy) < 10 && Math.abs(Rz.x - P.x) < 10) {
       Rz.hitP = 1;
@@ -179,7 +179,7 @@ Object.assign(SCENES.run, {
     if (atk === 'civi') { for (let l = P.lane - 1; l <= P.lane + 1; l++) if (l >= 0 && l <= 4) this.addObs('civi', l, 1, Rz.dist - 14); Sound.play('hey'); }
     else if (atk === 'karga') { for (const dl of [-1, 1]) this.foes.push(this.makeFoe('karga', clamp(Rz.lane + dl, 0, 4), Rz.dist + 10, { seen: true })); Sound.play('caw'); }
     else if (atk === 'ok') { Rz.aimLanes = [P.lane, clamp(P.lane + R.pick([-1, 1]), 0, 4)]; Sound.play('warn'); }
-    else { Rz.charge = 1.7; Rz.fromX = Rz.x; Rz.lane = P.lane; Rz.laneT = 0; floatText('HÜCUM!', Rz.x, this.sy(Rz.dist) - 24, C.red, 1, -10, 0.9); Sound.play('roar'); }
+    else { Rz.charge = 1.7; Rz.fromX = Rz.x; Rz.lane = P.lane; Rz.laneT = 0; floatText(TX('HÜCUM!'), Rz.x, this.sy(Rz.dist) - 24, C.red, 1, -10, 0.9); Sound.play('roar'); }
   },
   killReis() {
     const Rz = this.reis; if (!Rz) return;
@@ -190,9 +190,9 @@ Object.assign(SCENES.run, {
     this.addObs(R.chance(0.3) ? 'sugar' : 'heart', Rz.lane, 1, Rz.dist - 30);
     const sy = this.sy(Rz.dist);
     burst(Rz.x, sy, 30, [C.wine, C.gold, C.white, C.red], 80, 0.9, 80, 2);
-    floatText('KAPTAN DÜŞTÜ! +' + n, W / 2, this.pY - 70, C.gold, 1, -8, 1.5);
+    floatText(TX('KAPTAN DÜŞTÜ! +') + n, W / 2, this.pY - 70, C.gold, 1, -8, 1.5);
     Sound.play('win'); shake(4, 0.35); flash(C.gold, 0.25); haptic('success');
-    if (this.type === 'baskin' && this.kills >= this.goal && this.kills - 3 < this.goal) { floatText('HEDEF TAMAM!', W / 2, this.pY - 54, C.green, 1, -8, 1.3); }
+    if (this.type === 'baskin' && this.kills >= this.goal && this.kills - 3 < this.goal) { floatText(TX('HEDEF TAMAM!'), W / 2, this.pY - 54, C.green, 1, -8, 1.3); }
   },
 
   // ---------- boss ----------
@@ -212,13 +212,13 @@ Object.assign(SCENES.run, {
       B.gap += Math.min(3, (P.speed * (P.cornerM || 1) / (BASE_SPEED * this.reg.speed) - 1) * 4) * dt;
       B.gap = Math.min(100, B.gap);
       const ph = B.gap >= 75 ? 3 : B.gap >= 50 ? 2 : 1;
-      if (ph > B.phase) { B.phase = ph; B.gap -= 5; this.showBanner(ph + '. AŞAMA!', B.def.color); Sound.play('roar'); flash(B.def.color, 0.2); shake(3, 0.3); B.nextAtk = Math.min(B.nextAtk, this.lastBeatIdx + 2); }
+      if (ph > B.phase) { B.phase = ph; B.gap -= 5; this.showBanner(ph + TX('. AŞAMA!'), B.def.color); Sound.play('roar'); flash(B.def.color, 0.2); shake(3, 0.3); B.nextAtk = Math.min(B.nextAtk, this.lastBeatIdx + 2); }
       if (B.gap >= 100) { this.bossWin(); }
       else if (B.gap <= 0) {
-        B.gap = 30; floatText(B.def.name + ' KAÇIYOR!', W / 2, this.pY - 60, C.red, 1, -10, 1.2);
+        B.gap = 30; floatText(B.def.name + TX(' KAÇIYOR!'), W / 2, this.pY - 60, C.red, 1, -10, 1.2);
         P.invuln = 0; P.laneInv = 0; P.landInv = 0; this.hurt('boss');
       }
-      if (B.taunt > 0) { B.taunt -= dt; if (B.taunt <= 0) { B.gap = Math.max(1, B.gap - 5); floatText('HA HA HA!', B.x, B.screenY - 22, B.def.color, 1, -10, 1); } }
+      if (B.taunt > 0) { B.taunt -= dt; if (B.taunt <= 0) { B.gap = Math.max(1, B.gap - 5); floatText(TX('HA HA HA!'), B.x, B.screenY - 22, B.def.color, 1, -10, 1); } }
       B.laneTimer -= dt;
       if (B.laneTimer <= 0 && B.taunt <= 0) { B.laneTimer = R.f(1.1, 2.4); const nl = clamp(B.lane + R.pick([-1, 1, -2, 2]), 0, 4); B.fromX = B.x; B.lane = nl; B.laneT = 0; }
       if (B.stun > 0) B.stun -= dt;
@@ -235,20 +235,20 @@ Object.assign(SCENES.run, {
     if (B.def.sig === 'ayaz' && b >= B.nextTaunt) { this.startFrost(); B.nextTaunt = b + R.i(16, 22); return; }
     if (B.def.sig === 'kum' && b >= B.nextTaunt) {
       B.nextTaunt = b + R.i(18, 24); this.fogT = 3.2; this.burrow(1);
-      floatText('KUM FIRTINASI!', W / 2, this.pY - 74, C.tan, 1, -6, 1.4); Sound.play('whoosh'); return;
+      floatText(TX('KUM FIRTINASI!'), W / 2, this.pY - 74, C.tan, 1, -6, 1.4); Sound.play('whoosh'); return;
     }
     // Bora's storm: the sky goes dark and lightning hunts your lane and one more
     if (B.def.sig === 'firtina' && b >= B.nextTaunt) {
       B.nextTaunt = b + R.i(16, 22); this.fogT = 2.6;
       const P = this.P, other = R.pick([0, 1, 2, 3, 4].filter(l => l !== P.lane));
       for (const l of [P.lane, other]) this.bolts.push({ lane: l, t: 1.1, strike: 0 });
-      this.showBanner('FIRTINA!', C.yellow); Sound.play('warn'); return;
+      this.showBanner(TX('FIRTINA!'), C.yellow); Sound.play('warn'); return;
     }
     // Korhan's anvil: a strike that sends a wave of lava down the track
     if (B.def.sig === 'ocak' && b >= B.nextTaunt) {
       B.nextTaunt = b + R.i(18, 24);
       this.addObs('toz', 0, 5, this.P.dist + (this.pY - B.screenY) - 28, { lava: true });
-      this.showBanner('ÖRS DARBESİ!', C.orange); floatText('LAV DALGASI: SIÇRA!', W / 2, this.pY - 74, C.orange, 1, -6, 1.4);
+      this.showBanner(TX('ÖRS DARBESİ!'), C.orange); floatText(TX('LAV DALGASI: SIÇRA!'), W / 2, this.pY - 74, C.orange, 1, -6, 1.4);
       Sound.play('anvil'); shake(4, 0.3); return;
     }
     if (b >= B.nextAtk) {
@@ -259,19 +259,19 @@ Object.assign(SCENES.run, {
   startTaunt() {
     const B = this.boss, P = this.P;
     B.taunt = 2.6; const nl = P.lane > 0 ? P.lane - 1 : 1; B.fromX = B.x; B.lane = nl; B.laneT = 0;
-    floatText('KİBİR! HAMLE YAP YA DA ALTIN NOTAYI VUR', W / 2, this.pY - 74, C.magenta, 1, -6, 1.8);
+    floatText(TX('KİBİR! HAMLE YAP YA DA ALTIN NOTAYI VUR'), W / 2, this.pY - 74, C.magenta, 1, -6, 1.8);
     Sound.play('hey');
   },
   // Niva's frost: lane changes slow down until a dash or a golden note breaks the ice
   startFrost() {
-    this.frost = 3.6; this.showBanner('AYAZ!', C.cyan);
-    floatText('HAMLE YAP YA DA ALTIN NOTAYI VUR', W / 2, this.pY - 74, C.cyan, 1, -6, 1.8);
+    this.frost = 3.6; this.showBanner(TX('AYAZ!'), C.cyan);
+    floatText(TX('HAMLE YAP YA DA ALTIN NOTAYI VUR'), W / 2, this.pY - 74, C.cyan, 1, -6, 1.8);
     Sound.play('zap'); flash(C.cyan, 0.2);
   },
   breakFrost() {
     if (!(this.frost > 0)) return;
     this.frost = 0; if (this.boss) this.boss.gap = Math.min(100, this.boss.gap + 6);
-    floatText('BUZU KIRDIN!', W / 2, this.pY - 60, C.white, 1, -10, 1.2); Sound.play('combo'); haptic('success');
+    floatText(TX('BUZU KIRDIN!'), W / 2, this.pY - 60, C.white, 1, -10, 1.2); Sound.play('combo'); haptic('success');
     burst(this.P.x, this.pY, 14, [C.white, C.cyan, C.sky], 60, 0.5, 60, 1);
   },
   // Zarg's worm breaks the surface: sand rings mark the lanes first, the horse always keeps a way through
@@ -284,7 +284,7 @@ Object.assign(SCENES.run, {
   breakTaunt() {
     const B = this.boss; if (!B || B.taunt <= 0) return;
     B.taunt = 0; B.stun = 1.6; B.gap = Math.min(100, B.gap + 8);
-    floatText('KİBRİNİ KIRDIN!', W / 2, this.pY - 60, C.gold, 1, -10, 1.4); Sound.play('combo'); flash(C.gold, 0.2); haptic('success');
+    floatText(TX('KİBRİNİ KIRDIN!'), W / 2, this.pY - 60, C.gold, 1, -10, 1.4); Sound.play('combo'); flash(C.gold, 0.2); haptic('success');
   },
   bossHit(dmg, x, special) {
     const B = this.boss;
@@ -311,11 +311,11 @@ Object.assign(SCENES.run, {
         Sound.play('roar'); break;
       }
       case 'howl': {
-        this.fogT = 4; floatText('ULUMA!', B.x, B.screenY - 24, C.lgray, 1, -10, 1.1); Sound.play('roar');
+        this.fogT = 4; floatText(TX('ULUMA!'), B.x, B.screenY - 24, C.lgray, 1, -10, 1.1); Sound.play('roar');
         for (let i = 0; i < 2; i++) { const left = i === 0; this.addObs('wolf', 0, 1, P.dist + 150 + i * 60, { x: left ? this.trackL - 12 : this.trackL + this.laneW * 5 + 12, vx: (left ? 1 : -1) * R.f(45, 60) }); }
         break;
       }
-      case 'stomp': this.addObs('toz', 0, 5, wy - 20); floatText('ŞOK DALGASI: SIÇRA!', W / 2, this.pY - 70, C.tan, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
+      case 'stomp': this.addObs('toz', 0, 5, wy - 20); floatText(TX('ŞOK DALGASI: SIÇRA!'), W / 2, this.pY - 70, C.tan, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
       case 'bolt': case 'bolt3': {
         const lanes = [P.lane];
         const extra = atk === 'bolt3' ? 2 : (R.chance(0.5) ? 1 : 0);
@@ -350,13 +350,13 @@ Object.assign(SCENES.run, {
           const row = [0, 1, 2, 3, 4].filter(l => l !== gl).map(l => ({ lane: l, y }));
           if (this.passable(row, P.lane, P.dist + 20)) { for (const e of row) this.addObs('rock', e.lane, 1, y, { v: 1, ice: true }); break; }
         }
-        floatText('BUZ DUVARI!', B.x, B.screenY - 24, C.cyan, 1, -10, 1); Sound.play('boom'); break;
+        floatText(TX('BUZ DUVARI!'), B.x, B.screenY - 24, C.cyan, 1, -10, 1); Sound.play('boom'); break;
       }
       case 'burrow': case 'burrow2': this.burrow(atk === 'burrow2' ? 3 : 2); break;
-      case 'sandwave': this.addObs('toz', 0, 5, wy - 20); floatText('KUM DALGASI: SIÇRA!', W / 2, this.pY - 70, C.tan, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
+      case 'sandwave': this.addObs('toz', 0, 5, wy - 20); floatText(TX('KUM DALGASI: SIÇRA!'), W / 2, this.pY - 70, C.tan, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
       // Bora (Fırtına Devi): dark clouds slow you down, thunder rolls along the track
-      case 'cloudrow': { const gl = gapLane(); for (let l = 0; l < 5; l++) if (l !== gl) this.addObs('puddle', l, 1, wy - 10, { cloud: true }); floatText('KARA BULUT!', B.x, B.screenY - 24, C.lgray, 1, -10, 1); Sound.play('whoosh'); break; }
-      case 'thunder': this.addObs('toz', 0, 5, wy - 20, { storm: true }); floatText('GÖK GÜRLEDİ: SIÇRA!', W / 2, this.pY - 70, C.yellow, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); flash(C.white, 0.12); break;
+      case 'cloudrow': { const gl = gapLane(); for (let l = 0; l < 5; l++) if (l !== gl) this.addObs('puddle', l, 1, wy - 10, { cloud: true }); floatText(TX('KARA BULUT!'), B.x, B.screenY - 24, C.lgray, 1, -10, 1); Sound.play('whoosh'); break; }
+      case 'thunder': this.addObs('toz', 0, 5, wy - 20, { storm: true }); floatText(TX('GÖK GÜRLEDİ: SIÇRA!'), W / 2, this.pY - 70, C.yellow, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); flash(C.white, 0.12); break;
       // Korhan (Kor Ay): embers rain on your lane, lava stones wall the track, molten waves roll in
       case 'ember': case 'ember3': {
         const lanes = [P.lane], extra = atk === 'ember3' ? 2 : (R.chance(0.5) ? 1 : 0);
@@ -372,12 +372,12 @@ Object.assign(SCENES.run, {
           const row = [0, 1, 2, 3, 4].filter(l => l !== gl).map(l => ({ lane: l, y }));
           if (this.passable(row, P.lane, P.dist + 20)) { for (const e of row) this.addObs('rock', e.lane, 1, y, { v: 1, lava: true }); break; }
         }
-        floatText('LAV TAŞLARI!', B.x, B.screenY - 24, C.orange, 1, -10, 1); Sound.play('boom'); break;
+        floatText(TX('LAV TAŞLARI!'), B.x, B.screenY - 24, C.orange, 1, -10, 1); Sound.play('boom'); break;
       }
-      case 'lavawave': this.addObs('toz', 0, 5, wy - 20, { lava: true }); floatText('LAV DALGASI: SIÇRA!', W / 2, this.pY - 70, C.orange, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
-      case 'civirow': { const gl = gapLane(); for (let l = 0; l < 5; l++) if (l !== gl) this.addObs('civi', l, 1, wy - 12); floatText('HİLE!', B.x, B.screenY - 24, C.red, 1, -10, 1); Sound.play('hey'); break; }
+      case 'lavawave': this.addObs('toz', 0, 5, wy - 20, { lava: true }); floatText(TX('LAV DALGASI: SIÇRA!'), W / 2, this.pY - 70, C.orange, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
+      case 'civirow': { const gl = gapLane(); for (let l = 0; l < 5; l++) if (l !== gl) this.addObs('civi', l, 1, wy - 12); floatText(TX('HİLE!'), B.x, B.screenY - 24, C.red, 1, -10, 1); Sound.play('hey'); break; }
     }
-    if (B.phase >= 2 && rnd() < 0.3) { B.tired = 2; floatText('YORULDU! ŞİMDİ VUR!', B.x, B.screenY - 30, C.yellow, 1, -10, 1.2); }
+    if (B.phase >= 2 && rnd() < 0.3) { B.tired = 2; floatText(TX('YORULDU! ŞİMDİ VUR!'), B.x, B.screenY - 30, C.yellow, 1, -10, 1.2); }
   },
   updateBolts(dt) {
     for (let i = this.bolts.length - 1; i >= 0; i--) {
@@ -396,7 +396,7 @@ Object.assign(SCENES.run, {
     const B = this.boss; B.won = true; B.taunt = 0; this.endFever();
     this.state = 'finish'; this.stateT = 0; this.result = { boss: true }; this.hold = null;
     Sound.play('win'); haptic('success'); flash(C.white, 0.3);
-    this.finishMsg = B.def.name + ' GEÇİLDİ!';
+    this.finishMsg = B.def.name + TX(' GEÇİLDİ!');
     burst(W / 2, this.pY - 40, 30, [C.yellow, C.red, C.sky, C.green, C.white], 90, 1.2, 90, 2);
     this.giveMedal(this.damaged === 0 ? 'g' : this.damaged <= 2 ? 's' : 'b');
   },
@@ -410,19 +410,19 @@ Object.assign(SCENES.run, {
     const failDuel = this.type === 'duello' && rank > 1;
     if (failRank || failRaid || failDuel) {
       this.result.ok = false;
-      if (failDuel) { RUN.duelLost = this.duel.def.name; floatText(this.duel.def.name + ' KAZANDI', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('DÜELLOYU KAYBETTİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
-      else if (failRank) { floatText(rank + '. OLDUN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('İLK ' + this.passRank() + '\'E GİREMEDİN: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
-      else { floatText(this.kills + '/' + this.goal + ' DÜŞMAN', W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText('BASKIN PÜSKÜRTÜLEMEDİ: -1 CAN', W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
+      if (failDuel) { RUN.duelLost = this.duel.def.name; floatText(this.duel.def.name + TX(' KAZANDI'), W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText(TX('DÜELLOYU KAYBETTİN: -1 CAN'), W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
+      else if (failRank) { floatText(rank + TX('. OLDUN'), W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText(TX('İLK ') + this.passRank() + TX('\'E GİREMEDİN: -1 CAN'), W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
+      else { floatText(this.kills + '/' + this.goal + TX(' DÜŞMAN'), W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText(TX('BASKIN PÜSKÜRTÜLEMEDİ: -1 CAN'), W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }
       this.P.invuln = 0; this.P.laneInv = 0; this.P.landInv = 0; this.P.flyT = 0; this.P.hamleT = 0;
       this.state = 'run'; this.hurt(failRaid ? 'raid' : 'rank');
       if (this.state === 'run') { this.state = 'finish'; this.stateT = 0; }
       return;
     }
     Sound.play('win'); haptic('success');
-    const msg = this.tut ? 'ISINMA TAMAM!' : this.type === 'duello' ? 'DÜELLO SENİN!' : this.type === 'sprint' ? (rank === 1 ? 'BİRİNCİ!' : rank + '. OLDUN!') : this.type === 'parkur' ? (this.damaged ? 'PARKUR TAMAM!' : 'KUSURSUZ!') : this.type === 'baskin' ? 'BASKIN PÜSKÜRTÜLDÜ!' : 'KAÇTIN!';
+    const msg = this.tut ? TX('ISINMA TAMAM!') : this.type === 'duello' ? TX('DÜELLO SENİN!') : this.type === 'sprint' ? (rank === 1 ? TX('BİRİNCİ!') : rank + TX('. OLDUN!')) : this.type === 'parkur' ? (this.damaged ? TX('PARKUR TAMAM!') : TX('KUSURSUZ!')) : this.type === 'baskin' ? TX('BASKIN PÜSKÜRTÜLDÜ!') : TX('KAÇTIN!');
     this.finishMsg = msg; flash(C.white, 0.12);
     burst(W / 2, this.pY - 50, 24, [C.yellow, C.red, C.sky, C.green, C.white], 80, 1.1, 90, 2);
-    if (this.type === 'parkur' && !this.damaged) { RUN.coins += 20; RUN.coinsEarned += 20; this.finishBonus = '+20 SİKKE'; }
+    if (this.type === 'parkur' && !this.damaged) { RUN.coins += 20; RUN.coinsEarned += 20; this.finishBonus = TX('+20 SİKKE'); }
     if (this.type === 'sprint' && rank === 1 && this.kick > 0.08) missionEvent('kick', 1);
     let m;
     if (this.type === 'sprint') m = rank === 1 ? 'g' : rank === 2 ? 's' : 'b';
@@ -443,7 +443,7 @@ Object.assign(SCENES.run, {
     RUN.medals[m]++; META.stats.medals[m]++;
     if (m === 'g') {
       RUN.yonca += 3; missionEvent('yonca', 3); META.stats.golds++; missionEvent('medal', 1);
-      if (META.stats.golds % 3 === 0) { RUN.seker++; toast('3 ALTIN MADALYA: +1 ŞEKER', C.white, 'seker'); }
+      if (META.stats.golds % 3 === 0) { RUN.seker++; toast(TX('3 ALTIN MADALYA: +1 ŞEKER'), C.white, 'seker'); }
     } else if (m === 's') { RUN.yonca += 1; missionEvent('yonca', 1); }
     setTimeout(() => Sound.play('medal'), 350);
   },
@@ -455,19 +455,19 @@ Object.assign(SCENES.run, {
     if (this.tut) { META.tutorialDone = true; RUN.tutorial = false; }
     RUN.score += 100 + ({ g: 60, s: 30, b: 10 }[this.medal] || 0) + this.kills * 5 + (this.elite ? 50 : 0);
     for (const c of RUN.chaos) {
-      if (c.left > 0) { c.left--; if (c.left === 0) { const b = CHAOS_BY_ID[c.bless]; toast('KAOS LÜTFU: ' + b.name, C.magenta, 'swirl'); if (b.onActive) b.onActive(RUN); } }
+      if (c.left > 0) { c.left--; if (c.left === 0) { const b = CHAOS_BY_ID[c.bless]; toast(TX('KAOS LÜTFU: ') + b.name, C.magenta, 'swirl'); if (b.onActive) b.onActive(RUN); } }
     }
     const S = computeStats(RUN);
-    if (S.etapHeal && RUN.hp < S.maxHp) { RUN.hp = Math.min(S.maxHp, RUN.hp + S.etapHeal); toast('KAOS ŞİFASI: +1 CAN', C.red, 'heart'); }
+    if (S.etapHeal && RUN.hp < S.maxHp) { RUN.hp = Math.min(S.maxHp, RUN.hp + S.etapHeal); toast(TX('KAOS ŞİFASI: +1 CAN'), C.red, 'heart'); }
     RUN.hp = Math.min(RUN.hp, S.maxHp);
     if (this.type === 'boss') {
       RUN.bosses++;
       const key = this.reg.boss, first = !META.stats.bossWins[key];
       META.stats.bossWins[key] = (META.stats.bossWins[key] || 0) + 1; missionEvent('boss', 1);
-      if (first) { META.rozet++; toast('ŞAMPİYON ROZETİ KAZANDIN!', C.sky, 'rozet'); }
+      if (first) { META.rozet++; toast(TX('ŞAMPİYON ROZETİ KAZANDIN!'), C.sky, 'rozet'); }
       leagueRegionBonus();
       const yon = Math.round((BOSS_CRYSTALS[RUN.region] || 25) * HEATS[RUN.heat].rew);
-      RUN.yonca += yon; missionEvent('yonca', yon); toast('+' + yon + ' KRİSTAL', C.cyan, 'clover');
+      RUN.yonca += yon; missionEvent('yonca', yon); toast('+' + yon + TX(' KRİSTAL'), C.cyan, 'clover');
       RUN.score += 400;
       if (S.bossHeal) RUN.hp = Math.min(S.maxHp, RUN.hp + 1);
       RUN.region++; RUN.etap = 0;
@@ -484,7 +484,7 @@ Object.assign(SCENES.run, {
       META.rivals[id] = (META.rivals[id] || 0) + 1; META.stats.duels++; missionEvent('duel', 1);
       const bonus = 2 + RUN.region; RUN.yonca += bonus; missionEvent('yonca', bonus); RUN.score += 60;
       if (first) {
-        toast('YENİ DOSYA: ' + this.duel.def.name, C.salmon, 'book');
+        toast(TX('YENİ DOSYA: ') + this.duel.def.name, C.salmon, 'book');
         const lines = ((RIVAL_INFO[id] || {}).lose || []).map(t => [id, t]);
         saveMeta();
         if (lines.length && !window.__auto) { Dialog.start(lines, () => grantReward(this.node.reward, this.elite)); return; }
@@ -499,7 +499,7 @@ Object.assign(SCENES.run, {
   updateTut(dt) {
     const tu = this.tut, P = this.P;
     tu.t += dt; if (tu.msgT > 0) tu.msgT -= dt;
-    if (this.bond >= 100 && !tu.abTold && tu.step >= 3) { tu.abTold = true; tu.msg = 'TEKNİK HAZIR! ' + (META.settings.left ? 'SOL' : 'SAĞ') + ' ALTTAKİ JOKEYE BAS'; tu.msgT = 2.6; }
+    if (this.bond >= 100 && !tu.abTold && tu.step >= 3) { tu.abTold = true; tu.msg = TX('TEKNİK HAZIR! ') + (META.settings.left ? TX('SOL') : TX('SAĞ')) + TX(' ALTTAKİ JOKEYE BAS'); tu.msgT = 2.6; }
     if (tu.step === 0) { if (tu.t > 2.4) { tu.step = 1; tu.t = 0; } }
     else if (tu.step === 1) {
       const rock = this.obs.find(o => o.tutRock && !o.dead);
@@ -514,21 +514,21 @@ Object.assign(SCENES.run, {
       if (P.dist > 1200) { this.timeScale = 1; tu.step = 3; tu.t = 0; tu.hits = 0; }
     } else if (tu.step === 3) {
       if (tu.hits >= 4 || tu.t > 16) {
-        tu.step = 4; tu.t = 0; tu.msg = tu.hits >= 4 ? 'HARİKA! RİTİM = HIZ' : 'RİTMİ ZAMANLA ÖĞRENİRSİN'; tu.msgT = 1.6;
+        tu.step = 4; tu.t = 0; tu.msg = tu.hits >= 4 ? TX('HARİKA! RİTİM = HIZ') : TX('RİTMİ ZAMANLA ÖĞRENİRSİN'); tu.msgT = 1.6;
         Sound.play('combo'); this.spawnTutCrows();
       }
     } else if (tu.step === 4) {
       const alive = this.foes.filter(f => f.tut && !f.dead).length;
       if (alive === 0 || tu.t > 20) {
         for (const f of this.foes) if (f.tut) { f.dead = true; burst(f.x, this.sy(f.dist), 6, [C.navy, C.slate], 40, 0.4); }
-        tu.step = 5; tu.t = 0; tu.msg = alive === 0 ? 'TAM İSABET!' : 'NİŞAN ALMA, RİTMİ YAKALA'; tu.msgT = 1.4;
+        tu.step = 5; tu.t = 0; tu.msg = alive === 0 ? TX('TAM İSABET!') : TX('NİŞAN ALMA, RİTMİ YAKALA'); tu.msgT = 1.4;
         this.nefes = 100; Sound.play('combo');
       }
     } else if (tu.step === 5) {
       // breath burst: the bar is full, the world waits until you swipe down (or tap the button)
       this.timeScale = tu.t > 1.4 && tu.t < 14 ? 0.06 : 1;
       if (tu.t > 14) this.tutRivals();
-    } else if (tu.step === 6 && tu.t > 1.8 && !tu.said) { tu.said = true; tu.msg = 'RAKİPLERİ GEÇ, BİTİŞE KOŞ!'; tu.msgT = 2.2; }
+    } else if (tu.step === 6 && tu.t > 1.8 && !tu.said) { tu.said = true; tu.msg = TX('RAKİPLERİ GEÇ, BİTİŞE KOŞ!'); tu.msgT = 2.2; }
   },
   tutRivals() {
     const tu = this.tut, P = this.P;

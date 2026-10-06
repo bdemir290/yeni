@@ -4,44 +4,44 @@
 // the next tap moves on. Missing art falls back to a starfield, so the story still reads without images.
 const CINE = {
   prolog: [
-    { img: 'p_kupa', cap: 'DÜNYA · ALTIN NAL KUPASI FİNALİ', fx: 'confetti', lines: [
-      [null, 'TRİBÜNLER AYAKTA. ALTIN NAL KUPASI ÜÇÜNCÜ KEZ AYNI İKİLİNİN: DENİZ VE YILDIZ.'],
-      ['deniz', 'BU KUPA SENİN, YILDIZ. HER ZAMANKİ GİBİ.']] },
-    { img: 'p_ahir', cap: 'O GECE · AHIR', fx: 'dust', lines: [
-      [null, 'KALABALIK DAĞILINCA DENİZ YİNE AHIRA DÖNDÜ. DUVARDA ESKİ BİR FOTOĞRAF ASILI.'],
-      ['deniz', 'ANNEM DE BU PİSTTE KOŞARDI, YILDIZ. YİRMİ YIL ÖNCE BİR FİNAL GECESİ ORTADAN KAYBOLDU.'],
-      ['deniz', 'HERKES KAZA DEDİ. AMA KİMSE ONU BULAMADI.']] },
-    { img: 'p_isik', cap: 'GECE YARISI', fx: 'rise', lines: [
-      [null, 'HİPODROMUN ÜSTÜNDE SESSİZ BİR IŞIK BELİRDİ. NE BİR SES VARDI, NE DE RÜZGAR.'],
-      ['deniz', 'YILDIZ? SAKİN OL... BU IŞIK DA NE?']] },
-    { img: 'p_yolculuk', cap: 'YUKARI', fx: 'stars', lines: [
-      [null, 'SAMAN, FENER, YILDIZ VE DENİZ. HER ŞEY IŞIĞIN İÇİNDE YUKARI SÜZÜLDÜ.'],
-      [null, 'AŞAĞIDA DÜNYA BİR BİLYE KADAR KÜÇÜLDÜ.']] },
-    { img: 'p_arena', cap: 'ARENA-9 · GALAKSİNİN MERKEZİ', fx: 'twinkle', lines: [
-      [null, 'GÖZÜNÜ AÇTIĞINDA DEV BİR STADYUMUN IŞIKLARI ALTINDAYDIN.'],
-      [null, 'ARENA-9: GALAKSİNİN EN BÜYÜK YARIŞ ŞOVU. HER SEZON BAŞKA GEZEGENLERDEN ŞAMPİYONLAR KAÇIRILIR.']] },
-    { img: 'p_grax', cap: 'CANLI YAYIN', fx: 'spot', lines: [
-      ['grax', 'İYİ AKŞAMLAR GALAKSİ! BU SEZONUN YENİ YILDIZI: DÜNYALI JOKEY DENİZ VE TUHAF HAYVANI!'],
-      ['grax', 'KURAL BASİT: GALAKSİ KUPASI\'NI KAZANAN EVİNE DÖNER. KAYBEDEN... GELECEK SEZONA KADAR BİZİMLE!'],
-      ['grax', 'DÜNYALILAR HEP ÇOK EĞLENCELİ OLMUŞTUR. SONUNCUSU... NEYSE! REKLAMLAR!']] },
-    { img: 'p_bolme', cap: 'DÜNYA BÖLMESİ', fx: 'dust', lines: [
-      ['bip', 'BİP! BEN BİP-0, BU BÖLMENİN BAKICISIYIM. SENDEN ÖNCE DE DÜNYALILAR GELDİ.'],
-      ['bip', 'HİÇBİRİ EVE DÖNEMEDİ. BİRİNİN DOSYASI HÂLÂ KİLİTLİ... NEYSE.'],
-      ['bip', 'ÖNCE BİR ISINMA TURU ATALIM. TOYNAK SESİNİ DİNLE, DENİZ. RİTİM HIZDIR.']] },
-    { title: true, cap: '', fx: 'stars', lines: [[null, 'KAZAN VE EVE DÖN.']] }
+    { img: 'p_kupa', cap: TX('DÜNYA · ALTIN NAL KUPASI FİNALİ'), fx: 'confetti', lines: [
+      [null, TX('TRİBÜNLER AYAKTA. ALTIN NAL KUPASI ÜÇÜNCÜ KEZ AYNI İKİLİNİN: DENİZ VE YILDIZ.')],
+      ['deniz', TX('BU KUPA SENİN, YILDIZ. HER ZAMANKİ GİBİ.')]] },
+    { img: 'p_ahir', cap: TX('O GECE · AHIR'), fx: 'dust', lines: [
+      [null, TX('KALABALIK DAĞILINCA DENİZ YİNE AHIRA DÖNDÜ. DUVARDA ESKİ BİR FOTOĞRAF ASILI.')],
+      ['deniz', TX('ANNEM DE BU PİSTTE KOŞARDI, YILDIZ. YİRMİ YIL ÖNCE BİR FİNAL GECESİ ORTADAN KAYBOLDU.')],
+      ['deniz', TX('HERKES KAZA DEDİ. AMA KİMSE ONU BULAMADI.')]] },
+    { img: 'p_isik', cap: TX('GECE YARISI'), fx: 'rise', lines: [
+      [null, TX('HİPODROMUN ÜSTÜNDE SESSİZ BİR IŞIK BELİRDİ. NE BİR SES VARDI, NE DE RÜZGAR.')],
+      ['deniz', TX('YILDIZ? SAKİN OL... BU IŞIK DA NE?')]] },
+    { img: 'p_yolculuk', cap: TX('YUKARI'), fx: 'stars', lines: [
+      [null, TX('SAMAN, FENER, YILDIZ VE DENİZ. HER ŞEY IŞIĞIN İÇİNDE YUKARI SÜZÜLDÜ.')],
+      [null, TX('AŞAĞIDA DÜNYA BİR BİLYE KADAR KÜÇÜLDÜ.')]] },
+    { img: 'p_arena', cap: TX('ARENA-9 · GALAKSİNİN MERKEZİ'), fx: 'twinkle', lines: [
+      [null, TX('GÖZÜNÜ AÇTIĞINDA DEV BİR STADYUMUN IŞIKLARI ALTINDAYDIN.')],
+      [null, TX('ARENA-9: GALAKSİNİN EN BÜYÜK YARIŞ ŞOVU. HER SEZON BAŞKA GEZEGENLERDEN ŞAMPİYONLAR KAÇIRILIR.')]] },
+    { img: 'p_grax', cap: TX('CANLI YAYIN'), fx: 'spot', lines: [
+      ['grax', TX('İYİ AKŞAMLAR GALAKSİ! BU SEZONUN YENİ YILDIZI: DÜNYALI JOKEY DENİZ VE TUHAF HAYVANI!')],
+      ['grax', TX('KURAL BASİT: GALAKSİ KUPASI\'NI KAZANAN EVİNE DÖNER. KAYBEDEN... GELECEK SEZONA KADAR BİZİMLE!')],
+      ['grax', TX('DÜNYALILAR HEP ÇOK EĞLENCELİ OLMUŞTUR. SONUNCUSU... NEYSE! REKLAMLAR!')]] },
+    { img: 'p_bolme', cap: TX('DÜNYA BÖLMESİ'), fx: 'dust', lines: [
+      ['bip', TX('BİP! BEN BİP-0, BU BÖLMENİN BAKICISIYIM. SENDEN ÖNCE DE DÜNYALILAR GELDİ.')],
+      ['bip', TX('HİÇBİRİ EVE DÖNEMEDİ. BİRİNİN DOSYASI HÂLÂ KİLİTLİ... NEYSE.')],
+      ['bip', TX('ÖNCE BİR ISINMA TURU ATALIM. TOYNAK SESİNİ DİNLE, DENİZ. RİTİM HIZDIR.')]] },
+    { title: true, cap: '', fx: 'stars', lines: [[null, TX('KAZAN VE EVE DÖN.')]] }
   ],
   final: [
-    { img: 'e_kupa', cap: 'GALAKSİ KUPASI', fx: 'confetti', lines: [
-      [null, 'SON DÜZLÜK. VOLTRAK\'IN KIVILCIMLARI SÖNDÜ. YILDIZ BİR BAŞ ÖNDE.'],
-      ['grax', 'BU... BU OLAMAZ! KUPA... DÜNYALININ!']] },
-    { img: 'e_kapi', cap: 'KAPI', fx: 'rise', lines: [
-      [null, 'KUPA HAVAYA KALKINCA ARENANIN ORTASINDA DEV BİR KAPI AÇILDI. ÖTESİNDE MAVİ BİR GEZEGEN PARLIYORDU.'],
-      ['bip', 'BİP... BU DÜNYA! KAPI AÇIK, DENİZ!']] },
-    { img: 'e_akyel', cap: 'YİRMİ YIL SONRA', fx: 'dust', lines: [
-      [null, 'TRİBÜNDEN GRİ SAÇLI BİR KADIN İNDİ. YILDIZ ONU DENİZ\'DEN ÖNCE TANIDI.'],
-      ['akyel', 'DENİZ... YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.'],
-      ['deniz', 'ANNE?'],
-      [null, 'AMA PİSTTEKİLER DE KAÇIRILMIŞTI. KAPI HER KUPADA YENİDEN AÇILACAKTI. YOLCULUK BİTMEMİŞTİ.']] }
+    { img: 'e_kupa', cap: TX('GALAKSİ KUPASI'), fx: 'confetti', lines: [
+      [null, TX('SON DÜZLÜK. VOLTRAK\'IN KIVILCIMLARI SÖNDÜ. YILDIZ BİR BAŞ ÖNDE.')],
+      ['grax', TX('BU... BU OLAMAZ! KUPA... DÜNYALININ!')]] },
+    { img: 'e_kapi', cap: TX('KAPI'), fx: 'rise', lines: [
+      [null, TX('KUPA HAVAYA KALKINCA ARENANIN ORTASINDA DEV BİR KAPI AÇILDI. ÖTESİNDE MAVİ BİR GEZEGEN PARLIYORDU.')],
+      ['bip', TX('BİP... BU DÜNYA! KAPI AÇIK, DENİZ!')]] },
+    { img: 'e_akyel', cap: TX('YİRMİ YIL SONRA'), fx: 'dust', lines: [
+      [null, TX('TRİBÜNDEN GRİ SAÇLI BİR KADIN İNDİ. YILDIZ ONU DENİZ\'DEN ÖNCE TANIDI.')],
+      ['akyel', TX('DENİZ... YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.')],
+      ['deniz', TX('ANNE?')],
+      [null, TX('AMA PİSTTEKİLER DE KAÇIRILMIŞTI. KAPI HER KUPADA YENİDEN AÇILACAKTI. YOLCULUK BİTMEMİŞTİ.')]] }
   ]
 };
 
@@ -136,9 +136,9 @@ SCENES.cine = {
     for (let i = 0; i < 90; i++) { const h = hash2(i, 31), sp = 6 + h * 30; pix((hash2(i, 32) * W) | 0, ((hash2(i, 33) * H + this.t * sp) % H) | 0, i % 9 === 0 ? C.cyan : h > 0.6 ? C.white : C.slate); }
     const sc = W >= 176 ? 4 : 3, ly = Math.round(H * 0.38), a = Math.min(1, this.t / 1.2);
     g.globalAlpha = a;
-    for (const [dx, dy] of [[-sc, 0], [sc, 0], [0, -sc], [0, sc * 2]]) text('DÖRTNALA', W / 2 + dx, ly + dy, C.ink, 'center', sc);
-    text('DÖRTNALA', W / 2, ly + sc, C.rust, 'center', sc); text('DÖRTNALA', W / 2, ly, C.yellow, 'center', sc);
-    textO('GALAKSİ KUPASI', W / 2, ly + 38, C.cyan, 'center');
+    for (const [dx, dy] of [[-sc, 0], [sc, 0], [0, -sc], [0, sc * 2]]) text(TX('DÖRTNALA'), W / 2 + dx, ly + dy, C.ink, 'center', sc);
+    text(TX('DÖRTNALA'), W / 2, ly + sc, C.rust, 'center', sc); text(TX('DÖRTNALA'), W / 2, ly, C.yellow, 'center', sc);
+    textO(TX('GALAKSİ KUPASI'), W / 2, ly + 38, C.cyan, 'center');
     g.globalAlpha = Math.max(0, Math.min(1, (this.t - 1) / 0.8));
     const ln = this.line(); if (ln) textO(trUp(ln[1]).slice(0, Math.floor(this.chars)), W / 2, ly + 62, C.white, 'center');
     g.globalAlpha = 1;
@@ -147,7 +147,7 @@ SCENES.cine = {
   },
   drawControls() {
     UI.block(0, 0, W, H, () => this.tap());
-    button('cine_skip', W - SAFE.r - 46, SAFE.t + 4, 42, 14, 'ATLA', () => this.finish(), { kind: 'secondary' });
+    button('cine_skip', W - SAFE.r - 46, SAFE.t + 4, 42, 14, TX('ATLA'), () => this.finish(), { kind: 'secondary' });
     if (this.fade > 0) { g.globalAlpha = this.fade; rect(0, 0, W, H, C.ink); g.globalAlpha = 1; }
   }
 };

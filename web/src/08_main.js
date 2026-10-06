@@ -108,7 +108,7 @@ function render(dt) {
   Dialog.draw();
   drawToasts(dt);
   drawTrans();
-  if (LAST_ERROR) { g.globalAlpha = 1; rect(0, H - 44, W, 44, C.ink); textBlock('HATA: ' + LAST_ERROR.slice(0, 160), 4, H - 42, W - 8, C.red); }
+  if (LAST_ERROR) { g.globalAlpha = 1; rect(0, H - 44, W, 44, C.ink); textBlock(TX('HATA: ') + LAST_ERROR.slice(0, 160), 4, H - 42, W - 8, C.red); }
   ctx.drawImage(buf, 0, 0, W * SCALE, H * SCALE);
 }
 let lastFrame = 0;

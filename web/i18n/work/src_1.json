@@ -1,0 +1,2378 @@
+[
+ {
+  "tr": "TULPAR",
+  "ctx": [
+   "04_data.js:3  tulpar: { name: TX('TULPAR'), color: C.cyan, dark: C.sky, desc: TX('HAVA VE SIÇRAYIŞ') },"
+  ]
+ },
+ {
+  "tr": "HAVA VE SIÇRAYIŞ",
+  "ctx": [
+   "04_data.js:3  tulpar: { name: TX('TULPAR'), color: C.cyan, dark: C.sky, desc: TX('HAVA VE SIÇRAYIŞ') },"
+  ]
+ },
+ {
+  "tr": "KIRAT",
+  "ctx": [
+   "04_data.js:4  kirat: { name: TX('KIRAT'), color: C.red, dark: C.wine, desc: TX('GÜÇ VE CESARET') },"
+  ]
+ },
+ {
+  "tr": "GÜÇ VE CESARET",
+  "ctx": [
+   "04_data.js:4  kirat: { name: TX('KIRAT'), color: C.red, dark: C.wine, desc: TX('GÜÇ VE CESARET') },"
+  ]
+ },
+ {
+  "tr": "SLEİPNİR",
+  "ctx": [
+   "04_data.js:5  sleipnir: { name: TX('SLEİPNİR'), color: C.magenta, dark: C.purple, desc: TX('ÇOKLU HAREKET') },"
+  ]
+ },
+ {
+  "tr": "ÇOKLU HAREKET",
+  "ctx": [
+   "04_data.js:5  sleipnir: { name: TX('SLEİPNİR'), color: C.magenta, dark: C.purple, desc: TX('ÇOKLU HAREKET') },"
+  ]
+ },
+ {
+  "tr": "PEGASUS",
+  "ctx": [
+   "04_data.js:6  pegasus: { name: TX('PEGASUS'), color: C.yellow, dark: C.gold, desc: TX('IŞIK VE RİTİM') },"
+  ]
+ },
+ {
+  "tr": "IŞIK VE RİTİM",
+  "ctx": [
+   "04_data.js:6  pegasus: { name: TX('PEGASUS'), color: C.yellow, dark: C.gold, desc: TX('IŞIK VE RİTİM') },"
+  ]
+ },
+ {
+  "tr": "RÜZGAR KISRAĞI",
+  "ctx": [
+   "04_data.js:7  ruzgar: { name: TX('RÜZGAR KISRAĞI'), color: C.green, dark: C.dgreen, desc: TX('HIZ') }"
+  ]
+ },
+ {
+  "tr": "HIZ",
+  "ctx": [
+   "04_data.js:7  ruzgar: { name: TX('RÜZGAR KISRAĞI'), color: C.green, dark: C.dgreen, desc: TX('HIZ') }",
+   "04_data.js:183  const BRANCHES = [{ name: TX('HIZ'), color: C.sky }, { name: TX('DAYANIKLILIK'), color: C.red }, { name: TX('ZEKA'), color: C.gold }];"
+  ]
+ },
+ {
+  "tr": "ŞERİT",
+  "ctx": [
+   "04_data.js:10  const SLOTS = { serit: TX('ŞERİT'), sicra: TX('SIÇRAYIŞ'), ritim: TX('RİTİM'), hamle: TX('HAMLE'), cagri: TX('ÇAĞRI') };"
+  ]
+ },
+ {
+  "tr": "SIÇRAYIŞ",
+  "ctx": [
+   "04_data.js:10  const SLOTS = { serit: TX('ŞERİT'), sicra: TX('SIÇRAYIŞ'), ritim: TX('RİTİM'), hamle: TX('HAMLE'), cagri: TX('ÇAĞRI') };"
+  ]
+ },
+ {
+  "tr": "RİTİM",
+  "ctx": [
+   "04_data.js:10  const SLOTS = { serit: TX('ŞERİT'), sicra: TX('SIÇRAYIŞ'), ritim: TX('RİTİM'), hamle: TX('HAMLE'), cagri: TX('ÇAĞRI') };"
+  ]
+ },
+ {
+  "tr": "HAMLE",
+  "ctx": [
+   "04_data.js:10  const SLOTS = { serit: TX('ŞERİT'), sicra: TX('SIÇRAYIŞ'), ritim: TX('RİTİM'), hamle: TX('HAMLE'), cagri: TX('ÇAĞRI') };",
+   "07_farm.js:739  [TX('TEMİZ ATLAYIŞ'), st.cleanJumps || 0], [TX('HAMLE'), st.hamles || 0], [TX('SON ATAK'), st.kicks || 0], [TX('ÖZEL ATIŞ'), st.specials || 0], [TX('DEVRİLEN KAPTAN'), st.reisKills || 0], [TX('KAZANILAN DÜELLO'), st.duels || 0], [TX('ALINAN RÖVANŞ'), st.reveng"
+  ]
+ },
+ {
+  "tr": "ÇAĞRI",
+  "ctx": [
+   "04_data.js:10  const SLOTS = { serit: TX('ŞERİT'), sicra: TX('SIÇRAYIŞ'), ritim: TX('RİTİM'), hamle: TX('HAMLE'), cagri: TX('ÇAĞRI') };"
+  ]
+ },
+ {
+  "tr": "GÖK DARBESİ",
+  "ctx": [
+   "04_data.js:39  { id: 't_sicra', sp: 'tulpar', slot: 'sicra', name: TX('GÖK DARBESİ'), max: 3, desc: l => TX('İNİŞTE ') + (30 + l * 10) + TX(' ADIM ÇEVREDEKİ ENGEL VE DÜŞMANLAR PARÇALANIR'), apply: (S, l) => { S.landShock = 30 + l * 10; } },"
+  ]
+ },
+ {
+  "tr": "İNİŞTE ",
+  "ctx": [
+   "04_data.js:39  { id: 't_sicra', sp: 'tulpar', slot: 'sicra', name: TX('GÖK DARBESİ'), max: 3, desc: l => TX('İNİŞTE ') + (30 + l * 10) + TX(' ADIM ÇEVREDEKİ ENGEL VE DÜŞMANLAR PARÇALANIR'), apply: (S, l) => { S.landShock = 30 + l * 10; } },"
+  ]
+ },
+ {
+  "tr": " ADIM ÇEVREDEKİ ENGEL VE DÜŞMANLAR PARÇALANIR",
+  "ctx": [
+   "04_data.js:39  { id: 't_sicra', sp: 'tulpar', slot: 'sicra', name: TX('GÖK DARBESİ'), max: 3, desc: l => TX('İNİŞTE ') + (30 + l * 10) + TX(' ADIM ÇEVREDEKİ ENGEL VE DÜŞMANLAR PARÇALANIR'), apply: (S, l) => { S.landShock = 30 + l * 10; } },"
+  ]
+ },
+ {
+  "tr": "SÜZÜLEN ADIM",
+  "ctx": [
+   "04_data.js:40  { id: 't_serit', sp: 'tulpar', slot: 'serit', name: TX('SÜZÜLEN ADIM'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİRKEN ') + (0.2 + l * 0.1).toFixed(1) + TX(' SN YERDEN KESİLİRSİN: BARİYER VE JÖLE ETKİLEMEZ'), apply: (S, l) => { S.laneFloat = 0.2 + l * 0.1; } },"
+  ]
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİRKEN ",
+  "ctx": [
+   "04_data.js:40  { id: 't_serit', sp: 'tulpar', slot: 'serit', name: TX('SÜZÜLEN ADIM'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİRKEN ') + (0.2 + l * 0.1).toFixed(1) + TX(' SN YERDEN KESİLİRSİN: BARİYER VE JÖLE ETKİLEMEZ'), apply: (S, l) => { S.laneFloat = 0.2 + l * 0.1; } },"
+  ]
+ },
+ {
+  "tr": " SN YERDEN KESİLİRSİN: BARİYER VE JÖLE ETKİLEMEZ",
+  "ctx": [
+   "04_data.js:40  { id: 't_serit', sp: 'tulpar', slot: 'serit', name: TX('SÜZÜLEN ADIM'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİRKEN ') + (0.2 + l * 0.1).toFixed(1) + TX(' SN YERDEN KESİLİRSİN: BARİYER VE JÖLE ETKİLEMEZ'), apply: (S, l) => { S.laneFloat = 0.2 + l * 0.1; } },"
+  ]
+ },
+ {
+  "tr": "RÜZGAR OKU",
+  "ctx": [
+   "04_data.js:41  { id: 't_ritim', sp: 'tulpar', slot: 'ritim', name: TX('RÜZGAR OKU'), max: 3, desc: l => TX('MÜKEMMEL ATIŞLAR ') + l + TX(' DÜŞMANIN İÇİNDEN GEÇER'), apply: (S, l) => { S.shotPierce += l; } },"
+  ]
+ },
+ {
+  "tr": "MÜKEMMEL ATIŞLAR ",
+  "ctx": [
+   "04_data.js:41  { id: 't_ritim', sp: 'tulpar', slot: 'ritim', name: TX('RÜZGAR OKU'), max: 3, desc: l => TX('MÜKEMMEL ATIŞLAR ') + l + TX(' DÜŞMANIN İÇİNDEN GEÇER'), apply: (S, l) => { S.shotPierce += l; } },"
+  ]
+ },
+ {
+  "tr": " DÜŞMANIN İÇİNDEN GEÇER",
+  "ctx": [
+   "04_data.js:41  { id: 't_ritim', sp: 'tulpar', slot: 'ritim', name: TX('RÜZGAR OKU'), max: 3, desc: l => TX('MÜKEMMEL ATIŞLAR ') + l + TX(' DÜŞMANIN İÇİNDEN GEÇER'), apply: (S, l) => { S.shotPierce += l; } },"
+  ]
+ },
+ {
+  "tr": "TULPAR KANADI",
+  "ctx": [
+   "04_data.js:42  { id: 't_cagri', sp: 'tulpar', slot: 'cagri', name: TX('TULPAR KANADI'), max: 3, desc: l => TX('TEKNİKLE ') + (2 + l) + TX(' SN UÇARSIN, HİÇBİR ŞEY DOKUNAMAZ'), apply: (S, l) => { S.abFly = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": "TEKNİKLE ",
+  "ctx": [
+   "04_data.js:42  { id: 't_cagri', sp: 'tulpar', slot: 'cagri', name: TX('TULPAR KANADI'), max: 3, desc: l => TX('TEKNİKLE ') + (2 + l) + TX(' SN UÇARSIN, HİÇBİR ŞEY DOKUNAMAZ'), apply: (S, l) => { S.abFly = 2 + l; } },",
+   "04_data.js:63  { id: 's_cagri', sp: 'sleipnir', slot: 'cagri', name: TX('GÖLGE SÜRÜSÜ'), max: 3, desc: l => TX('TEKNİKLE ') + (3 + 2 * l) + TX(' SN İKİ GÖLGE AT YANINDA KOŞUP ATEŞ EDER'), apply: (S, l) => { S.abGhosts = 3 + 2 * l; } },"
+  ]
+ },
+ {
+  "tr": " SN UÇARSIN, HİÇBİR ŞEY DOKUNAMAZ",
+  "ctx": [
+   "04_data.js:42  { id: 't_cagri', sp: 'tulpar', slot: 'cagri', name: TX('TULPAR KANADI'), max: 3, desc: l => TX('TEKNİKLE ') + (2 + l) + TX(' SN UÇARSIN, HİÇBİR ŞEY DOKUNAMAZ'), apply: (S, l) => { S.abFly = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": "SÜZÜLEN HAMLE",
+  "ctx": [
+   "04_data.js:43  { id: 't_hamle', sp: 'tulpar', slot: 'hamle', name: TX('SÜZÜLEN HAMLE'), max: 3, desc: l => TX('HAMLEDE HAVAYA YÜKSELİRSİN, HİÇBİR ŞEY DOKUNAMAZ. SÜRE +%') + (20 * l), apply: (S, l) => { S.hamleAir = true; S.hamleDur *= 1 + 0.2 * l; } },"
+  ]
+ },
+ {
+  "tr": "HAMLEDE HAVAYA YÜKSELİRSİN, HİÇBİR ŞEY DOKUNAMAZ. SÜRE +%",
+  "ctx": [
+   "04_data.js:43  { id: 't_hamle', sp: 'tulpar', slot: 'hamle', name: TX('SÜZÜLEN HAMLE'), max: 3, desc: l => TX('HAMLEDE HAVAYA YÜKSELİRSİN, HİÇBİR ŞEY DOKUNAMAZ. SÜRE +%') + (20 * l), apply: (S, l) => { S.hamleAir = true; S.hamleDur *= 1 + 0.2 * l; } },"
+  ]
+ },
+ {
+  "tr": "TEMİZ KANAT",
+  "ctx": [
+   "04_data.js:44  { id: 't_temiz', sp: 'tulpar', name: TX('TEMİZ KANAT'), max: 2, desc: l => TX('TEMİZ ATLAYIŞTA ') + (1 + l) + TX(' YILDIZ FIRLATIR, +5 NEFES ALIRSIN'), apply: (S, l) => { S.cleanStars = 1 + l; S.cleanNefes += 5; } },"
+  ]
+ },
+ {
+  "tr": "TEMİZ ATLAYIŞTA ",
+  "ctx": [
+   "04_data.js:44  { id: 't_temiz', sp: 'tulpar', name: TX('TEMİZ KANAT'), max: 2, desc: l => TX('TEMİZ ATLAYIŞTA ') + (1 + l) + TX(' YILDIZ FIRLATIR, +5 NEFES ALIRSIN'), apply: (S, l) => { S.cleanStars = 1 + l; S.cleanNefes += 5; } },"
+  ]
+ },
+ {
+  "tr": " YILDIZ FIRLATIR, +5 NEFES ALIRSIN",
+  "ctx": [
+   "04_data.js:44  { id: 't_temiz', sp: 'tulpar', name: TX('TEMİZ KANAT'), max: 2, desc: l => TX('TEMİZ ATLAYIŞTA ') + (1 + l) + TX(' YILDIZ FIRLATIR, +5 NEFES ALIRSIN'), apply: (S, l) => { S.cleanStars = 1 + l; S.cleanNefes += 5; } },"
+  ]
+ },
+ {
+  "tr": "SÜZÜLME",
+  "ctx": [
+   "04_data.js:45  { id: 't_suzulme', sp: 'tulpar', name: TX('SÜZÜLME'), max: 3, desc: l => TX('SIÇRAYIŞ SÜRESİ +%') + (25 * l), apply: (S, l) => { S.jumpTime *= 1 + 0.25 * l; } },"
+  ]
+ },
+ {
+  "tr": "SIÇRAYIŞ SÜRESİ +%",
+  "ctx": [
+   "04_data.js:45  { id: 't_suzulme', sp: 'tulpar', name: TX('SÜZÜLME'), max: 3, desc: l => TX('SIÇRAYIŞ SÜRESİ +%') + (25 * l), apply: (S, l) => { S.jumpTime *= 1 + 0.25 * l; } },"
+  ]
+ },
+ {
+  "tr": "ÇİFT SIÇRAYIŞ",
+  "ctx": [
+   "04_data.js:46  { id: 't_cift', sp: 'tulpar', name: TX('ÇİFT SIÇRAYIŞ'), max: 1, desc: () => TX('HAVADAYKEN BİR KEZ DAHA SIÇRAYABİLİRSİN'), apply: S => { S.extraJumps += 1; } },"
+  ]
+ },
+ {
+  "tr": "HAVADAYKEN BİR KEZ DAHA SIÇRAYABİLİRSİN",
+  "ctx": [
+   "04_data.js:46  { id: 't_cift', sp: 'tulpar', name: TX('ÇİFT SIÇRAYIŞ'), max: 1, desc: () => TX('HAVADAYKEN BİR KEZ DAHA SIÇRAYABİLİRSİN'), apply: S => { S.extraJumps += 1; } },"
+  ]
+ },
+ {
+  "tr": "BULUT ADIMI",
+  "ctx": [
+   "04_data.js:47  { id: 't_bulut', sp: 'tulpar', name: TX('BULUT ADIMI'), max: 1, desc: () => TX('JÖLE SENİ YAVAŞLATMAZ, HAVADA ALINAN SİKKE X2'), apply: S => { S.puddleImmune = true; S.airCoins = true; } },"
+  ]
+ },
+ {
+  "tr": "JÖLE SENİ YAVAŞLATMAZ, HAVADA ALINAN SİKKE X2",
+  "ctx": [
+   "04_data.js:47  { id: 't_bulut', sp: 'tulpar', name: TX('BULUT ADIMI'), max: 1, desc: () => TX('JÖLE SENİ YAVAŞLATMAZ, HAVADA ALINAN SİKKE X2'), apply: S => { S.puddleImmune = true; S.airCoins = true; } },"
+  ]
+ },
+ {
+  "tr": "KIRAT TOYNAĞI",
+  "ctx": [
+   "04_data.js:49  { id: 'k_sicra', sp: 'kirat', slot: 'sicra', name: TX('KIRAT TOYNAĞI'), max: 3, desc: l => TX('İNDİĞİN YERDEKİ DÜŞMANLAR ') + (1 + l) + TX(' HASAR ALIR, BARİYERLER KIRILIR'), apply: (S, l) => { S.landStomp = 1 + l; } },"
+  ]
+ },
+ {
+  "tr": "İNDİĞİN YERDEKİ DÜŞMANLAR ",
+  "ctx": [
+   "04_data.js:49  { id: 'k_sicra', sp: 'kirat', slot: 'sicra', name: TX('KIRAT TOYNAĞI'), max: 3, desc: l => TX('İNDİĞİN YERDEKİ DÜŞMANLAR ') + (1 + l) + TX(' HASAR ALIR, BARİYERLER KIRILIR'), apply: (S, l) => { S.landStomp = 1 + l; } },"
+  ]
+ },
+ {
+  "tr": " HASAR ALIR, BARİYERLER KIRILIR",
+  "ctx": [
+   "04_data.js:49  { id: 'k_sicra', sp: 'kirat', slot: 'sicra', name: TX('KIRAT TOYNAĞI'), max: 3, desc: l => TX('İNDİĞİN YERDEKİ DÜŞMANLAR ') + (1 + l) + TX(' HASAR ALIR, BARİYERLER KIRILIR'), apply: (S, l) => { S.landStomp = 1 + l; } },"
+  ]
+ },
+ {
+  "tr": "OMUZ DARBESİ",
+  "ctx": [
+   "04_data.js:50  { id: 'k_serit', sp: 'kirat', slot: 'serit', name: TX('OMUZ DARBESİ'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİRKEN ÇARPTIĞIN RAKİBİ İTER, DÜŞMANA ') + l + TX(' HASAR VERİRSİN'), apply: (S, l) => { S.shoulder = true; S.shoulderDmg = l; } },"
+  ]
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİRKEN ÇARPTIĞIN RAKİBİ İTER, DÜŞMANA ",
+  "ctx": [
+   "04_data.js:50  { id: 'k_serit', sp: 'kirat', slot: 'serit', name: TX('OMUZ DARBESİ'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİRKEN ÇARPTIĞIN RAKİBİ İTER, DÜŞMANA ') + l + TX(' HASAR VERİRSİN'), apply: (S, l) => { S.shoulder = true; S.shoulderDmg = l; } },"
+  ]
+ },
+ {
+  "tr": " HASAR VERİRSİN",
+  "ctx": [
+   "04_data.js:50  { id: 'k_serit', sp: 'kirat', slot: 'serit', name: TX('OMUZ DARBESİ'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİRKEN ÇARPTIĞIN RAKİBİ İTER, DÜŞMANA ') + l + TX(' HASAR VERİRSİN'), apply: (S, l) => { S.shoulder = true; S.shoulderDmg = l; } },"
+  ]
+ },
+ {
+  "tr": "AĞIR OK",
+  "ctx": [
+   "04_data.js:51  { id: 'k_ritim', sp: 'kirat', slot: 'ritim', name: TX('AĞIR OK'), max: 3, desc: l => TX('ATIŞ HASARI +%') + (40 * l) + TX(', VURDUĞUN GERİ SAVRULUR'), apply: (S, l) => { S.shotDmg *= 1 + 0.4 * l; S.knock = true; } },"
+  ]
+ },
+ {
+  "tr": "ATIŞ HASARI +%",
+  "ctx": [
+   "04_data.js:51  { id: 'k_ritim', sp: 'kirat', slot: 'ritim', name: TX('AĞIR OK'), max: 3, desc: l => TX('ATIŞ HASARI +%') + (40 * l) + TX(', VURDUĞUN GERİ SAVRULUR'), apply: (S, l) => { S.shotDmg *= 1 + 0.4 * l; S.knock = true; } },"
+  ]
+ },
+ {
+  "tr": ", VURDUĞUN GERİ SAVRULUR",
+  "ctx": [
+   "04_data.js:51  { id: 'k_ritim', sp: 'kirat', slot: 'ritim', name: TX('AĞIR OK'), max: 3, desc: l => TX('ATIŞ HASARI +%') + (40 * l) + TX(', VURDUĞUN GERİ SAVRULUR'), apply: (S, l) => { S.shotDmg *= 1 + 0.4 * l; S.knock = true; } },"
+  ]
+ },
+ {
+  "tr": "KÖROĞLU NARASI",
+  "ctx": [
+   "04_data.js:52  { id: 'k_cagri', sp: 'kirat', slot: 'cagri', name: TX('KÖROĞLU NARASI'), max: 3, desc: l => TX('TEKNİK TÜM DÜŞMANLARI SERSEMLETİR VE ') + l + TX(' KALKAN VERİR'), apply: (S, l) => { S.abStun = true; S.abShield = l; } },"
+  ]
+ },
+ {
+  "tr": "TEKNİK TÜM DÜŞMANLARI SERSEMLETİR VE ",
+  "ctx": [
+   "04_data.js:52  { id: 'k_cagri', sp: 'kirat', slot: 'cagri', name: TX('KÖROĞLU NARASI'), max: 3, desc: l => TX('TEKNİK TÜM DÜŞMANLARI SERSEMLETİR VE ') + l + TX(' KALKAN VERİR'), apply: (S, l) => { S.abStun = true; S.abShield = l; } },"
+  ]
+ },
+ {
+  "tr": " KALKAN VERİR",
+  "ctx": [
+   "04_data.js:52  { id: 'k_cagri', sp: 'kirat', slot: 'cagri', name: TX('KÖROĞLU NARASI'), max: 3, desc: l => TX('TEKNİK TÜM DÜŞMANLARI SERSEMLETİR VE ') + l + TX(' KALKAN VERİR'), apply: (S, l) => { S.abStun = true; S.abShield = l; } },"
+  ]
+ },
+ {
+  "tr": "KOÇBAŞI",
+  "ctx": [
+   "04_data.js:53  { id: 'k_hamle', sp: 'kirat', slot: 'hamle', name: TX('KOÇBAŞI'), max: 3, desc: l => TX('HAMLE ÖNÜNDEKİ ENGELLERİ PARÇALAR, DÜŞMANLARA ') + (1 + l) + TX(' HASAR VERİR'), apply: (S, l) => { S.hamleRam = 1 + l; } },"
+  ]
+ },
+ {
+  "tr": "HAMLE ÖNÜNDEKİ ENGELLERİ PARÇALAR, DÜŞMANLARA ",
+  "ctx": [
+   "04_data.js:53  { id: 'k_hamle', sp: 'kirat', slot: 'hamle', name: TX('KOÇBAŞI'), max: 3, desc: l => TX('HAMLE ÖNÜNDEKİ ENGELLERİ PARÇALAR, DÜŞMANLARA ') + (1 + l) + TX(' HASAR VERİR'), apply: (S, l) => { S.hamleRam = 1 + l; } },"
+  ]
+ },
+ {
+  "tr": " HASAR VERİR",
+  "ctx": [
+   "04_data.js:53  { id: 'k_hamle', sp: 'kirat', slot: 'hamle', name: TX('KOÇBAŞI'), max: 3, desc: l => TX('HAMLE ÖNÜNDEKİ ENGELLERİ PARÇALAR, DÜŞMANLARA ') + (1 + l) + TX(' HASAR VERİR'), apply: (S, l) => { S.hamleRam = 1 + l; } },",
+   "04_data.js:70  { id: 'p_serit', sp: 'pegasus', slot: 'serit', name: TX('IŞIK İZİ'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİNCE ARKANDA KALAN IŞIK DÜŞMANA ') + l + TX(' HASAR VERİR'), apply: (S, l) => { S.laneTrail = l; } },"
+  ]
+ },
+ {
+  "tr": "ATEŞLİ NEFES",
+  "ctx": [
+   "04_data.js:54  { id: 'k_nefes', sp: 'kirat', name: TX('ATEŞLİ NEFES'), max: 2, desc: l => TX('NEFES 80 VE ÜSTÜYKEN ATIŞ HASARI +%') + (25 * l), apply: (S, l) => { S.fullNefesDmg = 0.25 * l; } },"
+  ]
+ },
+ {
+  "tr": "NEFES 80 VE ÜSTÜYKEN ATIŞ HASARI +%",
+  "ctx": [
+   "04_data.js:54  { id: 'k_nefes', sp: 'kirat', name: TX('ATEŞLİ NEFES'), max: 2, desc: l => TX('NEFES 80 VE ÜSTÜYKEN ATIŞ HASARI +%') + (25 * l), apply: (S, l) => { S.fullNefesDmg = 0.25 * l; } },"
+  ]
+ },
+ {
+  "tr": "DEMİR GÖĞÜS",
+  "ctx": [
+   "04_data.js:55  { id: 'k_demir', sp: 'kirat', name: TX('DEMİR GÖĞÜS'), max: 2, desc: l => TX('HER ETAPTA İLK ') + l + TX(' ÇARPMA CAN GÖTÜRMEZ'), apply: (S, l) => { S.shield += l; } },"
+  ]
+ },
+ {
+  "tr": "HER ETAPTA İLK ",
+  "ctx": [
+   "04_data.js:55  { id: 'k_demir', sp: 'kirat', name: TX('DEMİR GÖĞÜS'), max: 2, desc: l => TX('HER ETAPTA İLK ') + l + TX(' ÇARPMA CAN GÖTÜRMEZ'), apply: (S, l) => { S.shield += l; } },"
+  ]
+ },
+ {
+  "tr": " ÇARPMA CAN GÖTÜRMEZ",
+  "ctx": [
+   "04_data.js:55  { id: 'k_demir', sp: 'kirat', name: TX('DEMİR GÖĞÜS'), max: 2, desc: l => TX('HER ETAPTA İLK ') + l + TX(' ÇARPMA CAN GÖTÜRMEZ'), apply: (S, l) => { S.shield += l; } },"
+  ]
+ },
+ {
+  "tr": "KÖROĞLU ÖFKESİ",
+  "ctx": [
+   "04_data.js:56  { id: 'k_ofke', sp: 'kirat', name: TX('KÖROĞLU ÖFKESİ'), max: 2, desc: l => TX('TEK CANIN KALINCA HIZ +%') + (20 * l), apply: (S, l) => { S.lowHpSpeed += 0.2 * l; } },"
+  ]
+ },
+ {
+  "tr": "TEK CANIN KALINCA HIZ +%",
+  "ctx": [
+   "04_data.js:56  { id: 'k_ofke', sp: 'kirat', name: TX('KÖROĞLU ÖFKESİ'), max: 2, desc: l => TX('TEK CANIN KALINCA HIZ +%') + (20 * l), apply: (S, l) => { S.lowHpSpeed += 0.2 * l; } },"
+  ]
+ },
+ {
+  "tr": "GÖKTAŞI KIRAN",
+  "ctx": [
+   "04_data.js:57  { id: 'k_kaya', sp: 'kirat', name: TX('GÖKTAŞI KIRAN'), max: 1, desc: () => TX('GÖKTAŞLARI ÇARPINCA KIRILIR, CAN GİTMEZ'), apply: S => { S.rockBreaker = true; } },"
+  ]
+ },
+ {
+  "tr": "GÖKTAŞLARI ÇARPINCA KIRILIR, CAN GİTMEZ",
+  "ctx": [
+   "04_data.js:57  { id: 'k_kaya', sp: 'kirat', name: TX('GÖKTAŞI KIRAN'), max: 1, desc: () => TX('GÖKTAŞLARI ÇARPINCA KIRILIR, CAN GİTMEZ'), apply: S => { S.rockBreaker = true; } },"
+  ]
+ },
+ {
+  "tr": "YİĞİT YÜREK",
+  "ctx": [
+   "04_data.js:58  { id: 'k_yigit', sp: 'kirat', name: TX('YİĞİT YÜREK'), max: 3, desc: () => TX('+1 AZAMİ CAN VE 1 CAN YENİLE'), apply: (S, l) => { S.maxHp += l; }, onPick: (run, lv) => { run.hp += lv; } },"
+  ]
+ },
+ {
+  "tr": "+1 AZAMİ CAN VE 1 CAN YENİLE",
+  "ctx": [
+   "04_data.js:58  { id: 'k_yigit', sp: 'kirat', name: TX('YİĞİT YÜREK'), max: 3, desc: () => TX('+1 AZAMİ CAN VE 1 CAN YENİLE'), apply: (S, l) => { S.maxHp += l; }, onPick: (run, lv) => { run.hp += lv; } },"
+  ]
+ },
+ {
+  "tr": "SEKİZ AYAK",
+  "ctx": [
+   "04_data.js:60  { id: 's_sicra', sp: 'sleipnir', slot: 'sicra', name: TX('SEKİZ AYAK'), max: 3, desc: l => TX('İNİŞTEN SONRA ') + (0.2 + 0.2 * l).toFixed(1) + TX(' SN DOKUNULMAZSIN'), apply: (S, l) => { S.landInvuln = 0.2 + 0.2 * l; } },"
+  ]
+ },
+ {
+  "tr": "İNİŞTEN SONRA ",
+  "ctx": [
+   "04_data.js:60  { id: 's_sicra', sp: 'sleipnir', slot: 'sicra', name: TX('SEKİZ AYAK'), max: 3, desc: l => TX('İNİŞTEN SONRA ') + (0.2 + 0.2 * l).toFixed(1) + TX(' SN DOKUNULMAZSIN'), apply: (S, l) => { S.landInvuln = 0.2 + 0.2 * l; } },"
+  ]
+ },
+ {
+  "tr": " SN DOKUNULMAZSIN",
+  "ctx": [
+   "04_data.js:60  { id: 's_sicra', sp: 'sleipnir', slot: 'sicra', name: TX('SEKİZ AYAK'), max: 3, desc: l => TX('İNİŞTEN SONRA ') + (0.2 + 0.2 * l).toFixed(1) + TX(' SN DOKUNULMAZSIN'), apply: (S, l) => { S.landInvuln = 0.2 + 0.2 * l; } },",
+   "04_data.js:61  { id: 's_serit', sp: 'sleipnir', slot: 'serit', name: TX('HAYALET ADIM'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİNCE ') + (0.15 + 0.15 * l).toFixed(2) + TX(' SN DOKUNULMAZSIN'), apply: (S, l) => { S.laneInvuln = 0.15 + 0.15 * l; } },"
+  ]
+ },
+ {
+  "tr": "HAYALET ADIM",
+  "ctx": [
+   "04_data.js:61  { id: 's_serit', sp: 'sleipnir', slot: 'serit', name: TX('HAYALET ADIM'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİNCE ') + (0.15 + 0.15 * l).toFixed(2) + TX(' SN DOKUNULMAZSIN'), apply: (S, l) => { S.laneInvuln = 0.15 + 0.15 * l; } },"
+  ]
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİNCE ",
+  "ctx": [
+   "04_data.js:61  { id: 's_serit', sp: 'sleipnir', slot: 'serit', name: TX('HAYALET ADIM'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİNCE ') + (0.15 + 0.15 * l).toFixed(2) + TX(' SN DOKUNULMAZSIN'), apply: (S, l) => { S.laneInvuln = 0.15 + 0.15 * l; } },"
+  ]
+ },
+ {
+  "tr": "ÇATAL OK",
+  "ctx": [
+   "04_data.js:62  { id: 's_ritim', sp: 'sleipnir', slot: 'ritim', name: TX('ÇATAL OK'), max: 3, desc: l => TX('ATIŞLAR YAN ŞERİTLERE DE GİDER (%') + (40 + 20 * l) + TX(' HASAR)'), apply: (S, l) => { S.shotSpread = 0.4 + 0.2 * l; } },"
+  ]
+ },
+ {
+  "tr": "ATIŞLAR YAN ŞERİTLERE DE GİDER (%",
+  "ctx": [
+   "04_data.js:62  { id: 's_ritim', sp: 'sleipnir', slot: 'ritim', name: TX('ÇATAL OK'), max: 3, desc: l => TX('ATIŞLAR YAN ŞERİTLERE DE GİDER (%') + (40 + 20 * l) + TX(' HASAR)'), apply: (S, l) => { S.shotSpread = 0.4 + 0.2 * l; } },"
+  ]
+ },
+ {
+  "tr": " HASAR)",
+  "ctx": [
+   "04_data.js:62  { id: 's_ritim', sp: 'sleipnir', slot: 'ritim', name: TX('ÇATAL OK'), max: 3, desc: l => TX('ATIŞLAR YAN ŞERİTLERE DE GİDER (%') + (40 + 20 * l) + TX(' HASAR)'), apply: (S, l) => { S.shotSpread = 0.4 + 0.2 * l; } },"
+  ]
+ },
+ {
+  "tr": "GÖLGE SÜRÜSÜ",
+  "ctx": [
+   "04_data.js:63  { id: 's_cagri', sp: 'sleipnir', slot: 'cagri', name: TX('GÖLGE SÜRÜSÜ'), max: 3, desc: l => TX('TEKNİKLE ') + (3 + 2 * l) + TX(' SN İKİ GÖLGE AT YANINDA KOŞUP ATEŞ EDER'), apply: (S, l) => { S.abGhosts = 3 + 2 * l; } },"
+  ]
+ },
+ {
+  "tr": " SN İKİ GÖLGE AT YANINDA KOŞUP ATEŞ EDER",
+  "ctx": [
+   "04_data.js:63  { id: 's_cagri', sp: 'sleipnir', slot: 'cagri', name: TX('GÖLGE SÜRÜSÜ'), max: 3, desc: l => TX('TEKNİKLE ') + (3 + 2 * l) + TX(' SN İKİ GÖLGE AT YANINDA KOŞUP ATEŞ EDER'), apply: (S, l) => { S.abGhosts = 3 + 2 * l; } },"
+  ]
+ },
+ {
+  "tr": "GÖLGE HAMLESİ",
+  "ctx": [
+   "04_data.js:64  { id: 's_hamle', sp: 'sleipnir', slot: 'hamle', name: TX('GÖLGE HAMLESİ'), max: 3, desc: l => TX('HAMLEDE DOKUNULMAZSIN, ENGELLERDEN GEÇERSİN. NEFES BEDELİ -%') + (15 * l), apply: (S, l) => { S.hamleInv = true; S.hamleCost *= 1 - 0.15 * l; } },"
+  ]
+ },
+ {
+  "tr": "HAMLEDE DOKUNULMAZSIN, ENGELLERDEN GEÇERSİN. NEFES BEDELİ -%",
+  "ctx": [
+   "04_data.js:64  { id: 's_hamle', sp: 'sleipnir', slot: 'hamle', name: TX('GÖLGE HAMLESİ'), max: 3, desc: l => TX('HAMLEDE DOKUNULMAZSIN, ENGELLERDEN GEÇERSİN. NEFES BEDELİ -%') + (15 * l), apply: (S, l) => { S.hamleInv = true; S.hamleCost *= 1 - 0.15 * l; } },"
+  ]
+ },
+ {
+  "tr": "ÇİFT TOYNAK",
+  "ctx": [
+   "04_data.js:65  { id: 's_cift', sp: 'sleipnir', name: TX('ÇİFT TOYNAK'), max: 1, desc: () => TX('ÇİFT NOTANIN İKİSİNİ DE VURURSAN EK ATIŞ VE +4 NEFES'), apply: S => { S.doubleBonus = true; } },"
+  ]
+ },
+ {
+  "tr": "ÇİFT NOTANIN İKİSİNİ DE VURURSAN EK ATIŞ VE +4 NEFES",
+  "ctx": [
+   "04_data.js:65  { id: 's_cift', sp: 'sleipnir', name: TX('ÇİFT TOYNAK'), max: 1, desc: () => TX('ÇİFT NOTANIN İKİSİNİ DE VURURSAN EK ATIŞ VE +4 NEFES'), apply: S => { S.doubleBonus = true; } },"
+  ]
+ },
+ {
+  "tr": "SEKİZ TOYNAK",
+  "ctx": [
+   "04_data.js:66  { id: 's_sekiz', sp: 'sleipnir', name: TX('SEKİZ TOYNAK'), max: 1, desc: () => TX('ŞERİT DEĞİŞTİRME 2 KAT HIZLI'), apply: S => { S.laneTime *= 0.5; } },"
+  ]
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRME 2 KAT HIZLI",
+  "ctx": [
+   "04_data.js:66  { id: 's_sekiz', sp: 'sleipnir', name: TX('SEKİZ TOYNAK'), max: 1, desc: () => TX('ŞERİT DEĞİŞTİRME 2 KAT HIZLI'), apply: S => { S.laneTime *= 0.5; } },"
+  ]
+ },
+ {
+  "tr": "GÖLGE İKİZİ",
+  "ctx": [
+   "04_data.js:67  { id: 's_golge', sp: 'sleipnir', name: TX('GÖLGE İKİZİ'), max: 1, desc: () => TX('YAN ŞERİTTE BİR GÖLGE AT SİKKE TOPLAR'), apply: S => { S.ghost = true; } },"
+  ]
+ },
+ {
+  "tr": "YAN ŞERİTTE BİR GÖLGE AT SİKKE TOPLAR",
+  "ctx": [
+   "04_data.js:67  { id: 's_golge', sp: 'sleipnir', name: TX('GÖLGE İKİZİ'), max: 1, desc: () => TX('YAN ŞERİTTE BİR GÖLGE AT SİKKE TOPLAR'), apply: S => { S.ghost = true; } },"
+  ]
+ },
+ {
+  "tr": "YILDIZ SIÇRAYIŞI",
+  "ctx": [
+   "04_data.js:69  { id: 'p_sicra', sp: 'pegasus', slot: 'sicra', name: TX('YILDIZ SIÇRAYIŞI'), max: 3, desc: l => TX('SIÇRAYIŞIN TEPESİNDE ÖNÜNE ') + (2 + l) + TX(' YILDIZ FIRLATIRSIN'), apply: (S, l) => { S.jumpStars = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": "SIÇRAYIŞIN TEPESİNDE ÖNÜNE ",
+  "ctx": [
+   "04_data.js:69  { id: 'p_sicra', sp: 'pegasus', slot: 'sicra', name: TX('YILDIZ SIÇRAYIŞI'), max: 3, desc: l => TX('SIÇRAYIŞIN TEPESİNDE ÖNÜNE ') + (2 + l) + TX(' YILDIZ FIRLATIRSIN'), apply: (S, l) => { S.jumpStars = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": " YILDIZ FIRLATIRSIN",
+  "ctx": [
+   "04_data.js:69  { id: 'p_sicra', sp: 'pegasus', slot: 'sicra', name: TX('YILDIZ SIÇRAYIŞI'), max: 3, desc: l => TX('SIÇRAYIŞIN TEPESİNDE ÖNÜNE ') + (2 + l) + TX(' YILDIZ FIRLATIRSIN'), apply: (S, l) => { S.jumpStars = 2 + l; } },",
+   "04_data.js:73  { id: 'p_hamle', sp: 'pegasus', slot: 'hamle', name: TX('IŞIK HAMLESİ'), max: 3, desc: l => TX('HAMLEYE BAŞLARKEN ÖNÜNE ') + (2 + l) + TX(' YILDIZ FIRLATIRSIN'), apply: (S, l) => { S.hamleStars = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": "IŞIK İZİ",
+  "ctx": [
+   "04_data.js:70  { id: 'p_serit', sp: 'pegasus', slot: 'serit', name: TX('IŞIK İZİ'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİNCE ARKANDA KALAN IŞIK DÜŞMANA ') + l + TX(' HASAR VERİR'), apply: (S, l) => { S.laneTrail = l; } },"
+  ]
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİNCE ARKANDA KALAN IŞIK DÜŞMANA ",
+  "ctx": [
+   "04_data.js:70  { id: 'p_serit', sp: 'pegasus', slot: 'serit', name: TX('IŞIK İZİ'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİNCE ARKANDA KALAN IŞIK DÜŞMANA ') + l + TX(' HASAR VERİR'), apply: (S, l) => { S.laneTrail = l; } },"
+  ]
+ },
+ {
+  "tr": "PARLAK OK",
+  "ctx": [
+   "04_data.js:71  { id: 'p_ritim', sp: 'pegasus', slot: 'ritim', name: TX('PARLAK OK'), max: 3, desc: l => TX('MÜKEMMEL ATIŞLAR EN YAKIN DÜŞMANA YÖNELİR, HASAR +%') + (15 * l), apply: (S, l) => { S.shotHoming = true; S.shotDmg *= 1 + 0.15 * l; } },"
+  ]
+ },
+ {
+  "tr": "MÜKEMMEL ATIŞLAR EN YAKIN DÜŞMANA YÖNELİR, HASAR +%",
+  "ctx": [
+   "04_data.js:71  { id: 'p_ritim', sp: 'pegasus', slot: 'ritim', name: TX('PARLAK OK'), max: 3, desc: l => TX('MÜKEMMEL ATIŞLAR EN YAKIN DÜŞMANA YÖNELİR, HASAR +%') + (15 * l), apply: (S, l) => { S.shotHoming = true; S.shotDmg *= 1 + 0.15 * l; } },"
+  ]
+ },
+ {
+  "tr": "TAKIMYILDIZ",
+  "ctx": [
+   "04_data.js:72  { id: 'p_cagri', sp: 'pegasus', slot: 'cagri', name: TX('TAKIMYILDIZ'), max: 3, desc: l => TX('TEKNİK EKRANA YILDIZ YAĞDIRIR: DÜŞMANLARA ') + (1 + l) + TX(' HASAR'), apply: (S, l) => { S.abStars = 1 + l; } },"
+  ]
+ },
+ {
+  "tr": "TEKNİK EKRANA YILDIZ YAĞDIRIR: DÜŞMANLARA ",
+  "ctx": [
+   "04_data.js:72  { id: 'p_cagri', sp: 'pegasus', slot: 'cagri', name: TX('TAKIMYILDIZ'), max: 3, desc: l => TX('TEKNİK EKRANA YILDIZ YAĞDIRIR: DÜŞMANLARA ') + (1 + l) + TX(' HASAR'), apply: (S, l) => { S.abStars = 1 + l; } },"
+  ]
+ },
+ {
+  "tr": " HASAR",
+  "ctx": [
+   "04_data.js:72  { id: 'p_cagri', sp: 'pegasus', slot: 'cagri', name: TX('TAKIMYILDIZ'), max: 3, desc: l => TX('TEKNİK EKRANA YILDIZ YAĞDIRIR: DÜŞMANLARA ') + (1 + l) + TX(' HASAR'), apply: (S, l) => { S.abStars = 1 + l; } },"
+  ]
+ },
+ {
+  "tr": "IŞIK HAMLESİ",
+  "ctx": [
+   "04_data.js:73  { id: 'p_hamle', sp: 'pegasus', slot: 'hamle', name: TX('IŞIK HAMLESİ'), max: 3, desc: l => TX('HAMLEYE BAŞLARKEN ÖNÜNE ') + (2 + l) + TX(' YILDIZ FIRLATIRSIN'), apply: (S, l) => { S.hamleStars = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": "HAMLEYE BAŞLARKEN ÖNÜNE ",
+  "ctx": [
+   "04_data.js:73  { id: 'p_hamle', sp: 'pegasus', slot: 'hamle', name: TX('IŞIK HAMLESİ'), max: 3, desc: l => TX('HAMLEYE BAŞLARKEN ÖNÜNE ') + (2 + l) + TX(' YILDIZ FIRLATIRSIN'), apply: (S, l) => { S.hamleStars = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": "VURGU IŞIĞI",
+  "ctx": [
+   "04_data.js:74  { id: 'p_vurgu', sp: 'pegasus', name: TX('VURGU IŞIĞI'), max: 2, desc: l => TX('ALTIN NOTALARDA MÜKEMMEL PENCERE +%') + (30 * l) + TX(', ÖZEL ATIŞ +%') + (40 * l), apply: (S, l) => { S.accentWin = 1 + 0.3 * l; S.specialMult *= 1 + 0.4 * l; } },"
+  ]
+ },
+ {
+  "tr": "ALTIN NOTALARDA MÜKEMMEL PENCERE +%",
+  "ctx": [
+   "04_data.js:74  { id: 'p_vurgu', sp: 'pegasus', name: TX('VURGU IŞIĞI'), max: 2, desc: l => TX('ALTIN NOTALARDA MÜKEMMEL PENCERE +%') + (30 * l) + TX(', ÖZEL ATIŞ +%') + (40 * l), apply: (S, l) => { S.accentWin = 1 + 0.3 * l; S.specialMult *= 1 + 0.4 * l; } },"
+  ]
+ },
+ {
+  "tr": ", ÖZEL ATIŞ +%",
+  "ctx": [
+   "04_data.js:74  { id: 'p_vurgu', sp: 'pegasus', name: TX('VURGU IŞIĞI'), max: 2, desc: l => TX('ALTIN NOTALARDA MÜKEMMEL PENCERE +%') + (30 * l) + TX(', ÖZEL ATIŞ +%') + (40 * l), apply: (S, l) => { S.accentWin = 1 + 0.3 * l; S.specialMult *= 1 + 0.4 * l; } },"
+  ]
+ },
+ {
+  "tr": "PARLAK TOYNAK",
+  "ctx": [
+   "04_data.js:75  { id: 'p_parlak', sp: 'pegasus', name: TX('PARLAK TOYNAK'), max: 2, desc: l => TX('MÜKEMMEL RİTİM PENCERESİ +%') + (30 * l), apply: (S, l) => { S.perfectWin *= 1 + 0.3 * l; } },"
+  ]
+ },
+ {
+  "tr": "MÜKEMMEL RİTİM PENCERESİ +%",
+  "ctx": [
+   "04_data.js:75  { id: 'p_parlak', sp: 'pegasus', name: TX('PARLAK TOYNAK'), max: 2, desc: l => TX('MÜKEMMEL RİTİM PENCERESİ +%') + (30 * l), apply: (S, l) => { S.perfectWin *= 1 + 0.3 * l; } },"
+  ]
+ },
+ {
+  "tr": "YILDIZ TOZU",
+  "ctx": [
+   "04_data.js:76  { id: 'p_yildiz', sp: 'pegasus', name: TX('YILDIZ TOZU'), max: 1, desc: () => TX('HER 30 KOMBODA 1 CAN YENİLENİR'), apply: S => { S.starDust = true; } },"
+  ]
+ },
+ {
+  "tr": "HER 30 KOMBODA 1 CAN YENİLENİR",
+  "ctx": [
+   "04_data.js:76  { id: 'p_yildiz', sp: 'pegasus', name: TX('YILDIZ TOZU'), max: 1, desc: () => TX('HER 30 KOMBODA 1 CAN YENİLENİR'), apply: S => { S.starDust = true; } },"
+  ]
+ },
+ {
+  "tr": "ALTIN NAL",
+  "ctx": [
+   "04_data.js:77  { id: 'p_altin', sp: 'pegasus', name: TX('ALTIN NAL'), max: 3, desc: l => TX('SİKKE KAZANCI +%') + (40 * l), apply: (S, l) => { S.coinMult += 0.4 * l; } },"
+  ]
+ },
+ {
+  "tr": "SİKKE KAZANCI +%",
+  "ctx": [
+   "04_data.js:77  { id: 'p_altin', sp: 'pegasus', name: TX('ALTIN NAL'), max: 3, desc: l => TX('SİKKE KAZANCI +%') + (40 * l), apply: (S, l) => { S.coinMult += 0.4 * l; } },"
+  ]
+ },
+ {
+  "tr": "KASIRGA SIÇRAYIŞI",
+  "ctx": [
+   "04_data.js:79  { id: 'r_sicra', sp: 'ruzgar', slot: 'sicra', name: TX('KASIRGA SIÇRAYIŞI'), max: 3, desc: l => TX('İNİŞTE 1.5 SN %') + (10 + 5 * l) + TX(' HIZ PATLAMASI'), apply: (S, l) => { S.landBoost = 0.1 + 0.05 * l; } },"
+  ]
+ },
+ {
+  "tr": "İNİŞTE 1.5 SN %",
+  "ctx": [
+   "04_data.js:79  { id: 'r_sicra', sp: 'ruzgar', slot: 'sicra', name: TX('KASIRGA SIÇRAYIŞI'), max: 3, desc: l => TX('İNİŞTE 1.5 SN %') + (10 + 5 * l) + TX(' HIZ PATLAMASI'), apply: (S, l) => { S.landBoost = 0.1 + 0.05 * l; } },"
+  ]
+ },
+ {
+  "tr": " HIZ PATLAMASI",
+  "ctx": [
+   "04_data.js:79  { id: 'r_sicra', sp: 'ruzgar', slot: 'sicra', name: TX('KASIRGA SIÇRAYIŞI'), max: 3, desc: l => TX('İNİŞTE 1.5 SN %') + (10 + 5 * l) + TX(' HIZ PATLAMASI'), apply: (S, l) => { S.landBoost = 0.1 + 0.05 * l; } },"
+  ]
+ },
+ {
+  "tr": "YAN RÜZGAR",
+  "ctx": [
+   "04_data.js:80  { id: 'r_serit', sp: 'ruzgar', slot: 'serit', name: TX('YAN RÜZGAR'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİNCE 1 SN %') + (6 + 4 * l) + TX(' HIZ'), apply: (S, l) => { S.laneSpeed = 0.06 + 0.04 * l; } },"
+  ]
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİNCE 1 SN %",
+  "ctx": [
+   "04_data.js:80  { id: 'r_serit', sp: 'ruzgar', slot: 'serit', name: TX('YAN RÜZGAR'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİNCE 1 SN %') + (6 + 4 * l) + TX(' HIZ'), apply: (S, l) => { S.laneSpeed = 0.06 + 0.04 * l; } },"
+  ]
+ },
+ {
+  "tr": " HIZ",
+  "ctx": [
+   "04_data.js:80  { id: 'r_serit', sp: 'ruzgar', slot: 'serit', name: TX('YAN RÜZGAR'), max: 3, desc: l => TX('ŞERİT DEĞİŞTİRİNCE 1 SN %') + (6 + 4 * l) + TX(' HIZ'), apply: (S, l) => { S.laneSpeed = 0.06 + 0.04 * l; } },",
+   "06_run.js:1159  floatText(TX('SON ATAK! +%') + Math.round(this.kick * 100) + TX(' HIZ'), W / 2, this.pY - 42, C.cyan, 1, -8, 1.4);"
+  ]
+ },
+ {
+  "tr": "HIZLI YAY",
+  "ctx": [
+   "04_data.js:81  { id: 'r_ritim', sp: 'ruzgar', slot: 'ritim', name: TX('HIZLI YAY'), max: 3, desc: l => TX('HER ') + [8, 6, 4][l - 1] + TX(' KOMBODA BEŞ IŞINLIK YAĞMUR'), apply: (S, l) => { S.volley = [8, 6, 4][l - 1]; } },"
+  ]
+ },
+ {
+  "tr": "HER ",
+  "ctx": [
+   "04_data.js:81  { id: 'r_ritim', sp: 'ruzgar', slot: 'ritim', name: TX('HIZLI YAY'), max: 3, desc: l => TX('HER ') + [8, 6, 4][l - 1] + TX(' KOMBODA BEŞ IŞINLIK YAĞMUR'), apply: (S, l) => { S.volley = [8, 6, 4][l - 1]; } },"
+  ]
+ },
+ {
+  "tr": " KOMBODA BEŞ IŞINLIK YAĞMUR",
+  "ctx": [
+   "04_data.js:81  { id: 'r_ritim', sp: 'ruzgar', slot: 'ritim', name: TX('HIZLI YAY'), max: 3, desc: l => TX('HER ') + [8, 6, 4][l - 1] + TX(' KOMBODA BEŞ IŞINLIK YAĞMUR'), apply: (S, l) => { S.volley = [8, 6, 4][l - 1]; } },"
+  ]
+ },
+ {
+  "tr": "FIRTINA ATAĞI",
+  "ctx": [
+   "04_data.js:82  { id: 'r_cagri', sp: 'ruzgar', slot: 'cagri', name: TX('FIRTINA ATAĞI'), max: 3, desc: l => TX('TEKNİK ') + (2 + l) + TX(' SN EN YÜKSEK HIZ VE KOMBO KORUMASI VERİR'), apply: (S, l) => { S.abStorm = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": "TEKNİK ",
+  "ctx": [
+   "04_data.js:82  { id: 'r_cagri', sp: 'ruzgar', slot: 'cagri', name: TX('FIRTINA ATAĞI'), max: 3, desc: l => TX('TEKNİK ') + (2 + l) + TX(' SN EN YÜKSEK HIZ VE KOMBO KORUMASI VERİR'), apply: (S, l) => { S.abStorm = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": " SN EN YÜKSEK HIZ VE KOMBO KORUMASI VERİR",
+  "ctx": [
+   "04_data.js:82  { id: 'r_cagri', sp: 'ruzgar', slot: 'cagri', name: TX('FIRTINA ATAĞI'), max: 3, desc: l => TX('TEKNİK ') + (2 + l) + TX(' SN EN YÜKSEK HIZ VE KOMBO KORUMASI VERİR'), apply: (S, l) => { S.abStorm = 2 + l; } },"
+  ]
+ },
+ {
+  "tr": "FIRTINA HAMLESİ",
+  "ctx": [
+   "04_data.js:83  { id: 'r_hamle', sp: 'ruzgar', slot: 'hamle', name: TX('FIRTINA HAMLESİ'), max: 3, desc: l => TX('HAMLE SÜRESİ +%') + (30 * l) + TX(', HAMLE HIZI +%') + (5 * l), apply: (S, l) => { S.hamleDur *= 1 + 0.3 * l; S.hamleSpd += 0.05 * l; } },"
+  ]
+ },
+ {
+  "tr": "HAMLE SÜRESİ +%",
+  "ctx": [
+   "04_data.js:83  { id: 'r_hamle', sp: 'ruzgar', slot: 'hamle', name: TX('FIRTINA HAMLESİ'), max: 3, desc: l => TX('HAMLE SÜRESİ +%') + (30 * l) + TX(', HAMLE HIZI +%') + (5 * l), apply: (S, l) => { S.hamleDur *= 1 + 0.3 * l; S.hamleSpd += 0.05 * l; } },"
+  ]
+ },
+ {
+  "tr": ", HAMLE HIZI +%",
+  "ctx": [
+   "04_data.js:83  { id: 'r_hamle', sp: 'ruzgar', slot: 'hamle', name: TX('FIRTINA HAMLESİ'), max: 3, desc: l => TX('HAMLE SÜRESİ +%') + (30 * l) + TX(', HAMLE HIZI +%') + (5 * l), apply: (S, l) => { S.hamleDur *= 1 + 0.3 * l; S.hamleSpd += 0.05 * l; } },"
+  ]
+ },
+ {
+  "tr": "İKİNCİ SOLUK",
+  "ctx": [
+   "04_data.js:84  { id: 'r_soluk', sp: 'ruzgar', name: TX('İKİNCİ SOLUK'), max: 2, desc: l => TX('NEFES KAZANCI +%') + (40 * l) + TX(', SON ATAK +%') + (40 * l), apply: (S, l) => { S.nefesGain *= 1 + 0.4 * l; S.kickMult *= 1 + 0.4 * l; } },"
+  ]
+ },
+ {
+  "tr": "NEFES KAZANCI +%",
+  "ctx": [
+   "04_data.js:84  { id: 'r_soluk', sp: 'ruzgar', name: TX('İKİNCİ SOLUK'), max: 2, desc: l => TX('NEFES KAZANCI +%') + (40 * l) + TX(', SON ATAK +%') + (40 * l), apply: (S, l) => { S.nefesGain *= 1 + 0.4 * l; S.kickMult *= 1 + 0.4 * l; } },"
+  ]
+ },
+ {
+  "tr": ", SON ATAK +%",
+  "ctx": [
+   "04_data.js:84  { id: 'r_soluk', sp: 'ruzgar', name: TX('İKİNCİ SOLUK'), max: 2, desc: l => TX('NEFES KAZANCI +%') + (40 * l) + TX(', SON ATAK +%') + (40 * l), apply: (S, l) => { S.nefesGain *= 1 + 0.4 * l; S.kickMult *= 1 + 0.4 * l; } },"
+  ]
+ },
+ {
+  "tr": "VİRAJ USTASI",
+  "ctx": [
+   "04_data.js:85  { id: 'r_viraj', sp: 'ruzgar', name: TX('VİRAJ USTASI'), max: 1, desc: () => TX('VİRAJDA İÇ KULVAR AVANTAJI İKİ KAT, DIŞTA YAVAŞLAMAZSIN'), apply: S => { S.cornerMult *= 2; S.outerSafe = true; } },"
+  ]
+ },
+ {
+  "tr": "VİRAJDA İÇ KULVAR AVANTAJI İKİ KAT, DIŞTA YAVAŞLAMAZSIN",
+  "ctx": [
+   "04_data.js:85  { id: 'r_viraj', sp: 'ruzgar', name: TX('VİRAJ USTASI'), max: 1, desc: () => TX('VİRAJDA İÇ KULVAR AVANTAJI İKİ KAT, DIŞTA YAVAŞLAMAZSIN'), apply: S => { S.cornerMult *= 2; S.outerSafe = true; } },"
+  ]
+ },
+ {
+  "tr": "ARKA RÜZGAR",
+  "ctx": [
+   "04_data.js:86  { id: 'r_ruzgar', sp: 'ruzgar', name: TX('ARKA RÜZGAR'), max: 3, desc: l => TX('TABAN HIZ +%') + (6 * l), apply: (S, l) => { S.speed *= 1 + 0.06 * l; } },"
+  ]
+ },
+ {
+  "tr": "TABAN HIZ +%",
+  "ctx": [
+   "04_data.js:86  { id: 'r_ruzgar', sp: 'ruzgar', name: TX('ARKA RÜZGAR'), max: 3, desc: l => TX('TABAN HIZ +%') + (6 * l), apply: (S, l) => { S.speed *= 1 + 0.06 * l; } },"
+  ]
+ },
+ {
+  "tr": "KESİNTİSİZ",
+  "ctx": [
+   "04_data.js:87  { id: 'r_kesintisiz', sp: 'ruzgar', name: TX('KESİNTİSİZ'), max: 1, desc: () => TX('ISKA KOMBOYU SIFIRLAMAZ, YARIYA İNDİRİR'), apply: S => { S.comboKeep = true; } },"
+  ]
+ },
+ {
+  "tr": "ISKA KOMBOYU SIFIRLAMAZ, YARIYA İNDİRİR",
+  "ctx": [
+   "04_data.js:87  { id: 'r_kesintisiz', sp: 'ruzgar', name: TX('KESİNTİSİZ'), max: 1, desc: () => TX('ISKA KOMBOYU SIFIRLAMAZ, YARIYA İNDİRİR'), apply: S => { S.comboKeep = true; } },"
+  ]
+ },
+ {
+  "tr": "TAM GAZ",
+  "ctx": [
+   "04_data.js:88  { id: 'r_firtina', sp: 'ruzgar', name: TX('TAM GAZ'), max: 1, desc: () => TX('KOMBO 20 VE ÜSTÜYKEN EKSTRA HIZ +%12'), apply: S => { S.stormBonus = 0.12; } },"
+  ]
+ },
+ {
+  "tr": "KOMBO 20 VE ÜSTÜYKEN EKSTRA HIZ +%12",
+  "ctx": [
+   "04_data.js:88  { id: 'r_firtina', sp: 'ruzgar', name: TX('TAM GAZ'), max: 1, desc: () => TX('KOMBO 20 VE ÜSTÜYKEN EKSTRA HIZ +%12'), apply: S => { S.stormBonus = 0.12; } },"
+  ]
+ },
+ {
+  "tr": "HAFİF AYAK",
+  "ctx": [
+   "04_data.js:89  { id: 'r_hafif', sp: 'ruzgar', name: TX('HAFİF AYAK'), max: 1, desc: () => TX('ÇARPMA VE JÖLE YAVAŞLATMASI %50 AZALIR'), apply: S => { S.slowResist += 0.5; } }"
+  ]
+ },
+ {
+  "tr": "ÇARPMA VE JÖLE YAVAŞLATMASI %50 AZALIR",
+  "ctx": [
+   "04_data.js:89  { id: 'r_hafif', sp: 'ruzgar', name: TX('HAFİF AYAK'), max: 1, desc: () => TX('ÇARPMA VE JÖLE YAVAŞLATMASI %50 AZALIR'), apply: S => { S.slowResist += 0.5; } }"
+  ]
+ },
+ {
+  "tr": "GÖK GÜRÜLTÜSÜ",
+  "ctx": [
+   "04_data.js:93  { id: 'd_tk', duo: ['tulpar', 'kirat'], name: TX('GÖK GÜRÜLTÜSÜ'), desc: () => TX('İNİŞ DALGASI İKİ KAT GENİŞ OLUR VE DÜŞMANLARI SERSEMLETİR'), apply: S => { S.landShockWide = true; if (!S.landShock) S.landShock = 30; } },"
+  ]
+ },
+ {
+  "tr": "İNİŞ DALGASI İKİ KAT GENİŞ OLUR VE DÜŞMANLARI SERSEMLETİR",
+  "ctx": [
+   "04_data.js:93  { id: 'd_tk', duo: ['tulpar', 'kirat'], name: TX('GÖK GÜRÜLTÜSÜ'), desc: () => TX('İNİŞ DALGASI İKİ KAT GENİŞ OLUR VE DÜŞMANLARI SERSEMLETİR'), apply: S => { S.landShockWide = true; if (!S.landShock) S.landShock = 30; } },"
+  ]
+ },
+ {
+  "tr": "IŞIK YAĞMURU",
+  "ctx": [
+   "04_data.js:94  { id: 'd_tp', duo: ['tulpar', 'pegasus'], name: TX('IŞIK YAĞMURU'), desc: () => TX('HAVADAYKEN HER VURUŞTA BİR YILDIZ ATARSIN'), apply: S => { S.airStars = true; } },"
+  ]
+ },
+ {
+  "tr": "HAVADAYKEN HER VURUŞTA BİR YILDIZ ATARSIN",
+  "ctx": [
+   "04_data.js:94  { id: 'd_tp', duo: ['tulpar', 'pegasus'], name: TX('IŞIK YAĞMURU'), desc: () => TX('HAVADAYKEN HER VURUŞTA BİR YILDIZ ATARSIN'), apply: S => { S.airStars = true; } },"
+  ]
+ },
+ {
+  "tr": "GÖKTAŞI FIRTINASI",
+  "ctx": [
+   "04_data.js:95  { id: 'd_kr', duo: ['kirat', 'ruzgar'], name: TX('GÖKTAŞI FIRTINASI'), desc: () => TX('KOMBO 20 ÜSTÜNDEYKEN GÖKTAŞI VE KAPSÜLLERİ EZİP GEÇERSİN'), apply: S => { S.comboTrample = 20; } },"
+  ]
+ },
+ {
+  "tr": "KOMBO 20 ÜSTÜNDEYKEN GÖKTAŞI VE KAPSÜLLERİ EZİP GEÇERSİN",
+  "ctx": [
+   "04_data.js:95  { id: 'd_kr', duo: ['kirat', 'ruzgar'], name: TX('GÖKTAŞI FIRTINASI'), desc: () => TX('KOMBO 20 ÜSTÜNDEYKEN GÖKTAŞI VE KAPSÜLLERİ EZİP GEÇERSİN'), apply: S => { S.comboTrample = 20; } },"
+  ]
+ },
+ {
+  "tr": "AY GÖLGESİ",
+  "ctx": [
+   "04_data.js:96  { id: 'd_sp', duo: ['sleipnir', 'pegasus'], name: TX('AY GÖLGESİ'), desc: () => TX('YANINDAKİ GÖLGE AT DA ATEŞ EDER'), apply: S => { S.ghost = true; S.ghostShoots = true; } },"
+  ]
+ },
+ {
+  "tr": "YANINDAKİ GÖLGE AT DA ATEŞ EDER",
+  "ctx": [
+   "04_data.js:96  { id: 'd_sp', duo: ['sleipnir', 'pegasus'], name: TX('AY GÖLGESİ'), desc: () => TX('YANINDAKİ GÖLGE AT DA ATEŞ EDER'), apply: S => { S.ghost = true; S.ghostShoots = true; } },"
+  ]
+ },
+ {
+  "tr": "SEKİZ RÜZGAR",
+  "ctx": [
+   "04_data.js:97  { id: 'd_sr', duo: ['sleipnir', 'ruzgar'], name: TX('SEKİZ RÜZGAR'), desc: () => TX('HAMLE NEFESİN YARISINA MAL OLUR, HAMLEDE DÜŞMANLARI EZERSİN'), apply: S => { S.hamleCost *= 0.5; S.hamleRam = Math.max(S.hamleRam, 2); } },"
+  ]
+ },
+ {
+  "tr": "HAMLE NEFESİN YARISINA MAL OLUR, HAMLEDE DÜŞMANLARI EZERSİN",
+  "ctx": [
+   "04_data.js:97  { id: 'd_sr', duo: ['sleipnir', 'ruzgar'], name: TX('SEKİZ RÜZGAR'), desc: () => TX('HAMLE NEFESİN YARISINA MAL OLUR, HAMLEDE DÜŞMANLARI EZERSİN'), apply: S => { S.hamleCost *= 0.5; S.hamleRam = Math.max(S.hamleRam, 2); } },"
+  ]
+ },
+ {
+  "tr": "GÖK KOŞUSU",
+  "ctx": [
+   "04_data.js:98  { id: 'd_tr', duo: ['tulpar', 'ruzgar'], name: TX('GÖK KOŞUSU'), desc: () => TX('TEMİZ ATLAYIŞ SANA BEDAVA BİR KISA HAMLE VERİR'), apply: S => { S.cleanHamle = true; } },"
+  ]
+ },
+ {
+  "tr": "TEMİZ ATLAYIŞ SANA BEDAVA BİR KISA HAMLE VERİR",
+  "ctx": [
+   "04_data.js:98  { id: 'd_tr', duo: ['tulpar', 'ruzgar'], name: TX('GÖK KOŞUSU'), desc: () => TX('TEMİZ ATLAYIŞ SANA BEDAVA BİR KISA HAMLE VERİR'), apply: S => { S.cleanHamle = true; } },"
+  ]
+ },
+ {
+  "tr": "DEMİR GÖLGE",
+  "ctx": [
+   "04_data.js:99  { id: 'd_ks', duo: ['kirat', 'sleipnir'], name: TX('DEMİR GÖLGE'), desc: () => TX('HAMLE SIRASINDA ÇARPTIĞIN HER ŞEY KIRILIR VE 1 KALKAN KAZANIRSIN'), apply: S => { S.hamleShield = true; S.hamleRam = Math.max(S.hamleRam, 1); } },"
+  ]
+ },
+ {
+  "tr": "HAMLE SIRASINDA ÇARPTIĞIN HER ŞEY KIRILIR VE 1 KALKAN KAZANIRSIN",
+  "ctx": [
+   "04_data.js:99  { id: 'd_ks', duo: ['kirat', 'sleipnir'], name: TX('DEMİR GÖLGE'), desc: () => TX('HAMLE SIRASINDA ÇARPTIĞIN HER ŞEY KIRILIR VE 1 KALKAN KAZANIRSIN'), apply: S => { S.hamleShield = true; S.hamleRam = Math.max(S.hamleRam, 1); } },"
+  ]
+ },
+ {
+  "tr": "ALTIN TOYNAK",
+  "ctx": [
+   "04_data.js:100  { id: 'd_pk', duo: ['pegasus', 'kirat'], name: TX('ALTIN TOYNAK'), desc: () => TX('DÜŞMANLAR 2 KAT SİKKE DÜŞÜRÜR'), apply: S => { S.foeCoins *= 2; } },"
+  ]
+ },
+ {
+  "tr": "DÜŞMANLAR 2 KAT SİKKE DÜŞÜRÜR",
+  "ctx": [
+   "04_data.js:100  { id: 'd_pk', duo: ['pegasus', 'kirat'], name: TX('ALTIN TOYNAK'), desc: () => TX('DÜŞMANLAR 2 KAT SİKKE DÜŞÜRÜR'), apply: S => { S.foeCoins *= 2; } },"
+  ]
+ },
+ {
+  "tr": "BULUT SÜRÜSÜ",
+  "ctx": [
+   "04_data.js:101  { id: 'd_ts', duo: ['tulpar', 'sleipnir'], name: TX('BULUT SÜRÜSÜ'), desc: () => TX('+1 SIÇRAYIŞ VE İNİŞTE KISA DOKUNULMAZLIK'), apply: S => { S.extraJumps += 1; S.landInvuln = Math.max(S.landInvuln, 0.4); } },"
+  ]
+ },
+ {
+  "tr": "+1 SIÇRAYIŞ VE İNİŞTE KISA DOKUNULMAZLIK",
+  "ctx": [
+   "04_data.js:101  { id: 'd_ts', duo: ['tulpar', 'sleipnir'], name: TX('BULUT SÜRÜSÜ'), desc: () => TX('+1 SIÇRAYIŞ VE İNİŞTE KISA DOKUNULMAZLIK'), apply: S => { S.extraJumps += 1; S.landInvuln = Math.max(S.landInvuln, 0.4); } },"
+  ]
+ },
+ {
+  "tr": "ŞAFAK KOŞUSU",
+  "ctx": [
+   "04_data.js:102  { id: 'd_rp', duo: ['ruzgar', 'pegasus'], name: TX('ŞAFAK KOŞUSU'), desc: () => TX('KOMBO 20 ÜSTÜNDE MÜKEMMEL PENCERE +%50'), apply: S => { S.dawnWindow = true; } }"
+  ]
+ },
+ {
+  "tr": "KOMBO 20 ÜSTÜNDE MÜKEMMEL PENCERE +%50",
+  "ctx": [
+   "04_data.js:102  { id: 'd_rp', duo: ['ruzgar', 'pegasus'], name: TX('ŞAFAK KOŞUSU'), desc: () => TX('KOMBO 20 ÜSTÜNDE MÜKEMMEL PENCERE +%50'), apply: S => { S.dawnWindow = true; } }"
+  ]
+ },
+ {
+  "tr": "SIRADAN",
+  "ctx": [
+   "04_data.js:106  { name: TX('SIRADAN'), color: C.lgray, lv: 1 },"
+  ]
+ },
+ {
+  "tr": "NADİR",
+  "ctx": [
+   "04_data.js:107  { name: TX('NADİR'), color: C.sky, lv: 2 },"
+  ]
+ },
+ {
+  "tr": "DESTANSI",
+  "ctx": [
+   "04_data.js:108  { name: TX('DESTANSI'), color: C.magenta, lv: 3 }"
+  ]
+ },
+ {
+  "tr": "IŞIK YAYI",
+  "ctx": [
+   "04_data.js:113  yay: { name: TX('IŞIK YAYI'), desc: TX('HER RİTİM VURUŞUNDA IŞIK OKU, MÜKEMMELDE İKİ OK'), cost: 0, dmg: 1, speed: 340, fire: 'judged', icon: 'w_yay', shot: 'arrow' },"
+  ]
+ },
+ {
+  "tr": "HER RİTİM VURUŞUNDA IŞIK OKU, MÜKEMMELDE İKİ OK",
+  "ctx": [
+   "04_data.js:113  yay: { name: TX('IŞIK YAYI'), desc: TX('HER RİTİM VURUŞUNDA IŞIK OKU, MÜKEMMELDE İKİ OK'), cost: 0, dmg: 1, speed: 340, fire: 'judged', icon: 'w_yay', shot: 'arrow' },"
+  ]
+ },
+ {
+  "tr": "ŞOK SAPANI",
+  "ctx": [
+   "04_data.js:114  sapan: { name: TX('ŞOK SAPANI'), desc: TX('HER DOKUNUŞTA ŞOK TOPU; RİTİMDE ÜÇ TANE'), cost: 45, dmg: 0.7, speed: 320, fire: 'any', icon: 'w_sapan', shot: 'pebble' },"
+  ]
+ },
+ {
+  "tr": "HER DOKUNUŞTA ŞOK TOPU; RİTİMDE ÜÇ TANE",
+  "ctx": [
+   "04_data.js:114  sapan: { name: TX('ŞOK SAPANI'), desc: TX('HER DOKUNUŞTA ŞOK TOPU; RİTİMDE ÜÇ TANE'), cost: 45, dmg: 0.7, speed: 320, fire: 'any', icon: 'w_sapan', shot: 'pebble' },"
+  ]
+ },
+ {
+  "tr": "RAY ARBALETİ",
+  "ctx": [
+   "04_data.js:115  tatar: { name: TX('RAY ARBALETİ'), desc: TX('SADECE MÜKEMMELDE: DELİCİ IŞIN, GÖKTAŞI KIRAR'), cost: 70, dmg: 2.4, speed: 400, fire: 'perfect', pierce: 2, breaksRock: true, icon: 'w_tatar', shot: 'bolt' },"
+  ]
+ },
+ {
+  "tr": "SADECE MÜKEMMELDE: DELİCİ IŞIN, GÖKTAŞI KIRAR",
+  "ctx": [
+   "04_data.js:115  tatar: { name: TX('RAY ARBALETİ'), desc: TX('SADECE MÜKEMMELDE: DELİCİ IŞIN, GÖKTAŞI KIRAR'), cost: 70, dmg: 2.4, speed: 400, fire: 'perfect', pierce: 2, breaksRock: true, icon: 'w_tatar', shot: 'bolt' },"
+  ]
+ },
+ {
+  "tr": "PLAZMA TOPU",
+  "ctx": [
+   "04_data.js:116  top: { name: TX('PLAZMA TOPU'), desc: TX('HER 4 VURUŞTA BİR PLAZMA: GENİŞ PATLAMA'), cost: 110, dmg: 3, speed: 260, fire: 'bar', aoe: true, breaksRock: true, icon: 'w_top', shot: 'ball' }"
+  ]
+ },
+ {
+  "tr": "HER 4 VURUŞTA BİR PLAZMA: GENİŞ PATLAMA",
+  "ctx": [
+   "04_data.js:116  top: { name: TX('PLAZMA TOPU'), desc: TX('HER 4 VURUŞTA BİR PLAZMA: GENİŞ PATLAMA'), cost: 110, dmg: 3, speed: 260, fire: 'bar', aoe: true, breaksRock: true, icon: 'w_top', shot: 'ball' }"
+  ]
+ },
+ {
+  "tr": "ÜÇLÜ IŞIN",
+  "ctx": [
+   "04_data.js:119  const WEAPON_SPECIAL = { yay: TX('ÜÇLÜ IŞIN'), sapan: TX('ŞOK FIRTINASI'), tatar: TX('ZIRH DELEN'), top: TX('DEV PLAZMA') };"
+  ]
+ },
+ {
+  "tr": "ŞOK FIRTINASI",
+  "ctx": [
+   "04_data.js:119  const WEAPON_SPECIAL = { yay: TX('ÜÇLÜ IŞIN'), sapan: TX('ŞOK FIRTINASI'), tatar: TX('ZIRH DELEN'), top: TX('DEV PLAZMA') };"
+  ]
+ },
+ {
+  "tr": "ZIRH DELEN",
+  "ctx": [
+   "04_data.js:119  const WEAPON_SPECIAL = { yay: TX('ÜÇLÜ IŞIN'), sapan: TX('ŞOK FIRTINASI'), tatar: TX('ZIRH DELEN'), top: TX('DEV PLAZMA') };"
+  ]
+ },
+ {
+  "tr": "DEV PLAZMA",
+  "ctx": [
+   "04_data.js:119  const WEAPON_SPECIAL = { yay: TX('ÜÇLÜ IŞIN'), sapan: TX('ŞOK FIRTINASI'), tatar: TX('ZIRH DELEN'), top: TX('DEV PLAZMA') };"
+  ]
+ },
+ {
+  "tr": "ÇİFT KİRİŞ",
+  "ctx": [
+   "04_data.js:123  { id: 'y_cift', name: TX('ÇİFT KİRİŞ'), desc: TX('HER VURUŞTA EN AZ İKİ IŞIK OKU'), apply: S => { S.minShots = 2; } },"
+  ]
+ },
+ {
+  "tr": "HER VURUŞTA EN AZ İKİ IŞIK OKU",
+  "ctx": [
+   "04_data.js:123  { id: 'y_cift', name: TX('ÇİFT KİRİŞ'), desc: TX('HER VURUŞTA EN AZ İKİ IŞIK OKU'), apply: S => { S.minShots = 2; } },"
+  ]
+ },
+ {
+  "tr": "ALEVLİ OK",
+  "ctx": [
+   "04_data.js:124  { id: 'y_alev', name: TX('ALEVLİ OK'), desc: TX('VURDUĞUN DÜŞMAN 2 SN YANAR'), apply: S => { S.burn = Math.max(S.burn, 0.8); } },"
+  ]
+ },
+ {
+  "tr": "VURDUĞUN DÜŞMAN 2 SN YANAR",
+  "ctx": [
+   "04_data.js:124  { id: 'y_alev', name: TX('ALEVLİ OK'), desc: TX('VURDUĞUN DÜŞMAN 2 SN YANAR'), apply: S => { S.burn = Math.max(S.burn, 0.8); } },"
+  ]
+ },
+ {
+  "tr": "SEKEN OK",
+  "ctx": [
+   "04_data.js:125  { id: 'y_sekme', name: TX('SEKEN OK'), desc: TX('OK VURDUKTAN SONRA YAKINDAKİ BİR DÜŞMANA SEKER'), apply: S => { S.ricochet += 1; } }"
+  ]
+ },
+ {
+  "tr": "OK VURDUKTAN SONRA YAKINDAKİ BİR DÜŞMANA SEKER",
+  "ctx": [
+   "04_data.js:125  { id: 'y_sekme', name: TX('SEKEN OK'), desc: TX('OK VURDUKTAN SONRA YAKINDAKİ BİR DÜŞMANA SEKER'), apply: S => { S.ricochet += 1; } }"
+  ]
+ },
+ {
+  "tr": "AĞIR ŞOK",
+  "ctx": [
+   "04_data.js:128  { id: 's_iri', name: TX('AĞIR ŞOK'), desc: TX('ŞOK TOPLARI SERSEMLETİR, HASAR +%30'), apply: S => { S.shotStun = 0.6; S.shotDmg *= 1.3; } },"
+  ]
+ },
+ {
+  "tr": "ŞOK TOPLARI SERSEMLETİR, HASAR +%30",
+  "ctx": [
+   "04_data.js:128  { id: 's_iri', name: TX('AĞIR ŞOK'), desc: TX('ŞOK TOPLARI SERSEMLETİR, HASAR +%30'), apply: S => { S.shotStun = 0.6; S.shotDmg *= 1.3; } },"
+  ]
+ },
+ {
+  "tr": "DOLU ŞARJ",
+  "ctx": [
+   "04_data.js:129  { id: 's_torba', name: TX('DOLU ŞARJ'), desc: TX('RİTİMDE 3 YERİNE 5 ŞOK TOPU'), apply: S => { S.fanCount = 5; } },"
+  ]
+ },
+ {
+  "tr": "RİTİMDE 3 YERİNE 5 ŞOK TOPU",
+  "ctx": [
+   "04_data.js:129  { id: 's_torba', name: TX('DOLU ŞARJ'), desc: TX('RİTİMDE 3 YERİNE 5 ŞOK TOPU'), apply: S => { S.fanCount = 5; } },"
+  ]
+ },
+ {
+  "tr": "DELİCİ ŞOK",
+  "ctx": [
+   "04_data.js:130  { id: 's_sivri', name: TX('DELİCİ ŞOK'), desc: TX('ŞOK TOPLARI BİR DÜŞMANI DELİP GEÇER'), apply: S => { S.shotPierce += 1; } }"
+  ]
+ },
+ {
+  "tr": "ŞOK TOPLARI BİR DÜŞMANI DELİP GEÇER",
+  "ctx": [
+   "04_data.js:130  { id: 's_sivri', name: TX('DELİCİ ŞOK'), desc: TX('ŞOK TOPLARI BİR DÜŞMANI DELİP GEÇER'), apply: S => { S.shotPierce += 1; } }"
+  ]
+ },
+ {
+  "tr": "HIZLI ŞARJ",
+  "ctx": [
+   "04_data.js:133  { id: 't_kurma', name: TX('HIZLI ŞARJ'), desc: TX('İYİ VURUŞTA DA ATEŞ EDER'), apply: S => { S.fireOnGood = true; } },"
+  ]
+ },
+ {
+  "tr": "İYİ VURUŞTA DA ATEŞ EDER",
+  "ctx": [
+   "04_data.js:133  { id: 't_kurma', name: TX('HIZLI ŞARJ'), desc: TX('İYİ VURUŞTA DA ATEŞ EDER'), apply: S => { S.fireOnGood = true; } },"
+  ]
+ },
+ {
+  "tr": "PATLAYAN UÇ",
+  "ctx": [
+   "04_data.js:134  { id: 't_patla', name: TX('PATLAYAN UÇ'), desc: TX('IŞIN İSABET EDİNCE KÜÇÜK BİR PATLAMA'), apply: S => { S.miniBlast = true; } },"
+  ]
+ },
+ {
+  "tr": "IŞIN İSABET EDİNCE KÜÇÜK BİR PATLAMA",
+  "ctx": [
+   "04_data.js:134  { id: 't_patla', name: TX('PATLAYAN UÇ'), desc: TX('IŞIN İSABET EDİNCE KÜÇÜK BİR PATLAMA'), apply: S => { S.miniBlast = true; } },"
+  ]
+ },
+ {
+  "tr": "UZUN MENZİL",
+  "ctx": [
+   "04_data.js:135  { id: 't_menzil', name: TX('UZUN MENZİL'), desc: TX('IŞIN HERKESİN İÇİNDEN GEÇER, HASAR +%20'), apply: S => { S.shotPierce += 9; S.shotDmg *= 1.2; } }"
+  ]
+ },
+ {
+  "tr": "IŞIN HERKESİN İÇİNDEN GEÇER, HASAR +%20",
+  "ctx": [
+   "04_data.js:135  { id: 't_menzil', name: TX('UZUN MENZİL'), desc: TX('IŞIN HERKESİN İÇİNDEN GEÇER, HASAR +%20'), apply: S => { S.shotPierce += 9; S.shotDmg *= 1.2; } }"
+  ]
+ },
+ {
+  "tr": "ÇİFT NAMLU",
+  "ctx": [
+   "04_data.js:138  { id: 'o_namlu', name: TX('ÇİFT NAMLU'), desc: TX('PLAZMA 4 YERİNE 3 VURUŞTA'), apply: S => { S.barNeed = 3; } },"
+  ]
+ },
+ {
+  "tr": "PLAZMA 4 YERİNE 3 VURUŞTA",
+  "ctx": [
+   "04_data.js:138  { id: 'o_namlu', name: TX('ÇİFT NAMLU'), desc: TX('PLAZMA 4 YERİNE 3 VURUŞTA'), apply: S => { S.barNeed = 3; } },"
+  ]
+ },
+ {
+  "tr": "ŞOK PLAZMASI",
+  "ctx": [
+   "04_data.js:139  { id: 'o_sis', name: TX('ŞOK PLAZMASI'), desc: TX('PATLAMA DÜŞMANLARI 2 SN SERSEMLETİR'), apply: S => { S.blastStun = 2; } },"
+  ]
+ },
+ {
+  "tr": "PATLAMA DÜŞMANLARI 2 SN SERSEMLETİR",
+  "ctx": [
+   "04_data.js:139  { id: 'o_sis', name: TX('ŞOK PLAZMASI'), desc: TX('PATLAMA DÜŞMANLARI 2 SN SERSEMLETİR'), apply: S => { S.blastStun = 2; } },"
+  ]
+ },
+ {
+  "tr": "SEKEN PLAZMA",
+  "ctx": [
+   "04_data.js:140  { id: 'o_seken', name: TX('SEKEN PLAZMA'), desc: TX('PLAZMA PATLADIKTAN SONRA BİR KEZ DAHA SEKER'), apply: S => { S.bounceBall += 1; } }"
+  ]
+ },
+ {
+  "tr": "PLAZMA PATLADIKTAN SONRA BİR KEZ DAHA SEKER",
+  "ctx": [
+   "04_data.js:140  { id: 'o_seken', name: TX('SEKEN PLAZMA'), desc: TX('PLAZMA PATLADIKTAN SONRA BİR KEZ DAHA SEKER'), apply: S => { S.bounceBall += 1; } }"
+  ]
+ },
+ {
+  "tr": "GÖZCÜ",
+  "ctx": [
+   "04_data.js:147  karga: { name: TX('GÖZCÜ'), hp: 1, coins: 2, w: 10 },"
+  ]
+ },
+ {
+  "tr": "TOSBİK",
+  "ctx": [
+   "04_data.js:148  domuz: { name: TX('TOSBİK'), hp: 2, coins: 3, w: 10 },"
+  ]
+ },
+ {
+  "tr": "KORSAN",
+  "ctx": [
+   "04_data.js:149  eskiya: { name: TX('KORSAN'), hp: 4, coins: 6, w: 12 },"
+  ]
+ },
+ {
+  "tr": "NİŞANCI",
+  "ctx": [
+   "04_data.js:150  okcu: { name: TX('NİŞANCI'), hp: 3, coins: 5, w: 12 },"
+  ]
+ },
+ {
+  "tr": "KALKAN ROBOTU",
+  "ctx": [
+   "04_data.js:151  kalkanli: { name: TX('KALKAN ROBOTU'), hp: 3, coins: 7, w: 12 },"
+  ]
+ },
+ {
+  "tr": "KORSAN KAPTANI",
+  "ctx": [
+   "04_data.js:152  reis: { name: TX('KORSAN KAPTANI'), hp: 14, coins: 20, w: 14 }",
+   "06b_run_draw.js:592  textO(TX('KORSAN KAPTANI'), cx, by - 9, C.red, 'center');"
+  ]
+ },
+ {
+  "tr": "DEMİR NAL",
+  "ctx": [
+   "04_data.js:156  demir: { name: TX('DEMİR NAL'), desc: TX('DENGELİ, GÜVENİLİR'), cost: 0, apply: () => { } },"
+  ]
+ },
+ {
+  "tr": "DENGELİ, GÜVENİLİR",
+  "ctx": [
+   "04_data.js:156  demir: { name: TX('DEMİR NAL'), desc: TX('DENGELİ, GÜVENİLİR'), cost: 0, apply: () => { } },"
+  ]
+ },
+ {
+  "tr": "İYON NALI",
+  "ctx": [
+   "04_data.js:157  ruzgar: { name: TX('İYON NALI'), desc: TX('HIZ +%10, AZAMİ CAN -1'), cost: 60, apply: S => { S.speed *= 1.1; S.maxHp -= 1; } },"
+  ]
+ },
+ {
+  "tr": "HIZ +%10, AZAMİ CAN -1",
+  "ctx": [
+   "04_data.js:157  ruzgar: { name: TX('İYON NALI'), desc: TX('HIZ +%10, AZAMİ CAN -1'), cost: 60, apply: S => { S.speed *= 1.1; S.maxHp -= 1; } },"
+  ]
+ },
+ {
+  "tr": "METEOR NALI",
+  "ctx": [
+   "04_data.js:158  tas: { name: TX('METEOR NALI'), desc: TX('AZAMİ CAN +1, YAVAŞLAMA -%30, HIZ -%5'), cost: 60, apply: S => { S.maxHp += 1; S.slowResist += 0.3; S.speed *= 0.95; } },"
+  ]
+ },
+ {
+  "tr": "AZAMİ CAN +1, YAVAŞLAMA -%30, HIZ -%5",
+  "ctx": [
+   "04_data.js:158  tas: { name: TX('METEOR NALI'), desc: TX('AZAMİ CAN +1, YAVAŞLAMA -%30, HIZ -%5'), cost: 60, apply: S => { S.maxHp += 1; S.slowResist += 0.3; S.speed *= 0.95; } },"
+  ]
+ },
+ {
+  "tr": "RİTİM NALI",
+  "ctx": [
+   "04_data.js:159  ritim: { name: TX('RİTİM NALI'), desc: TX('MÜKEMMEL PENCERE +%25, KOMBO HIZI +%50'), cost: 90, apply: S => { S.perfectWin *= 1.25; S.comboPer *= 1.5; } }"
+  ]
+ },
+ {
+  "tr": "MÜKEMMEL PENCERE +%25, KOMBO HIZI +%50",
+  "ctx": [
+   "04_data.js:159  ritim: { name: TX('RİTİM NALI'), desc: TX('MÜKEMMEL PENCERE +%25, KOMBO HIZI +%50'), cost: 90, apply: S => { S.perfectWin *= 1.25; S.comboPer *= 1.5; } }"
+  ]
+ },
+ {
+  "tr": "AYŞE",
+  "ctx": [
+   "04_data.js:162  ayse: { name: TX('AYŞE'), silk: 'ayse', passive: TX('KOMBO YAVAŞ SÖNER'), ability: TX('SAKİN NEFES'), abDesc: TX('4 SN DOKUNULMAZLIK VE EKSTRA HIZ'), rozet: 0, apply: S => { S.comboDecay = 1; } },",
+   "04_data.js:503  const NPC_NAMES = { bip: TX('BİP-0'), ayse: TX('AYŞE'), kemal: TX('KEMAL USTA'), tayfun: TX('TAYFUN'), moko: TX('MOKO') };"
+  ]
+ },
+ {
+  "tr": "KOMBO YAVAŞ SÖNER",
+  "ctx": [
+   "04_data.js:162  ayse: { name: TX('AYŞE'), silk: 'ayse', passive: TX('KOMBO YAVAŞ SÖNER'), ability: TX('SAKİN NEFES'), abDesc: TX('4 SN DOKUNULMAZLIK VE EKSTRA HIZ'), rozet: 0, apply: S => { S.comboDecay = 1; } },"
+  ]
+ },
+ {
+  "tr": "SAKİN NEFES",
+  "ctx": [
+   "04_data.js:162  ayse: { name: TX('AYŞE'), silk: 'ayse', passive: TX('KOMBO YAVAŞ SÖNER'), ability: TX('SAKİN NEFES'), abDesc: TX('4 SN DOKUNULMAZLIK VE EKSTRA HIZ'), rozet: 0, apply: S => { S.comboDecay = 1; } },"
+  ]
+ },
+ {
+  "tr": "4 SN DOKUNULMAZLIK VE EKSTRA HIZ",
+  "ctx": [
+   "04_data.js:162  ayse: { name: TX('AYŞE'), silk: 'ayse', passive: TX('KOMBO YAVAŞ SÖNER'), ability: TX('SAKİN NEFES'), abDesc: TX('4 SN DOKUNULMAZLIK VE EKSTRA HIZ'), rozet: 0, apply: S => { S.comboDecay = 1; } },"
+  ]
+ },
+ {
+  "tr": "KEMAL USTA",
+  "ctx": [
+   "04_data.js:163  kemal: { name: TX('KEMAL USTA'), silk: 'kemal', passive: TX('+1 AZAMİ CAN'), ability: TX('USTA ATAĞI'), abDesc: TX('ANINDA İLERİ FIRLA, FARKI KAPAT'), rozet: 1, apply: S => { S.maxHp += 1; } },",
+   "04_data.js:503  const NPC_NAMES = { bip: TX('BİP-0'), ayse: TX('AYŞE'), kemal: TX('KEMAL USTA'), tayfun: TX('TAYFUN'), moko: TX('MOKO') };"
+  ]
+ },
+ {
+  "tr": "+1 AZAMİ CAN",
+  "ctx": [
+   "04_data.js:163  kemal: { name: TX('KEMAL USTA'), silk: 'kemal', passive: TX('+1 AZAMİ CAN'), ability: TX('USTA ATAĞI'), abDesc: TX('ANINDA İLERİ FIRLA, FARKI KAPAT'), rozet: 1, apply: S => { S.maxHp += 1; } },",
+   "04_data.js:415  { label: TX('ÇEKİP ÇIKAR'), desc: TX('+1 AZAMİ CAN'), fn: r => { r.bonusMaxHp++; r.hp++; return TX('YAVRU SEVİNÇLE IŞILDADI. KALBİN ISINDI.'); } },"
+  ]
+ },
+ {
+  "tr": "USTA ATAĞI",
+  "ctx": [
+   "04_data.js:163  kemal: { name: TX('KEMAL USTA'), silk: 'kemal', passive: TX('+1 AZAMİ CAN'), ability: TX('USTA ATAĞI'), abDesc: TX('ANINDA İLERİ FIRLA, FARKI KAPAT'), rozet: 1, apply: S => { S.maxHp += 1; } },"
+  ]
+ },
+ {
+  "tr": "ANINDA İLERİ FIRLA, FARKI KAPAT",
+  "ctx": [
+   "04_data.js:163  kemal: { name: TX('KEMAL USTA'), silk: 'kemal', passive: TX('+1 AZAMİ CAN'), ability: TX('USTA ATAĞI'), abDesc: TX('ANINDA İLERİ FIRLA, FARKI KAPAT'), rozet: 1, apply: S => { S.maxHp += 1; } },"
+  ]
+ },
+ {
+  "tr": "ÇILGIN TAYFUN",
+  "ctx": [
+   "04_data.js:164  tayfun: { name: TX('ÇILGIN TAYFUN'), silk: 'tayfun', passive: TX('HEP OMUZ DARBESİ'), ability: TX('KÜKREME'), abDesc: TX('ÖNÜNDEKİ ENGELLER KIRILIR, DÜŞMANLAR SERSEMLER'), rozet: 2, apply: S => { S.shoulder = true; S.shoulderDmg = Math.max(S.shoulderDmg, 1); }"
+  ]
+ },
+ {
+  "tr": "HEP OMUZ DARBESİ",
+  "ctx": [
+   "04_data.js:164  tayfun: { name: TX('ÇILGIN TAYFUN'), silk: 'tayfun', passive: TX('HEP OMUZ DARBESİ'), ability: TX('KÜKREME'), abDesc: TX('ÖNÜNDEKİ ENGELLER KIRILIR, DÜŞMANLAR SERSEMLER'), rozet: 2, apply: S => { S.shoulder = true; S.shoulderDmg = Math.max(S.shoulderDmg, 1); }"
+  ]
+ },
+ {
+  "tr": "KÜKREME",
+  "ctx": [
+   "04_data.js:164  tayfun: { name: TX('ÇILGIN TAYFUN'), silk: 'tayfun', passive: TX('HEP OMUZ DARBESİ'), ability: TX('KÜKREME'), abDesc: TX('ÖNÜNDEKİ ENGELLER KIRILIR, DÜŞMANLAR SERSEMLER'), rozet: 2, apply: S => { S.shoulder = true; S.shoulderDmg = Math.max(S.shoulderDmg, 1); }"
+  ]
+ },
+ {
+  "tr": "ÖNÜNDEKİ ENGELLER KIRILIR, DÜŞMANLAR SERSEMLER",
+  "ctx": [
+   "04_data.js:164  tayfun: { name: TX('ÇILGIN TAYFUN'), silk: 'tayfun', passive: TX('HEP OMUZ DARBESİ'), ability: TX('KÜKREME'), abDesc: TX('ÖNÜNDEKİ ENGELLER KIRILIR, DÜŞMANLAR SERSEMLER'), rozet: 2, apply: S => { S.shoulder = true; S.shoulderDmg = Math.max(S.shoulderDmg, 1); }"
+  ]
+ },
+ {
+  "tr": "HAVUÇ",
+  "ctx": [
+   "04_data.js:167  havuc: { name: TX('HAVUÇ'), desc: TX('KOŞUYA +1 AZAMİ CANLA BAŞLA'), cost: 0, apply: S => { S.maxHp += 1; } },",
+   "07_farm.js:677  const seeds = [['havuc', TX('HAVUÇ'), TX('6 KRİSTAL · 3 KOŞU')], ['pancar', TX('PANCAR'), TX('1 ŞEKER · 6 KOŞU')]];"
+  ]
+ },
+ {
+  "tr": "KOŞUYA +1 AZAMİ CANLA BAŞLA",
+  "ctx": [
+   "04_data.js:167  havuc: { name: TX('HAVUÇ'), desc: TX('KOŞUYA +1 AZAMİ CANLA BAŞLA'), cost: 0, apply: S => { S.maxHp += 1; } },"
+  ]
+ },
+ {
+  "tr": "YULAF",
+  "ctx": [
+   "04_data.js:168  yulaf: { name: TX('YULAF'), desc: TX('HIZ +%5'), cost: 30, apply: S => { S.speed *= 1.05; } },"
+  ]
+ },
+ {
+  "tr": "HIZ +%5",
+  "ctx": [
+   "04_data.js:168  yulaf: { name: TX('YULAF'), desc: TX('HIZ +%5'), cost: 30, apply: S => { S.speed *= 1.05; } },"
+  ]
+ },
+ {
+  "tr": "KESME ŞEKER",
+  "ctx": [
+   "04_data.js:169  seker: { name: TX('KESME ŞEKER'), desc: TX('KOŞUYA 60 SİKKEYLE BAŞLA'), cost: 40, apply: S => { S.startCoins += 60; } },"
+  ]
+ },
+ {
+  "tr": "KOŞUYA 60 SİKKEYLE BAŞLA",
+  "ctx": [
+   "04_data.js:169  seker: { name: TX('KESME ŞEKER'), desc: TX('KOŞUYA 60 SİKKEYLE BAŞLA'), cost: 40, apply: S => { S.startCoins += 60; } },"
+  ]
+ },
+ {
+  "tr": "ELMA",
+  "ctx": [
+   "04_data.js:170  elma: { name: TX('ELMA'), desc: TX('İLK RUH GÜCÜ EN AZ NADİR'), cost: 45, apply: () => { }, rareFirst: true }"
+  ]
+ },
+ {
+  "tr": "İLK RUH GÜCÜ EN AZ NADİR",
+  "ctx": [
+   "04_data.js:170  elma: { name: TX('ELMA'), desc: TX('İLK RUH GÜCÜ EN AZ NADİR'), cost: 45, apply: () => { }, rareFirst: true }"
+  ]
+ },
+ {
+  "tr": "GÜÇLÜ BACAKLAR",
+  "ctx": [
+   "04_data.js:173  { id: 'h1', br: 0, name: TX('GÜÇLÜ BACAKLAR'), max: 3, cost: 1, desc: TX('HIZ +%3'), apply: (S, r) => { S.speed *= 1 + 0.03 * r; } },"
+  ]
+ },
+ {
+  "tr": "HIZ +%3",
+  "ctx": [
+   "04_data.js:173  { id: 'h1', br: 0, name: TX('GÜÇLÜ BACAKLAR'), max: 3, cost: 1, desc: TX('HIZ +%3'), apply: (S, r) => { S.speed *= 1 + 0.03 * r; } },"
+  ]
+ },
+ {
+  "tr": "RİTİM DUYGUSU",
+  "ctx": [
+   "04_data.js:174  { id: 'h2', br: 0, name: TX('RİTİM DUYGUSU'), max: 2, cost: 1, desc: TX('MÜKEMMEL PENCERE +%10'), apply: (S, r) => { S.perfectWin *= 1 + 0.1 * r; } },"
+  ]
+ },
+ {
+  "tr": "MÜKEMMEL PENCERE +%10",
+  "ctx": [
+   "04_data.js:174  { id: 'h2', br: 0, name: TX('RİTİM DUYGUSU'), max: 2, cost: 1, desc: TX('MÜKEMMEL PENCERE +%10'), apply: (S, r) => { S.perfectWin *= 1 + 0.1 * r; } },"
+  ]
+ },
+ {
+  "tr": "HIZLI KALKIŞ",
+  "ctx": [
+   "04_data.js:175  { id: 'h3', br: 0, name: TX('HIZLI KALKIŞ'), max: 1, cost: 2, desc: TX('ETAPLARA 5 KOMBOYLA BAŞLA'), apply: (S, r) => { S.startCombo += 5 * r; } },"
+  ]
+ },
+ {
+  "tr": "ETAPLARA 5 KOMBOYLA BAŞLA",
+  "ctx": [
+   "04_data.js:175  { id: 'h3', br: 0, name: TX('HIZLI KALKIŞ'), max: 1, cost: 2, desc: TX('ETAPLARA 5 KOMBOYLA BAŞLA'), apply: (S, r) => { S.startCombo += 5 * r; } },"
+  ]
+ },
+ {
+  "tr": "SAĞLAM YAPI",
+  "ctx": [
+   "04_data.js:176  { id: 'd1', br: 1, name: TX('SAĞLAM YAPI'), max: 2, cost: 2, desc: TX('AZAMİ CAN +1'), apply: (S, r) => { S.maxHp += r; } },"
+  ]
+ },
+ {
+  "tr": "AZAMİ CAN +1",
+  "ctx": [
+   "04_data.js:176  { id: 'd1', br: 1, name: TX('SAĞLAM YAPI'), max: 2, cost: 2, desc: TX('AZAMİ CAN +1'), apply: (S, r) => { S.maxHp += r; } },"
+  ]
+ },
+ {
+  "tr": "KALIN DERİ",
+  "ctx": [
+   "04_data.js:177  { id: 'd2', br: 1, name: TX('KALIN DERİ'), max: 2, cost: 1, desc: TX('YAVAŞLAMA -%15'), apply: (S, r) => { S.slowResist += 0.15 * r; } },"
+  ]
+ },
+ {
+  "tr": "YAVAŞLAMA -%15",
+  "ctx": [
+   "04_data.js:177  { id: 'd2', br: 1, name: TX('KALIN DERİ'), max: 2, cost: 1, desc: TX('YAVAŞLAMA -%15'), apply: (S, r) => { S.slowResist += 0.15 * r; } },"
+  ]
+ },
+ {
+  "tr": "TOPARLANMA",
+  "ctx": [
+   "04_data.js:178  { id: 'd3', br: 1, name: TX('TOPARLANMA'), max: 1, cost: 2, desc: TX('BOSS YENİNCE 1 CAN YENİLE'), apply: (S, r) => { S.bossHeal = r; } },"
+  ]
+ },
+ {
+  "tr": "BOSS YENİNCE 1 CAN YENİLE",
+  "ctx": [
+   "04_data.js:178  { id: 'd3', br: 1, name: TX('TOPARLANMA'), max: 1, cost: 2, desc: TX('BOSS YENİNCE 1 CAN YENİLE'), apply: (S, r) => { S.bossHeal = r; } },"
+  ]
+ },
+ {
+  "tr": "SEÇİCİ",
+  "ctx": [
+   "04_data.js:179  { id: 'z1', br: 2, name: TX('SEÇİCİ'), max: 2, cost: 1, desc: TX('KOŞU BAŞI +1 GÜÇ YENİLEME'), apply: (S, r) => { S.rerolls += r; } },"
+  ]
+ },
+ {
+  "tr": "KOŞU BAŞI +1 GÜÇ YENİLEME",
+  "ctx": [
+   "04_data.js:179  { id: 'z1', br: 2, name: TX('SEÇİCİ'), max: 2, cost: 1, desc: TX('KOŞU BAŞI +1 GÜÇ YENİLEME'), apply: (S, r) => { S.rerolls += r; } },"
+  ]
+ },
+ {
+  "tr": "PAZARLIKÇI",
+  "ctx": [
+   "04_data.js:180  { id: 'z2', br: 2, name: TX('PAZARLIKÇI'), max: 2, cost: 1, desc: TX('PAZARDA -%15 FİYAT'), apply: (S, r) => { S.discount += 0.15 * r; } },"
+  ]
+ },
+ {
+  "tr": "PAZARDA -%15 FİYAT",
+  "ctx": [
+   "04_data.js:180  { id: 'z2', br: 2, name: TX('PAZARLIKÇI'), max: 2, cost: 1, desc: TX('PAZARDA -%15 FİYAT'), apply: (S, r) => { S.discount += 0.15 * r; } },"
+  ]
+ },
+ {
+  "tr": "ŞANSLI",
+  "ctx": [
+   "04_data.js:181  { id: 'z3', br: 2, name: TX('ŞANSLI'), max: 2, cost: 1, desc: TX('NADİR GÜÇ ŞANSI ARTAR'), apply: (S, r) => { S.luck += 0.1 * r; } }"
+  ]
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI ARTAR",
+  "ctx": [
+   "04_data.js:181  { id: 'z3', br: 2, name: TX('ŞANSLI'), max: 2, cost: 1, desc: TX('NADİR GÜÇ ŞANSI ARTAR'), apply: (S, r) => { S.luck += 0.1 * r; } }"
+  ]
+ },
+ {
+  "tr": "DAYANIKLILIK",
+  "ctx": [
+   "04_data.js:183  const BRANCHES = [{ name: TX('HIZ'), color: C.sky }, { name: TX('DAYANIKLILIK'), color: C.red }, { name: TX('ZEKA'), color: C.gold }];"
+  ]
+ },
+ {
+  "tr": "ZEKA",
+  "ctx": [
+   "04_data.js:183  const BRANCHES = [{ name: TX('HIZ'), color: C.sky }, { name: TX('DAYANIKLILIK'), color: C.red }, { name: TX('ZEKA'), color: C.gold }];"
+  ]
+ },
+ {
+  "tr": "KAMARA",
+  "ctx": [
+   "04_data.js:187  ev: { name: TX('KAMARA'), max: 1, up: [0], upDesc: [TX('SEYİR DEFTERİ')], desc: TX('DENİZ\\'İN KAMARASI. SEYİR DEFTERİNDE BU TUHAF YOLCULUK YAZILI.') },",
+   "07_farm.js:7  const MAP_NAMES = { ev: TX('KAMARA'), ahir: TX('AHIR'), pano: TX('GÖREVLER'), ambar: TX('YEM DEPOSU'), silahhane: TX('CEPHANELİK'), nalbant: TX('NAL ATÖLYESİ'), tapinak: TX('GÖZLEMEVİ'),"
+  ]
+ },
+ {
+  "tr": "SEYİR DEFTERİ",
+  "ctx": [
+   "04_data.js:187  ev: { name: TX('KAMARA'), max: 1, up: [0], upDesc: [TX('SEYİR DEFTERİ')], desc: TX('DENİZ\\'İN KAMARASI. SEYİR DEFTERİNDE BU TUHAF YOLCULUK YAZILI.') },",
+   "07_farm.js:763  const P = this.panelBox(TX('SEYİR DEFTERİ'), 52 + Math.max(MEMORIES.length * mh + 20, rivals.length * rh) + 6);"
+  ]
+ },
+ {
+  "tr": "DENİZ'İN KAMARASI. SEYİR DEFTERİNDE BU TUHAF YOLCULUK YAZILI.",
+  "ctx": [
+   "04_data.js:187  ev: { name: TX('KAMARA'), max: 1, up: [0], upDesc: [TX('SEYİR DEFTERİ')], desc: TX('DENİZ\\'İN KAMARASI. SEYİR DEFTERİNDE BU TUHAF YOLCULUK YAZILI.') },"
+  ]
+ },
+ {
+  "tr": "AHIR MODÜLÜ",
+  "ctx": [
+   "04_data.js:188  ahir: { name: TX('AHIR MODÜLÜ'), max: 4, up: [0, 80, 160, 280], upDesc: [TX('ANTRENMAN PLANI'), TX('+1 PUAN VE BATTANİYE RENKLERİ'), TX('+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ'), TX('+1 PUAN, SEVİLEN YILDIZ 15 KOMBOYLA BAŞLAR')], desc: TX('YILDIZ\\'IN CAM KUBBEL"
+  ]
+ },
+ {
+  "tr": "ANTRENMAN PLANI",
+  "ctx": [
+   "04_data.js:188  ahir: { name: TX('AHIR MODÜLÜ'), max: 4, up: [0, 80, 160, 280], upDesc: [TX('ANTRENMAN PLANI'), TX('+1 PUAN VE BATTANİYE RENKLERİ'), TX('+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ'), TX('+1 PUAN, SEVİLEN YILDIZ 15 KOMBOYLA BAŞLAR')], desc: TX('YILDIZ\\'IN CAM KUBBEL"
+  ]
+ },
+ {
+  "tr": "+1 PUAN VE BATTANİYE RENKLERİ",
+  "ctx": [
+   "04_data.js:188  ahir: { name: TX('AHIR MODÜLÜ'), max: 4, up: [0, 80, 160, 280], upDesc: [TX('ANTRENMAN PLANI'), TX('+1 PUAN VE BATTANİYE RENKLERİ'), TX('+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ'), TX('+1 PUAN, SEVİLEN YILDIZ 15 KOMBOYLA BAŞLAR')], desc: TX('YILDIZ\\'IN CAM KUBBEL"
+  ]
+ },
+ {
+  "tr": "+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ",
+  "ctx": [
+   "04_data.js:188  ahir: { name: TX('AHIR MODÜLÜ'), max: 4, up: [0, 80, 160, 280], upDesc: [TX('ANTRENMAN PLANI'), TX('+1 PUAN VE BATTANİYE RENKLERİ'), TX('+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ'), TX('+1 PUAN, SEVİLEN YILDIZ 15 KOMBOYLA BAŞLAR')], desc: TX('YILDIZ\\'IN CAM KUBBEL"
+  ]
+ },
+ {
+  "tr": "+1 PUAN, SEVİLEN YILDIZ 15 KOMBOYLA BAŞLAR",
+  "ctx": [
+   "04_data.js:188  ahir: { name: TX('AHIR MODÜLÜ'), max: 4, up: [0, 80, 160, 280], upDesc: [TX('ANTRENMAN PLANI'), TX('+1 PUAN VE BATTANİYE RENKLERİ'), TX('+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ'), TX('+1 PUAN, SEVİLEN YILDIZ 15 KOMBOYLA BAŞLAR')], desc: TX('YILDIZ\\'IN CAM KUBBEL"
+  ]
+ },
+ {
+  "tr": "YILDIZ'IN CAM KUBBELİ AHIRI. SEVİYE PUANLARINI ANTRENMANDA HARCA.",
+  "ctx": [
+   "04_data.js:188  ahir: { name: TX('AHIR MODÜLÜ'), max: 4, up: [0, 80, 160, 280], upDesc: [TX('ANTRENMAN PLANI'), TX('+1 PUAN VE BATTANİYE RENKLERİ'), TX('+1 PUAN, SEVİLEN YILDIZ İKİ KAT GÜÇLÜ'), TX('+1 PUAN, SEVİLEN YILDIZ 15 KOMBOYLA BAŞLAR')], desc: TX('YILDIZ\\'IN CAM KUBBEL"
+  ]
+ },
+ {
+  "tr": "GÖREV EKRANI",
+  "ctx": [
+   "04_data.js:189  pano: { name: TX('GÖREV EKRANI'), max: 4, up: [0, 60, 140, 260], upDesc: [TX('3 GÖREV'), TX('4. GÖREV YUVASI'), TX('GÖREV ÖDÜLLERİ +%50'), TX('GÖREV ÖDÜLLERİ İKİ KAT')], desc: TX('GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.') },",
+   "07_farm.js:507  const P = this.panelBox(TX('GÖREV EKRANI'), 20 + slots * 30 + 52 + (showDaily ? 30 : 0) + this.upgradeH('pano') + 8);"
+  ]
+ },
+ {
+  "tr": "3 GÖREV",
+  "ctx": [
+   "04_data.js:189  pano: { name: TX('GÖREV EKRANI'), max: 4, up: [0, 60, 140, 260], upDesc: [TX('3 GÖREV'), TX('4. GÖREV YUVASI'), TX('GÖREV ÖDÜLLERİ +%50'), TX('GÖREV ÖDÜLLERİ İKİ KAT')], desc: TX('GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.') },"
+  ]
+ },
+ {
+  "tr": "4. GÖREV YUVASI",
+  "ctx": [
+   "04_data.js:189  pano: { name: TX('GÖREV EKRANI'), max: 4, up: [0, 60, 140, 260], upDesc: [TX('3 GÖREV'), TX('4. GÖREV YUVASI'), TX('GÖREV ÖDÜLLERİ +%50'), TX('GÖREV ÖDÜLLERİ İKİ KAT')], desc: TX('GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.') },"
+  ]
+ },
+ {
+  "tr": "GÖREV ÖDÜLLERİ +%50",
+  "ctx": [
+   "04_data.js:189  pano: { name: TX('GÖREV EKRANI'), max: 4, up: [0, 60, 140, 260], upDesc: [TX('3 GÖREV'), TX('4. GÖREV YUVASI'), TX('GÖREV ÖDÜLLERİ +%50'), TX('GÖREV ÖDÜLLERİ İKİ KAT')], desc: TX('GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.') },"
+  ]
+ },
+ {
+  "tr": "GÖREV ÖDÜLLERİ İKİ KAT",
+  "ctx": [
+   "04_data.js:189  pano: { name: TX('GÖREV EKRANI'), max: 4, up: [0, 60, 140, 260], upDesc: [TX('3 GÖREV'), TX('4. GÖREV YUVASI'), TX('GÖREV ÖDÜLLERİ +%50'), TX('GÖREV ÖDÜLLERİ İKİ KAT')], desc: TX('GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.') },"
+  ]
+ },
+ {
+  "tr": "GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.",
+  "ctx": [
+   "04_data.js:189  pano: { name: TX('GÖREV EKRANI'), max: 4, up: [0, 60, 140, 260], upDesc: [TX('3 GÖREV'), TX('4. GÖREV YUVASI'), TX('GÖREV ÖDÜLLERİ +%50'), TX('GÖREV ÖDÜLLERİ İKİ KAT')], desc: TX('GÖREVLER, GÜNLÜK ERZAK VE GÜNÜN KOŞUSU.') },"
+  ]
+ },
+ {
+  "tr": "YEM DEPOSU",
+  "ctx": [
+   "04_data.js:190  ambar: { name: TX('YEM DEPOSU'), max: 2, up: [20, 90], upDesc: [TX('KOŞUDAN ÖNCE YEM SEÇ'), TX('İKİNCİ YEM YUVASI')], desc: TX('DÜNYA\\'DAN GETİRİLEN YEMLER. KOŞUDAN ÖNCE BİRİNİ SEÇ, AVANTAJLA BAŞLA.') },",
+   "07_farm.js:7  const MAP_NAMES = { ev: TX('KAMARA'), ahir: TX('AHIR'), pano: TX('GÖREVLER'), ambar: TX('YEM DEPOSU'), silahhane: TX('CEPHANELİK'), nalbant: TX('NAL ATÖLYESİ'), tapinak: TX('GÖZLEMEVİ'),"
+  ]
+ },
+ {
+  "tr": "KOŞUDAN ÖNCE YEM SEÇ",
+  "ctx": [
+   "04_data.js:190  ambar: { name: TX('YEM DEPOSU'), max: 2, up: [20, 90], upDesc: [TX('KOŞUDAN ÖNCE YEM SEÇ'), TX('İKİNCİ YEM YUVASI')], desc: TX('DÜNYA\\'DAN GETİRİLEN YEMLER. KOŞUDAN ÖNCE BİRİNİ SEÇ, AVANTAJLA BAŞLA.') },"
+  ]
+ },
+ {
+  "tr": "İKİNCİ YEM YUVASI",
+  "ctx": [
+   "04_data.js:190  ambar: { name: TX('YEM DEPOSU'), max: 2, up: [20, 90], upDesc: [TX('KOŞUDAN ÖNCE YEM SEÇ'), TX('İKİNCİ YEM YUVASI')], desc: TX('DÜNYA\\'DAN GETİRİLEN YEMLER. KOŞUDAN ÖNCE BİRİNİ SEÇ, AVANTAJLA BAŞLA.') },",
+   "07_farm.js:882  if (bl('ambar') >= 2) rows.push({ label: TX('YEM 2'), val: META.food2 ? FOODS[META.food2].name : TX('YOK'), desc: META.food2 ? FOODS[META.food2].desc : TX('İKİNCİ YEM YUVASI'), list: [null].concat(owned.filter(k => k !== META.food)), key: 'food2' });"
+  ]
+ },
+ {
+  "tr": "DÜNYA'DAN GETİRİLEN YEMLER. KOŞUDAN ÖNCE BİRİNİ SEÇ, AVANTAJLA BAŞLA.",
+  "ctx": [
+   "04_data.js:190  ambar: { name: TX('YEM DEPOSU'), max: 2, up: [20, 90], upDesc: [TX('KOŞUDAN ÖNCE YEM SEÇ'), TX('İKİNCİ YEM YUVASI')], desc: TX('DÜNYA\\'DAN GETİRİLEN YEMLER. KOŞUDAN ÖNCE BİRİNİ SEÇ, AVANTAJLA BAŞLA.') },"
+  ]
+ },
+ {
+  "tr": "CEPHANELİK",
+  "ctx": [
+   "04_data.js:191  silahhane: { name: TX('CEPHANELİK'), max: 4, up: [30, 100, 200, 350], upDesc: [TX('SİLAH SEÇ VE GELİŞTİR'), TX('TÜM ATIŞLAR +%20 HASAR'), TX('TÜM ATIŞLAR +%40 HASAR'), TX('TÜM ATIŞLAR +%60 HASAR')], desc: TX('EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ E",
+   "07_farm.js:7  const MAP_NAMES = { ev: TX('KAMARA'), ahir: TX('AHIR'), pano: TX('GÖREVLER'), ambar: TX('YEM DEPOSU'), silahhane: TX('CEPHANELİK'), nalbant: TX('NAL ATÖLYESİ'), tapinak: TX('GÖZLEMEVİ'),"
+  ]
+ },
+ {
+  "tr": "SİLAH SEÇ VE GELİŞTİR",
+  "ctx": [
+   "04_data.js:191  silahhane: { name: TX('CEPHANELİK'), max: 4, up: [30, 100, 200, 350], upDesc: [TX('SİLAH SEÇ VE GELİŞTİR'), TX('TÜM ATIŞLAR +%20 HASAR'), TX('TÜM ATIŞLAR +%40 HASAR'), TX('TÜM ATIŞLAR +%60 HASAR')], desc: TX('EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ E"
+  ]
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%20 HASAR",
+  "ctx": [
+   "04_data.js:191  silahhane: { name: TX('CEPHANELİK'), max: 4, up: [30, 100, 200, 350], upDesc: [TX('SİLAH SEÇ VE GELİŞTİR'), TX('TÜM ATIŞLAR +%20 HASAR'), TX('TÜM ATIŞLAR +%40 HASAR'), TX('TÜM ATIŞLAR +%60 HASAR')], desc: TX('EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ E"
+  ]
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%40 HASAR",
+  "ctx": [
+   "04_data.js:191  silahhane: { name: TX('CEPHANELİK'), max: 4, up: [30, 100, 200, 350], upDesc: [TX('SİLAH SEÇ VE GELİŞTİR'), TX('TÜM ATIŞLAR +%20 HASAR'), TX('TÜM ATIŞLAR +%40 HASAR'), TX('TÜM ATIŞLAR +%60 HASAR')], desc: TX('EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ E"
+  ]
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%60 HASAR",
+  "ctx": [
+   "04_data.js:191  silahhane: { name: TX('CEPHANELİK'), max: 4, up: [30, 100, 200, 350], upDesc: [TX('SİLAH SEÇ VE GELİŞTİR'), TX('TÜM ATIŞLAR +%20 HASAR'), TX('TÜM ATIŞLAR +%40 HASAR'), TX('TÜM ATIŞLAR +%60 HASAR')], desc: TX('EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ E"
+  ]
+ },
+ {
+  "tr": "EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ EDER.",
+  "ctx": [
+   "04_data.js:191  silahhane: { name: TX('CEPHANELİK'), max: 4, up: [30, 100, 200, 350], upDesc: [TX('SİLAH SEÇ VE GELİŞTİR'), TX('TÜM ATIŞLAR +%20 HASAR'), TX('TÜM ATIŞLAR +%40 HASAR'), TX('TÜM ATIŞLAR +%60 HASAR')], desc: TX('EYERE TAKILAN SİLAHLAR. RİTİMLE DOKUNDUĞUNDA ATEŞ E"
+  ]
+ },
+ {
+  "tr": "NAL ATÖLYESİ",
+  "ctx": [
+   "04_data.js:192  nalbant: { name: TX('NAL ATÖLYESİ'), max: 4, up: [50, 100, 180, 300], upDesc: [TX('NAL SEÇ'), TX('HER NALDA +%5 HIZ'), TX('HER NALDA +1 AZAMİ CAN'), TX('HER NALDA YAVAŞLAMA -%20')], desc: TX('FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.') },",
+   "07_farm.js:7  const MAP_NAMES = { ev: TX('KAMARA'), ahir: TX('AHIR'), pano: TX('GÖREVLER'), ambar: TX('YEM DEPOSU'), silahhane: TX('CEPHANELİK'), nalbant: TX('NAL ATÖLYESİ'), tapinak: TX('GÖZLEMEVİ'),"
+  ]
+ },
+ {
+  "tr": "NAL SEÇ",
+  "ctx": [
+   "04_data.js:192  nalbant: { name: TX('NAL ATÖLYESİ'), max: 4, up: [50, 100, 180, 300], upDesc: [TX('NAL SEÇ'), TX('HER NALDA +%5 HIZ'), TX('HER NALDA +1 AZAMİ CAN'), TX('HER NALDA YAVAŞLAMA -%20')], desc: TX('FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.') },"
+  ]
+ },
+ {
+  "tr": "HER NALDA +%5 HIZ",
+  "ctx": [
+   "04_data.js:192  nalbant: { name: TX('NAL ATÖLYESİ'), max: 4, up: [50, 100, 180, 300], upDesc: [TX('NAL SEÇ'), TX('HER NALDA +%5 HIZ'), TX('HER NALDA +1 AZAMİ CAN'), TX('HER NALDA YAVAŞLAMA -%20')], desc: TX('FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.') },"
+  ]
+ },
+ {
+  "tr": "HER NALDA +1 AZAMİ CAN",
+  "ctx": [
+   "04_data.js:192  nalbant: { name: TX('NAL ATÖLYESİ'), max: 4, up: [50, 100, 180, 300], upDesc: [TX('NAL SEÇ'), TX('HER NALDA +%5 HIZ'), TX('HER NALDA +1 AZAMİ CAN'), TX('HER NALDA YAVAŞLAMA -%20')], desc: TX('FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.') },"
+  ]
+ },
+ {
+  "tr": "HER NALDA YAVAŞLAMA -%20",
+  "ctx": [
+   "04_data.js:192  nalbant: { name: TX('NAL ATÖLYESİ'), max: 4, up: [50, 100, 180, 300], upDesc: [TX('NAL SEÇ'), TX('HER NALDA +%5 HIZ'), TX('HER NALDA +1 AZAMİ CAN'), TX('HER NALDA YAVAŞLAMA -%20')], desc: TX('FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.') },"
+  ]
+ },
+ {
+  "tr": "FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.",
+  "ctx": [
+   "04_data.js:192  nalbant: { name: TX('NAL ATÖLYESİ'), max: 4, up: [50, 100, 180, 300], upDesc: [TX('NAL SEÇ'), TX('HER NALDA +%5 HIZ'), TX('HER NALDA +1 AZAMİ CAN'), TX('HER NALDA YAVAŞLAMA -%20')], desc: TX('FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.') },"
+  ]
+ },
+ {
+  "tr": "GÖZLEMEVİ",
+  "ctx": [
+   "04_data.js:193  tapinak: { name: TX('GÖZLEMEVİ'), max: 3, up: [60, 120, 220], needBoon: true, upDesc: [TX('GÖZDE TAKIMYILDIZINI SEÇ'), TX('İKİLİ GÜÇ ŞANSI 2 KAT'), TX('NADİR GÜÇ ŞANSI +%15')], desc: TX('TELESKOP YILDIZ ATLARINA ÇEVRİLİ. GÖZDE TAKIMYILDIZININ İLK GÜCÜ SENİN OL",
+   "07_farm.js:7  const MAP_NAMES = { ev: TX('KAMARA'), ahir: TX('AHIR'), pano: TX('GÖREVLER'), ambar: TX('YEM DEPOSU'), silahhane: TX('CEPHANELİK'), nalbant: TX('NAL ATÖLYESİ'), tapinak: TX('GÖZLEMEVİ'),"
+  ]
+ },
+ {
+  "tr": "GÖZDE TAKIMYILDIZINI SEÇ",
+  "ctx": [
+   "04_data.js:193  tapinak: { name: TX('GÖZLEMEVİ'), max: 3, up: [60, 120, 220], needBoon: true, upDesc: [TX('GÖZDE TAKIMYILDIZINI SEÇ'), TX('İKİLİ GÜÇ ŞANSI 2 KAT'), TX('NADİR GÜÇ ŞANSI +%15')], desc: TX('TELESKOP YILDIZ ATLARINA ÇEVRİLİ. GÖZDE TAKIMYILDIZININ İLK GÜCÜ SENİN OL"
+  ]
+ },
+ {
+  "tr": "İKİLİ GÜÇ ŞANSI 2 KAT",
+  "ctx": [
+   "04_data.js:193  tapinak: { name: TX('GÖZLEMEVİ'), max: 3, up: [60, 120, 220], needBoon: true, upDesc: [TX('GÖZDE TAKIMYILDIZINI SEÇ'), TX('İKİLİ GÜÇ ŞANSI 2 KAT'), TX('NADİR GÜÇ ŞANSI +%15')], desc: TX('TELESKOP YILDIZ ATLARINA ÇEVRİLİ. GÖZDE TAKIMYILDIZININ İLK GÜCÜ SENİN OL"
+  ]
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI +%15",
+  "ctx": [
+   "04_data.js:193  tapinak: { name: TX('GÖZLEMEVİ'), max: 3, up: [60, 120, 220], needBoon: true, upDesc: [TX('GÖZDE TAKIMYILDIZINI SEÇ'), TX('İKİLİ GÜÇ ŞANSI 2 KAT'), TX('NADİR GÜÇ ŞANSI +%15')], desc: TX('TELESKOP YILDIZ ATLARINA ÇEVRİLİ. GÖZDE TAKIMYILDIZININ İLK GÜCÜ SENİN OL"
+  ]
+ },
+ {
+  "tr": "TELESKOP YILDIZ ATLARINA ÇEVRİLİ. GÖZDE TAKIMYILDIZININ İLK GÜCÜ SENİN OLUR.",
+  "ctx": [
+   "04_data.js:193  tapinak: { name: TX('GÖZLEMEVİ'), max: 3, up: [60, 120, 220], needBoon: true, upDesc: [TX('GÖZDE TAKIMYILDIZINI SEÇ'), TX('İKİLİ GÜÇ ŞANSI 2 KAT'), TX('NADİR GÜÇ ŞANSI +%15')], desc: TX('TELESKOP YILDIZ ATLARINA ÇEVRİLİ. GÖZDE TAKIMYILDIZININ İLK GÜCÜ SENİN OL"
+  ]
+ },
+ {
+  "tr": "JOKEY KOĞUŞU",
+  "ctx": [
+   "04_data.js:194  jokey: { name: TX('JOKEY KOĞUŞU'), max: 4, up: [40, 90, 170, 300], rozet: 1, upDesc: [TX('TEKNİK SEÇ'), TX('TEKNİK %25 HIZLI DOLAR'), TX('TEKNİK %50 HIZLI DOLAR'), TX('TEKNİK %75 HIZLI DOLAR')], desc: TX('TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.') },",
+   "07_farm.js:644  const P = this.panelBox(TX('JOKEY KOĞUŞU'), 34 + keys.length * 46 + this.upgradeH('jokey') + 6);"
+  ]
+ },
+ {
+  "tr": "TEKNİK SEÇ",
+  "ctx": [
+   "04_data.js:194  jokey: { name: TX('JOKEY KOĞUŞU'), max: 4, up: [40, 90, 170, 300], rozet: 1, upDesc: [TX('TEKNİK SEÇ'), TX('TEKNİK %25 HIZLI DOLAR'), TX('TEKNİK %50 HIZLI DOLAR'), TX('TEKNİK %75 HIZLI DOLAR')], desc: TX('TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.') },"
+  ]
+ },
+ {
+  "tr": "TEKNİK %25 HIZLI DOLAR",
+  "ctx": [
+   "04_data.js:194  jokey: { name: TX('JOKEY KOĞUŞU'), max: 4, up: [40, 90, 170, 300], rozet: 1, upDesc: [TX('TEKNİK SEÇ'), TX('TEKNİK %25 HIZLI DOLAR'), TX('TEKNİK %50 HIZLI DOLAR'), TX('TEKNİK %75 HIZLI DOLAR')], desc: TX('TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.') },"
+  ]
+ },
+ {
+  "tr": "TEKNİK %50 HIZLI DOLAR",
+  "ctx": [
+   "04_data.js:194  jokey: { name: TX('JOKEY KOĞUŞU'), max: 4, up: [40, 90, 170, 300], rozet: 1, upDesc: [TX('TEKNİK SEÇ'), TX('TEKNİK %25 HIZLI DOLAR'), TX('TEKNİK %50 HIZLI DOLAR'), TX('TEKNİK %75 HIZLI DOLAR')], desc: TX('TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.') },"
+  ]
+ },
+ {
+  "tr": "TEKNİK %75 HIZLI DOLAR",
+  "ctx": [
+   "04_data.js:194  jokey: { name: TX('JOKEY KOĞUŞU'), max: 4, up: [40, 90, 170, 300], rozet: 1, upDesc: [TX('TEKNİK SEÇ'), TX('TEKNİK %25 HIZLI DOLAR'), TX('TEKNİK %50 HIZLI DOLAR'), TX('TEKNİK %75 HIZLI DOLAR')], desc: TX('TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.') },"
+  ]
+ },
+ {
+  "tr": "TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.",
+  "ctx": [
+   "04_data.js:194  jokey: { name: TX('JOKEY KOĞUŞU'), max: 4, up: [40, 90, 170, 300], rozet: 1, upDesc: [TX('TEKNİK SEÇ'), TX('TEKNİK %25 HIZLI DOLAR'), TX('TEKNİK %50 HIZLI DOLAR'), TX('TEKNİK %75 HIZLI DOLAR')], desc: TX('TUTSAK DÜNYALI JOKEYLER SANA TEKNİKLERİNİ ÖĞRETİR.') },"
+  ]
+ },
+ {
+  "tr": "REVİR",
+  "ctx": [
+   "04_data.js:195  veteriner: { name: TX('REVİR'), max: 4, up: [80, 150, 220, 380], upDesc: [TX('1 KEZ, 1 CANLA KALK'), TX('1 KEZ, 2 CANLA KALK'), TX('2 KEZ, 2 CANLA KALK'), TX('3 KEZ, 2 CANLA KALK')], desc: TX('İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.') },",
+   "07_farm.js:8  jokey: TX('KOĞUŞ'), veteriner: TX('REVİR'), pazar: TX('MOKO'), anit: TX('VİTRİN') };"
+  ]
+ },
+ {
+  "tr": "1 KEZ, 1 CANLA KALK",
+  "ctx": [
+   "04_data.js:195  veteriner: { name: TX('REVİR'), max: 4, up: [80, 150, 220, 380], upDesc: [TX('1 KEZ, 1 CANLA KALK'), TX('1 KEZ, 2 CANLA KALK'), TX('2 KEZ, 2 CANLA KALK'), TX('3 KEZ, 2 CANLA KALK')], desc: TX('İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.') },"
+  ]
+ },
+ {
+  "tr": "1 KEZ, 2 CANLA KALK",
+  "ctx": [
+   "04_data.js:195  veteriner: { name: TX('REVİR'), max: 4, up: [80, 150, 220, 380], upDesc: [TX('1 KEZ, 1 CANLA KALK'), TX('1 KEZ, 2 CANLA KALK'), TX('2 KEZ, 2 CANLA KALK'), TX('3 KEZ, 2 CANLA KALK')], desc: TX('İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.') },"
+  ]
+ },
+ {
+  "tr": "2 KEZ, 2 CANLA KALK",
+  "ctx": [
+   "04_data.js:195  veteriner: { name: TX('REVİR'), max: 4, up: [80, 150, 220, 380], upDesc: [TX('1 KEZ, 1 CANLA KALK'), TX('1 KEZ, 2 CANLA KALK'), TX('2 KEZ, 2 CANLA KALK'), TX('3 KEZ, 2 CANLA KALK')], desc: TX('İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.') },"
+  ]
+ },
+ {
+  "tr": "3 KEZ, 2 CANLA KALK",
+  "ctx": [
+   "04_data.js:195  veteriner: { name: TX('REVİR'), max: 4, up: [80, 150, 220, 380], upDesc: [TX('1 KEZ, 1 CANLA KALK'), TX('1 KEZ, 2 CANLA KALK'), TX('2 KEZ, 2 CANLA KALK'), TX('3 KEZ, 2 CANLA KALK')], desc: TX('İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.') },"
+  ]
+ },
+ {
+  "tr": "İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.",
+  "ctx": [
+   "04_data.js:195  veteriner: { name: TX('REVİR'), max: 4, up: [80, 150, 220, 380], upDesc: [TX('1 KEZ, 1 CANLA KALK'), TX('1 KEZ, 2 CANLA KALK'), TX('2 KEZ, 2 CANLA KALK'), TX('3 KEZ, 2 CANLA KALK')], desc: TX('İKİNCİ NEFES: YORGUN DÜŞTÜĞÜNDE AYAĞA KALK.') },"
+  ]
+ },
+ {
+  "tr": "SERA",
+  "ctx": [
+   "04_data.js:196  bahce: { name: TX('SERA'), max: 3, up: [25, 90, 180], upDesc: [TX('3 TEPSİ'), TX('5 TEPSİ'), TX('7 TEPSİ')], desc: TX('HER KOŞUDAN SONRA ÜRÜNLER BÜYÜR. HAVUÇ KRİSTAL, PANCAR ŞEKER VERİR.') }",
+   "07_farm.js:361  { const tw = textWidth(TX('SERA')) + 4; g.globalAlpha = 0.75; rect(x + 2, y + B.h - 2, tw, 8, C.ink); g.globalAlpha = 1; text(TX('SERA'), x + 4, y + B.h - 3, lv ? C.lgray : C.gray); }"
+  ]
+ },
+ {
+  "tr": "3 TEPSİ",
+  "ctx": [
+   "04_data.js:196  bahce: { name: TX('SERA'), max: 3, up: [25, 90, 180], upDesc: [TX('3 TEPSİ'), TX('5 TEPSİ'), TX('7 TEPSİ')], desc: TX('HER KOŞUDAN SONRA ÜRÜNLER BÜYÜR. HAVUÇ KRİSTAL, PANCAR ŞEKER VERİR.') }"
+  ]
+ },
+ {
+  "tr": "5 TEPSİ",
+  "ctx": [
+   "04_data.js:196  bahce: { name: TX('SERA'), max: 3, up: [25, 90, 180], upDesc: [TX('3 TEPSİ'), TX('5 TEPSİ'), TX('7 TEPSİ')], desc: TX('HER KOŞUDAN SONRA ÜRÜNLER BÜYÜR. HAVUÇ KRİSTAL, PANCAR ŞEKER VERİR.') }"
+  ]
+ },
+ {
+  "tr": "7 TEPSİ",
+  "ctx": [
+   "04_data.js:196  bahce: { name: TX('SERA'), max: 3, up: [25, 90, 180], upDesc: [TX('3 TEPSİ'), TX('5 TEPSİ'), TX('7 TEPSİ')], desc: TX('HER KOŞUDAN SONRA ÜRÜNLER BÜYÜR. HAVUÇ KRİSTAL, PANCAR ŞEKER VERİR.') }"
+  ]
+ },
+ {
+  "tr": "HER KOŞUDAN SONRA ÜRÜNLER BÜYÜR. HAVUÇ KRİSTAL, PANCAR ŞEKER VERİR.",
+  "ctx": [
+   "04_data.js:196  bahce: { name: TX('SERA'), max: 3, up: [25, 90, 180], upDesc: [TX('3 TEPSİ'), TX('5 TEPSİ'), TX('7 TEPSİ')], desc: TX('HER KOŞUDAN SONRA ÜRÜNLER BÜYÜR. HAVUÇ KRİSTAL, PANCAR ŞEKER VERİR.') }"
+  ]
+ },
+ {
+  "tr": "SAMAN BALYALARI",
+  "ctx": [
+   "04_data.js:202  saman: { name: TX('SAMAN BALYALARI'), cost: 10 },"
+  ]
+ },
+ {
+  "tr": "UZAY ÇİÇEKLERİ",
+  "ctx": [
+   "04_data.js:203  cicek: { name: TX('UZAY ÇİÇEKLERİ'), cost: 15 },"
+  ]
+ },
+ {
+  "tr": "NEON LAMBA",
+  "ctx": [
+   "04_data.js:204  fener: { name: TX('NEON LAMBA'), cost: 20 },"
+  ]
+ },
+ {
+  "tr": "IŞIK DİZİSİ",
+  "ctx": [
+   "04_data.js:205  bayrak: { name: TX('IŞIK DİZİSİ'), cost: 25 },"
+  ]
+ },
+ {
+  "tr": "KUBBELİ AĞAÇ",
+  "ctx": [
+   "04_data.js:206  agac: { name: TX('KUBBELİ AĞAÇ'), cost: 30 },"
+  ]
+ },
+ {
+  "tr": "SU TANKI",
+  "ctx": [
+   "04_data.js:207  kuyu: { name: TX('SU TANKI'), cost: 35 },"
+  ]
+ },
+ {
+  "tr": "HOLOGRAM ÇEŞME",
+  "ctx": [
+   "04_data.js:208  cesme: { name: TX('HOLOGRAM ÇEŞME'), cost: 60 },"
+  ]
+ },
+ {
+  "tr": "AKYEL HEYKELİ",
+  "ctx": [
+   "04_data.js:209  heykel: { name: TX('AKYEL HEYKELİ'), cost: 90, needWin: true }"
+  ]
+ },
+ {
+  "tr": "NORMAL",
+  "ctx": [
+   "04_data.js:211  const HEATS = [{ name: TX('NORMAL'), mult: 1, rew: 1 }, { name: TX('METEORLU PİST'), mult: 1.12, rew: 1.5 }, { name: TX('KARA DELİK PİSTİ'), mult: 1.24, rew: 2 }];"
+  ]
+ },
+ {
+  "tr": "METEORLU PİST",
+  "ctx": [
+   "04_data.js:211  const HEATS = [{ name: TX('NORMAL'), mult: 1, rew: 1 }, { name: TX('METEORLU PİST'), mult: 1.12, rew: 1.5 }, { name: TX('KARA DELİK PİSTİ'), mult: 1.24, rew: 2 }];"
+  ]
+ },
+ {
+  "tr": "KARA DELİK PİSTİ",
+  "ctx": [
+   "04_data.js:211  const HEATS = [{ name: TX('NORMAL'), mult: 1, rew: 1 }, { name: TX('METEORLU PİST'), mult: 1.12, rew: 1.5 }, { name: TX('KARA DELİK PİSTİ'), mult: 1.24, rew: 2 }];"
+  ]
+ },
+ {
+  "tr": "ÖNDE KOŞ",
+  "ctx": [
+   "04_data.js:213  onde: { name: TX('ÖNDE KOŞ'), desc: TX('İLK YARIDA +%8 HIZ VE UCUZ HAMLE, SONDA -%4') },"
+  ]
+ },
+ {
+  "tr": "İLK YARIDA +%8 HIZ VE UCUZ HAMLE, SONDA -%4",
+  "ctx": [
+   "04_data.js:213  onde: { name: TX('ÖNDE KOŞ'), desc: TX('İLK YARIDA +%8 HIZ VE UCUZ HAMLE, SONDA -%4') },"
+  ]
+ },
+ {
+  "tr": "DENGELİ",
+  "ctx": [
+   "04_data.js:214  dengeli: { name: TX('DENGELİ'), desc: TX('SABİT TEMPO, NEFES KAZANCI +%20') },"
+  ]
+ },
+ {
+  "tr": "SABİT TEMPO, NEFES KAZANCI +%20",
+  "ctx": [
+   "04_data.js:214  dengeli: { name: TX('DENGELİ'), desc: TX('SABİT TEMPO, NEFES KAZANCI +%20') },"
+  ]
+ },
+ {
+  "tr": "SONDAN GEL",
+  "ctx": [
+   "04_data.js:215  sondan: { name: TX('SONDAN GEL'), desc: TX('BAŞTA -%4, SON ATAK 1.5 KAT GÜÇLÜ') }"
+  ]
+ },
+ {
+  "tr": "BAŞTA -%4, SON ATAK 1.5 KAT GÜÇLÜ",
+  "ctx": [
+   "04_data.js:215  sondan: { name: TX('SONDAN GEL'), desc: TX('BAŞTA -%4, SON ATAK 1.5 KAT GÜÇLÜ') }"
+  ]
+ },
+ {
+  "tr": "LUMO ÇAYIRI",
+  "ctx": [
+   "04_data.js:219  { id: 'cayir', name: TX('LUMO ÇAYIRI'), song: 'cayir', bpm: 120, speed: 1.0, dens: 1.0, rivals: [0.86, 0.92, 0.97, 1.02, 1.07], boss: 'pirlanta',"
+  ]
+ },
+ {
+  "tr": "MANTAR AYI",
+  "ctx": [
+   "04_data.js:222  { id: 'orman', name: TX('MANTAR AYI'), song: 'orman', bpm: 128, speed: 1.08, dens: 1.18, rivals: [0.9, 0.95, 1.0, 1.05, 1.1], boss: 'kurt',"
+  ]
+ },
+ {
+  "tr": "BUZ HALKASI",
+  "ctx": [
+   "04_data.js:225  { id: 'buz', name: TX('BUZ HALKASI'), song: 'buz', bpm: 132, speed: 1.11, dens: 1.24, rivals: [0.91, 0.96, 1.0, 1.04, 1.08, 0.94, 0.98], boss: 'niva', tier: 1.5, field: 6,",
+   "04_data.js:317  kar: { race: TX('KRİSTAL CİN'), home: TX('BUZ HALKASI'), trick: STYLE_TRICK.zikzak,"
+  ]
+ },
+ {
+  "tr": "KIZIL KUM",
+  "ctx": [
+   "04_data.js:228  { id: 'kum', name: TX('KIZIL KUM'), song: 'kum', bpm: 134, speed: 1.14, dens: 1.3, rivals: [0.92, 0.97, 1.01, 1.05, 1.1, 0.95, 0.99], boss: 'zarg', tier: 2, field: 7,",
+   "04_data.js:321  tozkiran: { race: TX('ÇÖL HAYDUDU'), home: TX('KIZIL KUM'), trick: STYLE_TRICK.atici,"
+  ]
+ },
+ {
+  "tr": "FIRTINA DEVİ",
+  "ctx": [
+   "04_data.js:231  { id: 'bulut', name: TX('FIRTINA DEVİ'), song: 'bulut', bpm: 135, speed: 1.15, dens: 1.32, rivals: [0.92, 0.97, 1.02, 1.06, 1.11, 0.95, 0.99], boss: 'bora', tier: 2.15, field: 6,",
+   "04b_story.js:139  zefir: { race: TX('RÜZGAR PERİSİ'), home: TX('FIRTINA DEVİ'), trick: TX('ÖNDE KAÇAR, MAYIN BIRAKIR'),"
+  ]
+ },
+ {
+  "tr": "KOR AY",
+  "ctx": [
+   "04_data.js:234  { id: 'kor', name: TX('KOR AY'), song: 'kor', bpm: 137, speed: 1.16, dens: 1.34, rivals: [0.93, 0.98, 1.02, 1.06, 1.11, 0.96, 1.0], boss: 'korhan', tier: 2.3, field: 7,",
+   "04b_story.js:151  kivilcim: { race: TX('KIVILCIM CİNİ'), home: TX('KOR AY'), trick: STYLE_TRICK.zikzak,"
+  ]
+ },
+ {
+  "tr": "GALAKSİ ARENASI",
+  "ctx": [
+   "04_data.js:237  { id: 'hipodrom', name: TX('GALAKSİ ARENASI'), song: 'hipodrom', bpm: 138, speed: 1.18, dens: 1.37, rivals: [0.94, 0.99, 1.03, 1.07, 1.12, 0.97, 1.01], boss: 'simsek', tier: 2.45, field: 6, pass: 4,"
+  ]
+ },
+ {
+  "tr": "PRENS KRİSTALO",
+  "ctx": [
+   "04_data.js:251  pirlanta: { name: TX('PRENS KRİSTALO'), look: 'kristalo', drain: 2.0, attacks: ['mud', 'bale', 'karga'], attacks2: ['karga3', 'mud'], attacks3: ['mudrow', 'bale'], sig: 'kibir', taunt: TX('IŞILTIMA BAK DÜNYALI. SONRA TOZUMU YUT.'), color: C.magenta, title: TX("
+  ]
+ },
+ {
+  "tr": "IŞILTIMA BAK DÜNYALI. SONRA TOZUMU YUT.",
+  "ctx": [
+   "04_data.js:251  pirlanta: { name: TX('PRENS KRİSTALO'), look: 'kristalo', drain: 2.0, attacks: ['mud', 'bale', 'karga'], attacks2: ['karga3', 'mud'], attacks3: ['mudrow', 'bale'], sig: 'kibir', taunt: TX('IŞILTIMA BAK DÜNYALI. SONRA TOZUMU YUT.'), color: C.magenta, title: TX("
+  ]
+ },
+ {
+  "tr": "LUMO'NUN KİBİRLİ KRİSTAL PRENSİ",
+  "ctx": [
+   "04_data.js:251  pirlanta: { name: TX('PRENS KRİSTALO'), look: 'kristalo', drain: 2.0, attacks: ['mud', 'bale', 'karga'], attacks2: ['karga3', 'mud'], attacks3: ['mudrow', 'bale'], sig: 'kibir', taunt: TX('IŞILTIMA BAK DÜNYALI. SONRA TOZUMU YUT.'), color: C.magenta, title: TX("
+  ]
+ },
+ {
+  "tr": "ULUYAN GORM",
+  "ctx": [
+   "04_data.js:252  kurt: { name: TX('ULUYAN GORM'), look: 'gorm', drain: 2.4, attacks: ['log', 'wolf', 'domuz'], attacks2: ['howl', 'wolf'], attacks3: ['stomp', 'domuz'], sig: 'uluma', taunt: TX('AUUU! BU ORMANDA BENDEN HIZLISI YOK!'), color: C.green, title: TX('MANTAR AYI\\'NIN "
+  ]
+ },
+ {
+  "tr": "AUUU! BU ORMANDA BENDEN HIZLISI YOK!",
+  "ctx": [
+   "04_data.js:252  kurt: { name: TX('ULUYAN GORM'), look: 'gorm', drain: 2.4, attacks: ['log', 'wolf', 'domuz'], attacks2: ['howl', 'wolf'], attacks3: ['stomp', 'domuz'], sig: 'uluma', taunt: TX('AUUU! BU ORMANDA BENDEN HIZLISI YOK!'), color: C.green, title: TX('MANTAR AYI\\'NIN "
+  ]
+ },
+ {
+  "tr": "MANTAR AYI'NIN YENİLMEZİ",
+  "ctx": [
+   "04_data.js:252  kurt: { name: TX('ULUYAN GORM'), look: 'gorm', drain: 2.4, attacks: ['log', 'wolf', 'domuz'], attacks2: ['howl', 'wolf'], attacks3: ['stomp', 'domuz'], sig: 'uluma', taunt: TX('AUUU! BU ORMANDA BENDEN HIZLISI YOK!'), color: C.green, title: TX('MANTAR AYI\\'NIN "
+  ]
+ },
+ {
+  "tr": "BUZ KRALİÇESİ NİVA",
+  "ctx": [
+   "04_data.js:253  niva: { name: TX('BUZ KRALİÇESİ NİVA'), look: 'niva', drain: 2.5, attacks: ['icicle', 'karga', 'bale'], attacks2: ['icerow', 'icicle'], attacks3: ['icicle3', 'icerow'], sig: 'ayaz', taunt: TX('BURADA HER ŞEY DONAR. SEN DE.'), color: C.cyan, title: TX('BUZ HALK"
+  ]
+ },
+ {
+  "tr": "BURADA HER ŞEY DONAR. SEN DE.",
+  "ctx": [
+   "04_data.js:253  niva: { name: TX('BUZ KRALİÇESİ NİVA'), look: 'niva', drain: 2.5, attacks: ['icicle', 'karga', 'bale'], attacks2: ['icerow', 'icicle'], attacks3: ['icicle3', 'icerow'], sig: 'ayaz', taunt: TX('BURADA HER ŞEY DONAR. SEN DE.'), color: C.cyan, title: TX('BUZ HALK"
+  ]
+ },
+ {
+  "tr": "BUZ HALKASI'NIN SOĞUK HÜKÜMDARI",
+  "ctx": [
+   "04_data.js:253  niva: { name: TX('BUZ KRALİÇESİ NİVA'), look: 'niva', drain: 2.5, attacks: ['icicle', 'karga', 'bale'], attacks2: ['icerow', 'icicle'], attacks3: ['icicle3', 'icerow'], sig: 'ayaz', taunt: TX('BURADA HER ŞEY DONAR. SEN DE.'), color: C.cyan, title: TX('BUZ HALK"
+  ]
+ },
+ {
+  "tr": "KUM SOLUCANI ZARG",
+  "ctx": [
+   "04_data.js:254  zarg: { name: TX('KUM SOLUCANI ZARG'), look: 'zarg', drain: 2.65, attacks: ['burrow', 'eskiya', 'domuz'], attacks2: ['sandwave', 'burrow', 'okcu'], attacks3: ['burrow2', 'sandwave'], sig: 'kum', taunt: TX('KUMUN ALTINDAN SENİ İZLİYORUM...'), color: C.orange, t"
+  ]
+ },
+ {
+  "tr": "KUMUN ALTINDAN SENİ İZLİYORUM...",
+  "ctx": [
+   "04_data.js:254  zarg: { name: TX('KUM SOLUCANI ZARG'), look: 'zarg', drain: 2.65, attacks: ['burrow', 'eskiya', 'domuz'], attacks2: ['sandwave', 'burrow', 'okcu'], attacks3: ['burrow2', 'sandwave'], sig: 'kum', taunt: TX('KUMUN ALTINDAN SENİ İZLİYORUM...'), color: C.orange, t"
+  ]
+ },
+ {
+  "tr": "KIZIL KUM'UN ÇÖL CANAVARI",
+  "ctx": [
+   "04_data.js:254  zarg: { name: TX('KUM SOLUCANI ZARG'), look: 'zarg', drain: 2.65, attacks: ['burrow', 'eskiya', 'domuz'], attacks2: ['sandwave', 'burrow', 'okcu'], attacks3: ['burrow2', 'sandwave'], sig: 'kum', taunt: TX('KUMUN ALTINDAN SENİ İZLİYORUM...'), color: C.orange, t"
+  ]
+ },
+ {
+  "tr": "BULUT ÇOBANI BORA",
+  "ctx": [
+   "04_data.js:255  bora: { name: TX('BULUT ÇOBANI BORA'), look: 'bora', drain: 2.7, attacks: ['bolt', 'karga', 'bale'], attacks2: ['bolt3', 'cloudrow'], attacks3: ['bolt3', 'cloudrow', 'thunder'], sig: 'firtina', taunt: TX('BULUTLARIM SENİ YUTACAK, DÜNYALI.'), color: C.sky, titl"
+  ]
+ },
+ {
+  "tr": "BULUTLARIM SENİ YUTACAK, DÜNYALI.",
+  "ctx": [
+   "04_data.js:255  bora: { name: TX('BULUT ÇOBANI BORA'), look: 'bora', drain: 2.7, attacks: ['bolt', 'karga', 'bale'], attacks2: ['bolt3', 'cloudrow'], attacks3: ['bolt3', 'cloudrow', 'thunder'], sig: 'firtina', taunt: TX('BULUTLARIM SENİ YUTACAK, DÜNYALI.'), color: C.sky, titl"
+  ]
+ },
+ {
+  "tr": "FIRTINA DEVİ'NİN YAŞLI ÇOBANI",
+  "ctx": [
+   "04_data.js:255  bora: { name: TX('BULUT ÇOBANI BORA'), look: 'bora', drain: 2.7, attacks: ['bolt', 'karga', 'bale'], attacks2: ['bolt3', 'cloudrow'], attacks3: ['bolt3', 'cloudrow', 'thunder'], sig: 'firtina', taunt: TX('BULUTLARIM SENİ YUTACAK, DÜNYALI.'), color: C.sky, titl"
+  ]
+ },
+ {
+  "tr": "DEMİRCİ KORHAN",
+  "ctx": [
+   "04_data.js:256  korhan: { name: TX('DEMİRCİ KORHAN'), look: 'korhan', drain: 2.75, attacks: ['ember', 'domuz', 'eskiya'], attacks2: ['ember3', 'lavarow'], attacks3: ['ember3', 'lavarow', 'lavawave'], sig: 'ocak', taunt: TX('ÖRSÜMDE NE DÖVDÜĞÜMÜ BİLMEK İSTEMEZSİN.'), color: C."
+  ]
+ },
+ {
+  "tr": "ÖRSÜMDE NE DÖVDÜĞÜMÜ BİLMEK İSTEMEZSİN.",
+  "ctx": [
+   "04_data.js:256  korhan: { name: TX('DEMİRCİ KORHAN'), look: 'korhan', drain: 2.75, attacks: ['ember', 'domuz', 'eskiya'], attacks2: ['ember3', 'lavarow'], attacks3: ['ember3', 'lavarow', 'lavawave'], sig: 'ocak', taunt: TX('ÖRSÜMDE NE DÖVDÜĞÜMÜ BİLMEK İSTEMEZSİN.'), color: C."
+  ]
+ },
+ {
+  "tr": "KOR AY'IN ZİNCİRLİ DEMİRCİSİ",
+  "ctx": [
+   "04_data.js:256  korhan: { name: TX('DEMİRCİ KORHAN'), look: 'korhan', drain: 2.75, attacks: ['ember', 'domuz', 'eskiya'], attacks2: ['ember3', 'lavarow'], attacks3: ['ember3', 'lavarow', 'lavawave'], sig: 'ocak', taunt: TX('ÖRSÜMDE NE DÖVDÜĞÜMÜ BİLMEK İSTEMEZSİN.'), color: C."
+  ]
+ },
+ {
+  "tr": "VOLTRAK",
+  "ctx": [
+   "04_data.js:257  simsek: { name: TX('VOLTRAK'), horse: ['robot', 'voltrak'], drain: 2.8, attacks: ['bolt', 'bale', 'eskiya'], attacks2: ['bolt3', 'okcu'], attacks3: ['civirow', 'bolt3'], sig: 'hile', taunt: TX('HESAPLAMA: KAZANMA İHTİMALİN %0.'), color: C.red, title: TX('GRAX\\"
+  ]
+ },
+ {
+  "tr": "HESAPLAMA: KAZANMA İHTİMALİN %0.",
+  "ctx": [
+   "04_data.js:257  simsek: { name: TX('VOLTRAK'), horse: ['robot', 'voltrak'], drain: 2.8, attacks: ['bolt', 'bale', 'eskiya'], attacks2: ['bolt3', 'okcu'], attacks3: ['civirow', 'bolt3'], sig: 'hile', taunt: TX('HESAPLAMA: KAZANMA İHTİMALİN %0.'), color: C.red, title: TX('GRAX\\"
+  ]
+ },
+ {
+  "tr": "GRAX'IN ROBOT ŞAMPİYONU",
+  "ctx": [
+   "04_data.js:257  simsek: { name: TX('VOLTRAK'), horse: ['robot', 'voltrak'], drain: 2.8, attacks: ['bolt', 'bale', 'eskiya'], attacks2: ['bolt3', 'okcu'], attacks3: ['civirow', 'bolt3'], sig: 'hile', taunt: TX('HESAPLAMA: KAZANMA İHTİMALİN %0.'), color: C.red, title: TX('GRAX\\"
+  ]
+ },
+ {
+  "tr": "GLORB",
+  "ctx": [
+   "04_data.js:262  [{ id: 'glorb', name: TX('GLORB'), style: 'sondan', look: 'n5' }, { id: 'vuum', name: TX('KIZIL VUUM'), style: 'itici', look: 'n1' }, { id: 'pip', name: TX('PİP-PİP'), style: 'zikzak', look: 'n7' }],"
+  ]
+ },
+ {
+  "tr": "KIZIL VUUM",
+  "ctx": [
+   "04_data.js:262  [{ id: 'glorb', name: TX('GLORB'), style: 'sondan', look: 'n5' }, { id: 'vuum', name: TX('KIZIL VUUM'), style: 'itici', look: 'n1' }, { id: 'pip', name: TX('PİP-PİP'), style: 'zikzak', look: 'n7' }],"
+  ]
+ },
+ {
+  "tr": "PİP-PİP",
+  "ctx": [
+   "04_data.js:262  [{ id: 'glorb', name: TX('GLORB'), style: 'sondan', look: 'n5' }, { id: 'vuum', name: TX('KIZIL VUUM'), style: 'itici', look: 'n1' }, { id: 'pip', name: TX('PİP-PİP'), style: 'zikzak', look: 'n7' }],"
+  ]
+ },
+ {
+  "tr": "GECE KANADI",
+  "ctx": [
+   "04_data.js:263  [{ id: 'gece', name: TX('GECE KANADI'), style: 'onde', look: 'n6' }, { id: 'kiskac', name: TX('DEMİR KISKAÇ'), style: 'itici', look: 'n3' }, { id: 'mantis', name: TX('SİSLİ MANTİS'), style: 'atici', look: 'n8' }],"
+  ]
+ },
+ {
+  "tr": "DEMİR KISKAÇ",
+  "ctx": [
+   "04_data.js:263  [{ id: 'gece', name: TX('GECE KANADI'), style: 'onde', look: 'n6' }, { id: 'kiskac', name: TX('DEMİR KISKAÇ'), style: 'itici', look: 'n3' }, { id: 'mantis', name: TX('SİSLİ MANTİS'), style: 'atici', look: 'n8' }],"
+  ]
+ },
+ {
+  "tr": "SİSLİ MANTİS",
+  "ctx": [
+   "04_data.js:263  [{ id: 'gece', name: TX('GECE KANADI'), style: 'onde', look: 'n6' }, { id: 'kiskac', name: TX('DEMİR KISKAÇ'), style: 'itici', look: 'n3' }, { id: 'mantis', name: TX('SİSLİ MANTİS'), style: 'atici', look: 'n8' }],"
+  ]
+ },
+ {
+  "tr": "BUZDİŞ",
+  "ctx": [
+   "04_data.js:264  [{ id: 'buzdis', name: TX('BUZDİŞ'), style: 'itici', look: 'n9' }, { id: 'aurora', name: TX('AURORA'), style: 'onde', look: 'n10' }, { id: 'kar', name: TX('KAR TANESİ'), style: 'zikzak', look: 'n14' }],"
+  ]
+ },
+ {
+  "tr": "AURORA",
+  "ctx": [
+   "04_data.js:264  [{ id: 'buzdis', name: TX('BUZDİŞ'), style: 'itici', look: 'n9' }, { id: 'aurora', name: TX('AURORA'), style: 'onde', look: 'n10' }, { id: 'kar', name: TX('KAR TANESİ'), style: 'zikzak', look: 'n14' }],"
+  ]
+ },
+ {
+  "tr": "KAR TANESİ",
+  "ctx": [
+   "04_data.js:264  [{ id: 'buzdis', name: TX('BUZDİŞ'), style: 'itici', look: 'n9' }, { id: 'aurora', name: TX('AURORA'), style: 'onde', look: 'n10' }, { id: 'kar', name: TX('KAR TANESİ'), style: 'zikzak', look: 'n14' }],"
+  ]
+ },
+ {
+  "tr": "TOZKIRAN",
+  "ctx": [
+   "04_data.js:265  [{ id: 'tozkiran', name: TX('TOZKIRAN'), style: 'atici', look: 'n11' }, { id: 'zib', name: TX('ÜÇ GÖZ ZİB'), style: 'sondan', look: 'n12' }, { id: 'serap', name: TX('SERAP'), style: 'onde', look: 'n15' }],"
+  ]
+ },
+ {
+  "tr": "ÜÇ GÖZ ZİB",
+  "ctx": [
+   "04_data.js:265  [{ id: 'tozkiran', name: TX('TOZKIRAN'), style: 'atici', look: 'n11' }, { id: 'zib', name: TX('ÜÇ GÖZ ZİB'), style: 'sondan', look: 'n12' }, { id: 'serap', name: TX('SERAP'), style: 'onde', look: 'n15' }],"
+  ]
+ },
+ {
+  "tr": "SERAP",
+  "ctx": [
+   "04_data.js:265  [{ id: 'tozkiran', name: TX('TOZKIRAN'), style: 'atici', look: 'n11' }, { id: 'zib', name: TX('ÜÇ GÖZ ZİB'), style: 'sondan', look: 'n12' }, { id: 'serap', name: TX('SERAP'), style: 'onde', look: 'n15' }],"
+  ]
+ },
+ {
+  "tr": "ZEFİR",
+  "ctx": [
+   "04_data.js:266  [{ id: 'zefir', name: TX('ZEFİR'), style: 'onde', look: 'n16' }, { id: 'gumbur', name: TX('GÜMBÜR'), style: 'itici', look: 'n17' }, { id: 'damla', name: TX('DAMLA'), style: 'sondan', look: 'n18' }],"
+  ]
+ },
+ {
+  "tr": "GÜMBÜR",
+  "ctx": [
+   "04_data.js:266  [{ id: 'zefir', name: TX('ZEFİR'), style: 'onde', look: 'n16' }, { id: 'gumbur', name: TX('GÜMBÜR'), style: 'itici', look: 'n17' }, { id: 'damla', name: TX('DAMLA'), style: 'sondan', look: 'n18' }],"
+  ]
+ },
+ {
+  "tr": "DAMLA",
+  "ctx": [
+   "04_data.js:266  [{ id: 'zefir', name: TX('ZEFİR'), style: 'onde', look: 'n16' }, { id: 'gumbur', name: TX('GÜMBÜR'), style: 'itici', look: 'n17' }, { id: 'damla', name: TX('DAMLA'), style: 'sondan', look: 'n18' }],"
+  ]
+ },
+ {
+  "tr": "KIVILCIM",
+  "ctx": [
+   "04_data.js:267  [{ id: 'kivilcim', name: TX('KIVILCIM'), style: 'zikzak', look: 'n19' }, { id: 'curuf', name: TX('CÜRUF'), style: 'itici', look: 'n20' }, { id: 'oniks', name: TX('ONİKS'), style: 'atici', look: 'n21' }],"
+  ]
+ },
+ {
+  "tr": "CÜRUF",
+  "ctx": [
+   "04_data.js:267  [{ id: 'kivilcim', name: TX('KIVILCIM'), style: 'zikzak', look: 'n19' }, { id: 'curuf', name: TX('CÜRUF'), style: 'itici', look: 'n20' }, { id: 'oniks', name: TX('ONİKS'), style: 'atici', look: 'n21' }],"
+  ]
+ },
+ {
+  "tr": "ONİKS",
+  "ctx": [
+   "04_data.js:267  [{ id: 'kivilcim', name: TX('KIVILCIM'), style: 'zikzak', look: 'n19' }, { id: 'curuf', name: TX('CÜRUF'), style: 'itici', look: 'n20' }, { id: 'oniks', name: TX('ONİKS'), style: 'atici', look: 'n21' }],"
+  ]
+ },
+ {
+  "tr": "ALEV KUYRUK",
+  "ctx": [
+   "04_data.js:268  [{ id: 'alev', name: TX('ALEV KUYRUK'), style: 'onde', look: 'n4' }, { id: 'golge', name: TX('GRAX\\'IN GÖLGESİ'), style: 'sondan', look: 'n2' }, { id: 'nova', name: TX('NOVA'), style: 'zikzak', look: 'n13' }]"
+  ]
+ },
+ {
+  "tr": "GRAX'IN GÖLGESİ",
+  "ctx": [
+   "04_data.js:268  [{ id: 'alev', name: TX('ALEV KUYRUK'), style: 'onde', look: 'n4' }, { id: 'golge', name: TX('GRAX\\'IN GÖLGESİ'), style: 'sondan', look: 'n2' }, { id: 'nova', name: TX('NOVA'), style: 'zikzak', look: 'n13' }]"
+  ]
+ },
+ {
+  "tr": "NOVA",
+  "ctx": [
+   "04_data.js:268  [{ id: 'alev', name: TX('ALEV KUYRUK'), style: 'onde', look: 'n4' }, { id: 'golge', name: TX('GRAX\\'IN GÖLGESİ'), style: 'sondan', look: 'n2' }, { id: 'nova', name: TX('NOVA'), style: 'zikzak', look: 'n13' }]"
+  ]
+ },
+ {
+  "tr": "SONDAN GELİR",
+  "ctx": [
+   "04_data.js:271  const STYLE_SHORT = { sondan: TX('SONDAN GELİR'), onde: TX('ÖNDE KAÇAR'), itici: TX('OMUZ ATAR'), atici: TX('PLAZMA ATAR'), zikzak: TX('ÖNÜNÜ KESER') };"
+  ]
+ },
+ {
+  "tr": "ÖNDE KAÇAR",
+  "ctx": [
+   "04_data.js:271  const STYLE_SHORT = { sondan: TX('SONDAN GELİR'), onde: TX('ÖNDE KAÇAR'), itici: TX('OMUZ ATAR'), atici: TX('PLAZMA ATAR'), zikzak: TX('ÖNÜNÜ KESER') };"
+  ]
+ },
+ {
+  "tr": "OMUZ ATAR",
+  "ctx": [
+   "04_data.js:271  const STYLE_SHORT = { sondan: TX('SONDAN GELİR'), onde: TX('ÖNDE KAÇAR'), itici: TX('OMUZ ATAR'), atici: TX('PLAZMA ATAR'), zikzak: TX('ÖNÜNÜ KESER') };"
+  ]
+ },
+ {
+  "tr": "PLAZMA ATAR",
+  "ctx": [
+   "04_data.js:271  const STYLE_SHORT = { sondan: TX('SONDAN GELİR'), onde: TX('ÖNDE KAÇAR'), itici: TX('OMUZ ATAR'), atici: TX('PLAZMA ATAR'), zikzak: TX('ÖNÜNÜ KESER') };"
+  ]
+ },
+ {
+  "tr": "ÖNÜNÜ KESER",
+  "ctx": [
+   "04_data.js:271  const STYLE_SHORT = { sondan: TX('SONDAN GELİR'), onde: TX('ÖNDE KAÇAR'), itici: TX('OMUZ ATAR'), atici: TX('PLAZMA ATAR'), zikzak: TX('ÖNÜNÜ KESER') };"
+  ]
+ },
+ {
+  "tr": "NİŞAN ALIR, \"!\" SONRA PLAZMA ATAR",
+  "ctx": [
+   "04_data.js:272  const STYLE_TRICK = { atici: TX('NİŞAN ALIR, \"!\" SONRA PLAZMA ATAR'), zikzak: TX('ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER') };"
+  ]
+ },
+ {
+  "tr": "ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER",
+  "ctx": [
+   "04_data.js:272  const STYLE_TRICK = { atici: TX('NİŞAN ALIR, \"!\" SONRA PLAZMA ATAR'), zikzak: TX('ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER') };"
+  ]
+ },
+ {
+  "tr": "JÖLE BEYİNLİ BİLGİN",
+  "ctx": [
+   "04_data.js:277  glorb: { race: TX('JÖLE BEYİNLİ BİLGİN'), home: TX('KÜTÜPHANE GEZEGENİ ZİLA'), trick: TX('SONDAN GELİR, SONDA ATAKLAR'),"
+  ]
+ },
+ {
+  "tr": "KÜTÜPHANE GEZEGENİ ZİLA",
+  "ctx": [
+   "04_data.js:277  glorb: { race: TX('JÖLE BEYİNLİ BİLGİN'), home: TX('KÜTÜPHANE GEZEGENİ ZİLA'), trick: TX('SONDAN GELİR, SONDA ATAKLAR'),"
+  ]
+ },
+ {
+  "tr": "SONDAN GELİR, SONDA ATAKLAR",
+  "ctx": [
+   "04_data.js:277  glorb: { race: TX('JÖLE BEYİNLİ BİLGİN'), home: TX('KÜTÜPHANE GEZEGENİ ZİLA'), trick: TX('SONDAN GELİR, SONDA ATAKLAR'),",
+   "04_data.js:297  golge: { race: TX('GRAX\\'IN İLK TUTSAĞI'), home: TX('BİLİNMİYOR'), trick: TX('SONDAN GELİR, SONDA ATAKLAR'),"
+  ]
+ },
+ {
+  "tr": "HESAPLARIMA GÖRE KAYBEDECEKSİN.",
+  "ctx": [
+   "04_data.js:278  taunt: TX('HESAPLARIMA GÖRE KAYBEDECEKSİN.'),"
+  ]
+ },
+ {
+  "tr": "HESAPLARIM YANLIŞMIŞ. SENİN RİTMİN DENKLEMDE YOKTU.",
+  "ctx": [
+   "04_data.js:279  lose: [TX('HESAPLARIM YANLIŞMIŞ. SENİN RİTMİN DENKLEMDE YOKTU.'), TX('KÜTÜPHANEMİ ÖZLÜYORUM DÜNYALI. KUPAYI ALIRSAN KAPIYI AÇIK BIRAK, OLUR MU?')],"
+  ]
+ },
+ {
+  "tr": "KÜTÜPHANEMİ ÖZLÜYORUM DÜNYALI. KUPAYI ALIRSAN KAPIYI AÇIK BIRAK, OLUR MU?",
+  "ctx": [
+   "04_data.js:279  lose: [TX('HESAPLARIM YANLIŞMIŞ. SENİN RİTMİN DENKLEMDE YOKTU.'), TX('KÜTÜPHANEMİ ÖZLÜYORUM DÜNYALI. KUPAYI ALIRSAN KAPIYI AÇIK BIRAK, OLUR MU?')],"
+  ]
+ },
+ {
+  "tr": "GLORB, ZİLA'NIN EN GENÇ BİLGİNİYDİ. YARIŞ HESAPLARINI İNCELEMEK İÇİN TRİBÜNE GELDİ; GRAX ONU HESAPLARIYLA BİRLİKTE PİSTE ATTI. HER YARIŞTAN SONRA NOT TUTUYOR: BİR GÜN DENKLEMİ ÇÖZÜP EVE DÖNECEK.",
+  "ctx": [
+   "04_data.js:280  text: TX('GLORB, ZİLA\\'NIN EN GENÇ BİLGİNİYDİ. YARIŞ HESAPLARINI İNCELEMEK İÇİN TRİBÜNE GELDİ; GRAX ONU HESAPLARIYLA BİRLİKTE PİSTE ATTI. HER YARIŞTAN SONRA NOT TUTUYOR: BİR GÜN DENKLEMİ ÇÖZÜP EVE DÖNECEK.') },"
+  ]
+ },
+ {
+  "tr": "DOKUZ KOLLU VATOZ SÜRÜCÜSÜ",
+  "ctx": [
+   "04_data.js:281  vuum: { race: TX('DOKUZ KOLLU VATOZ SÜRÜCÜSÜ'), home: TX('OKYANUS AYI TALASSA'), trick: TX('YANAŞIR, \"!\" SONRA OMUZ ATAR'),"
+  ]
+ },
+ {
+  "tr": "OKYANUS AYI TALASSA",
+  "ctx": [
+   "04_data.js:281  vuum: { race: TX('DOKUZ KOLLU VATOZ SÜRÜCÜSÜ'), home: TX('OKYANUS AYI TALASSA'), trick: TX('YANAŞIR, \"!\" SONRA OMUZ ATAR'),"
+  ]
+ },
+ {
+  "tr": "YANAŞIR, \"!\" SONRA OMUZ ATAR",
+  "ctx": [
+   "04_data.js:281  vuum: { race: TX('DOKUZ KOLLU VATOZ SÜRÜCÜSÜ'), home: TX('OKYANUS AYI TALASSA'), trick: TX('YANAŞIR, \"!\" SONRA OMUZ ATAR'),",
+   "04_data.js:309  buzdis: { race: TX('BUZUL DEVİ'), home: TX('DONMUŞ AY GLASİ'), trick: TX('YANAŞIR, \"!\" SONRA OMUZ ATAR'),"
+  ]
+ },
+ {
+  "tr": "YOLUMDAN ÇEKİL, YOKSA İTERİM!",
+  "ctx": [
+   "04_data.js:282  taunt: TX('YOLUMDAN ÇEKİL, YOKSA İTERİM!'),"
+  ]
+ },
+ {
+  "tr": "İTEMEDİM Mİ? VAY... EYERE SAĞLAM OTURUYORSUN.",
+  "ctx": [
+   "04_data.js:283  lose: [TX('İTEMEDİM Mİ? VAY... EYERE SAĞLAM OTURUYORSUN.'), TX('YEDİ YAVRUM VAR, HER BİRİNE BİR KOL. HEPSİNE SENİ ANLATACAĞIM.')],"
+  ]
+ },
+ {
+  "tr": "YEDİ YAVRUM VAR, HER BİRİNE BİR KOL. HEPSİNE SENİ ANLATACAĞIM.",
+  "ctx": [
+   "04_data.js:283  lose: [TX('İTEMEDİM Mİ? VAY... EYERE SAĞLAM OTURUYORSUN.'), TX('YEDİ YAVRUM VAR, HER BİRİNE BİR KOL. HEPSİNE SENİ ANLATACAĞIM.')],"
+  ]
+ },
+ {
+  "tr": "VUUM, TALASSA'DA KARGO ÇEKEN BİR VATOZ SÜRÜCÜSÜYDÜ. DENİZ TRAFİĞİNDE İTİŞEREK BÜYÜDÜ, PİSTTE DE ÖYLE YAPIYOR. GRAX ONU \"SEYİRCİ KAVGA SEVER\" DİYE SEÇTİ. OYSA TEK İSTEDİĞİ YEDİ YAVRUSUNA DÖNMEK.",
+  "ctx": [
+   "04_data.js:284  text: TX('VUUM, TALASSA\\'DA KARGO ÇEKEN BİR VATOZ SÜRÜCÜSÜYDÜ. DENİZ TRAFİĞİNDE İTİŞEREK BÜYÜDÜ, PİSTTE DE ÖYLE YAPIYOR. GRAX ONU \"SEYİRCİ KAVGA SEVER\" DİYE SEÇTİ. OYSA TEK İSTEDİĞİ YEDİ YAVRUSUNA DÖNMEK.') },"
+  ]
+ },
+ {
+  "tr": "GECE GÖZLÜ YARASA HALKI",
+  "ctx": [
+   "04_data.js:285  gece: { race: TX('GECE GÖZLÜ YARASA HALKI'), home: TX('GÜNEŞSİZ GEZEGEN NOKS'), trick: TX('ÖNDE KAÇAR, MAYIN BIRAKIR'),"
+  ]
+ },
+ {
+  "tr": "GÜNEŞSİZ GEZEGEN NOKS",
+  "ctx": [
+   "04_data.js:285  gece: { race: TX('GECE GÖZLÜ YARASA HALKI'), home: TX('GÜNEŞSİZ GEZEGEN NOKS'), trick: TX('ÖNDE KAÇAR, MAYIN BIRAKIR'),"
+  ]
+ },
+ {
+  "tr": "ÖNDE KAÇAR, MAYIN BIRAKIR",
+  "ctx": [
+   "04_data.js:285  gece: { race: TX('GECE GÖZLÜ YARASA HALKI'), home: TX('GÜNEŞSİZ GEZEGEN NOKS'), trick: TX('ÖNDE KAÇAR, MAYIN BIRAKIR'),",
+   "04_data.js:293  alev: { race: TX('ATEŞ KUŞU BİNİCİSİ'), home: TX('YANARDAĞ GEZEGENİ PİRA'), trick: TX('ÖNDE KAÇAR, MAYIN BIRAKIR'),"
+  ]
+ },
+ {
+  "tr": "ÖNÜMÜ GÖREMEZSİN BİLE.",
+  "ctx": [
+   "04_data.js:286  taunt: TX('ÖNÜMÜ GÖREMEZSİN BİLE.'),"
+  ]
+ },
+ {
+  "tr": "GÖLGEMİ YAKALADIN DÜNYALI. KİMSE YAPAMAMIŞTI.",
+  "ctx": [
+   "04_data.js:287  lose: [TX('GÖLGEMİ YAKALADIN DÜNYALI. KİMSE YAPAMAMIŞTI.'), TX('TRİBÜNDE BENİM GİBİ KULAKLI BİR KIZ GÖRÜRSEN... EL SALLA. KIZ KARDEŞİM O.')],"
+  ]
+ },
+ {
+  "tr": "TRİBÜNDE BENİM GİBİ KULAKLI BİR KIZ GÖRÜRSEN... EL SALLA. KIZ KARDEŞİM O.",
+  "ctx": [
+   "04_data.js:287  lose: [TX('GÖLGEMİ YAKALADIN DÜNYALI. KİMSE YAPAMAMIŞTI.'), TX('TRİBÜNDE BENİM GİBİ KULAKLI BİR KIZ GÖRÜRSEN... EL SALLA. KIZ KARDEŞİM O.')],"
+  ]
+ },
+ {
+  "tr": "GECE KANADI, GÜNEŞİN HİÇ DOĞMADIĞI NOKS'TAN. ARENA IŞIKLARI GÖZLERİNİ YAKIYOR, O YÜZDEN HEP EN ÖNDE KAÇIYOR. KAÇIRILDIĞI GECE KIZ KARDEŞİ DE YANINDAYDI; ONU HÂLÂ TRİBÜNLERDE ARIYOR.",
+  "ctx": [
+   "04_data.js:288  text: TX('GECE KANADI, GÜNEŞİN HİÇ DOĞMADIĞI NOKS\\'TAN. ARENA IŞIKLARI GÖZLERİNİ YAKIYOR, O YÜZDEN HEP EN ÖNDE KAÇIYOR. KAÇIRILDIĞI GECE KIZ KARDEŞİ DE YANINDAYDI; ONU HÂLÂ TRİBÜNLERDE ARIYOR.') },"
+  ]
+ }
+]

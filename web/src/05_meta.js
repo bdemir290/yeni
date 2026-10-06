@@ -15,7 +15,7 @@ function defaultMeta() {
     daily: { last: '', count: 0, pending: false },
     dailyRun: { best: {}, log: [] },
     seen: {}, flags: {}, memRead: {}, tipsSeen: {}, assistLv: 0, petted: false, rivals: {}, rivalRead: {}, nemesis: null,
-    settings: { music: true, sfx: true, haptics: true, shake: true, left: false, wide: false, offset: 0, assist: false, beatHaptic: false, simpleNotes: false, loudSilent: true },
+    settings: { music: true, sfx: true, haptics: true, shake: true, left: false, wide: false, offset: 0, assist: false, beatHaptic: false, simpleNotes: false, loudSilent: true, lang: '' },
     freed: {}, freeTokens: 0, lastRun: null, seenReact: {}, lastReact: null,
     introDone: false, tutorialDone: false, runSave: null
   };
@@ -36,8 +36,7 @@ function mergeInto(def, src) {
 function loadMeta(hot) {
   let raw = null;
   if (hot && typeof hot.save === 'string') raw = hot.save;
-  if (!raw && typeof window.__NATIVE_SAVE__ === 'string' && window.__NATIVE_SAVE__.length > 2) raw = window.__NATIVE_SAVE__;
-  if (!raw) { try { raw = localStorage.getItem(SAVE_KEY); } catch (e) { } }
+  if (!raw) raw = newestSaveRaw();
   let obj = null;
   if (raw) { try { obj = JSON.parse(raw); } catch (e) { obj = null; } }
   META = mergeInto(defaultMeta(), obj || {});
@@ -98,6 +97,7 @@ function nativeAudio() {
   try { const mh = window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.audio; if (mh) mh.postMessage(META.settings.loudSilent ? 'playback' : 'ambient'); } catch (e) { }
 }
 function saveMeta() {
+  META.savedAt = Date.now();
   const s = JSON.stringify(META);
   try { localStorage.setItem(SAVE_KEY, s); } catch (e) { }
   try { const mh = window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.save; if (mh) mh.postMessage(s); } catch (e) { }
@@ -176,7 +176,7 @@ function missionEvent(k, amount) {
     if (p && p.run) m.p = Math.max(m.p, amount); else m.p += amount;
     if (m.p >= m.n) { m.p = m.n; m.done = true; done.push(m); }
   }
-  for (const m of done) toast('GÖREV TAMAM: ' + missionText(m), C.green, 'check');
+  for (const m of done) toast(TX('GÖREV TAMAM: ') + missionText(m), C.green, 'check');
   return done;
 }
 function todayStr() { const d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
@@ -192,38 +192,38 @@ function checkFarmPerks() {
   const earned = Math.floor(farmLevel() / 5);
   if (earned > META.farmPerks) {
     const n = earned - META.farmPerks; META.farmPerks = earned; META.points += n;
-    toast('ÜS PUANI ' + farmLevel() + '! +' + n + ' SEVİYE PUANI', C.yellow, 'house'); saveMeta();
+    toast(TX('ÜS PUANI ') + farmLevel() + '! +' + n + TX(' SEVİYE PUANI'), C.yellow, 'house'); saveMeta();
   }
 }
 function unlockedMemories() { return MEMORIES.filter(m => m.cond()); }
 function unreadMemories() { return unlockedMemories().filter(m => !META.memRead[m.id]).length + Object.keys(META.rivals).filter(id => RIVAL_BY_ID[id] && !META.rivalRead[id]).length; }
 function nextGoal() {
-  if (META.daily.pending) return { text: 'GÜNLÜK ERZAĞINI AL', target: 'pano', icon: 'clover' };
-  if (META.missions.some(m => m.done)) return { text: 'GÖREV ÖDÜLÜNÜ AL', target: 'pano', icon: 'check' };
-  if (META.points > 0) return { text: 'AHIRDA ' + META.points + ' PUAN BEKLİYOR', target: 'ahir', icon: 'star' };
-  if (unreadMemories() > 0) return { text: 'SEYİR DEFTERİNDE YENİ SAYFA', target: 'ev', icon: 'book' };
-  if (built('bahce') && META.crops.slice(0, plotCount()).some(c => c > 0 && c % 10 === 3)) return { text: 'SERADA HASAT VAR', target: 'bahce', icon: 'clover' };
-  if (META.seker > 0 && Object.keys(NPC_NAMES).some(k => npcAvailable(k) && META.bond[k] < 3)) return { text: 'DOSTLARINA ŞEKER HEDİYE ET', target: 'npc', icon: 'seker' };
-  if (META.freeTokens > 0 && freeCandidates().length) return { text: 'KAPI AÇIK: BİR RAKİBİ EVE GÖNDER', target: 'ev', icon: 'book' };
-  if (META.nemesis && RIVAL_BY_ID[META.nemesis.id]) return { text: 'RÖVANŞ: ' + RIVAL_BY_ID[META.nemesis.id].name, target: 'gate', icon: 'crown' };
+  if (META.daily.pending) return { text: TX('GÜNLÜK ERZAĞINI AL'), target: 'pano', icon: 'clover' };
+  if (META.missions.some(m => m.done)) return { text: TX('GÖREV ÖDÜLÜNÜ AL'), target: 'pano', icon: 'check' };
+  if (META.points > 0) return { text: TX('AHIRDA ') + META.points + TX(' PUAN BEKLİYOR'), target: 'ahir', icon: 'star' };
+  if (unreadMemories() > 0) return { text: TX('SEYİR DEFTERİNDE YENİ SAYFA'), target: 'ev', icon: 'book' };
+  if (built('bahce') && META.crops.slice(0, plotCount()).some(c => c > 0 && c % 10 === 3)) return { text: TX('SERADA HASAT VAR'), target: 'bahce', icon: 'clover' };
+  if (META.seker > 0 && Object.keys(NPC_NAMES).some(k => npcAvailable(k) && META.bond[k] < 3)) return { text: TX('DOSTLARINA ŞEKER HEDİYE ET'), target: 'npc', icon: 'seker' };
+  if (META.freeTokens > 0 && freeCandidates().length) return { text: TX('KAPI AÇIK: BİR RAKİBİ EVE GÖNDER'), target: 'ev', icon: 'book', tab: 'rakip' };
+  if (META.nemesis && RIVAL_BY_ID[META.nemesis.id]) return { text: TX('RÖVANŞ: ') + RIVAL_BY_ID[META.nemesis.id].name, target: 'gate', icon: 'crown' };
   for (const k of BUILD_ORDER) {
     if (built(k)) continue;
     const b = BUILDINGS[k];
     if (b.rozet && META.rozet < b.rozet) continue;
     if (b.needBoon && META.stats.boons === 0) continue;
-    return { text: b.name + ' ONAR', target: k, cur: META.yonca, need: b.up[0], icon: 'hammer' };
+    return { text: b.name + TX(' ONAR'), target: k, cur: META.yonca, need: b.up[0], icon: 'hammer' };
   }
-  if (!META.stats.bossWins.pirlanta) return { text: 'PRENS KRİSTALO\'YU YEN', target: 'gate', icon: 'crown' };
-  if (!built('jokey')) return { text: 'JOKEY KOĞUŞUNU ONAR', target: 'jokey', cur: META.yonca, need: BUILDINGS.jokey.up[0], icon: 'hammer' };
+  if (!META.stats.bossWins.pirlanta) return { text: TX('PRENS KRİSTALO\'YU YEN'), target: 'gate', icon: 'crown' };
+  if (!built('jokey')) return { text: TX('JOKEY KOĞUŞUNU ONAR'), target: 'jokey', cur: META.yonca, need: BUILDINGS.jokey.up[0], icon: 'hammer' };
   for (const k of ['silahhane', 'ahir', 'pano', 'nalbant', 'veteriner', 'jokey', 'bahce', 'tapinak', 'ambar']) {
     const b = BUILDINGS[k], lv = bl(k);
-    if (lv >= 1 && lv < b.max && !(lv === 3 && META.rozet < LV4_ROZET)) return { text: b.name + ' SEVİYE ' + (lv + 1), target: k, cur: META.yonca, need: b.up[lv], icon: 'hammer' };
+    if (lv >= 1 && lv < b.max && !(lv === 3 && META.rozet < LV4_ROZET)) return { text: b.name + TX(' SEVİYE ') + (lv + 1), target: k, cur: META.yonca, need: b.up[lv], icon: 'hammer' };
   }
-  if (!META.stats.bossWins.kurt) return { text: 'ULUYAN GORM\'U YEN', target: 'gate', icon: 'crown' };
-  if (!META.stats.bossWins.niva) return { text: 'BUZ KRALİÇESİ NİVA\'YI YEN', target: 'gate', icon: 'crown' };
-  if (!META.stats.bossWins.zarg) return { text: 'KUM SOLUCANI ZARG\'I YEN', target: 'gate', icon: 'crown' };
-  if (!META.stats.wins) return { text: 'GALAKSİ KUPASINI KAZAN', target: 'gate', icon: 'crown' };
-  return { text: 'ZOR PİSTTE KUPAYI KAZAN', target: 'gate', icon: 'crown' };
+  if (!META.stats.bossWins.kurt) return { text: TX('ULUYAN GORM\'U YEN'), target: 'gate', icon: 'crown' };
+  if (!META.stats.bossWins.niva) return { text: TX('BUZ KRALİÇESİ NİVA\'YI YEN'), target: 'gate', icon: 'crown' };
+  if (!META.stats.bossWins.zarg) return { text: TX('KUM SOLUCANI ZARG\'I YEN'), target: 'gate', icon: 'crown' };
+  if (!META.stats.wins) return { text: TX('GALAKSİ KUPASINI KAZAN'), target: 'gate', icon: 'crown' };
+  return { text: TX('ZOR PİSTTE KUPAYI KAZAN'), target: 'gate', icon: 'crown' };
 }
 
 // ---------- FX ----------

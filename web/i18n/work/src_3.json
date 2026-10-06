@@ -1,0 +1,2374 @@
+[
+ {
+  "tr": "ŞANS ESERİ BİR GALİBİYET! SEYİRCİLER BAYILDI. AMA KUPA... ASLA SENİN OLMAYACAK.",
+  "ctx": [
+   "04_data.js:574  { id: 'winPirlanta', cond: () => META.stats.bossWins.pirlanta, lines: [['kemal', TX('KRİSTALO\\'YU GEÇEN DÜNYALIYI GÖRMEYE GELDİM. BEN KEMAL. BENİ DE YILLAR ÖNCE KAÇIRDILAR.')], ['grax', TX('ŞANS ESERİ BİR GALİBİYET! SEYİRCİLER BAYILDI. AMA KUPA... ASLA SENİN O"
+  ]
+ },
+ {
+  "tr": "BİP. GRAX GİTTİ. DENİZ, ONA GÖSTER.",
+  "ctx": [
+   "04_data.js:574  { id: 'winPirlanta', cond: () => META.stats.bossWins.pirlanta, lines: [['kemal', TX('KRİSTALO\\'YU GEÇEN DÜNYALIYI GÖRMEYE GELDİM. BEN KEMAL. BENİ DE YILLAR ÖNCE KAÇIRDILAR.')], ['grax', TX('ŞANS ESERİ BİR GALİBİYET! SEYİRCİLER BAYILDI. AMA KUPA... ASLA SENİN O"
+  ]
+ },
+ {
+  "tr": "MANTAR AYI... ULUYAN GORM KİMSEYİ GEÇİRMEZMİŞ. KORSANLARA DA DİKKAT.",
+  "ctx": [
+   "04_data.js:575  { id: 'region2', cond: () => META.stats.bestRegion >= 1, lines: [['ayse', TX('MANTAR AYI... ULUYAN GORM KİMSEYİ GEÇİRMEZMİŞ. KORSANLARA DA DİKKAT.')]] },"
+  ]
+ },
+ {
+  "tr": "VAY! GORM'U GEÇTİN HA? BEN TAYFUN, DÖRT SEZONDUR BURADAYIM. BENİ DE TAKIMA AL!",
+  "ctx": [
+   "04_data.js:576  { id: 'winKurt', cond: () => META.stats.bossWins.kurt, lines: [['tayfun', TX('VAY! GORM\\'U GEÇTİN HA? BEN TAYFUN, DÖRT SEZONDUR BURADAYIM. BENİ DE TAKIMA AL!')]] },"
+  ]
+ },
+ {
+  "tr": "BUZ HALKASI! ORADA NİVA DİYE BİR KRALİÇE VARMIŞ, NEFESİYLE PİSTİ DONDURUYORMUŞ.",
+  "ctx": [
+   "04_data.js:577  { id: 'regionBuz', cond: () => META.stats.bestRegion >= 2, lines: [['tayfun', TX('BUZ HALKASI! ORADA NİVA DİYE BİR KRALİÇE VARMIŞ, NEFESİYLE PİSTİ DONDURUYORMUŞ.')], ['bip', TX('AYAZ GELİNCE ŞERİT DEĞİŞTİRMEK ZORLAŞIR. HAMLE YAP YA DA ALTIN NOTAYI VUR, BUZU KI"
+  ]
+ },
+ {
+  "tr": "AYAZ GELİNCE ŞERİT DEĞİŞTİRMEK ZORLAŞIR. HAMLE YAP YA DA ALTIN NOTAYI VUR, BUZU KIR. BİP.",
+  "ctx": [
+   "04_data.js:577  { id: 'regionBuz', cond: () => META.stats.bestRegion >= 2, lines: [['tayfun', TX('BUZ HALKASI! ORADA NİVA DİYE BİR KRALİÇE VARMIŞ, NEFESİYLE PİSTİ DONDURUYORMUŞ.')], ['bip', TX('AYAZ GELİNCE ŞERİT DEĞİŞTİRMEK ZORLAŞIR. HAMLE YAP YA DA ALTIN NOTAYI VUR, BUZU KI"
+  ]
+ },
+ {
+  "tr": "NİVA'YI GEÇTİN! KRALİÇE BİLE ŞAŞIRDI, TAHTINDAN İNİP SENİ ALKIŞLADI.",
+  "ctx": [
+   "04_data.js:578  { id: 'winNiva', cond: () => META.stats.bossWins.niva, lines: [['ayse', TX('NİVA\\'YI GEÇTİN! KRALİÇE BİLE ŞAŞIRDI, TAHTINDAN İNİP SENİ ALKIŞLADI.')], ['grax', TX('BUZ ERİDİ DİYE SEVİNME DÜNYALI. ÇÖLDE SENİ KUM YUTACAK!')]] },"
+  ]
+ },
+ {
+  "tr": "BUZ ERİDİ DİYE SEVİNME DÜNYALI. ÇÖLDE SENİ KUM YUTACAK!",
+  "ctx": [
+   "04_data.js:578  { id: 'winNiva', cond: () => META.stats.bossWins.niva, lines: [['ayse', TX('NİVA\\'YI GEÇTİN! KRALİÇE BİLE ŞAŞIRDI, TAHTINDAN İNİP SENİ ALKIŞLADI.')], ['grax', TX('BUZ ERİDİ DİYE SEVİNME DÜNYALI. ÇÖLDE SENİ KUM YUTACAK!')]] },"
+  ]
+ },
+ {
+  "tr": "KIZIL KUM... ZARG DENEN SOLUCAN PİSTİN ALTINDAN ÇIKAR. KUMDA HALKA GÖRÜRSEN O ŞERİTTEN UZAKLAŞ.",
+  "ctx": [
+   "04_data.js:579  { id: 'regionKum', cond: () => META.stats.bestRegion >= 3, lines: [['kemal', TX('KIZIL KUM... ZARG DENEN SOLUCAN PİSTİN ALTINDAN ÇIKAR. KUMDA HALKA GÖRÜRSEN O ŞERİTTEN UZAKLAŞ.')]] },"
+  ]
+ },
+ {
+  "tr": "SOLUCANI KUMA GÖMDÜN! ŞİMDİ SIRA VOLTRAK'TA!",
+  "ctx": [
+   "04_data.js:580  { id: 'winZarg', cond: () => META.stats.bossWins.zarg, lines: [['tayfun', TX('SOLUCANI KUMA GÖMDÜN! ŞİMDİ SIRA VOLTRAK\\'TA!')], ['bip', TX('ARENA\\'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.')]] },"
+  ]
+ },
+ {
+  "tr": "ARENA'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.",
+  "ctx": [
+   "04_data.js:580  { id: 'winZarg', cond: () => META.stats.bossWins.zarg, lines: [['tayfun', TX('SOLUCANI KUMA GÖMDÜN! ŞİMDİ SIRA VOLTRAK\\'TA!')], ['bip', TX('ARENA\\'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.')]] },"
+  ]
+ },
+ {
+  "tr": "GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.",
+  "ctx": [
+   "04_data.js:581  { id: 'region3', cond: () => META.stats.bestRegion >= LAST_REGION, lines: [['bip', TX('GALAKSİ ARENASI... KAYITLARA GÖRE ANNEN SON KEZ ORADA KOŞMUŞ.')]] },"
+  ]
+ },
+ {
+  "tr": "VOLTRAK HİLE YAPMADAN KAZANAMAZ. SEN ONDAN HIZLISIN.",
+  "ctx": [
+   "04_data.js:582  { id: 'lostSimsek', cond: () => META.flags.lost_simsek, lines: [['kemal', TX('VOLTRAK HİLE YAPMADAN KAZANAMAZ. SEN ONDAN HIZLISIN.')]] },"
+  ]
+ },
+ {
+  "tr": "BİP! İLK PİSTTE ÜST ÜSTE ZORLANDIN. AYARLARDA GENİŞ RİTİM PENCERESİ VE YARDIM MODU VAR. UTANILACAK ŞEY DEĞİL!",
+  "ctx": [
+   "04_data.js:583  { id: 'assistHint', cond: () => (META.stats.earlyLoss || 0) >= 3 && !META.settings.assist && !META.settings.wide, lines: [['bip', TX('BİP! İLK PİSTTE ÜST ÜSTE ZORLANDIN. AYARLARDA GENİŞ RİTİM PENCERESİ VE YARDIM MODU VAR. UTANILACAK ŞEY DEĞİL!')], ['ayse', TX("
+  ]
+ },
+ {
+  "tr": "BİR DE RİTMİ ÖLÇ: KULAKLIĞIN SESİ GEÇ VERİYOR OLABİLİR. SAĞ ÜSTTEKİ DİŞLİYE BAS.",
+  "ctx": [
+   "04_data.js:583  { id: 'assistHint', cond: () => (META.stats.earlyLoss || 0) >= 3 && !META.settings.assist && !META.settings.wide, lines: [['bip', TX('BİP! İLK PİSTTE ÜST ÜSTE ZORLANDIN. AYARLARDA GENİŞ RİTİM PENCERESİ VE YARDIM MODU VAR. UTANILACAK ŞEY DEĞİL!')], ['ayse', TX("
+  ]
+ },
+ {
+  "tr": "KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!",
+  "ctx": [
+   "04_data.js:584  { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', TX('KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!')], ['akyel', TX('...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.')], ['ayse', TX('ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KR"
+  ]
+ },
+ {
+  "tr": "...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.",
+  "ctx": [
+   "04_data.js:584  { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', TX('KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!')], ['akyel', TX('...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.')], ['ayse', TX('ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KR"
+  ]
+ },
+ {
+  "tr": "ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!",
+  "ctx": [
+   "04_data.js:584  { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', TX('KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!')], ['akyel', TX('...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.')], ['ayse', TX('ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KR"
+  ]
+ },
+ {
+  "tr": "AMA PİSTTEKİLER DE KAÇIRILMIŞTI DENİZ. HER KUPADA KAPI YİNE AÇILIR: DOSYASINI AÇTIĞIN BİR RAKİBİ EVİNE GÖNDEREBİLİRSİN.",
+  "ctx": [
+   "04_data.js:584  { id: 'win', cond: () => META.stats.wins > 0, lines: [['bip', TX('KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!')], ['akyel', TX('...DENİZ. YİRMİ YILDIR SENİ İZLİYORUM. NE KADAR BÜYÜMÜŞSÜN.')], ['ayse', TX('ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KR"
+  ]
+ },
+ {
+  "tr": "HALKA ATIN ETRAFINDA KAPANDIĞI AN DOKUN. RİTİM HIZDIR. BİP.",
+  "ctx": [
+   "04_data.js:587  ['bip', TX('HALKA ATIN ETRAFINDA KAPANDIĞI AN DOKUN. RİTİM HIZDIR. BİP.')],"
+  ]
+ },
+ {
+  "tr": "GÖKTAŞLARININ ÜSTÜNDEN SIÇRAYAMAZSIN, YANINDAN DOLAŞ.",
+  "ctx": [
+   "04_data.js:588  ['ayse', TX('GÖKTAŞLARININ ÜSTÜNDEN SIÇRAYAMAZSIN, YANINDAN DOLAŞ.')],"
+  ]
+ },
+ {
+  "tr": "KAPILARIN ÜSTÜNDEKİ İŞARETLERE BAK. ÖDÜLÜ SEN SEÇERSİN.",
+  "ctx": [
+   "04_data.js:589  ['bip', TX('KAPILARIN ÜSTÜNDEKİ İŞARETLERE BAK. ÖDÜLÜ SEN SEÇERSİN.')],"
+  ]
+ },
+ {
+  "tr": "GÖREV EKRANINA UĞRA, BİTEN GÖREVLER KRİSTAL VERİYOR!",
+  "ctx": [
+   "04_data.js:590  ['ayse', TX('GÖREV EKRANINA UĞRA, BİTEN GÖREVLER KRİSTAL VERİYOR!')],"
+  ]
+ },
+ {
+  "tr": "SPRİNTTE İLK SIRALARA GİREMEZSEN BİR CAN GİDER. KALABALIK PİSTLERDE İLK 4 YETER.",
+  "ctx": [
+   "04_data.js:591  ['bip', TX('SPRİNTTE İLK SIRALARA GİREMEZSEN BİR CAN GİDER. KALABALIK PİSTLERDE İLK 4 YETER.')],"
+  ]
+ },
+ {
+  "tr": "TEKNİK GÖSTERGESİ DOLUNCA ALTTAKİ DÜĞMEYE BAS.",
+  "ctx": [
+   "04_data.js:592  ['ayse', TX('TEKNİK GÖSTERGESİ DOLUNCA ALTTAKİ DÜĞMEYE BAS.')],"
+  ]
+ },
+ {
+  "tr": "RAKİBİN ARKASINDA KALIRSAN SİPER DOLAR. YANA ÇIKINCA FIRLARSIN.",
+  "ctx": [
+   "04_data.js:593  ['kemal', TX('RAKİBİN ARKASINDA KALIRSAN SİPER DOLAR. YANA ÇIKINCA FIRLARSIN.')],"
+  ]
+ },
+ {
+  "tr": "GÖKTAŞININ YANINDAN SON ANDA GEÇERSEN KIL PAYI SİKKESİ ALIRSIN!",
+  "ctx": [
+   "04_data.js:594  ['tayfun', TX('GÖKTAŞININ YANINDAN SON ANDA GEÇERSEN KIL PAYI SİKKESİ ALIRSIN!')],"
+  ]
+ },
+ {
+  "tr": "SİKKELERİN BOŞA GİTMEZ: KOŞU SONUNDA İLK 500 SİKKE 10'A 1, FAZLASI 20'YE 1 KRİSTAL OLUR. PAZARDA HARCAMAYI UNUTMA!",
+  "ctx": [
+   "04_data.js:595  ['ayse', TX('SİKKELERİN BOŞA GİTMEZ: KOŞU SONUNDA İLK 500 SİKKE 10\\'A 1, FAZLASI 20\\'YE 1 KRİSTAL OLUR. PAZARDA HARCAMAYI UNUTMA!')],"
+  ]
+ },
+ {
+  "tr": "NEFESİNİ HER YERDE HARCAMA. SON DÜZLÜKTE SAKLADIĞIN NEFES SENİ UÇURUR.",
+  "ctx": [
+   "04_data.js:596  ['kemal', TX('NEFESİNİ HER YERDE HARCAMA. SON DÜZLÜKTE SAKLADIĞIN NEFES SENİ UÇURUR.')],"
+  ]
+ },
+ {
+  "tr": "VİRAJDA İÇ KULVARA YAPIŞ, DIŞTAN DÖNEN HEP GERİDE KALIR.",
+  "ctx": [
+   "04_data.js:597  ['ayse', TX('VİRAJDA İÇ KULVARA YAPIŞ, DIŞTAN DÖNEN HEP GERİDE KALIR.')],"
+  ]
+ },
+ {
+  "tr": "ALTIN NOTAYI TAM VURURSAN SİLAH ÇILDIRIR! ÜÇLÜ IŞIN, PLAZMA, NE VARSA!",
+  "ctx": [
+   "04_data.js:598  ['tayfun', TX('ALTIN NOTAYI TAM VURURSAN SİLAH ÇILDIRIR! ÜÇLÜ IŞIN, PLAZMA, NE VARSA!')],"
+  ]
+ },
+ {
+  "tr": "NİŞANCI ATMADAN ÖNCE NİŞAN ALIR. KIRMIZI ÇİZGİYİ GÖRÜNCE KULVAR DEĞİŞTİR.",
+  "ctx": [
+   "04_data.js:599  ['kemal', TX('NİŞANCI ATMADAN ÖNCE NİŞAN ALIR. KIRMIZI ÇİZGİYİ GÖRÜNCE KULVAR DEĞİŞTİR.')],"
+  ]
+ },
+ {
+  "tr": "RAKİPLERİNİN HEPSİ BİR YERLERDEN KAÇIRILMIŞ. KİMSE BURADA OLMAK İSTEMEZ, DÜNYALI.",
+  "ctx": [
+   "04_data.js:600  ['moko', TX('RAKİPLERİNİN HEPSİ BİR YERLERDEN KAÇIRILMIŞ. KİMSE BURADA OLMAK İSTEMEZ, DÜNYALI.')],"
+  ]
+ },
+ {
+  "tr": "DÜELLODA RAKİBİN ARKASINA SAKLAN, SİPERİN DOLSUN. SON DÜZLÜKTE YANA ÇIK VE GEÇ.",
+  "ctx": [
+   "04_data.js:601  ['kemal', TX('DÜELLODA RAKİBİN ARKASINA SAKLAN, SİPERİN DOLSUN. SON DÜZLÜKTE YANA ÇIK VE GEÇ.')],"
+  ]
+ },
+ {
+  "tr": "DÜELLO KAZANDIĞIN HER RAKİBİN DOSYASI SEYİR DEFTERİNE EKLENİR. BİP.",
+  "ctx": [
+   "04_data.js:602  ['bip', TX('DÜELLO KAZANDIĞIN HER RAKİBİN DOSYASI SEYİR DEFTERİNE EKLENİR. BİP.')]"
+  ]
+ },
+ {
+  "tr": "İŞTE BAŞLIYORUZ GALAKSİ!",
+  "ctx": [
+   "04_data.js:606  start: [TX('İŞTE BAŞLIYORUZ GALAKSİ!'), TX('DÜNYALI PİSTTE, GÖZLER ONDA!'), TX('IŞIKLAR YANDI, KAMERALAR HAZIR!')],"
+  ]
+ },
+ {
+  "tr": "DÜNYALI PİSTTE, GÖZLER ONDA!",
+  "ctx": [
+   "04_data.js:606  start: [TX('İŞTE BAŞLIYORUZ GALAKSİ!'), TX('DÜNYALI PİSTTE, GÖZLER ONDA!'), TX('IŞIKLAR YANDI, KAMERALAR HAZIR!')],"
+  ]
+ },
+ {
+  "tr": "IŞIKLAR YANDI, KAMERALAR HAZIR!",
+  "ctx": [
+   "04_data.js:606  start: [TX('İŞTE BAŞLIYORUZ GALAKSİ!'), TX('DÜNYALI PİSTTE, GÖZLER ONDA!'), TX('IŞIKLAR YANDI, KAMERALAR HAZIR!')],"
+  ]
+ },
+ {
+  "tr": "MÜTHİŞ SOLLAMA!",
+  "ctx": [
+   "04_data.js:607  overtake: [TX('MÜTHİŞ SOLLAMA!'), TX('BİRİNİ DAHA GEÇTİ!'), TX('SEYİRCİLER AYAKTA!')],"
+  ]
+ },
+ {
+  "tr": "BİRİNİ DAHA GEÇTİ!",
+  "ctx": [
+   "04_data.js:607  overtake: [TX('MÜTHİŞ SOLLAMA!'), TX('BİRİNİ DAHA GEÇTİ!'), TX('SEYİRCİLER AYAKTA!')],"
+  ]
+ },
+ {
+  "tr": "SEYİRCİLER AYAKTA!",
+  "ctx": [
+   "04_data.js:607  overtake: [TX('MÜTHİŞ SOLLAMA!'), TX('BİRİNİ DAHA GEÇTİ!'), TX('SEYİRCİLER AYAKTA!')],"
+  ]
+ },
+ {
+  "tr": "KIL PAYI! KALBİM DURDU!",
+  "ctx": [
+   "04_data.js:608  nearmiss: [TX('KIL PAYI! KALBİM DURDU!'), TX('TÜYLERİM DİKEN DİKEN!'), TX('BU NE CESARET!')],"
+  ]
+ },
+ {
+  "tr": "TÜYLERİM DİKEN DİKEN!",
+  "ctx": [
+   "04_data.js:608  nearmiss: [TX('KIL PAYI! KALBİM DURDU!'), TX('TÜYLERİM DİKEN DİKEN!'), TX('BU NE CESARET!')],"
+  ]
+ },
+ {
+  "tr": "BU NE CESARET!",
+  "ctx": [
+   "04_data.js:608  nearmiss: [TX('KIL PAYI! KALBİM DURDU!'), TX('TÜYLERİM DİKEN DİKEN!'), TX('BU NE CESARET!')],"
+  ]
+ },
+ {
+  "tr": "AH! BU ACITTI!",
+  "ctx": [
+   "04_data.js:609  hurt: [TX('AH! BU ACITTI!'), TX('DÜNYALI SENDELİYOR!'), TX('REYTİNGLER... AŞAĞI!')],"
+  ]
+ },
+ {
+  "tr": "DÜNYALI SENDELİYOR!",
+  "ctx": [
+   "04_data.js:609  hurt: [TX('AH! BU ACITTI!'), TX('DÜNYALI SENDELİYOR!'), TX('REYTİNGLER... AŞAĞI!')],"
+  ]
+ },
+ {
+  "tr": "REYTİNGLER... AŞAĞI!",
+  "ctx": [
+   "04_data.js:609  hurt: [TX('AH! BU ACITTI!'), TX('DÜNYALI SENDELİYOR!'), TX('REYTİNGLER... AŞAĞI!')],"
+  ]
+ },
+ {
+  "tr": "RİTİM MAKİNESİ!",
+  "ctx": [
+   "04_data.js:610  combo: [TX('RİTİM MAKİNESİ!'), TX('BU DÜNYALI DURMUYOR!'), TX('MÜZİĞİ YUTUYOR!')],"
+  ]
+ },
+ {
+  "tr": "BU DÜNYALI DURMUYOR!",
+  "ctx": [
+   "04_data.js:610  combo: [TX('RİTİM MAKİNESİ!'), TX('BU DÜNYALI DURMUYOR!'), TX('MÜZİĞİ YUTUYOR!')],"
+  ]
+ },
+ {
+  "tr": "MÜZİĞİ YUTUYOR!",
+  "ctx": [
+   "04_data.js:610  combo: [TX('RİTİM MAKİNESİ!'), TX('BU DÜNYALI DURMUYOR!'), TX('MÜZİĞİ YUTUYOR!')],"
+  ]
+ },
+ {
+  "tr": "SON DÜZLÜK! KİM KAZANACAK?",
+  "ctx": [
+   "04_data.js:611  final: [TX('SON DÜZLÜK! KİM KAZANACAK?'), TX('SON METRELER, NEFESLER TUTULDU!')],"
+  ]
+ },
+ {
+  "tr": "SON METRELER, NEFESLER TUTULDU!",
+  "ctx": [
+   "04_data.js:611  final: [TX('SON DÜZLÜK! KİM KAZANACAK?'), TX('SON METRELER, NEFESLER TUTULDU!')],"
+  ]
+ },
+ {
+  "tr": "SPONSORUMUZDAN BİR HEDİYE!",
+  "ctx": [
+   "04_data.js:612  sponsor: [TX('SPONSORUMUZDAN BİR HEDİYE!'), TX('SEYİRCİ SENİ SEVDİ, AL BAKALIM!')],"
+  ]
+ },
+ {
+  "tr": "SEYİRCİ SENİ SEVDİ, AL BAKALIM!",
+  "ctx": [
+   "04_data.js:612  sponsor: [TX('SPONSORUMUZDAN BİR HEDİYE!'), TX('SEYİRCİ SENİ SEVDİ, AL BAKALIM!')],"
+  ]
+ },
+ {
+  "tr": "SEYİRCİ ESNİYOR! BİRAZ HEYECAN!",
+  "ctx": [
+   "04_data.js:613  bored: [TX('SEYİRCİ ESNİYOR! BİRAZ HEYECAN!'), TX('SIKICI! METEORLARI SALIN!')],"
+  ]
+ },
+ {
+  "tr": "SIKICI! METEORLARI SALIN!",
+  "ctx": [
+   "04_data.js:613  bored: [TX('SEYİRCİ ESNİYOR! BİRAZ HEYECAN!'), TX('SIKICI! METEORLARI SALIN!')],"
+  ]
+ },
+ {
+  "tr": "DÖRTNAL MODU! EKRANLAR YANIYOR!",
+  "ctx": [
+   "04_data.js:614  fever: [TX('DÖRTNAL MODU! EKRANLAR YANIYOR!'), TX('BU HIZ YASAL MI?')],"
+  ]
+ },
+ {
+  "tr": "BU HIZ YASAL MI?",
+  "ctx": [
+   "04_data.js:614  fever: [TX('DÖRTNAL MODU! EKRANLAR YANIYOR!'), TX('BU HIZ YASAL MI?')],"
+  ]
+ },
+ {
+  "tr": "KAPIYI RİTİMLE AÇTI!",
+  "ctx": [
+   "04_data.js:615  gateOpen: [TX('KAPIYI RİTİMLE AÇTI!'), TX('TAM VURUŞ, KAPI AÇIK!')],"
+  ]
+ },
+ {
+  "tr": "TAM VURUŞ, KAPI AÇIK!",
+  "ctx": [
+   "04_data.js:615  gateOpen: [TX('KAPIYI RİTİMLE AÇTI!'), TX('TAM VURUŞ, KAPI AÇIK!')],"
+  ]
+ },
+ {
+  "tr": "KAPIYA TOSLADI!",
+  "ctx": [
+   "04_data.js:616  gateShut: [TX('KAPIYA TOSLADI!'), TX('RİTMİ KAÇIRDI, KAPI KAPALI!')],"
+  ]
+ },
+ {
+  "tr": "RİTMİ KAÇIRDI, KAPI KAPALI!",
+  "ctx": [
+   "04_data.js:616  gateShut: [TX('KAPIYA TOSLADI!'), TX('RİTMİ KAÇIRDI, KAPI KAPALI!')],"
+  ]
+ },
+ {
+  "tr": "BÜYÜK DÜELLO BAŞLIYOR!",
+  "ctx": [
+   "04_data.js:617  duel: [TX('BÜYÜK DÜELLO BAŞLIYOR!'), TX('BİRE BİR! BAHİSLER MASADA!')],"
+  ]
+ },
+ {
+  "tr": "BİRE BİR! BAHİSLER MASADA!",
+  "ctx": [
+   "04_data.js:617  duel: [TX('BÜYÜK DÜELLO BAŞLIYOR!'), TX('BİRE BİR! BAHİSLER MASADA!')],"
+  ]
+ },
+ {
+  "tr": "RÖVANŞ GECESİ! HESAPLAR GÖRÜLECEK!",
+  "ctx": [
+   "04_data.js:618  nemesis: [TX('RÖVANŞ GECESİ! HESAPLAR GÖRÜLECEK!'), TX('ESKİ DÜŞMANLAR YİNE KARŞI KARŞIYA!')],"
+  ]
+ },
+ {
+  "tr": "ESKİ DÜŞMANLAR YİNE KARŞI KARŞIYA!",
+  "ctx": [
+   "04_data.js:618  nemesis: [TX('RÖVANŞ GECESİ! HESAPLAR GÖRÜLECEK!'), TX('ESKİ DÜŞMANLAR YİNE KARŞI KARŞIYA!')],"
+  ]
+ },
+ {
+  "tr": "RÖVANŞ ALINDI! İNANILMAZ!",
+  "ctx": [
+   "04_data.js:619  revenge: [TX('RÖVANŞ ALINDI! İNANILMAZ!'), TX('İNTİKAM SOĞUK YENİR, GALAKSİ!')],"
+  ]
+ },
+ {
+  "tr": "İNTİKAM SOĞUK YENİR, GALAKSİ!",
+  "ctx": [
+   "04_data.js:619  revenge: [TX('RÖVANŞ ALINDI! İNANILMAZ!'), TX('İNTİKAM SOĞUK YENİR, GALAKSİ!')],"
+  ]
+ },
+ {
+  "tr": "BAHSİ KAZANDI! MOKO AĞLIYOR!",
+  "ctx": [
+   "04_data.js:620  betWin: [TX('BAHSİ KAZANDI! MOKO AĞLIYOR!'), TX('KASA PATLADI!')],"
+  ]
+ },
+ {
+  "tr": "KASA PATLADI!",
+  "ctx": [
+   "04_data.js:620  betWin: [TX('BAHSİ KAZANDI! MOKO AĞLIYOR!'), TX('KASA PATLADI!')],"
+  ]
+ },
+ {
+  "tr": "ŞAMPİYON SAHNEDE! REKOR YAYIN!",
+  "ctx": [
+   "04_data.js:621  boss: [TX('ŞAMPİYON SAHNEDE! REKOR YAYIN!'), TX('İŞTE BÜYÜK KAPIŞMA!')],"
+  ]
+ },
+ {
+  "tr": "İŞTE BÜYÜK KAPIŞMA!",
+  "ctx": [
+   "04_data.js:621  boss: [TX('ŞAMPİYON SAHNEDE! REKOR YAYIN!'), TX('İŞTE BÜYÜK KAPIŞMA!')],"
+  ]
+ },
+ {
+  "tr": "KİRLİ OYUN! SEYİRCİ BAYILIYOR!",
+  "ctx": [
+   "04_data.js:622  rivalTrick: [TX('KİRLİ OYUN! SEYİRCİ BAYILIYOR!'), TX('BU HAMLEYİ GÖRDÜNÜZ MÜ?'), TX('KAÇABİLECEK Mİ?')],"
+  ]
+ },
+ {
+  "tr": "BU HAMLEYİ GÖRDÜNÜZ MÜ?",
+  "ctx": [
+   "04_data.js:622  rivalTrick: [TX('KİRLİ OYUN! SEYİRCİ BAYILIYOR!'), TX('BU HAMLEYİ GÖRDÜNÜZ MÜ?'), TX('KAÇABİLECEK Mİ?')],"
+  ]
+ },
+ {
+  "tr": "KAÇABİLECEK Mİ?",
+  "ctx": [
+   "04_data.js:622  rivalTrick: [TX('KİRLİ OYUN! SEYİRCİ BAYILIYOR!'), TX('BU HAMLEYİ GÖRDÜNÜZ MÜ?'), TX('KAÇABİLECEK Mİ?')],"
+  ]
+ },
+ {
+  "tr": "ŞIK KAÇIŞ!",
+  "ctx": [
+   "04_data.js:623  dodge: [TX('ŞIK KAÇIŞ!'), TX('RAKİBİ BOŞA ÇIKARDI!'), TX('REFLEKSLERE BAK!')],"
+  ]
+ },
+ {
+  "tr": "RAKİBİ BOŞA ÇIKARDI!",
+  "ctx": [
+   "04_data.js:623  dodge: [TX('ŞIK KAÇIŞ!'), TX('RAKİBİ BOŞA ÇIKARDI!'), TX('REFLEKSLERE BAK!')],"
+  ]
+ },
+ {
+  "tr": "REFLEKSLERE BAK!",
+  "ctx": [
+   "04_data.js:623  dodge: [TX('ŞIK KAÇIŞ!'), TX('RAKİBİ BOŞA ÇIKARDI!'), TX('REFLEKSLERE BAK!')],"
+  ]
+ },
+ {
+  "tr": "VUR GALAKSİ, VUR!",
+  "ctx": [
+   "04_data.js:624  kill: [TX('VUR GALAKSİ, VUR!'), TX('BİR KORSAN DAHA GİTTİ!')]"
+  ]
+ },
+ {
+  "tr": "BİR KORSAN DAHA GİTTİ!",
+  "ctx": [
+   "04_data.js:624  kill: [TX('VUR GALAKSİ, VUR!'), TX('BİR KORSAN DAHA GİTTİ!')]"
+  ]
+ },
+ {
+  "tr": "YİNE Mİ SEN?",
+  "ctx": [
+   "04_data.js:626  const NEMESIS_TAUNTS = [TX('YİNE Mİ SEN?'), TX('BU SEFER DE GEÇEMEZSİN!'), TX('SENİ BEKLİYORDUM DÜNYALI.')];"
+  ]
+ },
+ {
+  "tr": "BU SEFER DE GEÇEMEZSİN!",
+  "ctx": [
+   "04_data.js:626  const NEMESIS_TAUNTS = [TX('YİNE Mİ SEN?'), TX('BU SEFER DE GEÇEMEZSİN!'), TX('SENİ BEKLİYORDUM DÜNYALI.')];"
+  ]
+ },
+ {
+  "tr": "SENİ BEKLİYORDUM DÜNYALI.",
+  "ctx": [
+   "04_data.js:626  const NEMESIS_TAUNTS = [TX('YİNE Mİ SEN?'), TX('BU SEFER DE GEÇEMEZSİN!'), TX('SENİ BEKLİYORDUM DÜNYALI.')];"
+  ]
+ },
+ {
+  "tr": "ALTIN NAL KUPASI YİNE BİZİM, YILDIZ. HADİ EVE GİDELİM...",
+  "ctx": [
+   "04_data.js:628  ['deniz', TX('ALTIN NAL KUPASI YİNE BİZİM, YILDIZ. HADİ EVE GİDELİM...')],"
+  ]
+ },
+ {
+  "tr": "...BU IŞIK DA NE? YILDIZ, SAKİN OL!",
+  "ctx": [
+   "04_data.js:629  ['deniz', TX('...BU IŞIK DA NE? YILDIZ, SAKİN OL!')],"
+  ]
+ },
+ {
+  "tr": "İYİ AKŞAMLAR GALAKSİ! BU SEZONUN YENİ YILDIZI: DÜNYALI JOKEY DENİZ VE TUHAF HAYVANI!",
+  "ctx": [
+   "04_data.js:630  ['grax', TX('İYİ AKŞAMLAR GALAKSİ! BU SEZONUN YENİ YILDIZI: DÜNYALI JOKEY DENİZ VE TUHAF HAYVANI!')],",
+   "07c_cine.js:24  ['grax', TX('İYİ AKŞAMLAR GALAKSİ! BU SEZONUN YENİ YILDIZI: DÜNYALI JOKEY DENİZ VE TUHAF HAYVANI!')],"
+  ]
+ },
+ {
+  "tr": "KURAL BASİT: GALAKSİ KUPASI'NI KAZANAN EVİNE DÖNER. KAYBEDEN... GELECEK SEZONA KADAR BİZİMLE!",
+  "ctx": [
+   "04_data.js:631  ['grax', TX('KURAL BASİT: GALAKSİ KUPASI\\'NI KAZANAN EVİNE DÖNER. KAYBEDEN... GELECEK SEZONA KADAR BİZİMLE!')],",
+   "07c_cine.js:25  ['grax', TX('KURAL BASİT: GALAKSİ KUPASI\\'NI KAZANAN EVİNE DÖNER. KAYBEDEN... GELECEK SEZONA KADAR BİZİMLE!')],"
+  ]
+ },
+ {
+  "tr": "BİP! BEN BİP-0, DÜNYA BÖLMESİ'NİN BAKICISI. KORKMA, ÖNCE BİR ISINMA TURU ATALIM.",
+  "ctx": [
+   "04_data.js:632  ['bip', TX('BİP! BEN BİP-0, DÜNYA BÖLMESİ\\'NİN BAKICISI. KORKMA, ÖNCE BİR ISINMA TURU ATALIM.')]"
+  ]
+ },
+ {
+  "tr": "DENİZ",
+  "ctx": [
+   "04_data.js:634  const SPEAKERS = { deniz: TX('DENİZ'), bip: TX('BİP-0'), ayse: TX('AYŞE'), kemal: TX('KEMAL USTA'), tayfun: TX('TAYFUN'), moko: TX('MOKO'), grax: TX('SUNUCU GRAX'), akyel: TX('AKYEL') };",
+   "06g_league.js:10  for (const id in L) rows.push({ id, name: id === 'deniz' ? TX('DENİZ') : (RIVAL_BY_ID[id] ? RIVAL_BY_ID[id].name : id), pts: L[id], me: id === 'deniz' });"
+  ]
+ },
+ {
+  "tr": "SUNUCU GRAX",
+  "ctx": [
+   "04_data.js:634  const SPEAKERS = { deniz: TX('DENİZ'), bip: TX('BİP-0'), ayse: TX('AYŞE'), kemal: TX('KEMAL USTA'), tayfun: TX('TAYFUN'), moko: TX('MOKO'), grax: TX('SUNUCU GRAX'), akyel: TX('AKYEL') };"
+  ]
+ },
+ {
+  "tr": "AKYEL",
+  "ctx": [
+   "04_data.js:634  const SPEAKERS = { deniz: TX('DENİZ'), bip: TX('BİP-0'), ayse: TX('AYŞE'), kemal: TX('KEMAL USTA'), tayfun: TX('TAYFUN'), moko: TX('MOKO'), grax: TX('SUNUCU GRAX'), akyel: TX('AKYEL') };",
+   "04b_story.js:60  NPC_NAMES.akyel = TX('AKYEL');"
+  ]
+ },
+ {
+  "tr": "BEN... BİR PRENSTİM. LUMO'NUN KRİSTAL SARAYINDA DOĞDUM. GRAX BENİ TAÇ GİYME TÖRENİMDE KAÇIRDI.",
+  "ctx": [
+   "04b_story.js:12  pirlanta: [['kristalo', TX('BEN... BİR PRENSTİM. LUMO\\'NUN KRİSTAL SARAYINDA DOĞDUM. GRAX BENİ TAÇ GİYME TÖRENİMDE KAÇIRDI.')],"
+  ]
+ },
+ {
+  "tr": "KİBRİM KALKANIMDI DÜNYALI. ONSUZ KORKAKTIM. SEN BANA KORKMADAN KOŞMAYI GÖSTERDİN.",
+  "ctx": [
+   "04b_story.js:13  ['kristalo', TX('KİBRİM KALKANIMDI DÜNYALI. ONSUZ KORKAKTIM. SEN BANA KORKMADAN KOŞMAYI GÖSTERDİN.')],"
+  ]
+ },
+ {
+  "tr": "GÖRDÜN MÜ DENİZ? ŞAMPİYONLAR BİLE GRAX'IN TUTSAĞI.",
+  "ctx": [
+   "04b_story.js:14  ['ayse', TX('GÖRDÜN MÜ DENİZ? ŞAMPİYONLAR BİLE GRAX\\'IN TUTSAĞI.')]],"
+  ]
+ },
+ {
+  "tr": "AUUU... YENİLDİM. MANTAR AYI'NDA SÜRÜM BENİ BEKLİYOR. GRAX ONLARI KAFESTE TUTUYOR.",
+  "ctx": [
+   "04b_story.js:15  kurt: [['gorm', TX('AUUU... YENİLDİM. MANTAR AYI\\'NDA SÜRÜM BENİ BEKLİYOR. GRAX ONLARI KAFESTE TUTUYOR.')],"
+  ]
+ },
+ {
+  "tr": "KAZANDIKÇA YAVRULARIMI GÖRMEME İZİN VERİYORDU. ARTIK... SEN KAZAN DENİZ. HEPİMİZ İÇİN.",
+  "ctx": [
+   "04b_story.js:16  ['gorm', TX('KAZANDIKÇA YAVRULARIMI GÖRMEME İZİN VERİYORDU. ARTIK... SEN KAZAN DENİZ. HEPİMİZ İÇİN.')],"
+  ]
+ },
+ {
+  "tr": "ULUYAN GORM AĞLIYOR MU? BU ŞOVDA KİMSE KÖTÜ DEĞİL GALİBA. SADECE GRAX.",
+  "ctx": [
+   "04b_story.js:17  ['tayfun', TX('ULUYAN GORM AĞLIYOR MU? BU ŞOVDA KİMSE KÖTÜ DEĞİL GALİBA. SADECE GRAX.')]],"
+  ]
+ },
+ {
+  "tr": "BUZUM ERİDİ... YILLARDIR KENDİMİ DONDURUYORDUM DÜNYALI. DONMUŞ BİR KALP EVİNİ ÖZLEMEZ.",
+  "ctx": [
+   "04b_story.js:18  niva: [['niva', TX('BUZUM ERİDİ... YILLARDIR KENDİMİ DONDURUYORDUM DÜNYALI. DONMUŞ BİR KALP EVİNİ ÖZLEMEZ.')],"
+  ]
+ },
+ {
+  "tr": "GRAX GEZEGENİMİ ISITACAĞINI SÖZ VERDİ. YALAN. KUPA BİR ANAHTAR, SADECE KAZANANIN KAPISINI AÇAR.",
+  "ctx": [
+   "04b_story.js:19  ['niva', TX('GRAX GEZEGENİMİ ISITACAĞINI SÖZ VERDİ. YALAN. KUPA BİR ANAHTAR, SADECE KAZANANIN KAPISINI AÇAR.')],"
+  ]
+ },
+ {
+  "tr": "BİP. KRALİÇE NİVA SANA BİR BUZ ÇİÇEĞİ BIRAKTI. KAYITLARA EKLEDİM.",
+  "ctx": [
+   "04b_story.js:20  ['bip', TX('BİP. KRALİÇE NİVA SANA BİR BUZ ÇİÇEĞİ BIRAKTI. KAYITLARA EKLEDİM.')]],"
+  ]
+ },
+ {
+  "tr": "BİP! BAŞINDAKİ ÇİP KIRILMIŞ! ZARG KONUŞAMIYOR AMA SİNYALİ ÇÖZDÜM: \"TEŞEKKÜRLER.\" GRAX ONU ÇİPLE YÖNETİYORMUŞ!",
+  "ctx": [
+   "04b_story.js:22  ['bip', TX('BİP! BAŞINDAKİ ÇİP KIRILMIŞ! ZARG KONUŞAMIYOR AMA SİNYALİ ÇÖZDÜM: \"TEŞEKKÜRLER.\" GRAX ONU ÇİPLE YÖNETİYORMUŞ!')],"
+  ]
+ },
+ {
+  "tr": "DEMEK ŞAMPİYONLARIN BİR KISMI İPLE OYNATILAN KUKLA. VOLTRAK DA ÖYLE Mİ ACABA?",
+  "ctx": [
+   "04b_story.js:23  ['kemal', TX('DEMEK ŞAMPİYONLARIN BİR KISMI İPLE OYNATILAN KUKLA. VOLTRAK DA ÖYLE Mİ ACABA?')]],"
+  ]
+ },
+ {
+  "tr": "RÜZGARIN DÖNDÜ, ÇOCUK. YİRMİ YIL ÖNCE DE BÖYLE DÖNMÜŞTÜ...",
+  "ctx": [
+   "04b_story.js:24  bora: [['bora', TX('RÜZGARIN DÖNDÜ, ÇOCUK. YİRMİ YIL ÖNCE DE BÖYLE DÖNMÜŞTÜ...')],"
+  ]
+ },
+ {
+  "tr": "O FİNALDE ANNENLE AYNI PİSTTEYDİM. FIRTINAYI BEN GETİRDİM DEDİLER. HAYIR. SON DÜZLÜKTE VOLTRAK'IN NALLARINDAN KIVILCIM SAÇILDIĞINI GÖRDÜM.",
+  "ctx": [
+   "04b_story.js:25  ['bora', TX('O FİNALDE ANNENLE AYNI PİSTTEYDİM. FIRTINAYI BEN GETİRDİM DEDİLER. HAYIR. SON DÜZLÜKTE VOLTRAK\\'IN NALLARINDAN KIVILCIM SAÇILDIĞINI GÖRDÜM.')],"
+  ]
+ },
+ {
+  "tr": "KİMSE BENİ DİNLEMEDİ. GRAX SÜRÜMÜ ALIP SUSMAMI İSTEDİ. ARTIK SUSMAYACAĞIM. KOR AY'A GİT, DEMİRCİYİ BUL.",
+  "ctx": [
+   "04b_story.js:26  ['bora', TX('KİMSE BENİ DİNLEMEDİ. GRAX SÜRÜMÜ ALIP SUSMAMI İSTEDİ. ARTIK SUSMAYACAĞIM. KOR AY\\'A GİT, DEMİRCİYİ BUL.')],"
+  ]
+ },
+ {
+  "tr": "KIVILCIM... AKYEL'İN ATI O GECE TÖKEZLEMİŞTİ. HEPİMİZ KAZA SANDIK.",
+  "ctx": [
+   "04b_story.js:27  ['kemal', TX('KIVILCIM... AKYEL\\'İN ATI O GECE TÖKEZLEMİŞTİ. HEPİMİZ KAZA SANDIK.')]],"
+  ]
+ },
+ {
+  "tr": "ÖRSÜM SUSTU. YÜZ YILDIR İLK KEZ BİRİ BENİ YENDİ, DÜNYALI.",
+  "ctx": [
+   "04b_story.js:28  korhan: [['korhan', TX('ÖRSÜM SUSTU. YÜZ YILDIR İLK KEZ BİRİ BENİ YENDİ, DÜNYALI.')],"
+  ]
+ },
+ {
+  "tr": "GRAX OCAĞIMI ZİNCİRLEDİ. BANA KIVILCIM SAÇAN NALLAR DÖVDÜRDÜ. İLKİNİ YİRMİ YIL ÖNCE, BİR FİNAL GECESİ İÇİN.",
+  "ctx": [
+   "04b_story.js:29  ['korhan', TX('GRAX OCAĞIMI ZİNCİRLEDİ. BANA KIVILCIM SAÇAN NALLAR DÖVDÜRDÜ. İLKİNİ YİRMİ YIL ÖNCE, BİR FİNAL GECESİ İÇİN.')],"
+  ]
+ },
+ {
+  "tr": "AL. BU O NALIN KALIBI. ÜSTÜNDE GRAX'IN MÜHRÜ VAR. ARENA'DA HERKES GÖRSÜN.",
+  "ctx": [
+   "04b_story.js:30  ['korhan', TX('AL. BU O NALIN KALIBI. ÜSTÜNDE GRAX\\'IN MÜHRÜ VAR. ARENA\\'DA HERKES GÖRSÜN.')],"
+  ]
+ },
+ {
+  "tr": "BİP. KANIT KAYDEDİLDİ. DENİZ... ANNEN KAYBETMEDİ. ONU DÜŞÜRDÜLER.",
+  "ctx": [
+   "04b_story.js:31  ['bip', TX('BİP. KANIT KAYDEDİLDİ. DENİZ... ANNEN KAYBETMEDİ. ONU DÜŞÜRDÜLER.')]],"
+  ]
+ },
+ {
+  "tr": "HATA. HATA. PROGRAM: KAZAN. DURUM: KAYBETTİ. YENİ GÖREV ARANIYOR...",
+  "ctx": [
+   "04b_story.js:32  simsek: [['voltrak', TX('HATA. HATA. PROGRAM: KAZAN. DURUM: KAYBETTİ. YENİ GÖREV ARANIYOR...')],"
+  ]
+ },
+ {
+  "tr": "KAYIT 2006-FİNAL: AKYEL ÖNDE. GRAX KOMUTU: PİSTE KIVILCIM AT. KOMUT UYGULANDI. ÖZÜR... DİLERİM?",
+  "ctx": [
+   "04b_story.js:33  ['voltrak', TX('KAYIT 2006-FİNAL: AKYEL ÖNDE. GRAX KOMUTU: PİSTE KIVILCIM AT. KOMUT UYGULANDI. ÖZÜR... DİLERİM?')],"
+  ]
+ },
+ {
+  "tr": "YETER! KUPA... KUPA SENİN DÜNYALI. AMA KAPI SANDIĞIN KADAR KOLAY AÇILMAZ!",
+  "ctx": [
+   "04b_story.js:34  ['grax', TX('YETER! KUPA... KUPA SENİN DÜNYALI. AMA KAPI SANDIĞIN KADAR KOLAY AÇILMAZ!')]]"
+  ]
+ },
+ {
+  "tr": "DONMUŞ TAHT",
+  "ctx": [
+   "04b_story.js:39  { id: 8, title: TX('DONMUŞ TAHT'), hint: TX('BUZ HALKASI\\'NA ULAŞ'), cond: () => META.stats.bestRegion >= 2,"
+  ]
+ },
+ {
+  "tr": "BUZ HALKASI'NA ULAŞ",
+  "ctx": [
+   "04b_story.js:39  { id: 8, title: TX('DONMUŞ TAHT'), hint: TX('BUZ HALKASI\\'NA ULAŞ'), cond: () => META.stats.bestRegion >= 2,"
+  ]
+ },
+ {
+  "tr": "BUZ HALKASI'NDA KRALİÇE NİVA HÜKÜM SÜRÜYOR. GEZEGENİ GÜNEŞİNİ KAYBETTİĞİNDE GRAX ONA SICAKLIK SÖZÜ VERDİ. NİVA O GÜNDEN BERİ KENDİNİ DONDURUYOR: DONMUŞ BİR KALP EVİNİ ÖZLEMEZ, DİYOR.",
+  "ctx": [
+   "04b_story.js:40  text: TX('BUZ HALKASI\\'NDA KRALİÇE NİVA HÜKÜM SÜRÜYOR. GEZEGENİ GÜNEŞİNİ KAYBETTİĞİNDE GRAX ONA SICAKLIK SÖZÜ VERDİ. NİVA O GÜNDEN BERİ KENDİNİ DONDURUYOR: DONMUŞ BİR KALP EVİNİ ÖZLEMEZ, DİYOR.') },"
+  ]
+ },
+ {
+  "tr": "KUMUN ALTINDAKİ ÇİP",
+  "ctx": [
+   "04b_story.js:41  { id: 9, title: TX('KUMUN ALTINDAKİ ÇİP'), hint: TX('KUM SOLUCANI ZARG\\'I YEN'), cond: () => !!META.stats.bossWins.zarg,"
+  ]
+ },
+ {
+  "tr": "KUM SOLUCANI ZARG'I YEN",
+  "ctx": [
+   "04b_story.js:41  { id: 9, title: TX('KUMUN ALTINDAKİ ÇİP'), hint: TX('KUM SOLUCANI ZARG\\'I YEN'), cond: () => !!META.stats.bossWins.zarg,",
+   "05_meta.js:224  if (!META.stats.bossWins.zarg) return { text: TX('KUM SOLUCANI ZARG\\'I YEN'), target: 'gate', icon: 'crown' };"
+  ]
+ },
+ {
+  "tr": "ZARG'IN BAŞINDA GRAX'IN ÇİPİ VARDI. ŞAMPİYONLARIN BAZILARI GÖNÜLLÜ DEĞİL, KUKLA. BİP SİNYALİ ÇÖZDÜ: AYNI ÇİPTEN BİRİ DE VOLTRAK'IN İÇİNDE ATIYOR.",
+  "ctx": [
+   "04b_story.js:42  text: TX('ZARG\\'IN BAŞINDA GRAX\\'IN ÇİPİ VARDI. ŞAMPİYONLARIN BAZILARI GÖNÜLLÜ DEĞİL, KUKLA. BİP SİNYALİ ÇÖZDÜ: AYNI ÇİPTEN BİRİ DE VOLTRAK\\'IN İÇİNDE ATIYOR.') },"
+  ]
+ },
+ {
+  "tr": "AÇIK KAPI",
+  "ctx": [
+   "04b_story.js:43  { id: 10, title: TX('AÇIK KAPI'), hint: TX('BİR RAKİBİ EVE GÖNDER'), cond: () => freedCount() >= 1,"
+  ]
+ },
+ {
+  "tr": "BİR RAKİBİ EVE GÖNDER",
+  "ctx": [
+   "04b_story.js:43  { id: 10, title: TX('AÇIK KAPI'), hint: TX('BİR RAKİBİ EVE GÖNDER'), cond: () => freedCount() >= 1,"
+  ]
+ },
+ {
+  "tr": "KAPI AÇILDI AMA DENİZ GEÇMEDİ. TRİBÜNDEKİ HER YÜZ, PİSTTEKİ HER RAKİP BİR YERDEN KAÇIRILMIŞTI. KUPA HER KAZANILDIĞINDA KAPI BİR KEZ DAHA AÇILIYOR. ARTIK YARIŞMAK İÇİN DEĞİL, BAŞKALARINI EVE GÖNDERMEK İÇİN KOŞUYORUZ.",
+  "ctx": [
+   "04b_story.js:44  text: TX('KAPI AÇILDI AMA DENİZ GEÇMEDİ. TRİBÜNDEKİ HER YÜZ, PİSTTEKİ HER RAKİP BİR YERDEN KAÇIRILMIŞTI. KUPA HER KAZANILDIĞINDA KAPI BİR KEZ DAHA AÇILIYOR. ARTIK YARIŞMAK İÇİN DEĞİL, BAŞKALARINI EVE GÖNDERMEK İÇİN KOŞUYORUZ.') },"
+  ]
+ },
+ {
+  "tr": "HERKES EVİNE",
+  "ctx": [
+   "04b_story.js:45  { id: 11, title: TX('HERKES EVİNE'), hint: TX('BÜTÜN RAKİPLERİ EVE GÖNDER'), cond: () => freedCount() >= NAMED_RIVALS.flat().length,"
+  ]
+ },
+ {
+  "tr": "BÜTÜN RAKİPLERİ EVE GÖNDER",
+  "ctx": [
+   "04b_story.js:45  { id: 11, title: TX('HERKES EVİNE'), hint: TX('BÜTÜN RAKİPLERİ EVE GÖNDER'), cond: () => freedCount() >= NAMED_RIVALS.flat().length,"
+  ]
+ },
+ {
+  "tr": "SON RAKİP DE KAPIDAN GEÇTİ. GRAX'IN ŞOVU BOMBOŞ BİR STADYUMDA YAYINLANIYOR. AKYEL YILDIZ'IN YELESİNİ OKŞADI: \"ŞİMDİ EVE GİDEBİLİRİZ.\" DENİZ GÜLÜMSEDİ: \"BİR TUR DAHA, ANNE. SADECE ZEVK İÇİN.\"",
+  "ctx": [
+   "04b_story.js:46  text: TX('SON RAKİP DE KAPIDAN GEÇTİ. GRAX\\'IN ŞOVU BOMBOŞ BİR STADYUMDA YAYINLANIYOR. AKYEL YILDIZ\\'IN YELESİNİ OKŞADI: \"ŞİMDİ EVE GİDEBİLİRİZ.\" DENİZ GÜLÜMSEDİ: \"BİR TUR DAHA, ANNE. SADECE ZEVK İÇİN.\"') }"
+  ]
+ },
+ {
+  "tr": "FIRTINA ÇOBANI",
+  "ctx": [
+   "04b_story.js:50  { id: 12, title: TX('FIRTINA ÇOBANI'), hint: TX('FIRTINA DEVİ\\'NE ULAŞ'), cond: () => META.stats.bestRegion >= regionIdx('bulut'),"
+  ]
+ },
+ {
+  "tr": "FIRTINA DEVİ'NE ULAŞ",
+  "ctx": [
+   "04b_story.js:50  { id: 12, title: TX('FIRTINA ÇOBANI'), hint: TX('FIRTINA DEVİ\\'NE ULAŞ'), cond: () => META.stats.bestRegion >= regionIdx('bulut'),"
+  ]
+ },
+ {
+  "tr": "FIRTINA DEVİ'NİN BULUTLARINDA DEV GÖK BALİNALARI YÜZER. ÇOBANLARI BORA, YİRMİ YIL ÖNCEKİ FİNALDE ANNENLE AYNI PİSTTEYDİ. O GECE BİR FIRTINA KOPTU VE AKYEL'İN ATI TÖKEZLEDİ. HERKES BORA'YI SUÇLADI. BORA İSE YILLARDIR SUSUYOR.",
+  "ctx": [
+   "04b_story.js:51  text: TX('FIRTINA DEVİ\\'NİN BULUTLARINDA DEV GÖK BALİNALARI YÜZER. ÇOBANLARI BORA, YİRMİ YIL ÖNCEKİ FİNALDE ANNENLE AYNI PİSTTEYDİ. O GECE BİR FIRTINA KOPTU VE AKYEL\\'İN ATI TÖKEZLEDİ. HERKES BORA\\'YI SUÇLADI. BORA İSE YILLARDIR SUSUYOR.') },"
+  ]
+ },
+ {
+  "tr": "GRAX'IN MÜHRÜ",
+  "ctx": [
+   "04b_story.js:52  { id: 13, title: TX('GRAX\\'IN MÜHRÜ'), hint: TX('DEMİRCİ KORHAN\\'I YEN'), cond: () => !!META.stats.bossWins.korhan,"
+  ]
+ },
+ {
+  "tr": "DEMİRCİ KORHAN'I YEN",
+  "ctx": [
+   "04b_story.js:52  { id: 13, title: TX('GRAX\\'IN MÜHRÜ'), hint: TX('DEMİRCİ KORHAN\\'I YEN'), cond: () => !!META.stats.bossWins.korhan,"
+  ]
+ },
+ {
+  "tr": "KORHAN, KOR AY'IN SON DEMİRCİSİ. GRAX OCAĞINI ZİNCİRLEDİ VE ONA KIVILCIM SAÇAN NALLAR DÖVDÜRDÜ. YENİLİNCE SANA İLK NALIN KALIBINI VERDİ; ÜSTÜNDE GRAX'IN MÜHRÜ VAR. ANNEN KAYBETMEDİ. ONU DÜŞÜRDÜLER.",
+  "ctx": [
+   "04b_story.js:53  text: TX('KORHAN, KOR AY\\'IN SON DEMİRCİSİ. GRAX OCAĞINI ZİNCİRLEDİ VE ONA KIVILCIM SAÇAN NALLAR DÖVDÜRDÜ. YENİLİNCE SANA İLK NALIN KALIBINI VERDİ; ÜSTÜNDE GRAX\\'IN MÜHRÜ VAR. ANNEN KAYBETMEDİ. ONU DÜŞÜRDÜLER.') }"
+  ]
+ },
+ {
+  "tr": "DÜNYA ŞEKERİ... SEN KÜÇÜKKEN CEBİNDE HEP BUNDAN TAŞIRDIN. AL, ESKİ NALIM SENDE DURSUN.",
+  "ctx": [
+   "04b_story.js:62  gift: [TX('DÜNYA ŞEKERİ... SEN KÜÇÜKKEN CEBİNDE HEP BUNDAN TAŞIRDIN. AL, ESKİ NALIM SENDE DURSUN.'), TX('NALI PARLATTIM. VOLTRAK ONU YİRMİ YIL ÖNCE KIRMIŞTI, KEMAL USTA ONARDI.'), TX('SENİNLE GURUR DUYUYORUM DENİZ. HER TURDA.')],"
+  ]
+ },
+ {
+  "tr": "NALI PARLATTIM. VOLTRAK ONU YİRMİ YIL ÖNCE KIRMIŞTI, KEMAL USTA ONARDI.",
+  "ctx": [
+   "04b_story.js:62  gift: [TX('DÜNYA ŞEKERİ... SEN KÜÇÜKKEN CEBİNDE HEP BUNDAN TAŞIRDIN. AL, ESKİ NALIM SENDE DURSUN.'), TX('NALI PARLATTIM. VOLTRAK ONU YİRMİ YIL ÖNCE KIRMIŞTI, KEMAL USTA ONARDI.'), TX('SENİNLE GURUR DUYUYORUM DENİZ. HER TURDA.')],"
+  ]
+ },
+ {
+  "tr": "SENİNLE GURUR DUYUYORUM DENİZ. HER TURDA.",
+  "ctx": [
+   "04b_story.js:62  gift: [TX('DÜNYA ŞEKERİ... SEN KÜÇÜKKEN CEBİNDE HEP BUNDAN TAŞIRDIN. AL, ESKİ NALIM SENDE DURSUN.'), TX('NALI PARLATTIM. VOLTRAK ONU YİRMİ YIL ÖNCE KIRMIŞTI, KEMAL USTA ONARDI.'), TX('SENİNLE GURUR DUYUYORUM DENİZ. HER TURDA.')],"
+  ]
+ },
+ {
+  "tr": "YİRMİ YIL TRİBÜNDEN İZLEDİM. GRAX HER GECE YANIMA OTURUP \"OĞLUN GELMEYECEK\" DERDİ. GELDİN.",
+  "ctx": [
+   "04b_story.js:63  chat: [TX('YİRMİ YIL TRİBÜNDEN İZLEDİM. GRAX HER GECE YANIMA OTURUP \"OĞLUN GELMEYECEK\" DERDİ. GELDİN.'), TX('YILDIZ\\'IN ANNESİNİ BEN YETİŞTİRDİM. AYNI İNATÇI KULAKLAR.'), TX('VOLTRAK KÖTÜ DEĞİL. ONU KÖTÜ YAPAN KOMUTLARDI.'), TX('ŞAMPİYONLARIN SIRRI BASİT: SON "
+  ]
+ },
+ {
+  "tr": "YILDIZ'IN ANNESİNİ BEN YETİŞTİRDİM. AYNI İNATÇI KULAKLAR.",
+  "ctx": [
+   "04b_story.js:63  chat: [TX('YİRMİ YIL TRİBÜNDEN İZLEDİM. GRAX HER GECE YANIMA OTURUP \"OĞLUN GELMEYECEK\" DERDİ. GELDİN.'), TX('YILDIZ\\'IN ANNESİNİ BEN YETİŞTİRDİM. AYNI İNATÇI KULAKLAR.'), TX('VOLTRAK KÖTÜ DEĞİL. ONU KÖTÜ YAPAN KOMUTLARDI.'), TX('ŞAMPİYONLARIN SIRRI BASİT: SON "
+  ]
+ },
+ {
+  "tr": "VOLTRAK KÖTÜ DEĞİL. ONU KÖTÜ YAPAN KOMUTLARDI.",
+  "ctx": [
+   "04b_story.js:63  chat: [TX('YİRMİ YIL TRİBÜNDEN İZLEDİM. GRAX HER GECE YANIMA OTURUP \"OĞLUN GELMEYECEK\" DERDİ. GELDİN.'), TX('YILDIZ\\'IN ANNESİNİ BEN YETİŞTİRDİM. AYNI İNATÇI KULAKLAR.'), TX('VOLTRAK KÖTÜ DEĞİL. ONU KÖTÜ YAPAN KOMUTLARDI.'), TX('ŞAMPİYONLARIN SIRRI BASİT: SON "
+  ]
+ },
+ {
+  "tr": "ŞAMPİYONLARIN SIRRI BASİT: SON DÜZLÜKTE NEFESİNİ SAKLA.",
+  "ctx": [
+   "04b_story.js:63  chat: [TX('YİRMİ YIL TRİBÜNDEN İZLEDİM. GRAX HER GECE YANIMA OTURUP \"OĞLUN GELMEYECEK\" DERDİ. GELDİN.'), TX('YILDIZ\\'IN ANNESİNİ BEN YETİŞTİRDİM. AYNI İNATÇI KULAKLAR.'), TX('VOLTRAK KÖTÜ DEĞİL. ONU KÖTÜ YAPAN KOMUTLARDI.'), TX('ŞAMPİYONLARIN SIRRI BASİT: SON "
+  ]
+ },
+ {
+  "tr": "AKYEL'İN NALI",
+  "ctx": [
+   "04b_story.js:65  KEEPSAKES.akyel = { name: TX('AKYEL\\'İN NALI'), desc: l => TX('ŞAMPİYON YARIŞINDA FARK %') + [10, 20, 30][l - 1] + TX(' DAHA YAVAŞ KAPANIR'), apply: (S, l) => { S.bossDrainMult *= 1 - [0.1, 0.2, 0.3][l - 1]; } };"
+  ]
+ },
+ {
+  "tr": "ŞAMPİYON YARIŞINDA FARK %",
+  "ctx": [
+   "04b_story.js:65  KEEPSAKES.akyel = { name: TX('AKYEL\\'İN NALI'), desc: l => TX('ŞAMPİYON YARIŞINDA FARK %') + [10, 20, 30][l - 1] + TX(' DAHA YAVAŞ KAPANIR'), apply: (S, l) => { S.bossDrainMult *= 1 - [0.1, 0.2, 0.3][l - 1]; } };"
+  ]
+ },
+ {
+  "tr": " DAHA YAVAŞ KAPANIR",
+  "ctx": [
+   "04b_story.js:65  KEEPSAKES.akyel = { name: TX('AKYEL\\'İN NALI'), desc: l => TX('ŞAMPİYON YARIŞINDA FARK %') + [10, 20, 30][l - 1] + TX(' DAHA YAVAŞ KAPANIR'), apply: (S, l) => { S.bossDrainMult *= 1 - [0.1, 0.2, 0.3][l - 1]; } };"
+  ]
+ },
+ {
+  "tr": "BULUTLARIM BENİ BEKLİYOR. HER RÜZGAR ESTİĞİNDE ADINI FISILDAYACAĞIM, DENİZ.",
+  "ctx": [
+   "04b_story.js:74  zefir: TX('BULUTLARIM BENİ BEKLİYOR. HER RÜZGAR ESTİĞİNDE ADINI FISILDAYACAĞIM, DENİZ.'),"
+  ]
+ },
+ {
+  "tr": "GÜM! GÜM! BU SEFER SEVİNÇTEN GÜRLÜYORUM DÜNYALI!",
+  "ctx": [
+   "04b_story.js:75  gumbur: TX('GÜM! GÜM! BU SEFER SEVİNÇTEN GÜRLÜYORUM DÜNYALI!'),"
+  ]
+ },
+ {
+  "tr": "YAĞMUR OLUP YAĞACAĞIM. BİR GÜN DÜNYADA ISLANIRSAN, O BENİM.",
+  "ctx": [
+   "04b_story.js:76  damla: TX('YAĞMUR OLUP YAĞACAĞIM. BİR GÜN DÜNYADA ISLANIRSAN, O BENİM.'),"
+  ]
+ },
+ {
+  "tr": "SÖNMEDEN EVE VARACAĞIM! SEN DE SÖNME, DÜNYALI!",
+  "ctx": [
+   "04b_story.js:77  kivilcim: TX('SÖNMEDEN EVE VARACAĞIM! SEN DE SÖNME, DÜNYALI!'),"
+  ]
+ },
+ {
+  "tr": "KORHAN USTAYA SÖYLE: OCAK YENİDEN YANACAK. BEN YAKACAĞIM.",
+  "ctx": [
+   "04b_story.js:78  curuf: TX('KORHAN USTAYA SÖYLE: OCAK YENİDEN YANACAK. BEN YAKACAĞIM.'),"
+  ]
+ },
+ {
+  "tr": "NİŞANIMI HİÇ ŞAŞIRMAMIŞTIM. SENİN KALBİNE DE ŞAŞIRMADIM.",
+  "ctx": [
+   "04b_story.js:79  oniks: TX('NİŞANIMI HİÇ ŞAŞIRMAMIŞTIM. SENİN KALBİNE DE ŞAŞIRMADIM.'),"
+  ]
+ },
+ {
+  "tr": "DENKLEMİ ÇÖZDÜN DÜNYALI: EVE GİDEN YOLUN DEĞİŞKENİ DOSTLUKMUŞ. ZİLA'DA ADINA BİR KİTAP YAZACAĞIM.",
+  "ctx": [
+   "04b_story.js:80  glorb: TX('DENKLEMİ ÇÖZDÜN DÜNYALI: EVE GİDEN YOLUN DEĞİŞKENİ DOSTLUKMUŞ. ZİLA\\'DA ADINA BİR KİTAP YAZACAĞIM.'),"
+  ]
+ },
+ {
+  "tr": "YEDİ YAVRUMA DOKUZ KOLUMLA SARILACAĞIM! BİR KOLUM DA SENİN İÇİN, DENİZ.",
+  "ctx": [
+   "04b_story.js:81  vuum: TX('YEDİ YAVRUMA DOKUZ KOLUMLA SARILACAĞIM! BİR KOLUM DA SENİN İÇİN, DENİZ.'),"
+  ]
+ },
+ {
+  "tr": "PİP PİP! BELKİ EVDE UÇMAYI DA ÖĞRENİRİM. ÖĞRENMESEM DE OLUR, KOŞMAYI SEN ÖĞRETTİN.",
+  "ctx": [
+   "04b_story.js:82  pip: TX('PİP PİP! BELKİ EVDE UÇMAYI DA ÖĞRENİRİM. ÖĞRENMESEM DE OLUR, KOŞMAYI SEN ÖĞRETTİN.'),"
+  ]
+ },
+ {
+  "tr": "KIZ KARDEŞİMİ TRİBÜNDE BULDUM, O DA GELİYOR! NOKS'UN KARANLIĞINDA SENİN IŞIĞIN YANACAK.",
+  "ctx": [
+   "04b_story.js:83  gece: TX('KIZ KARDEŞİMİ TRİBÜNDE BULDUM, O DA GELİYOR! NOKS\\'UN KARANLIĞINDA SENİN IŞIĞIN YANACAK.'),"
+  ]
+ },
+ {
+  "tr": "YENİ PROGRAM YÜKLENDİ: ARKADAŞLIK. HEDEF: ASTEROİT KUŞAĞI. NOT: BİP'E SELAM.",
+  "ctx": [
+   "04b_story.js:84  kiskac: TX('YENİ PROGRAM YÜKLENDİ: ARKADAŞLIK. HEDEF: ASTEROİT KUŞAĞI. NOT: BİP\\'E SELAM.'),"
+  ]
+ },
+ {
+  "tr": "HUMA'DA YAĞMUR YİNE YAĞIYOR OLMALI. BU SEFER SEVİNEREK ISLANACAĞIM.",
+  "ctx": [
+   "04b_story.js:85  mantis: TX('HUMA\\'DA YAĞMUR YİNE YAĞIYOR OLMALI. BU SEFER SEVİNEREK ISLANACAĞIM.'),"
+  ]
+ },
+ {
+  "tr": "KARDEŞLERİM BU KIŞ SENİN HEYKELİNİ YAPACAK. ATIN DA OLACAK, SÖZ.",
+  "ctx": [
+   "04b_story.js:86  buzdis: TX('KARDEŞLERİM BU KIŞ SENİN HEYKELİNİ YAPACAK. ATIN DA OLACAK, SÖZ.'),"
+  ]
+ },
+ {
+  "tr": "KANATLARIM YİNE RENKLENDİ. LUMEN'İN GÖĞÜNE BAKARSAN YEŞİL BİR IŞIK GÖRÜRSÜN: O BENİM.",
+  "ctx": [
+   "04b_story.js:87  aurora: TX('KANATLARIM YİNE RENKLENDİ. LUMEN\\'İN GÖĞÜNE BAKARSAN YEŞİL BİR IŞIK GÖRÜRSÜN: O BENİM.'),"
+  ]
+ },
+ {
+  "tr": "SICAK BİR YERDE UYANACAĞIM SONUNDA. ERİRSEM DE MUTLU ERİRİM!",
+  "ctx": [
+   "04b_story.js:88  kar: TX('SICAK BİR YERDE UYANACAĞIM SONUNDA. ERİRSEM DE MUTLU ERİRİM!'),"
+  ]
+ },
+ {
+  "tr": "KERVANLAR YİNE YOLA ÇIKACAK. ŞARKININ YENİ KITASI SENİNLE İLGİLİ DÜNYALI.",
+  "ctx": [
+   "04b_story.js:89  tozkiran: TX('KERVANLAR YİNE YOLA ÇIKACAK. ŞARKININ YENİ KITASI SENİNLE İLGİLİ DÜNYALI.'),"
+  ]
+ },
+ {
+  "tr": "BORCUM KAPANDI! MOKO'YA SÖYLE: KUZENİ SONUNDA EVDE, DÜKKANINI AÇIYOR.",
+  "ctx": [
+   "04b_story.js:90  zib: TX('BORCUM KAPANDI! MOKO\\'YA SÖYLE: KUZENİ SONUNDA EVDE, DÜKKANINI AÇIYOR.'),"
+  ]
+ },
+ {
+  "tr": "DEMEK GERÇEK BİR KAPI VARMIŞ. BEN DE GERÇEKMİŞİM. HOŞÇA KAL, DENİZ.",
+  "ctx": [
+   "04b_story.js:91  serap: TX('DEMEK GERÇEK BİR KAPI VARMIŞ. BEN DE GERÇEKMİŞİM. HOŞÇA KAL, DENİZ.'),"
+  ]
+ },
+ {
+  "tr": "PİRA'YA DÖNÜYORUM AMA ŞAMPİYON OLARAK DEĞİL. ARTIK KİMSENİN ÖNÜNDE KOŞMAK ZORUNDA DEĞİLİM.",
+  "ctx": [
+   "04b_story.js:92  alev: TX('PİRA\\'YA DÖNÜYORUM AMA ŞAMPİYON OLARAK DEĞİL. ARTIK KİMSENİN ÖNÜNDE KOŞMAK ZORUNDA DEĞİLİM.'),"
+  ]
+ },
+ {
+  "tr": "ADIMI HATIRLADIM: RÜZGAR. YİRMİ YIL ÖNCE AKYEL'E BORÇLANDIM. BORCUMU OĞLUNA ÖDEDİM.",
+  "ctx": [
+   "04b_story.js:93  golge: TX('ADIMI HATIRLADIM: RÜZGAR. YİRMİ YIL ÖNCE AKYEL\\'E BORÇLANDIM. BORCUMU OĞLUNA ÖDEDİM.'),"
+  ]
+ },
+ {
+  "tr": "YILDIZIMA DÖNÜYORUM. SÖNMÜŞ OLABİLİR AMA BEN HÂLÂ PARLIYORUM. SEN DE PARLA.",
+  "ctx": [
+   "04b_story.js:94  nova: TX('YILDIZIMA DÖNÜYORUM. SÖNMÜŞ OLABİLİR AMA BEN HÂLÂ PARLIYORUM. SEN DE PARLA.')"
+  ]
+ },
+ {
+  "tr": "BİR KUPA DAHA! KAPI YİNE AÇIK. SEYİR DEFTERİNDEN BİR RAKİP SEÇ, EVİNE GÖNDERELİM.",
+  "ctx": [
+   "04b_story.js:100  { id: 'cupAgain', prio: 90, cond: i => i.won && META.stats.wins > 1 && META.freeTokens > 0, lines: () => [['akyel', TX('BİR KUPA DAHA! KAPI YİNE AÇIK. SEYİR DEFTERİNDEN BİR RAKİP SEÇ, EVİNE GÖNDERELİM.')]] },"
+  ]
+ },
+ {
+  "tr": "KAPIDAN BİRİ DAHA GEÇTİ. İSTASYON SESSİZLEŞİYOR AMA GÜZEL BİR SESSİZLİK. BİP.",
+  "ctx": [
+   "04b_story.js:101  { id: 'cupFreed', prio: 89, cond: i => i.won && META.stats.wins > 1 && !(META.freeTokens > 0), lines: () => [['bip', TX('KAPIDAN BİRİ DAHA GEÇTİ. İSTASYON SESSİZLEŞİYOR AMA GÜZEL BİR SESSİZLİK. BİP.')]] },"
+  ]
+ },
+ {
+  "tr": "KRİSTALO KİBİRLENİNCE DURUR. O AN HAMLE YAP YA DA ALTIN NOTAYI VUR, KİBRİNİ KIR!",
+  "ctx": [
+   "04b_story.js:102  { id: 'bossLoss_pirlanta', prio: 70, cond: i => i.boss === 'pirlanta', lines: () => [['ayse', TX('KRİSTALO KİBİRLENİNCE DURUR. O AN HAMLE YAP YA DA ALTIN NOTAYI VUR, KİBRİNİ KIR!')]] },"
+  ]
+ },
+ {
+  "tr": "GORM ULUYUNCA SİS ÇÖKER VE KURTLAR YANDAN GELİR. KULAĞIN RİTİMDE OLSUN, GÖZÜN KENARLARDA.",
+  "ctx": [
+   "04b_story.js:103  { id: 'bossLoss_kurt', prio: 70, cond: i => i.boss === 'kurt', lines: () => [['ayse', TX('GORM ULUYUNCA SİS ÇÖKER VE KURTLAR YANDAN GELİR. KULAĞIN RİTİMDE OLSUN, GÖZÜN KENARLARDA.')]] },"
+  ]
+ },
+ {
+  "tr": "BİP. NİVA'NIN AYAZINDA ŞERİT DEĞİŞTİRMEK YAVAŞLAR. BUZU HAMLEYLE YA DA ALTIN NOTAYLA KIR.",
+  "ctx": [
+   "04b_story.js:104  { id: 'bossLoss_niva', prio: 70, cond: i => i.boss === 'niva', lines: () => [['bip', TX('BİP. NİVA\\'NIN AYAZINDA ŞERİT DEĞİŞTİRMEK YAVAŞLAR. BUZU HAMLEYLE YA DA ALTIN NOTAYLA KIR.')], ['tayfun', TX('SARKITLARIN DÜŞTÜĞÜ ŞERİT KIRMIZI YANAR. ORADAN UZAK DUR, YET"
+  ]
+ },
+ {
+  "tr": "SARKITLARIN DÜŞTÜĞÜ ŞERİT KIRMIZI YANAR. ORADAN UZAK DUR, YETER!",
+  "ctx": [
+   "04b_story.js:104  { id: 'bossLoss_niva', prio: 70, cond: i => i.boss === 'niva', lines: () => [['bip', TX('BİP. NİVA\\'NIN AYAZINDA ŞERİT DEĞİŞTİRMEK YAVAŞLAR. BUZU HAMLEYLE YA DA ALTIN NOTAYLA KIR.')], ['tayfun', TX('SARKITLARIN DÜŞTÜĞÜ ŞERİT KIRMIZI YANAR. ORADAN UZAK DUR, YET"
+  ]
+ },
+ {
+  "tr": "KUMDA TURUNCU HALKA GÖRDÜĞÜN AN O ŞERİTTEN ÇIK. SOLUCAN ORADAN FIRLAR.",
+  "ctx": [
+   "04b_story.js:105  { id: 'bossLoss_zarg', prio: 70, cond: i => i.boss === 'zarg', lines: () => [['kemal', TX('KUMDA TURUNCU HALKA GÖRDÜĞÜN AN O ŞERİTTEN ÇIK. SOLUCAN ORADAN FIRLAR.')]] },"
+  ]
+ },
+ {
+  "tr": "VOLTRAK YİNE HİLE YAPTI, DEĞİL Mİ? KIVILCIMLARIN DÜŞECEĞİ ŞERİT ÖNCE KIZARIR. BEKLEME, KAÇ.",
+  "ctx": [
+   "04b_story.js:106  { id: 'bossLoss_simsek', prio: 70, cond: i => i.boss === 'simsek', lines: () => [[META.stats.wins ? 'akyel' : 'kemal', TX('VOLTRAK YİNE HİLE YAPTI, DEĞİL Mİ? KIVILCIMLARIN DÜŞECEĞİ ŞERİT ÖNCE KIZARIR. BEKLEME, KAÇ.')]] },"
+  ]
+ },
+ {
+  "tr": " SENİ DÜELLODA GEÇTİ. ARKASINA SAKLAN, SİPERİN DOLSUN, SON DÜZLÜKTE YANA ÇIK.",
+  "ctx": [
+   "04b_story.js:107  { id: 'duelLoss', prio: 60, cond: i => !!i.duelLost, lines: i => [['kemal', i.duelLost + TX(' SENİ DÜELLODA GEÇTİ. ARKASINA SAKLAN, SİPERİN DOLSUN, SON DÜZLÜKTE YANA ÇIK.')]] },"
+  ]
+ },
+ {
+  "tr": " ARTIK RÖVANŞÇIN! KIRMIZI TAÇLA GELECEK. ONU GEÇERSEN KESEN DOLAR!",
+  "ctx": [
+   "04b_story.js:108  { id: 'nemesisNew', prio: 58, once: true, cond: i => !!i.nemesis, lines: i => [['tayfun', i.nemesis + TX(' ARTIK RÖVANŞÇIN! KIRMIZI TAÇLA GELECEK. ONU GEÇERSEN KESEN DOLAR!')]] },"
+  ]
+ },
+ {
+  "tr": "RÖVANŞI ALDIN HA! GRAX'IN SURATINI GÖRMELİYDİN, MİKROFONU DÜŞÜRDÜ!",
+  "ctx": [
+   "04b_story.js:109  { id: 'revenge', prio: 55, cond: i => i.revenge, lines: () => [['tayfun', TX('RÖVANŞI ALDIN HA! GRAX\\'IN SURATINI GÖRMELİYDİN, MİKROFONU DÜŞÜRDÜ!')]] },"
+  ]
+ },
+ {
+  "tr": "LİG LİDERİ DÜNYALI! BAHİS MASAMDA ORANLARIN DÜŞTÜ, BUNU İYİ ANLAMDA SÖYLÜYORUM.",
+  "ctx": [
+   "04b_story.js:110  { id: 'leagueTop', prio: 50, cond: i => i.league === 1 && !i.won, lines: () => [['moko', TX('LİG LİDERİ DÜNYALI! BAHİS MASAMDA ORANLARIN DÜŞTÜ, BUNU İYİ ANLAMDA SÖYLÜYORUM.')]] },"
+  ]
+ },
+ {
+  "tr": " ETAPTA S NOTU! TOYNAKLARIN MÜZİĞİN İÇİNDEYDİ BUGÜN.",
+  "ctx": [
+   "04b_story.js:111  { id: 'sGrades', prio: 45, cond: i => i.sGrades >= 3, lines: i => [['ayse', i.sGrades + TX(' ETAPTA S NOTU! TOYNAKLARIN MÜZİĞİN İÇİNDEYDİ BUGÜN.')]] },"
+  ]
+ },
+ {
+  "tr": "KARA DELİK SENİ YAKALADI. KOMBO HIZDIR: RİTMİ BOZMA, HAMLEYİ SON ANA SAKLA.",
+  "ctx": [
+   "04b_story.js:112  { id: 'chaseLoss', prio: 40, cond: i => i.type === 'kovala', lines: () => [['bip', TX('KARA DELİK SENİ YAKALADI. KOMBO HIZDIR: RİTMİ BOZMA, HAMLEYİ SON ANA SAKLA.')]] },"
+  ]
+ },
+ {
+  "tr": "KORSANLAR FAZLA MI GELDİ? RİTİMLE VUR, SİLAH KENDİ NİŞAN ALIR. KAPTANI ÖZEL ATIŞLA DÜŞÜR!",
+  "ctx": [
+   "04b_story.js:113  { id: 'raidLoss', prio: 40, cond: i => i.type === 'baskin', lines: () => [['tayfun', TX('KORSANLAR FAZLA MI GELDİ? RİTİMLE VUR, SİLAH KENDİ NİŞAN ALIR. KAPTANI ÖZEL ATIŞLA DÜŞÜR!')]] },"
+  ]
+ },
+ {
+  "tr": "SPRİNTTE GERİDE KALINCA NEFESİN DAHA HIZLI DOLAR. O NEFESİ HAMLEYE ÇEVİR!",
+  "ctx": [
+   "04b_story.js:114  { id: 'sprintLoss', prio: 35, cond: i => i.type === 'sprint', lines: () => [['ayse', TX('SPRİNTTE GERİDE KALINCA NEFESİN DAHA HIZLI DOLAR. O NEFESİ HAMLEYE ÇEVİR!')]] },"
+  ]
+ },
+ {
+  "tr": "PARKURDA ACELE ETME. ENGEL SENE YAKLAŞINCA SIÇRA, ERKEN DEĞİL. TEMİZ ATLAYIŞ HIZ VERİR.",
+  "ctx": [
+   "04b_story.js:115  { id: 'parkurLoss', prio: 35, cond: i => i.type === 'parkur', lines: () => [['kemal', TX('PARKURDA ACELE ETME. ENGEL SENE YAKLAŞINCA SIÇRA, ERKEN DEĞİL. TEMİZ ATLAYIŞ HIZ VERİR.')]] },"
+  ]
+ },
+ {
+  "tr": "KOŞUYU BIRAKMAK DA BİR SEÇİM. YILDIZ DİNLENDİ, SEN DE DİNLEN. BİP.",
+  "ctx": [
+   "04b_story.js:116  { id: 'quit', prio: 30, cond: i => i.quit, lines: () => [['bip', TX('KOŞUYU BIRAKMAK DA BİR SEÇİM. YILDIZ DİNLENDİ, SEN DE DİNLEN. BİP.')]] },"
+  ]
+ },
+ {
+  "tr": "HERKES BURADAN BAŞLADI DENİZ. NOTA ORTADA BULUŞUNCA DOKUN, GERİSİ GELİR.",
+  "ctx": [
+   "04b_story.js:117  { id: 'early', prio: 20, cond: i => !i.won && i.region === 0 && i.etap <= 1, lines: () => [['ayse', TX('HERKES BURADAN BAŞLADI DENİZ. NOTA ORTADA BULUŞUNCA DOKUN, GERİSİ GELİR.')]] },"
+  ]
+ },
+ {
+  "tr": "BU SEFER ",
+  "ctx": [
+   "04b_story.js:118  { id: 'farther', prio: 15, cond: i => !i.won && i.region >= 2, lines: i => [['moko', TX('BU SEFER ') + REGIONS[Math.min(LAST_REGION, i.region)].name + TX(' GEZEGENİNE KADAR GİTTİN! TEZGAHIMDA SENİN ADINA BİR SÜS ASTIM.')]] }"
+  ]
+ },
+ {
+  "tr": " GEZEGENİNE KADAR GİTTİN! TEZGAHIMDA SENİN ADINA BİR SÜS ASTIM.",
+  "ctx": [
+   "04b_story.js:118  { id: 'farther', prio: 15, cond: i => !i.won && i.region >= 2, lines: i => [['moko', TX('BU SEFER ') + REGIONS[Math.min(LAST_REGION, i.region)].name + TX(' GEZEGENİNE KADAR GİTTİN! TEZGAHIMDA SENİN ADINA BİR SÜS ASTIM.')]] }"
+  ]
+ },
+ {
+  "tr": "RÜZGAR PERİSİ",
+  "ctx": [
+   "04b_story.js:139  zefir: { race: TX('RÜZGAR PERİSİ'), home: TX('FIRTINA DEVİ'), trick: TX('ÖNDE KAÇAR, MAYIN BIRAKIR'),"
+  ]
+ },
+ {
+  "tr": "RÜZGARI YAKALAYAMAZSIN!",
+  "ctx": [
+   "04b_story.js:140  taunt: TX('RÜZGARI YAKALAYAMAZSIN!'),"
+  ]
+ },
+ {
+  "tr": "RÜZGARI YAKALADIN. BUNU KİMSEYE SÖYLEME, UTANIRIM.",
+  "ctx": [
+   "04b_story.js:141  lose: [TX('RÜZGARI YAKALADIN. BUNU KİMSEYE SÖYLEME, UTANIRIM.'), TX('BORA USTA ESKİDEN BİZE MASAL ANLATIRDI. SONRA BİR GECE SUSTU.')],"
+  ]
+ },
+ {
+  "tr": "BORA USTA ESKİDEN BİZE MASAL ANLATIRDI. SONRA BİR GECE SUSTU.",
+  "ctx": [
+   "04b_story.js:141  lose: [TX('RÜZGARI YAKALADIN. BUNU KİMSEYE SÖYLEME, UTANIRIM.'), TX('BORA USTA ESKİDEN BİZE MASAL ANLATIRDI. SONRA BİR GECE SUSTU.')],"
+  ]
+ },
+ {
+  "tr": "ZEFİR, BULUTLARIN ARASINDA DOĞAN BİR RÜZGAR PERİSİ. BORA'NIN SÜRÜSÜNE ÇOBANLIK EDERDİ. GRAX BALİNALARI ALINCA ONU DA ALDI. HEP ÖNDE KOŞAR, ÇÜNKÜ DURURSA DAĞILACAĞINDAN KORKAR.",
+  "ctx": [
+   "04b_story.js:142  text: TX('ZEFİR, BULUTLARIN ARASINDA DOĞAN BİR RÜZGAR PERİSİ. BORA\\'NIN SÜRÜSÜNE ÇOBANLIK EDERDİ. GRAX BALİNALARI ALINCA ONU DA ALDI. HEP ÖNDE KOŞAR, ÇÜNKÜ DURURSA DAĞILACAĞINDAN KORKAR.') },"
+  ]
+ },
+ {
+  "tr": "GÖK GÜRÜLTÜSÜ KOÇU",
+  "ctx": [
+   "04b_story.js:143  gumbur: { race: TX('GÖK GÜRÜLTÜSÜ KOÇU'), home: TX('FIRTINA DEVİ'), trick: TX('YANAŞIR, \"!\" SONRA OMUZ ATAR'),"
+  ]
+ },
+ {
+  "tr": "GÜM! YOLDAN ÇEKİL!",
+  "ctx": [
+   "04b_story.js:144  taunt: TX('GÜM! YOLDAN ÇEKİL!'),"
+  ]
+ },
+ {
+  "tr": "GÜM... BU SEFER SESİM ÇIKMADI.",
+  "ctx": [
+   "04b_story.js:145  lose: [TX('GÜM... BU SEFER SESİM ÇIKMADI.'), TX('BULUTLARDA KARDEŞLERİM VAR. HER BİRİ BİR FIRTINA. ONLARA SENİ ANLATACAĞIM.')],"
+  ]
+ },
+ {
+  "tr": "BULUTLARDA KARDEŞLERİM VAR. HER BİRİ BİR FIRTINA. ONLARA SENİ ANLATACAĞIM.",
+  "ctx": [
+   "04b_story.js:145  lose: [TX('GÜM... BU SEFER SESİM ÇIKMADI.'), TX('BULUTLARDA KARDEŞLERİM VAR. HER BİRİ BİR FIRTINA. ONLARA SENİ ANLATACAĞIM.')],"
+  ]
+ },
+ {
+  "tr": "GÜMBÜR, FIRTINA DEVİ'NİN GÖK GÜRÜLTÜSÜ KOÇLARINDAN. BOYNUZLARINI ÇARPTIRINCA ŞİMŞEK ÇAKAR. GRAX ONU \"SEYİRCİ GÜRÜLTÜ SEVER\" DİYE SEÇTİ. ASLINDA ÇOK UTANGAÇ; SADECE YARIŞTA BAĞIRIYOR.",
+  "ctx": [
+   "04b_story.js:146  text: TX('GÜMBÜR, FIRTINA DEVİ\\'NİN GÖK GÜRÜLTÜSÜ KOÇLARINDAN. BOYNUZLARINI ÇARPTIRINCA ŞİMŞEK ÇAKAR. GRAX ONU \"SEYİRCİ GÜRÜLTÜ SEVER\" DİYE SEÇTİ. ASLINDA ÇOK UTANGAÇ; SADECE YARIŞTA BAĞIRIYOR.') },"
+  ]
+ },
+ {
+  "tr": "YAĞMUR RUHU",
+  "ctx": [
+   "04b_story.js:147  damla: { race: TX('YAĞMUR RUHU'), home: TX('FIRTINA DEVİ'), trick: TX('SONDAN GELİR, SONDA ATAKLAR'),"
+  ]
+ },
+ {
+  "tr": "BEN SABIRLIYIM. SONUNDA HERKES ISLANIR.",
+  "ctx": [
+   "04b_story.js:148  taunt: TX('BEN SABIRLIYIM. SONUNDA HERKES ISLANIR.'),"
+  ]
+ },
+ {
+  "tr": "SABRIM TÜKENDİ, DÜNYALI. İLK KEZ.",
+  "ctx": [
+   "04b_story.js:149  lose: [TX('SABRIM TÜKENDİ, DÜNYALI. İLK KEZ.'), TX('BULUTA DÖNMEK İSTİYORUM. ORADA KİMSE BENİ YARIŞTIRMAZ.')],"
+  ]
+ },
+ {
+  "tr": "BULUTA DÖNMEK İSTİYORUM. ORADA KİMSE BENİ YARIŞTIRMAZ.",
+  "ctx": [
+   "04b_story.js:149  lose: [TX('SABRIM TÜKENDİ, DÜNYALI. İLK KEZ.'), TX('BULUTA DÖNMEK İSTİYORUM. ORADA KİMSE BENİ YARIŞTIRMAZ.')],"
+  ]
+ },
+ {
+  "tr": "DAMLA, BİR BULUTUN İÇİNDE YÜZ YIL BEKLEYİP SONUNDA DÜŞEN BİR YAĞMUR RUHU. GRAX ONU YERE DEĞMEDEN YAKALADI. YARIŞIN SONUNA KADAR BEKLER, SONRA SAĞANAK GİBİ İNER.",
+  "ctx": [
+   "04b_story.js:150  text: TX('DAMLA, BİR BULUTUN İÇİNDE YÜZ YIL BEKLEYİP SONUNDA DÜŞEN BİR YAĞMUR RUHU. GRAX ONU YERE DEĞMEDEN YAKALADI. YARIŞIN SONUNA KADAR BEKLER, SONRA SAĞANAK GİBİ İNER.') },"
+  ]
+ },
+ {
+  "tr": "KIVILCIM CİNİ",
+  "ctx": [
+   "04b_story.js:151  kivilcim: { race: TX('KIVILCIM CİNİ'), home: TX('KOR AY'), trick: STYLE_TRICK.zikzak,"
+  ]
+ },
+ {
+  "tr": "TUTUŞTURURUM SENİ!",
+  "ctx": [
+   "04b_story.js:152  taunt: TX('TUTUŞTURURUM SENİ!'),"
+  ]
+ },
+ {
+  "tr": "SÖNDÜM... AMA SADECE BİRAZ.",
+  "ctx": [
+   "04b_story.js:153  lose: [TX('SÖNDÜM... AMA SADECE BİRAZ.'), TX('KORHAN USTANIN OCAĞINDA DOĞDUM. GRAX ONU ZİNCİRLEDİĞİNDEN BERİ HER YER SOĞUK.')],"
+  ]
+ },
+ {
+  "tr": "KORHAN USTANIN OCAĞINDA DOĞDUM. GRAX ONU ZİNCİRLEDİĞİNDEN BERİ HER YER SOĞUK.",
+  "ctx": [
+   "04b_story.js:153  lose: [TX('SÖNDÜM... AMA SADECE BİRAZ.'), TX('KORHAN USTANIN OCAĞINDA DOĞDUM. GRAX ONU ZİNCİRLEDİĞİNDEN BERİ HER YER SOĞUK.')],"
+  ]
+ },
+ {
+  "tr": "KIVILCIM, KORHAN'IN ÖRSÜNDEN SIÇRAYIP CANLANAN BİR KIVILCIM CİNİ. YERİNDE DURAMAZ, ŞERİTTEN ŞERİDE SEKER. GRAX'IN KIVILCIMLI NALLARINDAN NEFRET EDER: \"ONLAR BENİM KARDEŞLERİM DEĞİL, ZİNCİRLİ ESİRLER.\"",
+  "ctx": [
+   "04b_story.js:154  text: TX('KIVILCIM, KORHAN\\'IN ÖRSÜNDEN SIÇRAYIP CANLANAN BİR KIVILCIM CİNİ. YERİNDE DURAMAZ, ŞERİTTEN ŞERİDE SEKER. GRAX\\'IN KIVILCIMLI NALLARINDAN NEFRET EDER: \"ONLAR BENİM KARDEŞLERİM DEĞİL, ZİNCİRLİ ESİRLER.\"') },"
+  ]
+ },
+ {
+  "tr": "CÜRUF GOLEMİ",
+  "ctx": [
+   "04b_story.js:155  curuf: { race: TX('CÜRUF GOLEMİ'), home: TX('KOR AY'), trick: TX('YANAŞIR, \"!\" SONRA OMUZ ATAR'),"
+  ]
+ },
+ {
+  "tr": "EZİLMEK İSTEMİYORSAN KENARA!",
+  "ctx": [
+   "04b_story.js:156  taunt: TX('EZİLMEK İSTEMİYORSAN KENARA!'),"
+  ]
+ },
+ {
+  "tr": "AĞIR OLDUĞUM İÇİN YAVAŞ DEĞİLİM. AMA SEN HIZLISIN.",
+  "ctx": [
+   "04b_story.js:157  lose: [TX('AĞIR OLDUĞUM İÇİN YAVAŞ DEĞİLİM. AMA SEN HIZLISIN.'), TX('USTAM KORHAN BENİ ARTAKALAN DEMİRDEN YAPTI. ATILAN ŞEYLERDEN DE GÜZEL ŞEYLER ÇIKAR, DERDİ.')],"
+  ]
+ },
+ {
+  "tr": "USTAM KORHAN BENİ ARTAKALAN DEMİRDEN YAPTI. ATILAN ŞEYLERDEN DE GÜZEL ŞEYLER ÇIKAR, DERDİ.",
+  "ctx": [
+   "04b_story.js:157  lose: [TX('AĞIR OLDUĞUM İÇİN YAVAŞ DEĞİLİM. AMA SEN HIZLISIN.'), TX('USTAM KORHAN BENİ ARTAKALAN DEMİRDEN YAPTI. ATILAN ŞEYLERDEN DE GÜZEL ŞEYLER ÇIKAR, DERDİ.')],"
+  ]
+ },
+ {
+  "tr": "CÜRUF, KORHAN'IN OCAĞINDA ARTAKALAN DEMİRDEN DÖVÜLMÜŞ BİR GOLEM. USTASINI ÇOK SEVER. GRAX ONU ÖRSÜN BAŞINDAN KOPARDI; KORHAN İTAAT ETSİN DİYE REHİN TUTUYOR.",
+  "ctx": [
+   "04b_story.js:158  text: TX('CÜRUF, KORHAN\\'IN OCAĞINDA ARTAKALAN DEMİRDEN DÖVÜLMÜŞ BİR GOLEM. USTASINI ÇOK SEVER. GRAX ONU ÖRSÜN BAŞINDAN KOPARDI; KORHAN İTAAT ETSİN DİYE REHİN TUTUYOR.') },"
+  ]
+ },
+ {
+  "tr": "OBSİDYEN NİŞANCI",
+  "ctx": [
+   "04b_story.js:159  oniks: { race: TX('OBSİDYEN NİŞANCI'), home: TX('KOR AY'), trick: STYLE_TRICK.atici,"
+  ]
+ },
+ {
+  "tr": "TEK ATIŞ. TEK ŞANS.",
+  "ctx": [
+   "04b_story.js:160  taunt: TX('TEK ATIŞ. TEK ŞANS.'),"
+  ]
+ },
+ {
+  "tr": "NİŞANIM ŞAŞTI. YA DA SEN ÇOK HIZLIYDIN.",
+  "ctx": [
+   "04b_story.js:161  lose: [TX('NİŞANIM ŞAŞTI. YA DA SEN ÇOK HIZLIYDIN.'), TX('KARA CAMDAN DOĞDUM. İÇİMDE YANSIMALAR VAR: SENİNKİ EVİNE BAKIYOR.')],"
+  ]
+ },
+ {
+  "tr": "KARA CAMDAN DOĞDUM. İÇİMDE YANSIMALAR VAR: SENİNKİ EVİNE BAKIYOR.",
+  "ctx": [
+   "04b_story.js:161  lose: [TX('NİŞANIM ŞAŞTI. YA DA SEN ÇOK HIZLIYDIN.'), TX('KARA CAMDAN DOĞDUM. İÇİMDE YANSIMALAR VAR: SENİNKİ EVİNE BAKIYOR.')],"
+  ]
+ },
+ {
+  "tr": "ONİKS, KOR AY'IN KARA CAM VADİLERİNDE AVLANAN SESSİZ BİR NİŞANCI. ATEŞİN İÇİNDE BİLE ÜŞÜR. GRAX ONA PLAZMA VERDİ; O İSE HER ATIŞTAN ÖNCE KORHAN İÇİN DUA EDİYOR.",
+  "ctx": [
+   "04b_story.js:162  text: TX('ONİKS, KOR AY\\'IN KARA CAM VADİLERİNDE AVLANAN SESSİZ BİR NİŞANCI. ATEŞİN İÇİNDE BİLE ÜŞÜR. GRAX ONA PLAZMA VERDİ; O İSE HER ATIŞTAN ÖNCE KORHAN İÇİN DUA EDİYOR.') }"
+  ]
+ },
+ {
+  "tr": "BİP! KAYITLARIMI ONARDIM: SEYİR DEFTERİNDE YOLCULUĞUN BAŞINI ÇİZİMLERLE İZLEYEBİLİRSİN.",
+  "ctx": [
+   "04b_story.js:165  { id: 'v6news', cond: () => !!META.flags.v6news, lines: [['bip', TX('BİP! KAYITLARIMI ONARDIM: SEYİR DEFTERİNDE YOLCULUĞUN BAŞINI ÇİZİMLERLE İZLEYEBİLİRSİN.')], ['kemal', TX('BİR DE HARİTAYA BAK DENİZ. KIZIL KUM\\'DAN SONRA İKİ GEZEGEN DAHA VAR: FIRTINA DEVİ VE"
+  ]
+ },
+ {
+  "tr": "BİR DE HARİTAYA BAK DENİZ. KIZIL KUM'DAN SONRA İKİ GEZEGEN DAHA VAR: FIRTINA DEVİ VE KOR AY.",
+  "ctx": [
+   "04b_story.js:165  { id: 'v6news', cond: () => !!META.flags.v6news, lines: [['bip', TX('BİP! KAYITLARIMI ONARDIM: SEYİR DEFTERİNDE YOLCULUĞUN BAŞINI ÇİZİMLERLE İZLEYEBİLİRSİN.')], ['kemal', TX('BİR DE HARİTAYA BAK DENİZ. KIZIL KUM\\'DAN SONRA İKİ GEZEGEN DAHA VAR: FIRTINA DEVİ VE"
+  ]
+ },
+ {
+  "tr": "FIRTINA DEVİ... BORA'YI TANIRIM. ANNENLE AYNI FİNALDE KOŞTU. ONA SORACAKLARIN VAR, DENİZ.",
+  "ctx": [
+   "04b_story.js:166  { id: 'regionBulut', cond: () => META.stats.bestRegion >= regionIdx('bulut'), lines: [['kemal', TX('FIRTINA DEVİ... BORA\\'YI TANIRIM. ANNENLE AYNI FİNALDE KOŞTU. ONA SORACAKLARIN VAR, DENİZ.')], ['bip', TX('BULUT PİSTİNDE YILDIRIMLAR ŞERİTLERE DÜŞER. KIRMIZI Ş"
+  ]
+ },
+ {
+  "tr": "BULUT PİSTİNDE YILDIRIMLAR ŞERİTLERE DÜŞER. KIRMIZI ŞERİDİ GÖRÜNCE KAÇ. BİP.",
+  "ctx": [
+   "04b_story.js:166  { id: 'regionBulut', cond: () => META.stats.bestRegion >= regionIdx('bulut'), lines: [['kemal', TX('FIRTINA DEVİ... BORA\\'YI TANIRIM. ANNENLE AYNI FİNALDE KOŞTU. ONA SORACAKLARIN VAR, DENİZ.')], ['bip', TX('BULUT PİSTİNDE YILDIRIMLAR ŞERİTLERE DÜŞER. KIRMIZI Ş"
+  ]
+ },
+ {
+  "tr": "BORA NE DEDİ? KIVILCIM MI? DEMEK O GECE FIRTINA DEĞİLDİ...",
+  "ctx": [
+   "04b_story.js:167  { id: 'winBora', cond: () => !!META.stats.bossWins.bora, lines: [['ayse', TX('BORA NE DEDİ? KIVILCIM MI? DEMEK O GECE FIRTINA DEĞİLDİ...')], ['grax', TX('ESKİ HİKAYELER, DÜNYALI! SEYİRCİ YENİ SKANDAL İSTER. KOR AY\\'DA SENİ YAKACAĞIZ!')]] },"
+  ]
+ },
+ {
+  "tr": "ESKİ HİKAYELER, DÜNYALI! SEYİRCİ YENİ SKANDAL İSTER. KOR AY'DA SENİ YAKACAĞIZ!",
+  "ctx": [
+   "04b_story.js:167  { id: 'winBora', cond: () => !!META.stats.bossWins.bora, lines: [['ayse', TX('BORA NE DEDİ? KIVILCIM MI? DEMEK O GECE FIRTINA DEĞİLDİ...')], ['grax', TX('ESKİ HİKAYELER, DÜNYALI! SEYİRCİ YENİ SKANDAL İSTER. KOR AY\\'DA SENİ YAKACAĞIZ!')]] },"
+  ]
+ },
+ {
+  "tr": "KOR AY! LAV DALGASI GELİNCE SIÇRA, YOKSA TOYNAKLAR YANAR!",
+  "ctx": [
+   "04b_story.js:168  { id: 'regionKor', cond: () => META.stats.bestRegion >= regionIdx('kor'), lines: [['tayfun', TX('KOR AY! LAV DALGASI GELİNCE SIÇRA, YOKSA TOYNAKLAR YANAR!')], ['moko', TX('DEMİRCİ KORHAN... GRAX ONU ZİNCİRLEDİ DİYORLAR. ZİNCİRLİ BİRİ EN TEHLİKELİSİDİR, DÜNYALI"
+  ]
+ },
+ {
+  "tr": "DEMİRCİ KORHAN... GRAX ONU ZİNCİRLEDİ DİYORLAR. ZİNCİRLİ BİRİ EN TEHLİKELİSİDİR, DÜNYALI.",
+  "ctx": [
+   "04b_story.js:168  { id: 'regionKor', cond: () => META.stats.bestRegion >= regionIdx('kor'), lines: [['tayfun', TX('KOR AY! LAV DALGASI GELİNCE SIÇRA, YOKSA TOYNAKLAR YANAR!')], ['moko', TX('DEMİRCİ KORHAN... GRAX ONU ZİNCİRLEDİ DİYORLAR. ZİNCİRLİ BİRİ EN TEHLİKELİSİDİR, DÜNYALI"
+  ]
+ },
+ {
+  "tr": "BU KALIP... VOLTRAK'IN NALLARI! GRAX'IN MÜHRÜ ÜSTÜNDE!",
+  "ctx": [
+   "04b_story.js:169  { id: 'winKorhan', cond: () => !!META.stats.bossWins.korhan, lines: [['kemal', TX('BU KALIP... VOLTRAK\\'IN NALLARI! GRAX\\'IN MÜHRÜ ÜSTÜNDE!')], ['bip', TX('BİP. KANIT KAYDEDİLDİ. ARENA\\'DA HERKES GÖRECEK.')], ['ayse', TX('ŞİMDİ GİT VE KAZAN DENİZ. ANNEN İÇİN.'"
+  ]
+ },
+ {
+  "tr": "BİP. KANIT KAYDEDİLDİ. ARENA'DA HERKES GÖRECEK.",
+  "ctx": [
+   "04b_story.js:169  { id: 'winKorhan', cond: () => !!META.stats.bossWins.korhan, lines: [['kemal', TX('BU KALIP... VOLTRAK\\'IN NALLARI! GRAX\\'IN MÜHRÜ ÜSTÜNDE!')], ['bip', TX('BİP. KANIT KAYDEDİLDİ. ARENA\\'DA HERKES GÖRECEK.')], ['ayse', TX('ŞİMDİ GİT VE KAZAN DENİZ. ANNEN İÇİN.'"
+  ]
+ },
+ {
+  "tr": "ŞİMDİ GİT VE KAZAN DENİZ. ANNEN İÇİN.",
+  "ctx": [
+   "04b_story.js:169  { id: 'winKorhan', cond: () => !!META.stats.bossWins.korhan, lines: [['kemal', TX('BU KALIP... VOLTRAK\\'IN NALLARI! GRAX\\'IN MÜHRÜ ÜSTÜNDE!')], ['bip', TX('BİP. KANIT KAYDEDİLDİ. ARENA\\'DA HERKES GÖRECEK.')], ['ayse', TX('ŞİMDİ GİT VE KAZAN DENİZ. ANNEN İÇİN.'"
+  ]
+ },
+ {
+  "tr": "GÖREV TAMAM: ",
+  "ctx": [
+   "05_meta.js:179  for (const m of done) toast(TX('GÖREV TAMAM: ') + missionText(m), C.green, 'check');"
+  ]
+ },
+ {
+  "tr": "ÜS PUANI ",
+  "ctx": [
+   "05_meta.js:195  toast(TX('ÜS PUANI ') + farmLevel() + '! +' + n + TX(' SEVİYE PUANI'), C.yellow, 'house'); saveMeta();"
+  ]
+ },
+ {
+  "tr": " SEVİYE PUANI",
+  "ctx": [
+   "05_meta.js:195  toast(TX('ÜS PUANI ') + farmLevel() + '! +' + n + TX(' SEVİYE PUANI'), C.yellow, 'house'); saveMeta();"
+  ]
+ },
+ {
+  "tr": "GÜNLÜK ERZAĞINI AL",
+  "ctx": [
+   "05_meta.js:201  if (META.daily.pending) return { text: TX('GÜNLÜK ERZAĞINI AL'), target: 'pano', icon: 'clover' };"
+  ]
+ },
+ {
+  "tr": "GÖREV ÖDÜLÜNÜ AL",
+  "ctx": [
+   "05_meta.js:202  if (META.missions.some(m => m.done)) return { text: TX('GÖREV ÖDÜLÜNÜ AL'), target: 'pano', icon: 'check' };"
+  ]
+ },
+ {
+  "tr": "AHIRDA ",
+  "ctx": [
+   "05_meta.js:203  if (META.points > 0) return { text: TX('AHIRDA ') + META.points + TX(' PUAN BEKLİYOR'), target: 'ahir', icon: 'star' };"
+  ]
+ },
+ {
+  "tr": " PUAN BEKLİYOR",
+  "ctx": [
+   "05_meta.js:203  if (META.points > 0) return { text: TX('AHIRDA ') + META.points + TX(' PUAN BEKLİYOR'), target: 'ahir', icon: 'star' };"
+  ]
+ },
+ {
+  "tr": "SEYİR DEFTERİNDE YENİ SAYFA",
+  "ctx": [
+   "05_meta.js:204  if (unreadMemories() > 0) return { text: TX('SEYİR DEFTERİNDE YENİ SAYFA'), target: 'ev', icon: 'book' };"
+  ]
+ },
+ {
+  "tr": "SERADA HASAT VAR",
+  "ctx": [
+   "05_meta.js:205  if (built('bahce') && META.crops.slice(0, plotCount()).some(c => c > 0 && c % 10 === 3)) return { text: TX('SERADA HASAT VAR'), target: 'bahce', icon: 'clover' };"
+  ]
+ },
+ {
+  "tr": "DOSTLARINA ŞEKER HEDİYE ET",
+  "ctx": [
+   "05_meta.js:206  if (META.seker > 0 && Object.keys(NPC_NAMES).some(k => npcAvailable(k) && META.bond[k] < 3)) return { text: TX('DOSTLARINA ŞEKER HEDİYE ET'), target: 'npc', icon: 'seker' };"
+  ]
+ },
+ {
+  "tr": "KAPI AÇIK: BİR RAKİBİ EVE GÖNDER",
+  "ctx": [
+   "05_meta.js:207  if (META.freeTokens > 0 && freeCandidates().length) return { text: TX('KAPI AÇIK: BİR RAKİBİ EVE GÖNDER'), target: 'ev', icon: 'book', tab: 'rakip' };"
+  ]
+ },
+ {
+  "tr": "RÖVANŞ: ",
+  "ctx": [
+   "05_meta.js:208  if (META.nemesis && RIVAL_BY_ID[META.nemesis.id]) return { text: TX('RÖVANŞ: ') + RIVAL_BY_ID[META.nemesis.id].name, target: 'gate', icon: 'crown' };"
+  ]
+ },
+ {
+  "tr": " ONAR",
+  "ctx": [
+   "05_meta.js:214  return { text: b.name + TX(' ONAR'), target: k, cur: META.yonca, need: b.up[0], icon: 'hammer' };"
+  ]
+ },
+ {
+  "tr": "PRENS KRİSTALO'YU YEN",
+  "ctx": [
+   "05_meta.js:216  if (!META.stats.bossWins.pirlanta) return { text: TX('PRENS KRİSTALO\\'YU YEN'), target: 'gate', icon: 'crown' };"
+  ]
+ },
+ {
+  "tr": "JOKEY KOĞUŞUNU ONAR",
+  "ctx": [
+   "05_meta.js:217  if (!built('jokey')) return { text: TX('JOKEY KOĞUŞUNU ONAR'), target: 'jokey', cur: META.yonca, need: BUILDINGS.jokey.up[0], icon: 'hammer' };"
+  ]
+ },
+ {
+  "tr": " SEVİYE ",
+  "ctx": [
+   "05_meta.js:220  if (lv >= 1 && lv < b.max && !(lv === 3 && META.rozet < LV4_ROZET)) return { text: b.name + TX(' SEVİYE ') + (lv + 1), target: k, cur: META.yonca, need: b.up[lv], icon: 'hammer' };",
+   "07_farm.js:442  toast(lv === 0 ? b.name + TX(' ONARILDI!') : b.name + TX(' SEVİYE ') + (lv + 1) + '!', C.green, 'hammer');"
+  ]
+ },
+ {
+  "tr": "ULUYAN GORM'U YEN",
+  "ctx": [
+   "05_meta.js:222  if (!META.stats.bossWins.kurt) return { text: TX('ULUYAN GORM\\'U YEN'), target: 'gate', icon: 'crown' };"
+  ]
+ },
+ {
+  "tr": "BUZ KRALİÇESİ NİVA'YI YEN",
+  "ctx": [
+   "05_meta.js:223  if (!META.stats.bossWins.niva) return { text: TX('BUZ KRALİÇESİ NİVA\\'YI YEN'), target: 'gate', icon: 'crown' };"
+  ]
+ },
+ {
+  "tr": "GALAKSİ KUPASINI KAZAN",
+  "ctx": [
+   "05_meta.js:225  if (!META.stats.wins) return { text: TX('GALAKSİ KUPASINI KAZAN'), target: 'gate', icon: 'crown' };"
+  ]
+ },
+ {
+  "tr": "ZOR PİSTTE KUPAYI KAZAN",
+  "ctx": [
+   "05_meta.js:226  return { text: TX('ZOR PİSTTE KUPAYI KAZAN'), target: 'gate', icon: 'crown' };"
+  ]
+ },
+ {
+  "tr": "RİTİM AYARI",
+  "ctx": [
+   "05b_calib.js:40  panel(px, py, w, h, TX('RİTİM AYARI'));"
+  ]
+ },
+ {
+  "tr": "YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.",
+  "ctx": [
+   "05b_calib.js:44  textBlock(c.result ? (c.result.fail ? TX('YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.') : TX('ÖLÇÜM TAMAM!')) : TX('SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.'), px + w / 2, y, w - 20, C.lgray, 'center');"
+  ]
+ },
+ {
+  "tr": "ÖLÇÜM TAMAM!",
+  "ctx": [
+   "05b_calib.js:44  textBlock(c.result ? (c.result.fail ? TX('YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.') : TX('ÖLÇÜM TAMAM!')) : TX('SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.'), px + w / 2, y, w - 20, C.lgray, 'center');"
+  ]
+ },
+ {
+  "tr": "SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.",
+  "ctx": [
+   "05b_calib.js:44  textBlock(c.result ? (c.result.fail ? TX('YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.') : TX('ÖLÇÜM TAMAM!')) : TX('SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.'), px + w / 2, y, w - 20, C.lgray, 'center');"
+  ]
+ },
+ {
+  "tr": "SESİ BİRAZ GEÇ DUYUYORSUN",
+  "ctx": [
+   "05b_calib.js:55  text(r.ms > 10 ? TX('SESİ BİRAZ GEÇ DUYUYORSUN') : r.ms < -10 ? TX('SESİN ÖNÜNE GEÇİYORSUN') : TX('ZAMANLAMAN TAM'), cx, y + 22, C.lgray, 'center');"
+  ]
+ },
+ {
+  "tr": "SESİN ÖNÜNE GEÇİYORSUN",
+  "ctx": [
+   "05b_calib.js:55  text(r.ms > 10 ? TX('SESİ BİRAZ GEÇ DUYUYORSUN') : r.ms < -10 ? TX('SESİN ÖNÜNE GEÇİYORSUN') : TX('ZAMANLAMAN TAM'), cx, y + 22, C.lgray, 'center');"
+  ]
+ },
+ {
+  "tr": "ZAMANLAMAN TAM",
+  "ctx": [
+   "05b_calib.js:55  text(r.ms > 10 ? TX('SESİ BİRAZ GEÇ DUYUYORSUN') : r.ms < -10 ? TX('SESİN ÖNÜNE GEÇİYORSUN') : TX('ZAMANLAMAN TAM'), cx, y + 22, C.lgray, 'center');"
+  ]
+ },
+ {
+  "tr": "SAPMA: ",
+  "ctx": [
+   "05b_calib.js:56  text(TX('SAPMA: ') + r.spread + ' MS' + (r.spread > 90 ? TX(' (TEKRAR DENE)') : ''), cx, y + 32, r.spread > 90 ? C.salmon : C.gray, 'center');"
+  ]
+ },
+ {
+  "tr": " (TEKRAR DENE)",
+  "ctx": [
+   "05b_calib.js:56  text(TX('SAPMA: ') + r.spread + ' MS' + (r.spread > 90 ? TX(' (TEKRAR DENE)') : ''), cx, y + 32, r.spread > 90 ? C.salmon : C.gray, 'center');"
+  ]
+ },
+ {
+  "tr": "ERKEN",
+  "ctx": [
+   "05b_calib.js:61  text(TX('ERKEN'), lx, ly + 3, C.gray); text(TX('GEÇ'), lx + lw, ly + 3, C.gray, 'right');",
+   "06_run.js:503  else { this.pending = 'miss'; if (bd < 0.4) this.missHint = this.lastDelta > 0 ? TX('ERKEN') : TX('GEÇ'); }"
+  ]
+ },
+ {
+  "tr": "GEÇ",
+  "ctx": [
+   "05b_calib.js:61  text(TX('ERKEN'), lx, ly + 3, C.gray); text(TX('GEÇ'), lx + lw, ly + 3, C.gray, 'right');",
+   "06_run.js:503  else { this.pending = 'miss'; if (bd < 0.4) this.missHint = this.lastDelta > 0 ? TX('ERKEN') : TX('GEÇ'); }"
+  ]
+ },
+ {
+  "tr": "TEKRAR",
+  "ctx": [
+   "05b_calib.js:65  button('cal_again', px + 8, py + h - 22, bw, 15, TX('TEKRAR'), () => this.start(), { kind: 'secondary' });"
+  ]
+ },
+ {
+  "tr": "KAYDET",
+  "ctx": [
+   "05b_calib.js:66  if (!c.result.fail) button('cal_ok', px + 18 + bw, py + h - 22, bw, 15, TX('KAYDET'), () => { META.settings.offset = c.result.ms; saveMeta(); toast(TX('RİTİM GECİKMESİ: ') + c.result.ms + ' MS', C.green, 'check'); close(); }, { kind: 'green' });"
+  ]
+ },
+ {
+  "tr": "RİTİM GECİKMESİ: ",
+  "ctx": [
+   "05b_calib.js:66  if (!c.result.fail) button('cal_ok', px + 18 + bw, py + h - 22, bw, 15, TX('KAYDET'), () => { META.settings.offset = c.result.ms; saveMeta(); toast(TX('RİTİM GECİKMESİ: ') + c.result.ms + ' MS', C.green, 'check'); close(); }, { kind: 'green' });"
+  ]
+ },
+ {
+  "tr": "GÖKTAŞI!",
+  "ctx": [
+   "06_run.js:12  const HURT_LABELS = { rock: TX('GÖKTAŞI!'), fici: TX('VARİL!'), scan: TX('LAZER: ŞERİDİ DEĞİŞTİR'), arrow: TX('PLAZMA!'), bolt: TX('YILDIRIM!'), foe: TX('DÜŞMAN!'), reis: TX('KAPTAN!'),"
+  ]
+ },
+ {
+  "tr": "VARİL!",
+  "ctx": [
+   "06_run.js:12  const HURT_LABELS = { rock: TX('GÖKTAŞI!'), fici: TX('VARİL!'), scan: TX('LAZER: ŞERİDİ DEĞİŞTİR'), arrow: TX('PLAZMA!'), bolt: TX('YILDIRIM!'), foe: TX('DÜŞMAN!'), reis: TX('KAPTAN!'),",
+   "06_run.js:13  storm: TX('KARA DELİK!'), boss: TX('FARK KAPANDI!'), hurdle: TX('BARİYER: SIÇRA!'), log: TX('BORU: SIÇRA!'), bale: TX('VARİL!'), wolf: TX('AV KÖPEĞİ!'), civi: TX('MAYIN: SIÇRA!'), toz: TX('ŞOK DALGASI: SIÇRA!'),"
+  ]
+ },
+ {
+  "tr": "LAZER: ŞERİDİ DEĞİŞTİR",
+  "ctx": [
+   "06_run.js:12  const HURT_LABELS = { rock: TX('GÖKTAŞI!'), fici: TX('VARİL!'), scan: TX('LAZER: ŞERİDİ DEĞİŞTİR'), arrow: TX('PLAZMA!'), bolt: TX('YILDIRIM!'), foe: TX('DÜŞMAN!'), reis: TX('KAPTAN!'),"
+  ]
+ },
+ {
+  "tr": "PLAZMA!",
+  "ctx": [
+   "06_run.js:12  const HURT_LABELS = { rock: TX('GÖKTAŞI!'), fici: TX('VARİL!'), scan: TX('LAZER: ŞERİDİ DEĞİŞTİR'), arrow: TX('PLAZMA!'), bolt: TX('YILDIRIM!'), foe: TX('DÜŞMAN!'), reis: TX('KAPTAN!'),"
+  ]
+ },
+ {
+  "tr": "YILDIRIM!",
+  "ctx": [
+   "06_run.js:12  const HURT_LABELS = { rock: TX('GÖKTAŞI!'), fici: TX('VARİL!'), scan: TX('LAZER: ŞERİDİ DEĞİŞTİR'), arrow: TX('PLAZMA!'), bolt: TX('YILDIRIM!'), foe: TX('DÜŞMAN!'), reis: TX('KAPTAN!'),"
+  ]
+ },
+ {
+  "tr": "DÜŞMAN!",
+  "ctx": [
+   "06_run.js:12  const HURT_LABELS = { rock: TX('GÖKTAŞI!'), fici: TX('VARİL!'), scan: TX('LAZER: ŞERİDİ DEĞİŞTİR'), arrow: TX('PLAZMA!'), bolt: TX('YILDIRIM!'), foe: TX('DÜŞMAN!'), reis: TX('KAPTAN!'),"
+  ]
+ },
+ {
+  "tr": "KAPTAN!",
+  "ctx": [
+   "06_run.js:12  const HURT_LABELS = { rock: TX('GÖKTAŞI!'), fici: TX('VARİL!'), scan: TX('LAZER: ŞERİDİ DEĞİŞTİR'), arrow: TX('PLAZMA!'), bolt: TX('YILDIRIM!'), foe: TX('DÜŞMAN!'), reis: TX('KAPTAN!'),"
+  ]
+ },
+ {
+  "tr": "KARA DELİK!",
+  "ctx": [
+   "06_run.js:13  storm: TX('KARA DELİK!'), boss: TX('FARK KAPANDI!'), hurdle: TX('BARİYER: SIÇRA!'), log: TX('BORU: SIÇRA!'), bale: TX('VARİL!'), wolf: TX('AV KÖPEĞİ!'), civi: TX('MAYIN: SIÇRA!'), toz: TX('ŞOK DALGASI: SIÇRA!'),"
+  ]
+ },
+ {
+  "tr": "FARK KAPANDI!",
+  "ctx": [
+   "06_run.js:13  storm: TX('KARA DELİK!'), boss: TX('FARK KAPANDI!'), hurdle: TX('BARİYER: SIÇRA!'), log: TX('BORU: SIÇRA!'), bale: TX('VARİL!'), wolf: TX('AV KÖPEĞİ!'), civi: TX('MAYIN: SIÇRA!'), toz: TX('ŞOK DALGASI: SIÇRA!'),"
+  ]
+ },
+ {
+  "tr": "BARİYER: SIÇRA!",
+  "ctx": [
+   "06_run.js:13  storm: TX('KARA DELİK!'), boss: TX('FARK KAPANDI!'), hurdle: TX('BARİYER: SIÇRA!'), log: TX('BORU: SIÇRA!'), bale: TX('VARİL!'), wolf: TX('AV KÖPEĞİ!'), civi: TX('MAYIN: SIÇRA!'), toz: TX('ŞOK DALGASI: SIÇRA!'),"
+  ]
+ },
+ {
+  "tr": "BORU: SIÇRA!",
+  "ctx": [
+   "06_run.js:13  storm: TX('KARA DELİK!'), boss: TX('FARK KAPANDI!'), hurdle: TX('BARİYER: SIÇRA!'), log: TX('BORU: SIÇRA!'), bale: TX('VARİL!'), wolf: TX('AV KÖPEĞİ!'), civi: TX('MAYIN: SIÇRA!'), toz: TX('ŞOK DALGASI: SIÇRA!'),"
+  ]
+ },
+ {
+  "tr": "AV KÖPEĞİ!",
+  "ctx": [
+   "06_run.js:13  storm: TX('KARA DELİK!'), boss: TX('FARK KAPANDI!'), hurdle: TX('BARİYER: SIÇRA!'), log: TX('BORU: SIÇRA!'), bale: TX('VARİL!'), wolf: TX('AV KÖPEĞİ!'), civi: TX('MAYIN: SIÇRA!'), toz: TX('ŞOK DALGASI: SIÇRA!'),"
+  ]
+ },
+ {
+  "tr": "MAYIN: SIÇRA!",
+  "ctx": [
+   "06_run.js:13  storm: TX('KARA DELİK!'), boss: TX('FARK KAPANDI!'), hurdle: TX('BARİYER: SIÇRA!'), log: TX('BORU: SIÇRA!'), bale: TX('VARİL!'), wolf: TX('AV KÖPEĞİ!'), civi: TX('MAYIN: SIÇRA!'), toz: TX('ŞOK DALGASI: SIÇRA!'),"
+  ]
+ },
+ {
+  "tr": "ŞOK DALGASI: SIÇRA!",
+  "ctx": [
+   "06_run.js:13  storm: TX('KARA DELİK!'), boss: TX('FARK KAPANDI!'), hurdle: TX('BARİYER: SIÇRA!'), log: TX('BORU: SIÇRA!'), bale: TX('VARİL!'), wolf: TX('AV KÖPEĞİ!'), civi: TX('MAYIN: SIÇRA!'), toz: TX('ŞOK DALGASI: SIÇRA!'),",
+   "06c_run_foes.js:318  case 'stomp': this.addObs('toz', 0, 5, wy - 20); floatText(TX('ŞOK DALGASI: SIÇRA!'), W / 2, this.pY - 70, C.tan, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;"
+  ]
+ },
+ {
+  "tr": "BUZ SARKITI!",
+  "ctx": [
+   "06_run.js:14  ice: TX('BUZ SARKITI!'), kum: TX('KUM SOLUCANI!'), icerock: TX('BUZ DUVARI!'), ember: TX('KOR YAĞMURU!'), lavarock: TX('LAV TAŞI!') };"
+  ]
+ },
+ {
+  "tr": "KUM SOLUCANI!",
+  "ctx": [
+   "06_run.js:14  ice: TX('BUZ SARKITI!'), kum: TX('KUM SOLUCANI!'), icerock: TX('BUZ DUVARI!'), ember: TX('KOR YAĞMURU!'), lavarock: TX('LAV TAŞI!') };"
+  ]
+ },
+ {
+  "tr": "BUZ DUVARI!",
+  "ctx": [
+   "06_run.js:14  ice: TX('BUZ SARKITI!'), kum: TX('KUM SOLUCANI!'), icerock: TX('BUZ DUVARI!'), ember: TX('KOR YAĞMURU!'), lavarock: TX('LAV TAŞI!') };",
+   "06c_run_foes.js:353  floatText(TX('BUZ DUVARI!'), B.x, B.screenY - 24, C.cyan, 1, -10, 1); Sound.play('boom'); break;"
+  ]
+ },
+ {
+  "tr": "KOR YAĞMURU!",
+  "ctx": [
+   "06_run.js:14  ice: TX('BUZ SARKITI!'), kum: TX('KUM SOLUCANI!'), icerock: TX('BUZ DUVARI!'), ember: TX('KOR YAĞMURU!'), lavarock: TX('LAV TAŞI!') };"
+  ]
+ },
+ {
+  "tr": "LAV TAŞI!",
+  "ctx": [
+   "06_run.js:14  ice: TX('BUZ SARKITI!'), kum: TX('KUM SOLUCANI!'), icerock: TX('BUZ DUVARI!'), ember: TX('KOR YAĞMURU!'), lavarock: TX('LAV TAŞI!') };"
+  ]
+ },
+ {
+  "tr": "GÖZCÜ UÇAR, SIÇRAMAK İŞE YARAMAZ. VUR YA DA KAÇ!",
+  "ctx": [
+   "06_run.js:16  karga: TX('GÖZCÜ UÇAR, SIÇRAMAK İŞE YARAMAZ. VUR YA DA KAÇ!'),"
+  ]
+ },
+ {
+  "tr": "TOSBİK ÜSTÜNE KOŞAR. ÜSTÜNDEN SIÇRA YA DA VUR!",
+  "ctx": [
+   "06_run.js:17  domuz: TX('TOSBİK ÜSTÜNE KOŞAR. ÜSTÜNDEN SIÇRA YA DA VUR!'),"
+  ]
+ },
+ {
+  "tr": "KORSAN ÖNÜNE DİKEN MAYIN ATAR. VUR VE KESESİNİ AL!",
+  "ctx": [
+   "06_run.js:18  eskiya: TX('KORSAN ÖNÜNE DİKEN MAYIN ATAR. VUR VE KESESİNİ AL!'),"
+  ]
+ },
+ {
+  "tr": "NİŞANCI BİR VURUŞ NİŞAN ALIR, SONRAKİ VURUŞTA ATEŞ EDER. KIRMIZI ÇİZGİDEN ÇIK!",
+  "ctx": [
+   "06_run.js:19  okcu: TX('NİŞANCI BİR VURUŞ NİŞAN ALIR, SONRAKİ VURUŞTA ATEŞ EDER. KIRMIZI ÇİZGİDEN ÇIK!'),"
+  ]
+ },
+ {
+  "tr": "KALKAN ROBOTU IŞINLARI SEKTİRİR. ALTIN NOTA, PLAZMA YA DA DELİCİ IŞINLA KIR!",
+  "ctx": [
+   "06_run.js:20  kalkanli: TX('KALKAN ROBOTU IŞINLARI SEKTİRİR. ALTIN NOTA, PLAZMA YA DA DELİCİ IŞINLA KIR!'),"
+  ]
+ },
+ {
+  "tr": "KORSAN KAPTANI GELDİ! YENERSEN 3 DÜŞMAN SAYILIR, KESESİ DOLUDUR.",
+  "ctx": [
+   "06_run.js:21  reis: TX('KORSAN KAPTANI GELDİ! YENERSEN 3 DÜŞMAN SAYILIR, KESESİ DOLUDUR.')"
+  ]
+ },
+ {
+  "tr": " SİKKE",
+  "ctx": [
+   "06_run.js:110  if (rew.kind === 'coins') return Math.round(rew.n * m) + TX(' SİKKE');",
+   "06_run.js:128  if (rew.kind === 'coins') { const n = Math.round(rew.n * mult); RUN.coins += n; RUN.coinsEarned += n; missionEvent('coins', RUN.coinsEarned); toast('+' + n + TX(' SİKKE'), C.gold, 'coin0'); Sound.play('buy'); }"
+  ]
+ },
+ {
+  "tr": " KRİSTAL",
+  "ctx": [
+   "06_run.js:111  if (rew.kind === 'yonca') return Math.round(rew.n * m) + TX(' KRİSTAL');",
+   "06_run.js:129  else if (rew.kind === 'yonca') { const n = Math.round(rew.n * mult); RUN.yonca += n; missionEvent('yonca', n); toast('+' + n + TX(' KRİSTAL'), C.cyan, 'clover'); Sound.play('clover'); }"
+  ]
+ },
+ {
+  "tr": " CAN",
+  "ctx": [
+   "06_run.js:112  if (rew.kind === 'heal') return '+' + rew.n * (elite ? 2 : 1) + TX(' CAN');",
+   "06_run.js:130  else if (rew.kind === 'heal') { const S = computeStats(RUN), n = rew.n * (elite ? 2 : 1); RUN.hp = Math.min(S.maxHp, RUN.hp + n); toast('+' + n + TX(' CAN'), C.red, 'heart'); Sound.play('heart'); }"
+  ]
+ },
+ {
+  "tr": " ŞEKER",
+  "ctx": [
+   "06_run.js:113  if (rew.kind === 'seker') return (elite ? 2 : 1) + TX(' ŞEKER');",
+   "06_run.js:131  else if (rew.kind === 'seker') { const n = elite ? 2 : 1; RUN.seker += n; toast('+' + n + TX(' ŞEKER'), C.white, 'seker'); Sound.play('gift'); }"
+  ]
+ },
+ {
+  "tr": "ÇEKİÇ",
+  "ctx": [
+   "06_run.js:114  if (rew.kind === 'cekic') return TX('ÇEKİÇ');",
+   "07_scenes.js:249  text(TX('ÇEKİÇ'), x + w - 8, yy, C.lgray, 'right');"
+  ]
+ },
+ {
+  "tr": "ROZET",
+  "ctx": [
+   "06_run.js:115  if (rew.kind === 'boss') return TX('ROZET');"
+  ]
+ },
+ {
+  "tr": "← SOLA VİRAJ",
+  "ctx": [
+   "06_run.js:326  this.showBanner(b.dir < 0 ? TX('← SOLA VİRAJ') : TX('SAĞA VİRAJ →'), C.yellow);"
+  ]
+ },
+ {
+  "tr": "SAĞA VİRAJ →",
+  "ctx": [
+   "06_run.js:326  this.showBanner(b.dir < 0 ? TX('← SOLA VİRAJ') : TX('SAĞA VİRAJ →'), C.yellow);"
+  ]
+ },
+ {
+  "tr": "RİTMİK ADIM",
+  "ctx": [
+   "06_run.js:520  if (this.time - (this.stepLabelT || -9) > 1.4) { this.stepLabelT = this.time; floatText(TX('RİTMİK ADIM'), P.x, this.pY + 24, C.cyan, 1, 8, 0.5); }"
+  ]
+ },
+ {
+  "tr": "NOTA ANINDA KAYDIRMAK DA VURUŞ SAYILIR: RİTMİK ADIM HIZ VERİR",
+  "ctx": [
+   "06_run.js:521  if (!META.tipsSeen.adim) { META.tipsSeen.adim = true; toast(TX('NOTA ANINDA KAYDIRMAK DA VURUŞ SAYILIR: RİTMİK ADIM HIZ VERİR'), C.cyan, 'run'); }"
+  ]
+ },
+ {
+  "tr": "SİPER ÇIKIŞI!",
+  "ctx": [
+   "06_run.js:559  floatText(TX('SİPER ÇIKIŞI!'), P.x, this.pY - 28, C.cyan, 1, -16, 1); this.rate(6);"
+  ]
+ },
+ {
+  "tr": "SÜPER!",
+  "ctx": [
+   "06_run.js:563  if (this.tut && this.tut.step === 1 && this.timeScale < 1) this.tutNext(TX('SÜPER!'));"
+  ]
+ },
+ {
+  "tr": "SON ANDA!",
+  "ctx": [
+   "06_run.js:581  for (const o of this.obs) if (o.grace && !o.hit && !o.jumped && this.time - o.grace < JUMP_GRACE) { o.jumped = true; this.nearMiss(); floatText(TX('SON ANDA!'), P.x, this.pY - 36, C.green, 1, -12, 0.7); }"
+  ]
+ },
+ {
+  "tr": "UÇUYORSUN!",
+  "ctx": [
+   "06_run.js:583  if (this.tut && this.tut.step === 2 && this.timeScale < 1) this.tutNext(TX('UÇUYORSUN!'));"
+  ]
+ },
+ {
+  "tr": "NEFES YETMİYOR",
+  "ctx": [
+   "06_run.js:610  if (this.nefes < cost) { floatText(TX('NEFES YETMİYOR'), P.x, this.pY - 22, C.gray, 1, -10, 0.6); Sound.play('deny'); return; }"
+  ]
+ },
+ {
+  "tr": "+KALKAN",
+  "ctx": [
+   "06_run.js:616  if (S.hamleShield && !this.hamleShieldUsed) { this.hamleShieldUsed = true; P.shield++; floatText(TX('+KALKAN'), P.x, this.pY - 30, C.gold, 1, -12, 0.8); }"
+  ]
+ },
+ {
+  "tr": "HAMLE! NEFES HIZA DÖNÜŞTÜ",
+  "ctx": [
+   "06_run.js:619  if (this.tut && this.tut.step === 5) { this.tutRivals(); this.tut.msg = TX('HAMLE! NEFES HIZA DÖNÜŞTÜ'); this.tut.msgT = 1.6; Sound.play('select'); }"
+  ]
+ },
+ {
+  "tr": "SAKİN NEFES!",
+  "ctx": [
+   "06_run.js:625  if (RUN.jockey === 'ayse') { P.abilityT = 4; Sound.play('power'); flash(C.yellow, 0.25); floatText(TX('SAKİN NEFES!'), W / 2, this.pY - 50, C.yellow, 2, -10, 1.2); this.gainNefes(40); }"
+  ]
+ },
+ {
+  "tr": "USTA ATAĞI!",
+  "ctx": [
+   "06_run.js:630  Sound.play('dash'); flash(C.white, 0.3); floatText(TX('USTA ATAĞI!'), W / 2, this.pY - 50, C.white, 2, -10, 1.2);"
+  ]
+ },
+ {
+  "tr": "KÜKREME!",
+  "ctx": [
+   "06_run.js:639  Sound.play('roar'); shake(4, 0.4); flash(C.orange, 0.25); floatText(TX('KÜKREME!'), W / 2, this.pY - 50, C.orange, 2, -10, 1.2);"
+  ]
+ },
+ {
+  "tr": "TULPAR KANADI!",
+  "ctx": [
+   "06_run.js:643  if (S.abFly) { P.flyT = S.abFly; tag(TX('TULPAR KANADI!'), C.cyan); }"
+  ]
+ },
+ {
+  "tr": "KÖROĞLU NARASI!",
+  "ctx": [
+   "06_run.js:648  P.shield += S.abShield; tag(TX('KÖROĞLU NARASI!'), C.red); Sound.play('roar');"
+  ]
+ },
+ {
+  "tr": "GÖLGE SÜRÜSÜ!",
+  "ctx": [
+   "06_run.js:650  if (S.abGhosts) { P.ghostsT = S.abGhosts; tag(TX('GÖLGE SÜRÜSÜ!'), C.magenta); }"
+  ]
+ },
+ {
+  "tr": "TAKIMYILDIZ!",
+  "ctx": [
+   "06_run.js:655  tag(TX('TAKIMYILDIZ!'), C.yellow); Sound.play('medal');"
+  ]
+ },
+ {
+  "tr": "FIRTINA ATAĞI!",
+  "ctx": [
+   "06_run.js:657  if (S.abStorm) { P.stormT = S.abStorm; tag(TX('FIRTINA ATAĞI!'), C.green); Sound.play('whoosh'); }"
+  ]
+ },
+ {
+  "tr": "ISKA · ",
+  "ctx": [
+   "06_run.js:674  this.showJudge(this.missHint ? TX('ISKA · ') + this.missHint : TX('ISKA'), C.gray); Sound.play('miss'); this.tapMisses = (this.tapMisses || 0) + 1;"
+  ]
+ },
+ {
+  "tr": "ISKA",
+  "ctx": [
+   "06_run.js:674  this.showJudge(this.missHint ? TX('ISKA · ') + this.missHint : TX('ISKA'), C.gray); Sound.play('miss'); this.tapMisses = (this.tapMisses || 0) + 1;"
+  ]
+ },
+ {
+  "tr": "MÜKEMMEL",
+  "ctx": [
+   "06_run.js:692  this.showJudge(TX('MÜKEMMEL'), C.yellow);",
+   "07_farm.js:738  [TX('MÜKEMMEL'), st.perfects], [TX('VURULAN DÜŞMAN'), st.kills], [TX('KIL PAYI'), st.nearMiss], [TX('SİPER ÇIKIŞI'), st.drafts],"
+  ]
+ },
+ {
+  "tr": "İYİ · ERKEN",
+  "ctx": [
+   "06_run.js:694  } else { this.addBond(4); Sound.play('good'); this.showJudge(this.lastDelta > 0 ? TX('İYİ · ERKEN') : TX('İYİ · GEÇ'), C.white); this.shoeFlash = 0.5; }"
+  ]
+ },
+ {
+  "tr": "İYİ · GEÇ",
+  "ctx": [
+   "06_run.js:694  } else { this.addBond(4); Sound.play('good'); this.showJudge(this.lastDelta > 0 ? TX('İYİ · ERKEN') : TX('İYİ · GEÇ'), C.white); this.shoeFlash = 0.5; }"
+  ]
+ },
+ {
+  "tr": "ÇİFT!",
+  "ctx": [
+   "06_run.js:700  if (mate && mate.hit) { this.showJudge(TX('ÇİFT!'), C.magenta); this.addBond(3); if (S.doubleBonus) { this.fireWeapon('good'); this.gainNefes(4); } }"
+  ]
+ },
+ {
+  "tr": " KOMBO!",
+  "ctx": [
+   "06_run.js:707  if (this.combo % 30 !== 0 && (this.combo <= 20 || this.combo % 50 === 0)) floatText(this.combo + TX(' KOMBO!'), W / 2, this.pY - 44, C.gold, 2, -12, 1.1);"
+  ]
+ },
+ {
+  "tr": "NEFES!",
+  "ctx": [
+   "06_run.js:720  this.showJudge(TX('NEFES!'), C.cyan); Sound.play('heal');"
+  ]
+ },
+ {
+  "tr": "BIRAKTIN",
+  "ctx": [
+   "06_run.js:722  } else { this.showJudge(TX('BIRAKTIN'), C.gray); Sound.play('miss'); }"
+  ]
+ },
+ {
+  "tr": "GÜÇ!",
+  "ctx": [
+   "06_run.js:773  floatText(WEAPON_SPECIAL[w] || TX('GÜÇ!'), P.x, this.pY - 30, C.gold, 1, -16, 0.7);"
+  ]
+ },
+ {
+  "tr": "IŞIK YAĞMURU!",
+  "ctx": [
+   "06_run.js:780  floatText(TX('IŞIK YAĞMURU!'), W / 2, this.pY - 56, C.green, 1, -10, 0.9); Sound.play('whoosh');"
+  ]
+ },
+ {
+  "tr": "TINK",
+  "ctx": [
+   "06_run.js:813  floatText(TX('TINK'), f.x, this.sy(f.dist) - 14, C.lgray, 1, -14, 0.4);"
+  ]
+ },
+ {
+  "tr": "SERSEMLEDİ!",
+  "ctx": [
+   "06_run.js:829  floatText(TX('SERSEMLEDİ!'), r.x, this.sy(r.dist) - 28, C.yellow, 1, -8, 0.7); this.rate(3);"
+  ]
+ },
+ {
+  "tr": "KALKAN DÜŞTÜ!",
+  "ctx": [
+   "06_run.js:874  f.stun = 1.8; floatText(TX('KALKAN DÜŞTÜ!'), f.x, this.sy(f.dist) - 18, C.gold, 1, -12, 0.7);"
+  ]
+ },
+ {
+  "tr": "HEDEF TAMAM!",
+  "ctx": [
+   "06_run.js:892  if (this.type === 'baskin' && this.kills === this.goal) { floatText(TX('HEDEF TAMAM!'), W / 2, this.pY - 64, C.green, 1, -8, 1.3); Sound.play('combo'); }",
+   "06c_run_foes.js:195  if (this.type === 'baskin' && this.kills >= this.goal && this.kills - 3 < this.goal) { floatText(TX('HEDEF TAMAM!'), W / 2, this.pY - 54, C.green, 1, -8, 1.3); }"
+  ]
+ },
+ {
+  "tr": " ATAĞA KALKTI!",
+  "ctx": [
+   "06_run.js:926  this.banner = { txt: r.name + TX(' ATAĞA KALKTI!'), col: C.salmon }; this.bannerT = 1.6; Sound.play('roar');"
+  ]
+ },
+ {
+  "tr": "ÖNÜNÜ KESTİ!",
+  "ctx": [
+   "06_run.js:934  floatText(TX('ÖNÜNÜ KESTİ!'), r.x, this.sy(r.dist) - 28, C.salmon, 1, -8, 0.8);",
+   "06e_run_rivals.js:43  floatText(TX('ÖNÜNÜ KESTİ!'), r.x, this.sy(r.dist) - 28, C.salmon, 1, -8, 0.8); this.say('rivalTrick');"
+  ]
+ },
+ {
+  "tr": "KARŞILADIN!",
+  "ctx": [
+   "06_run.js:942  if (S.shoulder) { this.pushRival(r, r.lane - P.lane); floatText(TX('KARŞILADIN!'), P.x, this.pY - 18, C.green); }"
+  ]
+ },
+ {
+  "tr": "İTTİ!",
+  "ctx": [
+   "06_run.js:946  floatText(TX('İTTİ!'), P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(3, 0.16); haptic('medium');",
+   "06_run.js:1320  floatText(TX('İTTİ!'), P.x, this.pY - 18, C.salmon); Sound.play('bump'); shake(2, 0.12); haptic('light');"
+  ]
+ },
+ {
+  "tr": "BOŞA ÇIKTI!",
+  "ctx": [
+   "06_run.js:948  } else { r.stun = 0.8; floatText(TX('BOŞA ÇIKTI!'), r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.8); Sound.play('whoosh'); this.addBond(4); this.rate(6); }",
+   "06_run.js:1322  } else if (this.state === 'run') { floatText(TX('BOŞA ÇIKTI!'), r.x, this.sy(r.dist) - 28, C.green, 1, -8, 0.7); this.rate(4); }"
+  ]
+ },
+ {
+  "tr": "YARDIM!",
+  "ctx": [
+   "06_run.js:970  P.invuln = 0.5; floatText(TX('YARDIM!'), P.x, this.pY - 22, C.sky); Sound.play('bump'); shake(1, 0.1); return false;"
+  ]
+ },
+ {
+  "tr": "KALKAN!",
+  "ctx": [
+   "06_run.js:972  if (P.shield > 0) { P.shield--; P.invuln = 0.6; floatText(TX('KALKAN!'), P.x, this.pY - 22, C.gold); Sound.play('bump'); shake(2, 0.15); haptic('medium'); return false; }"
+  ]
+ },
+ {
+  "tr": "BİP'İN YEDEK PİLİ!",
+  "ctx": [
+   "06_run.js:987  floatText(TX('BİP\\'İN YEDEK PİLİ!'), W / 2, this.pY - 50, C.magenta, 1, -10, 1.4);"
+  ]
+ },
+ {
+  "tr": "İKİNCİ NEFES!",
+  "ctx": [
+   "06_run.js:991  floatText(TX('İKİNCİ NEFES!'), W / 2, this.pY - 50, C.cyan, 2, -10, 1.4);"
+  ]
+ },
+ {
+  "tr": "KIL PAYI! +",
+  "ctx": [
+   "06_run.js:1019  floatText(TX('KIL PAYI! +') + n, this.P.x, this.pY - 26, C.cyan, 1, -18, 0.85);"
+  ]
+ },
+ {
+  "tr": "TEMİZ!",
+  "ctx": [
+   "06_run.js:1031  floatText(TX('TEMİZ!'), P.x, this.pY - 26, C.green, 1, -14, 0.6); Sound.play('select'); this.rate(4);"
+  ]
+ },
+ {
+  "tr": "SIYIRDI",
+  "ctx": [
+   "06_run.js:1037  floatText(TX('SIYIRDI'), P.x, this.pY - 20, C.salmon, 1, -10, 0.5); Sound.play('bump');"
+  ]
+ },
+ {
+  "tr": "MUTLU YILDIZ! +",
+  "ctx": [
+   "06_run.js:1064  if (this.happy) { floatText(TX('MUTLU YILDIZ! +') + this.happy + TX(' KOMBO'), W / 2, this.pY - 52, C.salmon, 1, -10, 1.6); Sound.play('nicker'); }"
+  ]
+ },
+ {
+  "tr": " KOMBO",
+  "ctx": [
+   "06_run.js:1064  if (this.happy) { floatText(TX('MUTLU YILDIZ! +') + this.happy + TX(' KOMBO'), W / 2, this.pY - 52, C.salmon, 1, -10, 1.6); Sound.play('nicker'); }"
+  ]
+ },
+ {
+  "tr": "SİPER DOLU: YANA ÇIK!",
+  "ctx": [
+   "06_run.js:1114  if (P.draft >= 1 && !P.draftFull) { P.draftFull = true; floatText(TX('SİPER DOLU: YANA ÇIK!'), P.x, this.pY + 22, C.cyan, 1, 6, 1); Sound.play('select'); }"
+  ]
+ },
+ {
+  "tr": "GERİDESİN: NEFES VE SİPER DAHA HIZLI DOLAR. HAMLEYİ KULLAN!",
+  "ctx": [
+   "06_run.js:1141  if (this.chasing && !was && !META.tipsSeen.chase) { META.tipsSeen.chase = true; toast(TX('GERİDESİN: NEFES VE SİPER DAHA HIZLI DOLAR. HAMLEYİ KULLAN!'), C.cyan, 'run'); }"
+  ]
+ },
+ {
+  "tr": "SON DÜZLÜK!",
+  "ctx": [
+   "06_run.js:1155  floatText(TX('SON DÜZLÜK!'), W / 2, this.pY - 64, C.yellow, 2, -8, 1.3); Sound.play('cheer'); this.say('final', true);"
+  ]
+ },
+ {
+  "tr": "SON ATAK! +%",
+  "ctx": [
+   "06_run.js:1159  floatText(TX('SON ATAK! +%') + Math.round(this.kick * 100) + TX(' HIZ'), W / 2, this.pY - 42, C.cyan, 1, -8, 1.4);"
+  ]
+ },
+ {
+  "tr": "SONDAN GELİYORSUN!",
+  "ctx": [
+   "06_run.js:1162  if (RUN.runStyle === 'sondan') floatText(TX('SONDAN GELİYORSUN!'), W / 2, this.pY - 30, C.green, 1, -8, 1.3);"
+  ]
+ },
+ {
+  "tr": " DÜŞMAN DAHA!",
+  "ctx": [
+   "06_run.js:1163  if (this.type === 'baskin' && this.kills < this.goal) floatText((this.goal - this.kills) + TX(' DÜŞMAN DAHA!'), W / 2, this.pY - 18, C.salmon, 1, -8, 1.5);"
+  ]
+ },
+ {
+  "tr": "+1 KRİSTAL",
+  "ctx": [
+   "06_run.js:1253  floatText(TX('+1 KRİSTAL'), P.x, this.pY - 22, C.cyan); burst(P.x, this.pY - 6, 8, [C.cyan, C.white], 40, 0.5);"
+  ]
+ },
+ {
+  "tr": "+1 ŞEKER",
+  "ctx": [
+   "06_run.js:1257  RUN.seker++; Sound.play('gift'); haptic('success'); floatText(TX('+1 ŞEKER'), P.x, this.pY - 22, C.white); burst(P.x, this.pY - 6, 10, [C.white, C.lgray, C.yellow], 40, 0.5);",
+   "07_farm.js:713  else { META.seker += 1; toast(TX('+1 ŞEKER'), C.white, 'seker'); }"
+  ]
+ },
+ {
+  "tr": " BİTİRDİ!",
+  "ctx": [
+   "06_run.js:1337  if (r.duel && this.state === 'run') { this.banner = { txt: r.name + TX(' BİTİRDİ!'), col: C.red }; this.bannerT = 1.6; Sound.play('hey'); }"
+  ]
+ },
+ {
+  "tr": "ARKA RÜZGAR!",
+  "ctx": [
+   "06_run.js:1357  floatText(w.dir > 0 ? TX('ARKA RÜZGAR!') : TX('KARŞI RÜZGAR!'), W / 2, this.pY - 74, w.dir > 0 ? C.green : C.salmon, 1, -8, 1.1);"
+  ]
+ },
+ {
+  "tr": "KARŞI RÜZGAR!",
+  "ctx": [
+   "06_run.js:1357  floatText(w.dir > 0 ? TX('ARKA RÜZGAR!') : TX('KARŞI RÜZGAR!'), W / 2, this.pY - 74, w.dir > 0 ? C.green : C.salmon, 1, -8, 1.1);"
+  ]
+ },
+ {
+  "tr": "ALTIN MADALYA",
+  "ctx": [
+   "06b_run_draw.js:4  const MEDAL_NAMES = { g: TX('ALTIN MADALYA'), s: TX('GÜMÜŞ MADALYA'), b: TX('BRONZ MADALYA') };"
+  ]
+ },
+ {
+  "tr": "GÜMÜŞ MADALYA",
+  "ctx": [
+   "06b_run_draw.js:4  const MEDAL_NAMES = { g: TX('ALTIN MADALYA'), s: TX('GÜMÜŞ MADALYA'), b: TX('BRONZ MADALYA') };"
+  ]
+ },
+ {
+  "tr": "BRONZ MADALYA",
+  "ctx": [
+   "06b_run_draw.js:4  const MEDAL_NAMES = { g: TX('ALTIN MADALYA'), s: TX('GÜMÜŞ MADALYA'), b: TX('BRONZ MADALYA') };"
+  ]
+ },
+ {
+  "tr": "BİTİŞ",
+  "ctx": [
+   "06b_run_draw.js:164  if (ly > 0) { rect(tx - 6 + o, sy - 22, 2, 24, C.lgray); rect(tx + tw + 4 + o, sy - 22, 2, 24, C.lgray); rect(tx - 6 + o, sy - 24, tw + 12, 7, C.ink); rect(tx - 5 + o, sy - 23, tw + 10, 5, C.red); text(TX('BİTİŞ'), tx + tw / 2 + o, sy - 25, C.white, 'center');"
+  ]
+ },
+ {
+  "tr": "KİBİR!",
+  "ctx": [
+   "06b_run_draw.js:265  if (B.taunt > 0) { textO(TX('KİBİR!'), B.x + ox, y + oy - 34 + Math.round(Math.sin(T * 10)), C.magenta, 'center'); g.globalAlpha = 0.4 + 0.3 * Math.sin(T * 14); ring(B.x + ox, y + oy, 14, C.magenta); g.globalAlpha = 1; }"
+  ]
+ },
+ {
+  "tr": "İÇ!",
+  "ctx": [
+   "06b_run_draw.js:315  if (P.cornerM && P.cornerM !== 1 && this.state === 'run' && Math.floor(T * 4) % 2 === 0) textO(P.cornerM > 1 ? TX('İÇ!') : TX('DIŞ'), cx, this.pY + oy + 15, P.cornerM > 1 ? C.green : C.salmon, 'center');"
+  ]
+ },
+ {
+  "tr": "DIŞ",
+  "ctx": [
+   "06b_run_draw.js:315  if (P.cornerM && P.cornerM !== 1 && this.state === 'run' && Math.floor(T * 4) % 2 === 0) textO(P.cornerM > 1 ? TX('İÇ!') : TX('DIŞ'), cx, this.pY + oy + 15, P.cornerM > 1 ? C.green : C.salmon, 'center');"
+  ]
+ },
+ {
+  "tr": "KARA DELİK YAKLAŞIYOR!",
+  "ctx": [
+   "06b_run_draw.js:499  if (st.gap < 40 && Math.floor(T * 5) % 2 === 0) textO(TX('KARA DELİK YAKLAŞIYOR!'), W / 2, this.pY + 30, C.magenta, 'center');"
+  ]
+ },
+ {
+  "tr": "ISINMA TURU",
+  "ctx": [
+   "06b_run_draw.js:521  if (this.tut) return TX('ISINMA TURU');",
+   "06b_run_draw.js:742  const title = this.type === 'boss' ? this.boss.def.name : this.tut ? TX('ISINMA TURU') : ETAP_INFO[this.type].name;"
+  ]
+ },
+ {
+  "tr": "FARK",
+  "ctx": [
+   "06b_run_draw.js:559  textO(TX('FARK'), bx - 2, by - 2, C.lgray, 'right');"
+  ]
+ },
+ {
+  "tr": "YORGUN: X2",
+  "ctx": [
+   "06b_run_draw.js:561  if (B.tired > 0) textO(TX('YORGUN: X2'), bx + bw, by + 7, C.yellow, 'right');"
+  ]
+ },
+ {
+  "tr": "TAKİPTE: NEFES +%50",
+  "ctx": [
+   "06b_run_draw.js:575  if (this.chasing && Math.floor(T * 3) % 2 === 0) textO(TX('TAKİPTE: NEFES +%50'), cx, top + 34, C.cyan, 'center');"
+  ]
+ },
+ {
+  "tr": "KAZANDIN",
+  "ctx": [
+   "06b_run_draw.js:579  if (this.result && this.state !== 'run') textO(this.result.ok ? TX('KAZANDIN') : TX('KAYBETTİN'), cx, top + 20, this.result.ok ? C.green : C.red, 'center', 2);"
+  ]
+ },
+ {
+  "tr": "KAYBETTİN",
+  "ctx": [
+   "06b_run_draw.js:579  if (this.result && this.state !== 'run') textO(this.result.ok ? TX('KAZANDIN') : TX('KAYBETTİN'), cx, top + 20, this.result.ok ? C.green : C.red, 'center', 2);"
+  ]
+ },
+ {
+  "tr": "ÖNDESİN",
+  "ctx": [
+   "06b_run_draw.js:582  textO(lead ? TX('ÖNDESİN') : TX('GERİDESİN'), cx, top + 34, lead ? C.green : C.salmon, 'center');"
+  ]
+ },
+ {
+  "tr": "GERİDESİN",
+  "ctx": [
+   "06b_run_draw.js:582  textO(lead ? TX('ÖNDESİN') : TX('GERİDESİN'), cx, top + 34, lead ? C.green : C.salmon, 'center');"
+  ]
+ },
+ {
+  "tr": "KOMBO KIRILDI",
+  "ctx": [
+   "06b_run_draw.js:605  textO(TX('KOMBO KIRILDI'), rx, ry - 31, C.salmon, 'center'); g.globalAlpha = 1;"
+  ]
+ },
+ {
+  "tr": "KOMBO",
+  "ctx": [
+   "06b_run_draw.js:608  textO(TX('KOMBO'), rx, ry - 31, C.lgray, 'center');"
+  ]
+ },
+ {
+  "tr": "BAS!",
+  "ctx": [
+   "06b_run_draw.js:628  if (full) { g.globalAlpha = 0.5 + 0.5 * Math.sin(T * 8); ring(abx, aby, 15, C.yellow); g.globalAlpha = 1; textO(TX('BAS!'), abx, aby - 24, C.yellow, 'center'); }"
+  ]
+ },
+ {
+  "tr": "SIRA ",
+  "ctx": [
+   "06b_run_draw.js:689  if (this.type === 'sprint' && this.result && this.result.rank) stat.push(TX('SIRA ') + this.result.rank + '/' + (this.rivals.length + 1));"
+  ]
+ },
+ {
+  "tr": "DÜŞMAN ",
+  "ctx": [
+   "06b_run_draw.js:690  else if (this.type === 'baskin') stat.push(TX('DÜŞMAN ') + this.kills + '/' + this.goal);"
+  ]
+ },
+ {
+  "tr": "FARK +",
+  "ctx": [
+   "06b_run_draw.js:691  else if (this.type === 'duello' && this.duel) stat.push(TX('FARK +') + Math.max(0, Math.round((this.P.dist - Math.min(this.duel.r.dist, this.length)) / 10)));"
+  ]
+ },
+ {
+  "tr": "HASAR ",
+  "ctx": [
+   "06b_run_draw.js:692  stat.push(TX('HASAR ') + this.damaged);"
+  ]
+ },
+ {
+  "tr": "MÜKEMMEL ",
+  "ctx": [
+   "06b_run_draw.js:693  let line2 = TX('MÜKEMMEL ') + (this.etapPerfects || 0) + TX(' · EN İYİ KOMBO ') + (this.etapMax || 0);"
+  ]
+ },
+ {
+  "tr": " · EN İYİ KOMBO ",
+  "ctx": [
+   "06b_run_draw.js:693  let line2 = TX('MÜKEMMEL ') + (this.etapPerfects || 0) + TX(' · EN İYİ KOMBO ') + (this.etapMax || 0);"
+  ]
+ },
+ {
+  "tr": "← → ŞERİT · ↑ SIÇRA · ↓ HAMLE",
+  "ctx": [
+   "06b_run_draw.js:694  if (this.tut) { stat.length = 0; stat.push(TX('← → ŞERİT · ↑ SIÇRA · ↓ HAMLE')); line2 = TX('NOTADA DOKUN: HIZ, KOMBO VE ATEŞ'); }"
+  ]
+ },
+ {
+  "tr": "NOTADA DOKUN: HIZ, KOMBO VE ATEŞ",
+  "ctx": [
+   "06b_run_draw.js:694  if (this.tut) { stat.length = 0; stat.push(TX('← → ŞERİT · ↑ SIÇRA · ↓ HAMLE')); line2 = TX('NOTADA DOKUN: HIZ, KOMBO VE ATEŞ'); }"
+  ]
+ },
+ {
+  "tr": "RİTİM NOTU ",
+  "ctx": [
+   "06b_run_draw.js:709  const lb = TX('RİTİM NOTU ') + gr.letter + ' · %' + Math.round(gr.acc * 100) + (gr.coins ? ' · +' + gr.coins + TX(' SİKKE') : '');"
+  ]
+ },
+ {
+  "tr": "YILDIZ'I SEN SÜRÜYORSUN, DENİZ!",
+  "ctx": [
+   "06b_run_draw.js:717  if (tu.step === 0) msg = TX('YILDIZ\\'I SEN SÜRÜYORSUN, DENİZ!');"
+  ]
+ },
+ {
+  "tr": "← → KAYDIR: ŞERİT DEĞİŞTİR",
+  "ctx": [
+   "06b_run_draw.js:718  else if (tu.step === 1 && this.timeScale < 1) { msg = TX('← → KAYDIR: ŞERİT DEĞİŞTİR'); arrow = 'h'; }"
+  ]
+ },
+ {
+  "tr": "↑ YUKARI KAYDIR: SIÇRA",
+  "ctx": [
+   "06b_run_draw.js:719  else if (tu.step === 2 && this.timeScale < 1) { msg = TX('↑ YUKARI KAYDIR: SIÇRA'); arrow = 'v'; }"
+  ]
+ },
+ {
+  "tr": "İŞARETLER ORTADA BULUŞUNCA DOKUN! (",
+  "ctx": [
+   "06b_run_draw.js:720  else if (tu.step === 3) { msg = TX('İŞARETLER ORTADA BULUŞUNCA DOKUN! (') + Math.min(4, tu.hits) + '/4)'; arrow = 'r'; }"
+  ]
+ },
+ {
+  "tr": "RİTİMLE DOKUN, IŞIK YAYI ATEŞ ETSİN! (",
+  "ctx": [
+   "06b_run_draw.js:721  else if (tu.step === 4) { const left = this.foes.filter(f => f.tut && !f.dead).length; msg = TX('RİTİMLE DOKUN, IŞIK YAYI ATEŞ ETSİN! (') + (3 - left) + '/3)'; arrow = 'r'; }"
+  ]
+ },
+ {
+  "tr": "↓ AŞAĞI KAYDIR YA DA ",
+  "ctx": [
+   "06b_run_draw.js:722  else if (tu.step === 5 && tu.t > 1.4) { msg = TX('↓ AŞAĞI KAYDIR YA DA ') + (META.settings.left ? TX('SAĞ') : TX('SOL')) + TX(' ALTTAKİ DÜĞMEYE BAS: HAMLE!'); arrow = 'd'; }"
+  ]
+ },
+ {
+  "tr": "SAĞ",
+  "ctx": [
+   "06b_run_draw.js:722  else if (tu.step === 5 && tu.t > 1.4) { msg = TX('↓ AŞAĞI KAYDIR YA DA ') + (META.settings.left ? TX('SAĞ') : TX('SOL')) + TX(' ALTTAKİ DÜĞMEYE BAS: HAMLE!'); arrow = 'd'; }",
+   "06c_run_foes.js:502  if (this.bond >= 100 && !tu.abTold && tu.step >= 3) { tu.abTold = true; tu.msg = TX('TEKNİK HAZIR! ') + (META.settings.left ? TX('SOL') : TX('SAĞ')) + TX(' ALTTAKİ JOKEYE BAS'); tu.msgT = 2.6; }"
+  ]
+ },
+ {
+  "tr": "SOL",
+  "ctx": [
+   "06b_run_draw.js:722  else if (tu.step === 5 && tu.t > 1.4) { msg = TX('↓ AŞAĞI KAYDIR YA DA ') + (META.settings.left ? TX('SAĞ') : TX('SOL')) + TX(' ALTTAKİ DÜĞMEYE BAS: HAMLE!'); arrow = 'd'; }",
+   "06c_run_foes.js:502  if (this.bond >= 100 && !tu.abTold && tu.step >= 3) { tu.abTold = true; tu.msg = TX('TEKNİK HAZIR! ') + (META.settings.left ? TX('SOL') : TX('SAĞ')) + TX(' ALTTAKİ JOKEYE BAS'); tu.msgT = 2.6; }"
+  ]
+ },
+ {
+  "tr": " ALTTAKİ DÜĞMEYE BAS: HAMLE!",
+  "ctx": [
+   "06b_run_draw.js:722  else if (tu.step === 5 && tu.t > 1.4) { msg = TX('↓ AŞAĞI KAYDIR YA DA ') + (META.settings.left ? TX('SAĞ') : TX('SOL')) + TX(' ALTTAKİ DÜĞMEYE BAS: HAMLE!'); arrow = 'd'; }"
+  ]
+ },
+ {
+  "tr": "TEMEL HAREKETLER",
+  "ctx": [
+   "06b_run_draw.js:743  let sub = this.type === 'boss' ? this.boss.def.title : this.tut ? TX('TEMEL HAREKETLER') : ETAP_INFO[this.type].short;"
+  ]
+ },
+ {
+  "tr": "İLK ",
+  "ctx": [
+   "06b_run_draw.js:745  if (this.type === 'sprint' && !this.tut) sub = TX('İLK ') + this.passRank() + TX('\\'E GİR · ') + (this.rivals.length + 1) + TX(' YARIŞÇI');",
+   "06c_run_foes.js:414  else if (failRank) { floatText(rank + TX('. OLDUN'), W / 2, this.pY - 70, C.red, 2, -6, 1.5); floatText(TX('İLK ') + this.passRank() + TX('\\'E GİREMEDİN: -1 CAN'), W / 2, this.pY - 48, C.salmon, 1, -6, 1.5); }"
+  ]
+ },
+ {
+  "tr": "'E GİR · ",
+  "ctx": [
+   "06b_run_draw.js:745  if (this.type === 'sprint' && !this.tut) sub = TX('İLK ') + this.passRank() + TX('\\'E GİR · ') + (this.rivals.length + 1) + TX(' YARIŞÇI');"
+  ]
+ },
+ {
+  "tr": " YARIŞÇI",
+  "ctx": [
+   "06b_run_draw.js:745  if (this.type === 'sprint' && !this.tut) sub = TX('İLK ') + this.passRank() + TX('\\'E GİR · ') + (this.rivals.length + 1) + TX(' YARIŞÇI');"
+  ]
+ },
+ {
+  "tr": " İLE BİRE BİR",
+  "ctx": [
+   "06b_run_draw.js:746  if (this.duel) sub = this.duel.def.name + TX(' İLE BİRE BİR');"
+  ]
+ },
+ {
+  "tr": "ZORLU · ÖDÜL X2",
+  "ctx": [
+   "06b_run_draw.js:749  if (this.elite) tags.push([TX('ZORLU · ÖDÜL X2'), C.salmon]);"
+  ]
+ }
+]

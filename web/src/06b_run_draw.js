@@ -1,7 +1,7 @@
 // ================= RUN SCENE: DRAWING =================
 const WHITE_CACHE = new Map();
 function whiteOf(img) { let w = WHITE_CACHE.get(img); if (!w) { w = tintSprite(img, C.white); WHITE_CACHE.set(img, w); } return w; }
-const MEDAL_NAMES = { g: 'ALTIN MADALYA', s: 'GÜMÜŞ MADALYA', b: 'BRONZ MADALYA' };
+const MEDAL_NAMES = { g: TX('ALTIN MADALYA'), s: TX('GÜMÜŞ MADALYA'), b: TX('BRONZ MADALYA') };
 const MEDAL_COLS = { g: C.yellow, s: C.lgray, b: C.orange0 };
 const NOTE_COLS = { n: C.white, a: C.gold, d: C.magenta, d2: C.magenta, h: C.cyan };
 
@@ -161,7 +161,7 @@ Object.assign(SCENES.run, {
       if (sy < -30 || sy > H + 10) continue;
       const o = this.offY(sy) + ox;
       for (let x = 0; x < tw; x += 4) for (let k = 0; k < 2; k++) rect(tx + x + o, sy + k * 4 - 4, 4, 4, ((x / 4 + k) % 2) ? C.ink : C.white);
-      if (ly > 0) { rect(tx - 6 + o, sy - 22, 2, 24, C.lgray); rect(tx + tw + 4 + o, sy - 22, 2, 24, C.lgray); rect(tx - 6 + o, sy - 24, tw + 12, 7, C.ink); rect(tx - 5 + o, sy - 23, tw + 10, 5, C.red); text('BİTİŞ', tx + tw / 2 + o, sy - 25, C.white, 'center'); }
+      if (ly > 0) { rect(tx - 6 + o, sy - 22, 2, 24, C.lgray); rect(tx + tw + 4 + o, sy - 22, 2, 24, C.lgray); rect(tx - 6 + o, sy - 24, tw + 12, 7, C.ink); rect(tx - 5 + o, sy - 23, tw + 10, 5, C.red); text(TX('BİTİŞ'), tx + tw / 2 + o, sy - 25, C.white, 'center'); }
     }
     if (this.type !== 'boss' && !this.tut) {
       const sy = Math.round(this.sy(this.length * 0.8)) + oy;
@@ -262,7 +262,7 @@ Object.assign(SCENES.run, {
     spr(ICONS.crown, B.x + ox - 5, y + oy - 22);
     if (B.tired > 0) for (let i = 0; i < 3; i++) { const k = (T * 1.5 + i / 3) % 1; g.globalAlpha = 1 - k; pix(B.x + ox - 8 + i * 8, y + oy - 14 + k * 10, C.cyan); g.globalAlpha = 1; }
     if (B.def.taunt && this.state === 'run' && this.stateT < 2.8 && B.screenY > 30) this.speech(B.def.taunt, B.x + ox, y + oy - 26);
-    if (B.taunt > 0) { textO('KİBİR!', B.x + ox, y + oy - 34 + Math.round(Math.sin(T * 10)), C.magenta, 'center'); g.globalAlpha = 0.4 + 0.3 * Math.sin(T * 14); ring(B.x + ox, y + oy, 14, C.magenta); g.globalAlpha = 1; }
+    if (B.taunt > 0) { textO(TX('KİBİR!'), B.x + ox, y + oy - 34 + Math.round(Math.sin(T * 10)), C.magenta, 'center'); g.globalAlpha = 0.4 + 0.3 * Math.sin(T * 14); ring(B.x + ox, y + oy, 14, C.magenta); g.globalAlpha = 1; }
   },
   drawPlayer(ox, oy, gallop) {
     const P = this.P, S = this.S;
@@ -312,7 +312,7 @@ Object.assign(SCENES.run, {
       if (!full || Math.floor(T * 8) % 2 === 0) bar(bx, by, bw, 2, P.draft, full ? C.white : C.cyan);
       if (full) for (const s of [-1, 1]) textO(s < 0 ? '←' : '→', cx + s * 15, this.pY + oy - 4, C.cyan, 'center');
     }
-    if (P.cornerM && P.cornerM !== 1 && this.state === 'run' && Math.floor(T * 4) % 2 === 0) textO(P.cornerM > 1 ? 'İÇ!' : 'DIŞ', cx, this.pY + oy + 15, P.cornerM > 1 ? C.green : C.salmon, 'center');
+    if (P.cornerM && P.cornerM !== 1 && this.state === 'run' && Math.floor(T * 4) % 2 === 0) textO(P.cornerM > 1 ? TX('İÇ!') : TX('DIŞ'), cx, this.pY + oy + 15, P.cornerM > 1 ? C.green : C.salmon, 'center');
   },
   drawHorse(set, x, sy, frame, jumping, jk, blink) {
     const lift = jumping ? Math.round(Math.sin(Math.PI * clamp(jk, 0, 1)) * 9) : 0;
@@ -496,7 +496,7 @@ Object.assign(SCENES.run, {
     }
     rect(0, top + 8 + oy, W, H, C.ink);
     for (let i = 0; i < 12; i++) { const a = T * 2.4 + i * 0.52, x = W / 2 + Math.cos(a) * W * 0.46, y = top + 22 + Math.sin(a) * 9; pix(x + ox, y + oy, i % 2 ? C.purple : C.magenta); }
-    if (st.gap < 40 && Math.floor(T * 5) % 2 === 0) textO('KARA DELİK YAKLAŞIYOR!', W / 2, this.pY + 30, C.magenta, 'center');
+    if (st.gap < 40 && Math.floor(T * 5) % 2 === 0) textO(TX('KARA DELİK YAKLAŞIYOR!'), W / 2, this.pY + 30, C.magenta, 'center');
   },
   drawBolts(ox, oy) {
     for (const b of this.bolts) {
@@ -518,7 +518,7 @@ Object.assign(SCENES.run, {
     }
   },
   etapLabel() {
-    if (this.tut) return 'ISINMA TURU';
+    if (this.tut) return TX('ISINMA TURU');
     const info = ETAP_INFO[this.type];
     const full = info.name + ' · ' + this.reg.name.split(' ')[0];
     return textWidth(full) <= W - 80 ? full : (info.tiny || info.name);
@@ -556,9 +556,9 @@ Object.assign(SCENES.run, {
       bar(bx, by, bw, 5, B.gap / 100, B.gap > 70 ? C.green : B.gap > 30 ? C.gold : C.red);
       for (const th of [50, 75]) vline(bx + Math.round(bw * th / 100), by - 1, 7, C.ink);
       spr(ICONS.crown, bx + bw + 3, by - 1);
-      textO('FARK', bx - 2, by - 2, C.lgray, 'right');
+      textO(TX('FARK'), bx - 2, by - 2, C.lgray, 'right');
       for (let i = 0; i < 3; i++) rect(bx + i * 6, by + 8, 4, 3, i < B.phase ? B.def.color : C.slate);
-      if (B.tired > 0) textO('YORGUN: X2', bx + bw, by + 7, C.yellow, 'right');
+      if (B.tired > 0) textO(TX('YORGUN: X2'), bx + bw, by + 7, C.yellow, 'right');
     } else {
       textO(this.etapLabel(), cx, top, this.elite ? C.salmon : C.white, 'center');
       const bw = Math.min(90, W - 120), bx = Math.round(cx - bw / 2);
@@ -572,14 +572,14 @@ Object.assign(SCENES.run, {
         let rank = 1; for (const r of this.rivals) if (r.done || r.dist > P.dist) rank++;
         const ok = rank <= this.passRank();
         textO(rank + '/' + (this.rivals.length + 1), cx, top + 19, ok ? C.yellow : C.red, 'center', 2);
-        if (this.chasing && Math.floor(T * 3) % 2 === 0) textO('TAKİPTE: NEFES +%50', cx, top + 34, C.cyan, 'center');
+        if (this.chasing && Math.floor(T * 3) % 2 === 0) textO(TX('TAKİPTE: NEFES +%50'), cx, top + 34, C.cyan, 'center');
       } else if (this.type === 'duello' && this.duel) {
         const r = this.duel.r, gap = Math.round((P.dist - Math.min(r.dist, this.length)) / 10), lead = gap >= 0 && !(r.done && this.state === 'run');
         rect(bx + Math.round(bw * clamp(r.dist / this.length, 0, 1)) - 1, top + 9, 2, 8, C.salmon);
-        if (this.result && this.state !== 'run') textO(this.result.ok ? 'KAZANDIN' : 'KAYBETTİN', cx, top + 20, this.result.ok ? C.green : C.red, 'center', 2);
+        if (this.result && this.state !== 'run') textO(this.result.ok ? TX('KAZANDIN') : TX('KAYBETTİN'), cx, top + 20, this.result.ok ? C.green : C.red, 'center', 2);
         else {
           textO((gap > 0 ? '+' : '') + gap, cx, top + 19, lead ? C.green : C.red, 'center', 2);
-          textO(lead ? 'ÖNDESİN' : 'GERİDESİN', cx, top + 34, lead ? C.green : C.salmon, 'center');
+          textO(lead ? TX('ÖNDESİN') : TX('GERİDESİN'), cx, top + 34, lead ? C.green : C.salmon, 'center');
         }
       } else if (this.type === 'baskin') {
         const s = this.kills + '/' + this.goal, ok = this.kills >= this.goal, w2 = textWidth(s, 2);
@@ -589,7 +589,7 @@ Object.assign(SCENES.run, {
     }
     if (this.reis && !this.reis.dead) {
       const Rz = this.reis, bw = Math.min(100, W - 90), bx = Math.round(cx - bw / 2), by = top + 49;
-      textO('KORSAN KAPTANI', cx, by - 9, C.red, 'center');
+      textO(TX('KORSAN KAPTANI'), cx, by - 9, C.red, 'center');
       bar(bx, by, bw, 3, Rz.hp / Rz.maxHp, C.red);
     }
     if (this.bannerT > 0 && this.banner && !this.medal) {
@@ -602,10 +602,10 @@ Object.assign(SCENES.run, {
     if (this.comboBreak > 0 && this.combo < 3) {
       g.globalAlpha = clamp(this.comboBreak * 2, 0, 1);
       textO(String(this.brokenCombo), rx, ry - 46 + Math.round((0.9 - this.comboBreak) * 10), C.red, 'center', 2);
-      textO('KOMBO KIRILDI', rx, ry - 31, C.salmon, 'center'); g.globalAlpha = 1;
+      textO(TX('KOMBO KIRILDI'), rx, ry - 31, C.salmon, 'center'); g.globalAlpha = 1;
     } else if (this.combo > 0) {
       textO(String(this.combo), rx, ry - 46 - (this.comboPop > 0 ? 1 : 0), this.comboPop > 0.08 ? C.white : this.combo >= 20 ? C.gold : this.combo >= 10 ? C.yellow : C.white, 'center', 2);
-      textO('KOMBO', rx, ry - 31, C.lgray, 'center');
+      textO(TX('KOMBO'), rx, ry - 31, C.lgray, 'center');
       if (this.combo >= 10) spr(ICONS.flame, rx + textWidth(String(this.combo), 2) / 2 + 3, ry - 44);
     }
     const showNefes = !this.tut || this.tut.step >= 5;
@@ -625,7 +625,7 @@ Object.assign(SCENES.run, {
     spr(PEOPLE.deniz || PEOPLE.ayse, abx - 5, aby - 8);
     const cg = Object.keys(RUN.boons).map(id => BOON_BY_ID[id]).find(b => b && b.slot === 'cagri');
     if (cg) { circle(abx + 10, aby - 10, 3, C.ink); circle(abx + 10, aby - 10, 2, SPIRITS[cg.sp].color); }
-    if (full) { g.globalAlpha = 0.5 + 0.5 * Math.sin(T * 8); ring(abx, aby, 15, C.yellow); g.globalAlpha = 1; textO('BAS!', abx, aby - 24, C.yellow, 'center'); }
+    if (full) { g.globalAlpha = 0.5 + 0.5 * Math.sin(T * 8); ring(abx, aby, 15, C.yellow); g.globalAlpha = 1; textO(TX('BAS!'), abx, aby - 24, C.yellow, 'center'); }
     UI.add('ability', abx - 16, aby - 16, 32, 32, () => this.useAbility(), { onDown: true });
     if (showNefes) {
       const hx2 = left ? W - 22 - SAFE.r : 22 + SAFE.l, hy = aby;
@@ -686,12 +686,12 @@ Object.assign(SCENES.run, {
     const m = this.medal, k = clamp(this.medalT / 0.35, 0, 1), img = MEDAL.big[m];
     const top = Math.round(Math.max(SAFE.t + 92, H * 0.28) + (1 - Ease.outBack(k)) * 24);
     const stat = [];
-    if (this.type === 'sprint' && this.result && this.result.rank) stat.push('SIRA ' + this.result.rank + '/' + (this.rivals.length + 1));
-    else if (this.type === 'baskin') stat.push('DÜŞMAN ' + this.kills + '/' + this.goal);
-    else if (this.type === 'duello' && this.duel) stat.push('FARK +' + Math.max(0, Math.round((this.P.dist - Math.min(this.duel.r.dist, this.length)) / 10)));
-    stat.push('HASAR ' + this.damaged);
-    let line2 = 'MÜKEMMEL ' + (this.etapPerfects || 0) + ' · EN İYİ KOMBO ' + (this.etapMax || 0);
-    if (this.tut) { stat.length = 0; stat.push('← → ŞERİT · ↑ SIÇRA · ↓ HAMLE'); line2 = 'NOTADA DOKUN: HIZ, KOMBO VE ATEŞ'; }
+    if (this.type === 'sprint' && this.result && this.result.rank) stat.push(TX('SIRA ') + this.result.rank + '/' + (this.rivals.length + 1));
+    else if (this.type === 'baskin') stat.push(TX('DÜŞMAN ') + this.kills + '/' + this.goal);
+    else if (this.type === 'duello' && this.duel) stat.push(TX('FARK +') + Math.max(0, Math.round((this.P.dist - Math.min(this.duel.r.dist, this.length)) / 10)));
+    stat.push(TX('HASAR ') + this.damaged);
+    let line2 = TX('MÜKEMMEL ') + (this.etapPerfects || 0) + TX(' · EN İYİ KOMBO ') + (this.etapMax || 0);
+    if (this.tut) { stat.length = 0; stat.push(TX('← → ŞERİT · ↑ SIÇRA · ↓ HAMLE')); line2 = TX('NOTADA DOKUN: HIZ, KOMBO VE ATEŞ'); }
     const gr = this.grade, h = 30 + img.height + 34 + (this.finishBonus ? 10 : 0) + (gr ? 12 : 0);
     g.globalAlpha = 0.55 * k; rect(0, top, W, h, C.ink); g.globalAlpha = k;
     hline(0, top, W, MEDAL_COLS[m]); hline(0, top + h - 1, W, MEDAL_COLS[m]);
@@ -701,12 +701,12 @@ Object.assign(SCENES.run, {
     spr(img, W / 2 - img.width / 2, my);
     if (gr) { const gx = W / 2 + img.width / 2 + 16; textO(gr.letter, gx, my + 2, gr.col, 'center', 2); }
     let y = my + img.height + 3;
-    textO(MEDAL_NAMES[m] + (m !== 'b' ? '  ' + (m === 'g' ? '+3' : '+1') + ' KRİSTAL' : ''), W / 2, y, MEDAL_COLS[m], 'center'); y += 11;
+    textO(MEDAL_NAMES[m] + (m !== 'b' ? '  ' + (m === 'g' ? '+3' : '+1') + TX(' KRİSTAL') : ''), W / 2, y, MEDAL_COLS[m], 'center'); y += 11;
     text(stat.join(' · '), W / 2, y, this.damaged ? C.lgray : C.green, 'center'); y += 10;
     text(line2, W / 2, y, C.lgray, 'center'); y += 10;
     if (this.finishBonus) { text(this.finishBonus, W / 2, y, C.yellow, 'center'); y += 10; }
     if (gr) {
-      const lb = 'RİTİM NOTU ' + gr.letter + ' · %' + Math.round(gr.acc * 100) + (gr.coins ? ' · +' + gr.coins + ' SİKKE' : '');
+      const lb = TX('RİTİM NOTU ') + gr.letter + ' · %' + Math.round(gr.acc * 100) + (gr.coins ? ' · +' + gr.coins + TX(' SİKKE') : '');
       textO(lb, W / 2, y + 1, gr.col, 'center');
     }
     g.globalAlpha = 1;
@@ -714,12 +714,12 @@ Object.assign(SCENES.run, {
   drawTut() {
     const tu = this.tut;
     let msg = null, arrow = null;
-    if (tu.step === 0) msg = 'YILDIZ\'I SEN SÜRÜYORSUN, DENİZ!';
-    else if (tu.step === 1 && this.timeScale < 1) { msg = '← → KAYDIR: ŞERİT DEĞİŞTİR'; arrow = 'h'; }
-    else if (tu.step === 2 && this.timeScale < 1) { msg = '↑ YUKARI KAYDIR: SIÇRA'; arrow = 'v'; }
-    else if (tu.step === 3) { msg = 'İŞARETLER ORTADA BULUŞUNCA DOKUN! (' + Math.min(4, tu.hits) + '/4)'; arrow = 'r'; }
-    else if (tu.step === 4) { const left = this.foes.filter(f => f.tut && !f.dead).length; msg = 'RİTİMLE DOKUN, IŞIK YAYI ATEŞ ETSİN! (' + (3 - left) + '/3)'; arrow = 'r'; }
-    else if (tu.step === 5 && tu.t > 1.4) { msg = '↓ AŞAĞI KAYDIR YA DA ' + (META.settings.left ? 'SAĞ' : 'SOL') + ' ALTTAKİ DÜĞMEYE BAS: HAMLE!'; arrow = 'd'; }
+    if (tu.step === 0) msg = TX('YILDIZ\'I SEN SÜRÜYORSUN, DENİZ!');
+    else if (tu.step === 1 && this.timeScale < 1) { msg = TX('← → KAYDIR: ŞERİT DEĞİŞTİR'); arrow = 'h'; }
+    else if (tu.step === 2 && this.timeScale < 1) { msg = TX('↑ YUKARI KAYDIR: SIÇRA'); arrow = 'v'; }
+    else if (tu.step === 3) { msg = TX('İŞARETLER ORTADA BULUŞUNCA DOKUN! (') + Math.min(4, tu.hits) + '/4)'; arrow = 'r'; }
+    else if (tu.step === 4) { const left = this.foes.filter(f => f.tut && !f.dead).length; msg = TX('RİTİMLE DOKUN, IŞIK YAYI ATEŞ ETSİN! (') + (3 - left) + '/3)'; arrow = 'r'; }
+    else if (tu.step === 5 && tu.t > 1.4) { msg = TX('↓ AŞAĞI KAYDIR YA DA ') + (META.settings.left ? TX('SAĞ') : TX('SOL')) + TX(' ALTTAKİ DÜĞMEYE BAS: HAMLE!'); arrow = 'd'; }
     if (tu.msgT > 0 && tu.msg) msg = tu.msg;
     if (!msg) return;
     const lines = wrapText(msg, W - 30);
@@ -739,18 +739,18 @@ Object.assign(SCENES.run, {
     if (this.tipKey) return this.drawTip();
     if (this.betOffer) return this.drawBet();
     const k = clamp(this.stateT / 0.3, 0, 1);
-    const title = this.type === 'boss' ? this.boss.def.name : this.tut ? 'ISINMA TURU' : ETAP_INFO[this.type].name;
-    let sub = this.type === 'boss' ? this.boss.def.title : this.tut ? 'TEMEL HAREKETLER' : ETAP_INFO[this.type].short;
-    if (this.type === 'baskin') sub = this.goal + ' DÜŞMAN VUR';
-    if (this.type === 'sprint' && !this.tut) sub = 'İLK ' + this.passRank() + '\'E GİR · ' + (this.rivals.length + 1) + ' YARIŞÇI';
-    if (this.duel) sub = this.duel.def.name + ' İLE BİRE BİR';
+    const title = this.type === 'boss' ? this.boss.def.name : this.tut ? TX('ISINMA TURU') : ETAP_INFO[this.type].name;
+    let sub = this.type === 'boss' ? this.boss.def.title : this.tut ? TX('TEMEL HAREKETLER') : ETAP_INFO[this.type].short;
+    if (this.type === 'baskin') sub = this.goal + TX(' DÜŞMAN VUR');
+    if (this.type === 'sprint' && !this.tut) sub = TX('İLK ') + this.passRank() + TX('\'E GİR · ') + (this.rivals.length + 1) + TX(' YARIŞÇI');
+    if (this.duel) sub = this.duel.def.name + TX(' İLE BİRE BİR');
     const tags = [];
     if (this.duel && this.duel.info.trick) tags.push([this.duel.info.trick, C.salmon]);
-    if (this.elite) tags.push(['ZORLU · ÖDÜL X2', C.salmon]);
+    if (this.elite) tags.push([TX('ZORLU · ÖDÜL X2'), C.salmon]);
     if (this.weather !== 'acik') tags.push([WEATHERS[this.weather].name, C.sky]);
     // who you are up against in this sprint, and their habit
-    if (this.type === 'sprint' && !this.tut) for (const r of this.rivals) if (r.name) tags.push([r.name + ' · ' + (r.nem ? 'RÖVANŞÇI' : STYLE_SHORT[r.style] || ''), r.nem ? C.red : STYLE_COL[r.style] || C.white]);
-    if (this.bends && this.bends.length) tags.push([this.bends.length + ' VİRAJ', C.orange]);
+    if (this.type === 'sprint' && !this.tut) for (const r of this.rivals) if (r.name) tags.push([r.name + ' · ' + (r.nem ? TX('RÖVANŞÇI') : STYLE_SHORT[r.style] || ''), r.nem ? C.red : STYLE_COL[r.style] || C.white]);
+    if (this.bends && this.bends.length) tags.push([this.bends.length + TX(' VİRAJ'), C.orange]);
     if (RUN.runStyle !== 'dengeli' && this.type !== 'boss' && !this.tut) tags.push([RUN_STYLES[RUN.runStyle].name, C.green]);
     const bh = 44 + tags.length * 10;
     // champion races open with the champion's painted card
@@ -766,7 +766,7 @@ Object.assign(SCENES.run, {
     textO(sub, W / 2, by + 28, C.white, 'center');
     tags.forEach((t, i) => textO(t[0], W / 2, by + 40 + i * 10, t[1], 'center'));
     const left = Beat.t0 - now();
-    if (this.clockOn && left < 0.5) textO('KOŞ!', W / 2, by + bh + 8, C.green, 'center', 2);
+    if (this.clockOn && left < 0.5) textO(TX('KOŞ!'), W / 2, by + bh + 8, C.green, 'center', 2);
   },
   tipTitle(key) { return ETAP_INFO[key] ? ETAP_INFO[key].name : TIP_TITLES[key] ? TIP_TITLES[key] : WEATHERS[key] ? WEATHERS[key].name : ''; },
   tipIcon(key) {
@@ -784,7 +784,7 @@ Object.assign(SCENES.run, {
     const ph = 24 + blocks.reduce((a, b) => a + 16 + b.lines.length * 9 + 6, 0) + 14;
     const px = Math.round(W / 2 - pw / 2), py = Math.round(Math.max(SAFE.t + 30, H * 0.42 - ph / 2));
     g.globalAlpha = 0.45; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
-    panel(px, py, pw, ph, 'YENİ!', C.yellow);
+    panel(px, py, pw, ph, TX('YENİ!'), C.yellow);
     let y = py + 20;
     for (const b of blocks) {
       if (b.ic) spr(b.ic, W / 2 - textWidth(b.title) / 2 - b.ic.width - 4, y + 1);
@@ -794,24 +794,24 @@ Object.assign(SCENES.run, {
       b.lines.forEach((ln, i) => text(ln, W / 2, y + 13 + i * 9, C.lgray, 'center'));
       y += 16 + b.lines.length * 9 + 6;
     }
-    g.globalAlpha = 0.6 + 0.4 * Math.sin(T * 6); textO('DOKUN VE BAŞLA', W / 2, py + ph - 14, C.green, 'center'); g.globalAlpha = 1;
+    g.globalAlpha = 0.6 + 0.4 * Math.sin(T * 6); textO(TX('DOKUN VE BAŞLA'), W / 2, py + ph - 14, C.green, 'center'); g.globalAlpha = 1;
   },
   drawDead() {
     const k = clamp(this.stateT / 0.5, 0, 1);
     g.globalAlpha = 0.5 * k; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
-    textO('YORGUN DÜŞTÜN', W / 2, H * 0.36, C.salmon, 'center', 2);
+    textO(TX('YORGUN DÜŞTÜN'), W / 2, H * 0.36, C.salmon, 'center', 2);
   },
   drawPause() {
     UI.block(0, 0, W, H, null);
     g.globalAlpha = 0.6; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
     const pw = Math.min(W - 24, 170), ph = 172, px = Math.round(W / 2 - pw / 2), py = Math.round(H / 2 - ph / 2);
-    panel(px, py, pw, ph, 'MOLA');
-    button('p_resume', px + 10, py + 22, pw - 20, 18, 'DEVAM ET', () => this.togglePause());
-    button('p_boons', px + 10, py + 46, pw - 20, 16, 'GÜÇLERİM (' + (Object.keys(RUN.boons).length + (RUN.mods ? RUN.mods.length : 0)) + ')', () => { this.showBoons = true; }, { kind: 'blue' });
-    button('p_music', px + 10, py + 66, pw - 20, 16, 'MÜZİK: ' + (META.settings.music ? 'AÇIK' : 'KAPALI'), () => { META.settings.music = !META.settings.music; Sound.applySettings(); saveMeta(); }, { kind: 'secondary' });
-    button('p_sfx', px + 10, py + 86, pw - 20, 16, 'EFEKTLER: ' + (META.settings.sfx ? 'AÇIK' : 'KAPALI'), () => { META.settings.sfx = !META.settings.sfx; Sound.applySettings(); saveMeta(); }, { kind: 'secondary' });
-    button('p_calib', px + 10, py + 106, pw - 20, 16, 'RİTMİ ÖLÇ', () => { this.calibOpen = true; Calib.start(); }, { kind: 'blue' });
-    button('p_quit', px + 10, py + 134, pw - 20, 18, this.confirmQuit ? 'EMİN MİSİN? TEKRAR BAS' : 'KOŞUYU BIRAK', () => {
+    panel(px, py, pw, ph, TX('MOLA'));
+    button('p_resume', px + 10, py + 22, pw - 20, 18, TX('DEVAM ET'), () => this.togglePause());
+    button('p_boons', px + 10, py + 46, pw - 20, 16, TX('GÜÇLERİM (') + (Object.keys(RUN.boons).length + (RUN.mods ? RUN.mods.length : 0)) + ')', () => { this.showBoons = true; }, { kind: 'blue' });
+    button('p_music', px + 10, py + 66, pw - 20, 16, TX('MÜZİK: ') + (META.settings.music ? TX('AÇIK') : TX('KAPALI')), () => { META.settings.music = !META.settings.music; Sound.applySettings(); saveMeta(); }, { kind: 'secondary' });
+    button('p_sfx', px + 10, py + 86, pw - 20, 16, TX('EFEKTLER: ') + (META.settings.sfx ? TX('AÇIK') : TX('KAPALI')), () => { META.settings.sfx = !META.settings.sfx; Sound.applySettings(); saveMeta(); }, { kind: 'secondary' });
+    button('p_calib', px + 10, py + 106, pw - 20, 16, TX('RİTMİ ÖLÇ'), () => { this.calibOpen = true; Calib.start(); }, { kind: 'blue' });
+    button('p_quit', px + 10, py + 134, pw - 20, 18, this.confirmQuit ? TX('EMİN MİSİN? TEKRAR BAS') : TX('KOŞUYU BIRAK'), () => {
       if (!this.confirmQuit) { this.confirmQuit = true; return; }
       this.paused = false; this.state = 'gone'; Music.fever = false; RUN.diedIn = { type: 'quit', region: RUN.region, etap: RUN.etap }; go('results', { won: false, quit: true });
     }, { kind: 'red' });

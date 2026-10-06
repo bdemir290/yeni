@@ -50,19 +50,24 @@ SCENES.title = {
     const sc = W >= 176 ? 4 : 3;
     const ly = Math.round(H * 0.17);
     g.globalAlpha = 0.65; rect(0, ly - 10, W, 70, C.ink); g.globalAlpha = 1;
-    for (const [dx, dy] of [[-sc, 0], [sc, 0], [0, -sc], [0, sc * 2], [-sc, sc], [sc, sc]]) text('DÖRTNALA', W / 2 + dx, ly + dy, C.ink, 'center', sc);
-    text('DÖRTNALA', W / 2, ly + sc, C.rust, 'center', sc);
-    text('DÖRTNALA', W / 2, ly, C.yellow, 'center', sc);
-    g.globalAlpha = 0.5; text('DÖRTNALA', W / 2, ly - Math.round(sc / 2), C.white, 'center', sc); g.globalAlpha = 1;
-    text('DÖRTNALA', W / 2, ly, C.yellow, 'center', sc);
-    textO('GALAKSİ KUPASI', W / 2, ly + 38, C.cyan, 'center');
-    text('UZAYIN EN HIZLI ATI SENİNKİ', W / 2, ly + 50, C.lgray, 'center');
+    for (const [dx, dy] of [[-sc, 0], [sc, 0], [0, -sc], [0, sc * 2], [-sc, sc], [sc, sc]]) text(TX('DÖRTNALA'), W / 2 + dx, ly + dy, C.ink, 'center', sc);
+    text(TX('DÖRTNALA'), W / 2, ly + sc, C.rust, 'center', sc);
+    text(TX('DÖRTNALA'), W / 2, ly, C.yellow, 'center', sc);
+    g.globalAlpha = 0.5; text(TX('DÖRTNALA'), W / 2, ly - Math.round(sc / 2), C.white, 'center', sc); g.globalAlpha = 1;
+    text(TX('DÖRTNALA'), W / 2, ly, C.yellow, 'center', sc);
+    textO(TX('GALAKSİ KUPASI'), W / 2, ly + 38, C.cyan, 'center');
+    text(TX('UZAYIN EN HIZLI ATI SENİNKİ'), W / 2, ly + 50, C.lgray, 'center');
     if (META.runSave) {
       const bw = Math.min(150, W - 30), bx = Math.round(W / 2 - bw / 2);
-      button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
-      button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
-    } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V6.0', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+      button('t_cont', bx, H * 0.42, bw, 20, TX('KOŞUYA DEVAM ET'), () => { restoreRun(); go('doors'); });
+      button('t_farm', bx, H * 0.42 + 26, bw, 18, TX('KOŞUYU BIRAK'), () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
+    } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO(TX('BAŞLAMAK İÇİN DOKUN'), W / 2, H * 0.47, C.white, 'center');
+    text('V6.1', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    // language picker: the device language is the default, one tap cycles (the page reloads to rebuild all text)
+    button('t_lang', SAFE.l + 4, H - SAFE.b - 20, 58, 14, LANG_NAMES[LANG], () => {
+      META.settings.lang = LANGS[(LANGS.indexOf(LANG) + 1) % LANGS.length]; saveMeta(); Sound.play('select');
+      setTimeout(() => location.reload(), 120);
+    }, { kind: 'secondary' });
   }
 };
 
@@ -89,7 +94,7 @@ SCENES.doors = {
     Music.layer = 3; Music.play(this.reg.song, now() + 0.2, false);
     saveRun();
     this.newRegion = RUN.etap === 0 && RUN.region > 0;
-    if (this.newRegion) toast('YENİ PİST: ' + this.reg.name, C.yellow, 'crown');
+    if (this.newRegion) toast(TX('YENİ PİST: ') + this.reg.name, C.yellow, 'crown');
   },
   pick(i) {
     if (this.sel >= 0) return;
@@ -143,9 +148,9 @@ SCENES.doors = {
       circle(cx, cy, 4, C.ink); circle(cx, cy, 3, i < RUN.etap ? C.green : i === RUN.etap ? C.yellow : C.slate);
       if (i < 3) hline(cx + 5, cy, 4, C.ink);
     }
-    textO(this.doors[0].type === 'boss' ? 'ŞAMPİYON SENİ BEKLİYOR' : 'YOLUNU SEÇ', W / 2, top + 26, C.white, 'center');
+    textO(this.doors[0].type === 'boss' ? TX('ŞAMPİYON SENİ BEKLİYOR') : TX('YOLUNU SEÇ'), W / 2, top + 26, C.white, 'center');
     if (RUN.league && Object.keys(RUN.league).length) {
-      const rk = leagueRank(), lt = leagueTable(), lb = 'LİG ' + rk + '. · ' + (lt[rk - 1] ? lt[rk - 1].pts : 0) + ' P', lw = textWidth(lb) + 24;
+      const rk = leagueRank(), lt = leagueTable(), lb = TX('LİG ') + rk + '. · ' + (lt[rk - 1] ? lt[rk - 1].pts : 0) + ' P', lw = textWidth(lb) + 24;
       button('league', W / 2 - lw / 2, top + 37, lw, 14, lb, () => { this.showLeague = true; }, { kind: rk === 1 ? 'primary' : 'secondary', icon: 'crown' });
     }
     for (let i = 0; i < n; i++) {
@@ -166,11 +171,11 @@ SCENES.doors = {
     const by = H - SAFE.b - 30;
     if (this.doors[0].type !== 'boss' && this.sel === -1) {
       const c = doorRerollCost(), bw = 112;
-      button('reroll', W / 2 - bw / 2, by - 24, bw, 16, 'YOLU DEĞİŞTİR ' + c, () => this.reroll(), { kind: 'secondary', icon: 'dice', disabled: RUN.coins < c });
+      button('reroll', W / 2 - bw / 2, by - 24, bw, 16, TX('YOLU DEĞİŞTİR ') + c, () => this.reroll(), { kind: 'secondary', icon: 'dice', disabled: RUN.coins < c });
     }
     bottomBar(by, () => {
       const bc = Object.keys(RUN.boons).length + (RUN.mods || []).length;
-      button('myboons', W - 64, by + 3, 54, 16, 'GÜÇ ' + bc, () => { this.showBoons = true; }, { kind: 'blue' });
+      button('myboons', W - 64, by + 3, 54, 16, TX('GÜÇ ') + bc, () => { this.showBoons = true; }, { kind: 'blue' });
     });
     drawParts(0, 0); drawTexts();
     if (this.showBoons) drawBoonList(() => { this.showBoons = false; });
@@ -183,15 +188,15 @@ SCENES.doors = {
     const pw = Math.min(W - 24, 176), ph = 120, px = Math.round(W / 2 - pw / 2), py = Math.round(SAFE.t + (H - SAFE.t - SAFE.b - ph) / 2);
     UI.block(0, 0, W, H, () => { this.showMenu = false; });
     g.globalAlpha = 0.6; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
-    panel(px, py, pw, ph, 'MOLA');
-    button('dm_back', px + 10, py + 20, pw - 20, 18, 'YOLA DEVAM', () => { this.showMenu = false; }, { kind: 'primary' });
-    button('dm_farm', px + 10, py + 44, pw - 20, 18, 'İSTASYONA DÖN', () => { saveRun(); this.showMenu = false; go('farm', {}); }, { kind: 'blue' });
-    text('KOŞUN KAYDEDİLİR, SONRA SÜRER', px + pw / 2, py + 65, C.lgray, 'center');
-    button('dm_quit', px + 10, py + 78, pw - 20, 18, this.confirmQuit ? 'EMİN MİSİN? TEKRAR BAS' : 'KOŞUYU BIRAK', () => {
+    panel(px, py, pw, ph, TX('MOLA'));
+    button('dm_back', px + 10, py + 20, pw - 20, 18, TX('YOLA DEVAM'), () => { this.showMenu = false; }, { kind: 'primary' });
+    button('dm_farm', px + 10, py + 44, pw - 20, 18, TX('İSTASYONA DÖN'), () => { saveRun(); this.showMenu = false; go('farm', {}); }, { kind: 'blue' });
+    text(TX('KOŞUN KAYDEDİLİR, SONRA SÜRER'), px + pw / 2, py + 65, C.lgray, 'center');
+    button('dm_quit', px + 10, py + 78, pw - 20, 18, this.confirmQuit ? TX('EMİN MİSİN? TEKRAR BAS') : TX('KOŞUYU BIRAK'), () => {
       if (!this.confirmQuit) { this.confirmQuit = true; Sound.play('deny'); return; }
       this.showMenu = false; RUN.diedIn = { type: 'quit', region: RUN.region, etap: RUN.etap }; go('results', { won: false, quit: true });
     }, { kind: 'secondary' });
-    text('ÖDÜLLERİNİ ALIR, KOŞUYU BİTİRİRSİN', px + pw / 2, py + 99, C.gray, 'center');
+    text(TX('ÖDÜLLERİNİ ALIR, KOŞUYU BİTİRİRSİN'), px + pw / 2, py + 99, C.gray, 'center');
   },
   drawDoor(d, x, y, w, h, hot) {
     const kaos = d.type === 'kaos', boss = d.type === 'boss';
@@ -216,7 +221,7 @@ SCENES.doors = {
     rect(x - 2, y - 2, w + 4, 7, C.ink); rect(x - 1, y - 1, w + 2, 5, kaos ? C.plum : C.slate); hline(x - 1, y - 1, w + 2, kaos ? C.magenta : C.lgray);
     for (let i = 0; i < w; i += 6) pix(x + 1 + i, y + 1, Math.floor(T * 3 + i) % 3 === 0 ? C.yellow : C.dgray);
     if (hot) { g.globalAlpha = 0.4; rect(x + 4, y + 5, w - 8, h - 5, C.yellow); g.globalAlpha = 1; }
-    if (d.elite) { rect(x - 2, y + 6, w + 4, 9, C.ink); rect(x - 1, y + 7, w + 2, 7, C.wine); text('ZORLU', x + w / 2, y + 6, C.white, 'center'); }
+    if (d.elite) { rect(x - 2, y + 6, w + 4, 9, C.ink); rect(x - 1, y + 7, w + 2, 7, C.wine); text(TX('ZORLU'), x + w / 2, y + 6, C.white, 'center'); }
     const sx = x + w / 2, sy = y - 16;
     const col = d.reward && d.reward.kind === 'boon' ? SPIRITS[d.reward.sp].color : d.type === 'boss' ? C.red : kaos ? C.magenta : d.type === 'olay' ? C.sand : C.gold;
     circle(sx, sy, 10, C.ink); circle(sx, sy, 9, C.navy); ring(sx, sy, 8, col);
@@ -241,12 +246,12 @@ function drawBoonList(onClose) {
   const x = Math.round(W / 2 - w / 2), y = Math.round(SAFE.t + (H - SAFE.t - SAFE.b - h) / 2);
   UI.block(0, 0, W, H, onClose);
   g.globalAlpha = 0.55; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
-  panel(x, y, w, h, 'YILDIZ GÜÇLERİN');
-  if (!ids.length && !mods.length) text('HENÜZ GÜÇ YOK', x + w / 2, y + 22, C.gray, 'center');
+  panel(x, y, w, h, TX('YILDIZ GÜÇLERİN'));
+  if (!ids.length && !mods.length) text(TX('HENÜZ GÜÇ YOK'), x + w / 2, y + 22, C.gray, 'center');
   mods.forEach((id, j) => {
     const m = MOD_BY_ID[id], yy = y + 18 + (ids.length + j) * rowH;
     spr(ICONS.hammer, x + 7, yy); text(m.name, x + 20, yy, C.orange);
-    text('ÇEKİÇ', x + w - 8, yy, C.lgray, 'right');
+    text(TX('ÇEKİÇ'), x + w - 8, yy, C.lgray, 'right');
     text(wrapText(m.desc, w - 26)[0], x + 20, yy + 9, C.lgray);
   });
   ids.forEach((id, i) => {
@@ -319,7 +324,7 @@ SCENES.boon = {
     if (big) { circle(W / 2, oy, 15, C.ink); circle(W / 2, oy, 14, sp.dark); sprC(big, W / 2, oy + Math.round(Math.sin(T * 2.5))); }
     else { circle(W / 2, oy, 12, C.ink); circle(W / 2, oy, 11, sp.dark); circle(W / 2, oy, 9, sp.color); sprC(tinted(SPIRIT_ICON[this.sp], C.ink), W / 2, oy); }
     textO(sp.name, W / 2, oy + 20, sp.color, 'center', 2);
-    text(this.after ? 'ŞAMPİYONU GEÇTİN! BİR GÜÇ SEÇ' : (this.hasDuo ? 'İKİ RUH BİRLİKTE KONUŞUYOR!' : sp.desc + ' RUHU SANA GÜÇ SUNUYOR'), W / 2, oy + 40, this.hasDuo ? C.gold : C.lgray, 'center');
+    text(this.after ? TX('ŞAMPİYONU GEÇTİN! BİR GÜÇ SEÇ') : (this.hasDuo ? TX('İKİ RUH BİRLİKTE KONUŞUYOR!') : sp.desc + TX(' RUHU SANA GÜÇ SUNUYOR')), W / 2, oy + 40, this.hasDuo ? C.gold : C.lgray, 'center');
     const cw = Math.min(W - 14, 230), cx = Math.round(W / 2 - cw / 2);
     let y = oy + 52;
     this.opts.forEach((o, i) => {
@@ -332,7 +337,7 @@ SCENES.boon = {
       y += ch + 6;
     });
     const left = this.S.rerolls - RUN.rerollsUsed;
-    if (left > 0 && this.chosen === -1) button('reroll', W / 2 - 45, y + 2, 90, 16, 'YENİLE (' + left + ')', () => { RUN.rerollsUsed++; this.roll(); this.t = 0.1; Sound.play('select'); }, { kind: 'blue' });
+    if (left > 0 && this.chosen === -1) button('reroll', W / 2 - 45, y + 2, 90, 16, TX('YENİLE (') + left + ')', () => { RUN.rerollsUsed++; this.roll(); this.t = 0.1; Sound.play('select'); }, { kind: 'blue' });
     drawParts(0, 0); drawTexts();
   },
   drawCard(o, x, y, w, h, sel, i) {
@@ -347,11 +352,11 @@ SCENES.boon = {
     if (duo) { sprC(tinted(SPIRIT_ICON[b.duo[0]], spA.color), x + 15, y + 14); sprC(tinted(SPIRIT_ICON[b.duo[1]], spB.color), x + 21, y + 20); }
     else sprC(spiritArt(b.sp, 16) || tinted(SPIRIT_ICON[b.sp], spA.color), x + 18, y + 17);
     text(b.name, x + 34, y + 4, duo ? C.gold : C.yellow);
-    const lvTxt = duo ? 'İKİLİ' : o.cur === 0 ? 'YENİ' : 'SV ' + o.cur + '→' + (o.cur + o.gain);
+    const lvTxt = duo ? TX('İKİLİ') : o.cur === 0 ? TX('YENİ') : 'SV ' + o.cur + '→' + (o.cur + o.gain);
     text(lvTxt, x + w - 6, y + 4, duo ? C.gold : o.cur === 0 ? C.green : C.sky, 'right');
     const lines = wrapText(b.desc(o.cur + o.gain), w - 42);
     lines.slice(0, o.replaces ? 2 : 3).forEach((ln, j) => text(ln, x + 34, y + 14 + j * 9, C.lgray));
-    if (o.replaces) text('YERİNE: ' + o.replaces.name, x + 34, y + 32, C.salmon);
+    if (o.replaces) text(TX('YERİNE: ') + o.replaces.name, x + 34, y + 32, C.salmon);
     if (b.slot) { const tw = textWidth(SLOTS[b.slot]) + 6; rect(x + 34, y + h - 12, tw, 9, C.ink); text(SLOTS[b.slot], x + 37, y + h - 12, C.cyan); }
     if (o.rar >= 0) text(RARITY[o.rar].name, x + w - 6, y + h - 11, rc, 'right');
     text(String(i + 1), x + 16, y + h - 13, C.dgray, 'center');
@@ -386,9 +391,9 @@ SCENES.shop = {
     else if (it.kind === 'heal') RUN.hp = Math.min(computeStats(RUN).maxHp, RUN.hp + 1);
     else if (it.kind === 'maxhp') { RUN.bonusMaxHp++; RUN.hp++; }
     else if (it.kind === 'sharp') RUN.shotBonus = (RUN.shotBonus || 0) + 0.3;
-    else if (it.kind === 'cekic') { RUN.pendingHammer = true; this.S = computeStats(RUN); Sound.play('anvil'); haptic('success'); toast('ÇEKİÇ ALINDI: ÇIKIŞTA ÖRSE!', C.orange, 'hammer'); return; }
+    else if (it.kind === 'cekic') { RUN.pendingHammer = true; this.S = computeStats(RUN); Sound.play('anvil'); haptic('success'); toast(TX('ÇEKİÇ ALINDI: ÇIKIŞTA ÖRSE!'), C.orange, 'hammer'); return; }
     this.S = computeStats(RUN);
-    Sound.play('buy'); haptic('success'); toast('SATIN ALINDI!', C.green, 'bag');
+    Sound.play('buy'); haptic('success'); toast(TX('SATIN ALINDI!'), C.green, 'bag');
   },
   update(dt) { this.t += dt; updateFX(dt); if (window.__auto && this.t > 0.6) { this.t = -99; if (window.__autoBuy) { for (const it of this.items) if (!it.sold && RUN.coins >= it.price) this.buy(it); } this.leave(); } },
   draw() {
@@ -396,21 +401,21 @@ SCENES.shop = {
     const top = SAFE.t + 6;
     spr(PEOPLE.moko, W / 2 - 5, top + 22);
     spr(BLD.stall, W / 2 - 32, top + 8);
-    textO('UZAY PAZARI', W / 2, top, C.yellow, 'center');
+    textO(TX('UZAY PAZARI'), W / 2, top, C.yellow, 'center');
     const by = top + 56;
     panel(6, by, W - 12, 26);
     rect(11, by + 4, 18, 18, C.ink); spr(PORTRAIT.moko, 6, by - 1);
-    text('MOKO:', 34, by + 5, C.yellow);
-    text(this.firstMeet ? 'BÖLMENE DE TEZGAH KURARIM!' : 'GEL DÜNYALI, TAZE GÜÇLER VAR!', 34, by + 14, C.white);
+    text(TX('MOKO:'), 34, by + 5, C.yellow);
+    text(this.firstMeet ? TX('BÖLMENE DE TEZGAH KURARIM!') : TX('GEL DÜNYALI, TAZE GÜÇLER VAR!'), 34, by + 14, C.white);
     let y = by + 32;
     const w = W - 12, n = this.items.length, dw = w - 86;
     const rows = this.items.map(it => {
       let name, desc, ic;
       if (it.kind === 'boon') { const sp = SPIRITS[it.b.sp]; name = it.b.name; desc = it.b.desc((RUN.boons[it.b.id] || 0) + 1); ic = tinted(SPIRIT_ICON[it.b.sp], sp.color); if (it.b.slot) name += ' · ' + SLOTS[it.b.slot]; }
-      else if (it.kind === 'heal') { name = 'ŞİFA JELİ'; desc = '1 CAN YENİLE'; ic = ICONS.heart; }
-      else if (it.kind === 'sharp') { name = 'ODAK LENSİ'; desc = 'ATIŞ HASARI +%30 (BU KOŞU)'; ic = ICONS[(WEAPONS[RUN.weapon] || WEAPONS.yay).icon]; }
-      else if (it.kind === 'cekic') { name = 'DEMİRCİ ÇEKİCİ'; desc = 'SİLAHINI DÖV: YENİ ÖZELLİK KAZAN'; ic = ICONS.hammer; }
-      else { name = 'ENERJİ YEMİ'; desc = '+1 AZAMİ CAN (BU KOŞU)'; ic = ICONS.heartG; }
+      else if (it.kind === 'heal') { name = TX('ŞİFA JELİ'); desc = TX('1 CAN YENİLE'); ic = ICONS.heart; }
+      else if (it.kind === 'sharp') { name = TX('ODAK LENSİ'); desc = TX('ATIŞ HASARI +%30 (BU KOŞU)'); ic = ICONS[(WEAPONS[RUN.weapon] || WEAPONS.yay).icon]; }
+      else if (it.kind === 'cekic') { name = TX('DEMİRCİ ÇEKİCİ'); desc = TX('SİLAHINI DÖV: YENİ ÖZELLİK KAZAN'); ic = ICONS.hammer; }
+      else { name = TX('ENERJİ YEMİ'); desc = TX('+1 AZAMİ CAN (BU KOŞU)'); ic = ICONS.heartG; }
       return { name, ic, lines: wrapText(desc, dw) };
     });
     // row heights: uniform when there is room, otherwise each row gets what its text needs
@@ -430,12 +435,12 @@ SCENES.shop = {
       const dl = r.lines.slice(), maxL = ih >= 34 ? 3 : 2;
       if (dl.length > maxL) { let l2 = dl[maxL - 1]; while (l2.length && textWidth(l2 + '..') > dw) l2 = l2.slice(0, l2.lastIndexOf(' ') > 0 ? l2.lastIndexOf(' ') : l2.length - 1); dl.length = maxL; dl[maxL - 1] = l2 + '..'; }
       dl.forEach((ln, j) => text(ln, 24, y + 12 + j * 8, C.lgray));
-      if (it.sold) text('SATILDI', W - 34, y + ih / 2 - 4, C.gray, 'center');
+      if (it.sold) text(TX('SATILDI'), W - 34, y + ih / 2 - 4, C.gray, 'center');
       else button('buy' + i, W - 58, y + Math.round(ih / 2) - 8, 48, 16, String(it.price), () => this.buy(it), { icon: 'coin0', disabled: RUN.coins < it.price });
       y += ih + 3;
     }
     iconNum('coin0', RUN.coins, 10, y + 4, C.yellow);
-    button('shop_out', W - 82, y + 1, 72, 18, RUN.pendingHammer ? 'ÖRSE GİT' : 'YOLA DEVAM', () => this.leave(), { kind: 'green' });
+    button('shop_out', W - 82, y + 1, 72, 18, RUN.pendingHammer ? TX('ÖRSE GİT') : TX('YOLA DEVAM'), () => this.leave(), { kind: 'green' });
     drawParts(0, 0); drawTexts();
   }
 };
@@ -460,7 +465,7 @@ SCENES.cekic = {
     META.stats.hammers = (META.stats.hammers || 0) + 1; missionEvent('hammer', 1);
     Sound.play('anvil'); setTimeout(() => Sound.play('power'), 260); haptic('success'); flash(C.orange, 0.25); shake(3, 0.25);
     burst(W / 2, this.anvilY || H * 0.25, 26, [C.yellow, C.orange, C.white], 95, 0.8, 140, 2);
-    toast(m.name + ': SİLAHIN DÖVÜLDÜ!', C.orange, 'hammer');
+    toast(m.name + TX(': SİLAHIN DÖVÜLDÜ!'), C.orange, 'hammer');
   },
   next() {
     if (RUN.pendingNode) { const n = RUN.pendingNode; RUN.pendingNode = null; go('run', n); return; }
@@ -492,10 +497,10 @@ SCENES.cekic = {
     const contentH = 44 + 62 + 14 + n * 48 + 12;
     const off = Math.max(0, Math.floor((H - SAFE.b - 34 - SAFE.t - 8 - contentH) / 3));
     const top = SAFE.t + 8 + off;
-    textO('DEMİRCİ ÇEKİCİ', W / 2, top, C.orange, 'center', 2);
+    textO(TX('DEMİRCİ ÇEKİCİ'), W / 2, top, C.orange, 'center', 2);
     const wp = WEAPONS[this.w];
-    text('SİLAHIN: ' + wp.name, W / 2, top + 20, C.sand, 'center');
-    text('BU KOŞUDA ÇEKİÇ: ' + Math.min(2, RUN.hammers) + '/2', W / 2, top + 30, C.lgray, 'center');
+    text(TX('SİLAHIN: ') + wp.name, W / 2, top + 20, C.sand, 'center');
+    text(TX('BU KOŞUDA ÇEKİÇ: ') + Math.min(2, RUN.hammers) + '/2', W / 2, top + 30, C.lgray, 'center');
     // anvil with the weapon glowing on it
     const ay = top + 44 + 44; this.anvilY = ay; const cx = W / 2;
     g.globalAlpha = 0.25 + 0.1 * Math.sin(T * 5); circle(cx, ay - 6, 22, C.orange); g.globalAlpha = 1;
@@ -512,10 +517,10 @@ SCENES.cekic = {
     const cw = Math.min(W - 14, 230), x = Math.round(W / 2 - cw / 2);
     let y = ay + 26;
     if (this.empty) {
-      textBlock('ÖRS SUSTU: BU SİLAHA DÖVÜLECEK BİR ŞEY KALMADI. DEMİRCİ +40 SİKKE VERDİ.', x + 6, y, cw - 12, C.lgray);
-      button('ck_out', W / 2 - 40, y + 40, 80, 18, 'DEVAM', () => { this.chosen = -2; this.next(); }, { kind: 'green' });
+      textBlock(TX('ÖRS SUSTU: BU SİLAHA DÖVÜLECEK BİR ŞEY KALMADI. DEMİRCİ +40 SİKKE VERDİ.'), x + 6, y, cw - 12, C.lgray);
+      button('ck_out', W / 2 - 40, y + 40, 80, 18, TX('DEVAM'), () => { this.chosen = -2; this.next(); }, { kind: 'green' });
     } else {
-      text(RUN.mods.length && this.chosen < 0 ? 'BİR DEĞİŞİKLİK DAHA SEÇ' : 'BİR DEĞİŞİKLİK SEÇ', W / 2, y, C.white, 'center');
+      text(RUN.mods.length && this.chosen < 0 ? TX('BİR DEĞİŞİKLİK DAHA SEÇ') : TX('BİR DEĞİŞİKLİK SEÇ'), W / 2, y, C.white, 'center');
       y += 12;
       const ch = 42;
       this.opts.forEach((m, i) => {
@@ -535,7 +540,7 @@ SCENES.cekic = {
       });
       if (RUN.mods.length) {
         const had = RUN.mods.filter((id, j) => !(this.chosen >= 0 && j === RUN.mods.length - 1)).map(id => MOD_BY_ID[id] ? MOD_BY_ID[id].name : id);
-        if (had.length) text('DÖVÜLMÜŞ: ' + had.join(', '), W / 2, y + 2, C.orange0, 'center');
+        if (had.length) text(TX('DÖVÜLMÜŞ: ') + had.join(', '), W / 2, y + 2, C.orange0, 'center');
       }
     }
     bottomBar(H - SAFE.b - 30);
@@ -548,9 +553,9 @@ SCENES.rest = {
   enter() { RUN.restDone[RUN.region] = true; this.S = computeStats(RUN); this.done = false; this.t = 0; this.leaveT = 0; Music.layer = 3; },
   pick(k) {
     if (this.done) return; this.done = true; this.leaveT = 0.5;
-    if (k === 'heal') { RUN.hp = Math.min(this.S.maxHp, RUN.hp + 2); toast('+2 CAN', C.red, 'heart'); Sound.play('heal'); }
-    else if (k === 'max') { RUN.bonusMaxHp++; toast('+1 AZAMİ CAN', C.gold, 'heartG'); Sound.play('heal'); }
-    else { RUN.yonca += 6; missionEvent('yonca', 6); toast('+6 KRİSTAL', C.cyan, 'clover'); Sound.play('clover'); }
+    if (k === 'heal') { RUN.hp = Math.min(this.S.maxHp, RUN.hp + 2); toast(TX('+2 CAN'), C.red, 'heart'); Sound.play('heal'); }
+    else if (k === 'max') { RUN.bonusMaxHp++; toast(TX('+1 AZAMİ CAN'), C.gold, 'heartG'); Sound.play('heal'); }
+    else { RUN.yonca += 6; missionEvent('yonca', 6); toast(TX('+6 KRİSTAL'), C.cyan, 'clover'); Sound.play('clover'); }
     haptic('success');
   },
   update(dt) {
@@ -562,8 +567,8 @@ SCENES.rest = {
   draw() {
     stationFloor();
     const top = SAFE.t + 6;
-    textO('DİNLENME KAPSÜLÜ', W / 2, top, C.cyan, 'center', 2);
-    text('TEMİZ HAVA, KISA BİR MOLA...', W / 2, top + 20, C.white, 'center');
+    textO(TX('DİNLENME KAPSÜLÜ'), W / 2, top, C.cyan, 'center', 2);
+    text(TX('TEMİZ HAVA, KISA BİR MOLA...'), W / 2, top + 20, C.white, 'center');
     const fy = top + 40; this.fy = fy + 8;
     spr(BLD.fountain, W / 2 - 20, fy);
     drawParts(0, 0);
@@ -573,7 +578,7 @@ SCENES.rest = {
     for (let i = 0; i < this.S.maxHp; i++) { spr(i < RUN.hp ? ICONS.heart : ICONS.heartE, hx, fy + 40); hx += 9; }
     const bw = Math.min(W - 20, 200), bx = Math.round(W / 2 - bw / 2);
     let y = fy + 58;
-    const opts = [['heal', 'ŞİFA BUHARI', '2 CAN YENİLE', 'heart'], ['max', 'KAPSÜLDE UYU', '+1 AZAMİ CAN', 'heartG'], ['yonca', 'YILDIZLARA BAK', '+6 KRİSTAL', 'clover']];
+    const opts = [['heal', TX('ŞİFA BUHARI'), TX('2 CAN YENİLE'), 'heart'], ['max', TX('KAPSÜLDE UYU'), TX('+1 AZAMİ CAN'), 'heartG'], ['yonca', TX('YILDIZLARA BAK'), TX('+6 KRİSTAL'), 'clover']];
     for (const [k, a, b, ic] of opts) {
       button('rest_' + k, bx, y, bw, 24, '', () => this.pick(k), { kind: 'secondary', disabled: this.done });
       spr(ICONS[ic], bx + 8, y + 7); text(a, bx + 24, y + 4, C.yellow); text(b, bx + 24, y + 13, C.lgray);
@@ -593,7 +598,7 @@ SCENES.kaos = {
   },
   choose(i) {
     if (this.done) return;
-    if (RUN.hp <= 1) { Sound.play('deny'); toast('KAOS BEDELİ İÇİN CANIN YETMİYOR', C.salmon, 'heart'); return; }
+    if (RUN.hp <= 1) { Sound.play('deny'); toast(TX('KAOS BEDELİ İÇİN CANIN YETMİYOR'), C.salmon, 'heart'); return; }
     const o = this.offers[i];
     this.done = true; this.pickI = i; this.leaveT = 1.0;
     RUN.hp--; RUN.chaos.push({ curse: o.curse, bless: o.bless, left: 3 }); missionEvent('kaos', 1);
@@ -612,9 +617,9 @@ SCENES.kaos = {
     g.globalAlpha = 1;
     drawParts(0, 0);
     const top = SAFE.t + 8;
-    textO('KAOS KAPISI', W / 2, top, C.magenta, 'center', 2);
-    text('BİR CAN VER, BİR PAZARLIK SEÇ', W / 2, top + 20, C.lgray, 'center');
-    text('ÖNCE 3 ETAP LANET, SONRA KALICI LÜTUF', W / 2, top + 30, C.gray, 'center');
+    textO(TX('KAOS KAPISI'), W / 2, top, C.magenta, 'center', 2);
+    text(TX('BİR CAN VER, BİR PAZARLIK SEÇ'), W / 2, top + 20, C.lgray, 'center');
+    text(TX('ÖNCE 3 ETAP LANET, SONRA KALICI LÜTUF'), W / 2, top + 30, C.gray, 'center');
     const cw = Math.min(W - 14, 230), cx = Math.round(W / 2 - cw / 2), ch = 50;
     let y = top + 46;
     this.offers.forEach((o, i) => {
@@ -623,17 +628,17 @@ SCENES.kaos = {
       g.globalAlpha = k * (this.done && this.pickI !== i ? 0.3 : 1);
       rrect(cx - 1, yy - 1, cw + 2, ch + 2, this.pickI === i ? C.magenta : C.ink); rrect(cx, yy, cw, ch, C.navy);
       rect(cx, yy + 1, 3, ch - 2, C.magenta);
-      text('LANET', cx + 8, yy + 4, C.red); text(cu.name, cx + 46, yy + 4, C.salmon); text(cu.desc, cx + 46, yy + 13, C.lgray);
+      text(TX('LANET'), cx + 8, yy + 4, C.red); text(cu.name, cx + 46, yy + 4, C.salmon); text(cu.desc, cx + 46, yy + 13, C.lgray);
       hline(cx + 8, yy + 24, cw - 16, C.slate);
-      text('LÜTUF', cx + 8, yy + 29, C.green); text(bs.name, cx + 46, yy + 29, C.yellow); text(bs.desc, cx + 46, yy + 38, C.lgray);
+      text(TX('LÜTUF'), cx + 8, yy + 29, C.green); text(bs.name, cx + 46, yy + 29, C.yellow); text(bs.desc, cx + 46, yy + 38, C.lgray);
       g.globalAlpha = 1;
       UI.add('kc' + i, cx, yy, cw, ch, () => this.choose(i));
       y += ch + 6;
     });
-    text('BEDEL: 1 CAN', W / 2, y + 2, RUN.hp > 1 ? C.red : C.salmon, 'center');
+    text(TX('BEDEL: 1 CAN'), W / 2, y + 2, RUN.hp > 1 ? C.red : C.salmon, 'center');
     let hx = W / 2 - computeStats(RUN).maxHp * 4.5;
     for (let i = 0; i < computeStats(RUN).maxHp; i++) { spr(i < RUN.hp ? ICONS.heart : ICONS.heartE, hx, y + 12); hx += 9; }
-    if (!this.done) button('k_out', W / 2 - 40, y + 26, 80, 16, 'VAZGEÇ', () => { this.done = true; go('doors'); }, { kind: 'secondary' });
+    if (!this.done) button('k_out', W / 2 - 40, y + 26, 80, 16, TX('VAZGEÇ'), () => { this.done = true; go('doors'); }, { kind: 'secondary' });
     drawTexts(); drawFlash();
   }
 };
@@ -679,13 +684,13 @@ SCENES.event = {
     const nC = this.result ? 0 : ev.choices.length;
     const ph = 40 + lines.length * 9 + (this.result ? 30 : nC * 30) + 6;
     const py = Math.round(Math.max(SAFE.t + 10, (H - SAFE.b - 90 - ph) / 2));
-    panel(px, py, pw, ph, 'YOL OLAYI');
+    panel(px, py, pw, ph, TX('YOL OLAYI'));
     const ic = ICONS[ev.icon];
     if (ic) spr(ic, px + 10, py + 20);
     text(ev.title, px + 24, py + 21, C.yellow);
     lines.forEach((ln, i) => text(ln, px + 10, py + 34 + i * 9, this.result ? C.white : C.lgray));
     let y = py + 38 + lines.length * 9;
-    if (this.result) button('ev_next', px + pw / 2 - 40, y + 4, 80, 18, 'DEVAM', () => this.next(), { kind: 'green' });
+    if (this.result) button('ev_next', px + pw / 2 - 40, y + 4, 80, 18, TX('DEVAM'), () => this.next(), { kind: 'green' });
     else ev.choices.forEach((c, i) => {
       const ok = !c.req || c.req(RUN);
       button('evc' + i, px + 8, y, pw - 16, 26, '', () => this.choose(c), { kind: ok ? 'secondary' : 'disabled', disabled: !ok });
@@ -746,12 +751,12 @@ SCENES.results = {
     this.league = RUN.league && Object.keys(RUN.league).length ? leagueRank() : 0;
     if (this.league === 1 && this.won) META.stats.leagueWins = (META.stats.leagueWins || 0) + 1;
     this.done = META.missions.filter(m => m.done).length;
-    this.where = this.won ? 'GALAKSİ KUPASI' : REGIONS[Math.min(LAST_REGION, RUN.region)].name + ' · ' + (RUN.etap >= 4 ? 'ŞAMPİYON' : 'ETAP ' + (RUN.etap + 1));
+    this.where = this.won ? TX('GALAKSİ KUPASI') : REGIONS[Math.min(LAST_REGION, RUN.region)].name + ' · ' + (RUN.etap >= 4 ? TX('ŞAMPİYON') : TX('ETAP ') + (RUN.etap + 1));
     const di = RUN.diedIn;
     this.near = null;
     if (!this.won && di) {
-      if (di.boss && di.gap != null) this.near = trAcc(BOSSES[di.boss].name.split(' ').pop()) + ' GEÇMENE %' + Math.max(0, 100 - di.gap) + ' KALDI';
-      else if (di.pct != null) this.near = 'ETAP İLERLEMESİ: %' + di.pct;
+      if (di.boss && di.gap != null) this.near = trAcc(BOSSES[di.boss].name.split(' ').pop()) + TX(' GEÇMENE %') + Math.max(0, 100 - di.gap) + TX(' KALDI');
+      else if (di.pct != null) this.near = TX('ETAP İLERLEMESİ: %') + di.pct;
     }
     checkFarmPerks();
     saveMeta();
@@ -768,19 +773,19 @@ SCENES.results = {
   draw() {
     rect(0, 0, W, H, this.won ? C.navy : C.ink);
     const top = SAFE.t + 14;
-    textO(this.won ? 'KUPA SENİN!' : RUN.daily ? 'GÜNÜN KOŞUSU' : this.quit ? 'KOŞU BİTTİ' : 'SEZON BİTTİ', W / 2, top, this.won ? C.yellow : RUN.daily ? C.cyan : C.salmon, 'center', 2);
+    textO(this.won ? TX('KUPA SENİN!') : RUN.daily ? TX('GÜNÜN KOŞUSU') : this.quit ? TX('KOŞU BİTTİ') : TX('SEZON BİTTİ'), W / 2, top, this.won ? C.yellow : RUN.daily ? C.cyan : C.salmon, 'center', 2);
     if (this.won) spr(ICONS.crown, W / 2 - 5, top - 10);
     text(this.where, W / 2, top + 21, C.lgray, 'center');
     const lines = [
-      ['EN İYİ KOMBO', String(RUN.maxCombo), C.yellow],
-      ['MÜKEMMEL RİTİM', String(RUN.perfects), C.yellow],
-      ['VURULAN DÜŞMAN', String(RUN.kills), C.white],
-      ['MADALYA', null, C.white],
-      ['SİKKE → KRİSTAL', RUN.coins + ' → ' + this.conv, C.gold],
-      ['TOPLAM KRİSTAL', '+' + this.yonca, C.cyan],
-      ['KAZANILAN XP', '+' + this.xp, C.sky]
+      [TX('EN İYİ KOMBO'), String(RUN.maxCombo), C.yellow],
+      [TX('MÜKEMMEL RİTİM'), String(RUN.perfects), C.yellow],
+      [TX('VURULAN DÜŞMAN'), String(RUN.kills), C.white],
+      [TX('MADALYA'), null, C.white],
+      [TX('SİKKE → KRİSTAL'), RUN.coins + ' → ' + this.conv, C.gold],
+      [TX('TOPLAM KRİSTAL'), '+' + this.yonca, C.cyan],
+      [TX('KAZANILAN XP'), '+' + this.xp, C.sky]
     ];
-    if (this.seker) lines.splice(6, 0, ['ŞEKER', '+' + this.seker, C.white]);
+    if (this.seker) lines.splice(6, 0, [TX('ŞEKER'), '+' + this.seker, C.white]);
     const pw = Math.min(W - 20, 200), px = Math.round(W / 2 - pw / 2);
     let y = top + 36;
     lines.forEach((ln, i) => {
@@ -796,20 +801,20 @@ SCENES.results = {
     const k = clamp((this.t - 1.4) / 1.0, 0, 1);
     const lvShown = k >= 1 ? META.level : this.lvBefore;
     const frac = k >= 1 ? META.xp / xpNeed(META.level) : lerp(this.xpBefore / xpNeed(this.lvBefore), this.ups.length ? 1 : META.xp / xpNeed(META.level), Ease.outCubic(k));
-    text('SEVİYE ' + lvShown, px, y, C.white);
+    text(TX('SEVİYE ') + lvShown, px, y, C.white);
     bar(px + 52, y + 2, pw - 52, 4, frac, C.sky);
     y += 13;
     const notes = [];
-    if (this.ups.length && this.t > 2) notes.push(['SEVİYE ATLADIN! +' + this.ups.length + ' PUAN', C.yellow, true]);
-    if (this.daily && this.t > 2.1) notes.push(['SKOR: ' + this.daily.score + (this.daily.best ? '  BUGÜNÜN REKORU!' : ''), C.cyan, true]);
-    if (this.record && this.t > 2.2) notes.push(['YENİ REKOR!', C.gold, true]);
+    if (this.ups.length && this.t > 2) notes.push([TX('SEVİYE ATLADIN! +') + this.ups.length + TX(' PUAN'), C.yellow, true]);
+    if (this.daily && this.t > 2.1) notes.push([TX('SKOR: ') + this.daily.score + (this.daily.best ? TX('  BUGÜNÜN REKORU!') : ''), C.cyan, true]);
+    if (this.record && this.t > 2.2) notes.push([TX('YENİ REKOR!'), C.gold, true]);
     if (this.near && this.t > 2.3) notes.push([this.near, C.salmon]);
-    if (this.grew && this.t > 2.4) notes.push(['SERADA ÜRÜNLER BÜYÜDÜ', C.green]);
-    if (this.assistUp && this.t > 2.4) notes.push(['YARDIM MODU BİRAZ GÜÇLENDİ', C.sky]);
-    if (RUN.grades && this.t > 2.42) { const gs = ['S', 'A', 'B'].filter(k => RUN.grades[k]).map(k => RUN.grades[k] + ' ' + k).join(' · '); if (gs) notes.push(['RİTİM NOTLARI: ' + gs, C.gold]); }
-    if (this.league && this.t > 2.45) notes.push(['GALAKSİ LİGİ: ' + this.league + '. SIRA', this.league === 1 ? C.gold : C.lgray, this.league === 1]);
-    if (RUN.coins > 500 && this.t > 2.48) notes.push(['500 ÜSTÜ SİKKE YARI DEĞERDE: PAZARDA HARCA', C.salmon]);
-    if (this.done && this.t > 2.5) notes.push([this.done + ' GÖREV TAMAM: PANODAN AL', C.green]);
+    if (this.grew && this.t > 2.4) notes.push([TX('SERADA ÜRÜNLER BÜYÜDÜ'), C.green]);
+    if (this.assistUp && this.t > 2.4) notes.push([TX('YARDIM MODU BİRAZ GÜÇLENDİ'), C.sky]);
+    if (RUN.grades && this.t > 2.42) { const gs = ['S', 'A', 'B'].filter(k => RUN.grades[k]).map(k => RUN.grades[k] + ' ' + k).join(' · '); if (gs) notes.push([TX('RİTİM NOTLARI: ') + gs, C.gold]); }
+    if (this.league && this.t > 2.45) notes.push([TX('GALAKSİ LİGİ: ') + this.league + TX('. SIRA'), this.league === 1 ? C.gold : C.lgray, this.league === 1]);
+    if (RUN.coins > 500 && this.t > 2.48) notes.push([TX('500 ÜSTÜ SİKKE YARI DEĞERDE: PAZARDA HARCA'), C.salmon]);
+    if (this.done && this.t > 2.5) notes.push([this.done + TX(' GÖREV TAMAM: PANODAN AL'), C.green]);
     for (const [s, c, o] of notes) { if (o) textO(s, W / 2, y, c, 'center'); else text(s, W / 2, y, c, 'center'); y += 11; }
     const btnY = H - SAFE.b - 38;
     const artY = Math.max(y + 34, btnY - 50);
@@ -821,7 +826,7 @@ SCENES.results = {
       if (this.won) spr(ICONS.crown, W / 2 - 5, artY - img.height + 8 - Math.round(Math.abs(Math.sin(this.t * 4)) * 3));
       else for (let i = 0; i < 3; i++) { const kk = (this.t * 0.6 + i / 3) % 1; g.globalAlpha = 1 - kk; text('Z', W / 2 + 14 + kk * 10, artY - 18 - kk * 16, C.lgray); g.globalAlpha = 1; }
     }
-    if (this.t > 1.0) { const bw = Math.min(W - 30, 160); const lib = this.won && META.freeTokens > 0 && freeCandidates().length; button('res_farm', W / 2 - bw / 2, btnY, bw, 22, lib ? 'KAPI AÇIK: BİRİNİ EVE GÖNDER' : 'İSTASYONA DÖN', () => { const dest = [lib ? 'liberate' : 'farm', { fromRun: true }]; if (this.won && !META.seen.cine_final) go('cine', { script: 'final', then: dest }); else go(dest[0], dest[1]); }, { kind: 'primary' }); }
+    if (this.t > 1.0) { const bw = Math.min(W - 30, 160); const lib = this.won && META.freeTokens > 0 && freeCandidates().length; button('res_farm', W / 2 - bw / 2, btnY, bw, 22, lib ? TX('KAPI AÇIK: BİRİNİ EVE GÖNDER') : TX('İSTASYONA DÖN'), () => { const dest = [lib ? 'liberate' : 'farm', { fromRun: true }]; if (this.won && !META.seen.cine_final) go('cine', { script: 'final', then: dest }); else go(dest[0], dest[1]); }, { kind: 'primary' }); }
     drawParts(0, 0); drawTexts();
   }
 };
@@ -881,9 +886,9 @@ SCENES.liberate = {
     if (META.nemesis && META.nemesis.id === id) META.nemesis = null;
     META.yonca += 12; META.seker += 1; saveMeta();
     Sound.play('gate'); haptic('success'); flash(C.cyan, 0.3);
-    const lines = [[id, RIVAL_BYE[id] || 'HOŞÇA KAL DÜNYALI.']];
-    lines.push([npcAvailable('akyel') ? 'akyel' : 'bip', freedCount() >= NAMED_RIVALS.flat().length ? 'SONUNCUSU DA GİTTİ. ARTIK GRAX\'IN ŞOVUNDA KİMSE ZORLA KOŞMUYOR.' : r.name + ' EVİNDE. GERİDE ' + (NAMED_RIVALS.flat().length - freedCount()) + ' KİŞİ KALDI.']);
-    Dialog.start(lines, () => { toast('VEDA HEDİYESİ: +12 KRİSTAL +1 ŞEKER', C.cyan, 'gift'); go('farm', { fromRun: true }); });
+    const lines = [[id, RIVAL_BYE[id] || TX('HOŞÇA KAL DÜNYALI.')]];
+    lines.push([npcAvailable('akyel') ? 'akyel' : 'bip', freedCount() >= NAMED_RIVALS.flat().length ? TX('SONUNCUSU DA GİTTİ. ARTIK GRAX\'IN ŞOVUNDA KİMSE ZORLA KOŞMUYOR.') : r.name + TX(' EVİNDE. GERİDE ') + (NAMED_RIVALS.flat().length - freedCount()) + TX(' KİŞİ KALDI.')]);
+    Dialog.start(lines, () => { toast(TX('VEDA HEDİYESİ: +12 KRİSTAL +1 ŞEKER'), C.cyan, 'gift'); go('farm', { fromRun: true }); });
   },
   update(dt) { this.t += dt; updateFX(dt); if (this.empty && Trans.dir === 0) { this.empty = false; go('farm', { fromRun: true }); } },
   key(k) { if (k === 'Escape') { go('farm', { fromRun: true }); return true; } return false; },
@@ -895,8 +900,8 @@ SCENES.liberate = {
     const gx = W / 2, gy = SAFE.t + 54;
     for (let r = 30, i = 0; r > 10; r -= 5, i++) { g.globalAlpha = 0.18 + 0.06 * i + 0.05 * Math.sin(T * 3 + i); ring(gx, gy, r, C.cyan); }
     g.globalAlpha = 1; circle(gx, gy, 9, C.white); circle(gx, gy, 7, C.cyan);
-    textO('KAPI AÇIK', W / 2, gy + 36, C.cyan, 'center', 2);
-    textBlock('KUPA KAPIYI BİR KEZ DAHA AÇTI. DOSYASINI AÇTIĞIN BİR RAKİBİ EVİNE GÖNDER. GİDEN BİR DAHA PİSTE ÇIKMAZ.', W / 2, gy + 56, W - 24, C.lgray, 'center');
+    textO(TX('KAPI AÇIK'), W / 2, gy + 36, C.cyan, 'center', 2);
+    textBlock(TX('KUPA KAPIYI BİR KEZ DAHA AÇTI. DOSYASINI AÇTIĞIN BİR RAKİBİ EVİNE GÖNDER. GİDEN BİR DAHA PİSTE ÇIKMAZ.'), W / 2, gy + 56, W - 24, C.lgray, 'center');
     const top = gy + 88, rowH = 30, bw = Math.min(W - 16, 220), bx = Math.round(W / 2 - bw / 2);
     const maxRows = Math.max(3, Math.floor((H - SAFE.b - 60 - top) / rowH));
     this.list.slice(0, maxRows).forEach((r, i) => {
@@ -908,9 +913,9 @@ SCENES.liberate = {
       UI.add('lib_' + r.id, bx, y, bw, rowH - 4, () => { this.sel = r.id; Sound.play('select'); });
     });
     const by = H - SAFE.b - 34, half = Math.floor((bw - 6) / 2);
-    button('lib_later', bx, by, half, 20, 'SONRA', () => go('farm', { fromRun: true }), { kind: 'secondary' });
-    button('lib_go', bx + half + 6, by, half, 20, 'EVE GÖNDER', () => this.free(this.sel), { kind: 'green', disabled: !this.sel || this.done });
-    text('EVE GÖNDERME HAKKI: ' + (META.freeTokens || 0), W / 2, by - 12, C.yellow, 'center');
+    button('lib_later', bx, by, half, 20, TX('SONRA'), () => go('farm', { fromRun: true }), { kind: 'secondary' });
+    button('lib_go', bx + half + 6, by, half, 20, TX('EVE GÖNDER'), () => this.free(this.sel), { kind: 'green', disabled: !this.sel || this.done });
+    text(TX('EVE GÖNDERME HAKKI: ') + (META.freeTokens || 0), W / 2, by - 12, C.yellow, 'center');
     drawParts(0, 0); drawTexts(); drawFlash();
   }
 };

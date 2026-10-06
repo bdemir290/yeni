@@ -35,12 +35,12 @@ Object.assign(SCENES.run, {
     } else if (t.kind === 'drop') {
       const kind = rnd() < 0.5 ? 'civi' : 'puddle';
       this.addObs(kind, r.lane, 1, r.dist - 22, kind === 'puddle' ? { mud: this.reg.mud } : null);
-      floatText(kind === 'civi' ? 'MAYIN!' : 'JÖLE!', r.x, this.sy(r.dist) + 2, C.salmon, 1, -6, 0.8); Sound.play('pebble');
+      floatText(kind === 'civi' ? TX('MAYIN!') : TX('JÖLE!'), r.x, this.sy(r.dist) + 2, C.salmon, 1, -6, 0.8); Sound.play('pebble');
     } else if (t.kind === 'cut') {
       const gap = r.dist - P.dist;
       if (gap > 4 && gap < 90 && this.laneFree(t.lane, r.dist, r)) {
         r.fromX = r.x; r.lane = t.lane; r.laneT = 0; r.cool = 1;
-        floatText('ÖNÜNÜ KESTİ!', r.x, this.sy(r.dist) - 28, C.salmon, 1, -8, 0.8); this.say('rivalTrick');
+        floatText(TX('ÖNÜNÜ KESTİ!'), r.x, this.sy(r.dist) - 28, C.salmon, 1, -8, 0.8); this.say('rivalTrick');
       }
     }
   },

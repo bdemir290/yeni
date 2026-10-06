@@ -37,11 +37,11 @@ const Calib = {
     // the whole screen takes the taps while measuring; the close button is registered after it, so it still works
     UI.block(0, 0, W, H, c.result ? null : (x, y, tt) => this.tap(tt == null ? now() : tt));
     g.globalAlpha = 0.55; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
-    panel(px, py, w, h, 'RİTİM AYARI');
+    panel(px, py, w, h, TX('RİTİM AYARI'));
     const close = () => { this.st = null; onClose(); };
     button('cal_x', px + w - 14, py + 2, 11, 10, 'X', close, { kind: 'red', hitPad: 5 });
     let y = py + 19;
-    textBlock(c.result ? (c.result.fail ? 'YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.' : 'ÖLÇÜM TAMAM!') : 'SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.', px + w / 2, y, w - 20, C.lgray, 'center');
+    textBlock(c.result ? (c.result.fail ? TX('YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.') : TX('ÖLÇÜM TAMAM!')) : TX('SESİ AÇ. HER TIK SESİNİ DUYDUĞUN ANDA EKRANA DOKUN. EKRANA DEĞİL, SESE GÜVEN.'), px + w / 2, y, w - 20, C.lgray, 'center');
     y += 30;
     const cx = px + w / 2;
     if (!c.result) {
@@ -52,18 +52,18 @@ const Calib = {
     } else if (!c.result.fail) {
       const r = c.result;
       textO((r.ms > 0 ? '+' : '') + r.ms + ' MS', cx, y + 2, C.yellow, 'center', 2);
-      text(r.ms > 10 ? 'SESİ BİRAZ GEÇ DUYUYORSUN' : r.ms < -10 ? 'SESİN ÖNÜNE GEÇİYORSUN' : 'ZAMANLAMAN TAM', cx, y + 22, C.lgray, 'center');
-      text('SAPMA: ' + r.spread + ' MS' + (r.spread > 90 ? ' (TEKRAR DENE)' : ''), cx, y + 32, r.spread > 90 ? C.salmon : C.gray, 'center');
+      text(r.ms > 10 ? TX('SESİ BİRAZ GEÇ DUYUYORSUN') : r.ms < -10 ? TX('SESİN ÖNÜNE GEÇİYORSUN') : TX('ZAMANLAMAN TAM'), cx, y + 22, C.lgray, 'center');
+      text(TX('SAPMA: ') + r.spread + ' MS' + (r.spread > 90 ? TX(' (TEKRAR DENE)') : ''), cx, y + 32, r.spread > 90 ? C.salmon : C.gray, 'center');
     }
     // where each tap landed: -150 ms ... +150 ms
     const lx = px + 16, lw = w - 32, ly = py + 112;
     rect(lx, ly, lw, 1, C.slate); vline(lx + lw / 2, ly - 3, 7, C.lgray);
-    text('ERKEN', lx, ly + 3, C.gray); text('GEÇ', lx + lw, ly + 3, C.gray, 'right');
+    text(TX('ERKEN'), lx, ly + 3, C.gray); text(TX('GEÇ'), lx + lw, ly + 3, C.gray, 'right');
     for (const d of c.taps) { const x = lx + lw / 2 + clamp(d / 0.15, -1, 1) * lw / 2; vline(x, ly - 2, 5, C.cyan); }
     if (c.result) {
       const bw = Math.floor((w - 26) / 2);
-      button('cal_again', px + 8, py + h - 22, bw, 15, 'TEKRAR', () => this.start(), { kind: 'secondary' });
-      if (!c.result.fail) button('cal_ok', px + 18 + bw, py + h - 22, bw, 15, 'KAYDET', () => { META.settings.offset = c.result.ms; saveMeta(); toast('RİTİM GECİKMESİ: ' + c.result.ms + ' MS', C.green, 'check'); close(); }, { kind: 'green' });
+      button('cal_again', px + 8, py + h - 22, bw, 15, TX('TEKRAR'), () => this.start(), { kind: 'secondary' });
+      if (!c.result.fail) button('cal_ok', px + 18 + bw, py + h - 22, bw, 15, TX('KAYDET'), () => { META.settings.offset = c.result.ms; saveMeta(); toast(TX('RİTİM GECİKMESİ: ') + c.result.ms + ' MS', C.green, 'check'); close(); }, { kind: 'green' });
     }
   }
 };
