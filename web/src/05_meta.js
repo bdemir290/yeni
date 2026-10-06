@@ -2,7 +2,7 @@
 const SAVE_KEY = 'dortnala_save_v1';
 function defaultMeta() {
   return {
-    v: 5, yonca: 0, rozet: 0, seker: 0, xp: 0, level: 1, points: 0,
+    v: 6, yonca: 0, rozet: 0, seker: 0, xp: 0, level: 1, points: 0,
     skills: {},
     blv: { ev: 1, ahir: 1, pano: 1, ambar: 0, silahhane: 0, nalbant: 0, tapinak: 0, jokey: 0, veteriner: 0, bahce: 0 },
     nals: { demir: true }, nal: 'demir', foods: {}, food: null, food2: null,
@@ -72,6 +72,24 @@ function loadMeta(hot) {
       if (rs.diedIn && rs.diedIn.region != null) rs.diedIn.region = map(rs.diedIn.region);
     }
     META.v = 5;
+  }
+  // v6: Fırtına Devi and Kor Ay now sit between Kızıl Kum and the arena
+  if (obj && (obj.v || 0) < 6) {
+    const map = i => REGION_V5[clamp(i | 0, 0, REGION_V5.length - 1)];
+    META.stats.bestRegion = map(META.stats.bestRegion);
+    if (META.stats.bestProgress >= 20) META.stats.bestProgress += 10;
+    const rs = META.runSave;
+    if (rs) {
+      rs.region = map(rs.region); rs.doors = null;
+      for (const k of ['shopDone', 'restDone', 'kaosDone', 'eventCount', 'duelDone']) {
+        const o = rs[k]; if (!o) continue;
+        const n = {}; for (const r in o) n[map(+r)] = o[r]; rs[k] = n;
+      }
+      if (rs.diedIn && rs.diedIn.region != null) rs.diedIn.region = map(rs.diedIn.region);
+    }
+    if (META.lastRun && META.lastRun.region != null) META.lastRun.region = map(META.lastRun.region);
+    if (META.introDone) META.flags.v6news = true;
+    META.v = 6;
   }
   fixCrops();
 }

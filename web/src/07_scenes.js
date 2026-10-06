@@ -6,7 +6,7 @@ SCENES.title = {
     Sound.unlock();
     if (META.runSave) return;
     if (!META.introDone) {
-      Dialog.start(INTRO, () => { META.introDone = true; saveMeta(); newRun(); go('run', firstNode()); });
+      go('cine', { script: 'prolog', then: () => { META.introDone = true; saveMeta(); newRun(); go('run', firstNode()); } });
       return;
     }
     go('farm', {});
@@ -62,7 +62,7 @@ SCENES.title = {
       button('t_cont', bx, H * 0.42, bw, 20, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); });
       button('t_farm', bx, H * 0.42 + 26, bw, 18, 'KOŞUYU BIRAK', () => { META.runSave = null; saveMeta(); go('farm', {}); }, { kind: 'secondary' });
     } else if (!Dialog.active() && Math.floor(this.t * 2) % 2 === 0) textO('BAŞLAMAK İÇİN DOKUN', W / 2, H * 0.47, C.white, 'center');
-    text('V5.6', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
+    text('V6.0', W - SAFE.r - 4, H - SAFE.b - 10, C.slate, 'right');
   }
 };
 
@@ -821,7 +821,7 @@ SCENES.results = {
       if (this.won) spr(ICONS.crown, W / 2 - 5, artY - img.height + 8 - Math.round(Math.abs(Math.sin(this.t * 4)) * 3));
       else for (let i = 0; i < 3; i++) { const kk = (this.t * 0.6 + i / 3) % 1; g.globalAlpha = 1 - kk; text('Z', W / 2 + 14 + kk * 10, artY - 18 - kk * 16, C.lgray); g.globalAlpha = 1; }
     }
-    if (this.t > 1.0) { const bw = Math.min(W - 30, 160); const lib = this.won && META.freeTokens > 0 && freeCandidates().length; button('res_farm', W / 2 - bw / 2, btnY, bw, 22, lib ? 'KAPI AÇIK: BİRİNİ EVE GÖNDER' : 'İSTASYONA DÖN', () => go(lib ? 'liberate' : 'farm', { fromRun: true }), { kind: 'primary' }); }
+    if (this.t > 1.0) { const bw = Math.min(W - 30, 160); const lib = this.won && META.freeTokens > 0 && freeCandidates().length; button('res_farm', W / 2 - bw / 2, btnY, bw, 22, lib ? 'KAPI AÇIK: BİRİNİ EVE GÖNDER' : 'İSTASYONA DÖN', () => { const dest = [lib ? 'liberate' : 'farm', { fromRun: true }]; if (this.won && !META.seen.cine_final) go('cine', { script: 'final', then: dest }); else go(dest[0], dest[1]); }, { kind: 'primary' }); }
     drawParts(0, 0); drawTexts();
   }
 };
@@ -842,6 +842,8 @@ const PLANET_PAL = [
   [C.teal, C.ddgreen, C.dgreen, C.green],    // Mantar Ayı
   [C.blue, C.sky, C.cyan, C.white],          // Buz Halkası
   [C.dbrown, C.rust, C.orange0, C.tan],      // Kızıl Kum
+  [C.navy, C.slate, C.lgray, C.white],       // Fırtına Devi
+  [C.plum, C.wine, C.red, C.orange],         // Kor Ay
   [C.rust, C.orange0, C.tan, C.sand]         // Galaksi Arenası
 ];
 function drawPlanet(x, y, r, reg) {
@@ -854,6 +856,8 @@ function drawPlanet(x, y, r, reg) {
   for (let i = -r + 4; i < r - 2; i += 6) { const dx = Math.floor(Math.sqrt(r * r - i * i)) - 2; if (dx > 2) hline(x - dx, y + i, dx * 2, p[0]); }
   g.globalAlpha = 1;
   if (reg === 1) { circle(x + 6, y + 5, 3, p[0]); circle(x - 8, y + 9, 2, p[0]); circle(x + 9, y - 6, 2, p[0]); }
+  if (reg === regionIdx('bulut')) { g.globalAlpha = 0.5; for (let i = -r + 5; i < r - 3; i += 4) { const dx = Math.floor(Math.sqrt(r * r - i * i)) - 3; if (dx > 2) hline(x - dx, y + i, dx * 2, i % 8 ? C.lgray : C.purple); } g.globalAlpha = 1; ellipse(x + 4, y + 4, 3, 2, C.purple); }
+  if (reg === regionIdx('kor')) { pix(x + 3, y + 4, C.yellow); hline(x - 6, y + 2, 5, C.orange); vline(x + 6, y - 5, 4, C.orange); pix(x - 3, y - 6, C.yellow); }
   if (ringed) ringArc(true);
 }
 

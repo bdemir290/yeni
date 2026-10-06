@@ -1,5 +1,5 @@
 // Imported PixelLab art is embedded by build.py, so the iOS game stays offline.
-const IMPORTED_ART = { horses: {}, mounts: {}, portraits: {}, buildings: {}, items: {}, env: {} };
+const IMPORTED_ART = { horses: {}, mounts: {}, portraits: {}, buildings: {}, items: {}, env: {}, story: {} };
 async function loadPixelLabArt() {
   const decode = uri => new Promise((resolve, reject) => {
     const image = new Image();
@@ -23,7 +23,7 @@ async function loadPixelLabArt() {
       }
     }
   }
-  for (const group of ['portraits', 'buildings', 'items', 'env']) {
+  for (const group of ['portraits', 'buildings', 'items', 'env', 'story']) {
     for (const [key, uri] of Object.entries(PIXELLAB_ASSETS[group] || {})) {
       try { IMPORTED_ART[group][key] = await decode(uri); }
       catch (error) { console.warn('PixelLab art fallback:', group, key, error.message); }

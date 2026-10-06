@@ -85,18 +85,25 @@ Object.assign(SCENES.run, {
         } else if (reg.deco === 'desert') {
           if (h > 0.6 && h < 0.618) spr(OB.dune, x, sy);
           else if (h > 0.45 && h < 0.455) spr(OB.ribs, x, sy);
+        } else if (reg.deco === 'cloud') {
+          if (h > 0.6 && h < 0.62) spr(OB.cloudPuff, x - 2, sy);
+        } else if (reg.deco === 'lava') {
+          if (h > 0.6 && h < 0.615) spr(OB.lavaPool, x, sy);
         }
       }
     }
-    if (reg.deco === 'forest' || reg.deco === 'meadow' || reg.deco === 'ice' || reg.deco === 'desert') {
+    if (reg.deco === 'forest' || reg.deco === 'meadow' || reg.deco === 'ice' || reg.deco === 'desert' || reg.deco === 'cloud' || reg.deco === 'lava') {
       const step = 26; const s0 = Math.floor(botWorld / step), s1 = Math.ceil(topWorld / step);
       for (let s = s0; s <= s1; s++) for (const side of [0, 1]) {
         const h = hash2(s * 7 + side, 991);
         const sy = Math.round(this.sy(s * step)) + oy, o = this.offY(sy) + ox;
         if (reg.deco === 'forest') {
           if (h < 0.75) { const img = h < 0.4 ? OB.tree : OB.pine; const x = side ? tx + tw + 4 + (h * 20 | 0) % Math.max(1, W - tx - tw - 10) - 2 : tx - 4 - img.width - ((h * 20) | 0) % Math.max(1, tx - 6) + 4; spr(img, x + o, sy - img.height); }
-        } else if (reg.deco === 'ice' || reg.deco === 'desert') {
-          const img = reg.deco === 'ice' ? (h < 0.22 ? OB.iceSpire : h < 0.3 ? OB.iceShard : null) : (h < 0.16 ? OB.cactus : h < 0.24 ? OB.sandRock : null);
+        } else if (reg.deco === 'ice' || reg.deco === 'desert' || reg.deco === 'cloud' || reg.deco === 'lava') {
+          const img = reg.deco === 'ice' ? (h < 0.22 ? OB.iceSpire : h < 0.3 ? OB.iceShard : null)
+            : reg.deco === 'cloud' ? (h < 0.14 ? OB.skyIsle : h < 0.3 ? OB.cloudPuff : null)
+            : reg.deco === 'lava' ? (h < 0.18 ? OB.obsSpike : h < 0.26 ? OB.lavaPool : null)
+            : (h < 0.16 ? OB.cactus : h < 0.24 ? OB.sandRock : null);
           if (img) { const x = side ? tx + tw + 5 + ((h * 90) | 0) % Math.max(1, W - tx - tw - img.width - 6) : ((h * 90) | 0) % Math.max(1, tx - img.width - 5); spr(img, x + o, sy - img.height); }
         } else if (h < 0.16) { const x = side ? tx + tw + 6 + ((h * 90) | 0) % Math.max(1, W - tx - tw - 16) : ((h * 90) | 0) % Math.max(1, tx - 16); spr(OB.bush, x + o, sy - 6); }
       }
@@ -162,6 +169,9 @@ Object.assign(SCENES.run, {
     }
     if (reg.deco === 'forest') { for (let i = 0; i < 6; i++) { g.globalAlpha = 0.07 * (6 - i); rect(0, i * 10, W, 10, C.lgray); } g.globalAlpha = 1; }
     if (reg.night) { g.globalAlpha = 0.22; rect(0, 0, W, H, C.navy); g.globalAlpha = 1; }
+    // Fırtına Devi: cloud shadows drift over the track; Kor Ay: a heat glow rises from the bottom
+    if (reg.deco === 'cloud') { g.globalAlpha = 0.12; for (let i = 0; i < 3; i++) { const cy = ((P.dist * 0.6 + i * 170) % (H + 120)) - 60; ellipse(((i * 71 + T * 6) % (W + 80)) - 40, Math.round(cy), 46, 22, C.navy); } g.globalAlpha = 1; }
+    if (reg.deco === 'lava') { for (let i = 0; i < 5; i++) { g.globalAlpha = 0.05 * (5 - i); rect(0, H - (i + 1) * 12, W, 12, C.orange); } g.globalAlpha = 1; }
   },
   drawStands(ox, oy, botWorld, topWorld) {
     const tx = this.trackL, tw = this.laneW * 5;
@@ -317,10 +327,18 @@ Object.assign(SCENES.run, {
     const x0 = this.laneL(o.lane) + ox; sy = Math.round(sy) + oy;
     const lw = this.laneW;
     switch (o.kind) {
-      case 'rock': { const img = o.ice ? OB.rock2 : o.kum || this.reg.deco === 'desert' ? OB.sandRock : o.v ? OB.rock2 : (this.reg.deco === 'forest' ? OB.mossrock : OB.rock); g.globalAlpha = 0.3; ellipse(x0 + lw / 2, sy + 4, 7, 2, C.ink); g.globalAlpha = 1; spr(img, x0 + lw / 2 - img.width / 2, sy - img.height + 4); break; }
+      case 'rock': { const img = o.lava || this.reg.deco === 'lava' ? OB.lavaRock : o.ice ? OB.rock2 : o.kum || this.reg.deco === 'desert' ? OB.sandRock : o.v ? OB.rock2 : (this.reg.deco === 'forest' ? OB.mossrock : OB.rock); g.globalAlpha = 0.3; ellipse(x0 + lw / 2, sy + 4, 7, 2, C.ink); g.globalAlpha = 1; spr(img, x0 + lw / 2 - img.width / 2, sy - img.height + 4); break; }
       case 'hurdle': { for (let i = 0; i < o.span; i++) { const img = hurdleSprite(lw - 4); spr(img, x0 + i * lw + 2, sy - 5); } break; }
       case 'log': { const img = logSprite(o.span * lw - 4); spr(img, x0 + 2, sy - 5); break; }
-      case 'puddle': { const img = puddleSprite(lw - 4, o.mud); spr(img, x0 + 2, sy - 5); break; }
+      case 'puddle': {
+        if (o.cloud) { // a low storm cloud: slows you like a puddle
+          const cx = x0 + lw / 2, bob = Math.round(Math.sin(T * 3 + o.t) * 1);
+          g.globalAlpha = 0.85; ellipse(cx, sy + bob, lw / 2 - 2, 5, C.slate); ellipse(cx - 5, sy - 2 + bob, 6, 4, C.gray); ellipse(cx + 5, sy - 2 + bob, 6, 4, C.gray); ellipse(cx, sy - 3 + bob, 7, 4, C.lgray);
+          g.globalAlpha = 1; if (Math.floor(T * 6 + o.t) % 7 === 0) vline(Math.round(cx + 2), sy + 3 + bob, 4, C.yellow);
+          break;
+        }
+        const img = puddleSprite(lw - 4, o.mud); spr(img, x0 + 2, sy - 5); break;
+      }
       case 'bale': { const img = OB.bale[Math.floor(o.t * 8) % 2]; spr(img, x0 + lw / 2 - img.width / 2, sy - 6); break; }
       case 'wolf': { let img = OB.wolf[Math.floor(o.t * 10) % 2]; if (o.vx < 0) img = flipCached(img); spr(img, o.x + ox - img.width / 2, sy - 4); break; }
       case 'coin': { const img = OB.coin[Math.floor(T * 8 + o.y * 0.05) % 4]; spr(img, x0 + lw / 2 - img.width / 2, sy - 4 - (this.beatFrac() < 0.18 ? 1 : 0)); break; }
@@ -335,8 +353,8 @@ Object.assign(SCENES.run, {
         const w = o.span * lw;
         for (let i = 0; i < w; i += 6) {
           const wob = Math.round(Math.sin(T * 12 + i * 0.7) * 1.5);
-          g.globalAlpha = 0.6; ellipse(x0 + i + 3, sy - 2 + wob, 5, 3, C.blue);
-          g.globalAlpha = 0.9; ellipse(x0 + i + 3, sy - 3 + wob, 4, 2, C.cyan);
+          g.globalAlpha = 0.6; ellipse(x0 + i + 3, sy - 2 + wob, 5, 3, o.lava ? C.wine : o.storm ? C.slate : C.blue);
+          g.globalAlpha = 0.9; ellipse(x0 + i + 3, sy - 3 + wob, 4, 2, o.lava ? C.orange : o.storm ? C.yellow : C.cyan);
         }
         g.globalAlpha = 0.5 + 0.5 * Math.sin(T * 20); hline(x0, sy - 3, w, C.white);
         g.globalAlpha = 1; hline(x0, sy + 2, w, C.navy);
@@ -485,15 +503,16 @@ Object.assign(SCENES.run, {
       const lw = this.laneW, xc = this.laneL(b.lane) + lw / 2 + ox;
       if (b.strike > 0) {
         g.globalAlpha = 0.8;
-        for (let y = 0; y < this.pY + 12; y += 6) { const o = this.offY(y); rect(xc - 2 + o, y, 4, 6, C.white); rect(xc - 1 + o, y, 2, 6, b.ice ? C.cyan : C.yellow); }
+        for (let y = 0; y < this.pY + 12; y += 6) { const o = this.offY(y); rect(xc - 2 + o, y, 4, 6, b.ember ? C.gold : C.white); rect(xc - 1 + o, y, 2, 6, b.ice ? C.cyan : b.ember ? C.red : C.yellow); }
         g.globalAlpha = 1;
         burst(xc, this.pY + 10, 2, [C.yellow, C.white], 60, 0.3);
       } else {
         const on = Math.floor(T * 12) % 2 === 0;
         g.globalAlpha = on ? 0.35 : 0.18;
-        for (let y = this.pY - 70; y < this.pY + 20; y += 5) rect(xc - lw / 2 + 1 + this.offY(y), y + oy, lw - 2, 5, b.ice ? C.sky : C.red);
+        for (let y = this.pY - 70; y < this.pY + 20; y += 5) rect(xc - lw / 2 + 1 + this.offY(y), y + oy, lw - 2, 5, b.ice ? C.sky : b.ember ? C.orange : C.red);
         g.globalAlpha = 1;
         if (b.ice) { const ix = xc + this.offY(this.pY - 80), iy = this.pY - 84 + oy + Math.round((1 - b.t) * 6); spr(OB.iceShard, ix - 1, iy); spr(OB.flake, ix - 1, iy - 5); }
+        else if (b.ember) { const ix = xc + this.offY(this.pY - 80), iy = this.pY - 82 + oy + Math.round((1 - b.t) * 6); circle(ix, iy, 3, C.ink); circle(ix, iy, 2, C.orange); pix(ix - 1, iy - 1, C.yellow); }
         else spr(ICONS.bolt, xc - 3 + this.offY(this.pY - 80), this.pY - 80 + oy);
       }
     }
@@ -734,12 +753,20 @@ Object.assign(SCENES.run, {
     if (this.bends && this.bends.length) tags.push([this.bends.length + ' VİRAJ', C.orange]);
     if (RUN.runStyle !== 'dengeli' && this.type !== 'boss' && !this.tut) tags.push([RUN_STYLES[RUN.runStyle].name, C.green]);
     const bh = 44 + tags.length * 10;
-    g.globalAlpha = 0.5 * k; rect(0, H * 0.3, W, bh, C.ink); g.globalAlpha = 1;
-    textO(title, W / 2, H * 0.3 + 6, this.type === 'boss' ? C.salmon : C.yellow, 'center', 2);
-    textO(sub, W / 2, H * 0.3 + 28, C.white, 'center');
-    tags.forEach((t, i) => textO(t[0], W / 2, H * 0.3 + 40 + i * 10, t[1], 'center'));
+    // champion races open with the champion's painted card
+    const card = this.type === 'boss' && IMPORTED_ART.story['c_' + this.boss.key];
+    let by = Math.round(H * 0.3);
+    if (card) {
+      const cy = Math.max(SAFE.t + 34, by - card.height - 8), cx = Math.round(W / 2 - card.width / 2);
+      by = Math.max(by, cy + card.height + 8);
+      g.globalAlpha = k; rect(cx - 2, cy - 2, card.width + 4, card.height + 4, this.boss.def.color || C.salmon); spr(card, cx, cy); g.globalAlpha = 1;
+    }
+    g.globalAlpha = 0.5 * k; rect(0, by, W, bh, C.ink); g.globalAlpha = 1;
+    textO(title, W / 2, by + 6, this.type === 'boss' ? C.salmon : C.yellow, 'center', 2);
+    textO(sub, W / 2, by + 28, C.white, 'center');
+    tags.forEach((t, i) => textO(t[0], W / 2, by + 40 + i * 10, t[1], 'center'));
     const left = Beat.t0 - now();
-    if (this.clockOn && left < 0.5) textO('KOŞ!', W / 2, H * 0.3 + bh + 8, C.green, 'center', 2);
+    if (this.clockOn && left < 0.5) textO('KOŞ!', W / 2, by + bh + 8, C.green, 'center', 2);
   },
   tipTitle(key) { return ETAP_INFO[key] ? ETAP_INFO[key].name : TIP_TITLES[key] ? TIP_TITLES[key] : WEATHERS[key] ? WEATHERS[key].name : ''; },
   tipIcon(key) {

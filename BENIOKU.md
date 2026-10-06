@@ -1,4 +1,4 @@
-# Dörtnala – iOS prototipi (v5.6 · Galaksi Kupası)
+# Dörtnala – iOS prototipi (v6.0 · Galaksi Kupası)
 
 Hades tarzı, üslü roguelike at yarışı. Pixel art, dikey ekran, tek elle oynanır.
 
@@ -130,6 +130,18 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 - Yol seçme ekranında MOLA menüsü: istasyona dön (koşu kaydedilir, istasyondaki "KOŞUYA DEVAM ET" ile sürer) veya koşuyu bırak.
 - iPhone güvenli alanı: uygulama çentik/Dynamic Island ve ana ekran çizgisi boşluklarını oyuna kendisi bildirir (WKWebView'de CSS env() 0 dönebiliyordu).
 - Binalar için üç yöntem denendi; hiçbiri mevcut çizimlerden iyi olmadığı için bağlanmadı. Denemeler `originals/buildings_trials/` altında.
+
+## v6.0: Çizimli hikaye ve iki yeni gezegen
+
+- **Prolog:** Yeni oyun 7 çizimli sahne ve bir başlık kartıyla açılır: Altın Nal Kupası, ahırdaki anne fotoğrafı, ışık, uzaya yolculuk, ARENA-9, Grax'ın canlı yayını, Dünya Bölmesi ve BİP-0. Çizimler yavaşça kayar, altyazılar daktiloyla yazılır; "ATLA" ile geçilebilir. Seyir defterinden yeniden izlenir.
+- **Final:** İlk kupada 3 sahnelik final oynar: kupa, kapı, Akyel ile kavuşma.
+- **Seyir defteri:** 13 sayfanın her birinde küçük bir çizim var. İki yeni sayfa: Fırtına Çobanı ve Grax'ın Mührü.
+- **Şampiyon kartları:** Her şampiyon yarışı, şampiyonun çizimli kartıyla başlar.
+- **Fırtına Devi (6. gezegen):** Bulut yolu, şampiyon Bulut Çobanı Bora (yıldırım, kara bulut, gök gürültüsü; özel hamle "Fırtına"). Rakipler Zefir, Gümbür, Damla.
+- **Kor Ay (7. gezegen):** Lav çatlaklı bazalt pist, şampiyon Demirci Korhan (kor yağmuru, lav taşları, lav dalgası; özel hamle "Örs Darbesi"). Rakipler Kıvılcım, Cüruf, Oniks.
+- **Hikaye:** Bora 2006 finalinde Voltrak'ın kıvılcımlarını gördüğünü anlatır, Korhan kıvılcımlı nalların kalıbını Grax'ın mührüyle birlikte verir. Gizem arenada Voltrak'ın itirafıyla kapanır.
+- **İçerik:** 23 yeni portre; 8 yeni yarışçı seti; yeni zemin dokuları ve dekorlar; iki yeni şarkı. Arena artık 138 BPM.
+- **Kayıt:** v6 göçü eski kayıtlarda arenayı 4'ten 6'ya taşır; koşu kaydı ve rekorlar da uyarlanır. Eski oyunculara BİP yenilikleri haber verir.
 
 ## Proje yapısı
 

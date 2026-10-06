@@ -51,6 +51,14 @@ const ALIEN_LOOKS = {
   n13: { mount: 'bird', fancyTail: true, c: C.white, l: C.white, d: C.lgray, a: C.gold, b: C.yellow, leg: C.gold, eye: C.ink, rider: 'crystal', skin: C.yellow, suit: C.white, trim: C.gold, cape: C.gold },
   n14: { mount: 'ray', crystal: true, c: C.sky, l: C.white, d: C.blue, a: C.white, b: C.cyan, eye: C.white, rider: 'stalk', skin: C.white, suit: C.sky, trim: C.white, reye: C.cyan },
   n15: { mount: 'lizard', sail: true, c: C.salmon, l: C.sand, d: C.magenta, a: C.gold, eye: C.white, rider: 'fin', skin: C.sand, suit: C.orange0, trim: C.yellow },
+  n16: { mount: 'bird', fancyTail: true, c: C.sky, l: C.cyan, d: C.blue, a: C.white, b: C.white, leg: C.yellow, eye: C.ink, rider: 'fin', skin: C.cyan, suit: C.white, trim: C.sky },
+  n17: { mount: 'beast', spikes: true, c: C.slate, l: C.lgray, d: C.navy, a: C.yellow, b: C.gray, eye: C.yellow, rider: 'brute', skin: C.gray, suit: C.yellow, trim: C.navy, reye: C.yellow, horn: C.yellow },
+  n18: { mount: 'ray', glowEdge: true, c: C.blue, l: C.sky, d: C.navy, a: C.cyan, eye: C.white, rider: 'dome', skin: C.cyan, suit: C.blue, trim: C.white, glass: C.sky, brain: C.cyan },
+  n19: { mount: 'lizard', sail: true, c: C.red, l: C.orange, d: C.wine, a: C.yellow, eye: C.yellow, rider: 'horn', skin: C.orange, suit: C.ink, trim: C.orange, horn: C.yellow },
+  n20: { mount: 'beast', big: true, c: C.dgray, l: C.gray, d: C.ink, a: C.orange, b: C.slate, eye: C.orange, rider: 'robo', skin: C.dgray, suit: C.rust, trim: C.orange, reye: C.orange },
+  n21: { mount: 'beetle', horned: true, c: C.ink, l: C.slate, d: C.ink, a: C.red, b: C.purple, eye: C.red, rider: 'hood', skin: C.purple, suit: C.ink, trim: C.red, hat: C.slate },
+  bora: { mount: 'ray', c: C.white, l: C.white, d: C.lgray, a: C.sky, b: C.cyan, eye: C.ink, rider: 'hood', skin: C.sky, suit: C.navy, trim: C.white, hat: C.white },
+  korhan: { mount: 'beast', big: true, spikes: true, c: C.ink, l: C.slate, d: C.ink, a: C.orange, b: C.red, eye: C.orange, rider: 'brute', skin: C.dgray, suit: C.rust, trim: C.orange, reye: C.orange, horn: C.slate },
   niva: { mount: 'ray', crystal: true, c: C.cyan, l: C.white, d: C.sky, a: C.blue, b: C.white, eye: C.white, rider: 'crystal', skin: C.white, suit: C.sky, trim: C.white, cape: C.blue },
   zarg: { mount: 'beast', big: true, spikes: true, c: C.orange0, l: C.tan, d: C.rust, a: C.dbrown, b: C.sand, eye: C.red, rider: 'brute', skin: C.tan, suit: C.rust, trim: C.gold, reye: C.red, horn: C.sand },
   // champions
@@ -496,6 +504,12 @@ function rcrBuildObstacles() {
   OB.iceShard = rcrSpr(['.w.', 'wcs', 'wcs', 'bbb'], { w: C.white, c: C.cyan, s: C.sky, b: C.blue }, null);
   OB.flake = rcrSpr(['w.w', '.c.', 'w.w'], { w: C.white, c: C.cyan }, null);
   // v5 · Kızıl Kum: alien cacti, ribs of something huge, desert rocks
+  // v6 · Fırtına Devi: cloud puffs and floating islets; Kor Ay: obsidian spikes, lava pools and glowing stones
+  OB.cloudPuff = rcrSpr(['...wwww.....', '.wwllwww.ww.', 'wllllllwwllw', 'llllllllllll', '.gggggggggg.'], { w: C.white, l: C.lgray, g: C.gray }, null);
+  OB.skyIsle = rcrSpr(['..gggggg..', '.gGGGGGgg.', 'bbbbbbbbbb', '.bBBBBBbb.', '..bBBBb...', '...bBb....', '....b.....'], { g: C.green, G: C.dgreen, b: C.dgray, B: C.slate });
+  OB.obsSpike = rcrSpr(['...k....', '..kK....', '..kK..k.', '.kkKK.kK', '.kKKKkKK', 'kkKoKKKK', 'kKKKKoKK', 'rrrrrrrr'], { k: C.slate, K: C.ink, o: C.orange, r: C.wine });
+  OB.lavaPool = rcrSpr(['..rrrrrr..', '.roooyoor.', 'royyooyyor', '.roooooor.', '..rrrrrr..'], { r: C.wine, o: C.orange, y: C.yellow }, null);
+  OB.lavaRock = rcrSpr(['..kkkk..', '.kKoKKk.', 'kKKKoKKk', 'kKoKKKKk', 'kKKKKoKk', '.oooooo.'], { k: C.slate, K: C.ink, o: C.orange });
   OB.cactus = rcrSpr([
     '...g...', '..gGg..', 'g.gGg..', 'gggGg.g', '.ggGggg', '..gGg..', '..gGg..', '..ddd..'
   ], { g: C.green, G: C.yellow, d: C.dbrown });

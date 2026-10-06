@@ -221,6 +221,38 @@
     "kristalo": {
       "character_id": "5e93aac5-6039-404e-ab80-c9fa96fbe1c6",
       "direction": "north"
+    },
+    "n16": {
+      "character_id": "9cdeb9fb-8aae-438d-9184-a1d8db1758a3",
+      "direction": "north"
+    },
+    "n17": {
+      "character_id": "60971902-6b00-488d-b6d2-3d8fe013cdb4",
+      "direction": "north"
+    },
+    "n18": {
+      "character_id": "a4dbc4ee-36b4-4c4a-82cd-5626c54a7c41",
+      "direction": "north"
+    },
+    "n19": {
+      "character_id": "6d540049-87ee-4ec6-88b9-3396528e5f4c",
+      "direction": "south"
+    },
+    "n20": {
+      "character_id": "e3b21c3f-2833-4c76-995b-084a2260f9ff",
+      "direction": "north"
+    },
+    "n21": {
+      "character_id": "19d1cacf-fdb3-40a3-900c-9d7a270f0d53",
+      "direction": "north"
+    },
+    "bora": {
+      "character_id": "a7b3e9bb-df9c-4d15-a2eb-9be93ad806e4",
+      "direction": "south"
+    },
+    "korhan": {
+      "character_id": "588b9b55-9383-4a90-879e-d5e764ffdb42",
+      "direction": "south"
     }
   }
 }

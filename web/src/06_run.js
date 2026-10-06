@@ -11,7 +11,7 @@ const JUMP_GRACE = 0.09; // seconds a swipe-up may come after touching a jumpabl
 // what hit you, shown next to the horse; jumpable ones remind you to jump
 const HURT_LABELS = { rock: 'GÖKTAŞI!', fici: 'VARİL!', scan: 'LAZER: ŞERİDİ DEĞİŞTİR', arrow: 'PLAZMA!', bolt: 'YILDIRIM!', foe: 'DÜŞMAN!', reis: 'KAPTAN!',
   storm: 'KARA DELİK!', boss: 'FARK KAPANDI!', hurdle: 'BARİYER: SIÇRA!', log: 'BORU: SIÇRA!', bale: 'VARİL!', wolf: 'AV KÖPEĞİ!', civi: 'MAYIN: SIÇRA!', toz: 'ŞOK DALGASI: SIÇRA!',
-  ice: 'BUZ SARKITI!', kum: 'KUM SOLUCANI!', icerock: 'BUZ DUVARI!' };
+  ice: 'BUZ SARKITI!', kum: 'KUM SOLUCANI!', icerock: 'BUZ DUVARI!', ember: 'KOR YAĞMURU!', lavarock: 'LAV TAŞI!' };
 const FOE_TIPS = {
   karga: 'GÖZCÜ UÇAR, SIÇRAMAK İŞE YARAMAZ. VUR YA DA KAÇ!',
   domuz: 'TOSBİK ÜSTÜNE KOŞAR. ÜSTÜNDEN SIÇRA YA DA VUR!',
@@ -1235,7 +1235,7 @@ SCENES.run = {
       if (S.comboTrample && this.combo >= S.comboTrample && o.kind !== 'wolf') { if (o.kind === 'fici') this.hitFici(o, 99); else this.breakObs(o); Sound.play('bump'); shake(2, 0.1); continue; }
       if ((o.kind === 'rock' || o.kind === 'fici') && S.rockBreaker) { if (o.kind === 'fici') this.hitFici(o, 99); else this.breakObs(o); P.slowT = 0.35; P.slowAmt = 0.25; Sound.play('bump'); shake(2, 0.12); continue; }
       o.hit = true;
-      if (this.hurt(o.kum ? 'kum' : o.ice ? 'icerock' : o.kind)) { if (o.kind === 'fici') this.hitFici(o, 99); else this.breakObs(o); }
+      if (this.hurt(o.kum ? 'kum' : o.ice ? 'icerock' : o.lava ? 'lavarock' : o.kind)) { if (o.kind === 'fici') this.hitFici(o, 99); else this.breakObs(o); }
     }
     if (this.obs.length > 160) this.obs = this.obs.filter(o => !o.dead);
   },

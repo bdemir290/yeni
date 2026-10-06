@@ -759,7 +759,8 @@ SCENES.farm = {
     if (!this.defTab) this.defTab = unreadR && !MEMORIES.some(m => m.cond() && !META.memRead[m.id]) ? 'rakip' : 'gunluk';
     const tab = this.defTab === 'rakip' ? 'rakip' : 'gunluk';
     const avail = H - SAFE.t - SAFE.b - 8, rh = clamp(Math.floor((avail - 64) / rivals.length), 13, 20);
-    const P = this.panelBox('SEYİR DEFTERİ', 52 + Math.max(MEMORIES.length * 20, rivals.length * rh) + 6);
+    const mh = clamp(Math.floor((avail - 82) / MEMORIES.length), 15, 20);
+    const P = this.panelBox('SEYİR DEFTERİ', 52 + Math.max(MEMORIES.length * mh + 20, rivals.length * rh) + 6);
     const tw = Math.floor((P.w - 16) / 2);
     button('tab_g', P.x + 6, P.y + 16, tw, 14, 'GÜNLÜK', () => { this.defTab = 'gunluk'; Sound.play('page'); }, { kind: tab === 'gunluk' ? 'primary' : 'secondary' });
     button('tab_r', P.x + 10 + tw, P.y + 16, tw, 14, 'RAKİPLER ' + nOpen + '/' + rivals.length, () => { this.defTab = 'rakip'; Sound.play('page'); }, { kind: tab === 'rakip' ? 'primary' : 'secondary' });
@@ -769,15 +770,20 @@ SCENES.farm = {
       text('DENİZ VE YILDIZ\'IN YOLCULUĞU', P.x + P.w / 2, y, C.lgray, 'center'); y += 12;
       for (const m of MEMORIES) {
         const open = m.cond(), unread = open && !META.memRead[m.id];
-        rrect(P.x + 6, y, P.w - 12, 17, open ? (unread ? C.purple : C.slate) : C.navy);
-        text((MEMORIES.indexOf(m) + 1) + '.', P.x + 12, y + 5, open ? C.yellow : C.dgray);
+        const rh2 = mh - 3, ty = y + Math.round(rh2 / 2) - 3;
+        rrect(P.x + 6, y, P.w - 12, rh2, open ? (unread ? C.purple : C.slate) : C.navy);
+        text((MEMORIES.indexOf(m) + 1) + '.', P.x + 12, ty, open ? C.yellow : C.dgray);
         if (open) {
-          text(m.title, P.x + 26, y + 5, C.white);
-          if (unread) text('YENİ', P.x + P.w - 12, y + 5, C.yellow, 'right');
-          UI.add('mem' + m.id, P.x + 6, y, P.w - 12, 17, () => { this.page = m.id; META.memRead[m.id] = true; saveMeta(); Sound.play('page'); });
-        } else { spr(ICONS.lock, P.x + 26, y + 4); text(m.hint, P.x + 37, y + 5, C.dgray); }
-        y += 20;
+          text(m.title, P.x + 26, ty, C.white);
+          if (unread) text('YENİ', P.x + P.w - 12, ty, C.yellow, 'right');
+          UI.add('mem' + m.id, P.x + 6, y, P.w - 12, rh2, () => { this.page = m.id; META.memRead[m.id] = true; saveMeta(); Sound.play('page'); });
+        } else { spr(ICONS.lock, P.x + 26, ty - 1); text(m.hint, P.x + 37, ty, C.dgray); }
+        y += mh;
       }
+      // the illustrated story can be watched again
+      const bw2 = Math.floor((P.w - 16) / 2);
+      button('cine_p', P.x + 6, y + 2, bw2, 14, 'PROLOĞU İZLE', () => { this.panel = null; go('cine', { script: 'prolog', then: ['farm', {}] }); }, { kind: 'blue' });
+      if (META.seen.cine_final) button('cine_f', P.x + 10 + bw2, y + 2, bw2, 14, 'FİNALİ İZLE', () => { this.panel = null; go('cine', { script: 'final', then: ['farm', {}] }); }, { kind: 'blue' });
       return;
     }
     text('DÜELLODA YENDİĞİN RAKİPLERİN DOSYALARI', P.x + P.w / 2, y, C.lgray, 'center'); y += 12;
@@ -823,10 +829,12 @@ SCENES.farm = {
   pPage(id) {
     const m = MEMORIES.find(q => q.id === id);
     const w = Math.min(W - 10, 226), lines = wrapText(m.text, w - 30);
-    const P = this.panelBox('SAYFA ' + id, 48 + lines.length * 10 + 30, w);
+    const pic = IMPORTED_ART.story['log_m' + id], ph = pic ? pic.height + 6 : 0;
+    const P = this.panelBox('SAYFA ' + (MEMORIES.indexOf(m) + 1), 48 + ph + lines.length * 10 + 30, w);
     rect(P.x + 6, P.y + 18, P.w - 12, P.h - 44, C.sand); hline(P.x + 6, P.y + 18, P.w - 12, C.white);
     text(m.title, P.x + P.w / 2, P.y + 23, C.wine, 'center');
-    lines.forEach((ln, i) => text(ln, P.x + 15, P.y + 36 + i * 10, C.dbrown));
+    if (pic) { const px = Math.round(P.x + P.w / 2 - pic.width / 2); rect(px - 2, P.y + 33, pic.width + 4, pic.height + 4, C.dbrown); spr(pic, px, P.y + 35); }
+    lines.forEach((ln, i) => text(ln, P.x + 15, P.y + 36 + ph + i * 10, C.dbrown));
     const opened = MEMORIES.filter(q => q.cond());
     const idx = opened.indexOf(m);
     button('pg_back', P.x + 8, P.y + P.h - 22, 54, 15, '< LİSTE', () => { this.page = null; Sound.play('page'); }, { kind: 'secondary' });

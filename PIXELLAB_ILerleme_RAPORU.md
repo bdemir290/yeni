@@ -40,3 +40,9 @@ Bu turda kullanıcının onayıyla yeni üretim yapıldı.
 - Zemin dokuları: 12 Pixen görseli (9 yüzey, 3 yeniden deneme). Oyunun paletine çevrilip ek yersiz hale getirildi. Kaynaklar `originals/env/`.
 - Yarışçılar: 37 karakter, v3 modu (karakter başına 2) ile 4 karelik koşu ve 5 karelik sıçrama (her biri 1). Yanlış yöne bakan 14 karakter yeniden üretildi, 4'ü üçüncü kez. Kaynak zip dosyaları `originals/mounts/`; karakter kimlikleri `originals/production-notes.json` içinde.
 - Binalar: Mevcut binayı başlangıç görseli olarak verme, düzenleme ve sıfırdan önden çizim yöntemleri denendi (8 üretim). Hiçbiri mevcut çizimlerden iyi değildi, bağlanmadı. Denemeler `originals/buildings_trials/`.
+
+# Güncelleme — 6 Ekim 2026 (v6.0)
+
+- Hikaye çizimleri Pixflux ile oyunun 32 renklik paletine kilitli üretildi: 7 prolog, 3 final, 7 şampiyon kartı, 13 seyir defteri çizimi (`assets/pixellab/story/`). Grax, Bölme ve Akyel sahneleri bir kez yeniden üretildi.
+- 23 portre Pixen ile (9 eksik isimli rakip, 7 şampiyon, 6 yeni rakip ve Zib'in yenisi), 32'den 28'e en yakın piksel küçültmesiyle.
+- Yeni gezegenler: 4 zemin dokusu, 8 yarışçı (v3 karakter ve koşu/sıçrama). Oniks'in koşusu bir kez yeniden istendi.

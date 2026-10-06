@@ -409,6 +409,86 @@
       ],
       "jump": "mounts/kristalo/jump.png",
       "stand": "mounts/kristalo/stand.png"
+    },
+    "n16": {
+      "frames": [
+        "mounts/n16/run-0.png",
+        "mounts/n16/run-1.png",
+        "mounts/n16/run-2.png",
+        "mounts/n16/run-3.png"
+      ],
+      "jump": "mounts/n16/jump.png",
+      "stand": "mounts/n16/stand.png"
+    },
+    "n17": {
+      "frames": [
+        "mounts/n17/run-0.png",
+        "mounts/n17/run-1.png",
+        "mounts/n17/run-2.png",
+        "mounts/n17/run-3.png"
+      ],
+      "jump": "mounts/n17/jump.png",
+      "stand": "mounts/n17/stand.png"
+    },
+    "n18": {
+      "frames": [
+        "mounts/n18/run-0.png",
+        "mounts/n18/run-1.png",
+        "mounts/n18/run-2.png",
+        "mounts/n18/run-3.png"
+      ],
+      "jump": "mounts/n18/jump.png",
+      "stand": "mounts/n18/stand.png"
+    },
+    "n19": {
+      "frames": [
+        "mounts/n19/run-0.png",
+        "mounts/n19/run-1.png",
+        "mounts/n19/run-2.png",
+        "mounts/n19/run-3.png"
+      ],
+      "jump": "mounts/n19/jump.png",
+      "stand": "mounts/n19/stand.png"
+    },
+    "n20": {
+      "frames": [
+        "mounts/n20/run-0.png",
+        "mounts/n20/run-1.png",
+        "mounts/n20/run-2.png",
+        "mounts/n20/run-3.png"
+      ],
+      "jump": "mounts/n20/jump.png",
+      "stand": "mounts/n20/stand.png"
+    },
+    "n21": {
+      "frames": [
+        "mounts/n21/run-0.png",
+        "mounts/n21/run-1.png",
+        "mounts/n21/run-2.png",
+        "mounts/n21/run-3.png"
+      ],
+      "jump": "mounts/n21/jump.png",
+      "stand": "mounts/n21/stand.png"
+    },
+    "bora": {
+      "frames": [
+        "mounts/bora/run-0.png",
+        "mounts/bora/run-1.png",
+        "mounts/bora/run-2.png",
+        "mounts/bora/run-3.png"
+      ],
+      "jump": "mounts/bora/jump.png",
+      "stand": "mounts/bora/stand.png"
+    },
+    "korhan": {
+      "frames": [
+        "mounts/korhan/run-0.png",
+        "mounts/korhan/run-1.png",
+        "mounts/korhan/run-2.png",
+        "mounts/korhan/run-3.png"
+      ],
+      "jump": "mounts/korhan/jump.png",
+      "stand": "mounts/korhan/stand.png"
     }
   },
   "portraits": {
@@ -425,7 +505,29 @@
     "gece": "portraits/gece.png",
     "kiskac": "portraits/kiskac.png",
     "alev": "portraits/alev.png",
-    "golge": "portraits/golge.png"
+    "golge": "portraits/golge.png",
+    "aurora": "portraits/aurora.png",
+    "buzdis": "portraits/buzdis.png",
+    "gorm": "portraits/gorm.png",
+    "kar": "portraits/kar.png",
+    "kristalo": "portraits/kristalo.png",
+    "mantis": "portraits/mantis.png",
+    "niva": "portraits/niva.png",
+    "nova": "portraits/nova.png",
+    "pip": "portraits/pip.png",
+    "serap": "portraits/serap.png",
+    "tozkiran": "portraits/tozkiran.png",
+    "voltrak": "portraits/voltrak.png",
+    "zarg": "portraits/zarg.png",
+    "zib": "portraits/zib.png",
+    "bora": "portraits/bora.png",
+    "curuf": "portraits/curuf.png",
+    "damla": "portraits/damla.png",
+    "gumbur": "portraits/gumbur.png",
+    "kivilcim": "portraits/kivilcim.png",
+    "korhan": "portraits/korhan.png",
+    "oniks": "portraits/oniks.png",
+    "zefir": "portraits/zefir.png"
   },
   "items": {
     "food_havuc": "items/food_havuc.png",
@@ -471,6 +573,42 @@
     "buz_out": "env/buz_out.png",
     "kum_track": "env/kum_track.png",
     "kum_out": "env/kum_out.png",
-    "hipodrom_track": "env/hipodrom_track.png"
+    "hipodrom_track": "env/hipodrom_track.png",
+    "bulut_track": "env/bulut_track.png",
+    "bulut_out": "env/bulut_out.png",
+    "kor_track": "env/kor_track.png",
+    "kor_out": "env/kor_out.png"
+  },
+  "story": {
+    "c_bora": "story/c_bora.png",
+    "c_korhan": "story/c_korhan.png",
+    "c_kurt": "story/c_kurt.png",
+    "c_niva": "story/c_niva.png",
+    "c_pirlanta": "story/c_pirlanta.png",
+    "c_simsek": "story/c_simsek.png",
+    "c_zarg": "story/c_zarg.png",
+    "e_akyel": "story/e_akyel.png",
+    "e_kapi": "story/e_kapi.png",
+    "e_kupa": "story/e_kupa.png",
+    "p_ahir": "story/p_ahir.png",
+    "p_arena": "story/p_arena.png",
+    "p_bolme": "story/p_bolme.png",
+    "p_grax": "story/p_grax.png",
+    "p_isik": "story/p_isik.png",
+    "p_kupa": "story/p_kupa.png",
+    "p_yolculuk": "story/p_yolculuk.png",
+    "log_m1": "story/log_m1.png",
+    "log_m10": "story/log_m10.png",
+    "log_m11": "story/log_m11.png",
+    "log_m12": "story/log_m12.png",
+    "log_m13": "story/log_m13.png",
+    "log_m2": "story/log_m2.png",
+    "log_m3": "story/log_m3.png",
+    "log_m4": "story/log_m4.png",
+    "log_m5": "story/log_m5.png",
+    "log_m6": "story/log_m6.png",
+    "log_m7": "story/log_m7.png",
+    "log_m8": "story/log_m8.png",
+    "log_m9": "story/log_m9.png"
   }
 }

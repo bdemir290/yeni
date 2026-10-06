@@ -237,6 +237,20 @@ Object.assign(SCENES.run, {
       B.nextTaunt = b + R.i(18, 24); this.fogT = 3.2; this.burrow(1);
       floatText('KUM FIRTINASI!', W / 2, this.pY - 74, C.tan, 1, -6, 1.4); Sound.play('whoosh'); return;
     }
+    // Bora's storm: the sky goes dark and lightning hunts your lane and one more
+    if (B.def.sig === 'firtina' && b >= B.nextTaunt) {
+      B.nextTaunt = b + R.i(16, 22); this.fogT = 2.6;
+      const P = this.P, other = R.pick([0, 1, 2, 3, 4].filter(l => l !== P.lane));
+      for (const l of [P.lane, other]) this.bolts.push({ lane: l, t: 1.1, strike: 0 });
+      this.showBanner('FIRTINA!', C.yellow); Sound.play('warn'); return;
+    }
+    // Korhan's anvil: a strike that sends a wave of lava down the track
+    if (B.def.sig === 'ocak' && b >= B.nextTaunt) {
+      B.nextTaunt = b + R.i(18, 24);
+      this.addObs('toz', 0, 5, this.P.dist + (this.pY - B.screenY) - 28, { lava: true });
+      this.showBanner('ÖRS DARBESİ!', C.orange); floatText('LAV DALGASI: SIÇRA!', W / 2, this.pY - 74, C.orange, 1, -6, 1.4);
+      Sound.play('anvil'); shake(4, 0.3); return;
+    }
     if (b >= B.nextAtk) {
       B.nextAtk = b + Math.max(2, [4, 3, 2][B.phase - 1] - (RUN.heat >= 2 ? 1 : 0));
       this.bossAttack();
@@ -340,6 +354,27 @@ Object.assign(SCENES.run, {
       }
       case 'burrow': case 'burrow2': this.burrow(atk === 'burrow2' ? 3 : 2); break;
       case 'sandwave': this.addObs('toz', 0, 5, wy - 20); floatText('KUM DALGASI: SIÇRA!', W / 2, this.pY - 70, C.tan, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
+      // Bora (Fırtına Devi): dark clouds slow you down, thunder rolls along the track
+      case 'cloudrow': { const gl = gapLane(); for (let l = 0; l < 5; l++) if (l !== gl) this.addObs('puddle', l, 1, wy - 10, { cloud: true }); floatText('KARA BULUT!', B.x, B.screenY - 24, C.lgray, 1, -10, 1); Sound.play('whoosh'); break; }
+      case 'thunder': this.addObs('toz', 0, 5, wy - 20, { storm: true }); floatText('GÖK GÜRLEDİ: SIÇRA!', W / 2, this.pY - 70, C.yellow, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); flash(C.white, 0.12); break;
+      // Korhan (Kor Ay): embers rain on your lane, lava stones wall the track, molten waves roll in
+      case 'ember': case 'ember3': {
+        const lanes = [P.lane], extra = atk === 'ember3' ? 2 : (R.chance(0.5) ? 1 : 0);
+        const others = R.shuffle([0, 1, 2, 3, 4].filter(l => l !== P.lane));
+        for (let i = 0; i < extra; i++) lanes.push(others[i]);
+        for (const l of lanes) this.bolts.push({ lane: l, t: 1.0, strike: 0, ember: true });
+        Sound.play('warn'); break;
+      }
+      case 'lavarow': {
+        const y = Math.max(wy, P.dist + 180);
+        const gaps = R.shuffle([0, 1, 2, 3, 4].filter(l => Math.abs(l - P.lane) <= 2));
+        for (const gl of gaps) {
+          const row = [0, 1, 2, 3, 4].filter(l => l !== gl).map(l => ({ lane: l, y }));
+          if (this.passable(row, P.lane, P.dist + 20)) { for (const e of row) this.addObs('rock', e.lane, 1, y, { v: 1, lava: true }); break; }
+        }
+        floatText('LAV TAŞLARI!', B.x, B.screenY - 24, C.orange, 1, -10, 1); Sound.play('boom'); break;
+      }
+      case 'lavawave': this.addObs('toz', 0, 5, wy - 20, { lava: true }); floatText('LAV DALGASI: SIÇRA!', W / 2, this.pY - 70, C.orange, 1, -8, 1.1); Sound.play('boom'); shake(3, 0.25); break;
       case 'civirow': { const gl = gapLane(); for (let l = 0; l < 5; l++) if (l !== gl) this.addObs('civi', l, 1, wy - 12); floatText('HİLE!', B.x, B.screenY - 24, C.red, 1, -10, 1); Sound.play('hey'); break; }
     }
     if (B.phase >= 2 && rnd() < 0.3) { B.tired = 2; floatText('YORULDU! ŞİMDİ VUR!', B.x, B.screenY - 30, C.yellow, 1, -10, 1.2); }
@@ -351,7 +386,7 @@ Object.assign(SCENES.run, {
       b.t -= dt;
       if (b.t <= 0) {
         b.strike = 0.25; Sound.play('thunder'); flash(C.white, 0.15); shake(3, 0.2);
-        if (this.P.lane === b.lane && this.state === 'run') this.hurt(b.ice ? 'ice' : 'bolt');
+        if (this.P.lane === b.lane && this.state === 'run') this.hurt(b.ice ? 'ice' : b.ember ? 'ember' : 'bolt');
       }
     }
   },

@@ -228,21 +228,32 @@ const REGIONS = [
   { id: 'kum', name: 'KIZIL KUM', song: 'kum', bpm: 134, speed: 1.14, dens: 1.3, rivals: [0.92, 0.97, 1.01, 1.05, 1.1, 0.95, 0.99], boss: 'zarg', tier: 2, field: 7,
     grass: C.rust, grass2: C.dbrown, grassD: C.orange0, dirt: C.sand, dirtD: C.tan, dirtL: C.white, rail: C.orange, post: C.dbrown, deco: 'desert', mud: false,
     foes: { karga: 0.8, domuz: 1.0, eskiya: 0.9, okcu: 0.7, kalkanli: 0.4 }, weather: { acik: 5, kumf: 3, ruzgar: 2 } },
-  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 136, speed: 1.17, dens: 1.36, rivals: [0.93, 0.98, 1.03, 1.07, 1.12, 0.96, 1.0], boss: 'simsek', tier: 2.4, field: 6, pass: 4,
+  { id: 'bulut', name: 'FIRTINA DEVİ', song: 'bulut', bpm: 135, speed: 1.15, dens: 1.32, rivals: [0.92, 0.97, 1.02, 1.06, 1.11, 0.95, 0.99], boss: 'bora', tier: 2.15, field: 6,
+    grass: C.slate, grass2: C.navy, grassD: C.purple, dirt: C.lgray, dirtD: C.gray, dirtL: C.white, rail: C.yellow, post: C.lgray, deco: 'cloud', mud: false,
+    foes: { karga: 1.2, domuz: 0.7, kalkanli: 0.6, okcu: 0.8, eskiya: 0.5 }, weather: { acik: 4, yagmur: 3, ruzgar: 3 } },
+  { id: 'kor', name: 'KOR AY', song: 'kor', bpm: 137, speed: 1.16, dens: 1.34, rivals: [0.93, 0.98, 1.02, 1.06, 1.11, 0.96, 1.0], boss: 'korhan', tier: 2.3, field: 7,
+    grass: C.wine, grass2: C.plum, grassD: C.orange, dirt: C.dgray, dirtD: C.slate, dirtL: C.orange, rail: C.orange, post: C.wine, deco: 'lava', mud: false,
+    foes: { karga: 0.9, domuz: 1.1, eskiya: 1.0, okcu: 0.8, kalkanli: 0.6 }, weather: { acik: 5, sis: 2, ruzgar: 1 } },
+  { id: 'hipodrom', name: 'GALAKSİ ARENASI', song: 'hipodrom', bpm: 138, speed: 1.18, dens: 1.37, rivals: [0.94, 0.99, 1.03, 1.07, 1.12, 0.97, 1.01], boss: 'simsek', tier: 2.45, field: 6, pass: 4,
     grass: C.navy, grass2: C.slate, grassD: C.ink, dirt: C.orange0, dirtD: C.rust, dirtL: C.tan, rail: C.cyan, post: C.lgray, deco: 'stadium', mud: false, night: true,
     foes: { karga: 0.8, domuz: 0.8, eskiya: 1.0, okcu: 0.8, kalkanli: 0.5 }, weather: { acik: 6, yagmur: 3, ruzgar: 2 } }
 ];
 REGIONS[0].tier = 0; REGIONS[0].field = 5; REGIONS[1].tier = 1; REGIONS[1].field = 5;
 // v5 put two planets between Mantar Ayı and the arena: saves from v4 map their region index through this table
+// (to the v5 layout; the v6 step below then moves the arena again)
 const LAST_REGION = REGIONS.length - 1;
-const REGION_V4 = [0, 1, LAST_REGION];
+const REGION_V4 = [0, 1, 4];
+// v6 put Fırtına Devi and Kor Ay between Kızıl Kum and the arena
+const REGION_V5 = [0, 1, 2, 3, LAST_REGION];
 const regionIdx = id => REGIONS.findIndex(r => r.id === id);
-const BOSS_CRYSTALS = [10, 15, 18, 21, 25];
+const BOSS_CRYSTALS = [10, 15, 18, 21, 23, 25, 28];
 const BOSSES = {
   pirlanta: { name: 'PRENS KRİSTALO', look: 'kristalo', drain: 2.0, attacks: ['mud', 'bale', 'karga'], attacks2: ['karga3', 'mud'], attacks3: ['mudrow', 'bale'], sig: 'kibir', taunt: 'IŞILTIMA BAK DÜNYALI. SONRA TOZUMU YUT.', color: C.magenta, title: 'LUMO\'NUN KİBİRLİ KRİSTAL PRENSİ' },
   kurt: { name: 'ULUYAN GORM', look: 'gorm', drain: 2.4, attacks: ['log', 'wolf', 'domuz'], attacks2: ['howl', 'wolf'], attacks3: ['stomp', 'domuz'], sig: 'uluma', taunt: 'AUUU! BU ORMANDA BENDEN HIZLISI YOK!', color: C.green, title: 'MANTAR AYI\'NIN YENİLMEZİ' },
   niva: { name: 'BUZ KRALİÇESİ NİVA', look: 'niva', drain: 2.5, attacks: ['icicle', 'karga', 'bale'], attacks2: ['icerow', 'icicle'], attacks3: ['icicle3', 'icerow'], sig: 'ayaz', taunt: 'BURADA HER ŞEY DONAR. SEN DE.', color: C.cyan, title: 'BUZ HALKASI\'NIN SOĞUK HÜKÜMDARI' },
   zarg: { name: 'KUM SOLUCANI ZARG', look: 'zarg', drain: 2.65, attacks: ['burrow', 'eskiya', 'domuz'], attacks2: ['sandwave', 'burrow', 'okcu'], attacks3: ['burrow2', 'sandwave'], sig: 'kum', taunt: 'KUMUN ALTINDAN SENİ İZLİYORUM...', color: C.orange, title: 'KIZIL KUM\'UN ÇÖL CANAVARI' },
+  bora: { name: 'BULUT ÇOBANI BORA', look: 'bora', drain: 2.7, attacks: ['bolt', 'karga', 'bale'], attacks2: ['bolt3', 'cloudrow'], attacks3: ['bolt3', 'cloudrow', 'thunder'], sig: 'firtina', taunt: 'BULUTLARIM SENİ YUTACAK, DÜNYALI.', color: C.sky, title: 'FIRTINA DEVİ\'NİN YAŞLI ÇOBANI' },
+  korhan: { name: 'DEMİRCİ KORHAN', look: 'korhan', drain: 2.75, attacks: ['ember', 'domuz', 'eskiya'], attacks2: ['ember3', 'lavarow'], attacks3: ['ember3', 'lavarow', 'lavawave'], sig: 'ocak', taunt: 'ÖRSÜMDE NE DÖVDÜĞÜMÜ BİLMEK İSTEMEZSİN.', color: C.orange, title: 'KOR AY\'IN ZİNCİRLİ DEMİRCİSİ' },
   simsek: { name: 'VOLTRAK', horse: ['robot', 'voltrak'], drain: 2.8, attacks: ['bolt', 'bale', 'eskiya'], attacks2: ['bolt3', 'okcu'], attacks3: ['civirow', 'bolt3'], sig: 'hile', taunt: 'HESAPLAMA: KAZANMA İHTİMALİN %0.', color: C.red, title: 'GRAX\'IN ROBOT ŞAMPİYONU' }
 };
 const RIVAL_LOOKS = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12', 'r13', 'r14', 'r15', 'r16'];
@@ -252,6 +263,8 @@ const NAMED_RIVALS = [
   [{ id: 'gece', name: 'GECE KANADI', style: 'onde', look: 'n6' }, { id: 'kiskac', name: 'DEMİR KISKAÇ', style: 'itici', look: 'n3' }, { id: 'mantis', name: 'SİSLİ MANTİS', style: 'atici', look: 'n8' }],
   [{ id: 'buzdis', name: 'BUZDİŞ', style: 'itici', look: 'n9' }, { id: 'aurora', name: 'AURORA', style: 'onde', look: 'n10' }, { id: 'kar', name: 'KAR TANESİ', style: 'zikzak', look: 'n14' }],
   [{ id: 'tozkiran', name: 'TOZKIRAN', style: 'atici', look: 'n11' }, { id: 'zib', name: 'ÜÇ GÖZ ZİB', style: 'sondan', look: 'n12' }, { id: 'serap', name: 'SERAP', style: 'onde', look: 'n15' }],
+  [{ id: 'zefir', name: 'ZEFİR', style: 'onde', look: 'n16' }, { id: 'gumbur', name: 'GÜMBÜR', style: 'itici', look: 'n17' }, { id: 'damla', name: 'DAMLA', style: 'sondan', look: 'n18' }],
+  [{ id: 'kivilcim', name: 'KIVILCIM', style: 'zikzak', look: 'n19' }, { id: 'curuf', name: 'CÜRUF', style: 'itici', look: 'n20' }, { id: 'oniks', name: 'ONİKS', style: 'atici', look: 'n21' }],
   [{ id: 'alev', name: 'ALEV KUYRUK', style: 'onde', look: 'n4' }, { id: 'golge', name: 'GRAX\'IN GÖLGESİ', style: 'sondan', look: 'n2' }, { id: 'nova', name: 'NOVA', style: 'zikzak', look: 'n13' }]
 ];
 const STYLE_COL = { itici: C.salmon, onde: C.sky, sondan: C.green, atici: C.gold, zikzak: C.magenta };
