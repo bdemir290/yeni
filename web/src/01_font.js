@@ -134,7 +134,9 @@ function textWidth(str, scale, gap) {
 }
 // draws text; y = top of glyph cell (cap top at y+2*scale)
 function text(str, x, y, color, align, scale, shadow, gap) {
-  scale = scale || 1; str = trUp(str); gap = gap == null ? 1 : gap;
+  scale = scale || 1; str = trUp(str);
+  // a line wider than the screen (long translations) is squeezed instead of running off the edges
+  if (gap == null) gap = textWidth(str, scale, 1) > W - 4 ? 0 : 1;
   const w = textWidth(str, scale, gap);
   let sx = Math.round(align === 'center' ? x - w / 2 : align === 'right' ? x - w : x);
   y = Math.round(y);
@@ -185,6 +187,10 @@ function wrapText(str, maxW, scale) {
   }
   if (line) lines.push(line);
   return lines;
+}
+// grey subtitle under a panel title; squeezed when a translation is wider than the panel
+function panelSub(P, str) {
+  text(str, P.x + P.w / 2, P.y + 18, C.lgray, 'center', 1, null, textWidth(str) > P.w - 6 ? 0 : 1);
 }
 function textBlock(str, x, y, maxW, color, align, scale, lineH) {
   scale = scale || 1; lineH = lineH || LINE_H * scale;

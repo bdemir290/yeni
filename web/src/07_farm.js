@@ -569,7 +569,7 @@ SCENES.farm = {
   pAmbar() {
     const keys = Object.keys(FOODS), two = bl('ambar') >= 2;
     const P = this.panelBox(TX('YEM DEPOSU'), 30 + keys.length * 30 + this.upgradeH('ambar') + 10);
-    text(two ? TX('İKİ YEM SEÇEBİLİRSİN') : TX('KOŞUDAN ÖNCE BİR YEM SEÇ'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    panelSub(P, two ? TX('İKİ YEM SEÇEBİLİRSİN') : TX('KOŞUDAN ÖNCE BİR YEM SEÇ'));
     const y = this.listRows(P, keys.map(k => {
       const f = FOODS[k], own = !!META.foods[k], s1 = META.food === k, s2 = META.food2 === k;
       if (own) {
@@ -590,7 +590,7 @@ SCENES.farm = {
   pNalbant() {
     const keys = Object.keys(NALS);
     const P = this.panelBox(TX('NAL ATÖLYESİ'), 30 + keys.length * 30 + this.upgradeH('nalbant') + 10);
-    text(TX('NAL OYUN TARZINI DEĞİŞTİRİR'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    panelSub(P, TX('NAL OYUN TARZINI DEĞİŞTİRİR'));
     const y = this.listRows(P, keys.map(k => {
       const n = NALS[k], own = !!META.nals[k], sel = META.nal === k;
       if (own) return { id: 'n_' + k, name: n.name, desc: n.desc, icon2: itemArt('nal_' + k), sel, label: sel ? TX('TAKILI') : TX('TAK'), kind: sel ? 'secondary' : 'green', fn: () => { META.nal = k; saveMeta(); Sound.play('select'); } };
@@ -601,7 +601,7 @@ SCENES.farm = {
   pSilah() {
     const keys = Object.keys(WEAPONS);
     const P = this.panelBox(TX('CEPHANELİK'), 30 + keys.length * 38 + this.upgradeH('silahhane') + 10);
-    text(TX('EYERDEKİ SİLAH RİTİMLE ATEŞ EDER'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    panelSub(P, TX('EYERDEKİ SİLAH RİTİMLE ATEŞ EDER'));
     let y = P.y + 30;
     for (const k of keys) {
       const w = WEAPONS[k], own = !!META.weapons[k], sel = META.weapon === k, lv = META.wlv[k] || 1;
@@ -642,7 +642,7 @@ SCENES.farm = {
   pJokey() {
     const keys = Object.keys(JOCKEYS);
     const P = this.panelBox(TX('JOKEY KOĞUŞU'), 34 + keys.length * 46 + this.upgradeH('jokey') + 6);
-    text(TX('TUTSAK JOKEYLER TEKNİKLERİNİ ÖĞRETİR'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    panelSub(P, TX('TUTSAK JOKEYLER TEKNİKLERİNİ ÖĞRETİR'));
     let y = P.y + 30;
     for (const k of keys) {
       const j = JOCKEYS[k], open = META.rozet >= j.rozet, sel = META.jockey === k;
@@ -716,7 +716,7 @@ SCENES.farm = {
   pPazar() {
     const keys = Object.keys(DECOR);
     const P = this.panelBox(TX('MOKO\'NUN TEZGAHI'), 34 + keys.length * 20 + 8);
-    text(TX('SÜS AL, ÜS PUANI KAZAN!'), P.x + P.w / 2, P.y + 18, C.lgray, 'center');
+    panelSub(P, TX('SÜS AL, ÜS PUANI KAZAN!'));
     let y = P.y + 30;
     for (const k of keys) {
       const d = DECOR[k], own = !!META.decor[k], lock = d.needWin && !META.stats.wins;
