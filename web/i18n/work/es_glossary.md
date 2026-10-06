@@ -79,7 +79,7 @@ Units: SN (saniye) -> S ; SV (seviye) -> NV ; X2 stays.
 | GECE KANADI | ALA NOCTURNA |
 | DEMİR KISKAÇ | PINZA FÉRREA |
 | SİSLİ MANTİS | MANTIS BRUMOSA |
-| BUZDİŞ | DIENTEFRÍO |
+| BUZDİŞ | GÉLIDO |
 | KAR TANESİ | COPITO |
 | TOZKIRAN | ROMPEPOLVO |
 | ÜÇ GÖZ ZİB | ZIB 3 OJOS |
@@ -92,7 +92,7 @@ Units: SN (saniye) -> S ; SV (seviye) -> NV ; X2 stays.
 | KIVILCIM | CHISPA |
 | CÜRUF | ESCORIA |
 | ONİKS | ÓNIX |
-| KIZIL VUUM | VUUM CARMESÍ |
+| KIZIL VUUM | VUUM ROJO |
 | RÜZGAR KISRAĞI | YEGUA DEL VIENTO |
 | PRENS KRİSTALO | PRÍNCIPE KRISTALO |
 | ULUYAN GORM | GORM AULLADOR |
@@ -119,15 +119,15 @@ SIRADAN -> COMÚN ; NADİR -> RARO ; DESTANSI -> ÉPICO
 | DÜNYALI | TERRÍCOLA (Grax crowd lines use "LA TIERRA" to stay gender-neutral) |
 | SUNUCU GRAX | GRAX (speaker label) |
 | NAL (horseshoe) | HERRADURA; horseshoe items: DE HIERRO / IÓNICA / METEÓRICA / RÍTMICA; ALTIN NAL boon: H. DE ORO |
-| NAL ATÖLYESİ / CEPHANELİK / YEM DEPOSU / REVİR / SERA / KAMARA | HERRERÍA / ARSENAL / DESPENSA / CLÍNICA / HUERTO / CAMAROTE |
-| AHIR (MODÜLÜ) / JOKEY KOĞUŞU / GÖREV EKRANI / GÖZLEMEVİ / VİTRİN | ESTABLO / BARRACÓN / MISIONES / OBSERVATORIO / VITRINA |
+| NAL ATÖLYESİ / CEPHANELİK / YEM DEPOSU / REVİR / SERA / KAMARA | HERRERÍA / ARSENAL / DESPENSA / CLÍNICA / HUERTO / CABINA |
+| AHIR (MODÜLÜ) / JOKEY KOĞUŞU / GÖREV EKRANI / GÖZLEMEVİ / VİTRİN | ESTABLO / BARRACÓN / MISIONES / ATALAYA / VITRINA |
 | UZAY PAZARI / PAZAR | BAZAR CÓSMICO / BAZAR |
-| KAOS KAPISI / LANET / LÜTUF | PUERTA DEL CAOS / CASTIGO / DON |
+| KAOS KAPISI / LANET / LÜTUF | PUERTA DEL CAOS / PENA / DON |
 | YOL OLAYI | IMPREVISTO |
 | RÖVANŞ / RÖVANŞÇI | REVANCHA / NÉMESIS |
 | DÖRTNAL MODU | MODO GALOPE ; title DÖRTNALA -> AL GALOPE |
 | KIL PAYI | ROCE |
-| REYTİNG | AUDIENCIA |
+| REYTİNG | RATING |
 | DOSYA (rival file) | FICHA (BIP's computer file: ARCHIVO) |
 | GÜNLÜK ERZAK / GÜNÜN KOŞUSU | RACIÓN DIARIA / RETO DIARIO |
 | ŞAMPİYON YARIŞI | RETO DEL CAMPEÓN |
@@ -136,6 +136,17 @@ SIRADAN -> COMÚN ; NADİR -> RARO ; DESTANSI -> ÉPICO
 | MÜKEMMEL / İYİ / ISKA / ERKEN / GEÇ | PERFECTO / BIEN / FALLO / PRONTO / TARDE |
 | AÇIK / KAPALI | SÍ / NO |
 | AYŞE'NİN KURDELESİ etc. keepsakes | EL LAZO DE LUCÍA, CRONÓMETRO DE RAMÓN, GAFAS DE TOÑO, BOLSA DE MOKO, PILA DE RESERVA DE BIP, HERRADURA DE ROCÍO |
+
+## Width pass (pixel-measured)
+| Turkish | Spanish |
+|---|---|
+| YEM (food slot) | MENÚ (sentences may still say COMIDA) |
+| HATIRA (keepsake slot) | REGALO |
+| STİL (run style row) / NAL row label | PLAN / HERR. |
+| KUM FIRTINASI / NEBULA SİSİ | POLVAREDA / NEBULOSA |
+| HIZ in short stat lines | VEL. |
+| "X, EL PLANETA Y" home lines | "X, PLANETA Y" |
+| VENCE A + boss short name | VENCE A ZARG / NIVA / GORM / TIZÓN / KRISTALO |
 
 ## Style
 - Grax: flashy TV host ("¡DAMAS Y CABALLEROS!", "¡QUÉ ESPECTÁCULO!").
