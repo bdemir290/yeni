@@ -368,8 +368,8 @@ SCENES.farm = {
     x += iconNum('clover', META.yonca, x, top + 3, C.green) + 7;
     x += iconNum('rozet', META.rozet, x, top + 2, C.sky) + 7;
     if (META.seker > 0 || META.stats.runs > 0) x += iconNum('seker', META.seker, x, top + 4, C.white) + 7;
-    const lx = x; text('SV' + META.level, lx, top + 3, C.yellow);
-    const lw = textWidth('SV' + META.level);
+    const lx = x; text(TX('SV') + META.level, lx, top + 3, C.yellow);
+    const lw = textWidth(TX('SV') + META.level);
     bar(lx + lw + 3, top + 6, Math.max(14, W - SAFE.r - 22 - (lx + lw + 3)), 3, META.xp / xpNeed(META.level), C.yellow);
     iconBtn('settings', W - SAFE.r - 17, top, 'gear', () => { if (!this.walk) this.panel = 'settings'; }, 14);
     const gl = nextGoal(); const by = top + 20;
@@ -408,9 +408,9 @@ SCENES.farm = {
   upgradeInfo(k) {
     const b = BUILDINGS[k], lv = bl(k), pw = Math.min(W - 10, 226);
     if (lv >= b.max) return { lv, max: true };
-    const next = wrapText('SV' + (lv + 1) + ': ' + b.upDesc[lv], pw - 84);
+    const next = wrapText(TX('SV') + (lv + 1) + ': ' + b.upDesc[lv], pw - 84);
     const later = [];
-    for (let i = lv + 1; i < b.max; i++) later.push(...wrapText('SV' + (i + 1) + ' (' + b.up[i] + '): ' + b.upDesc[i], pw - 16));
+    for (let i = lv + 1; i < b.max; i++) later.push(...wrapText(TX('SV') + (i + 1) + ' (' + b.up[i] + '): ' + b.upDesc[i], pw - 16));
     return { lv, next, later, cost: b.up[lv] };
   },
   upgradeH(k) { const u = this.upgradeInfo(k); if (u.max) return 18; return 16 + Math.max(2, u.next.length) * 9 + u.later.length * 9 + 2; },
@@ -446,7 +446,7 @@ SCENES.farm = {
   pRepair(k) {
     const b = BUILDINGS[k], img = k === 'bahce' ? null : this.bImg(k), ih = img ? img.height : 0;
     const lines = wrapText(b.desc, Math.min(W - 10, 226) - 20);
-    const later = []; for (let i = 1; i < b.max; i++) later.push(...wrapText('SV' + (i + 1) + ' (' + b.up[i] + TX(' KRİSTAL): ') + b.upDesc[i], Math.min(W - 10, 226) - 16));
+    const later = []; for (let i = 1; i < b.max; i++) later.push(...wrapText(TX('SV') + (i + 1) + ' (' + b.up[i] + TX(' KRİSTAL): ') + b.upDesc[i], Math.min(W - 10, 226) - 16));
     const h = 30 + ih + lines.length * 9 + 64 + later.length * 9;
     const P = this.panelBox(b.name + TX(' (ARIZALI)'), h);
     if (img) spr(img, P.x + P.w / 2 - img.width / 2, P.y + 20);
@@ -874,7 +874,7 @@ SCENES.farm = {
     const nls = Object.keys(NALS).filter(k => META.nals[k]);
     rows.push({ label: TX('NAL'), val: NALS[META.nal].name, desc: NALS[META.nal].desc, list: nls, key: 'nal' });
     const wps = Object.keys(WEAPONS).filter(k => META.weapons[k]);
-    if (built('silahhane') || wps.length > 1) { const w = WEAPONS[META.weapon] || WEAPONS.yay; rows.push({ label: TX('SİLAH'), val: w.name + ' SV' + (META.wlv[META.weapon] || 1), desc: w.desc, list: wps, key: 'weapon' }); }
+    if (built('silahhane') || wps.length > 1) { const w = WEAPONS[META.weapon] || WEAPONS.yay; rows.push({ label: TX('SİLAH'), val: w.name + TX(' SV') + (META.wlv[META.weapon] || 1), desc: w.desc, list: wps, key: 'weapon' }); }
     else rows.push({ label: TX('SİLAH'), val: WEAPONS.yay.name, desc: WEAPONS.yay.desc + TX(' (CEPHANELİKTE YENİLERİ VAR)'), list: ['yay'], key: 'weapon' });
     if (built('ambar')) {
       const owned = Object.keys(FOODS).filter(k => META.foods[k]);
@@ -893,13 +893,15 @@ SCENES.farm = {
     const rowH = clamp(Math.floor(avail / rows.length), 24, 36), two = rowH >= 33;
     const P = this.panelBox(TX('YARIŞA HAZIR MISIN?'), 22 + rows.length * rowH + 34);
     let y = P.y + 19;
+    // the label column grows with the longest label (translations), the value centres in what is left
+    const labW = Math.max(30, ...rows.map(r => textWidth(r.label))), bx0 = P.x + 12 + labW;
     for (const r of rows) {
       text(r.label, P.x + 8, y + 3, C.gray);
       if (r.list.length > 1) {
-        button('gl_' + r.key, P.x + 44, y, 14, 13, '<', () => { META[r.key] = this.cycle(r.list, META[r.key], -1); saveMeta(); Sound.play('select'); }, { kind: 'secondary' });
+        button('gl_' + r.key, bx0, y, 14, 13, '<', () => { META[r.key] = this.cycle(r.list, META[r.key], -1); saveMeta(); Sound.play('select'); }, { kind: 'secondary' });
         button('gr_' + r.key, P.x + P.w - 22, y, 14, 13, '>', () => { META[r.key] = this.cycle(r.list, META[r.key], 1); saveMeta(); Sound.play('select'); }, { kind: 'secondary' });
       }
-      text(r.val, P.x + (P.w + 36) / 2, y + 3, C.yellow, 'center');
+      text(r.val, (bx0 + 14 + P.x + P.w - 22) / 2, y + 3, C.yellow, 'center');
       wrapText(r.desc, P.w - 20).slice(0, two ? 2 : 1).forEach((dl, i) => text(dl, P.x + P.w / 2, y + 15 + i * 8, C.lgray, 'center'));
       y += rowH;
     }
@@ -932,7 +934,7 @@ SCENES.farm = {
     button('calib', P.x + 10, y, P.w - 20, 15, TX('RİTMİ ÖLÇ: DOKUNARAK AYARLA'), () => this.startCalib(), { kind: 'blue' });
     y += 20;
     // language: the whole game text is built at start-up, so a change reloads the page (progress is saved first)
-    text('DİL · LANGUAGE', P.x + 10, y + 4, C.white);
+    text({ tr: 'DİL · LANGUAGE', en: 'LANGUAGE', de: 'SPRACHE · LANGUAGE', es: 'IDIOMA · LANGUAGE', id: 'BAHASA · LANGUAGE' }[LANG], P.x + 10, y + 4, C.white);
     button('lang', P.x + P.w - 82, y, 74, 15, LANG_NAMES[LANG], () => {
       s.lang = LANGS[(LANGS.indexOf(LANG) + 1) % LANGS.length]; saveMeta(); Sound.play('select');
       setTimeout(() => location.reload(), 120);
@@ -954,10 +956,12 @@ SCENES.farm = {
     Calib.draw(() => { this.panel = 'settings'; Music.play('farm', now() + 0.2, false); });
   },
   pDaily() {
-    const P = this.panelBox(TX('GÜNLÜK ERZAK'), 104);
+    const desc = TX('HER GÜN UĞRA, ERZAK ARTARAK GELSİN. GÜN KAÇIRSAN DA SERİ SIFIRLANMAZ.');
+    const extra = Math.max(0, wrapText(desc, Math.min(W - 10, 226) - 20).length - 2) * LINE_H;   // longer translations wrap to 3 lines
+    const P = this.panelBox(TX('GÜNLÜK ERZAK'), 104 + extra);
     const cur = META.daily.count % 7;
-    textBlock(TX('HER GÜN UĞRA, ERZAK ARTARAK GELSİN. GÜN KAÇIRSAN DA SERİ SIFIRLANMAZ.'), P.x + P.w / 2, P.y + 18, P.w - 20, C.lgray, 'center');
-    const bw = Math.floor((P.w - 16 - 18) / 7), y = P.y + 44;
+    textBlock(desc, P.x + P.w / 2, P.y + 18, P.w - 20, C.lgray, 'center');
+    const bw = Math.floor((P.w - 16 - 18) / 7), y = P.y + 44 + extra;
     for (let i = 0; i < 7; i++) {
       const bx = P.x + 8 + i * (bw + 3); rrect(bx, y, bw, 22, i === cur ? C.gold : i < cur ? C.ddgreen : C.slate);
       text(String(DAILY[i]), bx + bw / 2, y + 7, i === cur ? C.ink : C.white, 'center');

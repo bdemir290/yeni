@@ -23,7 +23,7 @@ Percent fragments keep the source order (`+%` + number) because the number is gl
 | İSTASYON / BÖLME | STATION / ERDABTEIL (short: ABTEIL) | |
 | ROZET | ORDEN | badge |
 | ŞEKER | ZUCKER (ZUCKERWÜRFEL in prose) | |
-| GÖREV | MISSION | |
+| GÖREV | QUEST / QUESTS | mission (short plural) |
 | LİG | LIGA | |
 | PİST | PISTE | |
 | RİTİM | RHYTHMUS (short: TAKT) | |
@@ -46,11 +46,11 @@ Percent fragments keep the source order (`+%` + number) because the number is gl
 | GÖKTAŞI | METEOR | |
 | KALKAN | SCHILD | |
 | NOTA | NOTE | |
-| ISKA | DANEBEN / FEHLER | miss |
+| ISKA | MISS (judgement label) | miss |
 | TOYNAK / NAL | HUF / HUFEISEN | |
 | HIZ | TEMPO | speed |
 | DAYANIKLILIK | AUSDAUER | |
-| ZEKA | KÖPFCHEN | |
+| ZEKA | GRIPS | |
 | SN (seconds) | SEK | |
 | SV (level) | LV | |
 | X2, %, +, - | unchanged | |
@@ -66,7 +66,7 @@ Percent fragments keep the source order (`+%` + number) because the number is gl
 | KORHAN / DEMİRCİ KORHAN | GLUTHARD / SCHMIED GLUTHARD |
 | YILDIZ (horse) | STERN |
 | BİP-0, PİP-PİP, ZİB, NİVA, KRİSTALO | BIP-0, PIP-PIP, ZIB, NIVA, KRISTALO |
-| KÖROĞLU (folk hero) | SIEGFRIED (KÖROĞLU NARASI -> SIEGFRIEDS SCHREI) |
+| KÖROĞLU (folk hero) | SIEGFRIED (KÖROĞLU NARASI -> SIEGFRIEDS RUF, KÖROĞLU ÖFKESİ -> SIEGFRIEDS ZORN) |
 
 ## Aliens and places
 | Turkish | German |
@@ -76,16 +76,16 @@ Percent fragments keep the source order (`+%` + number) because the number is gl
 | SİSLİ MANTİS | NEBELMANTIS |
 | BUZDİŞ | EISZAHN |
 | KAR TANESİ | SCHNEEFLOCKE |
-| TOZKIRAN | STAUBBRECHER |
+| TOZKIRAN | STAUBTEUFEL |
 | ÜÇ GÖZ ZİB | DREIAUG-ZIB |
 | SERAP | TRUGBILD |
-| ALEV KUYRUK | FLAMMENSCHWEIF |
+| ALEV KUYRUK | FLAMMSCHWEIF |
 | GRAX'IN GÖLGESİ | GRAX' SCHATTEN |
 | ZEFİR | ZEPHYR |
 | GÜMBÜR | GRUMMEL |
-| DAMLA | TRÖPFCHEN |
+| DAMLA | TROPFEN |
 | KIVILCIM | FUNKE |
-| CÜRUF | SCHLACKE |
+| CÜRUF | ASCHE (race: SCHLACKEGOLEM) |
 | ONİKS | ONYX |
 | KIZIL VUUM | ROTER VUUM |
 | RÜZGAR KISRAĞI | WINDSTUTE |
@@ -103,3 +103,28 @@ Percent fragments keep the source order (`+%` + number) because the number is gl
 | GALAKSİ ARENASI | GALAXIE-ARENA |
 | ALTIN NAL KUPASI | GOLDHUFEISEN-POKAL |
 | GALAKSİ KUPASI | GALAXIE-POKAL |
+
+## Added while translating
+| Turkish | German | Notes |
+|---|---|---|
+| KOŞU | LAUF / LÄUFE | a run |
+| PAZAR / UZAY PAZARI | MARKT / WELTRAUMMARKT | |
+| DÜNYALI | ERDLING | how aliens address the hero |
+| RÖVANŞ / RÖVANŞÇI | REVANCHE / ERZRIVALE | nemesis |
+| DÖRTNAL MODU | GALOPPMODUS (short: GALOPP) | fever mode; game title DÖRTNALA kept as brand |
+| NAL (equipment) | EISEN (e.g. STAHLEISEN, IONENEISEN) | horseshoe item |
+| SEVİYE / SV | LV | level |
+| SEVİYE PUANI | LEVELPUNKT(E) | |
+| ÜS PUANI | BASISPUNKTE (toast: BASIS n) | farm score |
+| REYTİNG | QUOTE | TV rating |
+| AZAMİ CAN | MAX. LEBEN | |
+| MÜKEMMEL PENCERE | PERFEKT-FENSTER | timing window |
+| RUH (horse spirit) | GEIST | |
+| HATIRA (keepsake) | ANDENKEN | |
+| DOSYA | AKTE | rival file |
+| ÇEKİÇ / ÖRS | HAMMER / AMBOSS | |
+| KAOS KAPISI / LANET / LÜTUF | CHAOSTOR / FLUCH / SEGEN | |
+| SON DÜZLÜK | ZIELGERADE | |
+| KIL PAYI | KNAPP / HAARSCHARF | near miss |
+| SUNUCU GRAX | HOST GRAX | speaker label |
+| RÜZGAR (Gölge's real name) | WIND | |

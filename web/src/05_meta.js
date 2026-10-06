@@ -302,13 +302,15 @@ function button(id, x, y, w, h, label, fn, opts) {
   rrect(x - 1, y - 1, w + 2, h + 2, C.ink);
   rect(x, y, w, h, d);
   rect(x, y + oy, w, h - 2, b); hline(x + 1, y + oy, w - 2, l);
-  const ic = opts.icon && ICONS[opts.icon];
-  const lw = label ? textWidth(label, opts.scale || 1) : 0;
+  let ic = opts.icon && ICONS[opts.icon];
+  // a label that does not fit (long translations) is squeezed: letters touch, then the icon goes
+  let gap = 1, lw = label ? textWidth(label, opts.scale || 1) : 0;
+  if (label && lw + (ic ? ic.width + 3 : 0) > w - 4) { gap = 0; lw = textWidth(label, opts.scale || 1, 0); if (ic && lw + ic.width + 3 > w - 4) ic = null; }
   const total = lw + (ic ? ic.width + (label ? 3 : 0) : 0);
   let cx = x + Math.round(w / 2 - total / 2);
   const cy = y + oy + Math.round((h - 2) / 2);
   if (ic) { spr(ic, cx, cy - Math.floor(ic.height / 2)); cx += ic.width + 3; }
-  if (label) text(label, cx, cy - 4 * (opts.scale || 1), opts.disabled ? C.dgray : tc, 'left', opts.scale || 1);
+  if (label) text(label, cx, cy - 4 * (opts.scale || 1), opts.disabled ? C.dgray : tc, 'left', opts.scale || 1, null, gap);
   // small buttons get a taller invisible touch area (about 36 pt on an iPhone) without moving the art
   const pad = opts.hitPad != null ? opts.hitPad : clamp(Math.ceil((18 - h) / 2), 0, 3), hx = opts.hitPad != null ? pad : Math.min(pad, 2);
   if (opts.disabled) UI.add(id, x - hx, y - pad, w + hx * 2, h + pad * 2, () => { Sound.play('deny'); if (opts.onDeny) opts.onDeny(); }, { deny: true });

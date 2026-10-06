@@ -1,0 +1,2263 @@
+[
+ {
+  "tr": "İNİŞTE ",
+  "now": "SAAT MENDARAT, RINTANGAN DAN MUSUH DALAM ",
+  "tr_px": 29,
+  "now_px": 188,
+  "target_px": 31
+ },
+ {
+  "tr": "LİGDE ",
+  "now": "LIGA: NAIK KE POSISI ",
+  "tr_px": 26,
+  "now_px": 89,
+  "target_px": 28
+ },
+ {
+  "tr": " KALDI",
+  "now": " LAGI UNTUK DISALIP",
+  "tr_px": 26,
+  "now_px": 84,
+  "target_px": 28
+ },
+ {
+  "tr": "İLK ",
+  "now": "MASUK TOP ",
+  "tr_px": 16,
+  "now_px": 45,
+  "target_px": 17
+ },
+ {
+  "tr": "İÇ!",
+  "now": "DALAM!",
+  "tr_px": 10,
+  "now_px": 27,
+  "target_px": 10
+ },
+ {
+  "tr": "AL",
+  "now": "AMBIL",
+  "tr_px": 9,
+  "now_px": 24,
+  "target_px": 9
+ },
+ {
+  "tr": "EK",
+  "now": "TANAM",
+  "tr_px": 9,
+  "now_px": 24,
+  "target_px": 9
+ },
+ {
+  "tr": "KOŞUYA ",
+  "now": "MULAI RUN DENGAN ",
+  "tr_px": 31,
+  "now_px": 78,
+  "target_px": 33
+ },
+ {
+  "tr": "YOK",
+  "now": "KOSONG",
+  "tr_px": 13,
+  "now_px": 29,
+  "target_px": 14
+ },
+ {
+  "tr": " ONAR",
+  "now": " - PERBAIKI",
+  "tr_px": 22,
+  "now_px": 47,
+  "target_px": 23
+ },
+ {
+  "tr": "ETAPLARA ",
+  "now": "MULAI ETAPE DENGAN ",
+  "tr_px": 41,
+  "now_px": 87,
+  "target_px": 44
+ },
+ {
+  "tr": "AL: ",
+  "now": "AMBIL ",
+  "tr_px": 14,
+  "now_px": 27,
+  "target_px": 15
+ },
+ {
+  "tr": "AHIR",
+  "now": "KANDANG",
+  "tr_px": 18,
+  "now_px": 34,
+  "target_px": 19
+ },
+ {
+  "tr": "KAPI",
+  "now": "GERBANG",
+  "tr_px": 18,
+  "now_px": 34,
+  "target_px": 19
+ },
+ {
+  "tr": "İTTİ!",
+  "now": "DORONG!",
+  "tr_px": 17,
+  "now_px": 31,
+  "target_px": 18
+ },
+ {
+  "tr": "KOR AY",
+  "now": "BULAN BARA",
+  "tr_px": 26,
+  "now_px": 47,
+  "target_px": 28
+ },
+ {
+  "tr": "TEK ATIŞ. TEK ŞANS.",
+  "now": "SATU TEMBAKAN. SATU KESEMPATAN.",
+  "tr_px": 78,
+  "now_px": 140,
+  "target_px": 84
+ },
+ {
+  "tr": "TAK",
+  "now": "PAKAI",
+  "tr_px": 13,
+  "now_px": 23,
+  "target_px": 14
+ },
+ {
+  "tr": "↓ AŞAĞI KAYDIR YA DA ",
+  "now": "↓ GESER KE BAWAH ATAU TEKAN TOMBOL ",
+  "tr_px": 91,
+  "now_px": 160,
+  "target_px": 98
+ },
+ {
+  "tr": "DÜŞMANLAR %",
+  "now": "MUSUH MENJATUHKAN %",
+  "tr_px": 52,
+  "now_px": 90,
+  "target_px": 56
+ },
+ {
+  "tr": "İNİŞTE 1.5 SN %",
+  "now": "SAAT MENDARAT: 1.5 DTK, %",
+  "tr_px": 59,
+  "now_px": 102,
+  "target_px": 63
+ },
+ {
+  "tr": "SAĞ",
+  "now": "KANAN",
+  "tr_px": 14,
+  "now_px": 24,
+  "target_px": 15
+ },
+ {
+  "tr": "YEM",
+  "now": "PAKAN",
+  "tr_px": 14,
+  "now_px": 24,
+  "target_px": 15
+ },
+ {
+  "tr": "IŞIK",
+  "now": "CAHAYA",
+  "tr_px": 17,
+  "now_px": 28,
+  "target_px": 18
+ },
+ {
+  "tr": "AĞIR OK",
+  "now": "PANAH BERAT",
+  "tr_px": 31,
+  "now_px": 51,
+  "target_px": 33
+ },
+ {
+  "tr": "NAL",
+  "now": "TAPAL",
+  "tr_px": 14,
+  "now_px": 23,
+  "target_px": 15
+ },
+ {
+  "tr": "İYİ · GEÇ",
+  "now": "BAGUS · TELAT",
+  "tr_px": 34,
+  "now_px": 55,
+  "target_px": 36
+ },
+ {
+  "tr": "MÜKEMMEL ATIŞLAR ",
+  "now": "TEMBAKAN SEMPURNA MENEMBUS ",
+  "tr_px": 81,
+  "now_px": 131,
+  "target_px": 87
+ },
+ {
+  "tr": " CAN",
+  "now": " NYAWA",
+  "tr_px": 17,
+  "now_px": 27,
+  "target_px": 18
+ },
+ {
+  "tr": "GEÇ",
+  "now": "TELAT",
+  "tr_px": 14,
+  "now_px": 22,
+  "target_px": 15
+ },
+ {
+  "tr": "PAS",
+  "now": "TIDAK",
+  "tr_px": 14,
+  "now_px": 22,
+  "target_px": 15
+ },
+ {
+  "tr": "SEÇ",
+  "now": "PILIH",
+  "tr_px": 14,
+  "now_px": 22,
+  "target_px": 15
+ },
+ {
+  "tr": "BAS!",
+  "now": "TEKAN!",
+  "tr_px": 16,
+  "now_px": 25,
+  "target_px": 17
+ },
+ {
+  "tr": "HİLE!",
+  "now": "CURANG!",
+  "tr_px": 20,
+  "now_px": 31,
+  "target_px": 21
+ },
+ {
+  "tr": "GALAKSİ LİGİ: ",
+  "now": "LIGA GALAKSI: POSISI ",
+  "tr_px": 59,
+  "now_px": 91,
+  "target_px": 63
+ },
+ {
+  "tr": "NAL SEÇ",
+  "now": "PILIH TAPAL",
+  "tr_px": 32,
+  "now_px": 49,
+  "target_px": 34
+ },
+ {
+  "tr": "İNİŞTEN SONRA ",
+  "now": "USAI MENDARAT: KEBAL ",
+  "tr_px": 62,
+  "now_px": 94,
+  "target_px": 66
+ },
+ {
+  "tr": "SEKEN OK",
+  "now": "PANAH PANTUL",
+  "tr_px": 37,
+  "now_px": 56,
+  "target_px": 39
+ },
+ {
+  "tr": "KAPIYI RİTİMLE AÇTI!",
+  "now": "GERBANG DIBUKA DENGAN RITME!",
+  "tr_px": 85,
+  "now_px": 128,
+  "target_px": 91
+ },
+ {
+  "tr": "VUR, KIR, DAĞIT! SONRA SİKKELERİ TOPLA.",
+  "now": "HANTAM, HANCURKAN, OBRAK-ABRIK! LALU KUMPULKAN KOINNYA.",
+  "tr_px": 167,
+  "now_px": 249,
+  "target_px": 208
+ },
+ {
+  "tr": "ROZET",
+  "now": "LENCANA",
+  "tr_px": 23,
+  "now_px": 34,
+  "target_px": 24
+ },
+ {
+  "tr": "YEM 1",
+  "now": "PAKAN 1",
+  "tr_px": 21,
+  "now_px": 31,
+  "target_px": 22
+ },
+ {
+  "tr": "YEM 2",
+  "now": "PAKAN 2",
+  "tr_px": 21,
+  "now_px": 31,
+  "target_px": 22
+ },
+ {
+  "tr": "TRİBÜNDEN GRİ SAÇLI BİR KADIN İNDİ. YILDIZ ONU DENİZ'DEN ÖNCE TANIDI.",
+  "now": "SEORANG WANITA BERAMBUT KELABU TURUN DARI TRIBUN. BINTANG MENGENALINYA LEBIH DULU DARIPADA TIRTA.",
+  "tr_px": 300,
+  "now_px": 441,
+  "target_px": 375
+ },
+ {
+  "tr": "ÇEKİÇ ALINDI: ÇIKIŞTA ÖRSE!",
+  "now": "PALU DIDAPAT: KE LANDASAN SAAT KELUAR!",
+  "tr_px": 116,
+  "now_px": 170,
+  "target_px": 125
+ },
+ {
+  "tr": "BİR LAZER SIYIRDI. -1 CAN.",
+  "now": "SEBUAH LASER MENYEREMPET. -1 NYAWA.",
+  "tr_px": 108,
+  "now_px": 158,
+  "target_px": 116
+ },
+ {
+  "tr": "SAYFA ",
+  "now": "HALAMAN ",
+  "tr_px": 26,
+  "now_px": 38,
+  "target_px": 28
+ },
+ {
+  "tr": "BİR AT BİR YILDIZI GEÇTİ. BUNU YILDIZLARA ANLATACAĞIM.",
+  "now": "SEEKOR KUDA MENYALIP SEBUAH BINTANG. AKAN KUCERITAKAN INI PADA PARA BINTANG.",
+  "tr_px": 236,
+  "now_px": 344,
+  "target_px": 295
+ },
+ {
+  "tr": "HATIRA",
+  "now": "KENANGAN",
+  "tr_px": 27,
+  "now_px": 39,
+  "target_px": 29
+ },
+ {
+  "tr": "RAKİBİN ARKASINA SAKLAN, SONRA YANA ÇIK.",
+  "now": "BERLINDUNGLAH DI BELAKANG RIVAL, LALU KELUAR KE SAMPING.",
+  "tr_px": 178,
+  "now_px": 257,
+  "target_px": 222
+ },
+ {
+  "tr": "DEMİRCİ KORHAN'I YEN",
+  "now": "KALAHKAN BARA SI PANDAI BESI",
+  "tr_px": 89,
+  "now_px": 128,
+  "target_px": 96
+ },
+ {
+  "tr": "LANET",
+  "now": "KUTUKAN",
+  "tr_px": 23,
+  "now_px": 33,
+  "target_px": 24
+ },
+ {
+  "tr": "SİLAH",
+  "now": "SENJATA",
+  "tr_px": 23,
+  "now_px": 33,
+  "target_px": 24
+ },
+ {
+  "tr": "BİP. GRAX GİTTİ. DENİZ, ONA GÖSTER.",
+  "now": "BIP. GRAX SUDAH PERGI. TIRTA, TUNJUKKAN PADANYA.",
+  "tr_px": 145,
+  "now_px": 208,
+  "target_px": 181
+ },
+ {
+  "tr": "NALI PARLATTIM. VOLTRAK ONU YİRMİ YIL ÖNCE KIRMIŞTI, KEMAL USTA ONARDI.",
+  "now": "TAPALNYA SUDAH KUGOSOK. VOLTRAK MEMATAHKANNYA DUA PULUH TAHUN LALU, PAK KARTO YANG MEMPERBAIKINYA.",
+  "tr_px": 314,
+  "now_px": 450,
+  "target_px": 392
+ },
+ {
+  "tr": "KESEN BOŞALDI. DERS OLSUN.",
+  "now": "KANTONGMU KOSONG. JADIKAN PELAJARAN.",
+  "tr_px": 116,
+  "now_px": 166,
+  "target_px": 125
+ },
+ {
+  "tr": "BUZDİŞ",
+  "now": "TARING ES",
+  "tr_px": 28,
+  "now_px": 40,
+  "target_px": 30
+ },
+ {
+  "tr": "SIRA ",
+  "now": "POSISI ",
+  "tr_px": 21,
+  "now_px": 30,
+  "target_px": 22
+ },
+ {
+  "tr": "BİR ETABI S RİTİM NOTUYLA BİTİR",
+  "now": "SELESAIKAN SATU ETAPE DENGAN NILAI RITME S",
+  "tr_px": 134,
+  "now_px": 191,
+  "target_px": 167
+ },
+ {
+  "tr": "AÇIK KAPI",
+  "now": "GERBANG BUKA",
+  "tr_px": 40,
+  "now_px": 57,
+  "target_px": 43
+ },
+ {
+  "tr": "KAPI AÇIK",
+  "now": "GERBANG BUKA",
+  "tr_px": 40,
+  "now_px": 57,
+  "target_px": 43
+ },
+ {
+  "tr": " ROZET",
+  "now": " LENCANA",
+  "tr_px": 26,
+  "now_px": 37,
+  "target_px": 28
+ },
+ {
+  "tr": "NİŞAN ALMA, RİTMİ YAKALA",
+  "now": "JANGAN MEMBIDIK, TANGKAP RITMENYA",
+  "tr_px": 107,
+  "now_px": 152,
+  "target_px": 115
+ },
+ {
+  "tr": "İYİ VURUŞTA DA ATEŞ EDER",
+  "now": "JUGA MENEMBAK SAAT PUKULAN BAGUS",
+  "tr_px": 107,
+  "now_px": 152,
+  "target_px": 115
+ },
+ {
+  "tr": "YİRMİ YIL TRİBÜNDEN İZLEDİM. GRAX HER GECE YANIMA OTURUP \"OĞLUN GELMEYECEK\" DERDİ. GELDİN.",
+  "now": "DUA PULUH TAHUN AKU MENONTON DARI TRIBUN. TIAP MALAM GRAX DUDUK DI SAMPINGKU DAN BILANG \"ANAKMU TAK AKAN DATANG\". KAMU DATANG.",
+  "tr_px": 403,
+  "now_px": 571,
+  "target_px": 503
+ },
+ {
+  "tr": "VİRAJ",
+  "now": "BELOKAN",
+  "tr_px": 24,
+  "now_px": 34,
+  "target_px": 25
+ },
+ {
+  "tr": "ÖĞREN",
+  "now": "BELAJAR",
+  "tr_px": 24,
+  "now_px": 34,
+  "target_px": 25
+ },
+ {
+  "tr": "ONAR ",
+  "now": "BENAHI ",
+  "tr_px": 22,
+  "now_px": 31,
+  "target_px": 23
+ },
+ {
+  "tr": "1 KEZ, 1 CANLA KALK",
+  "now": "1X, BANGKIT DENGAN 1 NYAWA",
+  "tr_px": 81,
+  "now_px": 114,
+  "target_px": 87
+ },
+ {
+  "tr": "1 KEZ, 2 CANLA KALK",
+  "now": "1X, BANGKIT DENGAN 2 NYAWA",
+  "tr_px": 81,
+  "now_px": 114,
+  "target_px": 87
+ },
+ {
+  "tr": "2 KEZ, 2 CANLA KALK",
+  "now": "2X, BANGKIT DENGAN 2 NYAWA",
+  "tr_px": 81,
+  "now_px": 114,
+  "target_px": 87
+ },
+ {
+  "tr": "3 KEZ, 2 CANLA KALK",
+  "now": "3X, BANGKIT DENGAN 2 NYAWA",
+  "tr_px": 81,
+  "now_px": 114,
+  "target_px": 87
+ },
+ {
+  "tr": "ARTIK KAPIDA PİST ZORLUĞU SEÇEBİLİRSİN. DAHA ZOR, DAHA ÇOK KRİSTAL!",
+  "now": "SEKARANG KAMU BISA PILIH TINGKAT KESULITAN TREK DI GERBANG. LEBIH SULIT, LEBIH BANYAK KRISTAL!",
+  "tr_px": 297,
+  "now_px": 418,
+  "target_px": 371
+ },
+ {
+  "tr": "KORSAN ÖNÜNE DİKEN MAYIN ATAR. VUR VE KESESİNİ AL!",
+  "now": "PEROMPAK MELEMPAR RANJAU DURI KE DEPAN. TEMBAK DAN AMBIL KANTONGNYA!",
+  "tr_px": 224,
+  "now_px": 315,
+  "target_px": 280
+ },
+ {
+  "tr": " BÖLMEYE YERLEŞTİ!",
+  "now": " SUDAH DIPASANG DI RUANG!",
+  "tr_px": 79,
+  "now_px": 111,
+  "target_px": 85
+ },
+ {
+  "tr": "BUZ ERİDİ DİYE SEVİNME DÜNYALI. ÇÖLDE SENİ KUM YUTACAK!",
+  "now": "JANGAN SENANG DULU ESNYA MENCAIR, ANAK BUMI. DI GURUN, PASIR AKAN MENELANMU!",
+  "tr_px": 245,
+  "now_px": 344,
+  "target_px": 306
+ },
+ {
+  "tr": "+1 CAN",
+  "now": "+1 NYAWA",
+  "tr_px": 25,
+  "now_px": 35,
+  "target_px": 27
+ },
+ {
+  "tr": "+2 CAN",
+  "now": "+2 NYAWA",
+  "tr_px": 25,
+  "now_px": 35,
+  "target_px": 27
+ },
+ {
+  "tr": "BU SEFER ",
+  "now": "KAMU TEMBUS ",
+  "tr_px": 40,
+  "now_px": 56,
+  "target_px": 43
+ },
+ {
+  "tr": "KİBRİM KALKANIMDI DÜNYALI. ONSUZ KORKAKTIM. SEN BANA KORKMADAN KOŞMAYI GÖSTERDİN.",
+  "now": "KESOMBONGANKU ADALAH PERISAIKU, ANAK BUMI. TANPANYA AKU PENGECUT. KAMU MENUNJUKKAN CARA BERLARI TANPA RASA TAKUT.",
+  "tr_px": 370,
+  "now_px": 518,
+  "target_px": 462
+ },
+ {
+  "tr": "VUR GALAKSİ, VUR!",
+  "now": "TEMBAK, GALAKSI, TEMBAK!",
+  "tr_px": 75,
+  "now_px": 105,
+  "target_px": 81
+ },
+ {
+  "tr": "BİR GEZEGENİ LİG LİDERİ BİTİR",
+  "now": "FINIS SATU PLANET SEBAGAI PEMUNCAK LIGA",
+  "tr_px": 128,
+  "now_px": 179,
+  "target_px": 138
+ },
+ {
+  "tr": "ŞAMPİYON YARIŞINDA FARK %",
+  "now": "DI BALAPAN JUARA, JARAK MENYEMPIT %",
+  "tr_px": 113,
+  "now_px": 158,
+  "target_px": 122
+ },
+ {
+  "tr": "ULUYAN GORM'U YEN",
+  "now": "KALAHKAN GORM PELOLONG",
+  "tr_px": 76,
+  "now_px": 106,
+  "target_px": 82
+ },
+ {
+  "tr": "IŞIK İZİ",
+  "now": "EKOR SINAR",
+  "tr_px": 33,
+  "now_px": 46,
+  "target_px": 35
+ },
+ {
+  "tr": "AKYEL'LE AYNI PİSTTE KOŞTUM. SEN ONUN KADAR İYİSİN.",
+  "now": "AKU PERNAH BALAPAN DI TREK YANG SAMA DENGAN SEKAR. KAMU SEHEBAT DIA.",
+  "tr_px": 221,
+  "now_px": 308,
+  "target_px": 276
+ },
+ {
+  "tr": "KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!",
+  "now": "PIALANYA MILIK KITA! GERBANG TERBUKA! BIP BIP BIP!",
+  "tr_px": 156,
+  "now_px": 217,
+  "target_px": 195
+ },
+ {
+  "tr": "HUMA'DA YAĞMUR HİÇ DİNMEZ. KUPAYI ALIRSAN BİRAZ GÜNEŞ GETİR BANA.",
+  "now": "DI HUMA HUJAN TAK PERNAH BERHENTI. KALAU KAMU MENANG PIALA, BAWAKAN AKU SEDIKIT MATAHARI.",
+  "tr_px": 291,
+  "now_px": 404,
+  "target_px": 363
+ },
+ {
+  "tr": "FIRTINA DEVİ... BORA'YI TANIRIM. ANNENLE AYNI FİNALDE KOŞTU. ONA SORACAKLARIN VAR, DENİZ.",
+  "now": "RAKSASA BADAI... AKU KENAL BORA. IA BALAPAN DI FINAL YANG SAMA DENGAN IBUMU. ADA YANG PERLU KAMU TANYAKAN PADANYA, TIRTA.",
+  "tr_px": 386,
+  "now_px": 535,
+  "target_px": 482
+ },
+ {
+  "tr": "DÜNYALI PİSTTE, GÖZLER ONDA!",
+  "now": "ANAK BUMI DI TREK, SEMUA MATA PADANYA!",
+  "tr_px": 122,
+  "now_px": 169,
+  "target_px": 131
+ },
+ {
+  "tr": "VİRAJDA İÇ KULVARA YAPIŞ, DIŞTAN DÖNEN HEP GERİDE KALIR.",
+  "now": "DI TIKUNGAN, MENEMPEL DI JALUR DALAM. YANG MUTAR DARI LUAR SELALU TERTINGGAL.",
+  "tr_px": 251,
+  "now_px": 347,
+  "target_px": 313
+ },
+ {
+  "tr": "AUUU! BU ORMANDA BENDEN HIZLISI YOK!",
+  "now": "AUUU! TAK ADA YANG LEBIH CEPAT DARIKU DI HUTAN INI!",
+  "tr_px": 160,
+  "now_px": 221,
+  "target_px": 200
+ },
+ {
+  "tr": "KORSAN",
+  "now": "PEROMPAK",
+  "tr_px": 29,
+  "now_px": 40,
+  "target_px": 31
+ },
+ {
+  "tr": "KOŞUYU BIRAKMAK DA BİR SEÇİM. YILDIZ DİNLENDİ, SEN DE DİNLEN. BİP.",
+  "now": "BERHENTI DI TENGAH RUN JUGA PILIHAN. BINTANG SUDAH ISTIRAHAT, KAMU JUGA ISTIRAHATLAH. BIP.",
+  "tr_px": 288,
+  "now_px": 397,
+  "target_px": 360
+ },
+ {
+  "tr": "IŞIK YAYI",
+  "now": "BUSUR SINAR",
+  "tr_px": 37,
+  "now_px": 51,
+  "target_px": 39
+ },
+ {
+  "tr": "YAN ŞERİTTE BİR GÖLGE AT SİKKE TOPLAR",
+  "now": "KUDA BAYANGAN DI JALUR SAMPING MENGUMPULKAN KOIN",
+  "tr_px": 164,
+  "now_px": 226,
+  "target_px": 205
+ },
+ {
+  "tr": "ALTIN NAL KUPASI'NI ÜÇÜNCÜ KEZ KAZANDIĞIN GECE HİPODROMUN ÜSTÜNDE SESSİZ BİR IŞIK BELİRDİ. YILDIZ KİŞNEDİ, SEN DİZGİNLERİ SIKTIN. GÖZÜNÜ AÇTIĞINDA YILDIZLARIN ARASINDAYDIN.",
+  "now": "MALAM SAAT KAMU MEMENANGKAN PIALA TAPAL EMAS UNTUK KETIGA KALINYA, SEBERKAS CAHAYA SUNYI MUNCUL DI ATAS HIPODROM. BINTANG MERINGKIK, KAMU MENGGENGGAM ERAT TALI KEKANG. SAAT MEMBUKA MATA, KAMU SUDAH BERADA DI ANTARA BINTANG-BINTANG.",
+  "tr_px": 768,
+  "now_px": 1058,
+  "target_px": 960
+ },
+ {
+  "tr": "RİTİMLE DOKUN, IŞIK YAYI ATEŞ ETSİN! (",
+  "now": "SENTUH SESUAI RITME, BIAR BUSUR SINAR MENEMBAK! (",
+  "tr_px": 159,
+  "now_px": 219,
+  "target_px": 198
+ },
+ {
+  "tr": "SIKICI! METEORLARI SALIN!",
+  "now": "MEMBOSANKAN! LEPASKAN METEORNYA!",
+  "tr_px": 109,
+  "now_px": 150,
+  "target_px": 117
+ },
+ {
+  "tr": "YİRMİ YIL ÖNCE BİR DÜNYALI DA BENİ BÖYLE GEÇMİŞTİ. AYNI GÖZLER.",
+  "now": "DUA PULUH TAHUN LALU, SEORANG ANAK BUMI JUGA MENYALIPKU SEPERTI INI. MATA YANG SAMA.",
+  "tr_px": 275,
+  "now_px": 378,
+  "target_px": 343
+ },
+ {
+  "tr": " SN İKİ GÖLGE AT YANINDA KOŞUP ATEŞ EDER",
+  "now": " DTK DUA KUDA BAYANGAN BERLARI DI SISIMU DAN MENEMBAK",
+  "tr_px": 177,
+  "now_px": 243,
+  "target_px": 221
+ },
+ {
+  "tr": " ÇARPMA CAN GÖTÜRMEZ",
+  "now": " TABRAKAN PERTAMA TANPA LUKA",
+  "tr_px": 94,
+  "now_px": 129,
+  "target_px": 101
+ },
+ {
+  "tr": " VİRAJ",
+  "now": " BELOKAN",
+  "tr_px": 27,
+  "now_px": 37,
+  "target_px": 29
+ },
+ {
+  "tr": "RÜZGARIN DÖNDÜ, ÇOCUK. YİRMİ YIL ÖNCE DE BÖYLE DÖNMÜŞTÜ...",
+  "now": "ANGINMU SUDAH BERBALIK, NAK. DUA PULUH TAHUN LALU JUGA BERBALIK SEPERTI INI...",
+  "tr_px": 252,
+  "now_px": 345,
+  "target_px": 315
+ },
+ {
+  "tr": "ÇİFT!",
+  "now": "GANDA!",
+  "tr_px": 19,
+  "now_px": 26,
+  "target_px": 20
+ },
+ {
+  "tr": "TOPLADIĞIN KRİSTALLERLE BÖLMEYİ ONARABİLİRİZ. ÜSTTEKİ HEDEFE BAK!",
+  "now": "DENGAN KRISTAL YANG KAMU KUMPULKAN, KITA BISA MEMPERBAIKI RUANG INI. LIHAT TARGET DI ATAS!",
+  "tr_px": 294,
+  "now_px": 402,
+  "target_px": 367
+ },
+ {
+  "tr": "HEDEF: DÜNYALI. İŞLEM: EZ.",
+  "now": "TARGET: ANAK BUMI. PERINTAH: GILAS.",
+  "tr_px": 109,
+  "now_px": 149,
+  "target_px": 117
+ },
+ {
+  "tr": "KİMSE BENİ DİNLEMEDİ. GRAX SÜRÜMÜ ALIP SUSMAMI İSTEDİ. ARTIK SUSMAYACAĞIM. KOR AY'A GİT, DEMİRCİYİ BUL.",
+  "now": "TAK ADA YANG MAU MENDENGARKU. GRAX MENGAMBIL KAWANANKU AGAR AKU DIAM. AKU TAK AKAN DIAM LAGI. PERGILAH KE BULAN BARA, CARI SI PANDAI BESI.",
+  "tr_px": 456,
+  "now_px": 623,
+  "target_px": 570
+ },
+ {
+  "tr": "SABRIM TÜKENDİ, DÜNYALI. İLK KEZ.",
+  "now": "KESABARANKU HABIS, ANAK BUMI. BARU KALI INI.",
+  "tr_px": 142,
+  "now_px": 194,
+  "target_px": 177
+ },
+ {
+  "tr": "RİTMİ ZAMANLA ÖĞRENİRSİN",
+  "now": "RITME BISA DIPELAJARI PELAN-PELAN",
+  "tr_px": 112,
+  "now_px": 153,
+  "target_px": 120
+ },
+ {
+  "tr": "BİR CAN VER, BİR PAZARLIK SEÇ",
+  "now": "SERAHKAN 1 NYAWA, PILIH SATU PERJANJIAN",
+  "tr_px": 129,
+  "now_px": 176,
+  "target_px": 139
+ },
+ {
+  "tr": "ARKANDAN İNCE BİR BİPLEME DUYDUN...",
+  "now": "KAMU MENDENGAR BUNYI BIP LIRIH DI BELAKANGMU...",
+  "tr_px": 154,
+  "now_px": 210,
+  "target_px": 192
+ },
+ {
+  "tr": "KARA DELİK SENİ YAKALADI. KOMBO HIZDIR: RİTMİ BOZMA, HAMLEYİ SON ANA SAKLA.",
+  "now": "LUBANG HITAM MENANGKAPMU. KOMBO ITU KECEPATAN: JANGAN RUSAK RITME, SIMPAN DASH UNTUK DETIK TERAKHIR.",
+  "tr_px": 333,
+  "now_px": 454,
+  "target_px": 416
+ },
+ {
+  "tr": "ÖRSÜM SUSTU. YÜZ YILDIR İLK KEZ BİRİ BENİ YENDİ, DÜNYALI.",
+  "now": "LANDASANKU HENING. BARU KALI INI DALAM SERATUS TAHUN AKU KALAH, ANAK BUMI.",
+  "tr_px": 245,
+  "now_px": 333,
+  "target_px": 306
+ },
+ {
+  "tr": "1 CAN ADA",
+  "now": "BERI 1 NYAWA",
+  "tr_px": 39,
+  "now_px": 53,
+  "target_px": 42
+ },
+ {
+  "tr": "KARA DELİKTEN KAÇ",
+  "now": "KABUR DARI LUBANG HITAM",
+  "tr_px": 78,
+  "now_px": 106,
+  "target_px": 84
+ },
+ {
+  "tr": "BU... BU OLAMAZ! KUPA... DÜNYALININ!",
+  "now": "INI... TAK MUNGKIN! PIALANYA... MILIK ANAK BUMI!",
+  "tr_px": 145,
+  "now_px": 197,
+  "target_px": 181
+ },
+ {
+  "tr": "BAHİS: ",
+  "now": "TARUHAN: ",
+  "tr_px": 28,
+  "now_px": 38,
+  "target_px": 30
+ },
+ {
+  "tr": "İLK RUH GÜCÜ EN AZ NADİR",
+  "now": "DAYA ROH PERTAMA MINIMAL LANGKA",
+  "tr_px": 107,
+  "now_px": 145,
+  "target_px": 115
+ },
+ {
+  "tr": "HOŞÇA KAL DÜNYALI.",
+  "now": "SAMPAI JUMPA, ANAK BUMI.",
+  "tr_px": 80,
+  "now_px": 108,
+  "target_px": 86
+ },
+ {
+  "tr": "İLK YILDIZ GÜCÜNÜ AL",
+  "now": "AMBIL DAYA BINTANG PERTAMA",
+  "tr_px": 89,
+  "now_px": 120,
+  "target_px": 96
+ },
+ {
+  "tr": "ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER",
+  "now": "BERGESER ANTAR JALUR, MEMOTONG JALANMU",
+  "tr_px": 133,
+  "now_px": 179,
+  "target_px": 143
+ },
+ {
+  "tr": "HIZLI YAY",
+  "now": "BUSUR CEPAT",
+  "tr_px": 38,
+  "now_px": 51,
+  "target_px": 41
+ },
+ {
+  "tr": "SİLAH SEÇ VE GELİŞTİR",
+  "now": "PILIH DAN TINGKATKAN SENJATA",
+  "tr_px": 95,
+  "now_px": 127,
+  "target_px": 102
+ },
+ {
+  "tr": "DOSTLUK",
+  "now": "KEAKRABAN",
+  "tr_px": 33,
+  "now_px": 44,
+  "target_px": 35
+ },
+ {
+  "tr": "KOR AY'IN ZİNCİRLİ DEMİRCİSİ",
+  "now": "PANDAI BESI BERANTAI DARI BULAN BARA",
+  "tr_px": 123,
+  "now_px": 164,
+  "target_px": 132
+ },
+ {
+  "tr": "KOÇBAŞI",
+  "now": "PENDOBRAK",
+  "tr_px": 33,
+  "now_px": 44,
+  "target_px": 35
+ },
+ {
+  "tr": "YOL OLAYI",
+  "now": "EVENT JALAN",
+  "tr_px": 39,
+  "now_px": 52,
+  "target_px": 42
+ },
+ {
+  "tr": "TEKNİĞİNİ ",
+  "now": "PAKAI TEKNIK ",
+  "tr_px": 43,
+  "now_px": 57,
+  "target_px": 46
+ },
+ {
+  "tr": "SİLAHIN: ",
+  "now": "SENJATAMU: ",
+  "tr_px": 37,
+  "now_px": 49,
+  "target_px": 39
+ },
+ {
+  "tr": "PRENS KRİSTALO'YU YEN",
+  "now": "KALAHKAN PANGERAN KRISTALO",
+  "tr_px": 93,
+  "now_px": 123,
+  "target_px": 100
+ },
+ {
+  "tr": " VURUŞ",
+  "now": " PUKULAN",
+  "tr_px": 28,
+  "now_px": 37,
+  "target_px": 30
+ },
+ {
+  "tr": "PAZAR +%60 PAHALI",
+  "now": "PASAR +60% LEBIH MAHAL",
+  "tr_px": 75,
+  "now_px": 99,
+  "target_px": 81
+ },
+ {
+  "tr": "SÜS AL, ÜS PUANI KAZAN!",
+  "now": "BELI HIASAN, DAPAT POIN BASIS!",
+  "tr_px": 99,
+  "now_px": 130,
+  "target_px": 106
+ },
+ {
+  "tr": "BAHİS: +",
+  "now": "TARUHAN: +",
+  "tr_px": 32,
+  "now_px": 42,
+  "target_px": 34
+ },
+ {
+  "tr": "TEKNİK %25 HIZLI DOLAR",
+  "now": "TEKNIK TERISI 25% LEBIH CEPAT",
+  "tr_px": 96,
+  "now_px": 126,
+  "target_px": 103
+ },
+ {
+  "tr": "TEKNİK %50 HIZLI DOLAR",
+  "now": "TEKNIK TERISI 50% LEBIH CEPAT",
+  "tr_px": 96,
+  "now_px": 126,
+  "target_px": 103
+ },
+ {
+  "tr": "TEKNİK %75 HIZLI DOLAR",
+  "now": "TEKNIK TERISI 75% LEBIH CEPAT",
+  "tr_px": 96,
+  "now_px": 126,
+  "target_px": 103
+ },
+ {
+  "tr": "BU DÜNYALI DURMUYOR!",
+  "now": "ANAK BUMI INI TAK BERHENTI!",
+  "tr_px": 90,
+  "now_px": 118,
+  "target_px": 97
+ },
+ {
+  "tr": "GÖZDE: ",
+  "now": "FAVORIT: ",
+  "tr_px": 29,
+  "now_px": 38,
+  "target_px": 31
+ },
+ {
+  "tr": "BİR KORSAN DAHA GİTTİ!",
+  "now": "SATU PEROMPAK LAGI TUMBANG!",
+  "tr_px": 95,
+  "now_px": 124,
+  "target_px": 102
+ },
+ {
+  "tr": "YULAF",
+  "now": "GANDUM",
+  "tr_px": 23,
+  "now_px": 30,
+  "target_px": 24
+ },
+ {
+  "tr": "SENİ BEKLİYORDUM DÜNYALI.",
+  "now": "AKU SUDAH MENUNGGUMU, ANAK BUMI.",
+  "tr_px": 113,
+  "now_px": 147,
+  "target_px": 122
+ },
+ {
+  "tr": "SIYIRDI",
+  "now": "SEREMPET",
+  "tr_px": 30,
+  "now_px": 39,
+  "target_px": 32
+ },
+ {
+  "tr": "KARA DELİK KAÇIŞI",
+  "now": "LARI DARI LUBANG HITAM",
+  "tr_px": 77,
+  "now_px": 100,
+  "target_px": 83
+ },
+ {
+  "tr": "BAHİS GİTTİ",
+  "now": "TARUHAN KALAH",
+  "tr_px": 47,
+  "now_px": 61,
+  "target_px": 50
+ },
+ {
+  "tr": "USTA ATAĞI",
+  "now": "SERBUAN GURU",
+  "tr_px": 44,
+  "now_px": 57,
+  "target_px": 47
+ },
+ {
+  "tr": "RÜZGARI YAKALAYAMAZSIN!",
+  "now": "KAMU TAK BISA MENANGKAP ANGIN!",
+  "tr_px": 106,
+  "now_px": 137,
+  "target_px": 114
+ },
+ {
+  "tr": " RAKİP ATIŞINDAN KAÇ",
+  "now": " TEMBAKAN RIVAL DIHINDARI",
+  "tr_px": 89,
+  "now_px": 115,
+  "target_px": 96
+ },
+ {
+  "tr": "KİBİR!",
+  "now": "ANGKUH!",
+  "tr_px": 24,
+  "now_px": 31,
+  "target_px": 25
+ },
+ {
+  "tr": "DEMİRCİ KORHAN",
+  "now": "BARA SI PANDAI BESI",
+  "tr_px": 66,
+  "now_px": 85,
+  "target_px": 71
+ },
+ {
+  "tr": "HER VURUŞTA EN AZ İKİ IŞIK OKU",
+  "now": "TIAP PUKULAN MINIMAL DUA PANAH CAHAYA",
+  "tr_px": 133,
+  "now_px": 171,
+  "target_px": 143
+ },
+ {
+  "tr": "SON DÜZLÜK!",
+  "now": "LURUSAN AKHIR!",
+  "tr_px": 49,
+  "now_px": 63,
+  "target_px": 52
+ },
+ {
+  "tr": "%50: ŞEKER, %50: SERAP",
+  "now": "50%: GULA, 50%: FATAMORGANA",
+  "tr_px": 88,
+  "now_px": 113,
+  "target_px": 95
+ },
+ {
+  "tr": "USTA ATAĞI!",
+  "now": "SERBUAN GURU!",
+  "tr_px": 46,
+  "now_px": 59,
+  "target_px": 49
+ },
+ {
+  "tr": "ZOR PİSTTE KUPAYI KAZAN",
+  "now": "MENANGKAN PIALA DI TREK SULIT",
+  "tr_px": 103,
+  "now_px": 132,
+  "target_px": 111
+ },
+ {
+  "tr": "SESİ BİRAZ GEÇ DUYUYORSUN",
+  "now": "KAMU AGAK TELAT MENDENGAR SUARA",
+  "tr_px": 114,
+  "now_px": 146,
+  "target_px": 123
+ },
+ {
+  "tr": "BİP'İN YEDEK PİLİ",
+  "now": "BATERAI CADANGAN BIP",
+  "tr_px": 72,
+  "now_px": 92,
+  "target_px": 77
+ },
+ {
+  "tr": "O GECE · AHIR",
+  "now": "MALAM · KANDANG",
+  "tr_px": 54,
+  "now_px": 69,
+  "target_px": 58
+ },
+ {
+  "tr": " GÖREV TAMAM: PANODAN AL",
+  "now": " MISI BERES: KLAIM DI LAYAR MISI",
+  "tr_px": 110,
+  "now_px": 140,
+  "target_px": 118
+ },
+ {
+  "tr": "KAZAN VE EVE DÖN.",
+  "now": "MENANGLAH DAN PULANG.",
+  "tr_px": 77,
+  "now_px": 98,
+  "target_px": 83
+ },
+ {
+  "tr": "İKİ YILDIZ! KAZANDIN.",
+  "now": "DUA BINTANG! KAMU MENANG.",
+  "tr_px": 88,
+  "now_px": 112,
+  "target_px": 95
+ },
+ {
+  "tr": "ETAP SONU +1 CAN",
+  "now": "AKHIR ETAPE +1 NYAWA",
+  "tr_px": 70,
+  "now_px": 89,
+  "target_px": 75
+ },
+ {
+  "tr": "TOZKIRAN",
+  "now": "PECAH DEBU",
+  "tr_px": 37,
+  "now_px": 47,
+  "target_px": 39
+ },
+ {
+  "tr": "SONRAKİ ETAP 12 KOMBOYLA BAŞLA",
+  "now": "ETAPE BERIKUTNYA MULAI DENGAN 12 KOMBO",
+  "tr_px": 137,
+  "now_px": 174,
+  "target_px": 147
+ },
+ {
+  "tr": "SONRAKİ ETAP 15 KOMBOYLA BAŞLA",
+  "now": "ETAPE BERIKUTNYA MULAI DENGAN 15 KOMBO",
+  "tr_px": 137,
+  "now_px": 174,
+  "target_px": 147
+ },
+ {
+  "tr": "BİRE BİR! BAHİSLER MASADA!",
+  "now": "SATU LAWAN SATU! TARUHAN DI MEJA!",
+  "tr_px": 115,
+  "now_px": 146,
+  "target_px": 124
+ },
+ {
+  "tr": "KIZIL KUM",
+  "now": "PASIR MERAH",
+  "tr_px": 41,
+  "now_px": 52,
+  "target_px": 44
+ },
+ {
+  "tr": " DÜELLO KAZAN",
+  "now": " KEMENANGAN DUEL",
+  "tr_px": 60,
+  "now_px": 76,
+  "target_px": 64
+ },
+ {
+  "tr": "SAPMA: ",
+  "now": "DEVIASI: ",
+  "tr_px": 30,
+  "now_px": 38,
+  "target_px": 32
+ },
+ {
+  "tr": "KAPI AÇIK: BİRİNİ EVE GÖNDER",
+  "now": "GERBANG BUKA: PULANGKAN SATU RIVAL",
+  "tr_px": 124,
+  "now_px": 157,
+  "target_px": 133
+ },
+ {
+  "tr": " YARIŞÇI",
+  "now": " PEMBALAP",
+  "tr_px": 34,
+  "now_px": 43,
+  "target_px": 36
+ },
+ {
+  "tr": "TOSBİK",
+  "now": "SERUDUK",
+  "tr_px": 27,
+  "now_px": 34,
+  "target_px": 29
+ },
+ {
+  "tr": "AHIRDA ",
+  "now": "KANDANG: ",
+  "tr_px": 31,
+  "now_px": 39,
+  "target_px": 33
+ },
+ {
+  "tr": "SU TANKI",
+  "now": "TANGKI AIR",
+  "tr_px": 35,
+  "now_px": 44,
+  "target_px": 37
+ },
+ {
+  "tr": "BİR KEZ ÖLÜMCÜL DARBEYİ ",
+  "now": "LOLOS DARI MAUT SEKALI DENGAN ",
+  "tr_px": 109,
+  "now_px": 137,
+  "target_px": 117
+ },
+ {
+  "tr": "ÖNÜMÜ GÖREMEZSİN BİLE.",
+  "now": "KAMU CUMA AKAN LIHAT EKORKU.",
+  "tr_px": 102,
+  "now_px": 128,
+  "target_px": 110
+ },
+ {
+  "tr": "PİRA'DA KİMSE BENİ GEÇEMEZDİ!",
+  "now": "DI PIRA TAK ADA YANG BISA MENYALIPKU!",
+  "tr_px": 130,
+  "now_px": 163,
+  "target_px": 140
+ },
+ {
+  "tr": "+1 AZAMİ CAN VE 1 CAN YENİLE",
+  "now": "+1 NYAWA MAKS DAN PULIHKAN 1 NYAWA",
+  "tr_px": 123,
+  "now_px": 154,
+  "target_px": 132
+ },
+ {
+  "tr": "AĞIR ŞOK",
+  "now": "KEJUT KUAT",
+  "tr_px": 36,
+  "now_px": 45,
+  "target_px": 38
+ },
+ {
+  "tr": "NİŞANCI",
+  "now": "PENEMBAK",
+  "tr_px": 32,
+  "now_px": 40,
+  "target_px": 34
+ },
+ {
+  "tr": "RİTMİ ÖLÇ",
+  "now": "SETEL RITME",
+  "tr_px": 40,
+  "now_px": 50,
+  "target_px": 43
+ },
+ {
+  "tr": "ÜS PUANI",
+  "now": "POIN BASIS",
+  "tr_px": 36,
+  "now_px": 45,
+  "target_px": 38
+ },
+ {
+  "tr": "ŞAMPİYON SAHNEDE! REKOR YAYIN!",
+  "now": "SANG JUARA DI PANGGUNG! SIARAN REKOR!",
+  "tr_px": 133,
+  "now_px": 166,
+  "target_px": 143
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%20 HASAR",
+  "now": "SEMUA TEMBAKAN +20% DAMAGE",
+  "tr_px": 97,
+  "now_px": 121,
+  "target_px": 104
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%40 HASAR",
+  "now": "SEMUA TEMBAKAN +40% DAMAGE",
+  "tr_px": 97,
+  "now_px": 121,
+  "target_px": 104
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%60 HASAR",
+  "now": "SEMUA TEMBAKAN +60% DAMAGE",
+  "tr_px": 97,
+  "now_px": 121,
+  "target_px": 104
+ },
+ {
+  "tr": "AY GÖLGESİ",
+  "now": "BAYANG BULAN",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "DELİCİ ŞOK",
+  "now": "KEJUT TEMBUS",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "KAR TANESİ",
+  "now": "KEPING SALJU",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "SADE RİTİM",
+  "now": "RITME SIMPEL",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "SEKİZ AYAK",
+  "now": "DELAPAN KAKI",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "UZUN NOTA",
+  "now": "NOT PANJANG",
+  "tr_px": 41,
+  "now_px": 51,
+  "target_px": 44
+ },
+ {
+  "tr": " İSİMLİ RAKİBİN ÖNÜNDE BİTİR",
+  "now": " KALI FINIS DI DEPAN RIVAL BERNAMA",
+  "tr_px": 124,
+  "now_px": 154,
+  "target_px": 133
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI +%15",
+  "now": "PELUANG DAYA LANGKA +15%",
+  "tr_px": 87,
+  "now_px": 108,
+  "target_px": 93
+ },
+ {
+  "tr": "UZAY PAZARI",
+  "now": "PASAR ANGKASA",
+  "tr_px": 50,
+  "now_px": 62,
+  "target_px": 54
+ },
+ {
+  "tr": "ATEŞ KUŞU BİNİCİSİ",
+  "now": "PENUNGGANG BURUNG API",
+  "tr_px": 80,
+  "now_px": 99,
+  "target_px": 86
+ },
+ {
+  "tr": "TEMİZ HAVA, KISA BİR MOLA...",
+  "now": "UDARA SEGAR, ISTIRAHAT SEBENTAR...",
+  "tr_px": 118,
+  "now_px": 146,
+  "target_px": 127
+ },
+ {
+  "tr": "GECE GÖZLÜ YARASA HALKI",
+  "now": "BANGSA KELELAWAR MATA MALAM",
+  "tr_px": 106,
+  "now_px": 131,
+  "target_px": 114
+ },
+ {
+  "tr": "RİTMİ KAÇIRDI, KAPI KAPALI!",
+  "now": "KETUKAN LEPAS, GERBANG TERTUTUP!",
+  "tr_px": 116,
+  "now_px": 143,
+  "target_px": 125
+ },
+ {
+  "tr": "PLAZMA TOPU",
+  "now": "MERIAM PLASMA",
+  "tr_px": 52,
+  "now_px": 64,
+  "target_px": 56
+ },
+ {
+  "tr": "PRENS KRİSTALO",
+  "now": "PANGERAN KRISTALO",
+  "tr_px": 65,
+  "now_px": 80,
+  "target_px": 70
+ },
+ {
+  "tr": "ÜS PUANI ",
+  "now": "POIN BASIS ",
+  "tr_px": 39,
+  "now_px": 48,
+  "target_px": 42
+ },
+ {
+  "tr": "BÖLMEDE",
+  "now": "TERPASANG",
+  "tr_px": 35,
+  "now_px": 43,
+  "target_px": 37
+ },
+ {
+  "tr": "BOSS YENİNCE 1 CAN YENİLE",
+  "now": "KALAHKAN BOS, PULIHKAN 1 NYAWA",
+  "tr_px": 111,
+  "now_px": 136,
+  "target_px": 119
+ },
+ {
+  "tr": "İNANILMAZ! KESEN DOLDU.",
+  "now": "LUAR BIASA! KANTONGMU PENUH.",
+  "tr_px": 103,
+  "now_px": 126,
+  "target_px": 111
+ },
+ {
+  "tr": "MAYIN: SIÇRA!",
+  "now": "RANJAU: LOMPAT!",
+  "tr_px": 54,
+  "now_px": 66,
+  "target_px": 58
+ },
+ {
+  "tr": "RİTMİK ADIM",
+  "now": "LANGKAH RITME",
+  "tr_px": 50,
+  "now_px": 61,
+  "target_px": 54
+ },
+ {
+  "tr": "LENSLER JİLET GİBİ PARLADI.",
+  "now": "LENSANYA BERKILAU SETAJAM SILET.",
+  "tr_px": 120,
+  "now_px": 146,
+  "target_px": 129
+ },
+ {
+  "tr": "MÜZİĞİ YUTUYOR!",
+  "now": "MELAHAP MUSIKNYA!",
+  "tr_px": 65,
+  "now_px": 79,
+  "target_px": 70
+ },
+ {
+  "tr": " ONARILDI!",
+  "now": " DIPERBAIKI!",
+  "tr_px": 42,
+  "now_px": 51,
+  "target_px": 45
+ },
+ {
+  "tr": "OMUZ ATAR",
+  "now": "TABRAK BAHU",
+  "tr_px": 42,
+  "now_px": 51,
+  "target_px": 45
+ },
+ {
+  "tr": "YEM DEPOSU",
+  "now": "GUDANG PAKAN",
+  "tr_px": 47,
+  "now_px": 57,
+  "target_px": 50
+ },
+ {
+  "tr": " KORUMA",
+  "now": " PROTEKSI",
+  "tr_px": 33,
+  "now_px": 40,
+  "target_px": 35
+ },
+ {
+  "tr": "GÜNEŞSİZ GEZEGEN NOKS",
+  "now": "PLANET TANPA MATAHARI NOKS",
+  "tr_px": 99,
+  "now_px": 120,
+  "target_px": 106
+ },
+ {
+  "tr": "SONRAKİ ETAP +2 KALKAN",
+  "now": "ETAPE BERIKUTNYA +2 PERISAI",
+  "tr_px": 99,
+  "now_px": 120,
+  "target_px": 106
+ },
+ {
+  "tr": "BİR RÖVANŞÇIDAN RÖVANŞ AL",
+  "now": "MENANG REVANS LAWAN SATU RIVAL",
+  "tr_px": 118,
+  "now_px": 143,
+  "target_px": 127
+ },
+ {
+  "tr": "AHIR MODÜLÜ",
+  "now": "MODUL KANDANG",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": "PLAZMA ATAR",
+  "now": "TEMBAK PLASMA",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": "ULUYAN GORM",
+  "now": "GORM PELOLONG",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": " SİKKENİ ",
+  "now": " KOIN JADI ",
+  "tr_px": 38,
+  "now_px": 46,
+  "target_px": 41
+ },
+ {
+  "tr": "KARA DELİK!",
+  "now": "LUBANG HITAM!",
+  "tr_px": 48,
+  "now_px": 58,
+  "target_px": 51
+ },
+ {
+  "tr": "AV KÖPEĞİ!",
+  "now": "ANJING BURU!",
+  "tr_px": 44,
+  "now_px": 53,
+  "target_px": 47
+ },
+ {
+  "tr": "İYİ · ERKEN",
+  "now": "BAGUS · AWAL",
+  "tr_px": 44,
+  "now_px": 53,
+  "target_px": 47
+ },
+ {
+  "tr": " ROZET GEREK",
+  "now": " LENCANA PERLU",
+  "tr_px": 54,
+  "now_px": 65,
+  "target_px": 58
+ },
+ {
+  "tr": "ATIŞ HASARI +%50 (BU KOŞU)",
+  "now": "DAMAGE TEMBAKAN +50% (RUN INI)",
+  "tr_px": 110,
+  "now_px": 132,
+  "target_px": 118
+ },
+ {
+  "tr": "DÜNYALI SENDELİYOR!",
+  "now": "ANAK BUMI SEMPOYONGAN!",
+  "tr_px": 85,
+  "now_px": 102,
+  "target_px": 91
+ },
+ {
+  "tr": "KORSAN BASKINI",
+  "now": "SERBUAN PEROMPAK",
+  "tr_px": 65,
+  "now_px": 78,
+  "target_px": 70
+ },
+ {
+  "tr": " KEZ SİPERDEN FIRLA",
+  "now": " KALI MELESAT DARI SLIP",
+  "tr_px": 86,
+  "now_px": 103,
+  "target_px": 92
+ },
+ {
+  "tr": "RİTMİ ÖLÇ: DOKUNARAK AYARLA",
+  "now": "KALIBRASI: SETEL DENGAN SENTUHAN",
+  "tr_px": 122,
+  "now_px": 146,
+  "target_px": 131
+ },
+ {
+  "tr": "BEDEL: 1 CAN",
+  "now": "HARGA: 1 NYAWA",
+  "tr_px": 51,
+  "now_px": 61,
+  "target_px": 55
+ },
+ {
+  "tr": "DOKUZ KOLLU VATOZ SÜRÜCÜSÜ",
+  "now": "PENUNGGANG PARI LENGAN SEMBILAN",
+  "tr_px": 123,
+  "now_px": 147,
+  "target_px": 132
+ },
+ {
+  "tr": "IŞIK VE RİTİM",
+  "now": "SINAR DAN RITME",
+  "tr_px": 57,
+  "now_px": 68,
+  "target_px": 61
+ },
+ {
+  "tr": "KAPI KAPALI!",
+  "now": "GERBANG TUTUP!",
+  "tr_px": 52,
+  "now_px": 62,
+  "target_px": 56
+ },
+ {
+  "tr": "PARLAK OK",
+  "now": "PANAH KILAT",
+  "tr_px": 42,
+  "now_px": 50,
+  "target_px": 45
+ },
+ {
+  "tr": "TEK CANIN KALINCA HIZ +%",
+  "now": "SAAT NYAWA TINGGAL 1, LAJU +%",
+  "tr_px": 105,
+  "now_px": 125,
+  "target_px": 113
+ },
+ {
+  "tr": "KOŞU BİTTİ",
+  "now": "RUN SELESAI",
+  "tr_px": 43,
+  "now_px": 51,
+  "target_px": 46
+ },
+ {
+  "tr": "GECE YARISI",
+  "now": "TENGAH MALAM",
+  "tr_px": 49,
+  "now_px": 58,
+  "target_px": 52
+ },
+ {
+  "tr": "GÖLGE İKİZİ",
+  "now": "KEMBAR GELAP",
+  "tr_px": 49,
+  "now_px": 58,
+  "target_px": 52
+ },
+ {
+  "tr": "AH! BU ACITTI!",
+  "now": "ADUH! ITU SAKIT!",
+  "tr_px": 55,
+  "now_px": 65,
+  "target_px": 59
+ },
+ {
+  "tr": "RAKİBİ BOŞA ÇIKARDI!",
+  "now": "SERANGAN RIVAL SIA-SIA!",
+  "tr_px": 88,
+  "now_px": 104,
+  "target_px": 95
+ },
+ {
+  "tr": "YARIŞA ÇIK",
+  "now": "MULAI BALAP",
+  "tr_px": 44,
+  "now_px": 52,
+  "target_px": 47
+ },
+ {
+  "tr": "MANTAR AYI",
+  "now": "BULAN JAMUR",
+  "tr_px": 45,
+  "now_px": 53,
+  "target_px": 48
+ },
+ {
+  "tr": "PAHALI YOL",
+  "now": "JALUR MAHAL",
+  "tr_px": 45,
+  "now_px": 53,
+  "target_px": 48
+ },
+ {
+  "tr": "TEKNİK SEÇ",
+  "now": "PILIH TEKNIK",
+  "tr_px": 45,
+  "now_px": 53,
+  "target_px": 48
+ },
+ {
+  "tr": "KORSAN PUSUSU",
+  "now": "SERGAP PEROMPAK",
+  "tr_px": 62,
+  "now_px": 73,
+  "target_px": 66
+ },
+ {
+  "tr": "PLAZMA 4 YERİNE 3 VURUŞTA",
+  "now": "PLASMA TIAP 3 PUKULAN, BUKAN 4",
+  "tr_px": 113,
+  "now_px": 133,
+  "target_px": 122
+ },
+ {
+  "tr": "GÖK DARBESİ",
+  "now": "HANTAM LANGIT",
+  "tr_px": 51,
+  "now_px": 60,
+  "target_px": 55
+ },
+ {
+  "tr": "BASKIN ETABI, ÖDÜL X2",
+  "now": "ETAPE SERBUAN, HADIAH X2",
+  "tr_px": 91,
+  "now_px": 107,
+  "target_px": 98
+ },
+ {
+  "tr": "BUGÜN EN İYİ: ",
+  "now": "REKOR HARI INI: ",
+  "tr_px": 57,
+  "now_px": 67,
+  "target_px": 61
+ },
+ {
+  "tr": "ALTIN NAL",
+  "now": "TAPAL EMAS",
+  "tr_px": 40,
+  "now_px": 47,
+  "target_px": 43
+ },
+ {
+  "tr": "BÖLMENE DE TEZGAH KURARIM!",
+  "now": "AKU JUGA BUKA LAPAK DI RUANGMU!",
+  "tr_px": 120,
+  "now_px": 141,
+  "target_px": 129
+ },
+ {
+  "tr": "KUM SOLUCANI ZARG'I YEN",
+  "now": "KALAHKAN CACING PASIR ZARG",
+  "tr_px": 103,
+  "now_px": 121,
+  "target_px": 111
+ },
+ {
+  "tr": "MUTLU YILDIZ! +",
+  "now": "BINTANG SENANG! +",
+  "tr_px": 63,
+  "now_px": 74,
+  "target_px": 68
+ },
+ {
+  "tr": "BURADA HER ŞEY DONAR. SEN DE.",
+  "now": "DI SINI SEMUA MEMBEKU. KAMU JUGA.",
+  "tr_px": 127,
+  "now_px": 149,
+  "target_px": 137
+ },
+ {
+  "tr": "KORSANLAR GÜLEREK YOLU AÇTI.",
+  "now": "PEROMPAK MINGGIR SAMBIL TERTAWA.",
+  "tr_px": 127,
+  "now_px": 149,
+  "target_px": 137
+ },
+ {
+  "tr": "BİR DEĞİŞİKLİK SEÇ",
+  "now": "PILIH SATU MODIFIKASI",
+  "tr_px": 81,
+  "now_px": 95,
+  "target_px": 87
+ },
+ {
+  "tr": "KOŞUDAN ÖNCE BİR YEM SEÇ",
+  "now": "PILIH SATU PAKAN SEBELUM RUN",
+  "tr_px": 110,
+  "now_px": 129,
+  "target_px": 118
+ },
+ {
+  "tr": "KAPTAN DÜŞTÜ! +",
+  "now": "KAPTEN TUMBANG! +",
+  "tr_px": 64,
+  "now_px": 75,
+  "target_px": 69
+ },
+ {
+  "tr": "BU SEFER DE GEÇEMEZSİN!",
+  "now": "KALI INI PUN KAMU TAK LEWAT!",
+  "tr_px": 105,
+  "now_px": 123,
+  "target_px": 113
+ },
+ {
+  "tr": "AYNI YOL, TEK SKOR",
+  "now": "RUTE SAMA, SATU SKOR",
+  "tr_px": 76,
+  "now_px": 89,
+  "target_px": 82
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI ARTAR",
+  "now": "PELUANG DAYA LANGKA NAIK",
+  "tr_px": 95,
+  "now_px": 111,
+  "target_px": 102
+ },
+ {
+  "tr": "YOLA DEVAM",
+  "now": "LANJUT JALAN",
+  "tr_px": 48,
+  "now_px": 56,
+  "target_px": 51
+ },
+ {
+  "tr": "YİRMİ YIL SONRA",
+  "now": "20 TAHUN KEMUDIAN",
+  "tr_px": 66,
+  "now_px": 77,
+  "target_px": 71
+ },
+ {
+  "tr": "ŞIK KAÇIŞ!",
+  "now": "ELAK KEREN!",
+  "tr_px": 42,
+  "now_px": 49,
+  "target_px": 45
+ },
+ {
+  "tr": "YARDIM MODU BİRAZ GÜÇLENDİ",
+  "now": "MODE BANTUAN SEDIKIT LEBIH KUAT",
+  "tr_px": 121,
+  "now_px": 141,
+  "target_px": 130
+ },
+ {
+  "tr": "ZIPZIP ETRAFI KOKLADI: +",
+  "now": "ZIPZIP MENGENDUS SEKITAR: +",
+  "tr_px": 104,
+  "now_px": 121,
+  "target_px": 112
+ },
+ {
+  "tr": "YENİ DOSYA: ",
+  "now": "BERKAS BARU: ",
+  "tr_px": 49,
+  "now_px": 57,
+  "target_px": 52
+ },
+ {
+  "tr": "OKYANUS AYI TALASSA",
+  "now": "BULAN SAMUDRA TALASSA",
+  "tr_px": 86,
+  "now_px": 100,
+  "target_px": 92
+ },
+ {
+  "tr": "BRONZ MADALYA",
+  "now": "MEDALI PERUNGGU",
+  "tr_px": 62,
+  "now_px": 72,
+  "target_px": 66
+ },
+ {
+  "tr": "BULUT ADIMI",
+  "now": "LANGKAH AWAN",
+  "tr_px": 50,
+  "now_px": 58,
+  "target_px": 54
+ },
+ {
+  "tr": "İNDİĞİN YERDEKİ DÜŞMANLAR ",
+  "now": "MUSUH DI TEMPAT MENDARAT KENA ",
+  "tr_px": 119,
+  "now_px": 138,
+  "target_px": 128
+ },
+ {
+  "tr": "GRAX'IN İLK TUTSAĞI",
+  "now": "TAWANAN PERTAMA GRAX",
+  "tr_px": 82,
+  "now_px": 95,
+  "target_px": 88
+ },
+ {
+  "tr": "GÖLGE SÜRÜSÜ",
+  "now": "SERBU BAYANGAN",
+  "tr_px": 57,
+  "now_px": 66,
+  "target_px": 61
+ },
+ {
+  "tr": "SÜZÜLEN ADIM",
+  "now": "LANGKAH LAYANG",
+  "tr_px": 57,
+  "now_px": 66,
+  "target_px": 61
+ },
+ {
+  "tr": "BİR SPRİNTİ BİRİNCİ BİTİR",
+  "now": "FINIS PERTAMA DI SATU SPRINT",
+  "tr_px": 108,
+  "now_px": 125,
+  "target_px": 116
+ },
+ {
+  "tr": "KAPI AÇILDI!",
+  "now": "GERBANG BUKA!",
+  "tr_px": 51,
+  "now_px": 59,
+  "target_px": 55
+ },
+ {
+  "tr": "GÜM... BU SEFER SESİM ÇIKMADI.",
+  "now": "DUM... KALI INI SUARAKU TAK KELUAR.",
+  "tr_px": 129,
+  "now_px": 149,
+  "target_px": 139
+ },
+ {
+  "tr": "KUM GÖZÜNE KAÇMASIN DÜNYALI!",
+  "now": "AWAS PASIR MASUK MATA, ANAK BUMI!",
+  "tr_px": 129,
+  "now_px": 149,
+  "target_px": 139
+ },
+ {
+  "tr": "JÖLE BEYİNLİ BİLGİN",
+  "now": "CENDEKIAWAN OTAK JELI",
+  "tr_px": 85,
+  "now_px": 98,
+  "target_px": 91
+ },
+ {
+  "tr": "NEFES KAZANCI +%",
+  "now": "PEROLEHAN NAPAS +%",
+  "tr_px": 72,
+  "now_px": 83,
+  "target_px": 77
+ },
+ {
+  "tr": "GÖKTAŞI KIRAN",
+  "now": "PEMECAH METEOR",
+  "tr_px": 59,
+  "now_px": 68,
+  "target_px": 63
+ },
+ {
+  "tr": "GÖLGE SÜRÜSÜ!",
+  "now": "SERBU BAYANGAN!",
+  "tr_px": 59,
+  "now_px": 68,
+  "target_px": 63
+ },
+ {
+  "tr": "BİR YILDIZ GÜCÜ",
+  "now": "SATU DAYA BINTANG",
+  "tr_px": 66,
+  "now_px": 76,
+  "target_px": 71
+ },
+ {
+  "tr": "EN İYİ KOMBO",
+  "now": "KOMBO TERBAIK",
+  "tr_px": 53,
+  "now_px": 61,
+  "target_px": 57
+ },
+ {
+  "tr": "RİTİM KAPISI",
+  "now": "GERBANG RITME",
+  "tr_px": 53,
+  "now_px": 61,
+  "target_px": 57
+ },
+ {
+  "tr": "KOŞUDAN ÖNCE YEM SEÇ",
+  "now": "PILIH PAKAN SEBELUM RUN",
+  "tr_px": 93,
+  "now_px": 107,
+  "target_px": 100
+ },
+ {
+  "tr": " RUHU SANA GÜÇ SUNUYOR",
+  "now": " - ROHNYA MENAWARKAN DAYA",
+  "tr_px": 100,
+  "now_px": 115,
+  "target_px": 108
+ },
+ {
+  "tr": " ÖZEL ATIŞ YAP",
+  "now": " TEMBAK SPESIAL",
+  "tr_px": 60,
+  "now_px": 69,
+  "target_px": 64
+ },
+ {
+  "tr": "ATIŞ HASARI +%",
+  "now": "DMG TEMBAKAN +%",
+  "tr_px": 60,
+  "now_px": 69,
+  "target_px": 64
+ },
+ {
+  "tr": "YILDIZ TOZU",
+  "now": "DEBU BINTANG",
+  "tr_px": 48,
+  "now_px": 55,
+  "target_px": 51
+ },
+ {
+  "tr": "HER ETAP SİSLİ",
+  "now": "SELALU BERKABUT",
+  "tr_px": 62,
+  "now_px": 71,
+  "target_px": 66
+ },
+ {
+  "tr": "HER ETAP 1 KALKAN",
+  "now": "TIAP ETAPE 1 PERISAI",
+  "tr_px": 76,
+  "now_px": 87,
+  "target_px": 82
+ },
+ {
+  "tr": "SON DÜZLÜK! KİM KAZANACAK?",
+  "now": "LURUSAN AKHIR! SIAPA JUARANYA?",
+  "tr_px": 119,
+  "now_px": 136,
+  "target_px": 128
+ },
+ {
+  "tr": "SİS ORMANI AVCISI",
+  "now": "PEMBURU HUTAN KABUT",
+  "tr_px": 78,
+  "now_px": 89,
+  "target_px": 84
+ },
+ {
+  "tr": "ŞİFA JELİ: +1 CAN",
+  "now": "JELI OBAT: +1 NYAWA",
+  "tr_px": 71,
+  "now_px": 81,
+  "target_px": 76
+ },
+ {
+  "tr": "DEMİRCİ ÇEKİCİ",
+  "now": "PALU PANDAI BESI",
+  "tr_px": 64,
+  "now_px": 73,
+  "target_px": 69
+ },
+ {
+  "tr": "YAVAŞLAMA -%15",
+  "now": "PERLAMBATAN -15%",
+  "tr_px": 64,
+  "now_px": 73,
+  "target_px": 69
+ },
+ {
+  "tr": "KAOS KAPISI",
+  "now": "GERBANG KAOS",
+  "tr_px": 50,
+  "now_px": 57,
+  "target_px": 54
+ },
+ {
+  "tr": "TABAN HIZ +%",
+  "now": "LAJU DASAR +%",
+  "tr_px": 51,
+  "now_px": 58,
+  "target_px": 55
+ },
+ {
+  "tr": "SESSİZ MODDA DA ÇAL",
+  "now": "BUNYI SAAT MODE SENYAP",
+  "tr_px": 88,
+  "now_px": 100,
+  "target_px": 95
+ },
+ {
+  "tr": "KOMBO YAVAŞ SÖNER",
+  "now": "KOMBO MEREDUP PELAN",
+  "tr_px": 81,
+  "now_px": 92,
+  "target_px": 87
+ },
+ {
+  "tr": "SİPER DOLU: YANA ÇIK!",
+  "now": "SLIP PENUH: KE SAMPING!",
+  "tr_px": 89,
+  "now_px": 101,
+  "target_px": 96
+ },
+ {
+  "tr": "ARKA RÜZGAR",
+  "now": "ANGIN BURITAN",
+  "tr_px": 52,
+  "now_px": 59,
+  "target_px": 56
+ },
+ {
+  "tr": "HEP OMUZ DARBESİ",
+  "now": "SELALU HANTAM BAHU",
+  "tr_px": 75,
+  "now_px": 85,
+  "target_px": 81
+ },
+ {
+  "tr": "ATIŞ HASARI +%80",
+  "now": "DMG TEMBAKAN +80%",
+  "tr_px": 68,
+  "now_px": 77,
+  "target_px": 73
+ },
+ {
+  "tr": "ATIŞ HASARI -%50",
+  "now": "DMG TEMBAKAN -50%",
+  "tr_px": 68,
+  "now_px": 77,
+  "target_px": 73
+ },
+ {
+  "tr": "HIZ +%10, AZAMİ CAN -1",
+  "now": "LAJU +10%, NYAWA MAKS -1",
+  "tr_px": 91,
+  "now_px": 103,
+  "target_px": 98
+ },
+ {
+  "tr": "ONARIM BEDELİ",
+  "now": "BIAYA PERBAIKAN",
+  "tr_px": 61,
+  "now_px": 69,
+  "target_px": 65
+ },
+ {
+  "tr": "ARKA RÜZGAR!",
+  "now": "ANGIN BURITAN!",
+  "tr_px": 54,
+  "now_px": 61,
+  "target_px": 58
+ },
+ {
+  "tr": "FIRTINA DEVİ",
+  "now": "RAKSASA BADAI",
+  "tr_px": 54,
+  "now_px": 61,
+  "target_px": 58
+ },
+ {
+  "tr": "NAL ATÖLYESİ",
+  "now": "BENGKEL TAPAL",
+  "tr_px": 54,
+  "now_px": 61,
+  "target_px": 58
+ },
+ {
+  "tr": "STANDART ZORLUK",
+  "now": "KESULITAN STANDAR",
+  "tr_px": 70,
+  "now_px": 79,
+  "target_px": 75
+ },
+ {
+  "tr": "YILDIZ ŞAHLANDI!",
+  "now": "BINTANG MENGAMUK!",
+  "tr_px": 70,
+  "now_px": 79,
+  "target_px": 75
+ },
+ {
+  "tr": ": SİLAHIN DÖVÜLDÜ!",
+  "now": ": SENJATAMU DITEMPA!",
+  "tr_px": 78,
+  "now_px": 88,
+  "target_px": 84
+ },
+ {
+  "tr": " · EN İYİ KOMBO ",
+  "now": " · KOMBO TERBAIK ",
+  "tr_px": 64,
+  "now_px": 72,
+  "target_px": 69
+ },
+ {
+  "tr": "BİR DEĞİŞİKLİK DAHA SEÇ",
+  "now": "PILIH SATU MODIFIKASI LAGI",
+  "tr_px": 104,
+  "now_px": 117,
+  "target_px": 112
+ },
+ {
+  "tr": "DÜŞMANLAR %50 FAZLA",
+  "now": "MUSUH 50% LEBIH BANYAK",
+  "tr_px": 88,
+  "now_px": 99,
+  "target_px": 95
+ },
+ {
+  "tr": "KİBRİNİ KIRDIN!",
+  "now": "ANGKUHNYA PATAH!",
+  "tr_px": 64,
+  "now_px": 72,
+  "target_px": 69
+ },
+ {
+  "tr": "ÖNDE KAÇAR, MAYIN BIRAKIR",
+  "now": "KABUR DI DEPAN, TEBAR RANJAU",
+  "tr_px": 112,
+  "now_px": 126,
+  "target_px": 120
+ },
+ {
+  "tr": "VURDUĞUN DÜŞMAN 2 SN YANAR",
+  "now": "MUSUH YANG KENA TERBAKAR 2 DTK",
+  "tr_px": 121,
+  "now_px": 136,
+  "target_px": 130
+ },
+ {
+  "tr": "İKİLİ GÜÇ YA DA 12 GÜÇ AL",
+  "now": "AMBIL DAYA DUO ATAU 12 DAYA",
+  "tr_px": 106,
+  "now_px": 119,
+  "target_px": 114
+ },
+ {
+  "tr": "KOŞUYA +1 AZAMİ CANLA BAŞLA",
+  "now": "MULAI RUN DENGAN +1 NYAWA MAKS",
+  "tr_px": 123,
+  "now_px": 138,
+  "target_px": 132
+ }
+]

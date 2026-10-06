@@ -125,28 +125,29 @@ function fontAtlas(color) {
   }
   return t;
 }
-function textWidth(str, scale) {
-  scale = scale || 1; str = trUp(str);
+// gap = pixels between letters (1 normally; 0 squeezes a label that would not fit, e.g. long translations)
+function textWidth(str, scale, gap) {
+  scale = scale || 1; str = trUp(str); gap = gap == null ? 1 : gap;
   let w = 0;
-  for (const ch of str) { const m = FONT.map[ch] || FONT.map['?']; w += (m.w + 1); }
-  return Math.max(0, (w - 1)) * scale;
+  for (const ch of str) { const m = FONT.map[ch] || FONT.map['?']; w += (m.w + gap); }
+  return Math.max(0, (w - gap)) * scale;
 }
 // draws text; y = top of glyph cell (cap top at y+2*scale)
-function text(str, x, y, color, align, scale, shadow) {
-  scale = scale || 1; str = trUp(str);
-  const w = textWidth(str, scale);
+function text(str, x, y, color, align, scale, shadow, gap) {
+  scale = scale || 1; str = trUp(str); gap = gap == null ? 1 : gap;
+  const w = textWidth(str, scale, gap);
   let sx = Math.round(align === 'center' ? x - w / 2 : align === 'right' ? x - w : x);
   y = Math.round(y);
-  if (shadow) drawTextRaw(str, sx, y + scale, shadow, scale);
-  drawTextRaw(str, sx, y, color || C.white, scale);
+  if (shadow) drawTextRaw(str, sx, y + scale, shadow, scale, gap);
+  drawTextRaw(str, sx, y, color || C.white, scale, gap);
   return w;
 }
-function drawTextRaw(str, x, y, color, scale) {
-  const at = fontAtlas(color);
+function drawTextRaw(str, x, y, color, scale, gap) {
+  const at = fontAtlas(color); gap = gap == null ? 1 : gap;
   for (const ch of str) {
     const m = FONT.map[ch] || FONT.map['?'];
     g.drawImage(at, m.x, 0, m.w, FONT_H, x, y, m.w * scale, FONT_H * scale);
-    x += (m.w + 1) * scale;
+    x += (m.w + gap) * scale;
   }
 }
 // outlined text (for HUD readability). The 9-pass outline is rendered once per string/colour into a small
@@ -154,6 +155,8 @@ function drawTextRaw(str, x, y, color, scale) {
 const TEXTO_CACHE = new Map();
 function textO(str, x, y, color, align, scale, outline) {
   scale = scale || 1; outline = outline || C.ink; color = color || C.white; str = trUp(str);
+  // big titles that would run off the screen (long translations) drop to a smaller size
+  while (scale > 1 && textWidth(str, scale) > W - 6) scale--;
   const key = str + '|' + color + '|' + scale + '|' + outline;
   let c = TEXTO_CACHE.get(key);
   if (!c) {

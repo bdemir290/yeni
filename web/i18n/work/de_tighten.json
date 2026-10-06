@@ -1,0 +1,3271 @@
+[
+ {
+  "tr": "AL",
+  "now": "HOLEN",
+  "tr_px": 9,
+  "now_px": 24,
+  "target_px": 9
+ },
+ {
+  "tr": "İÇ!",
+  "now": "INNEN!",
+  "tr_px": 10,
+  "now_px": 25,
+  "target_px": 10
+ },
+ {
+  "tr": " ONAR",
+  "now": " REPARIEREN",
+  "tr_px": 22,
+  "now_px": 51,
+  "target_px": 23
+ },
+ {
+  "tr": "DIŞ",
+  "now": "AUSSEN",
+  "tr_px": 13,
+  "now_px": 29,
+  "target_px": 14
+ },
+ {
+  "tr": "TAK",
+  "now": "NUTZEN",
+  "tr_px": 13,
+  "now_px": 28,
+  "target_px": 14
+ },
+ {
+  "tr": "SEÇ",
+  "now": "WÄHLEN",
+  "tr_px": 14,
+  "now_px": 30,
+  "target_px": 15
+ },
+ {
+  "tr": "EK",
+  "now": "SÄEN",
+  "tr_px": 9,
+  "now_px": 19,
+  "target_px": 9
+ },
+ {
+  "tr": "SAĞ",
+  "now": "RECHTS",
+  "tr_px": 14,
+  "now_px": 28,
+  "target_px": 15
+ },
+ {
+  "tr": "KUM GÖZÜNE KAÇMASIN DÜNYALI!",
+  "now": "PASS AUF, DASS DIR KEIN SAND IN DIE AUGEN KOMMT, ERDLING!",
+  "tr_px": 129,
+  "now_px": 251,
+  "target_px": 139
+ },
+ {
+  "tr": "YEM",
+  "now": "FUTTER",
+  "tr_px": 14,
+  "now_px": 27,
+  "target_px": 15
+ },
+ {
+  "tr": "KESEN BOŞALDI. DERS OLSUN.",
+  "now": "DEIN BEUTEL IST LEER. LASS DIR DAS EINE LEHRE SEIN.",
+  "tr_px": 116,
+  "now_px": 223,
+  "target_px": 125
+ },
+ {
+  "tr": "HIZ",
+  "now": "TEMPO",
+  "tr_px": 13,
+  "now_px": 24,
+  "target_px": 14
+ },
+ {
+  "tr": "DÜNYALI PİSTTE, GÖZLER ONDA!",
+  "now": "DER ERDLING IST AUF DER PISTE, ALLE AUGEN AUF KAI!",
+  "tr_px": 122,
+  "now_px": 219,
+  "target_px": 131
+ },
+ {
+  "tr": "TOZU DUMANA KATTIN, KAÇTIN!",
+  "now": "DU HAST STAUB AUFGEWIRBELT UND BIST ENTKOMMEN!",
+  "tr_px": 117,
+  "now_px": 210,
+  "target_px": 126
+ },
+ {
+  "tr": "SERAPMIŞ... KUMA BATTIN, 10 SİKKE DÜŞÜRDÜN.",
+  "now": "NUR EIN TRUGBILD... DU BIST IM SAND VERSUNKEN UND HAST 10 MÜNZEN VERLOREN.",
+  "tr_px": 184,
+  "now_px": 328,
+  "target_px": 230
+ },
+ {
+  "tr": "EZİLMEK İSTEMİYORSAN KENARA!",
+  "now": "AUS DEM WEG, WENN DU NICHT ZERMALMT WERDEN WILLST!",
+  "tr_px": 129,
+  "now_px": 229,
+  "target_px": 139
+ },
+ {
+  "tr": "YOK",
+  "now": "KEINS",
+  "tr_px": 13,
+  "now_px": 23,
+  "target_px": 14
+ },
+ {
+  "tr": "BU DÜNYALI DURMUYOR!",
+  "now": "DIESER ERDLING IST NICHT ZU STOPPEN!",
+  "tr_px": 90,
+  "now_px": 159,
+  "target_px": 97
+ },
+ {
+  "tr": "BU... BU OLAMAZ! KUPA... DÜNYALININ!",
+  "now": "DAS... DAS KANN NICHT SEIN! DER POKAL... GEHÖRT DEM ERDLING!",
+  "tr_px": 145,
+  "now_px": 253,
+  "target_px": 181
+ },
+ {
+  "tr": "ŞAMPİYON YARIŞINDA FARK %",
+  "now": "IM CHAMPION-RENNEN SCHRUMPFT DER ABSTAND %",
+  "tr_px": 113,
+  "now_px": 196,
+  "target_px": 122
+ },
+ {
+  "tr": "İŞTE BÜYÜK KAPIŞMA!",
+  "now": "HIER KOMMT DER GROSSE SHOWDOWN!",
+  "tr_px": 84,
+  "now_px": 145,
+  "target_px": 90
+ },
+ {
+  "tr": "PAS",
+  "now": "PASSE",
+  "tr_px": 14,
+  "now_px": 24,
+  "target_px": 15
+ },
+ {
+  "tr": "BÖLMENE DE TEZGAH KURARIM!",
+  "now": "ICH BAU AUCH IN DEINEM ABTEIL EINEN STAND AUF!",
+  "tr_px": 120,
+  "now_px": 204,
+  "target_px": 129
+ },
+ {
+  "tr": "MÜKEMMEL ATIŞLAR ",
+  "now": "PERFEKTE SCHÜSSE DURCHBOHREN ",
+  "tr_px": 81,
+  "now_px": 137,
+  "target_px": 87
+ },
+ {
+  "tr": " HIZ",
+  "now": " TEMPO",
+  "tr_px": 16,
+  "now_px": 27,
+  "target_px": 17
+ },
+ {
+  "tr": "KOŞUN KAYDEDİLİR, SONRA SÜRER",
+  "now": "DEIN LAUF WIRD GESPEICHERT, ES GEHT SPÄTER WEITER",
+  "tr_px": 132,
+  "now_px": 221,
+  "target_px": 142
+ },
+ {
+  "tr": "ÖRSÜM SUSTU. YÜZ YILDIR İLK KEZ BİRİ BENİ YENDİ, DÜNYALI.",
+  "now": "MEIN AMBOSS SCHWEIGT. ZUM ERSTEN MAL SEIT HUNDERT JAHREN HAT MICH JEMAND BESIEGT, ERDLING.",
+  "tr_px": 245,
+  "now_px": 409,
+  "target_px": 306
+ },
+ {
+  "tr": "İTTİ!",
+  "now": "RUMMS!",
+  "tr_px": 17,
+  "now_px": 28,
+  "target_px": 18
+ },
+ {
+  "tr": "NAL",
+  "now": "EISEN",
+  "tr_px": 14,
+  "now_px": 23,
+  "target_px": 15
+ },
+ {
+  "tr": "SOL",
+  "now": "LINKS",
+  "tr_px": 14,
+  "now_px": 23,
+  "target_px": 15
+ },
+ {
+  "tr": "1 CAN ADA",
+  "now": "1 LEBEN OPFERN",
+  "tr_px": 39,
+  "now_px": 64,
+  "target_px": 42
+ },
+ {
+  "tr": "ÇİFT!",
+  "now": "DOPPEL!",
+  "tr_px": 19,
+  "now_px": 31,
+  "target_px": 20
+ },
+ {
+  "tr": "ZOR PİSTTE KUPAYI KAZAN",
+  "now": "GEWINNE DEN POKAL AUF SCHWERER PISTE",
+  "tr_px": 103,
+  "now_px": 168,
+  "target_px": 111
+ },
+ {
+  "tr": "BAS!",
+  "now": "DRÜCK!",
+  "tr_px": 16,
+  "now_px": 26,
+  "target_px": 17
+ },
+ {
+  "tr": "GÖLGEMİ YAKALADIN DÜNYALI. KİMSE YAPAMAMIŞTI.",
+  "now": "DU HAST MEINEN SCHATTEN EINGEHOLT, ERDLING. DAS HAT NOCH KEINER GESCHAFFT.",
+  "tr_px": 204,
+  "now_px": 331,
+  "target_px": 255
+ },
+ {
+  "tr": "YEM 1",
+  "now": "FUTTER 1",
+  "tr_px": 21,
+  "now_px": 34,
+  "target_px": 22
+ },
+ {
+  "tr": "YEM 2",
+  "now": "FUTTER 2",
+  "tr_px": 21,
+  "now_px": 34,
+  "target_px": 22
+ },
+ {
+  "tr": "ULUYAN GORM'U YEN",
+  "now": "BESIEGE DEN HEULENDEN GORM",
+  "tr_px": 76,
+  "now_px": 123,
+  "target_px": 82
+ },
+ {
+  "tr": "ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER",
+  "now": "WECHSELT SPUR UM SPUR, SCHNEIDET DIR DEN WEG AB",
+  "tr_px": 133,
+  "now_px": 214,
+  "target_px": 143
+ },
+ {
+  "tr": "VUR, KIR, DAĞIT! SONRA SİKKELERİ TOPLA.",
+  "now": "SCHIESSEN, ZERLEGEN, ABRÄUMEN! DANN DIE MÜNZEN EINSAMMELN.",
+  "tr_px": 167,
+  "now_px": 266,
+  "target_px": 208
+ },
+ {
+  "tr": "KARA DELİK SENİ YAKALADI. KOMBO HIZDIR: RİTMİ BOZMA, HAMLEYİ SON ANA SAKLA.",
+  "now": "DAS SCHWARZE LOCH HAT DICH ERWISCHT. KOMBO IST TEMPO: BRICH DEN RHYTHMUS NICHT, SPAR DEN SPURT FÜR DEN LETZTEN MOMENT.",
+  "tr_px": 333,
+  "now_px": 530,
+  "target_px": 416
+ },
+ {
+  "tr": "KOŞUYU BIRAKMAK DA BİR SEÇİM. YILDIZ DİNLENDİ, SEN DE DİNLEN. BİP.",
+  "now": "EINEN LAUF ABZUBRECHEN IST AUCH EINE ENTSCHEIDUNG. STERN HAT SICH AUSGERUHT, RUH DU DICH AUCH AUS. BIP.",
+  "tr_px": 288,
+  "now_px": 458,
+  "target_px": 360
+ },
+ {
+  "tr": "TIKIRTI ARKANDA KALDI...",
+  "now": "DAS TICKEN BLIEB HINTER DIR ZURÜCK...",
+  "tr_px": 100,
+  "now_px": 159,
+  "target_px": 108
+ },
+ {
+  "tr": " CAN",
+  "now": " LEBEN",
+  "tr_px": 17,
+  "now_px": 27,
+  "target_px": 18
+ },
+ {
+  "tr": "RAKİBİN ARKASINDA KALIRSAN SİPER DOLAR. YANA ÇIKINCA FIRLARSIN.",
+  "now": "BLEIBST DU HINTER EINEM RIVALEN, FÜLLT SICH DER WINDSCHATTEN. SCHERST DU AUS, SCHIESST DU NACH VORN.",
+  "tr_px": 284,
+  "now_px": 447,
+  "target_px": 355
+ },
+ {
+  "tr": "BU SEFER DE GEÇEMEZSİN!",
+  "now": "AUCH DIESMAL KOMMST DU NICHT VORBEI!",
+  "tr_px": 105,
+  "now_px": 165,
+  "target_px": 113
+ },
+ {
+  "tr": "SABRIM TÜKENDİ, DÜNYALI. İLK KEZ.",
+  "now": "MEINE GEDULD IST AM ENDE, ERDLING. ZUM ERSTEN MAL.",
+  "tr_px": 142,
+  "now_px": 223,
+  "target_px": 177
+ },
+ {
+  "tr": "ÇEKİÇ ALINDI: ÇIKIŞTA ÖRSE!",
+  "now": "HAMMER ERHALTEN: AM AUSGANG ZUM AMBOSS!",
+  "tr_px": 116,
+  "now_px": 182,
+  "target_px": 125
+ },
+ {
+  "tr": "GÜÇ!",
+  "now": "KRAFT!",
+  "tr_px": 16,
+  "now_px": 25,
+  "target_px": 17
+ },
+ {
+  "tr": "VAY, ŞEKER! DÖRT KOLUMLA SARILIRIM. AL ŞU KESEYİ, İÇİ BOŞ AMA UĞURLUDUR.",
+  "now": "WOW, ZUCKER! DAFÜR UMARME ICH DICH MIT ALLEN VIER ARMEN. NIMM DIESEN BEUTEL, ER IST LEER, ABER ER BRINGT GLÜCK.",
+  "tr_px": 317,
+  "now_px": 495,
+  "target_px": 396
+ },
+ {
+  "tr": "HERKES KAZA DEDİ. AMA KİMSE ONU BULAMADI.",
+  "now": "ALLE SAGTEN, ES WAR EIN UNFALL. ABER NIEMAND HAT SIE JE GEFUNDEN.",
+  "tr_px": 186,
+  "now_px": 290,
+  "target_px": 232
+ },
+ {
+  "tr": "YOLU KESEN UZAY KORSANLARI BAĞIRIYOR: KESEYİ VER, GEÇ!",
+  "now": "WELTRAUMPIRATEN VERSPERREN DEN WEG UND BRÜLLEN: BEUTEL HER, DANN DARFST DU DURCH!",
+  "tr_px": 239,
+  "now_px": 372,
+  "target_px": 298
+ },
+ {
+  "tr": "BİR LAZER SIYIRDI. -1 CAN.",
+  "now": "EIN LASER HAT DICH GESTREIFT. -1 LEBEN.",
+  "tr_px": 108,
+  "now_px": 168,
+  "target_px": 116
+ },
+ {
+  "tr": "ENKAZDA BİR KESE SİKKE BULDUN.",
+  "now": "IM WRACK HAST DU EINEN BEUTEL MÜNZEN GEFUNDEN.",
+  "tr_px": 136,
+  "now_px": 211,
+  "target_px": 146
+ },
+ {
+  "tr": "RÖVANŞI ALDIN HA! GRAX'IN SURATINI GÖRMELİYDİN, MİKROFONU DÜŞÜRDÜ!",
+  "now": "DU HAST DIR DIE REVANCHE GEHOLT! DU HÄTTEST GRAX' GESICHT SEHEN SOLLEN, ER HAT DAS MIKRO FALLEN LASSEN!",
+  "tr_px": 296,
+  "now_px": 459,
+  "target_px": 370
+ },
+ {
+  "tr": " GÖREV TAMAM: PANODAN AL",
+  "now": " QUESTS ERLEDIGT: AN DER TAFEL ABHOLEN",
+  "tr_px": 110,
+  "now_px": 170,
+  "target_px": 118
+ },
+ {
+  "tr": "SERAP",
+  "now": "TRUGBILD",
+  "tr_px": 24,
+  "now_px": 37,
+  "target_px": 25
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİRKEN ",
+  "now": "BEIM SPURWECHSEL SCHWEBST DU ",
+  "tr_px": 89,
+  "now_px": 137,
+  "target_px": 96
+ },
+ {
+  "tr": "GÜÇ ",
+  "now": "KRAFT ",
+  "tr_px": 17,
+  "now_px": 26,
+  "target_px": 18
+ },
+ {
+  "tr": "YILDIZ MUTLU! SONRAKİ KOŞU +",
+  "now": "STERN IST FROH! NÄCHSTER LAUF STARTET MIT +",
+  "tr_px": 123,
+  "now_px": 188,
+  "target_px": 132
+ },
+ {
+  "tr": "NALI PARLATTIM. VOLTRAK ONU YİRMİ YIL ÖNCE KIRMIŞTI, KEMAL USTA ONARDI.",
+  "now": "ICH HAB DAS HUFEISEN POLIERT. VOLTRAK HAT ES VOR ZWANZIG JAHREN ZERBROCHEN, MEISTER KURT HAT ES REPARIERT.",
+  "tr_px": 314,
+  "now_px": 479,
+  "target_px": 392
+ },
+ {
+  "tr": "IŞIĞIMI GEÇTİN. GÖKYÜZÜ SANA DA RENK VERDİ DEMEK.",
+  "now": "DU HAST MEIN LICHT ÜBERHOLT. DER HIMMEL HAT DIR WOHL AUCH FARBE GESCHENKT.",
+  "tr_px": 219,
+  "now_px": 334,
+  "target_px": 273
+ },
+ {
+  "tr": "SU İÇ",
+  "now": "TRINKEN",
+  "tr_px": 21,
+  "now_px": 32,
+  "target_px": 22
+ },
+ {
+  "tr": "ŞEKER! AL GÖZLÜĞÜMÜ, KORSANLARI UZAKTAN GÖR!",
+  "now": "ZUCKER! NIMM MEINE BRILLE, DANN SIEHST DU PIRATEN SCHON VON WEITEM!",
+  "tr_px": 199,
+  "now_px": 302,
+  "target_px": 248
+ },
+ {
+  "tr": "IŞILTIMA BAK DÜNYALI. SONRA TOZUMU YUT.",
+  "now": "BEWUNDERE MEINEN GLANZ, ERDLING. DANN FRISS MEINEN STAUB.",
+  "tr_px": 171,
+  "now_px": 259,
+  "target_px": 213
+ },
+ {
+  "tr": "ÖNÜMÜ GÖREMEZSİN BİLE.",
+  "now": "DU WIRST MICH NIE VON VORNE SEHEN.",
+  "tr_px": 102,
+  "now_px": 154,
+  "target_px": 110
+ },
+ {
+  "tr": "500 ÜSTÜ SİKKE YARI DEĞERDE: PAZARDA HARCA",
+  "now": "MÜNZEN ÜBER 500 SIND HALB SO VIEL WERT: AUF DEM MARKT AUSGEBEN",
+  "tr_px": 187,
+  "now_px": 282,
+  "target_px": 233
+ },
+ {
+  "tr": "HİLE!",
+  "now": "BETRUG!",
+  "tr_px": 20,
+  "now_px": 30,
+  "target_px": 21
+ },
+ {
+  "tr": "KOR AY",
+  "now": "GLUTMOND",
+  "tr_px": 26,
+  "now_px": 39,
+  "target_px": 28
+ },
+ {
+  "tr": "KİBİR!",
+  "now": "HOCHMUT!",
+  "tr_px": 24,
+  "now_px": 36,
+  "target_px": 25
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI +%15",
+  "now": "CHANCE AUF SELTENE KRAFT +%15",
+  "tr_px": 87,
+  "now_px": 130,
+  "target_px": 93
+ },
+ {
+  "tr": "ANINDA İLERİ FIRLA, FARKI KAPAT",
+  "now": "SOFORT NACH VORN SCHIESSEN, ABSTAND AUFHOLEN",
+  "tr_px": 137,
+  "now_px": 204,
+  "target_px": 171
+ },
+ {
+  "tr": "YİRMİ YIL TRİBÜNDEN İZLEDİM. GRAX HER GECE YANIMA OTURUP \"OĞLUN GELMEYECEK\" DERDİ. GELDİN.",
+  "now": "ZWANZIG JAHRE HAB ICH VON DER TRIBÜNE ZUGESEHEN. GRAX SASS JEDE NACHT NEBEN MIR UND SAGTE: \"DEIN SOHN KOMMT NICHT.\" DU BIST GEKOMMEN.",
+  "tr_px": 403,
+  "now_px": 600,
+  "target_px": 503
+ },
+ {
+  "tr": "KORSAN ÖNÜNE DİKEN MAYIN ATAR. VUR VE KESESİNİ AL!",
+  "now": "PIRATEN WERFEN STACHELMINEN VOR DICH. SCHIESS UND SCHNAPP DIR DEN BEUTEL!",
+  "tr_px": 224,
+  "now_px": 333,
+  "target_px": 280
+ },
+ {
+  "tr": "DÜELLODA RAKİBİN ARKASINA SAKLAN, SİPERİN DOLSUN. SON DÜZLÜKTE YANA ÇIK VE GEÇ.",
+  "now": "VERSTECK DICH IM DUELL HINTER DEM RIVALEN, BIS DER WINDSCHATTEN VOLL IST. AUF DER ZIELGERADEN AUSSCHEREN UND VORBEI.",
+  "tr_px": 356,
+  "now_px": 529,
+  "target_px": 445
+ },
+ {
+  "tr": "ÇİFT NOTA: İKİ İŞARET ART ARDA GELİR. VURUŞTA VE ARADA İKİ KEZ DOKUN.",
+  "now": "DOPPELNOTE: ZWEI ZEICHEN KOMMEN DICHT HINTEREINANDER. TIPP ZWEIMAL: AUF DEN SCHLAG UND DAZWISCHEN.",
+  "tr_px": 301,
+  "now_px": 447,
+  "target_px": 376
+ },
+ {
+  "tr": "RİTİM! TOYNAK SESİNİ DİNLE, UZAYDA BİLE AYNI.",
+  "now": "RHYTHMUS! HÖR AUF DEN HUFSCHLAG, SELBST IM ALL KLINGT ER GLEICH.",
+  "tr_px": 192,
+  "now_px": 285,
+  "target_px": 240
+ },
+ {
+  "tr": "ERİDİM Mİ? HAYIR... SADECE BİRAZ UTANDIM.",
+  "now": "BIN ICH GESCHMOLZEN? NEIN... NUR EIN BISSCHEN ROT GEWORDEN.",
+  "tr_px": 176,
+  "now_px": 261,
+  "target_px": 220
+ },
+ {
+  "tr": "ŞAMPİYON SAHNEDE! REKOR YAYIN!",
+  "now": "DER CHAMPION BETRITT DIE BÜHNE! REKORDQUOTE!",
+  "tr_px": 133,
+  "now_px": 197,
+  "target_px": 143
+ },
+ {
+  "tr": "DİNLE",
+  "now": "ZUHÖREN",
+  "tr_px": 23,
+  "now_px": 34,
+  "target_px": 24
+ },
+ {
+  "tr": "HATA: ",
+  "now": "FEHLER: ",
+  "tr_px": 23,
+  "now_px": 34,
+  "target_px": 24
+ },
+ {
+  "tr": "SELAM DÜNYALI! BÖLMENE BİR TEZGAH KURDUM. SÜSLERİMLE BURASI ŞENLENİR!",
+  "now": "HALLO ERDLING! ICH HAB IN DEINEM ABTEIL EINEN STAND AUFGEBAUT. MIT MEINER DEKO WIRD ES HIER RICHTIG BUNT!",
+  "tr_px": 316,
+  "now_px": 467,
+  "target_px": 395
+ },
+ {
+  "tr": "BİR KEZ ÖLÜMCÜL DARBEYİ ",
+  "now": "TÖDLICHER TREFFER: 1X ÜBERLEBEN MIT ",
+  "tr_px": 109,
+  "now_px": 161,
+  "target_px": 117
+ },
+ {
+  "tr": "DEMİRCİ SANA SU VERDİ. BİRAZ DİNLENDİN.",
+  "now": "DER SCHMIED GAB DIR WASSER. DU HAST DICH ETWAS AUSGERUHT.",
+  "tr_px": 174,
+  "now_px": 257,
+  "target_px": 217
+ },
+ {
+  "tr": "ETAP ",
+  "now": "ETAPPE ",
+  "tr_px": 21,
+  "now_px": 31,
+  "target_px": 22
+ },
+ {
+  "tr": "PİLİ ŞARJ ETTİM. ŞEKERİ DE KOLEKSİYONUMA KOYDUM.",
+  "now": "ICH HAB DEN AKKU GELADEN. DEN ZUCKER HAB ICH IN MEINE SAMMLUNG GELEGT.",
+  "tr_px": 215,
+  "now_px": 317,
+  "target_px": 268
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI ARTAR",
+  "now": "MEHR CHANCE AUF SELTENE KRÄFTE",
+  "tr_px": 95,
+  "now_px": 140,
+  "target_px": 102
+ },
+ {
+  "tr": "SERA",
+  "now": "GARTEN",
+  "tr_px": 19,
+  "now_px": 28,
+  "target_px": 20
+ },
+ {
+  "tr": "BASKIN ETABI, ÖDÜL X2",
+  "now": "ÜBERFALL-ETAPPE, BELOHNUNG X2",
+  "tr_px": 91,
+  "now_px": 134,
+  "target_px": 98
+ },
+ {
+  "tr": "İNANILMAZ! KESEN DOLDU.",
+  "now": "UNGLAUBLICH! DEIN BEUTEL IST VOLL.",
+  "tr_px": 103,
+  "now_px": 151,
+  "target_px": 111
+ },
+ {
+  "tr": "KORSANLAR GÜLEREK YOLU AÇTI.",
+  "now": "DIE PIRATEN MACHTEN LACHEND DEN WEG FREI.",
+  "tr_px": 127,
+  "now_px": 186,
+  "target_px": 137
+ },
+ {
+  "tr": "BİP. KANIT KAYDEDİLDİ. DENİZ... ANNEN KAYBETMEDİ. ONU DÜŞÜRDÜLER.",
+  "now": "BIP. BEWEIS GESPEICHERT. KAI... DEINE MUTTER HAT NICHT VERLOREN. MAN HAT SIE ZU FALL GEBRACHT.",
+  "tr_px": 280,
+  "now_px": 410,
+  "target_px": 350
+ },
+ {
+  "tr": "ÖRSÜMDE NE DÖVDÜĞÜMÜ BİLMEK İSTEMEZSİN.",
+  "now": "DU WILLST NICHT WISSEN, WAS ICH AUF MEINEM AMBOSS SCHMIEDE.",
+  "tr_px": 184,
+  "now_px": 269,
+  "target_px": 230
+ },
+ {
+  "tr": "KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!",
+  "now": "DER POKAL GEHÖRT UNS! DAS TOR IST OFFEN! BIP BIP BIP!",
+  "tr_px": 156,
+  "now_px": 228,
+  "target_px": 195
+ },
+ {
+  "tr": " RAKİP ATIŞINDAN KAÇ",
+  "now": " RIVALENSCHÜSSEN AUSWEICHEN",
+  "tr_px": 89,
+  "now_px": 130,
+  "target_px": 96
+ },
+ {
+  "tr": "HESAPLARIM YANLIŞMIŞ. SENİN RİTMİN DENKLEMDE YOKTU.",
+  "now": "MEINE BERECHNUNG WAR FALSCH. DEIN RHYTHMUS KAM IN DER GLEICHUNG NICHT VOR.",
+  "tr_px": 232,
+  "now_px": 338,
+  "target_px": 290
+ },
+ {
+  "tr": "YAVRU SEVİNÇLE IŞILDADI. KALBİN ISINDI.",
+  "now": "DAS JUNGE STRAHLTE VOR FREUDE. DIR WURDE WARM UMS HERZ.",
+  "tr_px": 173,
+  "now_px": 252,
+  "target_px": 216
+ },
+ {
+  "tr": "AMA PİSTTEKİLER DE KAÇIRILMIŞTI. KAPI HER KUPADA YENİDEN AÇILACAKTI. YOLCULUK BİTMEMİŞTİ.",
+  "now": "ABER AUCH DIE AUF DER PISTE WAREN ENTFÜHRT WORDEN. MIT JEDEM POKAL WÜRDE SICH DAS TOR WIEDER ÖFFNEN. DIE REISE WAR NICHT VORBEI.",
+  "tr_px": 398,
+  "now_px": 579,
+  "target_px": 497
+ },
+ {
+  "tr": " SENİ DÜELLODA GEÇTİ. ARKASINA SAKLAN, SİPERİN DOLSUN, SON DÜZLÜKTE YANA ÇIK.",
+  "now": " HAT DICH IM DUELL GESCHLAGEN. VERSTECK DICH HINTER IHM, FÜLL DEN WINDSCHATTEN, AUF DER ZIELGERADEN SCHER AUS.",
+  "tr_px": 341,
+  "now_px": 495,
+  "target_px": 426
+ },
+ {
+  "tr": "KESEYE BİR İKİ SİKKE KOYDUM, GRAX'A SÖYLEME.",
+  "now": "ICH HAB EIN, ZWEI MÜNZEN IN DEN BEUTEL GETAN. SAG ES GRAX NICHT.",
+  "tr_px": 193,
+  "now_px": 280,
+  "target_px": 241
+ },
+ {
+  "tr": "AŞAĞIDA DÜNYA BİR BİLYE KADAR KÜÇÜLDÜ.",
+  "now": "UNTEN SCHRUMPFTE DIE ERDE AUF DIE GRÖSSE EINER MURMEL.",
+  "tr_px": 171,
+  "now_px": 248,
+  "target_px": 213
+ },
+ {
+  "tr": "KAOS BEDELİ İÇİN CANIN YETMİYOR",
+  "now": "DU HAST NICHT GENUG LEBEN FÜR DEN CHAOSPREIS",
+  "tr_px": 139,
+  "now_px": 201,
+  "target_px": 173
+ },
+ {
+  "tr": "HATIRA",
+  "now": "ANDENKEN",
+  "tr_px": 27,
+  "now_px": 39,
+  "target_px": 29
+ },
+ {
+  "tr": "KIL PAYI! KALBİM DURDU!",
+  "now": "HAARSCHARF! MIR STOCKT DAS HERZ!",
+  "tr_px": 99,
+  "now_px": 143,
+  "target_px": 106
+ },
+ {
+  "tr": "ÜS PUANI",
+  "now": "BASISPUNKTE",
+  "tr_px": 36,
+  "now_px": 52,
+  "target_px": 38
+ },
+ {
+  "tr": "LENSLER JİLET GİBİ PARLADI.",
+  "now": "DIE LINSEN GLÄNZTEN WIE RASIERKLINGEN.",
+  "tr_px": 120,
+  "now_px": 173,
+  "target_px": 129
+ },
+ {
+  "tr": "KIL PAYI",
+  "now": "HAARSCHARF",
+  "tr_px": 34,
+  "now_px": 49,
+  "target_px": 36
+ },
+ {
+  "tr": "ÇÖLDE BİR KAPI GÖRDÜM DENİZ. IŞIKLI BİR KAPI. SERAP DEĞİLDİ, EMİNİM.",
+  "now": "ICH HAB IN DER WÜSTE EIN TOR GESEHEN, KAI. EIN LEUCHTENDES TOR. ES WAR KEIN TRUGBILD, GANZ SICHER.",
+  "tr_px": 298,
+  "now_px": 429,
+  "target_px": 372
+ },
+ {
+  "tr": "YAN ŞERİTTE BİR GÖLGE AT SİKKE TOPLAR",
+  "now": "EIN SCHATTENPFERD SAMMELT AUF DER NEBENSPUR MÜNZEN",
+  "tr_px": 164,
+  "now_px": 236,
+  "target_px": 205
+ },
+ {
+  "tr": "ÖRS SUSTU: BU SİLAHA DÖVÜLECEK BİR ŞEY KALMADI. DEMİRCİ +40 SİKKE VERDİ.",
+  "now": "DER AMBOSS SCHWEIGT: AN DIESER WAFFE GIBT ES NICHTS MEHR ZU SCHMIEDEN. DER SCHMIED GAB DIR +40 MÜNZEN.",
+  "tr_px": 320,
+  "now_px": 460,
+  "target_px": 400
+ },
+ {
+  "tr": "ÜÇ SEZONDUR BURADAYIM. SEN GELİNCE İLK KEZ UMUTLANDIM.",
+  "now": "ICH BIN SEIT DREI SAISONS HIER. ALS DU KAMST, HATTE ICH ZUM ERSTEN MAL HOFFNUNG.",
+  "tr_px": 246,
+  "now_px": 353,
+  "target_px": 307
+ },
+ {
+  "tr": "KÜKREMEYİ DOĞRU ANDA KULLAN.",
+  "now": "SETZ DAS GEBRÜLL IM RICHTIGEN MOMENT EIN.",
+  "tr_px": 129,
+  "now_px": 185,
+  "target_px": 139
+ },
+ {
+  "tr": "BİP... BU DÜNYA! KAPI AÇIK, DENİZ!",
+  "now": "BIP... DAS IST DIE ERDE! DAS TOR IST OFFEN, KAI!",
+  "tr_px": 136,
+  "now_px": 195,
+  "target_px": 170
+ },
+ {
+  "tr": "İKİ YEM SEÇEBİLİRSİN",
+  "now": "DU KANNST ZWEI FUTTER WÄHLEN",
+  "tr_px": 90,
+  "now_px": 129,
+  "target_px": 97
+ },
+ {
+  "tr": "HEDEF: DÜNYALI. İŞLEM: EZ.",
+  "now": "ZIEL: ERDLING. AKTION: ZERQUETSCHEN.",
+  "tr_px": 109,
+  "now_px": 156,
+  "target_px": 117
+ },
+ {
+  "tr": "NİŞAN ALMA, RİTMİ YAKALA",
+  "now": "NICHT ZIELEN, DEN RHYTHMUS TREFFEN",
+  "tr_px": 107,
+  "now_px": 153,
+  "target_px": 115
+ },
+ {
+  "tr": "BUZ ERİDİ: KAPSÜL KRİSTAL DOLUYMUŞ.",
+  "now": "DAS EIS SCHMOLZ: DIE KAPSEL WAR VOLLER KRISTALLE.",
+  "tr_px": 156,
+  "now_px": 223,
+  "target_px": 195
+ },
+ {
+  "tr": "SÖNMEDEN EVE VARACAĞIM! SEN DE SÖNME, DÜNYALI!",
+  "now": "ICH KOMME HEIM, BEVOR ICH ERLÖSCHE! ERLÖSCH DU AUCH NICHT, ERDLING!",
+  "tr_px": 210,
+  "now_px": 300,
+  "target_px": 262
+ },
+ {
+  "tr": "YANAŞIR, \"!\" SONRA KISKACIYLA İTER",
+  "now": "RÜCKT HERAN, \"!\" - DANN SCHIEBT ER MIT DER ZANGE",
+  "tr_px": 146,
+  "now_px": 208,
+  "target_px": 182
+ },
+ {
+  "tr": "UZAYIN EN HIZLI ATI SENİNKİ",
+  "now": "DAS SCHNELLSTE PFERD IM ALL IST DEINS",
+  "tr_px": 118,
+  "now_px": 168,
+  "target_px": 127
+ },
+ {
+  "tr": "ADIMI HATIRLADIM: RÜZGAR. YİRMİ YIL ÖNCE AKYEL'E BORÇLANDIM. BORCUMU OĞLUNA ÖDEDİM.",
+  "now": "MEIN NAME IST ZURÜCK: WIND. VOR ZWANZIG JAHREN STAND ICH IN GRETAS SCHULD. JETZT HAB ICH SIE BEI IHREM SOHN BEGLICHEN.",
+  "tr_px": 372,
+  "now_px": 527,
+  "target_px": 465
+ },
+ {
+  "tr": "ZIPZIP HER GÜN ETRAFI KOKLAR, BAZEN KRİSTAL BULUR. ONU SEVMEYİ UNUTMA!",
+  "now": "ZIPZIP SCHNÜFFELT JEDEN TAG HERUM UND FINDET MANCHMAL KRISTALLE. VERGISS NICHT, IHN ZU STREICHELN!",
+  "tr_px": 314,
+  "now_px": 444,
+  "target_px": 392
+ },
+ {
+  "tr": "ARENA'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.",
+  "now": "DER WEG ZUR ARENA IST FREI. DORT IST DIE SPUR DEINER MUTTER.",
+  "tr_px": 186,
+  "now_px": 263,
+  "target_px": 232
+ },
+ {
+  "tr": "KAÇTIN!",
+  "now": "GEFLOHEN!",
+  "tr_px": 29,
+  "now_px": 41,
+  "target_px": 31
+ },
+ {
+  "tr": "ŞAMPİYONLARIN SIRRI BASİT: SON DÜZLÜKTE NEFESİNİ SAKLA.",
+  "now": "DAS GEHEIMNIS DER CHAMPIONS IST EINFACH: SPAR DEINEN ATEM FÜR DIE ZIELGERADE.",
+  "tr_px": 247,
+  "now_px": 349,
+  "target_px": 308
+ },
+ {
+  "tr": "KERVANDA YILDIZ TOZU DOLU BİR ŞİŞE BULDUN.",
+  "now": "IN DER KARAWANE FANDEST DU EINE FLASCHE VOLL STERNENSTAUB.",
+  "tr_px": 189,
+  "now_px": 267,
+  "target_px": 236
+ },
+ {
+  "tr": "KARA DELİK ARKANDA! YAVAŞLARSAN SENİ YUTAR. KOMBOYU KORU.",
+  "now": "SCHWARZES LOCH HINTER DIR! WIRST DU LANGSAM, VERSCHLINGT ES DICH. HALT DIE KOMBO.",
+  "tr_px": 257,
+  "now_px": 363,
+  "target_px": 321
+ },
+ {
+  "tr": "YETER! KUPA... KUPA SENİN DÜNYALI. AMA KAPI SANDIĞIN KADAR KOLAY AÇILMAZ!",
+  "now": "GENUG! DER POKAL... DER POKAL GEHÖRT DIR, ERDLING. ABER DAS TOR GEHT NICHT SO LEICHT AUF, WIE DU DENKST!",
+  "tr_px": 318,
+  "now_px": 449,
+  "target_px": 397
+ },
+ {
+  "tr": " PUAN",
+  "now": " PUNKTE",
+  "tr_px": 22,
+  "now_px": 31,
+  "target_px": 23
+ },
+ {
+  "tr": " RAKİP GEÇ",
+  "now": " ÜBERHOLUNGEN",
+  "tr_px": 44,
+  "now_px": 62,
+  "target_px": 47
+ },
+ {
+  "tr": "SESSİZ MODDA DA ÇAL",
+  "now": "AUCH IM STUMMMODUS SPIELEN",
+  "tr_px": 88,
+  "now_px": 124,
+  "target_px": 95
+ },
+ {
+  "tr": "KIVILCIM... AKYEL'İN ATI O GECE TÖKEZLEMİŞTİ. HEPİMİZ KAZA SANDIK.",
+  "now": "FUNKEN... GRETAS PFERD IST IN JENER NACHT GESTOLPERT. WIR ALLE HIELTEN ES FÜR EINEN UNFALL.",
+  "tr_px": 285,
+  "now_px": 401,
+  "target_px": 356
+ },
+ {
+  "tr": "BUZUM ÇATLADI... BÖYLE SICAK BİR RİTİM HİÇ GÖRMEMİŞTİM.",
+  "now": "MEIN EIS IST GEBORSTEN... SO EINEN HEISSEN RHYTHMUS HAB ICH NOCH NIE GESEHEN.",
+  "tr_px": 241,
+  "now_px": 339,
+  "target_px": 301
+ },
+ {
+  "tr": "KOR AY'IN ZİNCİRLİ DEMİRCİSİ",
+  "now": "DER ANGEKETTETE SCHMIED DES GLUTMONDS",
+  "tr_px": 123,
+  "now_px": 173,
+  "target_px": 132
+ },
+ {
+  "tr": "TOZKIRAN",
+  "now": "STAUBTEUFEL",
+  "tr_px": 37,
+  "now_px": 52,
+  "target_px": 39
+ },
+ {
+  "tr": "AL. BU O NALIN KALIBI. ÜSTÜNDE GRAX'IN MÜHRÜ VAR. ARENA'DA HERKES GÖRSÜN.",
+  "now": "HIER. DAS IST DIE GUSSFORM DIESES HUFEISENS. DARAUF IST GRAX' SIEGEL. LASS ES IN DER ARENA ALLE SEHEN.",
+  "tr_px": 321,
+  "now_px": 451,
+  "target_px": 401
+ },
+ {
+  "tr": "BİRİNİ DAHA GEÇTİ!",
+  "now": "UND NOCH EINER ÜBERHOLT!",
+  "tr_px": 77,
+  "now_px": 108,
+  "target_px": 83
+ },
+ {
+  "tr": "MOKO BENİM KUZENİM. ONA SÖYLE, BORCUMU UNUTMADIM.",
+  "now": "MOKO IST MEIN COUSIN. SAG IHM, ICH HAB MEINE SCHULDEN NICHT VERGESSEN.",
+  "tr_px": 224,
+  "now_px": 314,
+  "target_px": 280
+ },
+ {
+  "tr": "RİTMİ ZAMANLA ÖĞRENİRSİN",
+  "now": "DEN RHYTHMUS LERNST DU MIT DER ZEIT",
+  "tr_px": 112,
+  "now_px": 157,
+  "target_px": 120
+ },
+ {
+  "tr": "+1 CAN",
+  "now": "+1 LEBEN",
+  "tr_px": 25,
+  "now_px": 35,
+  "target_px": 27
+ },
+ {
+  "tr": "+2 CAN",
+  "now": "+2 LEBEN",
+  "tr_px": 25,
+  "now_px": 35,
+  "target_px": 27
+ },
+ {
+  "tr": "SAVAŞ",
+  "now": "KÄMPFEN",
+  "tr_px": 25,
+  "now_px": 35,
+  "target_px": 27
+ },
+ {
+  "tr": "SU TANKI",
+  "now": "WASSERTANK",
+  "tr_px": 35,
+  "now_px": 49,
+  "target_px": 37
+ },
+ {
+  "tr": "ÖRSE GİT",
+  "now": "ZUM AMBOSS",
+  "tr_px": 35,
+  "now_px": 49,
+  "target_px": 37
+ },
+ {
+  "tr": "AKYEL'LE AYNI PİSTTE KOŞTUM. SEN ONUN KADAR İYİSİN.",
+  "now": "ICH BIN MIT GRETA AUF DERSELBEN PISTE GERITTEN. DU BIST SO GUT WIE SIE.",
+  "tr_px": 221,
+  "now_px": 309,
+  "target_px": 276
+ },
+ {
+  "tr": "İKİLİ GÜÇ YA DA 12 GÜÇ AL",
+  "now": "HOL EINE DUO-KRAFT ODER 12 KRÄFTE",
+  "tr_px": 106,
+  "now_px": 148,
+  "target_px": 114
+ },
+ {
+  "tr": "SIKICI! METEORLARI SALIN!",
+  "now": "LANGWEILIG! LASST DIE METEORE LOS!",
+  "tr_px": 109,
+  "now_px": 152,
+  "target_px": 117
+ },
+ {
+  "tr": "BEN BİR YILDIZDAN DOĞDUM. SEN BİR ATTAN!",
+  "now": "ICH WURDE AUS EINEM STERN GEBOREN. DU AUS EINEM PFERD!",
+  "tr_px": 175,
+  "now_px": 244,
+  "target_px": 218
+ },
+ {
+  "tr": "AUUU! BU ORMANDA BENDEN HIZLISI YOK!",
+  "now": "AUUU! IN DIESEM WALD IST KEINER SCHNELLER ALS ICH!",
+  "tr_px": 160,
+  "now_px": 223,
+  "target_px": 200
+ },
+ {
+  "tr": "NİVA'YI GEÇTİN! KRALİÇE BİLE ŞAŞIRDI, TAHTINDAN İNİP SENİ ALKIŞLADI.",
+  "now": "DU HAST NIVA ÜBERHOLT! SOGAR DIE KÖNIGIN WAR BAFF, SIE STIEG VOM THRON UND APPLAUDIERTE DIR.",
+  "tr_px": 295,
+  "now_px": 411,
+  "target_px": 368
+ },
+ {
+  "tr": "BASKIN",
+  "now": "ÜBERFALL",
+  "tr_px": 28,
+  "now_px": 39,
+  "target_px": 30
+ },
+ {
+  "tr": "DİNLEN",
+  "now": "AUSRUHEN",
+  "tr_px": 28,
+  "now_px": 39,
+  "target_px": 30
+ },
+ {
+  "tr": "HIZ +%3",
+  "now": "TEMPO +%3",
+  "tr_px": 28,
+  "now_px": 39,
+  "target_px": 30
+ },
+ {
+  "tr": "HIZ +%5",
+  "now": "TEMPO +%5",
+  "tr_px": 28,
+  "now_px": 39,
+  "target_px": 30
+ },
+ {
+  "tr": "SOHBET",
+  "now": "PLAUDERN",
+  "tr_px": 28,
+  "now_px": 39,
+  "target_px": 30
+ },
+ {
+  "tr": "İŞARETLER ORTADA BULUŞUNCA DOKUN! (",
+  "now": "TIPP, WENN SICH DIE ZEICHEN IN DER MITTE TREFFEN! (",
+  "tr_px": 158,
+  "now_px": 220,
+  "target_px": 197
+ },
+ {
+  "tr": "KİBRİM KALKANIMDI DÜNYALI. ONSUZ KORKAKTIM. SEN BANA KORKMADAN KOŞMAYI GÖSTERDİN.",
+  "now": "MEIN HOCHMUT WAR MEIN SCHILD, ERDLING. OHNE IHN WAR ICH EIN FEIGLING. DU HAST MIR GEZEIGT, WIE MAN OHNE ANGST LÄUFT.",
+  "tr_px": 370,
+  "now_px": 515,
+  "target_px": 462
+ },
+ {
+  "tr": "AĞIR ŞOK",
+  "now": "MEGASCHOCK",
+  "tr_px": 36,
+  "now_px": 50,
+  "target_px": 38
+ },
+ {
+  "tr": "↑ YUKARI KAYDIR: SIÇRA",
+  "now": "↑ NACH OBEN WISCHEN: SPRINGEN",
+  "tr_px": 96,
+  "now_px": 133,
+  "target_px": 103
+ },
+ {
+  "tr": "KARA CAMDAN DOĞDUM. İÇİMDE YANSIMALAR VAR: SENİNKİ EVİNE BAKIYOR.",
+  "now": "ICH WURDE AUS SCHWARZEM GLAS GEBOREN. IN MIR SIND SPIEGELBILDER: DEINES SCHAUT NACH HAUSE.",
+  "tr_px": 296,
+  "now_px": 410,
+  "target_px": 370
+ },
+ {
+  "tr": "BİP'İN KAYITLARINDA YİRMİ YIL ÖNCEKİ BİR FİNAL VAR: DÜNYALI BİR JOKEY, SON DÜZLÜKTE VOLTRAK'I GEÇMEK ÜZERE. GÖRÜNTÜ ORADA KESİLİYOR. JOKEYİN ADI AKYEL. ANNENİN ADI.",
+  "now": "IN BIPS AUFZEICHNUNGEN GIBT ES EIN FINALE VON VOR ZWANZIG JAHREN: EIN JOCKEY VON DER ERDE, AUF DER ZIELGERADEN KURZ DAVOR, VOLTRAK ZU ÜBERHOLEN. DORT BRICHT DAS BILD AB. DER NAME DES JOCKEYS: GRETA. DER NAME DEINER MUTTER.",
+  "tr_px": 722,
+  "now_px": 999,
+  "target_px": 902
+ },
+ {
+  "tr": "BİP! İLK PİSTTE ÜST ÜSTE ZORLANDIN. AYARLARDA GENİŞ RİTİM PENCERESİ VE YARDIM MODU VAR. UTANILACAK ŞEY DEĞİL!",
+  "now": "BIP! DIE ERSTE PISTE WAR MEHRMALS HART FÜR DICH. IN DEN EINSTELLUNGEN GIBT ES EIN BREITES RHYTHMUSFENSTER UND EINEN HILFEMODUS. KEIN GRUND ZUR SCHAM!",
+  "tr_px": 485,
+  "now_px": 671,
+  "target_px": 606
+ },
+ {
+  "tr": "KUPA KAPIYI BİR KEZ DAHA AÇTI. DOSYASINI AÇTIĞIN BİR RAKİBİ EVİNE GÖNDER. GİDEN BİR DAHA PİSTE ÇIKMAZ.",
+  "now": "DER POKAL HAT DAS TOR NOCH EINMAL GEÖFFNET. SCHICK EINEN RIVALEN, DESSEN AKTE DU HAST, NACH HAUSE. WER GEHT, KEHRT NIE AUF DIE PISTE ZURÜCK.",
+  "tr_px": 449,
+  "now_px": 621,
+  "target_px": 561
+ },
+ {
+  "tr": "KURDELEYİ YENİLEDİM, ŞİMDİ DAHA HIZLIYIZ!",
+  "now": "ICH HAB DIE SCHLEIFE ERNEUERT, JETZT SIND WIR SCHNELLER!",
+  "tr_px": 181,
+  "now_px": 250,
+  "target_px": 226
+ },
+ {
+  "tr": "KORHAN, KOR AY'IN SON DEMİRCİSİ. GRAX OCAĞINI ZİNCİRLEDİ VE ONA KIVILCIM SAÇAN NALLAR DÖVDÜRDÜ. YENİLİNCE SANA İLK NALIN KALIBINI VERDİ; ÜSTÜNDE GRAX'IN MÜHRÜ VAR. ANNEN KAYBETMEDİ. ONU DÜŞÜRDÜLER.",
+  "now": "GLUTHARD IST DER LETZTE SCHMIED DES GLUTMONDS. GRAX LEGTE SEINE ESSE IN KETTEN UND LIESS IHN FUNKENSPRÜHENDE HUFEISEN SCHMIEDEN. BESIEGT GAB ER DIR DIE GUSSFORM DES ERSTEN EISENS; DARAUF PRANGT GRAX' SIEGEL. DEINE MUTTER HAT NICHT VERLOREN. MAN HAT SIE ZU FALL GEBRACHT.",
+  "tr_px": 885,
+  "now_px": 1218,
+  "target_px": 1106
+ },
+ {
+  "tr": "KOĞUŞ",
+  "now": "JOCKEYS",
+  "tr_px": 24,
+  "now_px": 33,
+  "target_px": 25
+ },
+ {
+  "tr": "NAL OYUN TARZINI DEĞİŞTİRİR",
+  "now": "DAS HUFEISEN ÄNDERT DEINEN SPIELSTIL",
+  "tr_px": 120,
+  "now_px": 165,
+  "target_px": 129
+ },
+ {
+  "tr": "NAL SEÇ",
+  "now": "EISENWAHL",
+  "tr_px": 32,
+  "now_px": 44,
+  "target_px": 34
+ },
+ {
+  "tr": "PUAN: ",
+  "now": "PUNKTE: ",
+  "tr_px": 24,
+  "now_px": 33,
+  "target_px": 25
+ },
+ {
+  "tr": "İTEMEDİM Mİ? VAY... EYERE SAĞLAM OTURUYORSUN.",
+  "now": "ICH KONNTE DICH NICHT SCHUBSEN? WOW... DU SITZT FEST IM SATTEL.",
+  "tr_px": 198,
+  "now_px": 272,
+  "target_px": 247
+ },
+ {
+  "tr": " HASAR",
+  "now": " SCHADEN",
+  "tr_px": 27,
+  "now_px": 37,
+  "target_px": 29
+ },
+ {
+  "tr": "HASAR ",
+  "now": "SCHADEN ",
+  "tr_px": 27,
+  "now_px": 37,
+  "target_px": 29
+ },
+ {
+  "tr": "SIYIRDI",
+  "now": "GESTREIFT",
+  "tr_px": 30,
+  "now_px": 41,
+  "target_px": 32
+ },
+ {
+  "tr": "SEYİRCİ ESNİYOR! BİRAZ HEYECAN!",
+  "now": "DAS PUBLIKUM GÄHNT! ETWAS SPANNUNG BITTE!",
+  "tr_px": 135,
+  "now_px": 184,
+  "target_px": 168
+ },
+ {
+  "tr": "\"ALTIN NOTAYI TAM VUR, BUZ ÇATLAR. KRALİÇEYE SÖYLEME!\"",
+  "now": "\"TRIFF DIE GOLDNOTE GENAU, DANN BRICHT DAS EIS. SAG ES NICHT DER KÖNIGIN!\"",
+  "tr_px": 237,
+  "now_px": 323,
+  "target_px": 296
+ },
+ {
+  "tr": "SENİ BEKLİYORDUM DÜNYALI.",
+  "now": "ICH HAB AUF DICH GEWARTET, ERDLING.",
+  "tr_px": 113,
+  "now_px": 154,
+  "target_px": 122
+ },
+ {
+  "tr": "BORA NE DEDİ? KIVILCIM MI? DEMEK O GECE FIRTINA DEĞİLDİ...",
+  "now": "WAS HAT BORA GESAGT? FUNKEN? DANN WAR ES IN JENER NACHT GAR NICHT DER STURM...",
+  "tr_px": 254,
+  "now_px": 346,
+  "target_px": 317
+ },
+ {
+  "tr": "AĞIR OLDUĞUM İÇİN YAVAŞ DEĞİLİM. AMA SEN HIZLISIN.",
+  "now": "ICH BIN NICHT LANGSAM, NUR WEIL ICH SCHWER BIN. ABER DU BIST SCHNELL.",
+  "tr_px": 224,
+  "now_px": 305,
+  "target_px": 280
+ },
+ {
+  "tr": "HERKES BURADAN BAŞLADI DENİZ. NOTA ORTADA BULUŞUNCA DOKUN, GERİSİ GELİR.",
+  "now": "HIER HAT JEDER ANGEFANGEN, KAI. TIPP, WENN DIE NOTE IN DER MITTE ANKOMMT, DER REST KOMMT VON SELBST.",
+  "tr_px": 325,
+  "now_px": 442,
+  "target_px": 406
+ },
+ {
+  "tr": "BUZUM ERİDİ... YILLARDIR KENDİMİ DONDURUYORDUM DÜNYALI. DONMUŞ BİR KALP EVİNİ ÖZLEMEZ.",
+  "now": "MEIN EIS IST GESCHMOLZEN... JAHRELANG HAB ICH MICH SELBST EINGEFROREN, ERDLING. EIN GEFRORENES HERZ HAT KEIN HEIMWEH.",
+  "tr_px": 387,
+  "now_px": 526,
+  "target_px": 483
+ },
+ {
+  "tr": "YOL OLAYI",
+  "now": "WEGEREIGNIS",
+  "tr_px": 39,
+  "now_px": 53,
+  "target_px": 42
+ },
+ {
+  "tr": "BORCUM KAPANDI! MOKO'YA SÖYLE: KUZENİ SONUNDA EVDE, DÜKKANINI AÇIYOR.",
+  "now": "MEINE SCHULD IST BEGLICHEN! SAG MOKO: SEIN COUSIN IST ENDLICH DAHEIM UND ÖFFNET SEINEN LADEN.",
+  "tr_px": 308,
+  "now_px": 418,
+  "target_px": 385
+ },
+ {
+  "tr": "KRİSTALO KİBİRLENİNCE DURUR. O AN HAMLE YAP YA DA ALTIN NOTAYI VUR, KİBRİNİ KIR!",
+  "now": "WENN KRISTALO HOCHMÜTIG WIRD, BLEIBT ER STEHEN. SPURTE DANN ODER TRIFF DIE GOLDNOTE, BRICH SEINEN HOCHMUT!",
+  "tr_px": 350,
+  "now_px": 475,
+  "target_px": 437
+ },
+ {
+  "tr": "SON METRELER, NEFESLER TUTULDU!",
+  "now": "DIE LETZTEN METER, ALLE HALTEN DEN ATEM AN!",
+  "tr_px": 140,
+  "now_px": 190,
+  "target_px": 175
+ },
+ {
+  "tr": "SICAK BİR YERDE UYANACAĞIM SONUNDA. ERİRSEM DE MUTLU ERİRİM!",
+  "now": "ENDLICH WACHE ICH AN EINEM WARMEN ORT AUF. UND WENN ICH SCHMELZE, DANN GLÜCKLICH!",
+  "tr_px": 272,
+  "now_px": 369,
+  "target_px": 340
+ },
+ {
+  "tr": "AĞIR OK",
+  "now": "BLEIPFEIL",
+  "tr_px": 31,
+  "now_px": 42,
+  "target_px": 33
+ },
+ {
+  "tr": "HER GÜN UĞRA, ERZAK ARTARAK GELSİN. GÜN KAÇIRSAN DA SERİ SIFIRLANMAZ.",
+  "now": "SCHAU JEDEN TAG VORBEI, DER PROVIANT WÄCHST. VERPASST DU EINEN TAG, BLEIBT DIE SERIE TROTZDEM.",
+  "tr_px": 310,
+  "now_px": 420,
+  "target_px": 387
+ },
+ {
+  "tr": "SU SERİNDİ. YILDIZ DA KANA KANA İÇTİ.",
+  "now": "DAS WASSER WAR KÜHL. AUCH STERN TRANK SICH SATT.",
+  "tr_px": 158,
+  "now_px": 214,
+  "target_px": 197
+ },
+ {
+  "tr": "SERADA ÜRÜNLER BÜYÜDÜ",
+  "now": "IM GARTEN IST ETWAS GEWACHSEN",
+  "tr_px": 99,
+  "now_px": 134,
+  "target_px": 106
+ },
+ {
+  "tr": "ÜÇ SEZONDUR İLK KEZ BİRİ BANA ARKASINI GÖSTERDİ.",
+  "now": "ZUM ERSTEN MAL SEIT DREI SAISONS ZEIGT MIR JEMAND SEINEN RÜCKEN.",
+  "tr_px": 215,
+  "now_px": 291,
+  "target_px": 268
+ },
+ {
+  "tr": "ŞEKER HA... BU KRONOMETRE KIRK YILDIR BENİMLE. SENİN OLSUN.",
+  "now": "ZUCKER, HM... DIESE STOPPUHR BEGLEITET MICH SEIT VIERZIG JAHREN. SIE GEHÖRT DIR.",
+  "tr_px": 258,
+  "now_px": 349,
+  "target_px": 322
+ },
+ {
+  "tr": "DÜŞMANLAR 2 KAT SİKKE DÜŞÜRÜR",
+  "now": "FEINDE LASSEN 2X SO VIELE MÜNZEN FALLEN",
+  "tr_px": 134,
+  "now_px": 181,
+  "target_px": 144
+ },
+ {
+  "tr": "GÜNLÜK ERZAĞINI AL",
+  "now": "HOL DEINEN TAGESPROVIANT",
+  "tr_px": 83,
+  "now_px": 112,
+  "target_px": 89
+ },
+ {
+  "tr": "ÇEKİÇ",
+  "now": "HAMMER",
+  "tr_px": 23,
+  "now_px": 31,
+  "target_px": 24
+ },
+ {
+  "tr": "TEK ATIŞ. TEK ŞANS.",
+  "now": "EIN SCHUSS. EINE CHANCE.",
+  "tr_px": 78,
+  "now_px": 105,
+  "target_px": 84
+ },
+ {
+  "tr": "PAZARDA SENİ BEKLİYORUM.",
+  "now": "ICH WARTE AUF DEM MARKT AUF DICH.",
+  "tr_px": 110,
+  "now_px": 148,
+  "target_px": 118
+ },
+ {
+  "tr": "PARKUR",
+  "now": "PARCOURS",
+  "tr_px": 29,
+  "now_px": 39,
+  "target_px": 31
+ },
+ {
+  "tr": "İNİŞTE ",
+  "now": "LANDUNG: ",
+  "tr_px": 29,
+  "now_px": 39,
+  "target_px": 31
+ },
+ {
+  "tr": "HIZ +%12",
+  "now": "TEMPO +%12",
+  "tr_px": 32,
+  "now_px": 43,
+  "target_px": 34
+ },
+ {
+  "tr": "HIZ -%10",
+  "now": "TEMPO -%10",
+  "tr_px": 32,
+  "now_px": 43,
+  "target_px": 34
+ },
+ {
+  "tr": "BİRE BİR! BAHİSLER MASADA!",
+  "now": "EINS GEGEN EINS! DIE WETTEN LAUFEN!",
+  "tr_px": 115,
+  "now_px": 154,
+  "target_px": 124
+ },
+ {
+  "tr": "BİR RÖVANŞÇIDAN RÖVANŞ AL",
+  "now": "NIMM REVANCHE AN EINEM ERZRIVALEN",
+  "tr_px": 118,
+  "now_px": 158,
+  "target_px": 127
+ },
+ {
+  "tr": "İLK YILDIZ GÜCÜNÜ AL",
+  "now": "HOL DEINE ERSTE STERNKRAFT",
+  "tr_px": 89,
+  "now_px": 119,
+  "target_px": 96
+ },
+ {
+  "tr": " HASAR)",
+  "now": " SCHADEN)",
+  "tr_px": 30,
+  "now_px": 40,
+  "target_px": 32
+ },
+ {
+  "tr": "ÇATAL OK",
+  "now": "GABELPFEIL",
+  "tr_px": 36,
+  "now_px": 48,
+  "target_px": 38
+ },
+ {
+  "tr": "ŞEKER VER, HATIRASINI AL: ",
+  "now": "ZUCKER GEBEN, ANDENKEN ERHALTEN: ",
+  "tr_px": 112,
+  "now_px": 149,
+  "target_px": 120
+ },
+ {
+  "tr": "JOKEY KOĞUŞUNU ONAR",
+  "now": "JOCKEYQUARTIER REPARIEREN",
+  "tr_px": 89,
+  "now_px": 118,
+  "target_px": 96
+ },
+ {
+  "tr": "1 KEZ, 1 CANLA KALK",
+  "now": "1X MIT 1 LEBEN AUFSTEHEN",
+  "tr_px": 81,
+  "now_px": 107,
+  "target_px": 87
+ },
+ {
+  "tr": "1 KEZ, 2 CANLA KALK",
+  "now": "1X MIT 2 LEBEN AUFSTEHEN",
+  "tr_px": 81,
+  "now_px": 107,
+  "target_px": 87
+ },
+ {
+  "tr": "2 KEZ, 2 CANLA KALK",
+  "now": "2X MIT 2 LEBEN AUFSTEHEN",
+  "tr_px": 81,
+  "now_px": 107,
+  "target_px": 87
+ },
+ {
+  "tr": "3 KEZ, 2 CANLA KALK",
+  "now": "3X MIT 2 LEBEN AUFSTEHEN",
+  "tr_px": 81,
+  "now_px": 107,
+  "target_px": 87
+ },
+ {
+  "tr": "KOMBO YAVAŞ SÖNER",
+  "now": "KOMBO VERFÄLLT LANGSAM",
+  "tr_px": 81,
+  "now_px": 107,
+  "target_px": 87
+ },
+ {
+  "tr": "DAMLA",
+  "now": "TROPFEN",
+  "tr_px": 25,
+  "now_px": 33,
+  "target_px": 27
+ },
+ {
+  "tr": "YARIŞ",
+  "now": "RENNEN",
+  "tr_px": 22,
+  "now_px": 29,
+  "target_px": 23
+ },
+ {
+  "tr": "KAPIYI RİTİMLE AÇTI!",
+  "now": "TOR IM RHYTHMUS GEÖFFNET!",
+  "tr_px": 85,
+  "now_px": 112,
+  "target_px": 91
+ },
+ {
+  "tr": "EN UZAK",
+  "now": "WEITESTER",
+  "tr_px": 32,
+  "now_px": 42,
+  "target_px": 34
+ },
+ {
+  "tr": "KOŞUDAN ÖNCE YEM SEÇ",
+  "now": "FUTTER VOR DEM LAUF WÄHLEN",
+  "tr_px": 93,
+  "now_px": 122,
+  "target_px": 100
+ },
+ {
+  "tr": "HIZLI ŞARJ",
+  "now": "SCHNELLLADER",
+  "tr_px": 45,
+  "now_px": 59,
+  "target_px": 48
+ },
+ {
+  "tr": "KAR TANESİ",
+  "now": "SCHNEEFLOCKE",
+  "tr_px": 45,
+  "now_px": 59,
+  "target_px": 48
+ },
+ {
+  "tr": "GÖZDE: ",
+  "now": "FAVORIT: ",
+  "tr_px": 29,
+  "now_px": 38,
+  "target_px": 31
+ },
+ {
+  "tr": "GÜNLÜK",
+  "now": "TAGEBUCH",
+  "tr_px": 29,
+  "now_px": 38,
+  "target_px": 31
+ },
+ {
+  "tr": "ATIŞ HASARI +%30 (BU KOŞU)",
+  "now": "SCHUSSSCHADEN +%30 (DIESER LAUF)",
+  "tr_px": 110,
+  "now_px": 144,
+  "target_px": 118
+ },
+ {
+  "tr": "ATIŞ HASARI +%50 (BU KOŞU)",
+  "now": "SCHUSSSCHADEN +%50 (DIESER LAUF)",
+  "tr_px": 110,
+  "now_px": 144,
+  "target_px": 118
+ },
+ {
+  "tr": "ULUYAN GORM",
+  "now": "HEULENDER GORM",
+  "tr_px": 52,
+  "now_px": 68,
+  "target_px": 56
+ },
+ {
+  "tr": "↓ AŞAĞI KAYDIR YA DA ",
+  "now": "↓ NACH UNTEN WISCHEN ODER ",
+  "tr_px": 91,
+  "now_px": 119,
+  "target_px": 98
+ },
+ {
+  "tr": "SİLAH SEÇ VE GELİŞTİR",
+  "now": "WAFFE WÄHLEN UND AUFRÜSTEN",
+  "tr_px": 95,
+  "now_px": 124,
+  "target_px": 102
+ },
+ {
+  "tr": "BİR GEZEGENİ LİG LİDERİ BİTİR",
+  "now": "BEENDE EINEN PLANETEN ALS LIGAERSTER",
+  "tr_px": 128,
+  "now_px": 167,
+  "target_px": 138
+ },
+ {
+  "tr": "RÖVANŞ ALINDI! İNANILMAZ!",
+  "now": "REVANCHE GENOMMEN! UNGLAUBLICH!",
+  "tr_px": 112,
+  "now_px": 146,
+  "target_px": 120
+ },
+ {
+  "tr": "SAPMA: ",
+  "now": "VARIANZ: ",
+  "tr_px": 30,
+  "now_px": 39,
+  "target_px": 32
+ },
+ {
+  "tr": "UZAY PAZARI",
+  "now": "WELTRAUMMARKT",
+  "tr_px": 50,
+  "now_px": 65,
+  "target_px": 54
+ },
+ {
+  "tr": "SÖNDÜM... AMA SADECE BİRAZ.",
+  "now": "ERLOSCHEN... ABER NUR EIN BISSCHEN.",
+  "tr_px": 117,
+  "now_px": 152,
+  "target_px": 126
+ },
+ {
+  "tr": "KAZAN VE EVE DÖN.",
+  "now": "GEWINNE UND KEHR HEIM.",
+  "tr_px": 77,
+  "now_px": 100,
+  "target_px": 83
+ },
+ {
+  "tr": " İSİMLİ RAKİBİN ÖNÜNDE BİTİR",
+  "now": " MAL VOR BENANNTEN RIVALEN INS ZIEL",
+  "tr_px": 124,
+  "now_px": 161,
+  "target_px": 133
+ },
+ {
+  "tr": "YİĞİT YÜREK",
+  "now": "TAPFERES HERZ",
+  "tr_px": 47,
+  "now_px": 61,
+  "target_px": 50
+ },
+ {
+  "tr": "BU KOŞUDA ÇEKİÇ: ",
+  "now": "HÄMMER DIESES LAUFS: ",
+  "tr_px": 74,
+  "now_px": 96,
+  "target_px": 79
+ },
+ {
+  "tr": "HER NALDA +%5 HIZ",
+  "now": "JEDES EISEN: +%5 TEMPO",
+  "tr_px": 74,
+  "now_px": 96,
+  "target_px": 79
+ },
+ {
+  "tr": "SEKEN OK",
+  "now": "PRALLPFEIL",
+  "tr_px": 37,
+  "now_px": 48,
+  "target_px": 39
+ },
+ {
+  "tr": "HÜCUM!",
+  "now": "ANGRIFF!",
+  "tr_px": 27,
+  "now_px": 35,
+  "target_px": 29
+ },
+ {
+  "tr": "USTA ATAĞI",
+  "now": "MEISTERSTOSS",
+  "tr_px": 44,
+  "now_px": 57,
+  "target_px": 47
+ },
+ {
+  "tr": "RAKİPLERİ GEÇ, BİTİŞE KOŞ!",
+  "now": "ÜBERHOL DIE RIVALEN, AB INS ZIEL!",
+  "tr_px": 112,
+  "now_px": 145,
+  "target_px": 120
+ },
+ {
+  "tr": "GRAX'IN İLK TUTSAĞI",
+  "now": "GRAX' ERSTER GEFANGENER",
+  "tr_px": 82,
+  "now_px": 106,
+  "target_px": 88
+ },
+ {
+  "tr": "CEPHANELİK",
+  "now": "WAFFENKAMMER",
+  "tr_px": 48,
+  "now_px": 62,
+  "target_px": 51
+ },
+ {
+  "tr": "AY GÖLGESİ",
+  "now": "MONDSCHATTEN",
+  "tr_px": 45,
+  "now_px": 58,
+  "target_px": 48
+ },
+ {
+  "tr": " KRİSTAL",
+  "now": " KRISTALLE",
+  "tr_px": 35,
+  "now_px": 45,
+  "target_px": 37
+ },
+ {
+  "tr": " VURUŞ",
+  "now": " TREFFER",
+  "tr_px": 28,
+  "now_px": 36,
+  "target_px": 30
+ },
+ {
+  "tr": "RÖVANŞ: ",
+  "now": "REVANCHE: ",
+  "tr_px": 35,
+  "now_px": 45,
+  "target_px": 37
+ },
+ {
+  "tr": "SONDAN GELİR, SONDA ATAKLAR",
+  "now": "KOMMT VON HINTEN, GREIFT AM ENDE AN",
+  "tr_px": 123,
+  "now_px": 158,
+  "target_px": 132
+ },
+ {
+  "tr": "USTA ATAĞI!",
+  "now": "MEISTERSTOSS!",
+  "tr_px": 46,
+  "now_px": 59,
+  "target_px": 49
+ },
+ {
+  "tr": "ŞOK SAPANI",
+  "now": "SCHOCKZWILLE",
+  "tr_px": 46,
+  "now_px": 59,
+  "target_px": 49
+ },
+ {
+  "tr": "İYİ VURUŞTA DA ATEŞ EDER",
+  "now": "FEUERT AUCH BEI GUTEN TREFFERN",
+  "tr_px": 107,
+  "now_px": 137,
+  "target_px": 115
+ },
+ {
+  "tr": "ŞAMPİYON SENİ BEKLİYOR",
+  "now": "DER CHAMPION WARTET AUF DICH",
+  "tr_px": 101,
+  "now_px": 129,
+  "target_px": 109
+ },
+ {
+  "tr": "RİTİM NOTU ",
+  "now": "RHYTHMUSNOTE ",
+  "tr_px": 47,
+  "now_px": 60,
+  "target_px": 50
+ },
+ {
+  "tr": "KAR TANESİ'NİN SIRRI",
+  "now": "SCHNEEFLOCKES GEHEIMNIS",
+  "tr_px": 87,
+  "now_px": 111,
+  "target_px": 93
+ },
+ {
+  "tr": "AÇIK KAPI",
+  "now": "OFFENES TOR",
+  "tr_px": 40,
+  "now_px": 51,
+  "target_px": 43
+ },
+ {
+  "tr": "RİTMİ ÖLÇ",
+  "now": "TAKT MESSEN",
+  "tr_px": 40,
+  "now_px": 51,
+  "target_px": 43
+ },
+ {
+  "tr": " ALTTAKİ JOKEYE BAS",
+  "now": " UNTEN DEN JOCKEY TIPPEN",
+  "tr_px": 84,
+  "now_px": 107,
+  "target_px": 90
+ },
+ {
+  "tr": "IŞIK İZİ",
+  "now": "LICHTSPUR",
+  "tr_px": 33,
+  "now_px": 42,
+  "target_px": 35
+ },
+ {
+  "tr": "SEZON BİTTİ",
+  "now": "SAISON VORBEI",
+  "tr_px": 48,
+  "now_px": 61,
+  "target_px": 51
+ },
+ {
+  "tr": " KRİSTAL!",
+  "now": " KRISTALLE!",
+  "tr_px": 37,
+  "now_px": 47,
+  "target_px": 39
+ },
+ {
+  "tr": "IŞIK YAYI",
+  "now": "LICHTBOGEN",
+  "tr_px": 37,
+  "now_px": 47,
+  "target_px": 39
+ },
+ {
+  "tr": "UZAK DUR",
+  "now": "FINGER WEG",
+  "tr_px": 37,
+  "now_px": 47,
+  "target_px": 39
+ },
+ {
+  "tr": "DEMİRCİ KORHAN'I YEN",
+  "now": "BESIEGE SCHMIED GLUTHARD",
+  "tr_px": 89,
+  "now_px": 113,
+  "target_px": 96
+ },
+ {
+  "tr": "FIRTINA DEVİ'NE ULAŞ",
+  "now": "ERREICHE DEN STURMRIESEN",
+  "tr_px": 89,
+  "now_px": 113,
+  "target_px": 96
+ },
+ {
+  "tr": " SİKKE",
+  "now": " MÜNZEN",
+  "tr_px": 26,
+  "now_px": 33,
+  "target_px": 28
+ },
+ {
+  "tr": "VUR GALAKSİ, VUR!",
+  "now": "FEUER, GALAXIE, FEUER!",
+  "tr_px": 75,
+  "now_px": 95,
+  "target_px": 81
+ },
+ {
+  "tr": "YILDIZ KERVANIN ÖNÜNE GEÇTİ!",
+  "now": "STERN STELLT SICH VOR DIE KARAWANE!",
+  "tr_px": 125,
+  "now_px": 158,
+  "target_px": 135
+ },
+ {
+  "tr": "HIZLI YAY",
+  "now": "FLINKBOGEN",
+  "tr_px": 38,
+  "now_px": 48,
+  "target_px": 41
+ },
+ {
+  "tr": "BİR BUZ PARÇASI SEKTİ. -1 CAN.",
+  "now": "EIN EISSPLITTER PRALLTE AB. -1 LEBEN.",
+  "tr_px": 127,
+  "now_px": 160,
+  "target_px": 137
+ },
+ {
+  "tr": "JÖLE BEYİNLİ BİLGİN",
+  "now": "GELEHRTER MIT GELEEHIRN",
+  "tr_px": 85,
+  "now_px": 107,
+  "target_px": 91
+ },
+ {
+  "tr": "SATILDI",
+  "now": "VERKAUFT",
+  "tr_px": 31,
+  "now_px": 39,
+  "target_px": 33
+ },
+ {
+  "tr": "GÜVENLİ: KRİSTAL, BELKİ ŞEKER",
+  "now": "SICHER: KRISTALLE, VIELLEICHT ZUCKER",
+  "tr_px": 129,
+  "now_px": 162,
+  "target_px": 139
+ },
+ {
+  "tr": "SPRİNT VE DÜELLODA RAKİPLER ",
+  "now": "IN SPRINT UND DUELL STARTEN RIVALEN ",
+  "tr_px": 129,
+  "now_px": 162,
+  "target_px": 139
+ },
+ {
+  "tr": "ÇİFT KİRİŞ",
+  "now": "DOPPELSEHNE",
+  "tr_px": 43,
+  "now_px": 54,
+  "target_px": 46
+ },
+ {
+  "tr": " ÇARPMA CAN GÖTÜRMEZ",
+  "now": " TREFFER KOSTEN KEIN LEBEN",
+  "tr_px": 94,
+  "now_px": 118,
+  "target_px": 101
+ },
+ {
+  "tr": "YENİ REKOR!",
+  "now": "NEUER REKORD!",
+  "tr_px": 47,
+  "now_px": 59,
+  "target_px": 50
+ },
+ {
+  "tr": "RİTMİ ÖLÇ: DOKUNARAK AYARLA",
+  "now": "TAKT MESSEN: PER TIPPEN EINSTELLEN",
+  "tr_px": 122,
+  "now_px": 153,
+  "target_px": 131
+ },
+ {
+  "tr": "ATIŞ HASARI +%",
+  "now": "SCHUSSSCHADEN +%",
+  "tr_px": 60,
+  "now_px": 75,
+  "target_px": 64
+ },
+ {
+  "tr": "TEKRAR",
+  "now": "NOCHMAL",
+  "tr_px": 28,
+  "now_px": 35,
+  "target_px": 30
+ },
+ {
+  "tr": "GECE GÖZLÜ YARASA HALKI",
+  "now": "NACHTÄUGIGES FLEDERMAUSVOLK",
+  "tr_px": 106,
+  "now_px": 132,
+  "target_px": 114
+ },
+ {
+  "tr": " KOMBO YAP",
+  "now": " KOMBO HOLEN",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "KOÇBAŞI",
+  "now": "RAMMBOCK",
+  "tr_px": 33,
+  "now_px": 41,
+  "target_px": 35
+ },
+ {
+  "tr": "YENİLE (",
+  "now": "NEUWURF (",
+  "tr_px": 33,
+  "now_px": 41,
+  "target_px": 35
+ },
+ {
+  "tr": "TEMİZ ATLAYIŞ",
+  "now": "SAUBERE SPRÜNGE",
+  "tr_px": 58,
+  "now_px": 72,
+  "target_px": 62
+ },
+ {
+  "tr": " RUHU SANA GÜÇ SUNUYOR",
+  "now": " - DER GEIST BIETET DIR KRAFT",
+  "tr_px": 100,
+  "now_px": 124,
+  "target_px": 108
+ },
+ {
+  "tr": "BULUT ADIMI",
+  "now": "WOLKENSCHRITT",
+  "tr_px": 50,
+  "now_px": 62,
+  "target_px": 54
+ },
+ {
+  "tr": "ÖDÜLLER X",
+  "now": "BELOHNUNG X",
+  "tr_px": 42,
+  "now_px": 52,
+  "target_px": 45
+ },
+ {
+  "tr": "MANTAR AYI'NA ULAŞ",
+  "now": "ERREICHE DEN PILZMOND",
+  "tr_px": 80,
+  "now_px": 99,
+  "target_px": 86
+ },
+ {
+  "tr": "30 SİKKE YATIR",
+  "now": "30 MÜNZEN SETZEN",
+  "tr_px": 59,
+  "now_px": 73,
+  "target_px": 63
+ },
+ {
+  "tr": "BASKIN ETABI, 60 SİKKE X2",
+  "now": "ÜBERFALL-ETAPPE, 60 MÜNZEN X2",
+  "tr_px": 106,
+  "now_px": 131,
+  "target_px": 114
+ },
+ {
+  "tr": "GECE KANADI",
+  "now": "NACHTSCHWINGE",
+  "tr_px": 51,
+  "now_px": 63,
+  "target_px": 55
+ },
+ {
+  "tr": "TEKNİK ",
+  "now": "TECHNIK: ",
+  "tr_px": 30,
+  "now_px": 37,
+  "target_px": 32
+ },
+ {
+  "tr": "HER VURUŞTA EN AZ İKİ IŞIK OKU",
+  "now": "JEDER TREFFER MIND. ZWEI LICHTPFEILE",
+  "tr_px": 133,
+  "now_px": 164,
+  "target_px": 143
+ },
+ {
+  "tr": " KRİSTAL): ",
+  "now": " KRISTALLE): ",
+  "tr_px": 43,
+  "now_px": 53,
+  "target_px": 46
+ },
+ {
+  "tr": "+4 KRİSTAL",
+  "now": "+4 KRISTALLE",
+  "tr_px": 43,
+  "now_px": 53,
+  "target_px": 46
+ },
+ {
+  "tr": "+6 KRİSTAL",
+  "now": "+6 KRISTALLE",
+  "tr_px": 43,
+  "now_px": 53,
+  "target_px": 46
+ },
+ {
+  "tr": "+8 KRİSTAL",
+  "now": "+8 KRISTALLE",
+  "tr_px": 43,
+  "now_px": 53,
+  "target_px": 46
+ },
+ {
+  "tr": "EVE DÖNDÜ",
+  "now": "HEIMGEKEHRT",
+  "tr_px": 43,
+  "now_px": 53,
+  "target_px": 46
+ },
+ {
+  "tr": "+1 AZAMİ CAN (BU KOŞU)",
+  "now": "+1 MAX. LEBEN (DIESER LAUF)",
+  "tr_px": 95,
+  "now_px": 117,
+  "target_px": 102
+ },
+ {
+  "tr": "30 SİKKE ÖDE",
+  "now": "ZAHL 30 MÜNZEN",
+  "tr_px": 52,
+  "now_px": 64,
+  "target_px": 56
+ },
+ {
+  "tr": "ÇİFT NOTA",
+  "now": "DOPPELNOTE",
+  "tr_px": 39,
+  "now_px": 48,
+  "target_px": 42
+ },
+ {
+  "tr": "SÖNMÜŞ YILDIZ VEGA-9",
+  "now": "ERLOSCHENER STERN VEGA-9",
+  "tr_px": 92,
+  "now_px": 113,
+  "target_px": 99
+ },
+ {
+  "tr": "! AHIRDA PUAN SENİ BEKLİYOR",
+  "now": "! IM STALL WARTEN PUNKTE AUF DICH",
+  "tr_px": 119,
+  "now_px": 146,
+  "target_px": 128
+ },
+ {
+  "tr": "KAOS HIZI",
+  "now": "CHAOSTEMPO",
+  "tr_px": 40,
+  "now_px": 49,
+  "target_px": 43
+ },
+ {
+  "tr": "KRİSTAL CİN",
+  "now": "KRISTALLGEIST",
+  "tr_px": 49,
+  "now_px": 60,
+  "target_px": 52
+ },
+ {
+  "tr": "MANTAR AYI'NIN YENİLMEZİ",
+  "now": "DER UNBESIEGTE DES PILZMONDS",
+  "tr_px": 107,
+  "now_px": 131,
+  "target_px": 115
+ },
+ {
+  "tr": "İLK RUH GÜCÜ EN AZ NADİR",
+  "now": "ERSTE STERNKRAFT MIND. SELTEN",
+  "tr_px": 107,
+  "now_px": 131,
+  "target_px": 115
+ },
+ {
+  "tr": " KRİSTAL  +",
+  "now": " KRISTALLE  +",
+  "tr_px": 45,
+  "now_px": 55,
+  "target_px": 48
+ },
+ {
+  "tr": "KAOS ŞİFASI: +1 CAN",
+  "now": "CHAOSHEILUNG: +1 LEBEN",
+  "tr_px": 81,
+  "now_px": 99,
+  "target_px": 87
+ },
+ {
+  "tr": "SADE RİTİM",
+  "now": "EINFACH-TAKT",
+  "tr_px": 45,
+  "now_px": 55,
+  "target_px": 48
+ },
+ {
+  "tr": "TUTUŞTURURUM SENİ!",
+  "now": "ICH SETZ DICH IN BRAND!",
+  "tr_px": 81,
+  "now_px": 99,
+  "target_px": 87
+ },
+ {
+  "tr": "ATIŞ HASARI +%80",
+  "now": "SCHUSSSCHADEN +%80",
+  "tr_px": 68,
+  "now_px": 83,
+  "target_px": 73
+ },
+ {
+  "tr": "ATIŞ HASARI -%50",
+  "now": "SCHUSSSCHADEN -%50",
+  "tr_px": 68,
+  "now_px": 83,
+  "target_px": 73
+ },
+ {
+  "tr": "İNİŞTE 1.5 SN %",
+  "now": "LANDUNG 1.5 SEK %",
+  "tr_px": 59,
+  "now_px": 72,
+  "target_px": 63
+ },
+ {
+  "tr": "ENERJİ YEMİ",
+  "now": "ENERGIEFUTTER",
+  "tr_px": 50,
+  "now_px": 61,
+  "target_px": 54
+ },
+ {
+  "tr": "ISINMA TURU",
+  "now": "AUFWÄRMRUNDE",
+  "tr_px": 50,
+  "now_px": 61,
+  "target_px": 54
+ },
+ {
+  "tr": "TEMİZ KANAT",
+  "now": "REINER FLÜGEL",
+  "tr_px": 50,
+  "now_px": 61,
+  "target_px": 54
+ },
+ {
+  "tr": "TEKNİK %25 HIZLI DOLAR",
+  "now": "TECHNIK LÄDT %25 SCHNELLER",
+  "tr_px": 96,
+  "now_px": 117,
+  "target_px": 103
+ },
+ {
+  "tr": "TEKNİK %50 HIZLI DOLAR",
+  "now": "TECHNIK LÄDT %50 SCHNELLER",
+  "tr_px": 96,
+  "now_px": 117,
+  "target_px": 103
+ },
+ {
+  "tr": "TEKNİK %75 HIZLI DOLAR",
+  "now": "TECHNIK LÄDT %75 SCHNELLER",
+  "tr_px": 96,
+  "now_px": 117,
+  "target_px": 103
+ },
+ {
+  "tr": "YÜKSELT",
+  "now": "AUSBAUEN",
+  "tr_px": 32,
+  "now_px": 39,
+  "target_px": 34
+ },
+ {
+  "tr": "İKİ RUH BİRLİKTE KONUŞUYOR!",
+  "now": "ZWEI GEISTER SPRECHEN ZUSAMMEN!",
+  "tr_px": 119,
+  "now_px": 145,
+  "target_px": 128
+ },
+ {
+  "tr": "KOŞUYU BIRAK",
+  "now": "LAUF ABBRECHEN",
+  "tr_px": 55,
+  "now_px": 67,
+  "target_px": 59
+ },
+ {
+  "tr": "BOŞA ÇIKTI!",
+  "now": "AUSGEWICHEN!",
+  "tr_px": 46,
+  "now_px": 56,
+  "target_px": 49
+ },
+ {
+  "tr": "YOLUNA DÖN",
+  "now": "WEITERREITEN",
+  "tr_px": 46,
+  "now_px": 56,
+  "target_px": 49
+ },
+ {
+  "tr": "PİRA'DA KİMSE BENİ GEÇEMEZDİ!",
+  "now": "AUF PIRA HAT MICH NIEMAND ÜBERHOLT!",
+  "tr_px": 130,
+  "now_px": 158,
+  "target_px": 140
+ },
+ {
+  "tr": "GRAX'IN SIRRI",
+  "now": "GRAX' GEHEIMNIS",
+  "tr_px": 56,
+  "now_px": 68,
+  "target_px": 60
+ },
+ {
+  "tr": "20 SİKKE BIRAK",
+  "now": "20 MÜNZEN LASSEN",
+  "tr_px": 61,
+  "now_px": 74,
+  "target_px": 65
+ },
+ {
+  "tr": "DOSTLARINDAN BİR HATIRA TAK",
+  "now": "TRAG EIN ANDENKEN DEINER FREUNDE",
+  "tr_px": 122,
+  "now_px": 148,
+  "target_px": 131
+ },
+ {
+  "tr": "RİTİM MAKİNESİ!",
+  "now": "RHYTHMUSMASCHINE!",
+  "tr_px": 66,
+  "now_px": 80,
+  "target_px": 71
+ },
+ {
+  "tr": "SÜS AL, ÜS PUANI KAZAN!",
+  "now": "KAUF DEKO, HOL BASISPUNKTE!",
+  "tr_px": 99,
+  "now_px": 120,
+  "target_px": 106
+ },
+ {
+  "tr": "1 CAN YENİLE",
+  "now": "1 LEBEN HEILEN",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": "2 CAN YENİLE",
+  "now": "2 LEBEN HEILEN",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": "BUZU KIRDIN!",
+  "now": "EIS GEBROCHEN!",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": "YOLUMDAN ÇEKİL, YOKSA İTERİM!",
+  "now": "AUS DEM WEG, SONST SCHUBS ICH DICH!",
+  "tr_px": 128,
+  "now_px": 155,
+  "target_px": 138
+ },
+ {
+  "tr": "KIZIL KUM'UN ÇÖL CANAVARI",
+  "now": "DAS WÜSTENMONSTER VON ROTSAND",
+  "tr_px": 114,
+  "now_px": 138,
+  "target_px": 123
+ },
+ {
+  "tr": " KOMBODA BEŞ IŞINLIK YAĞMUR",
+  "now": " KOMBO: FÜNFFACHER STRAHLENREGEN",
+  "tr_px": 124,
+  "now_px": 150,
+  "target_px": 133
+ },
+ {
+  "tr": "KOŞU BİTTİ",
+  "now": "LAUF VORBEI",
+  "tr_px": 43,
+  "now_px": 52,
+  "target_px": 46
+ },
+ {
+  "tr": "ŞAMPİYONU GEÇTİN! BİR GÜÇ SEÇ",
+  "now": "CHAMPION ÜBERHOLT! WÄHL EINE KRAFT",
+  "tr_px": 129,
+  "now_px": 156,
+  "target_px": 139
+ },
+ {
+  "tr": ": HASAR +%25",
+  "now": ": SCHADEN +%25",
+  "tr_px": 48,
+  "now_px": 58,
+  "target_px": 51
+ },
+ {
+  "tr": "BİR RAKİBİ EVE GÖNDER",
+  "now": "SCHICK EINEN RIVALEN HEIM",
+  "tr_px": 96,
+  "now_px": 116,
+  "target_px": 103
+ },
+ {
+  "tr": "EVE GÖNDER",
+  "now": "HEIMSCHICKEN",
+  "tr_px": 48,
+  "now_px": 58,
+  "target_px": 51
+ },
+ {
+  "tr": "25 SİKKE VER",
+  "now": "ZAHL 25 MÜNZEN",
+  "tr_px": 53,
+  "now_px": 64,
+  "target_px": 57
+ },
+ {
+  "tr": "50 SİKKE VER",
+  "now": "ZAHL 50 MÜNZEN",
+  "tr_px": 53,
+  "now_px": 64,
+  "target_px": 57
+ },
+ {
+  "tr": "DÜELLO SENİN!",
+  "now": "DUELL GEWONNEN!",
+  "tr_px": 58,
+  "now_px": 70,
+  "target_px": 62
+ },
+ {
+  "tr": "İYON NALI",
+  "now": "IONENEISEN",
+  "tr_px": 39,
+  "now_px": 47,
+  "target_px": 42
+ },
+ {
+  "tr": "%50: ŞEKER, %50: SERAP",
+  "now": "%50: ZUCKER, %50: TRUGBILD",
+  "tr_px": 88,
+  "now_px": 106,
+  "target_px": 95
+ },
+ {
+  "tr": "KAOS IŞINI",
+  "now": "CHAOSSTRAHL",
+  "tr_px": 44,
+  "now_px": 53,
+  "target_px": 47
+ },
+ {
+  "tr": "DEV PLAZMA",
+  "now": "RIESENPLASMA",
+  "tr_px": 49,
+  "now_px": 59,
+  "target_px": 52
+ },
+ {
+  "tr": "6 KRİSTAL · 3 KOŞU",
+  "now": "6 KRISTALLE · 3 LÄUFE",
+  "tr_px": 74,
+  "now_px": 89,
+  "target_px": 79
+ },
+ {
+  "tr": "SEYİRCİLER AYAKTA!",
+  "now": "DIE ZUSCHAUER STEHEN!",
+  "tr_px": 79,
+  "now_px": 95,
+  "target_px": 85
+ },
+ {
+  "tr": "ISINMA TURUNU TEKRAR OYNA",
+  "now": "AUFWÄRMRUNDE NOCHMAL SPIELEN",
+  "tr_px": 114,
+  "now_px": 137,
+  "target_px": 123
+ },
+ {
+  "tr": "1 CAN VER",
+  "now": "GIB 1 LEBEN",
+  "tr_px": 40,
+  "now_px": 48,
+  "target_px": 43
+ },
+ {
+  "tr": "YAKINDAN BAK",
+  "now": "GENAU HINSEHEN",
+  "tr_px": 55,
+  "now_px": 66,
+  "target_px": 59
+ },
+ {
+  "tr": "SON ATAKLA BİR SPRİNTİ KAZAN",
+  "now": "GEWINNE EINEN SPRINT MIT ENDSPURT",
+  "tr_px": 126,
+  "now_px": 151,
+  "target_px": 136
+ },
+ {
+  "tr": "%50 ŞANS: +30",
+  "now": "%50 CHANCE: +30",
+  "tr_px": 51,
+  "now_px": 61,
+  "target_px": 55
+ },
+ {
+  "tr": "ZORLU ETAP",
+  "now": "HARTE ETAPPE",
+  "tr_px": 46,
+  "now_px": 55,
+  "target_px": 49
+ },
+ {
+  "tr": "TEMİZ HAVA, KISA BİR MOLA...",
+  "now": "FRISCHE LUFT, EINE KURZE PAUSE...",
+  "tr_px": 118,
+  "now_px": 141,
+  "target_px": 127
+ },
+ {
+  "tr": "BİR KORSAN KAPTANINI YEN",
+  "now": "BESIEGE EINEN PIRATENKAPITÄN",
+  "tr_px": 108,
+  "now_px": 129,
+  "target_px": 116
+ },
+ {
+  "tr": "KASA PATLADI!",
+  "now": "BANK GESPRENGT!",
+  "tr_px": 57,
+  "now_px": 68,
+  "target_px": 61
+ },
+ {
+  "tr": "MADEN ROBOTU",
+  "now": "BERGBAUROBOTER",
+  "tr_px": 57,
+  "now_px": 68,
+  "target_px": 61
+ },
+ {
+  "tr": "PLAZMA ATAR",
+  "now": "FEUERT PLASMA",
+  "tr_px": 52,
+  "now_px": 62,
+  "target_px": 56
+ },
+ {
+  "tr": "TAM İSABET!",
+  "now": "VOLLTREFFER!",
+  "tr_px": 47,
+  "now_px": 56,
+  "target_px": 50
+ },
+ {
+  "tr": "ALEVLİ OK",
+  "now": "FLAMMPFEIL",
+  "tr_px": 42,
+  "now_px": 50,
+  "target_px": 45
+ },
+ {
+  "tr": "DOLU ŞARJ",
+  "now": "VOLLLADUNG",
+  "tr_px": 42,
+  "now_px": 50,
+  "target_px": 45
+ },
+ {
+  "tr": "SİPER ÇIKIŞI",
+  "now": "SOG-AUSBRÜCHE",
+  "tr_px": 53,
+  "now_px": 63,
+  "target_px": 57
+ },
+ {
+  "tr": "KARA BULUT!",
+  "now": "DUNKELWOLKE!",
+  "tr_px": 48,
+  "now_px": 57,
+  "target_px": 51
+ },
+ {
+  "tr": "KARA DELİK!",
+  "now": "SCHWARZLOCH!",
+  "tr_px": 48,
+  "now_px": 57,
+  "target_px": 51
+ },
+ {
+  "tr": "RİTİM AYARI",
+  "now": "KALIBRIERUNG",
+  "tr_px": 48,
+  "now_px": 57,
+  "target_px": 51
+ },
+ {
+  "tr": "YILDIZ TOZU",
+  "now": "STERNENSTAUB",
+  "tr_px": 48,
+  "now_px": 57,
+  "target_px": 51
+ },
+ {
+  "tr": "BU HAMLEYİ GÖRDÜNÜZ MÜ?",
+  "now": "HABT IHR DIESEN ZUG GESEHEN?",
+  "tr_px": 107,
+  "now_px": 127,
+  "target_px": 115
+ },
+ {
+  "tr": "PLAZMA 4 YERİNE 3 VURUŞTA",
+  "now": "PLASMA NACH 3 STATT 4 TREFFERN",
+  "tr_px": 113,
+  "now_px": 134,
+  "target_px": 122
+ },
+ {
+  "tr": " YILDIZ GÜCÜ SEÇ",
+  "now": " STERNKRÄFTE HOLEN",
+  "tr_px": 70,
+  "now_px": 83,
+  "target_px": 75
+ },
+ {
+  "tr": "+15 SİKKE",
+  "now": "+15 MÜNZEN",
+  "tr_px": 38,
+  "now_px": 45,
+  "target_px": 41
+ },
+ {
+  "tr": "+20 SİKKE",
+  "now": "+20 MÜNZEN",
+  "tr_px": 38,
+  "now_px": 45,
+  "target_px": 41
+ },
+ {
+  "tr": "LAV TAŞI!",
+  "now": "LAVASTEIN!",
+  "tr_px": 38,
+  "now_px": 45,
+  "target_px": 41
+ },
+ {
+  "tr": "AĞIR TOYNAK",
+  "now": "SCHWERER HUF",
+  "tr_px": 49,
+  "now_px": 58,
+  "target_px": 52
+ },
+ {
+  "tr": " ÖZEL ATIŞ YAP",
+  "now": " SPEZIALSCHÜSSE",
+  "tr_px": 60,
+  "now_px": 71,
+  "target_px": 64
+ },
+ {
+  "tr": "VURDUĞUN DÜŞMAN 2 SN YANAR",
+  "now": "GETROFFENE FEINDE BRENNEN 2 SEK",
+  "tr_px": 121,
+  "now_px": 143,
+  "target_px": 130
+ },
+ {
+  "tr": "ONARIM BEDELİ",
+  "now": "REPARATURKOSTEN",
+  "tr_px": 61,
+  "now_px": 72,
+  "target_px": 65
+ },
+ {
+  "tr": "BİR KORSAN DAHA GİTTİ!",
+  "now": "WIEDER EIN PIRAT WENIGER!",
+  "tr_px": 95,
+  "now_px": 112,
+  "target_px": 102
+ },
+ {
+  "tr": "JOKEY KOĞUŞU",
+  "now": "JOCKEYQUARTIER",
+  "tr_px": 56,
+  "now_px": 66,
+  "target_px": 60
+ },
+ {
+  "tr": "KIRIK LENS",
+  "now": "LINSENBRUCH",
+  "tr_px": 45,
+  "now_px": 53,
+  "target_px": 48
+ },
+ {
+  "tr": "TEKNİK SEÇ",
+  "now": "TECHNIKWAHL",
+  "tr_px": 45,
+  "now_px": 53,
+  "target_px": 48
+ },
+ {
+  "tr": " KRİSTAL TOPLA",
+  "now": " KRISTALLE HOLEN",
+  "tr_px": 62,
+  "now_px": 73,
+  "target_px": 66
+ },
+ {
+  "tr": "ETAP İLERLEMESİ: %",
+  "now": "ETAPPENFORTSCHRITT: %",
+  "tr_px": 79,
+  "now_px": 93,
+  "target_px": 85
+ },
+ {
+  "tr": "BEDEL: 1 CAN",
+  "now": "PREIS: 1 LEBEN",
+  "tr_px": 51,
+  "now_px": 60,
+  "target_px": 55
+ },
+ {
+  "tr": "SİKKE → KRİSTAL",
+  "now": "MÜNZEN → KRISTALL",
+  "tr_px": 68,
+  "now_px": 80,
+  "target_px": 73
+ },
+ {
+  "tr": "TABAN HIZ +%",
+  "now": "GRUNDTEMPO +%",
+  "tr_px": 51,
+  "now_px": 60,
+  "target_px": 55
+ },
+ {
+  "tr": "BASKIN PÜSKÜRTÜLEMEDİ: -1 CAN",
+  "now": "ÜBERFALL NICHT ABGEWEHRT: -1 LEBEN",
+  "tr_px": 131,
+  "now_px": 154,
+  "target_px": 141
+ },
+ {
+  "tr": "SESİ BİRAZ GEÇ DUYUYORSUN",
+  "now": "DU HÖRST DEN TON ETWAS ZU SPÄT",
+  "tr_px": 114,
+  "now_px": 134,
+  "target_px": 123
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%20 HASAR",
+  "now": "ALLE SCHÜSSE +%20 SCHADEN",
+  "tr_px": 97,
+  "now_px": 114,
+  "target_px": 104
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%40 HASAR",
+  "now": "ALLE SCHÜSSE +%40 SCHADEN",
+  "tr_px": 97,
+  "now_px": 114,
+  "target_px": 104
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%60 HASAR",
+  "now": "ALLE SCHÜSSE +%60 SCHADEN",
+  "tr_px": 97,
+  "now_px": 114,
+  "target_px": 104
+ },
+ {
+  "tr": "TAKİPTE: NEFES +%50",
+  "now": "VERFOLGUNG: ATEM +%50",
+  "tr_px": 80,
+  "now_px": 94,
+  "target_px": 86
+ },
+ {
+  "tr": "YENİ KOŞU",
+  "now": "NEUER LAUF",
+  "tr_px": 40,
+  "now_px": 47,
+  "target_px": 43
+ },
+ {
+  "tr": "BARİYER: SIÇRA!",
+  "now": "BARRIERE: SPRING!",
+  "tr_px": 63,
+  "now_px": 74,
+  "target_px": 68
+ },
+ {
+  "tr": " KRİSTAL DAHA LAZIM",
+  "now": " KRISTALLE FEHLEN NOCH",
+  "tr_px": 86,
+  "now_px": 101,
+  "target_px": 92
+ },
+ {
+  "tr": "TOZKIRAN'IN KERVANI",
+  "now": "STAUBTEUFELS KARAWANE",
+  "tr_px": 86,
+  "now_px": 101,
+  "target_px": 92
+ },
+ {
+  "tr": "ZIRH DELEN",
+  "now": "PANZERBRUCH",
+  "tr_px": 46,
+  "now_px": 54,
+  "target_px": 49
+ },
+ {
+  "tr": "ALEV KUYRUK",
+  "now": "FLAMMSCHWEIF",
+  "tr_px": 52,
+  "now_px": 61,
+  "target_px": 56
+ },
+ {
+  "tr": "DAR PENCERE",
+  "now": "ENGES FENSTER",
+  "tr_px": 52,
+  "now_px": 61,
+  "target_px": 56
+ },
+ {
+  "tr": "DEMİR GÖLGE",
+  "now": "EISENSCHATTEN",
+  "tr_px": 52,
+  "now_px": 61,
+  "target_px": 56
+ },
+ {
+  "tr": "KOŞUDAN ÖNCE BİR YEM SEÇ",
+  "now": "WÄHL VOR DEM LAUF EIN FUTTER",
+  "tr_px": 110,
+  "now_px": 129,
+  "target_px": 118
+ },
+ {
+  "tr": "GÖK KOŞUSU",
+  "now": "HIMMELSLAUF",
+  "tr_px": 47,
+  "now_px": 55,
+  "target_px": 50
+ },
+ {
+  "tr": "IŞIK DİZİSİ",
+  "now": "LICHTERKETTE",
+  "tr_px": 47,
+  "now_px": 55,
+  "target_px": 50
+ },
+ {
+  "tr": "KEMAL USTA",
+  "now": "MEISTER KURT",
+  "tr_px": 47,
+  "now_px": 55,
+  "target_px": 50
+ },
+ {
+  "tr": "ÖRS DARBESİ!",
+  "now": "AMBOSSSCHLAG!",
+  "tr_px": 53,
+  "now_px": 62,
+  "target_px": 57
+ },
+ {
+  "tr": "İKİLİ GÜÇ ŞANSI 2 KAT",
+  "now": "CHANCE AUF DUO-KRAFT X2",
+  "tr_px": 90,
+  "now_px": 105,
+  "target_px": 97
+ },
+ {
+  "tr": "İNTİKAM SOĞUK YENİR, GALAKSİ!",
+  "now": "RACHE SERVIERT MAN KALT, GALAXIE!",
+  "tr_px": 127,
+  "now_px": 148,
+  "target_px": 137
+ },
+ {
+  "tr": "%50: +35 SİKKE, %50: -1 CAN",
+  "now": "%50: +35 MÜNZEN, %50: -1 LEBEN",
+  "tr_px": 103,
+  "now_px": 120,
+  "target_px": 111
+ },
+ {
+  "tr": "HAYALET ADIM",
+  "now": "GEISTERSCHRITT",
+  "tr_px": 55,
+  "now_px": 64,
+  "target_px": 59
+ },
+ {
+  "tr": "VİRAJ USTASI",
+  "now": "KURVENMEISTER",
+  "tr_px": 55,
+  "now_px": 64,
+  "target_px": 59
+ },
+ {
+  "tr": "GÖLGE İKİZİ",
+  "now": "SCHATTENKLON",
+  "tr_px": 49,
+  "now_px": 57,
+  "target_px": 52
+ },
+ {
+  "tr": "YENİ PİST: ",
+  "now": "NEUE PISTE: ",
+  "tr_px": 43,
+  "now_px": 50,
+  "target_px": 46
+ },
+ {
+  "tr": "YILDIZ GÜÇLERİN",
+  "now": "DEINE STERNKRÄFTE",
+  "tr_px": 68,
+  "now_px": 79,
+  "target_px": 73
+ },
+ {
+  "tr": "DOSTLARINA ŞEKER HEDİYE ET",
+  "now": "SCHENK DEINEN FREUNDEN ZUCKER",
+  "tr_px": 118,
+  "now_px": 137,
+  "target_px": 127
+ },
+ {
+  "tr": "KAPTAN KAÇTI!",
+  "now": "KAPITÄN FLIEHT!",
+  "tr_px": 56,
+  "now_px": 65,
+  "target_px": 60
+ },
+ {
+  "tr": "KAOS ŞİFASI",
+  "now": "CHAOSHEILUNG",
+  "tr_px": 50,
+  "now_px": 58,
+  "target_px": 54
+ },
+ {
+  "tr": "NEBULA SİSİ",
+  "now": "NEBULA-NEBEL",
+  "tr_px": 50,
+  "now_px": 58,
+  "target_px": 54
+ },
+ {
+  "tr": "ÜÇ GÖZ ZİB",
+  "now": "DREIAUG-ZIB",
+  "tr_px": 44,
+  "now_px": 51,
+  "target_px": 47
+ },
+ {
+  "tr": "SONDAN GELİYORSUN!",
+  "now": "DU KOMMST VON HINTEN!",
+  "tr_px": 82,
+  "now_px": 95,
+  "target_px": 88
+ },
+ {
+  "tr": "SPONSORUMUZDAN BİR HEDİYE!",
+  "now": "EIN GESCHENK UNSERES SPONSORS!",
+  "tr_px": 120,
+  "now_px": 139,
+  "target_px": 129
+ },
+ {
+  "tr": "KİRLİ OYUN! SEYİRCİ BAYILIYOR!",
+  "now": "FOULSPIEL! DAS PUBLIKUM LIEBT ES!",
+  "tr_px": 127,
+  "now_px": 147,
+  "target_px": 137
+ },
+ {
+  "tr": "GALAKSİ KUPASINI KAZAN",
+  "now": "GEWINNE DEN GALAXIE-POKAL",
+  "tr_px": 102,
+  "now_px": 118,
+  "target_px": 110
+ },
+ {
+  "tr": "GÖK DARBESİ",
+  "now": "HIMMELSSTOSS",
+  "tr_px": 51,
+  "now_px": 59,
+  "target_px": 55
+ },
+ {
+  "tr": "BİR CAN VER, BİR PAZARLIK SEÇ",
+  "now": "GIB EIN LEBEN, WÄHLE EINEN HANDEL",
+  "tr_px": 129,
+  "now_px": 149,
+  "target_px": 139
+ },
+ {
+  "tr": "HIZ +%10, AZAMİ CAN -1",
+  "now": "TEMPO +%10, MAX. LEBEN -1",
+  "tr_px": 91,
+  "now_px": 105,
+  "target_px": 98
+ },
+ {
+  "tr": "PLAZMA TOPU",
+  "now": "PLASMAKANONE",
+  "tr_px": 52,
+  "now_px": 60,
+  "target_px": 56
+ },
+ {
+  "tr": "TOPLAM KRİSTAL",
+  "now": "KRISTALLE GESAMT",
+  "tr_px": 65,
+  "now_px": 75,
+  "target_px": 70
+ },
+ {
+  "tr": "SONRAKİ ETAP 12 KOMBOYLA BAŞLA",
+  "now": "NÄCHSTE ETAPPE MIT 12 KOMBO STARTEN",
+  "tr_px": 137,
+  "now_px": 158,
+  "target_px": 147
+ },
+ {
+  "tr": "SONRAKİ ETAP 15 KOMBOYLA BAŞLA",
+  "now": "NÄCHSTE ETAPPE MIT 15 KOMBO STARTEN",
+  "tr_px": 137,
+  "now_px": 158,
+  "target_px": 147
+ },
+ {
+  "tr": "TEKNİK HAZIR! ",
+  "now": "TECHNIK BEREIT! ",
+  "tr_px": 59,
+  "now_px": 68,
+  "target_px": 63
+ },
+ {
+  "tr": "GALAKSİ ARENASI'NA ULAŞ",
+  "now": "ERREICHE DIE GALAXIE-ARENA",
+  "tr_px": 105,
+  "now_px": 121,
+  "target_px": 113
+ },
+ {
+  "tr": "1 ŞEKER · 6 KOŞU",
+  "now": "1 ZUCKER · 6 LÄUFE",
+  "tr_px": 66,
+  "now_px": 76,
+  "target_px": 71
+ },
+ {
+  "tr": "DEMİRCİ KORHAN",
+  "now": "SCHMIED GLUTHARD",
+  "tr_px": 66,
+  "now_px": 76,
+  "target_px": 71
+ },
+ {
+  "tr": " SİKKE TOPLA",
+  "now": " MÜNZEN HOLEN",
+  "tr_px": 53,
+  "now_px": 61,
+  "target_px": 57
+ },
+ {
+  "tr": "RAY ARBALETİ",
+  "now": "RAIL-ARMBRUST",
+  "tr_px": 54,
+  "now_px": 62,
+  "target_px": 58
+ },
+ {
+  "tr": "BU NE CESARET!",
+  "now": "WAS FÜR EIN MUT!",
+  "tr_px": 61,
+  "now_px": 70,
+  "target_px": 65
+ },
+ {
+  "tr": " ALTTAKİ DÜĞMEYE BAS: HAMLE!",
+  "now": " UNTEN DEN KNOPF DRÜCKEN: SPURT!",
+  "tr_px": 123,
+  "now_px": 141,
+  "target_px": 132
+ },
+ {
+  "tr": "+1 AZAMİ CAN VE 1 CAN YENİLE",
+  "now": "+1 MAX. LEBEN UND 1 LEBEN HEILEN",
+  "tr_px": 123,
+  "now_px": 141,
+  "target_px": 132
+ },
+ {
+  "tr": "ÖNCE BİR YILDIZ GÜCÜ KAZAN",
+  "now": "ERST EINE STERNKRAFT GEWINNEN",
+  "tr_px": 117,
+  "now_px": 134,
+  "target_px": 126
+ },
+ {
+  "tr": "KAPI AÇIK: BİRİNİ EVE GÖNDER",
+  "now": "TOR OFFEN: SCHICK JEMANDEN HEIM",
+  "tr_px": 124,
+  "now_px": 142,
+  "target_px": 133
+ },
+ {
+  "tr": "İÇİNİ BİR SERİNLİK KAPLADI.",
+  "now": "EINE KÜHLE RUHE ERFÜLLTE DICH.",
+  "tr_px": 118,
+  "now_px": 135,
+  "target_px": 127
+ },
+ {
+  "tr": "ETAP SONU +1 CAN",
+  "now": "+1 LEBEN JE ETAPPE",
+  "tr_px": 70,
+  "now_px": 80,
+  "target_px": 75
+ },
+ {
+  "tr": "FİNALİ İZLE",
+  "now": "FINALE SEHEN",
+  "tr_px": 49,
+  "now_px": 56,
+  "target_px": 52
+ },
+ {
+  "tr": "KARA DELİK KAÇIŞI",
+  "now": "SCHWARZLOCH-FLUCHT",
+  "tr_px": 77,
+  "now_px": 88,
+  "target_px": 83
+ },
+ {
+  "tr": "BÜYÜK DÜELLO BAŞLIYOR!",
+  "now": "DAS GROSSE DUELL BEGINNT!",
+  "tr_px": 99,
+  "now_px": 113,
+  "target_px": 106
+ },
+ {
+  "tr": "HER NALDA +1 AZAMİ CAN",
+  "now": "JEDES EISEN: +1 MAX. LEBEN",
+  "tr_px": 99,
+  "now_px": 113,
+  "target_px": 106
+ },
+ {
+  "tr": "SONRAKİ ETAP +2 KALKAN",
+  "now": "NÄCHSTE ETAPPE +2 SCHILDE",
+  "tr_px": 99,
+  "now_px": 113,
+  "target_px": 106
+ },
+ {
+  "tr": ": SİLAHIN DÖVÜLDÜ!",
+  "now": ": WAFFE GESCHMIEDET!",
+  "tr_px": 78,
+  "now_px": 89,
+  "target_px": 84
+ },
+ {
+  "tr": "KİBRİNİ KIRDIN!",
+  "now": "STOLZ GEBROCHEN!",
+  "tr_px": 64,
+  "now_px": 73,
+  "target_px": 69
+ },
+ {
+  "tr": "YANAŞIR, \"!\" SONRA OMUZ ATAR",
+  "now": "RÜCKT HERAN, \"!\" - DANN RAMMT ER",
+  "tr_px": 121,
+  "now_px": 138,
+  "target_px": 130
+ },
+ {
+  "tr": "CÜRUF GOLEMİ",
+  "now": "SCHLACKEGOLEM",
+  "tr_px": 57,
+  "now_px": 65,
+  "target_px": 61
+ },
+ {
+  "tr": "PATLAYAN UÇ",
+  "now": "SPRENGSPITZE",
+  "tr_px": 50,
+  "now_px": 57,
+  "target_px": 54
+ },
+ {
+  "tr": "KAPIYA TOSLADI!",
+  "now": "INS TOR GEKRACHT!",
+  "tr_px": 65,
+  "now_px": 74,
+  "target_px": 70
+ },
+ {
+  "tr": "MÜZİĞİ YUTUYOR!",
+  "now": "FRISST DIE MUSIK!",
+  "tr_px": 65,
+  "now_px": 74,
+  "target_px": 70
+ },
+ {
+  "tr": "BİR YOL OLAYINDA SEÇİM YAP",
+  "now": "BEI EINEM WEGEREIGNIS WÄHLEN",
+  "tr_px": 116,
+  "now_px": 132,
+  "target_px": 125
+ },
+ {
+  "tr": "GALAKSİ KUPASI'NI KAZAN",
+  "now": "GEWINNE DEN GALAXIE-POKAL",
+  "tr_px": 104,
+  "now_px": 118,
+  "target_px": 112
+ },
+ {
+  "tr": "KESME ŞEKER",
+  "now": "ZUCKERWÜRFEL",
+  "tr_px": 53,
+  "now_px": 60,
+  "target_px": 57
+ },
+ {
+  "tr": "TAM VURUŞ, KAPI AÇIK!",
+  "now": "VOLLTREFFER, TOR OFFEN!",
+  "tr_px": 91,
+  "now_px": 103,
+  "target_px": 98
+ },
+ {
+  "tr": "GÖZDE TAKIMYILDIZINI SEÇ",
+  "now": "LIEBLINGS-STERNBILD WÄHLEN",
+  "tr_px": 109,
+  "now_px": 123,
+  "target_px": 117
+ },
+ {
+  "tr": "RİTİMDE 3 YERİNE 5 ŞOK TOPU",
+  "now": "IM TAKT 5 STATT 3 SCHOCKKUGELN",
+  "tr_px": 117,
+  "now_px": 132,
+  "target_px": 126
+ },
+ {
+  "tr": "40 SİKKEYE AYARLAT",
+  "now": "40 MÜNZEN: JUSTIEREN",
+  "tr_px": 79,
+  "now_px": 89,
+  "target_px": 85
+ },
+ {
+  "tr": "SAĞA VİRAJ →",
+  "now": "RECHTSKURVE →",
+  "tr_px": 56,
+  "now_px": 63,
+  "target_px": 60
+ },
+ {
+  "tr": "İKİ YILDIZ! KAZANDIN.",
+  "now": "ZWEI STERNE! GEWONNEN.",
+  "tr_px": 88,
+  "now_px": 99,
+  "target_px": 95
+ },
+ {
+  "tr": " UZUN NOTAYI SONUNA KADAR TUT",
+  "now": " LANGE NOTEN BIS ZUM ENDE HALTEN",
+  "tr_px": 129,
+  "now_px": 145,
+  "target_px": 139
+ },
+ {
+  "tr": "HER ETAPTA İLK ",
+  "now": "JE ETAPPE: ERSTE ",
+  "tr_px": 65,
+  "now_px": 73,
+  "target_px": 70
+ }
+]

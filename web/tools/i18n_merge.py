@@ -6,11 +6,14 @@ src = {}
 for sp in sorted(glob.glob(os.path.join(W, 'work', 'src_*.json'))):
     for it in json.load(open(sp, encoding='utf-8')): src[it['tr']] = True
 KEEP = {'DÖRTNALA': 'DÖRTNALA'}   # the game's name stays the same everywhere
+# short abbreviations the scanner skipped (no vowel): level = SEVİYE
+ABBR = {'en': {'SV': 'LV', 'SV ': 'LV ', ' SV': ' LV', ' SV ': ' LV '}, 'de': {'SV': 'ST', 'SV ': 'ST ', ' SV': ' ST', ' SV ': ' ST '},
+        'es': {'SV': 'NV', 'SV ': 'NV ', ' SV': ' NV', ' SV ': ' NV '}, 'id': {'SV': 'LV', 'SV ': 'LV ', ' SV': ' LV', ' SV ': ' LV '}}
 for lang in ('en', 'de', 'es', 'id'):
     out = {}
     for fp in sorted(glob.glob(os.path.join(W, 'work', f'{lang}_[0-9]*.json'))):
         out.update(json.load(open(fp, encoding='utf-8')))
     out = {k: v for k, v in out.items() if k in src}
-    out.update({k: v for k, v in KEEP.items() if k in src})
+    out.update({k: v for k, v in KEEP.items() if k in src}); out.update(ABBR[lang])
     json.dump(dict(sorted(out.items())), open(os.path.join(W, f'{lang}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
     print(lang, len(out), '/', len(src))

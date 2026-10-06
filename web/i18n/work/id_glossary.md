@@ -10,13 +10,13 @@ Turkish suffixes glued to names/numbers are dropped. Short labels <= Turkish len
 | SIKKE | KOIN | run currency |
 | KOMBO | KOMBO | |
 | MUKEMMEL | SEMPURNA | perfect hit |
-| IYI (hit grade) | BAGUS | good hit |
-| ISKA | MELESET | miss |
+| IYI (hit grade) | BAIK | good hit |
+| ISKA | LUPUT (judge label) / MELESET (sentences) | miss |
 | HAMLE | DASH | dash move |
 | NEFES | NAPAS | breath / stamina |
 | SIPER | SLIP | draft / slipstream behind a rival |
 | ETAP | ETAPE | stage |
-| KAPI | GERBANG (gate) / PINTU (door home) | |
+| KAPI | GERBANG (rhythm gate and the portal home) | |
 | YILDIZ GUCU | DAYA BINTANG | star power / boon |
 | GUC (boon) | DAYA | RUH GUCU = DAYA ROH |
 | SAMPIYON | JUARA | |
@@ -58,15 +58,24 @@ Turkish suffixes glued to names/numbers are dropped. Short labels <= Turkish len
 | BOSS | BOS | |
 | SIRADAN / NADIR / DESTANSI | BIASA / LANGKA / EPIK | rarity |
 | AZAMI | MAKS | |
+| SON DUZLUK | LURUSAN AKHIR | final straight |
+| DORTNAL MODU | MODE GALOP | fever mode |
+| ROVANS / ROVANSCI | REVANS / BEBUYUTAN | rematch / nemesis |
+| US PUANI | POIN BASIS | base points |
+| OLAY (yol olayi) | EVENT (EVENT JALAN) | road event |
+| CEKIC / ORS | PALU / LANDASAN | hammer / anvil |
+| LANET / LUTUF | KUTUKAN / BERKAH | chaos curse / blessing |
+| HATIRA | KENANGAN | keepsake |
+| SUNUCU | HOST | speaker label HOST GRAX |
 
 ## Station rooms
 | Turkish | Indonesian |
 |---|---|
 | KAMARA | KABIN |
-| AHIR (MODULU) | KANDANG |
+| AHIR (MODULU) | KANDANG (map label: ISTAL) |
 | GOREV EKRANI | LAYAR MISI |
 | YEM DEPOSU | GUDANG PAKAN |
-| CEPHANELIK | SENJATA |
+| CEPHANELIK | ARSENAL |
 | NAL ATOLYESI | BENGKEL TAPAL |
 | GOZLEMEVI | TEROPONG |
 | JOKEY KOGUSU / KOGUS | ASRAMA JOKI / ASRAMA |
@@ -82,7 +91,7 @@ Turkish suffixes glued to names/numbers are dropped. Short labels <= Turkish len
 | AYSE | AYU |
 | KEMAL / KEMAL USTA | KARTO / PAK KARTO |
 | TAYFUN / CILGIN TAYFUN | TOPAN / TOPAN SI GILA |
-| KORHAN / DEMIRCI KORHAN | BARA / BARA SI PANDAI BESI |
+| KORHAN / DEMIRCI KORHAN / KORHAN USTA | BARA / BARA SI PANDAI BESI / MPU BARA |
 | YILDIZ (horse) | BINTANG |
 | KOROGLU | GATOTKACA (Javanese wayang hero) |
 
@@ -104,9 +113,9 @@ Turkish suffixes glued to names/numbers are dropped. Short labels <= Turkish len
 | SISLI MANTIS | MANTIS KABUT |
 | BUZDIS | TARING ES |
 | KAR TANESI | KEPING SALJU |
-| TOZKIRAN | PEMECAH DEBU |
-| UC GOZ ZIB | ZIB MATA TIGA |
-| SERAP | FATAMORGANA |
+| TOZKIRAN | PECAH DEBU |
+| UC GOZ ZIB | ZIB TRIMATA |
+| SERAP | ILUSI (race: ROH ILUSI) |
 | ALEV KUYRUK | EKOR API |
 | GRAX'IN GOLGESI | BAYANGAN GRAX |
 | ZEFIR | SEPOI |
@@ -121,4 +130,6 @@ Turkish suffixes glued to names/numbers are dropped. Short labels <= Turkish len
 | BUZ KRALICESI NIVA | RATU ES NIVA |
 | KUM SOLUCANI ZARG | CACING PASIR ZARG |
 | BULUT COBANI BORA | GEMBALA AWAN BORA |
+| GOLGE's real name RUZGAR | BAYU |
+| DORTNALA (logo) | DORTNALA (brand kept, accent dropped) |
 | BIP-0, PIP-PIP, ZIB ... | unchanged (no Turkish dots) |

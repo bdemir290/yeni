@@ -352,7 +352,7 @@ SCENES.boon = {
     if (duo) { sprC(tinted(SPIRIT_ICON[b.duo[0]], spA.color), x + 15, y + 14); sprC(tinted(SPIRIT_ICON[b.duo[1]], spB.color), x + 21, y + 20); }
     else sprC(spiritArt(b.sp, 16) || tinted(SPIRIT_ICON[b.sp], spA.color), x + 18, y + 17);
     text(b.name, x + 34, y + 4, duo ? C.gold : C.yellow);
-    const lvTxt = duo ? TX('İKİLİ') : o.cur === 0 ? TX('YENİ') : 'SV ' + o.cur + '→' + (o.cur + o.gain);
+    const lvTxt = duo ? TX('İKİLİ') : o.cur === 0 ? TX('YENİ') : TX('SV ') + o.cur + '→' + (o.cur + o.gain);
     text(lvTxt, x + w - 6, y + 4, duo ? C.gold : o.cur === 0 ? C.green : C.sky, 'right');
     const lines = wrapText(b.desc(o.cur + o.gain), w - 42);
     lines.slice(0, o.replaces ? 2 : 3).forEach((ln, j) => text(ln, x + 34, y + 14 + j * 9, C.lgray));

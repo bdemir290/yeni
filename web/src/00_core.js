@@ -62,7 +62,14 @@ function hash2(x, y) {
 const TRUP_CACHE = new Map();
 const trUp = s => {
   s = String(s); let u = TRUP_CACHE.get(s);
-  if (u === undefined) { u = s.toLocaleUpperCase(LANG === 'tr' ? 'tr-TR' : LANG); if (TRUP_CACHE.size > 2000) TRUP_CACHE.clear(); TRUP_CACHE.set(s, u); }
+  if (u === undefined) {
+    u = s.toLocaleUpperCase(LANG === 'tr' ? 'tr-TR' : LANG);
+    if (LANG !== 'tr') {
+      u = u.replace(/%(\d+)/g, '$1%');   // Turkish writes %40, the others 40%
+      if (LANG === 'en') u = u.replace(/\b(\d+)\. PLACE/g, (m, n) => n + ({ 1: 'ST', 2: 'ND', 3: 'RD' }[n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] || 'TH') + ' PLACE');
+    }
+    if (TRUP_CACHE.size > 2000) TRUP_CACHE.clear(); TRUP_CACHE.set(s, u);
+  }
   return u;
 };
 

@@ -208,7 +208,7 @@ Object.assign(SCENES.run, {
     if (N) { N.lv = Math.min(3, N.lv + 1); N.wins = (N.wins || 0) + 1; } else META.nemesis = { id, lv: 1, wins: 1 };
     const lv = META.nemesis.lv;
     RUN.nemesisNew = RIVAL_BY_ID[id].name;
-    toast(TX('RÖVANŞÇI: ') + RIVAL_BY_ID[id].name + (lv > 1 ? ' SV ' + lv : ''), C.red, 'crown');
+    toast(TX('RÖVANŞÇI: ') + RIVAL_BY_ID[id].name + (lv > 1 ? TX(' SV ') + lv : ''), C.red, 'crown');
     saveMeta();
   },
   takeRevenge() {

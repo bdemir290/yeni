@@ -22,7 +22,7 @@ Units: SN (saniye) -> S ; SV (seviye) -> NV ; X2 stays.
 | SEYİR DEFTERİ | BITÁCORA | logbook |
 | İSTASYON | ESTACIÓN | |
 | BÖLME (Earth compartment) | MÓDULO | e.g. DÜNYA BÖLMESİ -> MÓDULO TERRESTRE |
-| ROZET | INSIGNIA | |
+| ROZET | EMBLEMA | (short label; MAZO for ÇEKİÇ label, MARTILLO in text) |
 | ŞEKER | TERRÓN / TERRONES | sugar cube |
 | GÖREV | MISIÓN | |
 | LİG | LIGA | |
@@ -77,13 +77,13 @@ Units: SN (saniye) -> S ; SV (seviye) -> NV ; X2 stays.
 | Turkish | Spanish |
 |---|---|
 | GECE KANADI | ALA NOCTURNA |
-| DEMİR KISKAÇ | PINZA DE HIERRO |
+| DEMİR KISKAÇ | PINZA FÉRREA |
 | SİSLİ MANTİS | MANTIS BRUMOSA |
-| BUZDİŞ | COLMILLO HELADO |
-| KAR TANESİ | COPO DE NIEVE |
+| BUZDİŞ | DIENTEFRÍO |
+| KAR TANESİ | COPITO |
 | TOZKIRAN | ROMPEPOLVO |
-| ÜÇ GÖZ ZİB | ZIB TRES OJOS |
-| SERAP | ESPEJISMO |
+| ÜÇ GÖZ ZİB | ZIB 3 OJOS |
+| SERAP | MIRAJE (name); ESPEJISMO = common noun mirage |
 | ALEV KUYRUK | COLA DE FUEGO |
 | GRAX'IN GÖLGESİ | SOMBRA DE GRAX |
 | ZEFİR | CÉFIRO |
@@ -96,22 +96,46 @@ Units: SN (saniye) -> S ; SV (seviye) -> NV ; X2 stays.
 | RÜZGAR KISRAĞI | YEGUA DEL VIENTO |
 | PRENS KRİSTALO | PRÍNCIPE KRISTALO |
 | ULUYAN GORM | GORM AULLADOR |
-| BUZ KRALİÇESİ NİVA | NIVA REINA DE HIELO |
-| KUM SOLUCANI ZARG | ZARG GUSANO DE ARENA |
-| BULUT ÇOBANI BORA | BORA PASTOR DE NUBES |
+| BUZ KRALİÇESİ NİVA | REINA HELADA NIVA (boss names must END with the proper name: code uses last word) |
+| KUM SOLUCANI ZARG | GUSANO DE ARENA ZARG |
+| BULUT ÇOBANI BORA | PASTOR DE NUBES BORA |
 | LUMO ÇAYIRI | PRADERA LUMO |
 | MANTAR AYI | LUNA HONGO |
-| BUZ HALKASI | ANILLO DE HIELO |
-| KIZIL KUM | ARENAS ROJAS |
-| FIRTINA DEVİ | GIGANTE TORMENTA |
-| KOR AY | LUNA ASCUA |
+| BUZ HALKASI | ANILLO HELADO |
+| KIZIL KUM | DUNAS ROJAS (first word must differ from ARENA GALÁCTICA: rival list shows first word) |
+| FIRTINA DEVİ | TITÁN TORMENTA |
+| KOR AY | ASCUA LUNAR (first word must differ from LUNA HONGO) |
 | GALAKSİ ARENASI | ARENA GALÁCTICA |
 | ALTIN NAL KUPASI | COPA HERRADURA DE ORO |
 | GALAKSİ KUPASI | COPA GALÁCTICA |
 | KÖROĞLU (folk hero) | EL CID (KÖROĞLU NARASI -> GRITO DEL CID, KÖROĞLU ÖFKESİ -> FURIA DEL CID) |
 
 ## Rarity
-SIRADAN -> COMÚN ; others decided in chunk 1 and reused.
+SIRADAN -> COMÚN ; NADİR -> RARO ; DESTANSI -> ÉPICO
+
+## Other recurring decisions
+| Turkish | Spanish |
+|---|---|
+| DÜNYALI | TERRÍCOLA (Grax crowd lines use "LA TIERRA" to stay gender-neutral) |
+| SUNUCU GRAX | GRAX (speaker label) |
+| NAL (horseshoe) | HERRADURA; horseshoe items: DE HIERRO / IÓNICA / METEÓRICA / RÍTMICA; ALTIN NAL boon: H. DE ORO |
+| NAL ATÖLYESİ / CEPHANELİK / YEM DEPOSU / REVİR / SERA / KAMARA | HERRERÍA / ARSENAL / DESPENSA / CLÍNICA / HUERTO / CAMAROTE |
+| AHIR (MODÜLÜ) / JOKEY KOĞUŞU / GÖREV EKRANI / GÖZLEMEVİ / VİTRİN | ESTABLO / BARRACÓN / MISIONES / OBSERVATORIO / VITRINA |
+| UZAY PAZARI / PAZAR | BAZAR CÓSMICO / BAZAR |
+| KAOS KAPISI / LANET / LÜTUF | PUERTA DEL CAOS / CASTIGO / DON |
+| YOL OLAYI | IMPREVISTO |
+| RÖVANŞ / RÖVANŞÇI | REVANCHA / NÉMESIS |
+| DÖRTNAL MODU | MODO GALOPE ; title DÖRTNALA -> AL GALOPE |
+| KIL PAYI | ROCE |
+| REYTİNG | AUDIENCIA |
+| DOSYA (rival file) | FICHA (BIP's computer file: ARCHIVO) |
+| GÜNLÜK ERZAK / GÜNÜN KOŞUSU | RACIÓN DIARIA / RETO DIARIO |
+| ŞAMPİYON YARIŞI | RETO DEL CAMPEÓN |
+| ÇAĞRI slot / KÖROĞLU | LLAMADA / EL CID |
+| ŞEKER as count label | TERRÓN (stat row: AZÚCAR) |
+| MÜKEMMEL / İYİ / ISKA / ERKEN / GEÇ | PERFECTO / BIEN / FALLO / PRONTO / TARDE |
+| AÇIK / KAPALI | SÍ / NO |
+| AYŞE'NİN KURDELESİ etc. keepsakes | EL LAZO DE LUCÍA, CRONÓMETRO DE RAMÓN, GAFAS DE TOÑO, BOLSA DE MOKO, PILA DE RESERVA DE BIP, HERRADURA DE ROCÍO |
 
 ## Style
 - Grax: flashy TV host ("¡DAMAS Y CABALLEROS!", "¡QUÉ ESPECTÁCULO!").

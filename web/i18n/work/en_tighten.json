@@ -1,0 +1,1675 @@
+[
+ {
+  "tr": "BU SEFER ",
+  "now": "THIS TIME YOU MADE IT ALL THE WAY TO ",
+  "tr_px": 40,
+  "now_px": 159,
+  "target_px": 43
+ },
+ {
+  "tr": " SİKKENİ ",
+  "now": " AND I'LL PAY YOUR COINS BACK ",
+  "tr_px": 38,
+  "now_px": 128,
+  "target_px": 41
+ },
+ {
+  "tr": "LİGDE ",
+  "now": "LEAGUE: UP TO RANK ",
+  "tr_px": 26,
+  "now_px": 82,
+  "target_px": 28
+ },
+ {
+  "tr": "AL",
+  "now": "CLAIM",
+  "tr_px": 9,
+  "now_px": 24,
+  "target_px": 9
+ },
+ {
+  "tr": "EK",
+  "now": "PLANT",
+  "tr_px": 9,
+  "now_px": 23,
+  "target_px": 9
+ },
+ {
+  "tr": "İLK ",
+  "now": "MAKE TOP ",
+  "tr_px": 16,
+  "now_px": 40,
+  "target_px": 17
+ },
+ {
+  "tr": "KOŞUYA ",
+  "now": "START RUNS WITH ",
+  "tr_px": 31,
+  "now_px": 70,
+  "target_px": 33
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİRKEN ",
+  "now": "LANE CHANGES LIFT YOU OFF THE GROUND FOR ",
+  "tr_px": 89,
+  "now_px": 184,
+  "target_px": 96
+ },
+ {
+  "tr": "TEKNİK HAZIR! ",
+  "now": "SKILL READY! TAP THE BOTTOM ",
+  "tr_px": 59,
+  "now_px": 121,
+  "target_px": 63
+ },
+ {
+  "tr": "LİG ",
+  "now": "LEAGUE ",
+  "tr_px": 16,
+  "now_px": 32,
+  "target_px": 17
+ },
+ {
+  "tr": "ETAPLARA ",
+  "now": "START STAGES WITH ",
+  "tr_px": 41,
+  "now_px": 79,
+  "target_px": 44
+ },
+ {
+  "tr": "KOR AY",
+  "now": "EMBER MOON",
+  "tr_px": 26,
+  "now_px": 49,
+  "target_px": 28
+ },
+ {
+  "tr": " KEZ",
+  "now": " TIME(S)",
+  "tr_px": 17,
+  "now_px": 32,
+  "target_px": 18
+ },
+ {
+  "tr": "İTTİ!",
+  "now": "SHOVED!",
+  "tr_px": 17,
+  "now_px": 32,
+  "target_px": 18
+ },
+ {
+  "tr": "HIZ",
+  "now": "SPEED",
+  "tr_px": 13,
+  "now_px": 24,
+  "target_px": 14
+ },
+ {
+  "tr": "TAK",
+  "now": "EQUIP",
+  "tr_px": 13,
+  "now_px": 23,
+  "target_px": 14
+ },
+ {
+  "tr": "BUZ ERİDİ DİYE SEVİNME DÜNYALI. ÇÖLDE SENİ KUM YUTACAK!",
+  "now": "DON'T CELEBRATE JUST BECAUSE THE ICE MELTED, EARTHLING. IN THE DESERT, THE SAND WILL SWALLOW YOU!",
+  "tr_px": 245,
+  "now_px": 429,
+  "target_px": 306
+ },
+ {
+  "tr": " HIZ",
+  "now": " SPEED",
+  "tr_px": 16,
+  "now_px": 27,
+  "target_px": 17
+ },
+ {
+  "tr": "GÜÇ!",
+  "now": "POWER!",
+  "tr_px": 16,
+  "now_px": 27,
+  "target_px": 17
+ },
+ {
+  "tr": "GÜÇ ",
+  "now": "POWER ",
+  "tr_px": 17,
+  "now_px": 28,
+  "target_px": 18
+ },
+ {
+  "tr": "ÇİFT!",
+  "now": "DOUBLE!",
+  "tr_px": 19,
+  "now_px": 31,
+  "target_px": 20
+ },
+ {
+  "tr": "BAS!",
+  "now": "PRESS!",
+  "tr_px": 16,
+  "now_px": 26,
+  "target_px": 17
+ },
+ {
+  "tr": "BÖLMENE DE TEZGAH KURARIM!",
+  "now": "I'LL SET UP A STALL IN YOUR COMPARTMENT TOO!",
+  "tr_px": 120,
+  "now_px": 191,
+  "target_px": 129
+ },
+ {
+  "tr": "HER ",
+  "now": "EVERY ",
+  "tr_px": 17,
+  "now_px": 27,
+  "target_px": 18
+ },
+ {
+  "tr": "SAĞ",
+  "now": "RIGHT",
+  "tr_px": 14,
+  "now_px": 22,
+  "target_px": 15
+ },
+ {
+  "tr": "ÖRSÜM SUSTU. YÜZ YILDIR İLK KEZ BİRİ BENİ YENDİ, DÜNYALI.",
+  "now": "MY ANVIL FALLS SILENT. FIRST TIME IN A HUNDRED YEARS SOMEONE HAS BEATEN ME, EARTHLING.",
+  "tr_px": 245,
+  "now_px": 384,
+  "target_px": 306
+ },
+ {
+  "tr": "RİTİM! TOYNAK SESİNİ DİNLE, UZAYDA BİLE AYNI.",
+  "now": "RHYTHM! LISTEN TO THE HOOFBEATS - EVEN IN SPACE THEY SOUND THE SAME.",
+  "tr_px": 192,
+  "now_px": 300,
+  "target_px": 240
+ },
+ {
+  "tr": "DÜNYALI PİSTTE, GÖZLER ONDA!",
+  "now": "THE EARTHLING'S ON THE TRACK! ALL EYES HERE!",
+  "tr_px": 122,
+  "now_px": 190,
+  "target_px": 131
+ },
+ {
+  "tr": "AHIR",
+  "now": "STABLE",
+  "tr_px": 18,
+  "now_px": 28,
+  "target_px": 19
+ },
+ {
+  "tr": "SABRIM TÜKENDİ, DÜNYALI. İLK KEZ.",
+  "now": "MY PATIENCE RAN OUT, EARTHLING. FOR THE FIRST TIME.",
+  "tr_px": 142,
+  "now_px": 220,
+  "target_px": 177
+ },
+ {
+  "tr": "İŞTE BÜYÜK KAPIŞMA!",
+  "now": "HERE COMES THE BIG SHOWDOWN!",
+  "tr_px": 84,
+  "now_px": 129,
+  "target_px": 90
+ },
+ {
+  "tr": "TEKNİĞİNİ ",
+  "now": "USE YOUR SKILL ",
+  "tr_px": 43,
+  "now_px": 66,
+  "target_px": 46
+ },
+ {
+  "tr": " BÖLMEYE YERLEŞTİ!",
+  "now": " ADDED TO YOUR COMPARTMENT!",
+  "tr_px": 79,
+  "now_px": 121,
+  "target_px": 85
+ },
+ {
+  "tr": "↓ AŞAĞI KAYDIR YA DA ",
+  "now": "↓ SWIPE DOWN OR TAP THE BOTTOM ",
+  "tr_px": 91,
+  "now_px": 139,
+  "target_px": 98
+ },
+ {
+  "tr": "SERA",
+  "now": "GARDEN",
+  "tr_px": 19,
+  "now_px": 29,
+  "target_px": 20
+ },
+ {
+  "tr": "TAZE SÜSLER GELDİ, DÖRT KOLUMLA TAŞIDIM!",
+  "now": "FRESH DECORATIONS ARE IN - I CARRIED THEM WITH ALL FOUR ARMS!",
+  "tr_px": 179,
+  "now_px": 273,
+  "target_px": 223
+ },
+ {
+  "tr": "SÖNMEDEN EVE VARACAĞIM! SEN DE SÖNME, DÜNYALI!",
+  "now": "I'LL MAKE IT HOME BEFORE I BURN OUT! DON'T YOU BURN OUT EITHER, EARTHLING!",
+  "tr_px": 210,
+  "now_px": 318,
+  "target_px": 262
+ },
+ {
+  "tr": "İNTİKAM SOĞUK YENİR, GALAKSİ!",
+  "now": "REVENGE IS A DISH BEST SERVED COLD, GALAXY!",
+  "tr_px": 127,
+  "now_px": 192,
+  "target_px": 137
+ },
+ {
+  "tr": "GALAKSİ LİGİ: ",
+  "now": "GALAXY LEAGUE: RANK ",
+  "tr_px": 59,
+  "now_px": 89,
+  "target_px": 63
+ },
+ {
+  "tr": "TOZU DUMANA KATTIN, KAÇTIN!",
+  "now": "YOU KICKED UP A DUST CLOUD AND GOT AWAY!",
+  "tr_px": 117,
+  "now_px": 176,
+  "target_px": 126
+ },
+ {
+  "tr": "ŞAMPİYON SAHNEDE! REKOR YAYIN!",
+  "now": "THE CHAMPION TAKES THE STAGE! RECORD RATINGS!",
+  "tr_px": 133,
+  "now_px": 200,
+  "target_px": 143
+ },
+ {
+  "tr": "TRİBÜNLER AYAKTA. ALTIN NAL KUPASI ÜÇÜNCÜ KEZ AYNI İKİLİNİN: DENİZ VE YILDIZ.",
+  "now": "THE STANDS ARE ON THEIR FEET. THE GOLDEN HORSESHOE CUP GOES TO THE SAME PAIR FOR THE THIRD TIME: MORGAN AND STAR.",
+  "tr_px": 337,
+  "now_px": 501,
+  "target_px": 421
+ },
+ {
+  "tr": "BU... BU OLAMAZ! KUPA... DÜNYALININ!",
+  "now": "TH... THIS CAN'T BE! THE CUP... GOES TO THE EARTHLING!",
+  "tr_px": 145,
+  "now_px": 215,
+  "target_px": 181
+ },
+ {
+  "tr": "VİTRİN",
+  "now": "SHOWCASE",
+  "tr_px": 27,
+  "now_px": 40,
+  "target_px": 29
+ },
+ {
+  "tr": "ARENA'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.",
+  "now": "THE ROAD TO THE ARENA IS OPEN. YOUR MOTHER'S TRAIL LEADS THERE.",
+  "tr_px": 186,
+  "now_px": 275,
+  "target_px": 232
+ },
+ {
+  "tr": "EZİLMEK İSTEMİYORSAN KENARA!",
+  "now": "STEP ASIDE IF YOU DON'T WANT TO GET CRUSHED!",
+  "tr_px": 129,
+  "now_px": 190,
+  "target_px": 139
+ },
+ {
+  "tr": " ROZET",
+  "now": " BADGE(S)",
+  "tr_px": 26,
+  "now_px": 38,
+  "target_px": 28
+ },
+ {
+  "tr": "TAKILI",
+  "now": "EQUIPPED",
+  "tr_px": 26,
+  "now_px": 38,
+  "target_px": 28
+ },
+ {
+  "tr": "DÜNYALI SENDELİYOR!",
+  "now": "THE EARTHLING IS STAGGERING!",
+  "tr_px": 85,
+  "now_px": 124,
+  "target_px": 91
+ },
+ {
+  "tr": "KAPIYI RİTİMLE AÇTI!",
+  "now": "OPENED THE GATE WITH RHYTHM!",
+  "tr_px": 85,
+  "now_px": 124,
+  "target_px": 91
+ },
+ {
+  "tr": "BÖLMEN GÜZELLEŞTİKÇE SEYİRCİN ARTIYOR.",
+  "now": "THE PRETTIER YOUR COMPARTMENT, THE BIGGER YOUR AUDIENCE.",
+  "tr_px": 173,
+  "now_px": 250,
+  "target_px": 216
+ },
+ {
+  "tr": "HATIRA",
+  "now": "KEEPSAKE",
+  "tr_px": 27,
+  "now_px": 39,
+  "target_px": 29
+ },
+ {
+  "tr": "MANTAR AYI",
+  "now": "MUSHROOM MOON",
+  "tr_px": 45,
+  "now_px": 65,
+  "target_px": 48
+ },
+ {
+  "tr": "HERKES KAZA DEDİ. AMA KİMSE ONU BULAMADI.",
+  "now": "EVERYONE SAID IT WAS AN ACCIDENT. BUT NOBODY EVER FOUND HER.",
+  "tr_px": 186,
+  "now_px": 268,
+  "target_px": 232
+ },
+ {
+  "tr": "HASAT!",
+  "now": "HARVEST!",
+  "tr_px": 25,
+  "now_px": 36,
+  "target_px": 27
+ },
+ {
+  "tr": "BU SEFER DE GEÇEMEZSİN!",
+  "now": "YOU WON'T PASS ME THIS TIME EITHER!",
+  "tr_px": 105,
+  "now_px": 151,
+  "target_px": 113
+ },
+ {
+  "tr": "RAKİPLERİ GEÇ, BİTİŞE KOŞ!",
+  "now": "PASS YOUR RIVALS, RACE TO THE FINISH!",
+  "tr_px": 112,
+  "now_px": 161,
+  "target_px": 120
+ },
+ {
+  "tr": "RİTİMDE 3 YERİNE 5 ŞOK TOPU",
+  "now": "5 SHOCK BALLS ON THE BEAT INSTEAD OF 3",
+  "tr_px": 117,
+  "now_px": 167,
+  "target_px": 126
+ },
+ {
+  "tr": " GÖREV TAMAM: PANODAN AL",
+  "now": " MISSION(S) DONE: CLAIM AT THE BOARD",
+  "tr_px": 110,
+  "now_px": 157,
+  "target_px": 118
+ },
+ {
+  "tr": "YILDIZ KERVANIN ÖNÜNE GEÇTİ!",
+  "now": "STAR RUSHES TO THE FRONT OF THE CARAVAN!",
+  "tr_px": 125,
+  "now_px": 178,
+  "target_px": 135
+ },
+ {
+  "tr": "SENİ BEKLİYORDUM DÜNYALI.",
+  "now": "I'VE BEEN WAITING FOR YOU, EARTHLING.",
+  "tr_px": 113,
+  "now_px": 160,
+  "target_px": 122
+ },
+ {
+  "tr": "SEYİRCİ ESNİYOR! BİRAZ HEYECAN!",
+  "now": "THE CROWD IS YAWNING! GIVE US SOME THRILLS!",
+  "tr_px": 135,
+  "now_px": 191,
+  "target_px": 168
+ },
+ {
+  "tr": " ONAR",
+  "now": " REPAIR",
+  "tr_px": 22,
+  "now_px": 31,
+  "target_px": 23
+ },
+ {
+  "tr": "ONAR ",
+  "now": "REPAIR ",
+  "tr_px": 22,
+  "now_px": 31,
+  "target_px": 23
+ },
+ {
+  "tr": "3 GÖREV",
+  "now": "3 MISSIONS",
+  "tr_px": 32,
+  "now_px": 45,
+  "target_px": 34
+ },
+ {
+  "tr": "NİVA'YI GEÇTİN! KRALİÇE BİLE ŞAŞIRDI, TAHTINDAN İNİP SENİ ALKIŞLADI.",
+  "now": "YOU BEAT NIVA! EVEN THE QUEEN WAS STUNNED - SHE STEPPED DOWN FROM HER THRONE TO APPLAUD YOU.",
+  "tr_px": 295,
+  "now_px": 414,
+  "target_px": 368
+ },
+ {
+  "tr": "KORSANLAR GÜLEREK YOLU AÇTI.",
+  "now": "THE PIRATES LAUGHED AND LET YOU THROUGH.",
+  "tr_px": 127,
+  "now_px": 178,
+  "target_px": 137
+ },
+ {
+  "tr": "BUZ ERİDİ: KAPSÜL KRİSTAL DOLUYMUŞ.",
+  "now": "THE ICE MELTED: THE CAPSULE WAS FULL OF CRYSTALS.",
+  "tr_px": 156,
+  "now_px": 218,
+  "target_px": 195
+ },
+ {
+  "tr": "IŞIK İZİ",
+  "now": "GLOW TRAIL",
+  "tr_px": 33,
+  "now_px": 46,
+  "target_px": 35
+ },
+ {
+  "tr": "HIZ +%3",
+  "now": "SPEED +3%",
+  "tr_px": 28,
+  "now_px": 39,
+  "target_px": 30
+ },
+ {
+  "tr": "HIZ +%5",
+  "now": "SPEED +5%",
+  "tr_px": 28,
+  "now_px": 39,
+  "target_px": 30
+ },
+ {
+  "tr": "VUR GALAKSİ, VUR!",
+  "now": "SHOOT 'EM, GALAXY, SHOOT!",
+  "tr_px": 75,
+  "now_px": 104,
+  "target_px": 81
+ },
+ {
+  "tr": "BİP... BU DÜNYA! KAPI AÇIK, DENİZ!",
+  "now": "BIP... THAT'S EARTH! THE GATE IS OPEN, MORGAN!",
+  "tr_px": 136,
+  "now_px": 188,
+  "target_px": 170
+ },
+ {
+  "tr": "ŞAMPİYON YARIŞINDA FARK %",
+  "now": "IN CHAMPION RACES, THE GAP CLOSES %",
+  "tr_px": 113,
+  "now_px": 156,
+  "target_px": 122
+ },
+ {
+  "tr": "GÖZDE: ",
+  "now": "FAVORED: ",
+  "tr_px": 29,
+  "now_px": 40,
+  "target_px": 31
+ },
+ {
+  "tr": "KESEN BOŞALDI. DERS OLSUN.",
+  "now": "YOUR PURSE IS EMPTY. LESSON LEARNED.",
+  "tr_px": 116,
+  "now_px": 160,
+  "target_px": 125
+ },
+ {
+  "tr": "SERAPMIŞ... KUMA BATTIN, 10 SİKKE DÜŞÜRDÜN.",
+  "now": "JUST A MIRAGE... YOU SANK IN THE SAND AND DROPPED 10 COINS.",
+  "tr_px": 184,
+  "now_px": 253,
+  "target_px": 230
+ },
+ {
+  "tr": "YERİNE: ",
+  "now": "REPLACES: ",
+  "tr_px": 32,
+  "now_px": 44,
+  "target_px": 34
+ },
+ {
+  "tr": "İLK RUH GÜCÜ EN AZ NADİR",
+  "now": "FIRST STAR POWER IS AT LEAST RARE",
+  "tr_px": 107,
+  "now_px": 147,
+  "target_px": 115
+ },
+ {
+  "tr": "ÇEKİÇ ALINDI: ÇIKIŞTA ÖRSE!",
+  "now": "HAMMER BOUGHT: TO THE ANVIL ON EXIT!",
+  "tr_px": 116,
+  "now_px": 158,
+  "target_px": 125
+ },
+ {
+  "tr": "TIKIRTI ARKANDA KALDI...",
+  "now": "THE RATTLING FADES BEHIND YOU...",
+  "tr_px": 100,
+  "now_px": 136,
+  "target_px": 108
+ },
+ {
+  "tr": "AĞIR OK",
+  "now": "BIG ARROW",
+  "tr_px": 31,
+  "now_px": 42,
+  "target_px": 33
+ },
+ {
+  "tr": "SEYİRCİLER AYAKTA!",
+  "now": "THE CROWD IS ON ITS FEET!",
+  "tr_px": 79,
+  "now_px": 107,
+  "target_px": 85
+ },
+ {
+  "tr": "KARA DELİK SENİ YAKALADI. KOMBO HIZDIR: RİTMİ BOZMA, HAMLEYİ SON ANA SAKLA.",
+  "now": "THE BLACK HOLE CAUGHT YOU. COMBO IS SPEED: DON'T BREAK THE RHYTHM, SAVE YOUR DASH FOR THE LAST MOMENT.",
+  "tr_px": 333,
+  "now_px": 451,
+  "target_px": 416
+ },
+ {
+  "tr": "ÜÇ SEZONDUR BURADAYIM. SEN GELİNCE İLK KEZ UMUTLANDIM.",
+  "now": "I'VE BEEN HERE THREE SEASONS. WHEN YOU CAME, I FELT HOPE FOR THE FIRST TIME.",
+  "tr_px": 246,
+  "now_px": 333,
+  "target_px": 307
+ },
+ {
+  "tr": "İYİ · GEÇ",
+  "now": "GOOD · LATE",
+  "tr_px": 34,
+  "now_px": 46,
+  "target_px": 36
+ },
+ {
+  "tr": "GÖZDE TAKIMYILDIZINI SEÇ",
+  "now": "PICK YOUR FAVORITE CONSTELLATION",
+  "tr_px": 109,
+  "now_px": 147,
+  "target_px": 117
+ },
+ {
+  "tr": "ÇEKİÇ",
+  "now": "HAMMER",
+  "tr_px": 23,
+  "now_px": 31,
+  "target_px": 24
+ },
+ {
+  "tr": "BİR KOŞUDA ",
+  "now": "IN ONE RUN, GET ",
+  "tr_px": 49,
+  "now_px": 66,
+  "target_px": 52
+ },
+ {
+  "tr": "HIZ +%12",
+  "now": "SPEED +12%",
+  "tr_px": 32,
+  "now_px": 43,
+  "target_px": 34
+ },
+ {
+  "tr": "HIZ -%10",
+  "now": "SPEED -10%",
+  "tr_px": 32,
+  "now_px": 43,
+  "target_px": 34
+ },
+ {
+  "tr": "AĞIR ŞOK",
+  "now": "MEGA SHOCK",
+  "tr_px": 36,
+  "now_px": 48,
+  "target_px": 38
+ },
+ {
+  "tr": "PUAN: ",
+  "now": "POINTS: ",
+  "tr_px": 24,
+  "now_px": 32,
+  "target_px": 25
+ },
+ {
+  "tr": "REVİR",
+  "now": "SICKBAY",
+  "tr_px": 24,
+  "now_px": 32,
+  "target_px": 25
+ },
+ {
+  "tr": "ÇATAL OK",
+  "now": "FORK ARROW",
+  "tr_px": 36,
+  "now_px": 48,
+  "target_px": 38
+ },
+ {
+  "tr": "DÜNYA BÖLMESİ",
+  "now": "EARTH COMPARTMENT",
+  "tr_px": 61,
+  "now_px": 81,
+  "target_px": 65
+ },
+ {
+  "tr": "UZAYIN EN HIZLI ATI SENİNKİ",
+  "now": "THE FASTEST HORSE IN SPACE IS YOURS",
+  "tr_px": 118,
+  "now_px": 156,
+  "target_px": 127
+ },
+ {
+  "tr": "İNANILMAZ! KESEN DOLDU.",
+  "now": "INCREDIBLE! YOUR PURSE IS FULL.",
+  "tr_px": 103,
+  "now_px": 136,
+  "target_px": 111
+ },
+ {
+  "tr": "DAMLA",
+  "now": "DROPLET",
+  "tr_px": 25,
+  "now_px": 33,
+  "target_px": 27
+ },
+ {
+  "tr": "SU TANKI",
+  "now": "WATER TANK",
+  "tr_px": 35,
+  "now_px": 46,
+  "target_px": 37
+ },
+ {
+  "tr": "ÖNÜMÜ GÖREMEZSİN BİLE.",
+  "now": "YOU'LL NEVER EVEN SEE MY FACE.",
+  "tr_px": 102,
+  "now_px": 134,
+  "target_px": 110
+ },
+ {
+  "tr": "GEL DÜNYALI, TAZE GÜÇLER VAR!",
+  "now": "STEP UP, EARTHLING, FRESH POWERS HERE!",
+  "tr_px": 128,
+  "now_px": 168,
+  "target_px": 138
+ },
+ {
+  "tr": "İNİŞTE ",
+  "now": "LANDING: ",
+  "tr_px": 29,
+  "now_px": 38,
+  "target_px": 31
+ },
+ {
+  "tr": "3 KEZ, 2 CANLA KALK",
+  "now": "REVIVE 3 TIMES WITH 2 HP",
+  "tr_px": 81,
+  "now_px": 106,
+  "target_px": 87
+ },
+ {
+  "tr": "DİLEK TUT",
+  "now": "MAKE A WISH",
+  "tr_px": 39,
+  "now_px": 51,
+  "target_px": 42
+ },
+ {
+  "tr": "ÇİFT NOTA",
+  "now": "DOUBLE NOTE",
+  "tr_px": 39,
+  "now_px": 51,
+  "target_px": 42
+ },
+ {
+  "tr": "ÜS PUANI",
+  "now": "BASE SCORE",
+  "tr_px": 36,
+  "now_px": 47,
+  "target_px": 38
+ },
+ {
+  "tr": "DENİZ",
+  "now": "MORGAN",
+  "tr_px": 23,
+  "now_px": 30,
+  "target_px": 24
+ },
+ {
+  "tr": "SİLAH",
+  "now": "WEAPON",
+  "tr_px": 23,
+  "now_px": 30,
+  "target_px": 24
+ },
+ {
+  "tr": "ENKAZDA BİR KESE SİKKE BULDUN.",
+  "now": "YOU FOUND A PURSE OF COINS IN THE WRECK.",
+  "tr_px": 136,
+  "now_px": 177,
+  "target_px": 146
+ },
+ {
+  "tr": "ALTIN NAL",
+  "now": "GOLDEN SHOE",
+  "tr_px": 40,
+  "now_px": 52,
+  "target_px": 43
+ },
+ {
+  "tr": "KAOS HIZI",
+  "now": "CHAOS SPEED",
+  "tr_px": 40,
+  "now_px": 52,
+  "target_px": 43
+ },
+ {
+  "tr": "YILDIZ MUTLU! SONRAKİ KOŞU +",
+  "now": "STAR IS HAPPY! NEXT RUN STARTS WITH +",
+  "tr_px": 123,
+  "now_px": 159,
+  "target_px": 132
+ },
+ {
+  "tr": "KUMUN ALTINDAKİ ÇİP",
+  "now": "THE CHIP BENEATH THE SAND",
+  "tr_px": 87,
+  "now_px": 112,
+  "target_px": 93
+ },
+ {
+  "tr": "KUM GÖZÜNE KAÇMASIN DÜNYALI!",
+  "now": "DON'T GET SAND IN YOUR EYES, EARTHLING!",
+  "tr_px": 129,
+  "now_px": 166,
+  "target_px": 139
+ },
+ {
+  "tr": "BUZDİŞ",
+  "now": "ICETOOTH",
+  "tr_px": 28,
+  "now_px": 36,
+  "target_px": 30
+ },
+ {
+  "tr": "HEDEF: DÜNYALI. İŞLEM: EZ.",
+  "now": "TARGET: EARTHLING. ACTION: CRUSH.",
+  "tr_px": 109,
+  "now_px": 140,
+  "target_px": 117
+ },
+ {
+  "tr": "ÜS PUANI ",
+  "now": "BASE SCORE ",
+  "tr_px": 39,
+  "now_px": 50,
+  "target_px": 42
+ },
+ {
+  "tr": "NAL SEÇ",
+  "now": "PICK SHOE",
+  "tr_px": 32,
+  "now_px": 41,
+  "target_px": 34
+ },
+ {
+  "tr": "ŞİFA JELİ",
+  "now": "HEALING GEL",
+  "tr_px": 40,
+  "now_px": 51,
+  "target_px": 43
+ },
+ {
+  "tr": "BİRE BİR! BAHİSLER MASADA!",
+  "now": "ONE ON ONE! BETS ARE ON THE TABLE!",
+  "tr_px": 115,
+  "now_px": 146,
+  "target_px": 124
+ },
+ {
+  "tr": "KIRIK LENS",
+  "now": "CRACKED LENS",
+  "tr_px": 45,
+  "now_px": 57,
+  "target_px": 48
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI ARTAR",
+  "now": "BETTER ODDS OF RARE POWERS",
+  "tr_px": 95,
+  "now_px": 120,
+  "target_px": 102
+ },
+ {
+  "tr": "ŞIK KAÇIŞ!",
+  "now": "SLICK DODGE!",
+  "tr_px": 42,
+  "now_px": 53,
+  "target_px": 45
+ },
+ {
+  "tr": "İLK YILDIZ GÜCÜNÜ AL",
+  "now": "GET YOUR FIRST STAR POWER",
+  "tr_px": 89,
+  "now_px": 112,
+  "target_px": 96
+ },
+ {
+  "tr": "PLAZMA 4 YERİNE 3 VURUŞTA",
+  "now": "PLASMA EVERY 3 HITS INSTEAD OF 4",
+  "tr_px": 113,
+  "now_px": 142,
+  "target_px": 122
+ },
+ {
+  "tr": "KIZIL VUUM",
+  "now": "CRIMSON VUUM",
+  "tr_px": 47,
+  "now_px": 59,
+  "target_px": 50
+ },
+ {
+  "tr": "RİTİM NOTU ",
+  "now": "RHYTHM GRADE ",
+  "tr_px": 47,
+  "now_px": 59,
+  "target_px": 50
+ },
+ {
+  "tr": "AYNI YOL, TEK SKOR",
+  "now": "SAME ROUTE, ONE SCORE",
+  "tr_px": 76,
+  "now_px": 95,
+  "target_px": 82
+ },
+ {
+  "tr": "SON ATAK",
+  "now": "FINAL KICK",
+  "tr_px": 36,
+  "now_px": 45,
+  "target_px": 38
+ },
+ {
+  "tr": "BU DÜNYALI DURMUYOR!",
+  "now": "THIS EARTHLING WON'T STOP!",
+  "tr_px": 90,
+  "now_px": 112,
+  "target_px": 97
+ },
+ {
+  "tr": "DELİCİ ŞOK",
+  "now": "PIERCE SHOCK",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "HIZLI ŞARJ",
+  "now": "QUICK CHARGE",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "TOZKIRAN",
+  "now": "DUSTCUTTER",
+  "tr_px": 37,
+  "now_px": 46,
+  "target_px": 39
+ },
+ {
+  "tr": ". OLDUN",
+  "now": "TH PLACE",
+  "tr_px": 29,
+  "now_px": 36,
+  "target_px": 31
+ },
+ {
+  "tr": "KAÇTIN!",
+  "now": "ESCAPED!",
+  "tr_px": 29,
+  "now_px": 36,
+  "target_px": 31
+ },
+ {
+  "tr": "ZIRH DELEN",
+  "now": "ARMOR PIERCE",
+  "tr_px": 46,
+  "now_px": 57,
+  "target_px": 49
+ },
+ {
+  "tr": "DOLU ŞARJ",
+  "now": "FULL CHARGE",
+  "tr_px": 42,
+  "now_px": 52,
+  "target_px": 45
+ },
+ {
+  "tr": "KIL PAYI",
+  "now": "NEAR MISS",
+  "tr_px": 34,
+  "now_px": 42,
+  "target_px": 36
+ },
+ {
+  "tr": "IŞIK DİZİSİ",
+  "now": "STRING LIGHTS",
+  "tr_px": 47,
+  "now_px": 58,
+  "target_px": 50
+ },
+ {
+  "tr": "MANTAR AYI'NIN YENİLMEZİ",
+  "now": "MUSHROOM MOON'S UNBEATEN ONE",
+  "tr_px": 107,
+  "now_px": 132,
+  "target_px": 115
+ },
+ {
+  "tr": "DAR PENCERE",
+  "now": "NARROW WINDOW",
+  "tr_px": 52,
+  "now_px": 64,
+  "target_px": 56
+ },
+ {
+  "tr": "YARDIM MODU BİRAZ GÜÇLENDİ",
+  "now": "ASSIST MODE GOT A LITTLE STRONGER",
+  "tr_px": 121,
+  "now_px": 148,
+  "target_px": 130
+ },
+ {
+  "tr": "2 KEZ, 2 CANLA KALK",
+  "now": "REVIVE TWICE WITH 2 HP",
+  "tr_px": 81,
+  "now_px": 99,
+  "target_px": 87
+ },
+ {
+  "tr": "YARIN YİNE GEL!",
+  "now": "SEE YOU TOMORROW!",
+  "tr_px": 63,
+  "now_px": 77,
+  "target_px": 68
+ },
+ {
+  "tr": "TAKIMYILDIZ",
+  "now": "CONSTELLATION",
+  "tr_px": 50,
+  "now_px": 61,
+  "target_px": 54
+ },
+ {
+  "tr": "ŞİFA BUHARI",
+  "now": "HEALING STEAM",
+  "tr_px": 50,
+  "now_px": 61,
+  "target_px": 54
+ },
+ {
+  "tr": "TAM GAZ",
+  "now": "FULL TILT",
+  "tr_px": 32,
+  "now_px": 39,
+  "target_px": 34
+ },
+ {
+  "tr": "PARLAK OK",
+  "now": "SHINY ARROW",
+  "tr_px": 42,
+  "now_px": 51,
+  "target_px": 45
+ },
+ {
+  "tr": "PLAZMA TOPU",
+  "now": "PLASMA CANNON",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": "TAKIMYILDIZ!",
+  "now": "CONSTELLATION!",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": "YOL OLAYI",
+  "now": "ROAD EVENT",
+  "tr_px": 39,
+  "now_px": 47,
+  "target_px": 42
+ },
+ {
+  "tr": " ROZET GEREK",
+  "now": " BADGES NEEDED",
+  "tr_px": 54,
+  "now_px": 65,
+  "target_px": 58
+ },
+ {
+  "tr": "ZAFER VİTRİNİ",
+  "now": "TROPHY SHOWCASE",
+  "tr_px": 59,
+  "now_px": 71,
+  "target_px": 63
+ },
+ {
+  "tr": "KIL PAYI! KALBİM DURDU!",
+  "now": "BY A HAIR! MY HEART STOPPED!",
+  "tr_px": 99,
+  "now_px": 119,
+  "target_px": 106
+ },
+ {
+  "tr": "SÜS AL, ÜS PUANI KAZAN!",
+  "now": "BUY DECOR, EARN BASE SCORE!",
+  "tr_px": 99,
+  "now_px": 119,
+  "target_px": 106
+ },
+ {
+  "tr": " BİTİRDİ!",
+  "now": " FINISHED!",
+  "tr_px": 35,
+  "now_px": 42,
+  "target_px": 37
+ },
+ {
+  "tr": "AH! BU ACITTI!",
+  "now": "OUCH! THAT HURT!",
+  "tr_px": 55,
+  "now_px": 66,
+  "target_px": 59
+ },
+ {
+  "tr": "AY GÖLGESİ",
+  "now": "MOON SHADOW",
+  "tr_px": 45,
+  "now_px": 54,
+  "target_px": 48
+ },
+ {
+  "tr": "RAKİBİ GEÇ",
+  "now": "BEAT A RIVAL",
+  "tr_px": 45,
+  "now_px": 54,
+  "target_px": 48
+ },
+ {
+  "tr": "BOSS YENİNCE 1 CAN YENİLE",
+  "now": "HEAL 1 HP AFTER BEATING A BOSS",
+  "tr_px": 111,
+  "now_px": 133,
+  "target_px": 119
+ },
+ {
+  "tr": " KRİSTAL DAHA LAZIM",
+  "now": " MORE CRYSTAL(S) NEEDED",
+  "tr_px": 86,
+  "now_px": 103,
+  "target_px": 92
+ },
+ {
+  "tr": "PROLOĞU İZLE",
+  "now": "WATCH PROLOGUE",
+  "tr_px": 56,
+  "now_px": 67,
+  "target_px": 60
+ },
+ {
+  "tr": "%50 ŞANS: +30",
+  "now": "50% CHANCE: +30",
+  "tr_px": 51,
+  "now_px": 61,
+  "target_px": 55
+ },
+ {
+  "tr": "DONMUŞ TAHT",
+  "now": "FROZEN THRONE",
+  "tr_px": 51,
+  "now_px": 61,
+  "target_px": 55
+ },
+ {
+  "tr": "SPRİNT VE DÜELLODA RAKİPLER ",
+  "now": "IN SPRINTS AND DUELS, RIVALS START ",
+  "tr_px": 129,
+  "now_px": 154,
+  "target_px": 139
+ },
+ {
+  "tr": "AHIR MODÜLÜ",
+  "now": "STABLE MODULE",
+  "tr_px": 52,
+  "now_px": 62,
+  "target_px": 56
+ },
+ {
+  "tr": "TAM RİTİM!",
+  "now": "ON THE BEAT!",
+  "tr_px": 42,
+  "now_px": 50,
+  "target_px": 45
+ },
+ {
+  "tr": "SİLAH SEÇ VE GELİŞTİR",
+  "now": "PICK AND UPGRADE WEAPONS",
+  "tr_px": 95,
+  "now_px": 113,
+  "target_px": 102
+ },
+ {
+  "tr": "BİR BUZ PARÇASI SEKTİ. -1 CAN.",
+  "now": "A SHARD OF ICE BOUNCED BACK. -1 HP.",
+  "tr_px": 127,
+  "now_px": 151,
+  "target_px": 137
+ },
+ {
+  "tr": "İKİLİ GÜÇ YA DA 12 GÜÇ AL",
+  "now": "GET A DUO POWER OR 12 POWERS",
+  "tr_px": 106,
+  "now_px": 126,
+  "target_px": 114
+ },
+ {
+  "tr": "KIL PAYI! +",
+  "now": "NEAR MISS! +",
+  "tr_px": 43,
+  "now_px": 51,
+  "target_px": 46
+ },
+ {
+  "tr": "KAPIYA TOSLADI!",
+  "now": "SLAMMED THE GATE!",
+  "tr_px": 65,
+  "now_px": 77,
+  "target_px": 70
+ },
+ {
+  "tr": "PİRA'DA KİMSE BENİ GEÇEMEZDİ!",
+  "now": "NOBODY ON PIRA COULD EVER PASS ME!",
+  "tr_px": 130,
+  "now_px": 154,
+  "target_px": 140
+ },
+ {
+  "tr": "LAV TAŞI!",
+  "now": "LAVA ROCK!",
+  "tr_px": 38,
+  "now_px": 45,
+  "target_px": 41
+ },
+ {
+  "tr": "SON ATAK! +%",
+  "now": "FINAL KICK! +%",
+  "tr_px": 49,
+  "now_px": 58,
+  "target_px": 52
+ },
+ {
+  "tr": "SON DÜZLÜK!",
+  "now": "HOME STRETCH!",
+  "tr_px": 49,
+  "now_px": 58,
+  "target_px": 52
+ },
+ {
+  "tr": "USTA ATAĞI",
+  "now": "MASTER RUSH",
+  "tr_px": 44,
+  "now_px": 52,
+  "target_px": 47
+ },
+ {
+  "tr": "JOKEY KOĞUŞUNU ONAR",
+  "now": "REPAIR THE JOCKEY BUNKS",
+  "tr_px": 89,
+  "now_px": 105,
+  "target_px": 96
+ },
+ {
+  "tr": "GÖZLEMEVİ",
+  "now": "OBSERVATORY",
+  "tr_px": 45,
+  "now_px": 53,
+  "target_px": 48
+ },
+ {
+  "tr": " KRİSTAL TOPLA",
+  "now": " CRYSTALS EARNED",
+  "tr_px": 62,
+  "now_px": 73,
+  "target_px": 66
+ },
+ {
+  "tr": "HAMLE! NEFES HIZA DÖNÜŞTÜ",
+  "now": "DASH! BREATH TURNED INTO SPEED",
+  "tr_px": 114,
+  "now_px": 134,
+  "target_px": 123
+ },
+ {
+  "tr": "USTA ATAĞI!",
+  "now": "MASTER RUSH!",
+  "tr_px": 46,
+  "now_px": 54,
+  "target_px": 49
+ },
+ {
+  "tr": ", SON ATAK +%",
+  "now": ", FINAL KICK +%",
+  "tr_px": 52,
+  "now_px": 61,
+  "target_px": 56
+ },
+ {
+  "tr": "1 KEZ, 1 CANLA KALK",
+  "now": "REVIVE ONCE WITH 1 HP",
+  "tr_px": 81,
+  "now_px": 95,
+  "target_px": 87
+ },
+ {
+  "tr": "1 KEZ, 2 CANLA KALK",
+  "now": "REVIVE ONCE WITH 2 HP",
+  "tr_px": 81,
+  "now_px": 95,
+  "target_px": 87
+ },
+ {
+  "tr": " YILDIZ GÜCÜ SEÇ",
+  "now": " STAR POWERS TAKEN",
+  "tr_px": 70,
+  "now_px": 82,
+  "target_px": 75
+ },
+ {
+  "tr": "RİTİM DUYGUSU",
+  "now": "SENSE OF RHYTHM",
+  "tr_px": 59,
+  "now_px": 69,
+  "target_px": 63
+ },
+ {
+  "tr": "TEK ATIŞ. TEK ŞANS.",
+  "now": "ONE SHOT. ONE CHANCE.",
+  "tr_px": 78,
+  "now_px": 91,
+  "target_px": 84
+ },
+ {
+  "tr": "ZOR PİSTTE KUPAYI KAZAN",
+  "now": "WIN THE CUP ON A HARD TRACK",
+  "tr_px": 103,
+  "now_px": 120,
+  "target_px": 111
+ },
+ {
+  "tr": "JÖLE BEYİNLİ BİLGİN",
+  "now": "JELLY-BRAINED SCHOLAR",
+  "tr_px": 85,
+  "now_px": 99,
+  "target_px": 91
+ },
+ {
+  "tr": "PAZARDA SENİ BEKLİYORUM.",
+  "now": "I'LL BE WAITING AT THE BAZAAR.",
+  "tr_px": 110,
+  "now_px": 128,
+  "target_px": 118
+ },
+ {
+  "tr": "EVE DÖNÜŞ",
+  "now": "HOMECOMING",
+  "tr_px": 43,
+  "now_px": 50,
+  "target_px": 46
+ },
+ {
+  "tr": "KÜKREMEYİ DOĞRU ANDA KULLAN.",
+  "now": "USE YOUR ROAR AT THE RIGHT MOMENT.",
+  "tr_px": 129,
+  "now_px": 150,
+  "target_px": 139
+ },
+ {
+  "tr": "KOR AY'IN ZİNCİRLİ DEMİRCİSİ",
+  "now": "THE CHAINED SMITH OF EMBER MOON",
+  "tr_px": 123,
+  "now_px": 143,
+  "target_px": 132
+ },
+ {
+  "tr": "MANTAR AYI'NA ULAŞ",
+  "now": "REACH MUSHROOM MOON",
+  "tr_px": 80,
+  "now_px": 93,
+  "target_px": 86
+ },
+ {
+  "tr": " İSİMLİ RAKİBİN ÖNÜNDE BİTİR",
+  "now": " NAMED RIVALS BEATEN TO THE LINE",
+  "tr_px": 124,
+  "now_px": 144,
+  "target_px": 133
+ },
+ {
+  "tr": "HASARSIZ GEÇ",
+  "now": "TAKE NO DAMAGE",
+  "tr_px": 56,
+  "now_px": 65,
+  "target_px": 60
+ },
+ {
+  "tr": " RUHU SANA GÜÇ SUNUYOR",
+  "now": " SPIRIT OFFERS YOU A POWER",
+  "tr_px": 100,
+  "now_px": 116,
+  "target_px": 108
+ },
+ {
+  "tr": "EMİN MİSİN?",
+  "now": "ARE YOU SURE?",
+  "tr_px": 50,
+  "now_px": 58,
+  "target_px": 54
+ },
+ {
+  "tr": "DONMUŞ AY GLASİ",
+  "now": "FROZEN MOON GLASI",
+  "tr_px": 69,
+  "now_px": 80,
+  "target_px": 74
+ },
+ {
+  "tr": "RİTİM NALI",
+  "now": "RHYTHM SHOE",
+  "tr_px": 44,
+  "now_px": 51,
+  "target_px": 47
+ },
+ {
+  "tr": "İYİ · ERKEN",
+  "now": "GOOD · EARLY",
+  "tr_px": 44,
+  "now_px": 51,
+  "target_px": 47
+ },
+ {
+  "tr": "SON ATAKLA BİR SPRİNTİ KAZAN",
+  "now": "WIN A SPRINT WITH YOUR FINAL KICK",
+  "tr_px": 126,
+  "now_px": 146,
+  "target_px": 136
+ },
+ {
+  "tr": "ÇÖL HAYDUDU",
+  "now": "DESERT BANDIT",
+  "tr_px": 51,
+  "now_px": 59,
+  "target_px": 55
+ },
+ {
+  "tr": "BULUT ÇOBANI BORA",
+  "now": "CLOUD SHEPHERD BORA",
+  "tr_px": 78,
+  "now_px": 90,
+  "target_px": 84
+ },
+ {
+  "tr": "BİP'İN YEDEK PİLİ",
+  "now": "BIP'S SPARE BATTERY",
+  "tr_px": 72,
+  "now_px": 83,
+  "target_px": 77
+ },
+ {
+  "tr": " SN DOKUNULMAZSIN",
+  "now": " SEC OF INVINCIBILITY",
+  "tr_px": 80,
+  "now_px": 92,
+  "target_px": 86
+ },
+ {
+  "tr": "HARİKA! RİTİM = HIZ",
+  "now": "GREAT! RHYTHM = SPEED",
+  "tr_px": 80,
+  "now_px": 92,
+  "target_px": 86
+ },
+ {
+  "tr": "BURADA HER ŞEY DONAR. SEN DE.",
+  "now": "EVERYTHING FREEZES HERE. YOU TOO.",
+  "tr_px": 127,
+  "now_px": 146,
+  "target_px": 137
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI +%15",
+  "now": "RARE POWER CHANCE +15%",
+  "tr_px": 87,
+  "now_px": 100,
+  "target_px": 93
+ },
+ {
+  "tr": "KIZIL KUM'UN ÇÖL CANAVARI",
+  "now": "DESERT BEAST OF THE RED SANDS",
+  "tr_px": 114,
+  "now_px": 131,
+  "target_px": 123
+ },
+ {
+  "tr": "BİP'İN YEDEK PİLİ!",
+  "now": "BIP'S SPARE BATTERY!",
+  "tr_px": 74,
+  "now_px": 85,
+  "target_px": 79
+ },
+ {
+  "tr": "HER NALDA +%5 HIZ",
+  "now": "ALL SHOES +5% SPEED",
+  "tr_px": 74,
+  "now_px": 85,
+  "target_px": 79
+ },
+ {
+  "tr": "RAY ARBALETİ",
+  "now": "RAIL CROSSBOW",
+  "tr_px": 54,
+  "now_px": 62,
+  "target_px": 58
+ },
+ {
+  "tr": "GÜM... BU SEFER SESİM ÇIKMADI.",
+  "now": "BOOM... THIS TIME NOTHING CAME OUT.",
+  "tr_px": 129,
+  "now_px": 148,
+  "target_px": 139
+ },
+ {
+  "tr": "SIKICI! METEORLARI SALIN!",
+  "now": "BORING! RELEASE THE METEORS!",
+  "tr_px": 109,
+  "now_px": 125,
+  "target_px": 117
+ },
+ {
+  "tr": "GRAX'IN İLK TUTSAĞI",
+  "now": "GRAX'S FIRST PRISONER",
+  "tr_px": 82,
+  "now_px": 94,
+  "target_px": 88
+ },
+ {
+  "tr": "KUPA SENİN!",
+  "now": "CUP IS YOURS!",
+  "tr_px": 48,
+  "now_px": 55,
+  "target_px": 51
+ },
+ {
+  "tr": "ENGEL PARKURU",
+  "now": "OBSTACLE COURSE",
+  "tr_px": 62,
+  "now_px": 71,
+  "target_px": 66
+ },
+ {
+  "tr": "%45 ŞANS: İKİ KAT",
+  "now": "45% CHANCE: DOUBLE",
+  "tr_px": 69,
+  "now_px": 79,
+  "target_px": 74
+ },
+ {
+  "tr": "FİNALİ İZLE",
+  "now": "WATCH FINALE",
+  "tr_px": 49,
+  "now_px": 56,
+  "target_px": 52
+ },
+ {
+  "tr": "İKİNCİ NEFES!",
+  "now": "SECOND CHANCE!",
+  "tr_px": 56,
+  "now_px": 64,
+  "target_px": 60
+ },
+ {
+  "tr": "BİR GEZEGENİ LİG LİDERİ BİTİR",
+  "now": "FINISH A PLANET AS LEAGUE LEADER",
+  "tr_px": 128,
+  "now_px": 146,
+  "target_px": 138
+ },
+ {
+  "tr": "UZAY PAZARI",
+  "now": "SPACE BAZAAR",
+  "tr_px": 50,
+  "now_px": 57,
+  "target_px": 54
+ },
+ {
+  "tr": "TABAN HIZ +%",
+  "now": "BASE SPEED +%",
+  "tr_px": 51,
+  "now_px": 58,
+  "target_px": 55
+ },
+ {
+  "tr": "MÜKEMMEL ATIŞLAR ",
+  "now": "PERFECT SHOTS GAIN + ",
+  "tr_px": 81,
+  "now_px": 92,
+  "target_px": 87
+ },
+ {
+  "tr": " ATAĞA KALKTI!",
+  "now": " CHARGES AHEAD!",
+  "tr_px": 59,
+  "now_px": 67,
+  "target_px": 63
+ },
+ {
+  "tr": "GÖKTAŞI KIRAN",
+  "now": "METEOR BREAKER",
+  "tr_px": 59,
+  "now_px": 67,
+  "target_px": 63
+ },
+ {
+  "tr": "DOSTLARINDAN BİR HATIRA TAK",
+  "now": "EQUIP A KEEPSAKE FROM A FRIEND",
+  "tr_px": 122,
+  "now_px": 138,
+  "target_px": 131
+ },
+ {
+  "tr": "ÜÇ GÖZLÜ TÜCCAR",
+  "now": "THREE-EYED TRADER",
+  "tr_px": 69,
+  "now_px": 78,
+  "target_px": 74
+ },
+ {
+  "tr": "BİR SPRİNTİ BİRİNCİ BİTİR",
+  "now": "FINISH A SPRINT IN 1ST PLACE",
+  "tr_px": 108,
+  "now_px": 122,
+  "target_px": 116
+ },
+ {
+  "tr": "GALAKSİ LİGİ",
+  "now": "GALAXY LEAGUE",
+  "tr_px": 54,
+  "now_px": 61,
+  "target_px": 58
+ },
+ {
+  "tr": "BİR YOL OLAYINDA SEÇİM YAP",
+  "now": "MAKE A CHOICE AT A ROAD EVENT",
+  "tr_px": 116,
+  "now_px": 131,
+  "target_px": 125
+ },
+ {
+  "tr": "STANDART ZORLUK",
+  "now": "NORMAL DIFFICULTY",
+  "tr_px": 70,
+  "now_px": 79,
+  "target_px": 75
+ },
+ {
+  "tr": "TEKNİK %25 HIZLI DOLAR",
+  "now": "SKILL CHARGES 25% FASTER",
+  "tr_px": 96,
+  "now_px": 108,
+  "target_px": 103
+ },
+ {
+  "tr": "TEKNİK %50 HIZLI DOLAR",
+  "now": "SKILL CHARGES 50% FASTER",
+  "tr_px": 96,
+  "now_px": 108,
+  "target_px": 103
+ },
+ {
+  "tr": "TEKNİK %75 HIZLI DOLAR",
+  "now": "SKILL CHARGES 75% FASTER",
+  "tr_px": 96,
+  "now_px": 108,
+  "target_px": 103
+ },
+ {
+  "tr": "GÜNLÜK ERZAK",
+  "now": "DAILY SUPPLIES",
+  "tr_px": 57,
+  "now_px": 64,
+  "target_px": 61
+ }
+]
