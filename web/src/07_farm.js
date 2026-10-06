@@ -245,7 +245,9 @@ SCENES.farm = {
     drawTexts();
     if (!this.panel) {
       const bw = 92, bx = Math.round(W / 2 - bw / 2), by = H - SAFE.b - 30;
-      button('kos', bx, by, bw, 22, 'YARIŞA ÇIK', () => { this.panel = 'gate'; }, { kind: 'primary' });
+      // a run left at the path choice waits here: continue it instead of starting over by accident
+      if (META.runSave) button('kos', bx - 14, by, bw + 28, 22, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); }, { kind: 'primary' });
+      else button('kos', bx, by, bw, 22, 'YARIŞA ÇIK', () => { this.panel = 'gate'; }, { kind: 'primary' });
       if (this.maxCam > 4) { const k = this.camY / this.maxCam; rect(W - 3, SAFE.t + 40 + k * (H - SAFE.t - 80), 2, 26, C.ddgreen); }
     }
     if (this.panel) this.drawPanel();
@@ -542,7 +544,7 @@ SCENES.farm = {
       hline(P.x + 6, y, P.w - 12, C.slate); y += 4;
       text('GÜNÜN KOŞUSU', P.x + 8, y + 1, C.cyan);
       text(best ? 'BUGÜN EN İYİ: ' + best : 'AYNI YOL, TEK SKOR', P.x + 8, y + 11, C.lgray);
-      button('dailyrun', P.x + P.w - 62, y + 2, 54, 16, 'KOŞ', () => { this.panel = null; newRun({ daily: true }); saveMeta(); go('run', firstNode()); }, { kind: 'blue' });
+      button('dailyrun', P.x + P.w - 62, y + 2, 54, 16, 'KOŞ', () => { this.panel = null; META.runSave = null; newRun({ daily: true }); saveMeta(); go('run', firstNode()); }, { kind: 'blue' });
       y += 26;
     }
     this.upgradeRow(P, 'pano', y);
@@ -893,7 +895,13 @@ SCENES.farm = {
       wrapText(r.desc, P.w - 20).slice(0, two ? 2 : 1).forEach((dl, i) => text(dl, P.x + P.w / 2, y + 15 + i * 8, C.lgray, 'center'));
       y += rowH;
     }
-    button('run_go', P.x + 14, P.y + P.h - 26, P.w - 28, 20, 'KOŞ!', () => { this.panel = null; newRun(); saveMeta(); go('run', firstNode()); });
+    if (META.runSave) {
+      button('run_cont', P.x + 14, P.y + P.h - 26, Math.floor((P.w - 32) / 2), 20, 'DEVAM ET', () => { this.panel = null; restoreRun(); go('doors'); }, { kind: 'blue' });
+      button('run_go', P.x + 18 + Math.floor((P.w - 32) / 2), P.y + P.h - 26, Math.ceil((P.w - 32) / 2), 20, this.confirmNew ? 'EMİN MİSİN?' : 'YENİ KOŞU', () => {
+        if (!this.confirmNew) { this.confirmNew = true; Sound.play('deny'); return; }
+        this.confirmNew = false; this.panel = null; META.runSave = null; newRun(); saveMeta(); go('run', firstNode());
+      }, { kind: 'secondary' });
+    } else button('run_go', P.x + 14, P.y + P.h - 26, P.w - 28, 20, 'KOŞ!', () => { this.panel = null; newRun(); saveMeta(); go('run', firstNode()); });
   },
   pSettings() {
     const s = META.settings;

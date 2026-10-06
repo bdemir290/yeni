@@ -13,6 +13,22 @@ private func jsStringLiteral(_ value: String) -> String {
     return String(json.dropFirst().dropLast()) // ["..."] -> "..."
 }
 
+/// Web view that tells the game where the notch, Dynamic Island and home indicator are.
+/// With the scroll view ignoring content insets, CSS env(safe-area-inset-*) can read 0 on device,
+/// so the real insets are sent to the page whenever they change.
+final class GameWebView: WKWebView {
+    override func safeAreaInsetsDidChange() {
+        super.safeAreaInsetsDidChange()
+        pushSafeArea()
+    }
+
+    func pushSafeArea() {
+        let i = safeAreaInsets
+        evaluateJavaScript("window.__setNativeSafe && window.__setNativeSafe(\(i.top), \(i.right), \(i.bottom), \(i.left))",
+                           completionHandler: nil)
+    }
+}
+
 /// Hosts the pixel-art game (index.html in the app bundle) full screen.
 struct GameView: UIViewRepresentable {
     func makeCoordinator() -> GameBridge { GameBridge() }
@@ -33,7 +49,7 @@ struct GameView: UIViewRepresentable {
         config.mediaTypesRequiringUserActionForPlayback = []
 
         let background = UIColor(red: 0.094, green: 0.078, blue: 0.145, alpha: 1)
-        let webView = WKWebView(frame: .zero, configuration: config)
+        let webView = GameWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = context.coordinator
         webView.isOpaque = false
         webView.backgroundColor = background
@@ -100,6 +116,11 @@ final class GameBridge: NSObject, WKScriptMessageHandler, WKNavigationDelegate {
         default:
             break
         }
+    }
+
+    /// The page is ready: hand it the safe area once (later changes arrive through safeAreaInsetsDidChange).
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        (webView as? GameWebView)?.pushSafeArea()
     }
 
     /// iOS may end the web content process under memory pressure: reload with the latest save, not the launch one.

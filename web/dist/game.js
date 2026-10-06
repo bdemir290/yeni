@@ -71,14 +71,25 @@ let W = 180, H = 320, SCALE = 1, DPR = 1;
 const SAFE = { t: 0, b: 0, l: 0, r: 0 };
 let scene = null;
 
+// The iOS app also reports the real insets (notch, Dynamic Island, home indicator) because a WKWebView
+// whose scroll view ignores content insets can report env(safe-area-inset-*) as 0.
+const NATIVE_SAFE = { t: 0, r: 0, b: 0, l: 0 };
+window.__setNativeSafe = (t, r, b, l) => {
+  const n = v => Math.max(0, +v || 0);
+  NATIVE_SAFE.t = n(t); NATIVE_SAFE.r = n(r); NATIVE_SAFE.b = n(b); NATIVE_SAFE.l = n(l);
+  if (typeof cvs !== 'undefined' && cvs) resize();
+};
 function measureSafe() {
   const el = document.getElementById('safe');
-  if (!el) return;
-  const cs = getComputedStyle(el);
+  const cs = el ? getComputedStyle(el) : null;
   const f = v => parseFloat(v) || 0;
-  const toL = v => Math.ceil(v * DPR / SCALE);
-  SAFE.t = toL(f(cs.paddingTop)); SAFE.b = toL(f(cs.paddingBottom));
-  SAFE.l = toL(f(cs.paddingLeft)); SAFE.r = toL(f(cs.paddingRight));
+  // insets are measured from the screen edge; the canvas may sit a few pixels in from it
+  const offX = parseFloat(cvs.style.left) || 0, offY = parseFloat(cvs.style.top) || 0;
+  const toL = (v, off) => Math.max(0, Math.ceil((v - off) * DPR / SCALE));
+  SAFE.t = toL(Math.max(cs ? f(cs.paddingTop) : 0, NATIVE_SAFE.t), offY);
+  SAFE.b = toL(Math.max(cs ? f(cs.paddingBottom) : 0, NATIVE_SAFE.b), offY);
+  SAFE.l = toL(Math.max(cs ? f(cs.paddingLeft) : 0, NATIVE_SAFE.l), offX);
+  SAFE.r = toL(Math.max(cs ? f(cs.paddingRight) : 0, NATIVE_SAFE.r), offX);
 }
 
 function resize() {
@@ -7740,7 +7751,9 @@ SCENES.farm = {
     drawTexts();
     if (!this.panel) {
       const bw = 92, bx = Math.round(W / 2 - bw / 2), by = H - SAFE.b - 30;
-      button('kos', bx, by, bw, 22, 'YARIŞA ÇIK', () => { this.panel = 'gate'; }, { kind: 'primary' });
+      // a run left at the path choice waits here: continue it instead of starting over by accident
+      if (META.runSave) button('kos', bx - 14, by, bw + 28, 22, 'KOŞUYA DEVAM ET', () => { restoreRun(); go('doors'); }, { kind: 'primary' });
+      else button('kos', bx, by, bw, 22, 'YARIŞA ÇIK', () => { this.panel = 'gate'; }, { kind: 'primary' });
       if (this.maxCam > 4) { const k = this.camY / this.maxCam; rect(W - 3, SAFE.t + 40 + k * (H - SAFE.t - 80), 2, 26, C.ddgreen); }
     }
     if (this.panel) this.drawPanel();
@@ -8037,7 +8050,7 @@ SCENES.farm = {
       hline(P.x + 6, y, P.w - 12, C.slate); y += 4;
       text('GÜNÜN KOŞUSU', P.x + 8, y + 1, C.cyan);
       text(best ? 'BUGÜN EN İYİ: ' + best : 'AYNI YOL, TEK SKOR', P.x + 8, y + 11, C.lgray);
-      button('dailyrun', P.x + P.w - 62, y + 2, 54, 16, 'KOŞ', () => { this.panel = null; newRun({ daily: true }); saveMeta(); go('run', firstNode()); }, { kind: 'blue' });
+      button('dailyrun', P.x + P.w - 62, y + 2, 54, 16, 'KOŞ', () => { this.panel = null; META.runSave = null; newRun({ daily: true }); saveMeta(); go('run', firstNode()); }, { kind: 'blue' });
       y += 26;
     }
     this.upgradeRow(P, 'pano', y);
@@ -8388,7 +8401,13 @@ SCENES.farm = {
       wrapText(r.desc, P.w - 20).slice(0, two ? 2 : 1).forEach((dl, i) => text(dl, P.x + P.w / 2, y + 15 + i * 8, C.lgray, 'center'));
       y += rowH;
     }
-    button('run_go', P.x + 14, P.y + P.h - 26, P.w - 28, 20, 'KOŞ!', () => { this.panel = null; newRun(); saveMeta(); go('run', firstNode()); });
+    if (META.runSave) {
+      button('run_cont', P.x + 14, P.y + P.h - 26, Math.floor((P.w - 32) / 2), 20, 'DEVAM ET', () => { this.panel = null; restoreRun(); go('doors'); }, { kind: 'blue' });
+      button('run_go', P.x + 18 + Math.floor((P.w - 32) / 2), P.y + P.h - 26, Math.ceil((P.w - 32) / 2), 20, this.confirmNew ? 'EMİN MİSİN?' : 'YENİ KOŞU', () => {
+        if (!this.confirmNew) { this.confirmNew = true; Sound.play('deny'); return; }
+        this.confirmNew = false; this.panel = null; META.runSave = null; newRun(); saveMeta(); go('run', firstNode());
+      }, { kind: 'secondary' });
+    } else button('run_go', P.x + 14, P.y + P.h - 26, P.w - 28, 20, 'KOŞ!', () => { this.panel = null; newRun(); saveMeta(); go('run', firstNode()); });
   },
   pSettings() {
     const s = META.settings;
@@ -8532,7 +8551,7 @@ function bottomBar(by, extraFn) {
 SCENES.doors = {
   enter() {
     if (!RUN.doors) RUN.doors = genDoors();
-    this.doors = RUN.doors; this.t = 0; this.sel = -1; this.showBoons = false; this.showLeague = false;
+    this.doors = RUN.doors; this.t = 0; this.sel = -1; this.showBoons = false; this.showLeague = false; this.showMenu = false; this.confirmQuit = false;
     this.reg = REGIONS[RUN.region]; this.S = computeStats(RUN);
     RUN.hp = Math.min(RUN.hp, this.S.maxHp);
     Music.layer = 3; Music.play(this.reg.song, now() + 0.2, false);
@@ -8624,6 +8643,23 @@ SCENES.doors = {
     drawParts(0, 0); drawTexts();
     if (this.showBoons) drawBoonList(() => { this.showBoons = false; });
     if (this.showLeague) drawLeague(() => { this.showLeague = false; });
+    // break menu: go back to the station (the run stays saved) or end the run here
+    if (this.sel === -1 && !this.showBoons && !this.showLeague && !this.showMenu) button('d_menu', SAFE.l + 4, top - 2, 20, 16, '', () => { this.showMenu = true; this.confirmQuit = false; Sound.play('select'); }, { kind: 'secondary', icon: 'pause' });
+    if (this.showMenu) this.drawMenu();
+  },
+  drawMenu() {
+    const pw = Math.min(W - 24, 176), ph = 120, px = Math.round(W / 2 - pw / 2), py = Math.round(SAFE.t + (H - SAFE.t - SAFE.b - ph) / 2);
+    UI.block(0, 0, W, H, () => { this.showMenu = false; });
+    g.globalAlpha = 0.6; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
+    panel(px, py, pw, ph, 'MOLA');
+    button('dm_back', px + 10, py + 20, pw - 20, 18, 'YOLA DEVAM', () => { this.showMenu = false; }, { kind: 'primary' });
+    button('dm_farm', px + 10, py + 44, pw - 20, 18, 'İSTASYONA DÖN', () => { saveRun(); this.showMenu = false; go('farm', {}); }, { kind: 'blue' });
+    text('KOŞUN KAYDEDİLİR, SONRA SÜRER', px + pw / 2, py + 65, C.lgray, 'center');
+    button('dm_quit', px + 10, py + 78, pw - 20, 18, this.confirmQuit ? 'EMİN MİSİN? TEKRAR BAS' : 'KOŞUYU BIRAK', () => {
+      if (!this.confirmQuit) { this.confirmQuit = true; Sound.play('deny'); return; }
+      this.showMenu = false; RUN.diedIn = { type: 'quit', region: RUN.region, etap: RUN.etap }; go('results', { won: false, quit: true });
+    }, { kind: 'secondary' });
+    text('ÖDÜLLERİNİ ALIR, KOŞUYU BİTİRİRSİN', px + pw / 2, py + 99, C.gray, 'center');
   },
   drawDoor(d, x, y, w, h, hot) {
     const kaos = d.type === 'kaos', boss = d.type === 'boss';

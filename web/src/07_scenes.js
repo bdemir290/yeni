@@ -83,7 +83,7 @@ function bottomBar(by, extraFn) {
 SCENES.doors = {
   enter() {
     if (!RUN.doors) RUN.doors = genDoors();
-    this.doors = RUN.doors; this.t = 0; this.sel = -1; this.showBoons = false; this.showLeague = false;
+    this.doors = RUN.doors; this.t = 0; this.sel = -1; this.showBoons = false; this.showLeague = false; this.showMenu = false; this.confirmQuit = false;
     this.reg = REGIONS[RUN.region]; this.S = computeStats(RUN);
     RUN.hp = Math.min(RUN.hp, this.S.maxHp);
     Music.layer = 3; Music.play(this.reg.song, now() + 0.2, false);
@@ -175,6 +175,23 @@ SCENES.doors = {
     drawParts(0, 0); drawTexts();
     if (this.showBoons) drawBoonList(() => { this.showBoons = false; });
     if (this.showLeague) drawLeague(() => { this.showLeague = false; });
+    // break menu: go back to the station (the run stays saved) or end the run here
+    if (this.sel === -1 && !this.showBoons && !this.showLeague && !this.showMenu) button('d_menu', SAFE.l + 4, top - 2, 20, 16, '', () => { this.showMenu = true; this.confirmQuit = false; Sound.play('select'); }, { kind: 'secondary', icon: 'pause' });
+    if (this.showMenu) this.drawMenu();
+  },
+  drawMenu() {
+    const pw = Math.min(W - 24, 176), ph = 120, px = Math.round(W / 2 - pw / 2), py = Math.round(SAFE.t + (H - SAFE.t - SAFE.b - ph) / 2);
+    UI.block(0, 0, W, H, () => { this.showMenu = false; });
+    g.globalAlpha = 0.6; rect(0, 0, W, H, C.ink); g.globalAlpha = 1;
+    panel(px, py, pw, ph, 'MOLA');
+    button('dm_back', px + 10, py + 20, pw - 20, 18, 'YOLA DEVAM', () => { this.showMenu = false; }, { kind: 'primary' });
+    button('dm_farm', px + 10, py + 44, pw - 20, 18, 'İSTASYONA DÖN', () => { saveRun(); this.showMenu = false; go('farm', {}); }, { kind: 'blue' });
+    text('KOŞUN KAYDEDİLİR, SONRA SÜRER', px + pw / 2, py + 65, C.lgray, 'center');
+    button('dm_quit', px + 10, py + 78, pw - 20, 18, this.confirmQuit ? 'EMİN MİSİN? TEKRAR BAS' : 'KOŞUYU BIRAK', () => {
+      if (!this.confirmQuit) { this.confirmQuit = true; Sound.play('deny'); return; }
+      this.showMenu = false; RUN.diedIn = { type: 'quit', region: RUN.region, etap: RUN.etap }; go('results', { won: false, quit: true });
+    }, { kind: 'secondary' });
+    text('ÖDÜLLERİNİ ALIR, KOŞUYU BİTİRİRSİN', px + pw / 2, py + 99, C.gray, 'center');
   },
   drawDoor(d, x, y, w, h, hot) {
     const kaos = d.type === 'kaos', boss = d.type === 'boss';

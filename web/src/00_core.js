@@ -68,14 +68,25 @@ let W = 180, H = 320, SCALE = 1, DPR = 1;
 const SAFE = { t: 0, b: 0, l: 0, r: 0 };
 let scene = null;
 
+// The iOS app also reports the real insets (notch, Dynamic Island, home indicator) because a WKWebView
+// whose scroll view ignores content insets can report env(safe-area-inset-*) as 0.
+const NATIVE_SAFE = { t: 0, r: 0, b: 0, l: 0 };
+window.__setNativeSafe = (t, r, b, l) => {
+  const n = v => Math.max(0, +v || 0);
+  NATIVE_SAFE.t = n(t); NATIVE_SAFE.r = n(r); NATIVE_SAFE.b = n(b); NATIVE_SAFE.l = n(l);
+  if (typeof cvs !== 'undefined' && cvs) resize();
+};
 function measureSafe() {
   const el = document.getElementById('safe');
-  if (!el) return;
-  const cs = getComputedStyle(el);
+  const cs = el ? getComputedStyle(el) : null;
   const f = v => parseFloat(v) || 0;
-  const toL = v => Math.ceil(v * DPR / SCALE);
-  SAFE.t = toL(f(cs.paddingTop)); SAFE.b = toL(f(cs.paddingBottom));
-  SAFE.l = toL(f(cs.paddingLeft)); SAFE.r = toL(f(cs.paddingRight));
+  // insets are measured from the screen edge; the canvas may sit a few pixels in from it
+  const offX = parseFloat(cvs.style.left) || 0, offY = parseFloat(cvs.style.top) || 0;
+  const toL = (v, off) => Math.max(0, Math.ceil((v - off) * DPR / SCALE));
+  SAFE.t = toL(Math.max(cs ? f(cs.paddingTop) : 0, NATIVE_SAFE.t), offY);
+  SAFE.b = toL(Math.max(cs ? f(cs.paddingBottom) : 0, NATIVE_SAFE.b), offY);
+  SAFE.l = toL(Math.max(cs ? f(cs.paddingLeft) : 0, NATIVE_SAFE.l), offX);
+  SAFE.r = toL(Math.max(cs ? f(cs.paddingRight) : 0, NATIVE_SAFE.r), offX);
 }
 
 function resize() {

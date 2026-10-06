@@ -127,6 +127,8 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 
 - Her gezegenin pisti ve pist dışı alanı için zemin dokusu: çayırda toprak ve mor çimen, ormanda çakıl ve yosun, buzda kar ve çatlak buz, çölde rüzgâr izli kum ve kızıl kaya, arenada kil. Dokular oyunun paletine çevrildi, ek yeri görünmeden döşenir, yarışla kayar ve virajda pistle bükülür.
 - 37 uzaylı yarışçının hepsine (isimsiz ve isimli rakipler, şampiyonlar, korsan binicileri) arkadan görünen 4 karelik koşu ve sıçrama seti. Voltrak robot at olduğu için kendi çizimiyle kaldı.
+- Yol seçme ekranında MOLA menüsü: istasyona dön (koşu kaydedilir, istasyondaki "KOŞUYA DEVAM ET" ile sürer) veya koşuyu bırak.
+- iPhone güvenli alanı: uygulama çentik/Dynamic Island ve ana ekran çizgisi boşluklarını oyuna kendisi bildirir (WKWebView'de CSS env() 0 dönebiliyordu).
 - Binalar için üç yöntem denendi; hiçbiri mevcut çizimlerden iyi olmadığı için bağlanmadı. Denemeler `originals/buildings_trials/` altında.
 
 ## Proje yapısı
