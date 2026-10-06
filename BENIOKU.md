@@ -1,4 +1,4 @@
-# Dörtnala – iOS prototipi (v6.0 · Galaksi Kupası)
+# Dörtnala – iOS prototipi (v6.1 · Galaksi Kupası)
 
 Hades tarzı, üslü roguelike at yarışı. Pixel art, dikey ekran, tek elle oynanır.
 
@@ -142,6 +142,30 @@ Bilgisayarda: ok tuşları / WASD, boşluk = ritim (uzun notada basılı tut), a
 - **Hikaye:** Bora 2006 finalinde Voltrak'ın kıvılcımlarını gördüğünü anlatır, Korhan kıvılcımlı nalların kalıbını Grax'ın mührüyle birlikte verir. Gizem arenada Voltrak'ın itirafıyla kapanır.
 - **İçerik:** 23 yeni portre; 8 yeni yarışçı seti; yeni zemin dokuları ve dekorlar; iki yeni şarkı. Arena artık 138 BPM.
 - **Kayıt:** v6 göçü eski kayıtlarda arenayı 4'ten 6'ya taşır; koşu kaydı ve rekorlar da uyarlanır. Eski oyunculara BİP yenilikleri haber verir.
+
+## v6.1: Beş dil (Türkçe, English, Deutsch, Español, Bahasa Indonesia)
+
+- İlk açılışta cihazın dili seçilir; açılış ekranının sol altındaki düğmeden ya da Ayarlar > DİL'den değiştirilir. Değişince oyun yeniden yüklenir; ilerleme korunur.
+- Türk karakterler her dilde yerelleşir:
+
+| Türkçe | English | Deutsch | Español | Indonesia |
+|---|---|---|---|---|
+| Deniz | Morgan | Kai | Ariel | Tirta |
+| Akyel | Gale | Greta | Rocío | Sekar |
+| Ayşe | Amy | Anna | Lucía | Ayu |
+| Kemal Usta | Old Ken | Meister Kurt | Don Ramón | Pak Karto |
+| Tayfun | Tyler | Timo | Toño | Topan |
+| Demirci Korhan | Cinder the Smith | Schmied Gluthard | Tizón el Herrero | Bara si Pandai Besi |
+| Yıldız (at) | Star | Stern | Estrella | Bintang |
+
+  Türkçe anlamlı yer ve uzaylı adları çevrilir (Gece Kanadı → Nightwing). Köroğlu gibi kültürel göndermeler yerel karşılıklara uyarlanır: Beowulf, Siegfried, El Cid, Gatotkaca.
+- **Yeni metin eklerken:** Oyuncuya görünen metni Türkçe ve BÜYÜK harfle `TX('...')` içine yazın. Çevirisi yoksa Türkçe görünür.
+- **Çevirileri güncellemek:** Çeviriler `web/i18n/<dil>.json` dosyalarında, Türkçe satır → çeviri biçiminde durur. Yeni satırları bulmak için:
+  - `node web/tools/i18n_source.js` (acorn gerekir)
+  - `web/tools/i18n_check.py <dil>` (doğrulama)
+  - `web/tools/i18n_merge.py`
+  - `web/tools/i18n_width.py <dil>` (piksel genişliği)
+- Font Almanca ve İspanyolca harfleri içerir (Ä Á É Í Ó Ú Ñ ¿ ¡). Sığmayan buton yazıları otomatik sıkışır, ekrandan taşan büyük başlıklar küçülür.
 
 ## Proje yapısı
 

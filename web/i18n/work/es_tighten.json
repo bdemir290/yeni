@@ -1,0 +1,3782 @@
+[
+ {
+  "tr": "İNİŞTE ",
+  "now": "AL ATERRIZAR DESTROZAS OBSTÁCULOS Y ENEMIGOS A ",
+  "tr_px": 29,
+  "now_px": 215,
+  "target_px": 31
+ },
+ {
+  "tr": " HIZ",
+  "now": " DE VELOCIDAD",
+  "tr_px": 16,
+  "now_px": 60,
+  "target_px": 17
+ },
+ {
+  "tr": "KOŞUYA ",
+  "now": "EMPIEZA LA CARRERA CON ",
+  "tr_px": 31,
+  "now_px": 106,
+  "target_px": 33
+ },
+ {
+  "tr": "HIZ",
+  "now": "VELOCIDAD",
+  "tr_px": 13,
+  "now_px": 44,
+  "target_px": 14
+ },
+ {
+  "tr": "TEKNİK HAZIR! ",
+  "now": "¡TÉCNICA LISTA! PULSA EL JINETE DE ABAJO A LA ",
+  "tr_px": 59,
+  "now_px": 199,
+  "target_px": 63
+ },
+ {
+  "tr": "AL",
+  "now": "COBRAR",
+  "tr_px": 9,
+  "now_px": 29,
+  "target_px": 9
+ },
+ {
+  "tr": "İÇ!",
+  "now": "¡DENTRO!",
+  "tr_px": 10,
+  "now_px": 32,
+  "target_px": 10
+ },
+ {
+  "tr": "NAL",
+  "now": "HERRADURA",
+  "tr_px": 14,
+  "now_px": 44,
+  "target_px": 15
+ },
+ {
+  "tr": "EK",
+  "now": "PLANTA",
+  "tr_px": 9,
+  "now_px": 28,
+  "target_px": 9
+ },
+ {
+  "tr": "AHIRDA ",
+  "now": "PUNTOS EN EL ESTABLO: ",
+  "tr_px": 31,
+  "now_px": 96,
+  "target_px": 33
+ },
+ {
+  "tr": "SOL",
+  "now": "IZQUIERDA",
+  "tr_px": 14,
+  "now_px": 42,
+  "target_px": 15
+ },
+ {
+  "tr": "BU SEFER ",
+  "now": "¡ESTA VEZ LLEGASTE HASTA ",
+  "tr_px": 40,
+  "now_px": 111,
+  "target_px": 43
+ },
+ {
+  "tr": "TEKNİKLE ",
+  "now": "CON LA TÉCNICA, DURANTE ",
+  "tr_px": 40,
+  "now_px": 105,
+  "target_px": 43
+ },
+ {
+  "tr": "ETAPLARA ",
+  "now": "EMPIEZA LAS ETAPAS CON ",
+  "tr_px": 41,
+  "now_px": 105,
+  "target_px": 44
+ },
+ {
+  "tr": "SAĞ",
+  "now": "DERECHA",
+  "tr_px": 14,
+  "now_px": 34,
+  "target_px": 15
+ },
+ {
+  "tr": "↓ AŞAĞI KAYDIR YA DA ",
+  "now": "↓ DESLIZA ABAJO O PULSA EL BOTÓN DE ABAJO A LA ",
+  "tr_px": 91,
+  "now_px": 211,
+  "target_px": 98
+ },
+ {
+  "tr": "İTTİ!",
+  "now": "¡EMPUJÓN!",
+  "tr_px": 17,
+  "now_px": 39,
+  "target_px": 18
+ },
+ {
+  "tr": "BİR KOŞUDA ",
+  "now": "EN UNA CARRERA, CONSIGUE ",
+  "tr_px": 49,
+  "now_px": 112,
+  "target_px": 52
+ },
+ {
+  "tr": "DÜŞMANLAR %",
+  "now": "LOS ENEMIGOS SUELTAN UN %",
+  "tr_px": 52,
+  "now_px": 114,
+  "target_px": 56
+ },
+ {
+  "tr": " RAKİP GEÇ",
+  "now": " RIVALES ADELANTADOS",
+  "tr_px": 44,
+  "now_px": 94,
+  "target_px": 47
+ },
+ {
+  "tr": "LİGDE ",
+  "now": "LIGA: PUESTO ",
+  "tr_px": 26,
+  "now_px": 55,
+  "target_px": 28
+ },
+ {
+  "tr": "HIZ +%3",
+  "now": "VELOCIDAD +%3",
+  "tr_px": 28,
+  "now_px": 59,
+  "target_px": 30
+ },
+ {
+  "tr": "HIZ +%5",
+  "now": "VELOCIDAD +%5",
+  "tr_px": 28,
+  "now_px": 59,
+  "target_px": 30
+ },
+ {
+  "tr": "KOŞ",
+  "now": "CORRER",
+  "tr_px": 14,
+  "now_px": 29,
+  "target_px": 15
+ },
+ {
+  "tr": "YEM",
+  "now": "COMIDA",
+  "tr_px": 14,
+  "now_px": 29,
+  "target_px": 15
+ },
+ {
+  "tr": "KOŞU",
+  "now": "CARRERAS",
+  "tr_px": 19,
+  "now_px": 39,
+  "target_px": 20
+ },
+ {
+  "tr": "ÖNCE ",
+  "now": "NECESITAS ",
+  "tr_px": 22,
+  "now_px": 45,
+  "target_px": 23
+ },
+ {
+  "tr": "TEKNİK ",
+  "now": "LA TÉCNICA DA ",
+  "tr_px": 30,
+  "now_px": 61,
+  "target_px": 32
+ },
+ {
+  "tr": " KEZ",
+  "now": " VEZ(ES)",
+  "tr_px": 17,
+  "now_px": 34,
+  "target_px": 18
+ },
+ {
+  "tr": " ONAR",
+  "now": " - REPARAR",
+  "tr_px": 22,
+  "now_px": 44,
+  "target_px": 23
+ },
+ {
+  "tr": "KOR AY",
+  "now": "ASCUA LUNAR",
+  "tr_px": 26,
+  "now_px": 52,
+  "target_px": 28
+ },
+ {
+  "tr": "SEÇ",
+  "now": "ELEGIR",
+  "tr_px": 14,
+  "now_px": 28,
+  "target_px": 15
+ },
+ {
+  "tr": ". AŞAMA!",
+  "now": "/3 ¡NUEVA FASE!",
+  "tr_px": 32,
+  "now_px": 63,
+  "target_px": 34
+ },
+ {
+  "tr": "HIZ +%12",
+  "now": "VELOCIDAD +%12",
+  "tr_px": 32,
+  "now_px": 63,
+  "target_px": 34
+ },
+ {
+  "tr": "HIZ -%10",
+  "now": "VELOCIDAD -%10",
+  "tr_px": 32,
+  "now_px": 63,
+  "target_px": 34
+ },
+ {
+  "tr": "JÖLE!",
+  "now": "¡GELATINA!",
+  "tr_px": 21,
+  "now_px": 41,
+  "target_px": 22
+ },
+ {
+  "tr": "ŞAMPİYON YARIŞINDA FARK %",
+  "now": "EN EL RETO DEL CAMPEÓN, LA VENTAJA SE CIERRA UN %",
+  "tr_px": 113,
+  "now_px": 219,
+  "target_px": 122
+ },
+ {
+  "tr": " KORUMA",
+  "now": " DE PROTECCIÓN",
+  "tr_px": 33,
+  "now_px": 63,
+  "target_px": 35
+ },
+ {
+  "tr": ", HAMLE HIZI +%",
+  "now": ", VELOCIDAD DEL IMPULSO +%",
+  "tr_px": 62,
+  "now_px": 116,
+  "target_px": 66
+ },
+ {
+  "tr": "DIŞ",
+  "now": "FUERA",
+  "tr_px": 13,
+  "now_px": 24,
+  "target_px": 14
+ },
+ {
+  "tr": "AHIR",
+  "now": "ESTABLO",
+  "tr_px": 18,
+  "now_px": 33,
+  "target_px": 19
+ },
+ {
+  "tr": "ÜS PUANI ",
+  "now": "¡PUNTOS DE BASE: ",
+  "tr_px": 39,
+  "now_px": 71,
+  "target_px": 42
+ },
+ {
+  "tr": "İNİŞTE 1.5 SN %",
+  "now": "AL ATERRIZAR, 1.5 S CON +%",
+  "tr_px": 59,
+  "now_px": 107,
+  "target_px": 63
+ },
+ {
+  "tr": "FARK",
+  "now": "VENTAJA",
+  "tr_px": 19,
+  "now_px": 34,
+  "target_px": 20
+ },
+ {
+  "tr": "ÜS PUANI",
+  "now": "PUNTOS DE BASE",
+  "tr_px": 36,
+  "now_px": 64,
+  "target_px": 38
+ },
+ {
+  "tr": " DÜŞMAN VUR",
+  "now": " ENEMIGOS A DERRIBAR",
+  "tr_px": 52,
+  "now_px": 92,
+  "target_px": 56
+ },
+ {
+  "tr": "MÜKEMMEL ATIŞLAR ",
+  "now": "LOS TIROS PERFECTOS ATRAVIESAN ",
+  "tr_px": 81,
+  "now_px": 142,
+  "target_px": 87
+ },
+ {
+  "tr": "ELMA",
+  "now": "MANZANA",
+  "tr_px": 20,
+  "now_px": 35,
+  "target_px": 21
+ },
+ {
+  "tr": "GÜÇ!",
+  "now": "¡PODER!",
+  "tr_px": 16,
+  "now_px": 28,
+  "target_px": 17
+ },
+ {
+  "tr": "KOŞ!",
+  "now": "¡CORRE!",
+  "tr_px": 16,
+  "now_px": 28,
+  "target_px": 17
+ },
+ {
+  "tr": "ZAFER",
+  "now": "VICTORIAS",
+  "tr_px": 24,
+  "now_px": 42,
+  "target_px": 25
+ },
+ {
+  "tr": "SU SERİNDİ. YILDIZ DA KANA KANA İÇTİ.",
+  "now": "EL AGUA ESTABA FRESCA. ESTRELLA TAMBIÉN BEBIÓ HASTA SACIARSE.",
+  "tr_px": 158,
+  "now_px": 276,
+  "target_px": 197
+ },
+ {
+  "tr": "TEMİZ ATLAYIŞTA ",
+  "now": "CON UN SALTO LIMPIO LANZAS ",
+  "tr_px": 70,
+  "now_px": 122,
+  "target_px": 75
+ },
+ {
+  "tr": "KIZIL KUM'UN ÇÖL CANAVARI",
+  "now": "EL MONSTRUO DEL DESIERTO DE LAS DUNAS ROJAS",
+  "tr_px": 114,
+  "now_px": 198,
+  "target_px": 123
+ },
+ {
+  "tr": "SİS ORMANI AVCISI",
+  "now": "CAZADORA DEL BOSQUE DE NIEBLA",
+  "tr_px": 78,
+  "now_px": 135,
+  "target_px": 84
+ },
+ {
+  "tr": "HAVUÇ",
+  "now": "ZANAHORIA",
+  "tr_px": 25,
+  "now_px": 43,
+  "target_px": 27
+ },
+ {
+  "tr": "SÜS AL, ÜS PUANI KAZAN!",
+  "now": "¡COMPRA ADORNOS Y GANA PUNTOS DE BASE!",
+  "tr_px": 99,
+  "now_px": 170,
+  "target_px": 106
+ },
+ {
+  "tr": "BİR KEZ ÖLÜMCÜL DARBEYİ ",
+  "now": "UNA VEZ, SOBREVIVE A UN GOLPE MORTAL CON ",
+  "tr_px": 109,
+  "now_px": 187,
+  "target_px": 117
+ },
+ {
+  "tr": "AL: ",
+  "now": "TOMA: ",
+  "tr_px": 14,
+  "now_px": 24,
+  "target_px": 15
+ },
+ {
+  "tr": "YEM 1",
+  "now": "COMIDA 1",
+  "tr_px": 21,
+  "now_px": 36,
+  "target_px": 22
+ },
+ {
+  "tr": "YEM 2",
+  "now": "COMIDA 2",
+  "tr_px": 21,
+  "now_px": 36,
+  "target_px": 22
+ },
+ {
+  "tr": "GALAKSİ LİGİ: ",
+  "now": "LIGA GALÁCTICA: PUESTO ",
+  "tr_px": 59,
+  "now_px": 101,
+  "target_px": 63
+ },
+ {
+  "tr": "UZAYIN EN HIZLI ATI SENİNKİ",
+  "now": "EL CABALLO MÁS RÁPIDO DEL ESPACIO ES EL TUYO",
+  "tr_px": 118,
+  "now_px": 200,
+  "target_px": 127
+ },
+ {
+  "tr": " ROZET",
+  "now": " EMBLEMAS",
+  "tr_px": 26,
+  "now_px": 44,
+  "target_px": 28
+ },
+ {
+  "tr": "HER NALDA +%5 HIZ",
+  "now": "+%5 VELOCIDAD POR HERRADURA",
+  "tr_px": 74,
+  "now_px": 125,
+  "target_px": 79
+ },
+ {
+  "tr": "BUZ ERİDİ: KAPSÜL KRİSTAL DOLUYMUŞ.",
+  "now": "EL HIELO SE DERRITIÓ: LA CÁPSULA ESTABA LLENA DE CRISTALES.",
+  "tr_px": 156,
+  "now_px": 263,
+  "target_px": 195
+ },
+ {
+  "tr": "ONAR ",
+  "now": "REPARAR ",
+  "tr_px": 22,
+  "now_px": 37,
+  "target_px": 23
+ },
+ {
+  "tr": "ŞERİT ŞERİT KAYAR, ÖNÜNÜ KESER",
+  "now": "SE DESLIZA DE CARRIL EN CARRIL Y TE CIERRA EL PASO",
+  "tr_px": 133,
+  "now_px": 223,
+  "target_px": 143
+ },
+ {
+  "tr": "SABRIM TÜKENDİ, DÜNYALI. İLK KEZ.",
+  "now": "SE ME ACABÓ LA PACIENCIA, TERRÍCOLA. POR PRIMERA VEZ.",
+  "tr_px": 142,
+  "now_px": 237,
+  "target_px": 177
+ },
+ {
+  "tr": "İLK YILDIZ GÜCÜNÜ AL",
+  "now": "CONSIGUE TU PRIMER PODER ESTELAR",
+  "tr_px": 89,
+  "now_px": 148,
+  "target_px": 96
+ },
+ {
+  "tr": "RİTİM! TOYNAK SESİNİ DİNLE, UZAYDA BİLE AYNI.",
+  "now": "¡RITMO! ESCUCHA EL SONIDO DE LOS CASCOS, ES IGUAL INCLUSO EN EL ESPACIO.",
+  "tr_px": 192,
+  "now_px": 318,
+  "target_px": 240
+ },
+ {
+  "tr": "2 KEZ, 2 CANLA KALK",
+  "now": "2 VECES, LEVÁNTATE CON 2 VIDAS",
+  "tr_px": 81,
+  "now_px": 134,
+  "target_px": 87
+ },
+ {
+  "tr": "3 KEZ, 2 CANLA KALK",
+  "now": "3 VECES, LEVÁNTATE CON 2 VIDAS",
+  "tr_px": 81,
+  "now_px": 134,
+  "target_px": 87
+ },
+ {
+  "tr": "RAKİPLERİ GEÇ, BİTİŞE KOŞ!",
+  "now": "¡ADELANTA A LOS RIVALES Y CORRE A LA META!",
+  "tr_px": 112,
+  "now_px": 185,
+  "target_px": 120
+ },
+ {
+  "tr": "AYAZ!",
+  "now": "¡HELADA!",
+  "tr_px": 20,
+  "now_px": 33,
+  "target_px": 21
+ },
+ {
+  "tr": "HİLE!",
+  "now": "¡TRAMPA!",
+  "tr_px": 20,
+  "now_px": 33,
+  "target_px": 21
+ },
+ {
+  "tr": "BUZDİŞ",
+  "now": "DIENTEFRÍO",
+  "tr_px": 28,
+  "now_px": 46,
+  "target_px": 30
+ },
+ {
+  "tr": "GEÇ",
+  "now": "TARDE",
+  "tr_px": 14,
+  "now_px": 23,
+  "target_px": 15
+ },
+ {
+  "tr": "BU KOŞUDA ÇEKİÇ: ",
+  "now": "MARTILLOS EN ESTA CARRERA: ",
+  "tr_px": 74,
+  "now_px": 121,
+  "target_px": 79
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI ARTAR",
+  "now": "MÁS PROBABILIDAD DE PODERES RAROS",
+  "tr_px": 95,
+  "now_px": 155,
+  "target_px": 102
+ },
+ {
+  "tr": "KESEN BOŞALDI. DERS OLSUN.",
+  "now": "TU BOLSA SE VACIÓ. QUE TE SIRVA DE LECCIÓN.",
+  "tr_px": 116,
+  "now_px": 189,
+  "target_px": 125
+ },
+ {
+  "tr": "KOĞUŞ",
+  "now": "BARRACÓN",
+  "tr_px": 24,
+  "now_px": 39,
+  "target_px": 25
+ },
+ {
+  "tr": "BU... BU OLAMAZ! KUPA... DÜNYALININ!",
+  "now": "ESTO... ¡ESTO NO PUEDE SER! LA COPA... ¡ES PARA LA TIERRA!",
+  "tr_px": 145,
+  "now_px": 235,
+  "target_px": 181
+ },
+ {
+  "tr": "BUZ ERİDİ DİYE SEVİNME DÜNYALI. ÇÖLDE SENİ KUM YUTACAK!",
+  "now": "NO TE ALEGRES PORQUE SE DERRITIÓ EL HIELO, TERRÍCOLA. ¡EN EL DESIERTO TE TRAGARÁ LA ARENA!",
+  "tr_px": 245,
+  "now_px": 396,
+  "target_px": 306
+ },
+ {
+  "tr": "OLAY",
+  "now": "EVENTO",
+  "tr_px": 18,
+  "now_px": 29,
+  "target_px": 19
+ },
+ {
+  "tr": "KIL PAYI! KALBİM DURDU!",
+  "now": "¡POR UN PELO! ¡SE ME PARÓ EL CORAZÓN!",
+  "tr_px": 99,
+  "now_px": 159,
+  "target_px": 106
+ },
+ {
+  "tr": "AÇIK KAPI",
+  "now": "PUERTA ABIERTA",
+  "tr_px": 40,
+  "now_px": 64,
+  "target_px": 43
+ },
+ {
+  "tr": "KAPI AÇIK",
+  "now": "PUERTA ABIERTA",
+  "tr_px": 40,
+  "now_px": 64,
+  "target_px": 43
+ },
+ {
+  "tr": "ARENA'YA GİDEN YOL AÇIK. ANNENİN İZİ ORADA.",
+  "now": "EL CAMINO A LA ARENA ESTÁ ABIERTO. EL RASTRO DE TU MADRE ESTÁ ALLÍ.",
+  "tr_px": 186,
+  "now_px": 296,
+  "target_px": 232
+ },
+ {
+  "tr": "BİP... BU DÜNYA! KAPI AÇIK, DENİZ!",
+  "now": "BIP... ¡ES LA TIERRA! ¡LA PUERTA ESTÁ ABIERTA, ARIEL!",
+  "tr_px": 136,
+  "now_px": 216,
+  "target_px": 170
+ },
+ {
+  "tr": "GÜÇ ",
+  "now": "PODER ",
+  "tr_px": 17,
+  "now_px": 27,
+  "target_px": 18
+ },
+ {
+  "tr": "STİL",
+  "now": "ESTILO",
+  "tr_px": 17,
+  "now_px": 27,
+  "target_px": 18
+ },
+ {
+  "tr": "3 TEPSİ",
+  "now": "3 BANDEJAS",
+  "tr_px": 29,
+  "now_px": 46,
+  "target_px": 31
+ },
+ {
+  "tr": "5 TEPSİ",
+  "now": "5 BANDEJAS",
+  "tr_px": 29,
+  "now_px": 46,
+  "target_px": 31
+ },
+ {
+  "tr": "7 TEPSİ",
+  "now": "7 BANDEJAS",
+  "tr_px": 29,
+  "now_px": 46,
+  "target_px": 31
+ },
+ {
+  "tr": "YAN ŞERİTTE BİR GÖLGE AT SİKKE TOPLAR",
+  "now": "UN CABALLO SOMBRA RECOGE MONEDAS EN EL CARRIL DE AL LADO",
+  "tr_px": 164,
+  "now_px": 260,
+  "target_px": 205
+ },
+ {
+  "tr": "ENKAZDA BİR KESE SİKKE BULDUN.",
+  "now": "ENCONTRASTE UNA BOLSA DE MONEDAS EN LOS RESTOS.",
+  "tr_px": 136,
+  "now_px": 215,
+  "target_px": 146
+ },
+ {
+  "tr": "FARK +",
+  "now": "VENTAJA +",
+  "tr_px": 26,
+  "now_px": 41,
+  "target_px": 28
+ },
+ {
+  "tr": "GRAX'IN İLK TUTSAĞI",
+  "now": "EL PRIMER PRISIONERO DE GRAX",
+  "tr_px": 82,
+  "now_px": 129,
+  "target_px": 88
+ },
+ {
+  "tr": " GÖREV TAMAM: PANODAN AL",
+  "now": " MISIONES CUMPLIDAS: COBRA EN EL PANEL",
+  "tr_px": 110,
+  "now_px": 173,
+  "target_px": 118
+ },
+ {
+  "tr": "ROZET",
+  "now": "EMBLEMA",
+  "tr_px": 23,
+  "now_px": 36,
+  "target_px": 24
+ },
+ {
+  "tr": "SERAPMIŞ... KUMA BATTIN, 10 SİKKE DÜŞÜRDÜN.",
+  "now": "ERA UN ESPEJISMO... TE HUNDISTE EN LA ARENA Y PERDISTE 10 MONEDAS.",
+  "tr_px": 184,
+  "now_px": 288,
+  "target_px": 230
+ },
+ {
+  "tr": "KRİSTALO KİBİRLENİNCE DURUR. O AN HAMLE YAP YA DA ALTIN NOTAYI VUR, KİBRİNİ KIR!",
+  "now": "KRISTALO SE DETIENE CUANDO SE PONE ARROGANTE. ¡EN ESE MOMENTO HAZ UN IMPULSO O ACIERTA LA NOTA DORADA Y ROMPE SU ORGULLO!",
+  "tr_px": 350,
+  "now_px": 546,
+  "target_px": 437
+ },
+ {
+  "tr": "GECE GÖZLÜ YARASA HALKI",
+  "now": "PUEBLO MURCIÉLAGO DE OJOS NOCTURNOS",
+  "tr_px": 106,
+  "now_px": 165,
+  "target_px": 114
+ },
+ {
+  "tr": "ATLA",
+  "now": "SALTAR",
+  "tr_px": 18,
+  "now_px": 28,
+  "target_px": 19
+ },
+ {
+  "tr": "KAPI",
+  "now": "PUERTA",
+  "tr_px": 18,
+  "now_px": 28,
+  "target_px": 19
+ },
+ {
+  "tr": "O GECE · AHIR",
+  "now": "ESA NOCHE · ESTABLO",
+  "tr_px": 54,
+  "now_px": 84,
+  "target_px": 58
+ },
+ {
+  "tr": "AYNI YOL, TEK SKOR",
+  "now": "MISMA RUTA, UN SOLO RÉCORD",
+  "tr_px": 76,
+  "now_px": 118,
+  "target_px": 82
+ },
+ {
+  "tr": "PANCAR",
+  "now": "REMOLACHA",
+  "tr_px": 29,
+  "now_px": 45,
+  "target_px": 31
+ },
+ {
+  "tr": " EVİNDE. GERİDE ",
+  "now": " YA ESTÁ EN CASA. QUEDAN ",
+  "tr_px": 69,
+  "now_px": 107,
+  "target_px": 74
+ },
+ {
+  "tr": "KUM GÖZÜNE KAÇMASIN DÜNYALI!",
+  "now": "¡QUE NO TE ENTRE ARENA EN LOS OJOS, TERRÍCOLA!",
+  "tr_px": 129,
+  "now_px": 200,
+  "target_px": 139
+ },
+ {
+  "tr": "SERADA ÜRÜNLER BÜYÜDÜ",
+  "now": "LOS CULTIVOS DEL HUERTO CRECIERON",
+  "tr_px": 99,
+  "now_px": 153,
+  "target_px": 106
+ },
+ {
+  "tr": "YARIŞ",
+  "now": "CARRERA",
+  "tr_px": 22,
+  "now_px": 34,
+  "target_px": 23
+ },
+ {
+  "tr": "HAMLE SÜRESİ +%",
+  "now": "DURACIÓN DEL IMPULSO +%",
+  "tr_px": 68,
+  "now_px": 105,
+  "target_px": 73
+ },
+ {
+  "tr": "SEZON BİTTİ",
+  "now": "FIN DE TEMPORADA",
+  "tr_px": 48,
+  "now_px": 74,
+  "target_px": 51
+ },
+ {
+  "tr": "DÜNYALI PİSTTE, GÖZLER ONDA!",
+  "now": "¡LA TIERRA EN LA PISTA, TODOS LOS OJOS AQUÍ!",
+  "tr_px": 122,
+  "now_px": 188,
+  "target_px": 131
+ },
+ {
+  "tr": "\"ALTIN NOTAYI TAM VUR, BUZ ÇATLAR. KRALİÇEYE SÖYLEME!\"",
+  "now": "\"ACIERTA DE LLENO LA NOTA DORADA Y EL HIELO SE AGRIETA. ¡NO SE LO DIGAS A LA REINA!\"",
+  "tr_px": 237,
+  "now_px": 365,
+  "target_px": 296
+ },
+ {
+  "tr": "TAM VURUŞ, KAPI AÇIK!",
+  "now": "¡GOLPE PERFECTO, PUERTA ABIERTA!",
+  "tr_px": 91,
+  "now_px": 140,
+  "target_px": 98
+ },
+ {
+  "tr": "HALKA ATIN ETRAFINDA KAPANDIĞI AN DOKUN. RİTİM HIZDIR. BİP.",
+  "now": "TOCA JUSTO CUANDO EL ANILLO SE CIERRA ALREDEDOR DEL CABALLO. EL RITMO ES VELOCIDAD. BIP.",
+  "tr_px": 258,
+  "now_px": 396,
+  "target_px": 322
+ },
+ {
+  "tr": "NAL SEÇ",
+  "now": "HERRADURAS",
+  "tr_px": 32,
+  "now_px": 49,
+  "target_px": 34
+ },
+ {
+  "tr": "1 KEZ, 2 CANLA KALK",
+  "now": "1 VEZ, LEVÁNTATE CON 2 VIDAS",
+  "tr_px": 81,
+  "now_px": 124,
+  "target_px": 87
+ },
+ {
+  "tr": "TABAN HIZ +%",
+  "now": "VELOCIDAD BASE +%",
+  "tr_px": 51,
+  "now_px": 78,
+  "target_px": 55
+ },
+ {
+  "tr": "SON ATAK",
+  "now": "ATAQUE FINAL",
+  "tr_px": 36,
+  "now_px": 55,
+  "target_px": 38
+ },
+ {
+  "tr": "YENİ!",
+  "now": "¡NUEVO!",
+  "tr_px": 19,
+  "now_px": 29,
+  "target_px": 20
+ },
+ {
+  "tr": "ATIŞLAR YAN ŞERİTLERE DE GİDER (%",
+  "now": "LOS TIROS TAMBIÉN VAN A LOS CARRILES LATERALES (%",
+  "tr_px": 145,
+  "now_px": 221,
+  "target_px": 181
+ },
+ {
+  "tr": "HEDEF: DÜNYALI. İŞLEM: EZ.",
+  "now": "OBJETIVO: TERRÍCOLA. ACCIÓN: APLASTAR.",
+  "tr_px": 109,
+  "now_px": 166,
+  "target_px": 117
+ },
+ {
+  "tr": "ÇAĞRI",
+  "now": "LLAMADA",
+  "tr_px": 23,
+  "now_px": 35,
+  "target_px": 24
+ },
+ {
+  "tr": "KERVANDA YILDIZ TOZU DOLU BİR ŞİŞE BULDUN.",
+  "now": "EN LA CARAVANA ENCONTRASTE UNA BOTELLA LLENA DE POLVO ESTELAR.",
+  "tr_px": 189,
+  "now_px": 286,
+  "target_px": 236
+ },
+ {
+  "tr": "TEKNİĞİNİ ",
+  "now": "USA TU TÉCNICA ",
+  "tr_px": 43,
+  "now_px": 65,
+  "target_px": 46
+ },
+ {
+  "tr": "AŞAĞIDA DÜNYA BİR BİLYE KADAR KÜÇÜLDÜ.",
+  "now": "ABAJO, LA TIERRA SE ENCOGIÓ HASTA EL TAMAÑO DE UNA CANICA.",
+  "tr_px": 171,
+  "now_px": 258,
+  "target_px": 213
+ },
+ {
+  "tr": "YILDIZ ATLARI",
+  "now": "CABALLOS ESTELARES",
+  "tr_px": 57,
+  "now_px": 86,
+  "target_px": 61
+ },
+ {
+  "tr": "BAŞTA -%4, SON ATAK 1.5 KAT GÜÇLÜ",
+  "now": "AL INICIO -%4, ATAQUE FINAL 1.5 VECES MÁS FUERTE",
+  "tr_px": 138,
+  "now_px": 208,
+  "target_px": 172
+ },
+ {
+  "tr": "RİTİMDE 3 YERİNE 5 ŞOK TOPU",
+  "now": "AL RITMO, 5 BOLAS ELÉCTRICAS EN VEZ DE 3",
+  "tr_px": 117,
+  "now_px": 176,
+  "target_px": 126
+ },
+ {
+  "tr": "AKYEL'İN NALI",
+  "now": "HERRADURA DE ROCÍO",
+  "tr_px": 56,
+  "now_px": 84,
+  "target_px": 60
+ },
+ {
+  "tr": "IŞIK SÜZÜCÜ",
+  "now": "PLANEADOR DE LUZ",
+  "tr_px": 50,
+  "now_px": 75,
+  "target_px": 54
+ },
+ {
+  "tr": "VİRAJDA İÇ KULVARA YAPIŞ, DIŞTAN DÖNEN HEP GERİDE KALIR.",
+  "now": "EN LA CURVA, PÉGATE AL CARRIL INTERIOR: QUIEN GIRA POR FUERA SIEMPRE SE QUEDA ATRÁS.",
+  "tr_px": 251,
+  "now_px": 375,
+  "target_px": 313
+ },
+ {
+  "tr": "HAMLE! NEFES HIZA DÖNÜŞTÜ",
+  "now": "¡IMPULSO! EL ALIENTO SE HIZO VELOCIDAD",
+  "tr_px": 114,
+  "now_px": 170,
+  "target_px": 123
+ },
+ {
+  "tr": "KOŞU BAŞI +1 GÜÇ YENİLEME",
+  "now": "+1 RENOVACIÓN DE PODERES POR CARRERA",
+  "tr_px": 112,
+  "now_px": 167,
+  "target_px": 120
+ },
+ {
+  "tr": " KRİSTAL TOPLA",
+  "now": " CRISTALES RECOGIDOS",
+  "tr_px": 62,
+  "now_px": 92,
+  "target_px": 66
+ },
+ {
+  "tr": "GÖZDE: ",
+  "now": "FAVORITA: ",
+  "tr_px": 29,
+  "now_px": 43,
+  "target_px": 31
+ },
+ {
+  "tr": "YILDIZ KERVANIN ÖNÜNE GEÇTİ!",
+  "now": "¡ESTRELLA SE PUSO DELANTE DE LA CARAVANA!",
+  "tr_px": 125,
+  "now_px": 185,
+  "target_px": 135
+ },
+ {
+  "tr": "TOZU DUMANA KATTIN, KAÇTIN!",
+  "now": "¡LEVANTASTE UNA POLVAREDA Y ESCAPASTE!",
+  "tr_px": 117,
+  "now_px": 173,
+  "target_px": 126
+ },
+ {
+  "tr": "DİNLE",
+  "now": "ESCUCHA",
+  "tr_px": 23,
+  "now_px": 34,
+  "target_px": 24
+ },
+ {
+  "tr": "ÖRSÜM SUSTU. YÜZ YILDIR İLK KEZ BİRİ BENİ YENDİ, DÜNYALI.",
+  "now": "MI YUNQUE CALLÓ. EN CIEN AÑOS, ES LA PRIMERA VEZ QUE ALGUIEN ME VENCE, TERRÍCOLA.",
+  "tr_px": 245,
+  "now_px": 362,
+  "target_px": 306
+ },
+ {
+  "tr": "SIRA ",
+  "now": "PUESTO ",
+  "tr_px": 21,
+  "now_px": 31,
+  "target_px": 22
+ },
+ {
+  "tr": "ÖZEL ATIŞ",
+  "now": "TIRO ESPECIAL",
+  "tr_px": 40,
+  "now_px": 59,
+  "target_px": 43
+ },
+ {
+  "tr": "KUPA BİZİM! KAPI AÇILDI! BİP BİP BİP!",
+  "now": "¡LA COPA ES NUESTRA! ¡LA PUERTA SE ABRIÓ! ¡BIP BIP BIP!",
+  "tr_px": 156,
+  "now_px": 230,
+  "target_px": 195
+ },
+ {
+  "tr": "SERA",
+  "now": "HUERTO",
+  "tr_px": 19,
+  "now_px": 28,
+  "target_px": 20
+ },
+ {
+  "tr": "SPONSOR HEDİYESİ!",
+  "now": "¡REGALO DEL PATROCINADOR!",
+  "tr_px": 76,
+  "now_px": 112,
+  "target_px": 82
+ },
+ {
+  "tr": "ÇİFT!",
+  "now": "¡DOBLE!",
+  "tr_px": 19,
+  "now_px": 28,
+  "target_px": 20
+ },
+ {
+  "tr": "YENİ",
+  "now": "NUEVO",
+  "tr_px": 17,
+  "now_px": 25,
+  "target_px": 18
+ },
+ {
+  "tr": "İYİ · GEÇ",
+  "now": "BIEN · TARDE",
+  "tr_px": 34,
+  "now_px": 50,
+  "target_px": 36
+ },
+ {
+  "tr": "KRİSTAL CİN",
+  "now": "GENIO DE CRISTAL",
+  "tr_px": 49,
+  "now_px": 72,
+  "target_px": 52
+ },
+ {
+  "tr": "TAZE SÜSLER GELDİ, DÖRT KOLUMLA TAŞIDIM!",
+  "now": "¡LLEGARON ADORNOS NUEVOS, LOS TRAJE CON MIS CUATRO BRAZOS!",
+  "tr_px": 179,
+  "now_px": 263,
+  "target_px": 223
+ },
+ {
+  "tr": "1 KEZ, 1 CANLA KALK",
+  "now": "1 VEZ, LEVÁNTATE CON 1 VIDA",
+  "tr_px": 81,
+  "now_px": 119,
+  "target_px": 87
+ },
+ {
+  "tr": "BUZUL DEVİ",
+  "now": "GIGANTE GLACIAR",
+  "tr_px": 47,
+  "now_px": 69,
+  "target_px": 50
+ },
+ {
+  "tr": "İYİ VURUŞTA DA ATEŞ EDER",
+  "now": "TAMBIÉN DISPARA CON UN GOLPE BUENO",
+  "tr_px": 107,
+  "now_px": 157,
+  "target_px": 115
+ },
+ {
+  "tr": "BU DÜNYALI DURMUYOR!",
+  "now": "¡NO HAY QUIEN PARE A LA TIERRA!",
+  "tr_px": 90,
+  "now_px": 132,
+  "target_px": 97
+ },
+ {
+  "tr": " KOMBO",
+  "now": " DE COMBO",
+  "tr_px": 28,
+  "now_px": 41,
+  "target_px": 30
+ },
+ {
+  "tr": " SİKKE",
+  "now": " MONEDAS",
+  "tr_px": 26,
+  "now_px": 38,
+  "target_px": 28
+ },
+ {
+  "tr": " GEÇİLDİ!",
+  "now": " QUEDA ATRÁS",
+  "tr_px": 37,
+  "now_px": 54,
+  "target_px": 39
+ },
+ {
+  "tr": "RAKİBİ BOŞA ÇIKARDI!",
+  "now": "¡DEJÓ AL RIVAL CON LAS GANAS!",
+  "tr_px": 88,
+  "now_px": 128,
+  "target_px": 95
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİRKEN ÇARPTIĞIN RAKİBİ İTER, DÜŞMANA ",
+  "now": "AL CAMBIAR DE CARRIL EMPUJAS AL RIVAL QUE CHOCAS Y HACES A LOS ENEMIGOS ",
+  "tr_px": 227,
+  "now_px": 330,
+  "target_px": 283
+ },
+ {
+  "tr": "İKİLİ GÜÇ YA DA 12 GÜÇ AL",
+  "now": "CONSIGUE UN PODER DÚO O 12 PODERES",
+  "tr_px": 106,
+  "now_px": 154,
+  "target_px": 114
+ },
+ {
+  "tr": "TÜYLERİM DİKEN DİKEN!",
+  "now": "¡SE ME PONE LA PIEL DE GALLINA!",
+  "tr_px": 93,
+  "now_px": 135,
+  "target_px": 100
+ },
+ {
+  "tr": "NAL OYUN TARZINI DEĞİŞTİRİR",
+  "now": "LA HERRADURA CAMBIA TU ESTILO DE JUEGO",
+  "tr_px": 120,
+  "now_px": 174,
+  "target_px": 129
+ },
+ {
+  "tr": "TEKNİK %25 HIZLI DOLAR",
+  "now": "LA TÉCNICA CARGA %25 MÁS RÁPIDO",
+  "tr_px": 96,
+  "now_px": 139,
+  "target_px": 103
+ },
+ {
+  "tr": "TEKNİK %50 HIZLI DOLAR",
+  "now": "LA TÉCNICA CARGA %50 MÁS RÁPIDO",
+  "tr_px": 96,
+  "now_px": 139,
+  "target_px": 103
+ },
+ {
+  "tr": "TEKNİK %75 HIZLI DOLAR",
+  "now": "LA TÉCNICA CARGA %75 MÁS RÁPIDO",
+  "tr_px": 96,
+  "now_px": 139,
+  "target_px": 103
+ },
+ {
+  "tr": "ÖNCE 3 ETAP LANET, SONRA KALICI LÜTUF",
+  "now": "PRIMERO 3 ETAPAS DE CASTIGO, LUEGO UN DON PERMANENTE",
+  "tr_px": 163,
+  "now_px": 236,
+  "target_px": 203
+ },
+ {
+  "tr": "AMA PİSTTEKİLER DE KAÇIRILMIŞTI. KAPI HER KUPADA YENİDEN AÇILACAKTI. YOLCULUK BİTMEMİŞTİ.",
+  "now": "PERO LOS DE LA PISTA TAMBIÉN HABÍAN SIDO SECUESTRADOS. LA PUERTA SE ABRIRÍA DE NUEVO CON CADA COPA. EL VIAJE NO HABÍA TERMINADO.",
+  "tr_px": 398,
+  "now_px": 576,
+  "target_px": 497
+ },
+ {
+  "tr": "HATIRA",
+  "now": "RECUERDO",
+  "tr_px": 27,
+  "now_px": 39,
+  "target_px": 29
+ },
+ {
+  "tr": "ÖRS ÇINLADI, KIVILCIMLAR BOŞLUĞA SAÇILDI.",
+  "now": "EL YUNQUE RESONÓ Y LAS CHISPAS SE ESPARCIERON POR EL VACÍO.",
+  "tr_px": 185,
+  "now_px": 267,
+  "target_px": 231
+ },
+ {
+  "tr": "KAOS BEDELİ İÇİN CANIN YETMİYOR",
+  "now": "NO TIENES VIDA SUFICIENTE PARA PAGAR AL CAOS",
+  "tr_px": 139,
+  "now_px": 200,
+  "target_px": 173
+ },
+ {
+  "tr": "ÖNÜNDEKİ ENGELLER KIRILIR, DÜŞMANLAR SERSEMLER",
+  "now": "LOS OBSTÁCULOS DE DELANTE SE ROMPEN Y LOS ENEMIGOS QUEDAN ATURDIDOS",
+  "tr_px": 216,
+  "now_px": 310,
+  "target_px": 270
+ },
+ {
+  "tr": "NEFES: AŞAĞI KAYDIR YA DA ALTTAKİ ÇİFT OKA BAS, HAMLE YAP. SAKLADIĞIN NEFES SON DÜZLÜKTE SON ATAĞA DÖNÜŞÜR.",
+  "now": "ALIENTO: DESLIZA HACIA ABAJO O PULSA LA DOBLE FLECHA DE ABAJO PARA HACER UN IMPULSO. EL ALIENTO QUE GUARDES SE VUELVE ATAQUE FINAL EN LA ÚLTIMA RECTA.",
+  "tr_px": 475,
+  "now_px": 680,
+  "target_px": 593
+ },
+ {
+  "tr": "YILDIZ MUTLU! SONRAKİ KOŞU +",
+  "now": "¡ESTRELLA ESTÁ FELIZ! PRÓXIMA CARRERA: +",
+  "tr_px": 123,
+  "now_px": 176,
+  "target_px": 132
+ },
+ {
+  "tr": "ŞAMPİYONLARIN SIRRI BASİT: SON DÜZLÜKTE NEFESİNİ SAKLA.",
+  "now": "EL SECRETO DE LOS CAMPEONES ES SIMPLE: GUARDA EL ALIENTO PARA LA ÚLTIMA RECTA.",
+  "tr_px": 247,
+  "now_px": 353,
+  "target_px": 308
+ },
+ {
+  "tr": "SON ATAK! +%",
+  "now": "¡ATAQUE FINAL! +%",
+  "tr_px": 49,
+  "now_px": 70,
+  "target_px": 52
+ },
+ {
+  "tr": "ZOR PİSTTE KUPAYI KAZAN",
+  "now": "GANA LA COPA EN UNA PISTA DIFÍCIL",
+  "tr_px": 103,
+  "now_px": 147,
+  "target_px": 111
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİRKEN ",
+  "now": "AL CAMBIAR DE CARRIL FLOTAS ",
+  "tr_px": 89,
+  "now_px": 127,
+  "target_px": 96
+ },
+ {
+  "tr": "KURAL BASİT: GALAKSİ KUPASI'NI KAZANAN EVİNE DÖNER. KAYBEDEN... GELECEK SEZONA KADAR BİZİMLE!",
+  "now": "LA REGLA ES SENCILLA: QUIEN GANE LA COPA GALÁCTICA VUELVE A CASA. QUIEN PIERDA... ¡SE QUEDA CON NOSOTROS HASTA LA PRÓXIMA TEMPORADA!",
+  "tr_px": 414,
+  "now_px": 590,
+  "target_px": 517
+ },
+ {
+  "tr": "HARİKA! RİTİM = HIZ",
+  "now": "¡GENIAL! RITMO = VELOCIDAD",
+  "tr_px": 80,
+  "now_px": 114,
+  "target_px": 86
+ },
+ {
+  "tr": "YANINDAKİ GÖLGE AT DA ATEŞ EDER",
+  "now": "EL CABALLO SOMBRA A TU LADO TAMBIÉN DISPARA",
+  "tr_px": 139,
+  "now_px": 198,
+  "target_px": 173
+ },
+ {
+  "tr": "SİKKE KAZANCI +%",
+  "now": "GANANCIA DE MONEDAS +%",
+  "tr_px": 71,
+  "now_px": 101,
+  "target_px": 76
+ },
+ {
+  "tr": "BİR GEZEGENİ LİG LİDERİ BİTİR",
+  "now": "TERMINA UN PLANETA COMO LÍDER DE LA LIGA",
+  "tr_px": 128,
+  "now_px": 182,
+  "target_px": 138
+ },
+ {
+  "tr": "İLK RUH GÜCÜ EN AZ NADİR",
+  "now": "TU PRIMER PODER SERÁ RARO O MEJOR",
+  "tr_px": 107,
+  "now_px": 152,
+  "target_px": 115
+ },
+ {
+  "tr": "HERKES KAZA DEDİ. AMA KİMSE ONU BULAMADI.",
+  "now": "TODOS DIJERON QUE FUE UN ACCIDENTE. PERO NADIE LA ENCONTRÓ.",
+  "tr_px": 186,
+  "now_px": 264,
+  "target_px": 232
+ },
+ {
+  "tr": "KOŞUYA 60 SİKKEYLE BAŞLA",
+  "now": "EMPIEZA LA CARRERA CON 60 MONEDAS",
+  "tr_px": 108,
+  "now_px": 153,
+  "target_px": 116
+ },
+ {
+  "tr": "YENİLDİ: ",
+  "now": "LE GANASTE: ",
+  "tr_px": 36,
+  "now_px": 51,
+  "target_px": 38
+ },
+ {
+  "tr": "MANTAR AYI... ULUYAN GORM KİMSEYİ GEÇİRMEZMİŞ. KORSANLARA DA DİKKAT.",
+  "now": "LUNA HONGO... DICEN QUE EL GORM AULLADOR NO DEJA PASAR A NADIE. CUIDADO TAMBIÉN CON LOS PIRATAS.",
+  "tr_px": 302,
+  "now_px": 427,
+  "target_px": 377
+ },
+ {
+  "tr": "KOŞUYU BIRAKMAK DA BİR SEÇİM. YILDIZ DİNLENDİ, SEN DE DİNLEN. BİP.",
+  "now": "ABANDONAR LA CARRERA TAMBIÉN ES UNA DECISIÓN. ESTRELLA DESCANSÓ; DESCANSA TÚ TAMBIÉN. BIP.",
+  "tr_px": 288,
+  "now_px": 406,
+  "target_px": 360
+ },
+ {
+  "tr": " PUAN",
+  "now": " PUNTOS",
+  "tr_px": 22,
+  "now_px": 31,
+  "target_px": 23
+ },
+ {
+  "tr": "KARA DELİK SENİ YAKALADI. KOMBO HIZDIR: RİTMİ BOZMA, HAMLEYİ SON ANA SAKLA.",
+  "now": "EL AGUJERO NEGRO TE ATRAPÓ. EL COMBO ES VELOCIDAD: NO ROMPAS EL RITMO Y GUARDA EL IMPULSO PARA EL FINAL.",
+  "tr_px": 333,
+  "now_px": 469,
+  "target_px": 416
+ },
+ {
+  "tr": "KUM SOLUCANI ZARG'I YEN",
+  "now": "VENCE A ZARG, EL GUSANO DE ARENA",
+  "tr_px": 103,
+  "now_px": 145,
+  "target_px": 111
+ },
+ {
+  "tr": "TOZKIRAN'IN KERVANI",
+  "now": "LA CARAVANA DE ROMPEPOLVO",
+  "tr_px": 86,
+  "now_px": 121,
+  "target_px": 92
+ },
+ {
+  "tr": "3 GÖREV",
+  "now": "3 MISIONES",
+  "tr_px": 32,
+  "now_px": 45,
+  "target_px": 34
+ },
+ {
+  "tr": "6 KRİSTAL · 3 KOŞU",
+  "now": "6 CRISTALES · 3 CARRERAS",
+  "tr_px": 74,
+  "now_px": 104,
+  "target_px": 79
+ },
+ {
+  "tr": "BİP'İN YEDEK PİLİ!",
+  "now": "¡PILA DE RESERVA DE BIP!",
+  "tr_px": 74,
+  "now_px": 104,
+  "target_px": 79
+ },
+ {
+  "tr": "BÖLMEN GÜZELLEŞTİKÇE SEYİRCİN ARTIYOR.",
+  "now": "CUANTO MÁS BONITO ESTÉ TU MÓDULO, MÁS PÚBLICO TENDRÁS.",
+  "tr_px": 173,
+  "now_px": 243,
+  "target_px": 216
+ },
+ {
+  "tr": "İNDİĞİN YERDEKİ DÜŞMANLAR ",
+  "now": "LOS ENEMIGOS DONDE ATERRIZAS SUFREN ",
+  "tr_px": 119,
+  "now_px": 167,
+  "target_px": 128
+ },
+ {
+  "tr": "+2 CAN",
+  "now": "+2 VIDAS",
+  "tr_px": 25,
+  "now_px": 35,
+  "target_px": 27
+ },
+ {
+  "tr": "VİRAJ: İÇ KULVAR DAHA KISA. OKLARIN GÖSTERDİĞİ İÇ TARAFA GEÇ, DIŞTA KALAN GERİDE KALIR.",
+  "now": "CURVA: EL CARRIL INTERIOR ES MÁS CORTO. PASA AL LADO INTERIOR QUE MARCAN LAS FLECHAS; QUIEN VA POR FUERA SE QUEDA ATRÁS.",
+  "tr_px": 385,
+  "now_px": 539,
+  "target_px": 481
+ },
+ {
+  "tr": "ŞİFA JELİ",
+  "now": "GEL CURATIVO",
+  "tr_px": 40,
+  "now_px": 56,
+  "target_px": 43
+ },
+ {
+  "tr": "GÜM! YOLDAN ÇEKİL!",
+  "now": "¡BUM! ¡QUÍTATE DEL CAMINO!",
+  "tr_px": 78,
+  "now_px": 109,
+  "target_px": 84
+ },
+ {
+  "tr": "İLK YARIDA +%8 HIZ VE UCUZ HAMLE, SONDA -%4",
+  "now": "PRIMERA MITAD: +%8 VELOCIDAD E IMPULSO BARATO; AL FINAL -%4",
+  "tr_px": 187,
+  "now_px": 261,
+  "target_px": 233
+ },
+ {
+  "tr": "DÜŞMANLAR 2 KAT SİKKE DÜŞÜRÜR",
+  "now": "LOS ENEMIGOS SUELTAN EL DOBLE DE MONEDAS",
+  "tr_px": 134,
+  "now_px": 187,
+  "target_px": 144
+ },
+ {
+  "tr": " İSİMLİ RAKİBİN ÖNÜNDE BİTİR",
+  "now": " RIVALES CON NOMBRE SUPERADOS EN META",
+  "tr_px": 124,
+  "now_px": 173,
+  "target_px": 133
+ },
+ {
+  "tr": "KIVILCIM... AKYEL'İN ATI O GECE TÖKEZLEMİŞTİ. HEPİMİZ KAZA SANDIK.",
+  "now": "CHISPAS... AQUELLA NOCHE EL CABALLO DE ROCÍO TROPEZÓ. TODOS CREÍMOS QUE FUE UN ACCIDENTE.",
+  "tr_px": 285,
+  "now_px": 397,
+  "target_px": 356
+ },
+ {
+  "tr": "ASTEROİT KUŞAĞI K-7",
+  "now": "CINTURÓN DE ASTEROIDES K-7",
+  "tr_px": 84,
+  "now_px": 117,
+  "target_px": 90
+ },
+ {
+  "tr": "DİNLEN",
+  "now": "DESCANSA",
+  "tr_px": 28,
+  "now_px": 39,
+  "target_px": 30
+ },
+ {
+  "tr": "LANET",
+  "now": "CASTIGO",
+  "tr_px": 23,
+  "now_px": 32,
+  "target_px": 24
+ },
+ {
+  "tr": "YILDIZ'I SEN SÜRÜYORSUN, DENİZ!",
+  "now": "¡TÚ LLEVAS LAS RIENDAS DE ESTRELLA, ARIEL!",
+  "tr_px": 133,
+  "now_px": 185,
+  "target_px": 166
+ },
+ {
+  "tr": " RUHU SANA GÜÇ SUNUYOR",
+  "now": " · ESTE ESPÍRITU TE OFRECE PODER",
+  "tr_px": 100,
+  "now_px": 139,
+  "target_px": 108
+ },
+ {
+  "tr": "BİP'İN YEDEK PİLİ",
+  "now": "PILA DE RESERVA DE BIP",
+  "tr_px": 72,
+  "now_px": 100,
+  "target_px": 77
+ },
+ {
+  "tr": "ESKİ HİKAYELER, DÜNYALI! SEYİRCİ YENİ SKANDAL İSTER. KOR AY'DA SENİ YAKACAĞIZ!",
+  "now": "¡HISTORIAS VIEJAS, TERRÍCOLA! EL PÚBLICO QUIERE ESCÁNDALOS NUEVOS. ¡EN ASCUA LUNAR TE VAMOS A CHAMUSCAR!",
+  "tr_px": 338,
+  "now_px": 469,
+  "target_px": 422
+ },
+ {
+  "tr": "KOŞUDAN ÖNCE YEM SEÇ",
+  "now": "ELIGE COMIDA ANTES DE CORRER",
+  "tr_px": 93,
+  "now_px": 129,
+  "target_px": 100
+ },
+ {
+  "tr": "SONRAKİ ETAP 12 KOMBOYLA BAŞLA",
+  "now": "EMPIEZA LA SIGUIENTE ETAPA CON 12 DE COMBO",
+  "tr_px": 137,
+  "now_px": 190,
+  "target_px": 147
+ },
+ {
+  "tr": "SONRAKİ ETAP 15 KOMBOYLA BAŞLA",
+  "now": "EMPIEZA LA SIGUIENTE ETAPA CON 15 DE COMBO",
+  "tr_px": 137,
+  "now_px": 190,
+  "target_px": 147
+ },
+ {
+  "tr": "DÜNYA · ALTIN NAL KUPASI FİNALİ",
+  "now": "TIERRA · FINAL DE LA COPA HERRADURA DE ORO",
+  "tr_px": 135,
+  "now_px": 187,
+  "target_px": 168
+ },
+ {
+  "tr": "NEFES!",
+  "now": "¡ALIENTO!",
+  "tr_px": 26,
+  "now_px": 36,
+  "target_px": 28
+ },
+ {
+  "tr": "TEK ATIŞ. TEK ŞANS.",
+  "now": "UN TIRO. UNA OPORTUNIDAD.",
+  "tr_px": 78,
+  "now_px": 108,
+  "target_px": 84
+ },
+ {
+  "tr": "ULUYAN GORM'U YEN",
+  "now": "VENCE AL GORM AULLADOR",
+  "tr_px": 76,
+  "now_px": 105,
+  "target_px": 82
+ },
+ {
+  "tr": "İÇİNİ BİR SERİNLİK KAPLADI.",
+  "now": "UNA FRESCURA TE RECORRIÓ POR DENTRO.",
+  "tr_px": 118,
+  "now_px": 163,
+  "target_px": 127
+ },
+ {
+  "tr": " HIZ PATLAMASI",
+  "now": " DE VELOCIDAD EXTRA",
+  "tr_px": 63,
+  "now_px": 87,
+  "target_px": 68
+ },
+ {
+  "tr": "KAOS KAPISI",
+  "now": "PUERTA DEL CAOS",
+  "tr_px": 50,
+  "now_px": 69,
+  "target_px": 54
+ },
+ {
+  "tr": "SON DÜZLÜK. VOLTRAK'IN KIVILCIMLARI SÖNDÜ. YILDIZ BİR BAŞ ÖNDE.",
+  "now": "ÚLTIMA RECTA. LAS CHISPAS DE VOLTRAK SE APAGARON. ESTRELLA VA UNA CABEZA POR DELANTE.",
+  "tr_px": 279,
+  "now_px": 385,
+  "target_px": 348
+ },
+ {
+  "tr": " UZUN NOTAYI SONUNA KADAR TUT",
+  "now": " NOTAS LARGAS MANTENIDAS HASTA EL FINAL",
+  "tr_px": 129,
+  "now_px": 178,
+  "target_px": 139
+ },
+ {
+  "tr": "KERVANLAR YİNE YOLA ÇIKACAK. ŞARKININ YENİ KITASI SENİNLE İLGİLİ DÜNYALI.",
+  "now": "LAS CARAVANAS VOLVERÁN A PONERSE EN MARCHA. LA NUEVA ESTROFA DE LA CANCIÓN HABLA DE TI, TERRÍCOLA.",
+  "tr_px": 324,
+  "now_px": 447,
+  "target_px": 405
+ },
+ {
+  "tr": "ÖNCE BİR ISINMA TURU ATALIM. TOYNAK SESİNİ DİNLE, DENİZ. RİTİM HIZDIR.",
+  "now": "PRIMERO DEMOS UNA VUELTA DE CALENTAMIENTO. ESCUCHA LOS CASCOS, ARIEL. EL RITMO ES VELOCIDAD.",
+  "tr_px": 303,
+  "now_px": 418,
+  "target_px": 378
+ },
+ {
+  "tr": "TOZKIRAN",
+  "now": "ROMPEPOLVO",
+  "tr_px": 37,
+  "now_px": 51,
+  "target_px": 39
+ },
+ {
+  "tr": "KAPIYI RİTİMLE AÇTI!",
+  "now": "¡ABRIÓ LA PUERTA CON RITMO!",
+  "tr_px": 85,
+  "now_px": 117,
+  "target_px": 91
+ },
+ {
+  "tr": "SPRİNTTE İLK SIRALARA GİREMEZSEN BİR CAN GİDER. KALABALIK PİSTLERDE İLK 4 YETER.",
+  "now": "EN EL SPRINT, SI NO ACABAS EN CABEZA PIERDES UNA VIDA. EN PISTAS LLENAS BASTA CON QUEDAR ENTRE LOS 4 PRIMEROS.",
+  "tr_px": 357,
+  "now_px": 491,
+  "target_px": 446
+ },
+ {
+  "tr": "CÜRUF",
+  "now": "ESCORIA",
+  "tr_px": 24,
+  "now_px": 33,
+  "target_px": 25
+ },
+ {
+  "tr": "KARA DELİK!",
+  "now": "¡AGUJERO NEGRO!",
+  "tr_px": 48,
+  "now_px": 66,
+  "target_px": 51
+ },
+ {
+  "tr": "PUAN: ",
+  "now": "PUNTOS: ",
+  "tr_px": 24,
+  "now_px": 33,
+  "target_px": 25
+ },
+ {
+  "tr": "SKOR: ",
+  "now": "PUNTOS: ",
+  "tr_px": 24,
+  "now_px": 33,
+  "target_px": 25
+ },
+ {
+  "tr": "TAKİPTE: NEFES +%50",
+  "now": "PERSECUCIÓN: ALIENTO +%50",
+  "tr_px": 80,
+  "now_px": 110,
+  "target_px": 86
+ },
+ {
+  "tr": "ŞEKER VER, HATIRASINI AL: ",
+  "now": "DA UN TERRÓN Y RECIBE SU RECUERDO: ",
+  "tr_px": 112,
+  "now_px": 154,
+  "target_px": 120
+ },
+ {
+  "tr": "BİP! BEN BİP-0, DÜNYA BÖLMESİ'NİN BAKICISI. KORKMA, ÖNCE BİR ISINMA TURU ATALIM.",
+  "now": "¡BIP! SOY BIP-0, CUIDADOR DEL MÓDULO TERRESTRE. NO TENGAS MIEDO, PRIMERO DEMOS UNA VUELTA DE CALENTAMIENTO.",
+  "tr_px": 347,
+  "now_px": 477,
+  "target_px": 433
+ },
+ {
+  "tr": "KOR AY'IN ZİNCİRLİ DEMİRCİSİ",
+  "now": "EL HERRERO ENCADENADO DE ASCUA LUNAR",
+  "tr_px": 123,
+  "now_px": 169,
+  "target_px": 132
+ },
+ {
+  "tr": "YETERİNCE DOKUNUŞ YAKALANAMADI. SESİ AÇIP TEKRAR DENE.",
+  "now": "NO SE DETECTARON SUFICIENTES TOQUES. SUBE EL VOLUMEN E INTÉNTALO DE NUEVO.",
+  "tr_px": 244,
+  "now_px": 335,
+  "target_px": 305
+ },
+ {
+  "tr": "KAPI AÇIK: BİRİNİ EVE GÖNDER",
+  "now": "PUERTA ABIERTA: ENVÍA A ALGUIEN A CASA",
+  "tr_px": 124,
+  "now_px": 170,
+  "target_px": 133
+ },
+ {
+  "tr": "SEÇİCİ",
+  "now": "EXIGENTE",
+  "tr_px": 27,
+  "now_px": 37,
+  "target_px": 29
+ },
+ {
+  "tr": "NİŞANIM KUMA GÖMÜLDÜ. SENİ VURAMADIM, HELAL OLSUN.",
+  "now": "MI PUNTERÍA SE HUNDIÓ EN LA ARENA. NO PUDE DARTE; ME QUITO EL SOMBRERO.",
+  "tr_px": 230,
+  "now_px": 315,
+  "target_px": 287
+ },
+ {
+  "tr": "GEL DÜNYALI, TAZE GÜÇLER VAR!",
+  "now": "¡VEN, TERRÍCOLA, HAY PODERES FRESQUITOS!",
+  "tr_px": 128,
+  "now_px": 175,
+  "target_px": 138
+ },
+ {
+  "tr": "İŞARETLER ORTADA BULUŞUNCA DOKUN! (",
+  "now": "¡TOCA CUANDO LAS MARCAS SE JUNTEN EN EL CENTRO! (",
+  "tr_px": 158,
+  "now_px": 216,
+  "target_px": 197
+ },
+ {
+  "tr": " KOMBO!",
+  "now": " DE COMBO",
+  "tr_px": 30,
+  "now_px": 41,
+  "target_px": 32
+ },
+ {
+  "tr": "YILDIZ'IN CAM KUBBELİ AHIRI. SEVİYE PUANLARINI ANTRENMANDA HARCA.",
+  "now": "EL ESTABLO DE ESTRELLA, CON CÚPULA DE CRISTAL. GASTA AQUÍ LOS PUNTOS DE NIVEL ENTRENANDO.",
+  "tr_px": 292,
+  "now_px": 399,
+  "target_px": 365
+ },
+ {
+  "tr": ", SON ATAK +%",
+  "now": ", ATAQUE FINAL +%",
+  "tr_px": 52,
+  "now_px": 71,
+  "target_px": 56
+ },
+ {
+  "tr": "FARKLI NALLAR DÖV, OYUN TARZINI DEĞİŞTİR.",
+  "now": "FORJA HERRADURAS DISTINTAS Y CAMBIA TU ESTILO DE JUEGO.",
+  "tr_px": 181,
+  "now_px": 247,
+  "target_px": 226
+ },
+ {
+  "tr": "1 ŞEKER · 6 KOŞU",
+  "now": "1 TERRÓN · 6 CARRERAS",
+  "tr_px": 66,
+  "now_px": 90,
+  "target_px": 71
+ },
+ {
+  "tr": "KOR AY! LAV DALGASI GELİNCE SIÇRA, YOKSA TOYNAKLAR YANAR!",
+  "now": "¡ASCUA LUNAR! CUANDO LLEGUE LA OLA DE LAVA, SALTA, ¡O SE TE QUEMAN LOS CASCOS!",
+  "tr_px": 252,
+  "now_px": 343,
+  "target_px": 315
+ },
+ {
+  "tr": "NEFES KAZANCI +%",
+  "now": "GANANCIA DE ALIENTO +%",
+  "tr_px": 72,
+  "now_px": 98,
+  "target_px": 77
+ },
+ {
+  "tr": "ŞAMPİYON SAHNEDE! REKOR YAYIN!",
+  "now": "¡EL CAMPEÓN EN ESCENA! ¡AUDIENCIA RÉCORD!",
+  "tr_px": 133,
+  "now_px": 181,
+  "target_px": 143
+ },
+ {
+  "tr": "YEM SEÇİLMEDİ",
+  "now": "SIN COMIDA ELEGIDA",
+  "tr_px": 61,
+  "now_px": 83,
+  "target_px": 65
+ },
+ {
+  "tr": "HAMLE",
+  "now": "IMPULSO",
+  "tr_px": 25,
+  "now_px": 34,
+  "target_px": 27
+ },
+ {
+  "tr": "YOLU KESEN UZAY KORSANLARI BAĞIRIYOR: KESEYİ VER, GEÇ!",
+  "now": "LOS PIRATAS ESPACIALES TE CORTAN EL PASO Y GRITAN: ¡DANOS LA BOLSA Y PASA!",
+  "tr_px": 239,
+  "now_px": 325,
+  "target_px": 298
+ },
+ {
+  "tr": "BAHİS: ",
+  "now": "APUESTA: ",
+  "tr_px": 28,
+  "now_px": 38,
+  "target_px": 30
+ },
+ {
+  "tr": "ŞANSLI",
+  "now": "SUERTUDO",
+  "tr_px": 28,
+  "now_px": 38,
+  "target_px": 30
+ },
+ {
+  "tr": "DÜELLODA RAKİBİN ARKASINA SAKLAN, SİPERİN DOLSUN. SON DÜZLÜKTE YANA ÇIK VE GEÇ.",
+  "now": "EN EL DUELO, ESCÓNDETE DETRÁS DEL RIVAL PARA CARGAR EL REBUFO. EN LA ÚLTIMA RECTA, SAL AL LADO Y ADELÁNTALO.",
+  "tr_px": 356,
+  "now_px": 483,
+  "target_px": 445
+ },
+ {
+  "tr": "SONRAKİ KOŞU ISINMA TURUYLA BAŞLAR",
+  "now": "LA PRÓXIMA CARRERA EMPEZARÁ CON CALENTAMIENTO",
+  "tr_px": 157,
+  "now_px": 213,
+  "target_px": 196
+ },
+ {
+  "tr": "BUZDİŞ, GLASİ AYININ DEV BUZUL HALKINDAN. ADIMLARI YAVAŞ AMA OMUZLARI DAĞ GİBİ. GRAX ONU BUZUN İÇİNDE UYURKEN BULDU VE UYANDIRDI. O GÜNDEN BERİ PİSTTE KİMSEYE YOL VERMİYOR.",
+  "now": "DIENTEFRÍO ES DEL PUEBLO DE LOS GIGANTES GLACIARES DE LA LUNA GLASI. SUS PASOS SON LENTOS, PERO SUS HOMBROS SON MONTAÑAS. GRAX LO ENCONTRÓ DORMIDO DENTRO DEL HIELO Y LO DESPERTÓ. DESDE ENTONCES NO LE CEDE EL PASO A NADIE EN LA PISTA.",
+  "tr_px": 774,
+  "now_px": 1049,
+  "target_px": 967
+ },
+ {
+  "tr": "BİP! YORULMAK AYIP DEĞİL DENİZ. GRAX'IN ŞOVUNDA HERKES İLK SEZONU KAYBEDER.",
+  "now": "¡BIP! CANSARSE NO ES NINGUNA VERGÜENZA, ARIEL. EN EL SHOW DE GRAX TODOS PIERDEN SU PRIMERA TEMPORADA.",
+  "tr_px": 335,
+  "now_px": 454,
+  "target_px": 418
+ },
+ {
+  "tr": "REYTİNG",
+  "now": "AUDIENCIA",
+  "tr_px": 31,
+  "now_px": 42,
+  "target_px": 33
+ },
+ {
+  "tr": "TEKNİK GÖSTERGESİ DOLUNCA ALTTAKİ DÜĞMEYE BAS.",
+  "now": "CUANDO SE LLENE EL MEDIDOR DE TÉCNICA, PULSA EL BOTÓN DE ABAJO.",
+  "tr_px": 209,
+  "now_px": 283,
+  "target_px": 261
+ },
+ {
+  "tr": "ÇEKİÇ ALINDI: ÇIKIŞTA ÖRSE!",
+  "now": "MARTILLO LISTO: ¡AL SALIR, AL YUNQUE!",
+  "tr_px": 116,
+  "now_px": 157,
+  "target_px": 125
+ },
+ {
+  "tr": "VAY, ŞEKER! DÖRT KOLUMLA SARILIRIM. AL ŞU KESEYİ, İÇİ BOŞ AMA UĞURLUDUR.",
+  "now": "¡VAYA, UN TERRÓN! TE ABRAZARÍA CON MIS CUATRO BRAZOS. TOMA ESTA BOLSA: ESTÁ VACÍA, PERO DA SUERTE.",
+  "tr_px": 317,
+  "now_px": 429,
+  "target_px": 396
+ },
+ {
+  "tr": "JÖLE BEYİNLİ BİLGİN",
+  "now": "SABIO CEREBRO DE GELATINA",
+  "tr_px": 85,
+  "now_px": 115,
+  "target_px": 91
+ },
+ {
+  "tr": "KARDEŞLERİM BU KIŞ SENİN HEYKELİNİ YAPACAK. ATIN DA OLACAK, SÖZ.",
+  "now": "ESTE INVIERNO MIS HERMANOS ESCULPIRÁN TU ESTATUA. CON TU CABALLO INCLUIDO, PROMETIDO.",
+  "tr_px": 284,
+  "now_px": 384,
+  "target_px": 355
+ },
+ {
+  "tr": "SİKKELERİN BOŞA GİTMEZ: KOŞU SONUNDA İLK 500 SİKKE 10'A 1, FAZLASI 20'YE 1 KRİSTAL OLUR. PAZARDA HARCAMAYI UNUTMA!",
+  "now": "TUS MONEDAS NO SE PIERDEN: AL ACABAR LA CARRERA, LAS PRIMERAS 500 DAN 1 CRISTAL POR CADA 10, Y EL RESTO, 1 POR CADA 20. ¡NO OLVIDES GASTARLAS EN EL BAZAR!",
+  "tr_px": 498,
+  "now_px": 673,
+  "target_px": 622
+ },
+ {
+  "tr": "IŞIK YAYI",
+  "now": "ARCO DE LUZ",
+  "tr_px": 37,
+  "now_px": 50,
+  "target_px": 39
+ },
+ {
+  "tr": "GÖREV EKRANINA UĞRA, BİTEN GÖREVLER KRİSTAL VERİYOR!",
+  "now": "PÁSATE POR EL PANEL DE MISIONES: ¡LAS MISIONES CUMPLIDAS DAN CRISTALES!",
+  "tr_px": 237,
+  "now_px": 320,
+  "target_px": 296
+ },
+ {
+  "tr": "SIKICI! METEORLARI SALIN!",
+  "now": "¡ABURRIDO! ¡QUE CAIGAN METEORITOS!",
+  "tr_px": 109,
+  "now_px": 147,
+  "target_px": 117
+ },
+ {
+  "tr": "YİRMİ YIL SONRA",
+  "now": "VEINTE AÑOS DESPUÉS",
+  "tr_px": 66,
+  "now_px": 89,
+  "target_px": 71
+ },
+ {
+  "tr": " KALDI",
+  "now": " DE CAER",
+  "tr_px": 26,
+  "now_px": 35,
+  "target_px": 28
+ },
+ {
+  "tr": "BÜYÜYOR",
+  "now": "CRECIENDO",
+  "tr_px": 32,
+  "now_px": 43,
+  "target_px": 34
+ },
+ {
+  "tr": "EN UZAK",
+  "now": "MÁS LEJOS",
+  "tr_px": 32,
+  "now_px": 43,
+  "target_px": 34
+ },
+ {
+  "tr": "EZİLMEK İSTEMİYORSAN KENARA!",
+  "now": "¡A UN LADO SI NO QUIERES QUE TE APLASTE!",
+  "tr_px": 129,
+  "now_px": 173,
+  "target_px": 139
+ },
+ {
+  "tr": "YİĞİT YÜREK",
+  "now": "CORAZÓN BRAVO",
+  "tr_px": 47,
+  "now_px": 63,
+  "target_px": 50
+ },
+ {
+  "tr": "İNANILMAZ! KESEN DOLDU.",
+  "now": "¡INCREÍBLE! TU BOLSA ESTÁ LLENA.",
+  "tr_px": 103,
+  "now_px": 138,
+  "target_px": 111
+ },
+ {
+  "tr": ", ÖZEL ATIŞ +%",
+  "now": ", TIRO ESPECIAL +%",
+  "tr_px": 56,
+  "now_px": 75,
+  "target_px": 60
+ },
+ {
+  "tr": "RİTMİ ZAMANLA ÖĞRENİRSİN",
+  "now": "EL RITMO SE APRENDE CON EL TIEMPO",
+  "tr_px": 112,
+  "now_px": 150,
+  "target_px": 120
+ },
+ {
+  "tr": "KUM FIRTINASI",
+  "now": "TORMENTA DE ARENA",
+  "tr_px": 59,
+  "now_px": 79,
+  "target_px": 63
+ },
+ {
+  "tr": "HER VURUŞTA EN AZ İKİ IŞIK OKU",
+  "now": "CADA GOLPE, AL MENOS DOS FLECHAS DE LUZ",
+  "tr_px": 133,
+  "now_px": 178,
+  "target_px": 143
+ },
+ {
+  "tr": "SÖNMÜŞ YILDIZ VEGA-9",
+  "now": "VEGA-9, LA ESTRELLA APAGADA",
+  "tr_px": 92,
+  "now_px": 123,
+  "target_px": 99
+ },
+ {
+  "tr": "KOŞUDAN ÖNCE BİR YEM SEÇ",
+  "now": "ELIGE UNA COMIDA ANTES DE CORRER",
+  "tr_px": 110,
+  "now_px": 147,
+  "target_px": 118
+ },
+ {
+  "tr": "RAKİBİ GEÇ",
+  "now": "GANA AL RIVAL",
+  "tr_px": 45,
+  "now_px": 60,
+  "target_px": 48
+ },
+ {
+  "tr": "REVİR",
+  "now": "CLÍNICA",
+  "tr_px": 24,
+  "now_px": 32,
+  "target_px": 25
+ },
+ {
+  "tr": "30 SİKKE ÖDE",
+  "now": "PAGA 30 MONEDAS",
+  "tr_px": 52,
+  "now_px": 69,
+  "target_px": 56
+ },
+ {
+  "tr": "ÇİFT KİRİŞ",
+  "now": "DOBLE CUERDA",
+  "tr_px": 43,
+  "now_px": 57,
+  "target_px": 46
+ },
+ {
+  "tr": "SİKKE → KRİSTAL",
+  "now": "MONEDAS → CRISTALES",
+  "tr_px": 68,
+  "now_px": 90,
+  "target_px": 73
+ },
+ {
+  "tr": "SIKICI!",
+  "now": "¡BOSTEZO!",
+  "tr_px": 28,
+  "now_px": 37,
+  "target_px": 30
+ },
+ {
+  "tr": "HIZ +%10, AZAMİ CAN -1",
+  "now": "VELOCIDAD +%10, VIDA MÁX. -1",
+  "tr_px": 91,
+  "now_px": 120,
+  "target_px": 98
+ },
+ {
+  "tr": "NEFES TÜPÜ: +50 NEFES",
+  "now": "TUBO DE ALIENTO: +50 ALIENTO",
+  "tr_px": 91,
+  "now_px": 120,
+  "target_px": 98
+ },
+ {
+  "tr": "LENSLER JİLET GİBİ PARLADI.",
+  "now": "LAS LENTES BRILLARON COMO NAVAJAS.",
+  "tr_px": 120,
+  "now_px": 158,
+  "target_px": 129
+ },
+ {
+  "tr": "+15 SİKKE",
+  "now": "+15 MONEDAS",
+  "tr_px": 38,
+  "now_px": 50,
+  "target_px": 41
+ },
+ {
+  "tr": "+20 SİKKE",
+  "now": "+20 MONEDAS",
+  "tr_px": 38,
+  "now_px": 50,
+  "target_px": 41
+ },
+ {
+  "tr": "SİPER DOLU: YANA ÇIK!",
+  "now": "REBUFO LLENO: ¡SAL AL LADO!",
+  "tr_px": 89,
+  "now_px": 117,
+  "target_px": 96
+ },
+ {
+  "tr": "BAHİS: +",
+  "now": "APUESTA: +",
+  "tr_px": 32,
+  "now_px": 42,
+  "target_px": 34
+ },
+ {
+  "tr": " GEÇMENE %",
+  "now": " ESTABA A UN %",
+  "tr_px": 45,
+  "now_px": 59,
+  "target_px": 48
+ },
+ {
+  "tr": " ONARILDI!",
+  "now": " · ¡EN MARCHA!",
+  "tr_px": 42,
+  "now_px": 55,
+  "target_px": 45
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRME 2 KAT HIZLI",
+  "now": "CAMBIO DE CARRIL 2 VECES MÁS RÁPIDO",
+  "tr_px": 123,
+  "now_px": 161,
+  "target_px": 132
+ },
+ {
+  "tr": "KOMBO YAVAŞ SÖNER",
+  "now": "EL COMBO SE APAGA LENTO",
+  "tr_px": 81,
+  "now_px": 106,
+  "target_px": 87
+ },
+ {
+  "tr": "NEM GEZEGENİ HUMA",
+  "now": "HUMA, EL PLANETA HÚMEDO",
+  "tr_px": 81,
+  "now_px": 106,
+  "target_px": 87
+ },
+ {
+  "tr": "SPONSORUMUZDAN BİR HEDİYE!",
+  "now": "¡UN REGALO DE NUESTRO PATROCINADOR!",
+  "tr_px": 120,
+  "now_px": 157,
+  "target_px": 129
+ },
+ {
+  "tr": "BRONZ MADALYA",
+  "now": "MEDALLA DE BRONCE",
+  "tr_px": 62,
+  "now_px": 81,
+  "target_px": 66
+ },
+ {
+  "tr": "GÖLGE İKİZİ",
+  "now": "GEMELO SOMBRA",
+  "tr_px": 49,
+  "now_px": 64,
+  "target_px": 52
+ },
+ {
+  "tr": "KAYIP JOKEY",
+  "now": "JINETE PERDIDA",
+  "tr_px": 49,
+  "now_px": 64,
+  "target_px": 52
+ },
+ {
+  "tr": " RAKİP ATIŞINDAN KAÇ",
+  "now": " TIROS RIVALES ESQUIVADOS",
+  "tr_px": 89,
+  "now_px": 116,
+  "target_px": 96
+ },
+ {
+  "tr": "YENİ PİST: ",
+  "now": "NUEVA PISTA: ",
+  "tr_px": 43,
+  "now_px": 56,
+  "target_px": 46
+ },
+ {
+  "tr": "ETAPLARA 5 KOMBOYLA BAŞLA",
+  "now": "EMPIEZA LAS ETAPAS CON 5 DE COMBO",
+  "tr_px": 116,
+  "now_px": 151,
+  "target_px": 125
+ },
+ {
+  "tr": "BÖLMENE DE TEZGAH KURARIM!",
+  "now": "¡TAMBIÉN MONTO PUESTO EN TU MÓDULO!",
+  "tr_px": 120,
+  "now_px": 156,
+  "target_px": 129
+ },
+ {
+  "tr": "KAMARA",
+  "now": "CAMAROTE",
+  "tr_px": 30,
+  "now_px": 39,
+  "target_px": 32
+ },
+ {
+  "tr": "İKİ YEM SEÇEBİLİRSİN",
+  "now": "PUEDES ELEGIR DOS COMIDAS",
+  "tr_px": 90,
+  "now_px": 117,
+  "target_px": 97
+ },
+ {
+  "tr": " ÇARPMA CAN GÖTÜRMEZ",
+  "now": " CHOQUE(S) NO TE QUITAN VIDA",
+  "tr_px": 94,
+  "now_px": 122,
+  "target_px": 101
+ },
+ {
+  "tr": "RİTİM NOTU ",
+  "now": "NOTA DE RITMO ",
+  "tr_px": 47,
+  "now_px": 61,
+  "target_px": 50
+ },
+ {
+  "tr": " HASAR",
+  "now": " DE DAÑO",
+  "tr_px": 27,
+  "now_px": 35,
+  "target_px": 29
+ },
+ {
+  "tr": "ŞİFA JELİ: +1 CAN",
+  "now": "GEL CURATIVO: +1 VIDA",
+  "tr_px": 71,
+  "now_px": 92,
+  "target_px": 76
+ },
+ {
+  "tr": "ŞAMPİYONU GEÇTİN! BİR GÜÇ SEÇ",
+  "now": "¡SUPERASTE AL CAMPEÓN! ELIGE UN PODER",
+  "tr_px": 129,
+  "now_px": 167,
+  "target_px": 139
+ },
+ {
+  "tr": "YILDIZ TOZU",
+  "now": "POLVO ESTELAR",
+  "tr_px": 48,
+  "now_px": 62,
+  "target_px": 51
+ },
+ {
+  "tr": "'E GİR · ",
+  "now": ": ¡ENTRA! · ",
+  "tr_px": 31,
+  "now_px": 40,
+  "target_px": 33
+ },
+ {
+  "tr": "PRENS KRİSTALO'YU YEN",
+  "now": "VENCE AL PRÍNCIPE KRISTALO",
+  "tr_px": 93,
+  "now_px": 120,
+  "target_px": 100
+ },
+ {
+  "tr": "MANTAR AYI'NIN YENİLMEZİ",
+  "now": "EL INVENCIBLE DE LA LUNA HONGO",
+  "tr_px": 107,
+  "now_px": 138,
+  "target_px": 115
+ },
+ {
+  "tr": "AY GÖLGESİ",
+  "now": "SOMBRA LUNAR",
+  "tr_px": 45,
+  "now_px": 58,
+  "target_px": 48
+ },
+ {
+  "tr": "GÖZLEMEVİ",
+  "now": "OBSERVATORIO",
+  "tr_px": 45,
+  "now_px": 58,
+  "target_px": 48
+ },
+ {
+  "tr": "MOKO'NUN BAHİS MASASI",
+  "now": "LA MESA DE APUESTAS DE MOKO",
+  "tr_px": 97,
+  "now_px": 125,
+  "target_px": 104
+ },
+ {
+  "tr": " KRİSTAL",
+  "now": " CRISTALES",
+  "tr_px": 35,
+  "now_px": 45,
+  "target_px": 37
+ },
+ {
+  "tr": "RÖVANŞ: ",
+  "now": "REVANCHA: ",
+  "tr_px": 35,
+  "now_px": 45,
+  "target_px": 37
+ },
+ {
+  "tr": "KOŞUYA +1 AZAMİ CANLA BAŞLA",
+  "now": "EMPIEZA LA CARRERA CON +1 VIDA MÁX.",
+  "tr_px": 123,
+  "now_px": 158,
+  "target_px": 132
+ },
+ {
+  "tr": "TUTUŞTURURUM SENİ!",
+  "now": "¡TE VOY A PRENDER FUEGO!",
+  "tr_px": 81,
+  "now_px": 104,
+  "target_px": 87
+ },
+ {
+  "tr": " ÖZEL ATIŞ YAP",
+  "now": " TIROS ESPECIALES",
+  "tr_px": 60,
+  "now_px": 77,
+  "target_px": 64
+ },
+ {
+  "tr": "PLAZMA 4 YERİNE 3 VURUŞTA",
+  "now": "PLASMA CADA 3 GOLPES EN VEZ DE 4",
+  "tr_px": 113,
+  "now_px": 145,
+  "target_px": 122
+ },
+ {
+  "tr": "TEMİZ!",
+  "now": "¡LIMPIO!",
+  "tr_px": 25,
+  "now_px": 32,
+  "target_px": 27
+ },
+ {
+  "tr": "BOSS YENİNCE 1 CAN YENİLE",
+  "now": "AL VENCER A UN JEFE, CURA 1 VIDA",
+  "tr_px": 111,
+  "now_px": 142,
+  "target_px": 119
+ },
+ {
+  "tr": "ARKA RÜZGAR!",
+  "now": "¡VIENTO A FAVOR!",
+  "tr_px": 54,
+  "now_px": 69,
+  "target_px": 58
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİNCE 1 SN %",
+  "now": "AL CAMBIAR DE CARRIL, 1 S CON +%",
+  "tr_px": 108,
+  "now_px": 138,
+  "target_px": 116
+ },
+ {
+  "tr": "KAÇTIN!",
+  "now": "¡A SALVO!",
+  "tr_px": 29,
+  "now_px": 37,
+  "target_px": 31
+ },
+ {
+  "tr": "KARA DELİK YAKLAŞIYOR!",
+  "now": "¡SE ACERCA EL AGUJERO NEGRO!",
+  "tr_px": 98,
+  "now_px": 125,
+  "target_px": 105
+ },
+ {
+  "tr": "ÖNÜMÜ GÖREMEZSİN BİLE.",
+  "now": "NI SIQUIERA ME VERÁS LA CARA.",
+  "tr_px": 102,
+  "now_px": 130,
+  "target_px": 110
+ },
+ {
+  "tr": " DÜŞMAN",
+  "now": " ENEMIGOS",
+  "tr_px": 33,
+  "now_px": 42,
+  "target_px": 35
+ },
+ {
+  "tr": "%50: ŞEKER, %50: SERAP",
+  "now": "%50: TERRÓN, %50: ESPEJISMO",
+  "tr_px": 88,
+  "now_px": 112,
+  "target_px": 95
+ },
+ {
+  "tr": "DÜŞMAN ",
+  "now": "ENEMIGOS ",
+  "tr_px": 33,
+  "now_px": 42,
+  "target_px": 35
+ },
+ {
+  "tr": "FIRTINA!",
+  "now": "¡TORMENTA!",
+  "tr_px": 33,
+  "now_px": 42,
+  "target_px": 35
+ },
+ {
+  "tr": "SPRİNT VE DÜELLODA RAKİPLER ",
+  "now": "EN SPRINT Y DUELO, LOS RIVALES SALEN ",
+  "tr_px": 129,
+  "now_px": 164,
+  "target_px": 139
+ },
+ {
+  "tr": "BİRE BİR! BAHİSLER MASADA!",
+  "now": "¡CARA A CARA! ¡HAGAN SUS APUESTAS!",
+  "tr_px": 115,
+  "now_px": 146,
+  "target_px": 124
+ },
+ {
+  "tr": "YAĞMUR RUHU",
+  "now": "ALMA DE LLUVIA",
+  "tr_px": 52,
+  "now_px": 66,
+  "target_px": 56
+ },
+ {
+  "tr": "KIZIL KUM",
+  "now": "DUNAS ROJAS",
+  "tr_px": 41,
+  "now_px": 52,
+  "target_px": 44
+ },
+ {
+  "tr": " HASAR)",
+  "now": " DE DAÑO)",
+  "tr_px": 30,
+  "now_px": 38,
+  "target_px": 32
+ },
+ {
+  "tr": "GÖZDE TAKIMYILDIZINI SEÇ",
+  "now": "ELIGE TU CONSTELACIÓN FAVORITA",
+  "tr_px": 109,
+  "now_px": 138,
+  "target_px": 117
+ },
+ {
+  "tr": "BASKIN ETABI, ÖDÜL X2",
+  "now": "ETAPA DE ASALTO, PREMIO X2",
+  "tr_px": 91,
+  "now_px": 115,
+  "target_px": 98
+ },
+ {
+  "tr": "HIZLI YAY",
+  "now": "ARCO VELOZ",
+  "tr_px": 38,
+  "now_px": 48,
+  "target_px": 41
+ },
+ {
+  "tr": " SN DOKUNULMAZSIN",
+  "now": " S DE INVULNERABILIDAD",
+  "tr_px": 80,
+  "now_px": 101,
+  "target_px": 86
+ },
+ {
+  "tr": "ŞOK SAPANI",
+  "now": "ELECTROHONDA",
+  "tr_px": 46,
+  "now_px": 58,
+  "target_px": 49
+ },
+ {
+  "tr": "NEBULA SİSİ",
+  "now": "BRUMA NEBULAR",
+  "tr_px": 50,
+  "now_px": 63,
+  "target_px": 54
+ },
+ {
+  "tr": "KAYDET",
+  "now": "GUARDAR",
+  "tr_px": 27,
+  "now_px": 34,
+  "target_px": 29
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%20 HASAR",
+  "now": "TODOS LOS TIROS +%20 DE DAÑO",
+  "tr_px": 97,
+  "now_px": 122,
+  "target_px": 104
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%40 HASAR",
+  "now": "TODOS LOS TIROS +%40 DE DAÑO",
+  "tr_px": 97,
+  "now_px": 122,
+  "target_px": 104
+ },
+ {
+  "tr": "TÜM ATIŞLAR +%60 HASAR",
+  "now": "TODOS LOS TIROS +%60 DE DAÑO",
+  "tr_px": 97,
+  "now_px": 122,
+  "target_px": 104
+ },
+ {
+  "tr": "ŞAMPİYON ROZETİ KAZANDIN!",
+  "now": "¡GANASTE UN EMBLEMA DE CAMPEÓN!",
+  "tr_px": 113,
+  "now_px": 142,
+  "target_px": 122
+ },
+ {
+  "tr": "PAZARDA -%15 FİYAT",
+  "now": "PRECIOS DEL BAZAR -%15",
+  "tr_px": 78,
+  "now_px": 98,
+  "target_px": 84
+ },
+ {
+  "tr": "KIZIL VUUM",
+  "now": "VUUM CARMESÍ",
+  "tr_px": 47,
+  "now_px": 59,
+  "target_px": 50
+ },
+ {
+  "tr": "ATIŞ HASARI +%30 (BU KOŞU)",
+  "now": "DAÑO DE TIRO +%30 (ESTA CARRERA)",
+  "tr_px": 110,
+  "now_px": 138,
+  "target_px": 118
+ },
+ {
+  "tr": "ATIŞ HASARI +%50 (BU KOŞU)",
+  "now": "DAÑO DE TIRO +%50 (ESTA CARRERA)",
+  "tr_px": 110,
+  "now_px": 138,
+  "target_px": 118
+ },
+ {
+  "tr": "FIRTINA ATAĞI!",
+  "now": "¡ATAQUE TORMENTA!",
+  "tr_px": 59,
+  "now_px": 74,
+  "target_px": 63
+ },
+ {
+  "tr": "YILDIZ ÇOCUĞU",
+  "now": "CRIATURA ESTELAR",
+  "tr_px": 59,
+  "now_px": 74,
+  "target_px": 63
+ },
+ {
+  "tr": "GÜNLÜK ERZAĞINI AL",
+  "now": "RECOGE TU RACIÓN DIARIA",
+  "tr_px": 83,
+  "now_px": 104,
+  "target_px": 89
+ },
+ {
+  "tr": "KİRLİ OYUN! SEYİRCİ BAYILIYOR!",
+  "now": "¡JUEGO SUCIO! ¡AL PÚBLICO LE ENCANTA!",
+  "tr_px": 127,
+  "now_px": 159,
+  "target_px": 137
+ },
+ {
+  "tr": "İNTİKAM SOĞUK YENİR, GALAKSİ!",
+  "now": "¡LA VENGANZA SE SIRVE FRÍA, GALAXIA!",
+  "tr_px": 127,
+  "now_px": 159,
+  "target_px": 137
+ },
+ {
+  "tr": "ATEŞ KUŞU BİNİCİSİ",
+  "now": "JINETE DE AVE DE FUEGO",
+  "tr_px": 80,
+  "now_px": 100,
+  "target_px": 86
+ },
+ {
+  "tr": "PAZAR GEZEGENİ OBO",
+  "now": "OBO, EL PLANETA MERCADO",
+  "tr_px": 84,
+  "now_px": 105,
+  "target_px": 90
+ },
+ {
+  "tr": "İYİ · ERKEN",
+  "now": "BIEN · PRONTO",
+  "tr_px": 44,
+  "now_px": 55,
+  "target_px": 47
+ },
+ {
+  "tr": "DÜNYA BÖLMESİ",
+  "now": "MÓDULO TERRESTRE",
+  "tr_px": 61,
+  "now_px": 76,
+  "target_px": 65
+ },
+ {
+  "tr": "BASKIN ETABI, 60 SİKKE X2",
+  "now": "ETAPA DE ASALTO, 60 MONEDAS X2",
+  "tr_px": 106,
+  "now_px": 132,
+  "target_px": 114
+ },
+ {
+  "tr": "HIZLI ŞARJ",
+  "now": "CARGA RÁPIDA",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "SADE RİTİM",
+  "now": "RITMO SIMPLE",
+  "tr_px": 45,
+  "now_px": 56,
+  "target_px": 48
+ },
+ {
+  "tr": "BİRİNCİ!",
+  "now": "¡NÚMERO 1!",
+  "tr_px": 33,
+  "now_px": 41,
+  "target_px": 35
+ },
+ {
+  "tr": "YENİLE (",
+  "now": "RENOVAR (",
+  "tr_px": 33,
+  "now_px": 41,
+  "target_px": 35
+ },
+ {
+  "tr": "RİTMİ KAÇIRDI, KAPI KAPALI!",
+  "now": "¡PERDIÓ EL RITMO, PUERTA CERRADA!",
+  "tr_px": 116,
+  "now_px": 144,
+  "target_px": 125
+ },
+ {
+  "tr": "ŞOK FIRTINASI",
+  "now": "ELECTROTORMENTA",
+  "tr_px": 58,
+  "now_px": 72,
+  "target_px": 62
+ },
+ {
+  "tr": "SİSLİ MANTİS",
+  "now": "MANTIS BRUMOSA",
+  "tr_px": 54,
+  "now_px": 67,
+  "target_px": 58
+ },
+ {
+  "tr": "ISINMA TURU",
+  "now": "CALENTAMIENTO",
+  "tr_px": 50,
+  "now_px": 62,
+  "target_px": 54
+ },
+ {
+  "tr": "UZAY PAZARI",
+  "now": "BAZAR CÓSMICO",
+  "tr_px": 50,
+  "now_px": 62,
+  "target_px": 54
+ },
+ {
+  "tr": "ŞİFA BUHARI",
+  "now": "VAHO CURATIVO",
+  "tr_px": 50,
+  "now_px": 62,
+  "target_px": 54
+ },
+ {
+  "tr": "İŞTE BÜYÜK KAPIŞMA!",
+  "now": "¡ESTE ES EL GRAN CHOQUE!",
+  "tr_px": 84,
+  "now_px": 104,
+  "target_px": 90
+ },
+ {
+  "tr": "DEMİRCİ KORHAN'I YEN",
+  "now": "VENCE A TIZÓN EL HERRERO",
+  "tr_px": 89,
+  "now_px": 110,
+  "target_px": 96
+ },
+ {
+  "tr": "İLK ŞAMPİYONLA KARŞILAŞ",
+  "now": "ENFRÉNTATE AL PRIMER CAMPEÓN",
+  "tr_px": 107,
+  "now_px": 132,
+  "target_px": 115
+ },
+ {
+  "tr": " KRİSTAL): ",
+  "now": " CRISTALES): ",
+  "tr_px": 43,
+  "now_px": 53,
+  "target_px": 46
+ },
+ {
+  "tr": "+4 KRİSTAL",
+  "now": "+4 CRISTALES",
+  "tr_px": 43,
+  "now_px": 53,
+  "target_px": 46
+ },
+ {
+  "tr": "+6 KRİSTAL",
+  "now": "+6 CRISTALES",
+  "tr_px": 43,
+  "now_px": 53,
+  "target_px": 46
+ },
+ {
+  "tr": "+8 KRİSTAL",
+  "now": "+8 CRISTALES",
+  "tr_px": 43,
+  "now_px": 53,
+  "target_px": 46
+ },
+ {
+  "tr": "GRAX'IN SIRRI",
+  "now": "SECRETO DE GRAX",
+  "tr_px": 56,
+  "now_px": 69,
+  "target_px": 60
+ },
+ {
+  "tr": "+1 AZAMİ CAN (BU KOŞU)",
+  "now": "+1 VIDA MÁX. (ESTA CARRERA)",
+  "tr_px": 95,
+  "now_px": 117,
+  "target_px": 102
+ },
+ {
+  "tr": "YOL OLAYI",
+  "now": "IMPREVISTO",
+  "tr_px": 39,
+  "now_px": 48,
+  "target_px": 42
+ },
+ {
+  "tr": "BÖLMEDE",
+  "now": "EN MÓDULO",
+  "tr_px": 35,
+  "now_px": 43,
+  "target_px": 37
+ },
+ {
+  "tr": "FIRTINA ATAĞI",
+  "now": "ATAQUE TORMENTA",
+  "tr_px": 57,
+  "now_px": 70,
+  "target_px": 61
+ },
+ {
+  "tr": "KAOS IŞINI",
+  "now": "RAYO CAÓTICO",
+  "tr_px": 44,
+  "now_px": 54,
+  "target_px": 47
+ },
+ {
+  "tr": "1 CAN VER",
+  "now": "PAGA 1 VIDA",
+  "tr_px": 40,
+  "now_px": 49,
+  "target_px": 43
+ },
+ {
+  "tr": "ÜÇLÜ IŞIN",
+  "now": "TRIPLE RAYO",
+  "tr_px": 40,
+  "now_px": 49,
+  "target_px": 43
+ },
+ {
+  "tr": "RÖVANŞ ALINDI! İNANILMAZ!",
+  "now": "¡REVANCHA CUMPLIDA! ¡INCREÍBLE!",
+  "tr_px": 112,
+  "now_px": 137,
+  "target_px": 120
+ },
+ {
+  "tr": " KRİSTAL  +",
+  "now": " CRISTALES  +",
+  "tr_px": 45,
+  "now_px": 55,
+  "target_px": 48
+ },
+ {
+  "tr": "AÇIK GÖK",
+  "now": "DESPEJADO",
+  "tr_px": 36,
+  "now_px": 44,
+  "target_px": 38
+ },
+ {
+  "tr": "ÖNCE BİR YILDIZ GÜCÜ KAZAN",
+  "now": "ANTES CONSIGUE UN PODER ESTELAR",
+  "tr_px": 117,
+  "now_px": 143,
+  "target_px": 126
+ },
+ {
+  "tr": "SENİ BEKLİYORDUM DÜNYALI.",
+  "now": "TE ESTABA ESPERANDO, TERRÍCOLA.",
+  "tr_px": 113,
+  "now_px": 138,
+  "target_px": 122
+ },
+ {
+  "tr": "KAZAN VE EVE DÖN.",
+  "now": "GANA Y VUELVE A CASA.",
+  "tr_px": 77,
+  "now_px": 94,
+  "target_px": 83
+ },
+ {
+  "tr": "AKYEL HEYKELİ",
+  "now": "ESTATUA DE ROCÍO",
+  "tr_px": 59,
+  "now_px": 72,
+  "target_px": 63
+ },
+ {
+  "tr": "TEMİZ HAVA, KISA BİR MOLA...",
+  "now": "AIRE FRESCO, UN BREVE DESCANSO...",
+  "tr_px": 118,
+  "now_px": 144,
+  "target_px": 127
+ },
+ {
+  "tr": "ZIRH DELEN",
+  "now": "ANTIBLINDAJE",
+  "tr_px": 46,
+  "now_px": 56,
+  "target_px": 49
+ },
+ {
+  "tr": " KAÇIYOR!",
+  "now": " SE ESCAPA",
+  "tr_px": 37,
+  "now_px": 45,
+  "target_px": 39
+ },
+ {
+  "tr": " KRİSTAL!",
+  "now": " CRISTALES",
+  "tr_px": 37,
+  "now_px": 45,
+  "target_px": 39
+ },
+ {
+  "tr": "YARDIM MODU BİRAZ GÜÇLENDİ",
+  "now": "EL MODO AYUDA SE REFORZÓ UN POCO",
+  "tr_px": 121,
+  "now_px": 147,
+  "target_px": 130
+ },
+ {
+  "tr": "PARLAK OK",
+  "now": "SAETA SOLAR",
+  "tr_px": 42,
+  "now_px": 51,
+  "target_px": 45
+ },
+ {
+  "tr": "SON ATAKLA BİR SPRİNTİ KAZAN",
+  "now": "GANA UN SPRINT CON EL ATAQUE FINAL",
+  "tr_px": 126,
+  "now_px": 153,
+  "target_px": 136
+ },
+ {
+  "tr": "GÖK KOŞUSU",
+  "now": "GALOPE AÉREO",
+  "tr_px": 47,
+  "now_px": 57,
+  "target_px": 50
+ },
+ {
+  "tr": "DEMİR GÖLGE",
+  "now": "SOMBRA FÉRREA",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": "ULUYAN GORM",
+  "now": "GORM AULLADOR",
+  "tr_px": 52,
+  "now_px": 63,
+  "target_px": 56
+ },
+ {
+  "tr": "HER ETAP SİSLİ",
+  "now": "ETAPAS CON BRUMA",
+  "tr_px": 62,
+  "now_px": 75,
+  "target_px": 66
+ },
+ {
+  "tr": "OKYANUS AYI TALASSA",
+  "now": "TALASSA, LA LUNA OCÉANO",
+  "tr_px": 86,
+  "now_px": 104,
+  "target_px": 92
+ },
+ {
+  "tr": "ONARINCA: ",
+  "now": "AL REPARAR: ",
+  "tr_px": 43,
+  "now_px": 52,
+  "target_px": 46
+ },
+ {
+  "tr": "NEON LAMBA",
+  "now": "LÁMPARA NEÓN",
+  "tr_px": 48,
+  "now_px": 58,
+  "target_px": 51
+ },
+ {
+  "tr": "RÜZGARI YAKALAYAMAZSIN!",
+  "now": "¡NO PUEDES ATRAPAR EL VIENTO!",
+  "tr_px": 106,
+  "now_px": 128,
+  "target_px": 114
+ },
+ {
+  "tr": "RİTİM KAPISI",
+  "now": "PUERTA RÍTMICA",
+  "tr_px": 53,
+  "now_px": 64,
+  "target_px": 57
+ },
+ {
+  "tr": "BÜTÜN RAKİPLERİ EVE GÖNDER",
+  "now": "ENVÍA A CASA A TODOS LOS RIVALES",
+  "tr_px": 121,
+  "now_px": 146,
+  "target_px": 130
+ },
+ {
+  "tr": "MUTLU YILDIZ! +",
+  "now": "¡ESTRELLA FELIZ! +",
+  "tr_px": 63,
+  "now_px": 76,
+  "target_px": 68
+ },
+ {
+  "tr": "DOSTLARINDAN BİR HATIRA TAK",
+  "now": "EQUIPA UN RECUERDO DE TUS AMIGOS",
+  "tr_px": 122,
+  "now_px": 147,
+  "target_px": 131
+ },
+ {
+  "tr": "SON DÜZLÜK!",
+  "now": "¡ÚLTIMA RECTA!",
+  "tr_px": 49,
+  "now_px": 59,
+  "target_px": 52
+ },
+ {
+  "tr": "FIRTINA DEVİ'NİN YAŞLI ÇOBANI",
+  "now": "EL VIEJO PASTOR DEL TITÁN TORMENTA",
+  "tr_px": 128,
+  "now_px": 154,
+  "target_px": 138
+ },
+ {
+  "tr": "KAOS HIZI",
+  "now": "CAOS VELOZ",
+  "tr_px": 40,
+  "now_px": 48,
+  "target_px": 43
+ },
+ {
+  "tr": "MANTAR AYI'NA ULAŞ",
+  "now": "LLEGA A LA LUNA HONGO",
+  "tr_px": 80,
+  "now_px": 96,
+  "target_px": 86
+ },
+ {
+  "tr": "PRENS KRİSTALO",
+  "now": "PRÍNCIPE KRISTALO",
+  "tr_px": 65,
+  "now_px": 78,
+  "target_px": 70
+ },
+ {
+  "tr": "SONRAKİ >",
+  "now": "SIGUIENTE >",
+  "tr_px": 40,
+  "now_px": 48,
+  "target_px": 43
+ },
+ {
+  "tr": "ÇOKLU HAREKET",
+  "now": "MULTIMOVIMIENTO",
+  "tr_px": 61,
+  "now_px": 73,
+  "target_px": 65
+ },
+ {
+  "tr": "BUZ HALKASI",
+  "now": "ANILLO HELADO",
+  "tr_px": 51,
+  "now_px": 61,
+  "target_px": 55
+ },
+ {
+  "tr": "GÖK DARBESİ",
+  "now": "GOLPE CELESTE",
+  "tr_px": 51,
+  "now_px": 61,
+  "target_px": 55
+ },
+ {
+  "tr": "NADİR GÜÇ ŞANSI +%15",
+  "now": "PROB. DE PODER RARO +%15",
+  "tr_px": 87,
+  "now_px": 104,
+  "target_px": 93
+ },
+ {
+  "tr": "TİTREŞİM",
+  "now": "VIBRACIÓN",
+  "tr_px": 36,
+  "now_px": 43,
+  "target_px": 38
+ },
+ {
+  "tr": "ÇATAL OK",
+  "now": "HORQUILLA",
+  "tr_px": 36,
+  "now_px": 43,
+  "target_px": 38
+ },
+ {
+  "tr": "UZUN MENZİL",
+  "now": "LARGO ALCANCE",
+  "tr_px": 52,
+  "now_px": 62,
+  "target_px": 56
+ },
+ {
+  "tr": "ÖNDE KAÇAR",
+  "now": "VA EN CABEZA",
+  "tr_px": 47,
+  "now_px": 56,
+  "target_px": 50
+ },
+ {
+  "tr": "ALEVLİ OK",
+  "now": "SAETA ÍGNEA",
+  "tr_px": 42,
+  "now_px": 50,
+  "target_px": 45
+ },
+ {
+  "tr": "DOLU ŞARJ",
+  "now": "CARGA TOTAL",
+  "tr_px": 42,
+  "now_px": 50,
+  "target_px": 45
+ },
+ {
+  "tr": "GÜMÜŞ MADALYA",
+  "now": "MEDALLA DE PLATA",
+  "tr_px": 63,
+  "now_px": 75,
+  "target_px": 68
+ },
+ {
+  "tr": "VURDUĞUN DÜŞMAN 2 SN YANAR",
+  "now": "EL ENEMIGO QUE ACIERTAS ARDE 2 S",
+  "tr_px": 121,
+  "now_px": 144,
+  "target_px": 130
+ },
+ {
+  "tr": "SIÇRAYIŞ SÜRESİ +%",
+  "now": "DURACIÓN DEL SALTO +%",
+  "tr_px": 79,
+  "now_px": 94,
+  "target_px": 85
+ },
+ {
+  "tr": "BUZ HALKASI'NA ULAŞ",
+  "now": "LLEGA AL ANILLO HELADO",
+  "tr_px": 86,
+  "now_px": 102,
+  "target_px": 92
+ },
+ {
+  "tr": "KÜKREMEYİ DOĞRU ANDA KULLAN.",
+  "now": "USA EL RUGIDO EN EL MOMENTO JUSTO.",
+  "tr_px": 129,
+  "now_px": 153,
+  "target_px": 139
+ },
+ {
+  "tr": "AĞAÇ GEZEGENİ TİRİ",
+  "now": "TIRI, EL PLANETA ÁRBOL",
+  "tr_px": 81,
+  "now_px": 96,
+  "target_px": 87
+ },
+ {
+  "tr": "GALAKSİ LİGİ",
+  "now": "LIGA GALÁCTICA",
+  "tr_px": 54,
+  "now_px": 64,
+  "target_px": 58
+ },
+ {
+  "tr": "MÜZİĞİ YUTUYOR!",
+  "now": "¡SE COME EL RITMO!",
+  "tr_px": 65,
+  "now_px": 77,
+  "target_px": 70
+ },
+ {
+  "tr": "TOPARLANMA",
+  "now": "RECUPERACIÓN",
+  "tr_px": 49,
+  "now_px": 58,
+  "target_px": 52
+ },
+ {
+  "tr": "ESKİ BİR SİNYAL",
+  "now": "UNA SEÑAL ANTIGUA",
+  "tr_px": 66,
+  "now_px": 78,
+  "target_px": 71
+ },
+ {
+  "tr": "HER NALDA +1 AZAMİ CAN",
+  "now": "+1 VIDA MÁX. POR HERRADURA",
+  "tr_px": 99,
+  "now_px": 117,
+  "target_px": 106
+ },
+ {
+  "tr": "IŞIK HAMLESİ",
+  "now": "IMPULSO DE LUZ",
+  "tr_px": 55,
+  "now_px": 65,
+  "target_px": 59
+ },
+ {
+  "tr": "SONRAKİ ETAP +2 KALKAN",
+  "now": "SIGUIENTE ETAPA +2 ESCUDOS",
+  "tr_px": 99,
+  "now_px": 117,
+  "target_px": 106
+ },
+ {
+  "tr": "İKİ YILDIZ! KAZANDIN.",
+  "now": "¡DOS ESTRELLAS! GANASTE.",
+  "tr_px": 88,
+  "now_px": 104,
+  "target_px": 95
+ },
+ {
+  "tr": "BULUT ÇOBANI BORA",
+  "now": "PASTOR DE NUBES BORA",
+  "tr_px": 78,
+  "now_px": 92,
+  "target_px": 84
+ },
+ {
+  "tr": "ÇİFT NOTA",
+  "now": "NOTA DOBLE",
+  "tr_px": 39,
+  "now_px": 46,
+  "target_px": 42
+ },
+ {
+  "tr": "BEDEL: 1 CAN",
+  "now": "PRECIO: 1 VIDA",
+  "tr_px": 51,
+  "now_px": 60,
+  "target_px": 55
+ },
+ {
+  "tr": "DÜNYALI SENDELİYOR!",
+  "now": "¡TAMBALEOS EN LA PISTA!",
+  "tr_px": 85,
+  "now_px": 100,
+  "target_px": 91
+ },
+ {
+  "tr": "KAOS KESESİ",
+  "now": "BOLSA CAÓTICA",
+  "tr_px": 51,
+  "now_px": 60,
+  "target_px": 55
+ },
+ {
+  "tr": "KAOS LÜTFU: ",
+  "now": "DON DEL CAOS: ",
+  "tr_px": 51,
+  "now_px": 60,
+  "target_px": 55
+ },
+ {
+  "tr": "DAR PENCERE",
+  "now": "VENTANA CORTA",
+  "tr_px": 52,
+  "now_px": 61,
+  "target_px": 56
+ },
+ {
+  "tr": "TAKIMYILDIZ!",
+  "now": "¡CONSTELACIÓN!",
+  "tr_px": 52,
+  "now_px": 61,
+  "target_px": 56
+ },
+ {
+  "tr": "BUZ KRALİÇESİ NİVA'YI YEN",
+  "now": "VENCE A LA REINA HELADA NIVA",
+  "tr_px": 110,
+  "now_px": 129,
+  "target_px": 118
+ },
+ {
+  "tr": "KUSURSUZ!",
+  "now": "¡IMPECABLE!",
+  "tr_px": 41,
+  "now_px": 48,
+  "target_px": 44
+ },
+ {
+  "tr": "GÜVENLİ: KRİSTAL, BELKİ ŞEKER",
+  "now": "SEGURO: CRISTALES, QUIZÁ UN TERRÓN",
+  "tr_px": 129,
+  "now_px": 151,
+  "target_px": 139
+ },
+ {
+  "tr": "RÜZGAR OKU",
+  "now": "SAETA EÓLICA",
+  "tr_px": 47,
+  "now_px": 55,
+  "target_px": 50
+ },
+ {
+  "tr": "HENÜZ GÜÇ YOK",
+  "now": "AÚN SIN PODERES",
+  "tr_px": 59,
+  "now_px": 69,
+  "target_px": 63
+ },
+ {
+  "tr": "FIRTINA DEVİ'NE ULAŞ",
+  "now": "LLEGA AL TITÁN TORMENTA",
+  "tr_px": 89,
+  "now_px": 104,
+  "target_px": 96
+ },
+ {
+  "tr": "BİR SPONSOR HEDİYESİ KAZAN",
+  "now": "GANA UN REGALO DE PATROCINADOR",
+  "tr_px": 119,
+  "now_px": 139,
+  "target_px": 128
+ },
+ {
+  "tr": " DÜELLO KAZAN",
+  "now": " DUELOS GANADOS",
+  "tr_px": 60,
+  "now_px": 70,
+  "target_px": 64
+ },
+ {
+  "tr": "FIRTINA DEVİ",
+  "now": "TITÁN TORMENTA",
+  "tr_px": 54,
+  "now_px": 63,
+  "target_px": 58
+ },
+ {
+  "tr": "KUPA SENİN!",
+  "now": "¡COPA GANADA!",
+  "tr_px": 48,
+  "now_px": 56,
+  "target_px": 51
+ },
+ {
+  "tr": "PARLAK TOYNAK",
+  "now": "CASCO BRILLANTE",
+  "tr_px": 60,
+  "now_px": 70,
+  "target_px": 64
+ },
+ {
+  "tr": "ŞIK KAÇIŞ!",
+  "now": "¡QUÉ ESTILO!",
+  "tr_px": 42,
+  "now_px": 49,
+  "target_px": 45
+ },
+ {
+  "tr": "%50: +35 SİKKE, %50: -1 CAN",
+  "now": "%50: +35 MONEDAS, %50: -1 VIDA",
+  "tr_px": 103,
+  "now_px": 120,
+  "target_px": 111
+ },
+ {
+  "tr": " BÖLMEYE YERLEŞTİ!",
+  "now": " YA ESTÁ EN TU MÓDULO",
+  "tr_px": 79,
+  "now_px": 92,
+  "target_px": 85
+ },
+ {
+  "tr": "ŞAMPİYONU GEÇ",
+  "now": "GANA AL CAMPEÓN",
+  "tr_px": 61,
+  "now_px": 71,
+  "target_px": 65
+ },
+ {
+  "tr": "AĞIR TOYNAK",
+  "now": "CASCO PESADO",
+  "tr_px": 49,
+  "now_px": 57,
+  "target_px": 52
+ },
+ {
+  "tr": "BUZ DUVARI!",
+  "now": "¡MURO HELADO!",
+  "tr_px": 49,
+  "now_px": 57,
+  "target_px": 52
+ },
+ {
+  "tr": "YENİ DOSYA: ",
+  "now": "NUEVA FICHA: ",
+  "tr_px": 49,
+  "now_px": 57,
+  "target_px": 52
+ },
+ {
+  "tr": "GÜM... BU SEFER SESİM ÇIKMADI.",
+  "now": "BUM... ESTA VEZ NO ME SALIÓ LA VOZ.",
+  "tr_px": 129,
+  "now_px": 150,
+  "target_px": 139
+ },
+ {
+  "tr": "KUM SOLUCANI ZARG",
+  "now": "GUSANO DE ARENA ZARG",
+  "tr_px": 80,
+  "now_px": 93,
+  "target_px": 86
+ },
+ {
+  "tr": "KAOS KALKANI",
+  "now": "ESCUDO CAÓTICO",
+  "tr_px": 56,
+  "now_px": 65,
+  "target_px": 60
+ },
+ {
+  "tr": "LUMO ÇAYIRI",
+  "now": "PRADERA LUMO",
+  "tr_px": 50,
+  "now_px": 58,
+  "target_px": 54
+ },
+ {
+  "tr": "VUR GALAKSİ, VUR!",
+  "now": "¡DALE, GALAXIA, DALE!",
+  "tr_px": 75,
+  "now_px": 87,
+  "target_px": 81
+ },
+ {
+  "tr": "HAMLEYE BAŞLARKEN ÖNÜNE ",
+  "now": "AL INICIAR EL IMPULSO LANZAS ",
+  "tr_px": 113,
+  "now_px": 131,
+  "target_px": 122
+ },
+ {
+  "tr": "← → KAYDIR: ŞERİT DEĞİŞTİR",
+  "now": "← → DESLIZA: CAMBIA DE CARRIL",
+  "tr_px": 113,
+  "now_px": 131,
+  "target_px": 122
+ },
+ {
+  "tr": "SESSİZ MODDA DA ÇAL",
+  "now": "SONAR EN MODO SILENCIO",
+  "tr_px": 88,
+  "now_px": 102,
+  "target_px": 95
+ },
+ {
+  "tr": "YOLUMDAN ÇEKİL, YOKSA İTERİM!",
+  "now": "¡QUÍTATE DE MI CAMINO O TE EMPUJO!",
+  "tr_px": 128,
+  "now_px": 148,
+  "target_px": 138
+ },
+ {
+  "tr": " DÜŞMAN DAHA!",
+  "now": " MÁS POR ABATIR",
+  "tr_px": 58,
+  "now_px": 67,
+  "target_px": 62
+ },
+ {
+  "tr": " SEVİYE PUANI",
+  "now": " PUNTO DE NIVEL",
+  "tr_px": 58,
+  "now_px": 67,
+  "target_px": 62
+ },
+ {
+  "tr": "ŞERİT DEĞİŞTİRİNCE ",
+  "now": "AL CAMBIAR DE CARRIL, ",
+  "tr_px": 84,
+  "now_px": 97,
+  "target_px": 90
+ },
+ {
+  "tr": "ALEV KUYRUK",
+  "now": "COLA DE FUEGO",
+  "tr_px": 52,
+  "now_px": 60,
+  "target_px": 56
+ },
+ {
+  "tr": "ARKA RÜZGAR",
+  "now": "BRISA A FAVOR",
+  "tr_px": 52,
+  "now_px": 60,
+  "target_px": 56
+ },
+ {
+  "tr": "PİRA'DA KİMSE BENİ GEÇEMEZDİ!",
+  "now": "¡EN PIRA NADIE ME PODÍA ADELANTAR!",
+  "tr_px": 130,
+  "now_px": 150,
+  "target_px": 140
+ },
+ {
+  "tr": " KOMBODA BEŞ IŞINLIK YAĞMUR",
+  "now": " DE COMBO, LLUVIA DE CINCO RAYOS",
+  "tr_px": 124,
+  "now_px": 143,
+  "target_px": 133
+ },
+ {
+  "tr": "GÖLGE SÜRÜSÜ!",
+  "now": "¡MANADA SOMBRA!",
+  "tr_px": 59,
+  "now_px": 68,
+  "target_px": 63
+ },
+ {
+  "tr": "KIVILCIM CİNİ",
+  "now": "GENIO DE CHISPA",
+  "tr_px": 59,
+  "now_px": 68,
+  "target_px": 63
+ },
+ {
+  "tr": "BİLİNMİYOR",
+  "now": "DESCONOCIDO",
+  "tr_px": 46,
+  "now_px": 53,
+  "target_px": 49
+ },
+ {
+  "tr": "4. GÖREV YUVASI",
+  "now": "HUECO DE MISIÓN 4",
+  "tr_px": 66,
+  "now_px": 76,
+  "target_px": 71
+ },
+ {
+  "tr": "ARENA-9 · GALAKSİNİN MERKEZİ",
+  "now": "ARENA-9 · EL CENTRO DE LA GALAXIA",
+  "tr_px": 126,
+  "now_px": 145,
+  "target_px": 136
+ },
+ {
+  "tr": "SEVİYE ATLADIN! +",
+  "now": "¡SUBISTE DE NIVEL! +",
+  "tr_px": 73,
+  "now_px": 84,
+  "target_px": 78
+ },
+ {
+  "tr": "METEORLU PİST",
+  "now": "PISTA METEÓRICA",
+  "tr_px": 60,
+  "now_px": 69,
+  "target_px": 64
+ },
+ {
+  "tr": "RÜZGAR PERİSİ",
+  "now": "HADA DEL VIENTO",
+  "tr_px": 60,
+  "now_px": 69,
+  "target_px": 64
+ },
+ {
+  "tr": "BİR BUZ PARÇASI SEKTİ. -1 CAN.",
+  "now": "UN TROZO DE HIELO REBOTÓ. -1 VIDA.",
+  "tr_px": 127,
+  "now_px": 146,
+  "target_px": 137
+ },
+ {
+  "tr": "DONMUŞ AY GLASİ",
+  "now": "LUNA HELADA GLASI",
+  "tr_px": 69,
+  "now_px": 79,
+  "target_px": 74
+ },
+ {
+  "tr": "KOŞUYA DEVAM ET",
+  "now": "CONTINUAR CARRERA",
+  "tr_px": 70,
+  "now_px": 80,
+  "target_px": 75
+ },
+ {
+  "tr": "STANDART ZORLUK",
+  "now": "DIFICULTAD NORMAL",
+  "tr_px": 70,
+  "now_px": 80,
+  "target_px": 75
+ },
+ {
+  "tr": "İKİ RUH BİRLİKTE KONUŞUYOR!",
+  "now": "¡DOS ESPÍRITUS HABLAN A LA VEZ!",
+  "tr_px": 119,
+  "now_px": 136,
+  "target_px": 128
+ },
+ {
+  "tr": "TAKIMYILDIZ",
+  "now": "CONSTELACIÓN",
+  "tr_px": 50,
+  "now_px": 57,
+  "target_px": 54
+ },
+ {
+  "tr": " KEZ SİPERDEN FIRLA",
+  "now": " ACELERONES DE REBUFO",
+  "tr_px": 86,
+  "now_px": 98,
+  "target_px": 92
+ },
+ {
+  "tr": "GÖREV ÖDÜLLERİ +%50",
+  "now": "PREMIOS DE MISIÓN +%50",
+  "tr_px": 86,
+  "now_px": 98,
+  "target_px": 92
+ },
+ {
+  "tr": "3 ALTIN MADALYA: +1 ŞEKER",
+  "now": "3 MEDALLAS DE ORO: +1 TERRÓN",
+  "tr_px": 108,
+  "now_px": 123,
+  "target_px": 116
+ },
+ {
+  "tr": "SÖNDÜM... AMA SADECE BİRAZ.",
+  "now": "ME APAGUÉ... PERO SOLO UN POCO.",
+  "tr_px": 117,
+  "now_px": 133,
+  "target_px": 126
+ },
+ {
+  "tr": "+1 SEVİYE PUANI",
+  "now": "+1 PUNTO DE NIVEL",
+  "tr_px": 66,
+  "now_px": 75,
+  "target_px": 71
+ },
+ {
+  "tr": " ATAĞA KALKTI!",
+  "now": " PASA AL ATAQUE",
+  "tr_px": 59,
+  "now_px": 67,
+  "target_px": 63
+ },
+ {
+  "tr": "BURADA HER ŞEY DONAR. SEN DE.",
+  "now": "AQUÍ TODO SE CONGELA. TÚ TAMBIÉN.",
+  "tr_px": 127,
+  "now_px": 144,
+  "target_px": 137
+ },
+ {
+  "tr": "KORSANLAR GÜLEREK YOLU AÇTI.",
+  "now": "LOS PIRATAS SE APARTARON RIENDO.",
+  "tr_px": 127,
+  "now_px": 144,
+  "target_px": 137
+ },
+ {
+  "tr": "GALAKSİ ARENASI'NA ULAŞ",
+  "now": "LLEGA A LA ARENA GALÁCTICA",
+  "tr_px": 105,
+  "now_px": 119,
+  "target_px": 113
+ },
+ {
+  "tr": "PAZAR +%60 PAHALI",
+  "now": "BAZAR +%60 MÁS CARO",
+  "tr_px": 75,
+  "now_px": 85,
+  "target_px": 81
+ },
+ {
+  "tr": "20 SİKKE BIRAK",
+  "now": "DEJA 20 MONEDAS",
+  "tr_px": 61,
+  "now_px": 69,
+  "target_px": 65
+ },
+ {
+  "tr": " YILDIZ GÜCÜ SEÇ",
+  "now": " PODERES ELEGIDOS",
+  "tr_px": 70,
+  "now_px": 79,
+  "target_px": 75
+ },
+ {
+  "tr": "HAYALET ADIM",
+  "now": "PASO FANTASMA",
+  "tr_px": 55,
+  "now_px": 62,
+  "target_px": 59
+ },
+ {
+  "tr": "ALTIN NOTA VE ES",
+  "now": "NOTA DORADA/PAUSA",
+  "tr_px": 71,
+  "now_px": 80,
+  "target_px": 76
+ },
+ {
+  "tr": "EN AZ NADİR BİR YILDIZ GÜCÜ",
+  "now": "UN PODER ESTELAR RARO O MEJOR",
+  "tr_px": 119,
+  "now_px": 134,
+  "target_px": 128
+ },
+ {
+  "tr": "UZAY ÇİÇEKLERİ",
+  "now": "FLORES CÓSMICAS",
+  "tr_px": 64,
+  "now_px": 72,
+  "target_px": 69
+ },
+ {
+  "tr": "KAOS ŞİFASI: +1 CAN",
+  "now": "CURA CAÓTICA: +1 VIDA",
+  "tr_px": 81,
+  "now_px": 91,
+  "target_px": 87
+ },
+ {
+  "tr": "EMEKLİ NİŞANCI",
+  "now": "TIRADOR RETIRADO",
+  "tr_px": 65,
+  "now_px": 73,
+  "target_px": 70
+ },
+ {
+  "tr": "RÜZGAR KISRAĞI",
+  "now": "YEGUA DEL VIENTO",
+  "tr_px": 65,
+  "now_px": 73,
+  "target_px": 70
+ },
+ {
+  "tr": "DÖRTNAL BİTTİ",
+  "now": "FIN DEL GALOPE",
+  "tr_px": 57,
+  "now_px": 64,
+  "target_px": 61
+ },
+ {
+  "tr": "GÖLGE SÜRÜSÜ",
+  "now": "MANADA SOMBRA",
+  "tr_px": 57,
+  "now_px": 64,
+  "target_px": 61
+ },
+ {
+  "tr": "IŞIK YAĞMURU!",
+  "now": "¡LLUVIA DE LUZ!",
+  "tr_px": 57,
+  "now_px": 64,
+  "target_px": 61
+ },
+ {
+  "tr": "ŞOK PLAZMASI",
+  "now": "ELECTROPLASMA",
+  "tr_px": 57,
+  "now_px": 64,
+  "target_px": 61
+ },
+ {
+  "tr": "BİRLİKTE EVE DÖNECEĞİZ DENİZ.",
+  "now": "VOLVEREMOS A CASA, ARIEL. TÚ Y YO.",
+  "tr_px": 131,
+  "now_px": 147,
+  "target_px": 141
+ },
+ {
+  "tr": "KÜTÜPHANE GEZEGENİ ZİLA",
+  "now": "ZILA, EL PLANETA BIBLIOTECA",
+  "tr_px": 107,
+  "now_px": 120,
+  "target_px": 115
+ },
+ {
+  "tr": "BİR YILDIZ GÜCÜ",
+  "now": "UN PODER ESTELAR",
+  "tr_px": 66,
+  "now_px": 74,
+  "target_px": 71
+ },
+ {
+  "tr": "RİTİM MAKİNESİ!",
+  "now": "¡MÁQUINA RÍTMICA!",
+  "tr_px": 66,
+  "now_px": 74,
+  "target_px": 71
+ },
+ {
+  "tr": "← → ŞERİT · ↑ SIÇRA · ↓ HAMLE",
+  "now": "← → CARRIL · ↑ SALTO · ↓ IMPULSO",
+  "tr_px": 124,
+  "now_px": 139,
+  "target_px": 133
+ },
+ {
+  "tr": "TEMİZ ATLAYIŞ",
+  "now": "SALTOS LIMPIOS",
+  "tr_px": 58,
+  "now_px": 65,
+  "target_px": 62
+ }
+]
